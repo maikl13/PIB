@@ -6,7 +6,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/resources/style_manager.dart';
 import 'package:pip/core/resources/values_manager.dart';
 
-
 import 'color_manager.dart';
 import 'font_manager.dart';
 
@@ -37,7 +36,7 @@ ThemeData getAppTheme = ThemeData(
     //     getBoldStyle( fontSize: 10.sp),
     backgroundColor: ColorManager.white,
     elevation: 0.0,
-    selectedItemColor: ColorManager.seconadary,
+    selectedItemColor: ColorManager.lightSeconadary,
     unselectedItemColor: ColorManager.grey,
   ),
   // selectedLabelStyle: getBoldStyle(color: Colors.red, fontSize: 10.sp)),
@@ -53,10 +52,12 @@ ThemeData getAppTheme = ThemeData(
         size: 18.sp,
       ),
       systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarBrightness: Brightness.light,
+        
         statusBarColor: ColorManager.transparent,
-        statusBarIconBrightness: Brightness.dark,
+        statusBarIconBrightness: Brightness.light,
         systemNavigationBarColor: ColorManager.transparent,
-        systemNavigationBarIconBrightness: Brightness.dark,
+        systemNavigationBarIconBrightness: Brightness.light,
       ),
       centerTitle: true,
       color: ColorManager.white,

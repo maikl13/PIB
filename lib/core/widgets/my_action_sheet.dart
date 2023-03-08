@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../resources/color_manager.dart';
-import '../resources/strings_manager.dart';
 import '../resources/style_manager.dart';
 
 class MyActionSheet extends StatelessWidget {
@@ -22,7 +21,7 @@ class MyActionSheet extends StatelessWidget {
               Navigator.pop(context);
             },
             child: Text(
-              AppStrings.report,
+              "AppStrings.report",
               style:
                   getRegularStyle(color: ColorManager.black, fontSize: 16.sp),
             ),
@@ -54,7 +53,7 @@ class MyActionSheet extends StatelessWidget {
       cancelButton: CupertinoActionSheetAction(
         onPressed: () => Navigator.pop(context),
         child: Text(
-          AppStrings.cancel,
+         " AppStrings.cancel",
           style: getBoldStyle(
               color: Theme.of(context).primaryColor, fontSize: 18.sp),
         ),

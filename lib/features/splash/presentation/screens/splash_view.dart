@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:pip/core/resources/color_manager.dart';
 
 import '../../../../core/resources/constants.dart';
 import '../../../../core/resources/route_manager.dart';
@@ -16,13 +17,12 @@ class SplashView extends StatefulWidget {
 class _SplashViewState extends State<SplashView> {
   Timer? _timer;
 
-  
   void _startDelay() {
     _timer = Timer(const Duration(seconds: AppConstants.splashDelay), _goNext);
   }
 
   void _goNext() {
-    Navigator.pushReplacementNamed(context, Routes.mainAuthViewRoute  );
+    Navigator.pushReplacementNamed(context, Routes.onBoardingViewRoute);
   }
 
   @override
@@ -33,8 +33,9 @@ class _SplashViewState extends State<SplashView> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
+    return Scaffold(
+      backgroundColor: ColorManager.primary,
+      body: const Center(
         child: SplashBody(),
       ),
     );

@@ -1,3 +1,4 @@
+// ignore: depend_on_referenced_packages
 import 'package:dio/dio.dart';
 import 'package:dio_smart_retry/dio_smart_retry.dart';
 import 'package:get_it/get_it.dart';
@@ -12,33 +13,6 @@ void initGetIt() {
   // getIt.registerLazySingleton<AuthRepoistry>(() => AuthRepoistry(getIt()));
   // getIt.registerLazySingleton<AuthCubit>(() => AuthCubit(getIt()));
 
-
-  //   getIt.registerLazySingleton<MenuRepository>(() => MenuRepository(getIt()));
-  // getIt.registerLazySingleton<MenuCubit>(() => MenuCubit(getIt()));
-  // getIt
-  //     .registerLazySingleton<SearchRepository>(() => SearchRepository(getIt()));
-  // getIt.registerLazySingleton<SearchCubit>(() => SearchCubit(getIt()));
-  // getIt.registerLazySingleton<DealsCubit>(() => DealsCubit());
-  // getIt.registerLazySingleton<MessagesCubit>(() => MessagesCubit());
-  // getIt.registerLazySingleton<GlobalCubit>(() => GlobalCubit());
-
-  // getIt.registerLazySingleton<NotificationCubit>(
-  //     () => NotificationCubit(getIt()));
-  // getIt.registerLazySingleton<NotificationRepository>(
-  //     () => NotificationRepository(getIt()));
-
-  // getIt.registerLazySingleton<HomeRepository>(() => HomeRepository(getIt()));
-  // getIt.registerLazySingleton<AuthCubit>(() => AuthCubit(getIt()));
-  // getIt.registerLazySingleton<AuthRepoistry>(() => AuthRepoistry(getIt()));
-  // getIt.registerLazySingleton<ProductsCubit>(() => ProductsCubit(getIt()));
-  // getIt.registerLazySingleton<ProductsRepository>(
-  //     () => ProductsRepository(getIt()));
-  // getIt.registerLazySingleton<ForumsCubit>(() => ForumsCubit(getIt()));
-  // getIt
-  //     .registerLazySingleton<ForumsRepository>(() => ForumsRepository(getIt()));
-
-  // getIt.registerLazySingleton<WebServices>(
-  //     () => WebServices(createAndSetupDio()));
 }
 
 Dio createAndSetupDio() {

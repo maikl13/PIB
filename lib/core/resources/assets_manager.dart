@@ -2,7 +2,8 @@ const String imagePath = "assets/images";
 const String svgPath = "assets/images/svg";
 
 class ImageAssets {
-  static const String splashLogo = "$imagePath/splash_logo.png";
+  static const String splashLogo = "$imagePath/splash.png";
+  static const String onBoarding = "$imagePath/onBoarding.png";
 
 }
 
