@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/resources/color_manager.dart';
+import 'package:pip/core/resources/route_manager.dart';
 
 import '../widgets/custom_network_image.dart';
 import 'constants.dart';
@@ -39,7 +40,7 @@ buildMainSearchViewAppBarActions(BuildContext context) {
       padding: EdgeInsets.only(left: 20.w),
       child: InkWell(
           onTap: () {
-            // Navigator.pushNamed(context, Routes.notificationViewRoute);
+            Navigator.pushNamed(context, Routes.notificationViewRoute);
           },
           child: Icon(
             CupertinoIcons.bell,

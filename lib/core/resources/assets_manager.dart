@@ -10,6 +10,8 @@ class ImageAssets {
   static const String successBackground = "$imagePath/success_background.png";
   static const String userImage = "$imagePath/user_image.png";
   static const String banner = "$imagePath/banner.png";
+  static const String bell = "$imagePath/bell.png";
+
 }
 
 

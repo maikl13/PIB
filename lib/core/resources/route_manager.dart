@@ -5,6 +5,7 @@ import 'package:pip/features/auth/presentation/screens/login_view.dart';
 import 'package:pip/features/auth/presentation/screens/main_auth_view.dart';
 import 'package:pip/features/auth/presentation/screens/register_view.dart';
 import 'package:pip/features/home/presentation/screens/main_home_view.dart';
+import 'package:pip/features/notification/presentation/screens/notification_view.dart';
 
 import 'package:pip/features/splash/presentation/screens/on_boarding_view.dart';
 import '../../features/home/business_logic/cubit/home_cubit.dart';
@@ -23,6 +24,8 @@ class Routes {
   static const String forgotPasswordViewRoute = "/forgotPasswordViewRoute";
 
   static const String mainHomeViewRoute = "/mainHomeViewRoute";
+  static const String notificationViewRoute = "/notificationViewRoute";
+
 }
 
 class RouteGenerator {
@@ -75,6 +78,11 @@ class RouteGenerator {
             value: homeCubit,
             child: const MainHomeView(),
           ),
+        );
+
+         case Routes.notificationViewRoute:
+        return MaterialPageRoute(
+          builder: (_) => const NotificationView(),
         );
       default:
         return unDefinedRoute();

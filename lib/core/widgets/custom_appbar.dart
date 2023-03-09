@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/resources/color_manager.dart';
+import 'package:pip/core/resources/style_manager.dart';
 import 'package:pip/core/widgets/skip_text.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -28,6 +29,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           ],
       title: Text(
         title ?? '',
+        style: getRegularStyle(fontSize: 18.sp, color: ColorManager.white),
       ),
       leading: Row(
         mainAxisAlignment: MainAxisAlignment.end,
