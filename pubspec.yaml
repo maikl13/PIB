@@ -44,6 +44,7 @@ dependencies:
   dio_smart_retry: ^5.0.0
   flutter_localizations:
     sdk: flutter
+  flutter_svg: ^2.0.2
 
 dev_dependencies:
   flutter_test:

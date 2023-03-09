@@ -5,19 +5,21 @@ import 'package:pip/core/resources/color_manager.dart';
 import 'package:pip/core/resources/strings_manager.dart';
 import 'package:pip/core/resources/style_manager.dart';
 
+import '../../../../core/resources/route_manager.dart';
+
 class OnBoardingView extends StatelessWidget {
   const OnBoardingView({super.key});
-  _buildBody() {
+  _buildBody(BuildContext context) {
     return Stack(
       fit: StackFit.expand,
       children: [
         _buildBackground(),
-        _buildContent(),
+        _buildContent(context),
       ],
     );
   }
 
-  _buildContent() {
+  _buildContent(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(bottom: 60.h),
       child: Column(
@@ -27,7 +29,7 @@ class OnBoardingView extends StatelessWidget {
           SizedBox(height: 23.h),
           _buildSubHeadline(),
           SizedBox(height: 40.h),
-          _buildButton(),
+          _buildButton(context),
         ],
       ),
     );
@@ -64,15 +66,15 @@ class OnBoardingView extends StatelessWidget {
     );
   }
 
-  _buildButton() {
+  _buildButton(BuildContext context) {
     return Container(
       width: 190.w,
       height: 55.h,
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
+            ColorManager.darkSeconadry,
             ColorManager.lightSeconadary,
-            ColorManager.darkSeconadary,
           ],
           begin: Alignment.centerRight,
           end: Alignment.centerLeft,
@@ -86,7 +88,7 @@ class OnBoardingView extends StatelessWidget {
           children: [
             _buildTitle(),
             SizedBox(width: 30.w),
-            _buildIcon(),
+            _buildIcon(context),
           ],
         ),
       ),
@@ -103,7 +105,7 @@ class OnBoardingView extends StatelessWidget {
     );
   }
 
-  _buildIcon() {
+  _buildIcon(BuildContext context) {
     return Container(
       width: 45.w,
       height: 45.h,
@@ -111,10 +113,15 @@ class OnBoardingView extends StatelessWidget {
         color: ColorManager.white,
         borderRadius: BorderRadius.circular(25.r),
       ),
-      child: Icon(
-        Icons.arrow_back,
-        color: ColorManager.darkSeconadary,
-        size: 20.sp,
+      child: InkWell(
+        onTap: () {
+          Navigator.pushReplacementNamed(context, Routes.mainAuthViewRoute);
+        },
+        child: Icon(
+          Icons.arrow_back,
+          color: ColorManager.lightSeconadary,
+          size: 20.sp,
+        ),
       ),
     );
   }
@@ -122,7 +129,7 @@ class OnBoardingView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _buildBody(),
+      body: _buildBody(context),
     );
   }
 }

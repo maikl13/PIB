@@ -14,12 +14,26 @@ class AppStrings {
   static const String manageDeals = 'ادارة صفقاتي';
   static const String menu = 'القائمة ';
 
-
-
-
   static const String onBoardingHeadline = 'احدث الوظائف الشاغرة';
-  static const String onBoardingSubHeadline = 'يمكنك الان التسجيل باحدث الوظائف من دون جهد ووقت كبيرين';
+  static const String onBoardingSubHeadline =
+      'يمكنك الان التسجيل باحدث الوظائف من دون جهد ووقت كبيرين';
   static const String start = 'ابدأ';
+  static const String skip = 'تخطي';
+  static const String hello = 'مرحبا';
+  static const String you = 'بك';
+  static const String registerNewAcc = 'تسجيل حساب جديد';
+  static const String login = 'تسجيل دخول';
+  static const String orLoginWith = 'او تسجيل باستخدام';
+  static const String facebook = 'facebook';
+  static const String google = 'google';
+  static const String loginDescription =
+      'الرجاء إدخال البيانات التالية للدخول لحسابك';
+  static const String forgotPassword = 'نسيت كلمة المرور';
+  static const String dontHaveAccount = 'لا املك حساب بالتطبيق ؟';
+  static const String countryCode = '+966';
+  static const String zeros = '0000000000';
+  static const String phoneNumber = 'رقم الجوال :';
+  static const String password = 'كلمة المرور';
   // static const String local = 'محلي';
   // static const String local = 'محلي';
   // static const String local = 'محلي';
@@ -28,20 +42,4 @@ class AppStrings {
   // static const String local = 'محلي';
   // static const String local = 'محلي';
   // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-
 }

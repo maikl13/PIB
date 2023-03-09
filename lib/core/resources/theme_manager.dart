@@ -12,7 +12,7 @@ import 'font_manager.dart';
 ThemeData getAppTheme = ThemeData(
   dividerColor: Colors.transparent,
 
-  scaffoldBackgroundColor: ColorManager.white,
+  scaffoldBackgroundColor: ColorManager.darkBlack,
   // main colors
   primaryColor: ColorManager.primary,
 
@@ -36,7 +36,7 @@ ThemeData getAppTheme = ThemeData(
     //     getBoldStyle( fontSize: 10.sp),
     backgroundColor: ColorManager.white,
     elevation: 0.0,
-    selectedItemColor: ColorManager.lightSeconadary,
+    selectedItemColor: ColorManager.darkSeconadry,
     unselectedItemColor: ColorManager.grey,
   ),
   // selectedLabelStyle: getBoldStyle(color: Colors.red, fontSize: 10.sp)),
@@ -48,19 +48,18 @@ ThemeData getAppTheme = ThemeData(
   // app bar theme
   appBarTheme: AppBarTheme(
       iconTheme: IconThemeData(
-        color: ColorManager.black,
+        color: ColorManager.darkSeconadry,
         size: 18.sp,
       ),
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarBrightness: Brightness.light,
-        
         statusBarColor: ColorManager.transparent,
         statusBarIconBrightness: Brightness.light,
         systemNavigationBarColor: ColorManager.transparent,
         systemNavigationBarIconBrightness: Brightness.light,
       ),
       centerTitle: true,
-      color: ColorManager.white,
+      color: ColorManager.transparent,
       elevation: 0.0,
       // shadowColor: ColorManager.lightPrimary,
       titleTextStyle: getRegularStyle(
@@ -110,8 +109,7 @@ ThemeData getAppTheme = ThemeData(
         getRegularStyle(color: ColorManager.primary, fontSize: FontSize.s17.sp),
     //--------------------------------------------------------------------------
     // titlein search main app bar
-    headlineLarge:
-        getBoldStyle(color: ColorManager.black, fontSize: FontSize.s22.sp),
+    headlineLarge: getBoldStyle(color: ColorManager.white, fontSize: 25.sp),
     //------------------------------------------------------------------------------
     //main search subtitle
     labelLarge: getBoldStyle(color: ColorManager.darkGrey, fontSize: 17.sp),
@@ -124,8 +122,8 @@ ThemeData getAppTheme = ThemeData(
         getSemiBoldStyle(color: ColorManager.darkGrey, fontSize: FontSize.s16),
 
     //------------------------------------------------------------------------------
-    headlineMedium:
-        getRegularStyle(color: ColorManager.black, fontSize: FontSize.s18.sp),
+    headlineMedium: getRegularStyle(
+        color: ColorManager.white.withOpacity(.9), fontSize: 15.sp),
     //------------------------------------------------------------------------------
 
     //------------------------------------------------------------------------------
@@ -145,7 +143,7 @@ ThemeData getAppTheme = ThemeData(
   // input decoration theme (text form field)
 
   inputDecorationTheme: InputDecorationTheme(
-      fillColor: ColorManager.grey.withOpacity(.10),
+      fillColor: ColorManager.lightBlack,
       filled: true,
       contentPadding: EdgeInsets.only(right: 32.w),
       hintStyle:
@@ -156,17 +154,17 @@ ThemeData getAppTheme = ThemeData(
       enabledBorder: OutlineInputBorder(
           borderSide:
               BorderSide(color: ColorManager.transparent, width: 1.5.sp),
-          borderRadius: BorderRadius.all(Radius.circular(5.r))),
+          borderRadius: BorderRadius.all(Radius.circular(15.r))),
       focusedBorder: OutlineInputBorder(
           borderSide:
               BorderSide(color: ColorManager.transparent, width: AppSize.s1_5),
-          borderRadius: BorderRadius.all(Radius.circular(5.r))),
+          borderRadius: BorderRadius.all(Radius.circular(15.r))),
       errorBorder: OutlineInputBorder(
           borderSide:
               BorderSide(color: ColorManager.transparent, width: AppSize.s1_5),
-          borderRadius: BorderRadius.all(Radius.circular(5.r))),
+          borderRadius: BorderRadius.all(Radius.circular(15.r))),
       focusedErrorBorder: OutlineInputBorder(
           borderSide:
               BorderSide(color: ColorManager.transparent, width: AppSize.s1_5),
-          borderRadius: BorderRadius.all(Radius.circular(5.r)))),
+          borderRadius: BorderRadius.all(Radius.circular(15.r)))),
 );

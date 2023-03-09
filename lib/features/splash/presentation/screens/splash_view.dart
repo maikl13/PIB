@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:pip/core/resources/color_manager.dart';
 
 import '../../../../core/resources/constants.dart';
 import '../../../../core/resources/route_manager.dart';
@@ -33,9 +32,9 @@ class _SplashViewState extends State<SplashView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: ColorManager.primary,
-      body: const Center(
+    return const Scaffold(
+      // backgroundColor: ColorManager.primary,
+      body: Center(
         child: SplashBody(),
       ),
     );

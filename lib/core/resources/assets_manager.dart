@@ -4,7 +4,9 @@ const String svgPath = "assets/images/svg";
 class ImageAssets {
   static const String splashLogo = "$imagePath/splash.png";
   static const String onBoarding = "$imagePath/onBoarding.png";
-
+  static const String authLogo = "$imagePath/auth_logo.png";
+  static const String facebook = "$imagePath/facebook.png";
+  static const String google = "$imagePath/google.png";
 }
 
 

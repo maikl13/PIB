@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/resources/color_manager.dart';
@@ -27,7 +28,15 @@ class DefaultButton extends StatelessWidget {
         width: widht ?? double.infinity,
         height: height ?? 49.h,
         decoration: BoxDecoration(
-            color: color ?? ColorManager.darkSeconadary,
+            gradient: const RadialGradient(
+              // focal: const Alignment(0.0, 0.0),
+              center: Alignment(0.0, 0.0),
+              radius: 0.395,
+              colors: [Color(0xffffc638), Color(0xfff7b100)],
+
+              stops: [0.0, 1.0],
+              transform: GradientRotation(0),
+            ),
             borderRadius: BorderRadius.all(Radius.circular(31.r))),
         child: Center(
           child: Text(
@@ -43,3 +52,16 @@ class DefaultButton extends StatelessWidget {
     );
   }
 }
+// Container(
+//     decoration: BoxDecoration(
+//       gradient: RadialGradient(
+//         center: Alignment(0.0, 0.0),
+//         radius: 0.395,
+//         colors: [const Color(0xffffc638), const Color(0xfff7b100)],
+//         stops: [0.0, 1.0],
+//         transform: GradientXDTransform(
+//             1.0, 0.0, 0.0, 2.702, 0.0, -0.851, Alignment(0.0, 0.0)),
+//       ),
+//       borderRadius: BorderRadius.circular(31.0),
+//     ),
+//   )

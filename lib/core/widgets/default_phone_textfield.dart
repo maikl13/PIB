@@ -1,0 +1,72 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/resources/color_manager.dart';
+import 'package:pip/core/resources/strings_manager.dart';
+import 'package:pip/core/resources/style_manager.dart';
+
+class DefaultPhoneTextField extends StatelessWidget {
+  const DefaultPhoneTextField(
+      {super.key,
+      required this.suffix,
+      this.hint,
+      this.contentPadding,
+      this.validator,
+      this.onSaved,
+      this.prefixIcon,
+      this.controller});
+
+  final Widget suffix;
+  final String? hint;
+  final EdgeInsetsGeometry? contentPadding;
+  final String? Function(String?)? validator;
+  final void Function(String?)? onSaved;
+  final IconData? prefixIcon;
+  final TextEditingController? controller;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      controller: controller,
+      cursorColor: ColorManager.lightSeconadary,
+      style: getBoldStyle(fontSize: 20.sp, color: ColorManager.darkGrey),
+      onSaved: onSaved,
+      validator: validator,
+      decoration: InputDecoration(
+        floatingLabelBehavior: FloatingLabelBehavior.never,
+        label: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text(AppStrings.phoneNumber,
+                style: getBoldStyle(
+                    fontSize: 10.sp, color: ColorManager.darkGrey)),
+            const SizedBox(height: 10),
+            Text(AppStrings.zeros,
+                style:
+                    getRegularStyle(fontSize: 17.sp, color: ColorManager.grey)),
+          ],
+        ),
+
+        prefixIcon: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Icon(
+              prefixIcon,
+              color: ColorManager.lightSeconadary,
+              size: 20.sp,
+            ),
+          ],
+        ),
+        contentPadding: contentPadding ??
+            EdgeInsets.only(top: 28.h, bottom: 18.h, right: 20.w),
+        hintText: hint,
+        // hintStyle: ,
+        suffixIcon: Padding(
+          padding: EdgeInsets.only(top: 0.h, left: 20.w, bottom: 28.h),
+          child: suffix,
+        ),
+      ),
+    );
+  }
+}
