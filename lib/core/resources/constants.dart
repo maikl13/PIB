@@ -1,5 +1,4 @@
-
-
+import 'package:pip/core/resources/strings_manager.dart';
 
 class AppConstants {
   static const int splashDelay = 3;
@@ -16,3 +15,13 @@ String token = '123';
 String userPhone = '';
 String userImage = '';
 
+int selectedTab = 0;
+int screenIndex = 0;
+
+final List<String> viewsTitles = [
+  AppStrings.main,
+  AppStrings.pib,
+  AppStrings.myOrders,
+  AppStrings.messages,
+  AppStrings.personalInfo,
+];

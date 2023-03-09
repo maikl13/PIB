@@ -3,11 +3,13 @@ import 'package:dio/dio.dart';
 import 'package:dio_smart_retry/dio_smart_retry.dart';
 import 'package:get_it/get_it.dart';
 
+import '../../features/home/business_logic/cubit/home_cubit.dart';
 import 'constants.dart';
 
 final getIt = GetIt.instance;
 
 void initGetIt() {
+  getIt.registerLazySingleton<HomeCubit>(() => HomeCubit());
   // getIt.registerLazySingleton<HomeRepository>(() => HomeRepository(getIt()));
   // getIt.registerLazySingleton<HomeCubit>(() => HomeCubit(getIt()));
   // getIt.registerLazySingleton<AuthRepoistry>(() => AuthRepoistry(getIt()));

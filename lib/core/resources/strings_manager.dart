@@ -12,8 +12,8 @@ class AppStrings {
   static const String main = 'الرئيسية ';
   static const String messages = 'الرسائل ';
 
-  static const String manageDeals = 'ادارة صفقاتي';
-  static const String menu = 'القائمة ';
+  static const String myOrders = 'طلباتي';
+  static const String personalInfo = 'الملف الشخصي ';
 
   static const String onBoardingHeadline = 'احدث الوظائف الشاغرة';
   static const String onBoardingSubHeadline =
@@ -41,21 +41,25 @@ class AppStrings {
   static const String zeros = '0000000000';
   static const String phoneNumber = 'رقم الجوال :';
   static const String password = 'كلمة المرور';
-  static const String name =  'الاسم';
+  static const String name = 'الاسم';
   static const String termsAndCondition = 'الشروط والأحكام وسياسة الخصوصية';
-  static const String areadyHaveAnaccount =  'لدي حساب بالفعل';
+  static const String areadyHaveAnaccount = 'لدي حساب بالفعل';
   static const String thankYou = 'شكرا لك';
   static const String local = 'محلي';
-  static const String successAuthDesc = 'يمكنك الان تصفح التطبيق والتمتع بتجربة فريدة بطلبك';
+  static const String successAuthDesc =
+      'يمكنك الان تصفح التطبيق والتمتع بتجربة فريدة بطلبك';
   static const String agree = 'موافق';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
+  static const String pib = 'PIB';
+  static const String availbleRecentJobs = 'احدث الوظائف الشاغرة';
+  static const String bannerDesc =
+      'يمكنك الان التسجيل باحدث الوظائف من دون جهد ووقت كبيرين';
+  static const String showAll = 'عرض الكل';
+  static const String companiesRequireJobs = 'شركات قاموا بطلب وظائف :';
+
+  static const String jobTitle = 'سباك';
+  static const String companyName = 'شركة امواج للنظافة';
+  static const String partTimeJobs = 'وظائف بارت تايم :';
+  static const String fullTimeJobs = 'وظائف دوام كامل :';
   // static const String local = 'محلي';
   // static const String local = 'محلي';
   // static const String local = 'محلي';
@@ -68,7 +72,6 @@ class AppStrings {
   // static const String local = 'محلي';
   // static const String local = 'محلي';
 
-  
   // static const String local = 'محلي';
   // static const String local = 'محلي';
   // static const String local = 'محلي';

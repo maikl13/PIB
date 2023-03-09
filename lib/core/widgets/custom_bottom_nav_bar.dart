@@ -1,5 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/resources/assets_manager.dart';
+import 'package:pip/core/resources/color_manager.dart';
+import 'package:pip/core/resources/constants.dart';
+import 'package:pip/core/resources/style_manager.dart';
 
 import '../resources/strings_manager.dart';
 
@@ -16,38 +21,44 @@ class CustomBottomNavBar extends StatefulWidget {
 class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          border: Border.all(color: Theme.of(context).primaryColor)),
-      child: BottomNavigationBar(
-        selectedItemColor: Theme.of(context).primaryColor,
-        type: BottomNavigationBarType.fixed, // This is all you need!
+    return BottomNavigationBar(
+      // selectedItemColor: Theme.of(contex,
+      type: BottomNavigationBarType.fixed, // This is all you need!
 
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home_filled),
-            label: AppStrings.main,
+      items: <BottomNavigationBarItem>[
+        const BottomNavigationBarItem(
+          icon: Icon(Icons.home_filled),
+          label: AppStrings.main,
+        ),
+        BottomNavigationBarItem(
+          icon: Padding(
+            padding: EdgeInsets.only(top: 8.h),
+            child: Text(
+              AppStrings.pib,
+              style: getBoldStyle(
+                  fontSize: 16.sp,
+                  color: selectedTab == 1
+                      ? ColorManager.darkSeconadry
+                      : ColorManager.grey),
+            ),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: AppStrings.theSearch,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.bell),
-            label: AppStrings.notification,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.layers_outlined),
-            label: AppStrings.manageDeals,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.menu),
-            label: AppStrings.menu,
-          ),
-        ],
-        currentIndex: widget.selectedIndex,
-        onTap: widget.onTap!,
-      ),
+          label: '',
+        ),
+        const BottomNavigationBarItem(
+          icon: Icon(Icons.layers_outlined),
+          label: AppStrings.myOrders,
+        ),
+        const BottomNavigationBarItem(
+          icon: Icon(CupertinoIcons.chat_bubble_2),
+          label: AppStrings.messages,
+        ),
+        BottomNavigationBarItem(
+          icon: Image.asset(ImageAssets.userImage, height: 25.h),
+          label: AppStrings.personalInfo,
+        ),
+      ],
+      currentIndex: widget.selectedIndex,
+      onTap: widget.onTap!,
     );
   }
 }

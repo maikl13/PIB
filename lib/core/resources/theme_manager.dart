@@ -34,7 +34,7 @@ ThemeData getAppTheme = ThemeData(
     ),
     // selectedLabelStyle:
     //     getBoldStyle( fontSize: 10.sp),
-    backgroundColor: ColorManager.white,
+    backgroundColor: ColorManager.lightBlack,
     elevation: 0.0,
     selectedItemColor: ColorManager.darkSeconadry,
     unselectedItemColor: ColorManager.grey,
