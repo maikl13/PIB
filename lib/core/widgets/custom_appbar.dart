@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/resources/color_manager.dart';
+import 'package:pip/core/widgets/skip_text.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? title;
@@ -21,7 +22,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: appBarColor ?? ColorManager.darkBlack,
-      actions: actions,
+      actions: actions ??
+          [
+            const SkipText(),
+          ],
       title: Text(
         title ?? '',
       ),

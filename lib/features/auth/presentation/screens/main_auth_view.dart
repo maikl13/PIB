@@ -31,7 +31,12 @@ class MainAuthView extends StatelessWidget {
             },
           ),
           SizedBox(height: 25.h),
-          const DarkDefaultButton(text: AppStrings.login),
+          DarkDefaultButton(
+            text: AppStrings.login,
+            onTap: () {
+              Navigator.pushNamed(context, Routes.loginViewRoute);
+            },
+          ),
           SizedBox(height: 76.h),
           _buildOrLoginWith(),
           SizedBox(height: 29.h),

@@ -4,10 +4,12 @@ import 'package:pip/core/resources/color_manager.dart';
 import 'package:pip/core/resources/strings_manager.dart';
 import 'package:pip/core/resources/style_manager.dart';
 
+import '../resources/utils.dart';
+
 class DefaultPhoneTextField extends StatelessWidget {
   const DefaultPhoneTextField(
       {super.key,
-      required this.suffix,
+       this.suffix,
       this.hint,
       this.contentPadding,
       this.validator,
@@ -15,7 +17,7 @@ class DefaultPhoneTextField extends StatelessWidget {
       this.prefixIcon,
       this.controller});
 
-  final Widget suffix;
+  final Widget ?suffix;
   final String? hint;
   final EdgeInsetsGeometry? contentPadding;
   final String? Function(String?)? validator;
@@ -52,7 +54,7 @@ class DefaultPhoneTextField extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Icon(
-              prefixIcon,
+              prefixIcon ?? Icons.phone,
               color: ColorManager.lightSeconadary,
               size: 20.sp,
             ),
@@ -60,11 +62,17 @@ class DefaultPhoneTextField extends StatelessWidget {
         ),
         contentPadding: contentPadding ??
             EdgeInsets.only(top: 28.h, bottom: 18.h, right: 20.w),
-        hintText: hint,
+        hintText: hint ?? AppStrings.zeros,
         // hintStyle: ,
         suffixIcon: Padding(
           padding: EdgeInsets.only(top: 0.h, left: 20.w, bottom: 28.h),
-          child: suffix,
+          child: suffix ?? Padding(
+          padding: EdgeInsets.only(top: 10.h),
+          child: Text(
+            '${getCountryFlag()}    ${AppStrings.countryCode}',
+            style: getBoldStyle(color: ColorManager.grey, fontSize: 17.sp),
+          ),
+        ) ,
         ),
       ),
     );

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:pip/features/auth/presentation/screens/forgot_password_view.dart';
 import 'package:pip/features/auth/presentation/screens/login_view.dart';
 import 'package:pip/features/auth/presentation/screens/main_auth_view.dart';
+import 'package:pip/features/auth/presentation/screens/register_view.dart';
 
 import 'package:pip/features/splash/presentation/screens/on_boarding_view.dart';
 import '../../features/splash/presentation/screens/splash_view.dart';
@@ -13,6 +15,9 @@ class Routes {
   static const String mainAuthViewRoute = "/mainAuthViewRoute";
   static const String registerViewRoute = "/registerViewRoute";
   static const String loginViewRoute = "/loginViewRoute";
+  static const String forgotPasswordViewRoute = "/forgotPasswordViewRoute";
+
+
 
 }
 
@@ -32,9 +37,20 @@ class RouteGenerator {
           builder: (_) => const MainAuthView(),
         );
 
-      case Routes.registerViewRoute:
+      case Routes.loginViewRoute:
         return MaterialPageRoute(
           builder: (_) => const LoginView(),
+        );
+
+         case Routes.forgotPasswordViewRoute:
+        return MaterialPageRoute(
+          builder: (_) => const ForgotPasswordView(),
+        );
+
+
+         case Routes.registerViewRoute:
+        return MaterialPageRoute(
+          builder: (_) => const RegisterView(),
         );
       default:
         return unDefinedRoute();

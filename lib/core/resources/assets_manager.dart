@@ -7,6 +7,8 @@ class ImageAssets {
   static const String authLogo = "$imagePath/auth_logo.png";
   static const String facebook = "$imagePath/facebook.png";
   static const String google = "$imagePath/google.png";
+  static const String successBackground = "$imagePath/success_background.png";
+
 }
 
 

@@ -7,6 +7,7 @@ class AppStrings {
   static const String notification = 'الاشعارات';
   static const String theSearch = 'البحث';
   static const String search = 'بحث';
+  static const String send = 'ارسال';
 
   static const String main = 'الرئيسية ';
   static const String messages = 'الرسائل ';
@@ -28,17 +29,46 @@ class AppStrings {
   static const String google = 'google';
   static const String loginDescription =
       'الرجاء إدخال البيانات التالية للدخول لحسابك';
+  static const String registerDescription =
+      'الرجاء تعبئة البيانات التالية لانشاء حساب جديد';
+
   static const String forgotPassword = 'نسيت كلمة المرور';
+  static const String forgotPasswordDescription =
+      'فم بادخال رقم الجوال لاسترداد حسابك';
+
   static const String dontHaveAccount = 'لا املك حساب بالتطبيق ؟';
   static const String countryCode = '+966';
   static const String zeros = '0000000000';
   static const String phoneNumber = 'رقم الجوال :';
   static const String password = 'كلمة المرور';
+  static const String name =  'الاسم';
+  static const String termsAndCondition = 'الشروط والأحكام وسياسة الخصوصية';
+  static const String areadyHaveAnaccount =  'لدي حساب بالفعل';
+  static const String thankYou = 'شكرا لك';
+  static const String local = 'محلي';
+  static const String successAuthDesc = 'يمكنك الان تصفح التطبيق والتمتع بتجربة فريدة بطلبك';
+  static const String agree = 'موافق';
   // static const String local = 'محلي';
   // static const String local = 'محلي';
   // static const String local = 'محلي';
   // static const String local = 'محلي';
   // static const String local = 'محلي';
+  // static const String local = 'محلي';
+  // static const String local = 'محلي';
+  // static const String local = 'محلي';
+  // static const String local = 'محلي';
+  // static const String local = 'محلي';
+  // static const String local = 'محلي';
+  // static const String local = 'محلي';
+  // static const String local = 'محلي';
+  // static const String local = 'محلي';
+  // static const String local = 'محلي';
+  // static const String local = 'محلي';
+  // static const String local = 'محلي';
+  // static const String local = 'محلي';
+  // static const String local = 'محلي';
+
+  
   // static const String local = 'محلي';
   // static const String local = 'محلي';
   // static const String local = 'محلي';
