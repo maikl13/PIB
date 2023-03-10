@@ -6,7 +6,9 @@ import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 
 class SearchBar extends StatelessWidget {
-  const SearchBar({super.key});
+  const SearchBar({super.key, this.fillColor});
+
+  final Color? fillColor;
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +16,7 @@ class SearchBar extends StatelessWidget {
         style: getBoldStyle(fontSize: 14.sp, color: ColorManager.darkSeconadry),
         cursorColor: ColorManager.darkSeconadry,
         decoration: InputDecoration(
+          fillColor: fillColor,
           focusedBorder: OutlineInputBorder(
               borderSide:
                   BorderSide(color: ColorManager.transparent, width: 1.5.w),

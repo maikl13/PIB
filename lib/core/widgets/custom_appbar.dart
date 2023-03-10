@@ -4,6 +4,8 @@ import 'package:pip/core/resources/color_manager.dart';
 import 'package:pip/core/resources/style_manager.dart';
 import 'package:pip/core/widgets/skip_text.dart';
 
+import 'leading_arrow.dart';
+
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? title;
   final double? height;
@@ -31,30 +33,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         title ?? '',
         style: getRegularStyle(fontSize: 18.sp, color: ColorManager.white),
       ),
-      leading: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          // SizedBox(width: 20.w),
-          InkWell(
-            onTap: () => Navigator.pop(context),
-            child: leadingArrow ??
-                Container(
-                  width: 35.w,
-                  height: 35.h,
-                  decoration: BoxDecoration(
-                    color: ColorManager.darkSeconadry,
-                    borderRadius: BorderRadius.circular(8.r),
-                  ),
-                  child: Center(
-                    child: Icon(
-                      Icons.arrow_back_ios,
-                      color: ColorManager.black,
-                      // size: 20.sp,
-                    ),
-                  ),
-                ),
-          ),
-        ],
+      leading: LeadingArrow(
+        leadingArrow: leadingArrow,
       ),
     );
   }

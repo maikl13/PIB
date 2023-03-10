@@ -27,6 +27,7 @@ class ShowAllText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisSize: MainAxisSize.min,
       children: [
         _buildTitle(),
         SizedBox(width: 12.w),

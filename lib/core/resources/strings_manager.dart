@@ -60,16 +60,18 @@ class AppStrings {
   static const String companyName = 'شركة امواج للنظافة';
   static const String partTimeJobs = 'وظائف بارت تايم :';
   static const String fullTimeJobs = 'وظائف دوام كامل :';
-  static const String notificationSubtitle = 'هناك حقيقة مثبتة منذ زمن طويل وهي المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الصفحة التي يقرأها.';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
+  static const String notificationSubtitle =
+      'هناك حقيقة مثبتة منذ زمن طويل وهي المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الصفحة التي يقرأها.';
+  static const String jobDetailsAppBarTitle = 'تفاصيل الاعلان';
+  static const String share = 'محلي';
+  static const String randomText =
+      'هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء طريقة لوريم إيبسوم لأنها تعطي توزيعاَ طبيعياَ -إلى للأحرف ع" فتجعلها تبدو (أي الأحرف) وكأنها نص مقروء.';
+  static const String adPayed = 'اعلان مدفوع';
+  static const String jobLink = 'https://www.Jops1.com/';
+  static const String jobLocation = 'الدمام - احد - عمارة ٣';
+  static const String applyToJob = 'تقديم طلب توظيف';
+  static const String emptySearch = 'لا توجد اي نتائج بحث';
+  static const String searchResults = 'نتائج البحث :';
   // static const String local = 'محلي';
 
   // static const String local = 'محلي';

@@ -4,8 +4,10 @@ import 'package:pip/features/auth/presentation/screens/forgot_password_view.dart
 import 'package:pip/features/auth/presentation/screens/login_view.dart';
 import 'package:pip/features/auth/presentation/screens/main_auth_view.dart';
 import 'package:pip/features/auth/presentation/screens/register_view.dart';
+import 'package:pip/features/home/presentation/screens/jop_details_view.dart';
 import 'package:pip/features/home/presentation/screens/main_home_view.dart';
 import 'package:pip/features/notification/presentation/screens/notification_view.dart';
+import 'package:pip/features/search/presentation/screens/search_main_view.dart';
 
 import 'package:pip/features/splash/presentation/screens/on_boarding_view.dart';
 import '../../features/home/business_logic/cubit/home_cubit.dart';
@@ -24,7 +26,12 @@ class Routes {
   static const String forgotPasswordViewRoute = "/forgotPasswordViewRoute";
 
   static const String mainHomeViewRoute = "/mainHomeViewRoute";
+  static const String jobDetailsViewRoute = "/jobDetailsViewRoute";
+
   static const String notificationViewRoute = "/notificationViewRoute";
+
+  static const String searchMainViewRoute = "/searchMainViewRoute";
+
 
 }
 
@@ -83,6 +90,18 @@ class RouteGenerator {
          case Routes.notificationViewRoute:
         return MaterialPageRoute(
           builder: (_) => const NotificationView(),
+
+          
+        );
+
+          case Routes.jobDetailsViewRoute:
+        return MaterialPageRoute(
+          builder: (_) => const JobDetailsView(),          
+        );
+
+          case Routes.searchMainViewRoute:
+        return MaterialPageRoute(
+          builder: (_) => const SearchMainView(),          
         );
       default:
         return unDefinedRoute();
