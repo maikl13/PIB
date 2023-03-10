@@ -8,7 +8,7 @@ import 'job_item.dart';
 
 class JobsPart extends StatelessWidget {
   const JobsPart({super.key, required this.headline});
-  final String headline ;
+  final String headline;
 
   @override
   Widget build(BuildContext context) {
@@ -16,14 +16,14 @@ class JobsPart extends StatelessWidget {
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children:  [
-            CustomTitle(title:headline),
+          children: [
+            CustomTitle(title: headline),
             const ShowAllText(),
           ],
         ),
         SizedBox(height: 25.h),
         SizedBox(
-          height: 122.h,
+          height: 122.w,
           child: ListView.separated(
               scrollDirection: Axis.horizontal,
               shrinkWrap: true,
@@ -35,7 +35,7 @@ class JobsPart extends StatelessWidget {
               },
               itemCount: 10,
               itemBuilder: (context, index) {
-                return  const JobItem();
+                return const JobItem();
               }),
         ),
       ],

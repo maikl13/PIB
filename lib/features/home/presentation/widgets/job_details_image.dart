@@ -7,7 +7,7 @@ import '../../../../core/resources/color_manager.dart';
 class JobDetailsImage extends StatelessWidget {
   const JobDetailsImage({super.key});
 
- _buildImage() {
+  _buildImage() {
     return Stack(
       fit: StackFit.loose,
       children: [
@@ -25,20 +25,30 @@ class JobDetailsImage extends StatelessWidget {
   _buildJobImage() {
     return SizedBox(
       width: 150.w,
-      height: 150.h,
-      // color: Colors.red,
-      child: ClipOval(
-          child: ColorFiltered(
-        colorFilter:
-            ColorFilter.mode(Colors.black.withOpacity(0.3), BlendMode.darken),
-        child: Image.asset(
+      height: 150.w,
+      child: CircleAvatar(
+        radius: 80.r,
+        backgroundImage: const AssetImage(
           ImageAssets.banner,
-          height: 70.h,
-          width: 70.w,
-          fit: BoxFit.fill,
         ),
-      )),
+      ),
     );
+    // return SizedBox(
+    //   width: 150.w,
+    //   height: 150.h,
+    //   // color: Colors.red,
+    //   child: ClipOval(
+    //       child: ColorFiltered(
+    //     colorFilter:
+    //         ColorFilter.mode(Colors.black.withOpacity(0.3), BlendMode.darken),
+    //     child: Image.asset(
+    //       ImageAssets.banner,
+    //       height: 70.h,
+    //       width: 70.w,
+    //       fit: BoxFit.fill,
+    //     ),
+    //   )),
+    // );
   }
 
   _buildJobRate() {
@@ -47,7 +57,7 @@ class JobDetailsImage extends StatelessWidget {
         alignment: Alignment.bottomLeft,
         child: Container(
           width: 78.w,
-          height: 25.h,
+          height: 25.w,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(25.r), color: Colors.white),
           child: Row(
@@ -71,6 +81,7 @@ class JobDetailsImage extends StatelessWidget {
       ),
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return _buildImage();

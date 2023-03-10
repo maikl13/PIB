@@ -6,9 +6,9 @@ import '../../../../core/resources/color_manager.dart';
 
 class ImageWithRating extends StatelessWidget {
   const ImageWithRating({super.key});
-_buildImage() {
+  _buildImage() {
     return Stack(
-      // fit: StackFit.loose,
+      // fit: StackFit.expand,
       children: [
         SizedBox(
           width: 80.w,
@@ -24,16 +24,28 @@ _buildImage() {
   _buildJobImage() {
     return SizedBox(
       width: 70.w,
-      height: 70.h,
-      // color: Colors.red,
-      child: ClipOval(
-          child: Image.asset(
-        ImageAssets.banner,
-        height: 70.h,
-        width: 70.w,
-        fit: BoxFit.fill,
-      )),
+      height: 70.w,
+      child: CircleAvatar(
+        radius: 50.r,
+        backgroundImage: const AssetImage(
+          ImageAssets.banner,
+        ),
+      ),
     );
+    // return Container(
+    //   width: 70.w,
+    //   height: 70.h,
+    //   decoration: BoxDecoration(
+    //     shape: BoxShape.circle,
+    //   ),
+    //   // color: Colors.red,
+    //   child: Image.asset(
+    //     ImageAssets.banner,
+    //     height: 70.h,
+    //     width: 70.w,
+    //     fit: BoxFit.fill,
+    //   ),
+    // );
   }
 
   _buildJobRate() {
@@ -42,7 +54,7 @@ _buildImage() {
         alignment: Alignment.bottomLeft,
         child: Container(
           width: 49.w,
-          height: 19.h,
+          height: 19.w,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(25.r), color: Colors.white),
           child: Row(
@@ -66,6 +78,7 @@ _buildImage() {
       ),
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return _buildImage();

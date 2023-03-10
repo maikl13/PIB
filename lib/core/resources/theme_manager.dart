@@ -143,6 +143,7 @@ ThemeData getAppTheme = ThemeData(
   // input decoration theme (text form field)
 
   inputDecorationTheme: InputDecorationTheme(
+      isDense: true,
       fillColor: ColorManager.lightBlack,
       filled: true,
       contentPadding: EdgeInsets.only(right: 32.w),

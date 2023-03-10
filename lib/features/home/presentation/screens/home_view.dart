@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/resources/color_manager.dart';
 import 'package:pip/core/resources/strings_manager.dart';
-import 'package:pip/core/widgets/default_textfield.dart';
 import 'package:pip/features/home/presentation/widgets/banners.dart';
 import 'package:pip/features/home/presentation/widgets/jobs_part.dart';
 import 'package:pip/features/home/presentation/widgets/search_bar.dart';

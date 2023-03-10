@@ -24,7 +24,9 @@ class MyApp extends StatelessWidget {
       designSize: const Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: true,
-      useInheritedMediaQuery: true,
+      // useInheritedMediaQuery: true,
+      // scaleByHeight: true,
+
       builder: (context, state) {
         return MaterialApp(
           localizationsDelegates: const [

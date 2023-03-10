@@ -12,7 +12,7 @@ class BannerItem extends StatelessWidget {
     return ColorFiltered(
         colorFilter: ColorFilter.mode(
             ColorManager.black.withOpacity(.4), BlendMode.darken),
-        child: Image.asset(ImageAssets.banner, fit: BoxFit.cover));
+        child: Image.asset(ImageAssets.banner, fit: BoxFit.fill));
   }
 
   _buildTitle() {
@@ -32,32 +32,34 @@ class BannerItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      // color: Colors.red,
-      height: 180.h,
-      width: 315.w,
-      child: Stack(
-        fit: StackFit.expand,
-        children: [
-          _buildBackGround(),
-          Padding(
-            padding: EdgeInsets.only(right: 19.w, left: 69.w, bottom: 20.h),
-            child: Align(
-              alignment: Alignment.bottomCenter,
-              child: SizedBox(
-                width: 229.w,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    _buildTitle(),
-                    _buildSubtitle(),
-                  ],
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(13.r),
+      child: SizedBox(
+        height: 180.h,
+        width: 315.w,
+        child: Stack(
+          fit: StackFit.expand,
+          children: [
+            _buildBackGround(),
+            Padding(
+              padding: EdgeInsets.only(right: 19.w, left: 69.w, bottom: 20.h),
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: SizedBox(
+                  width: 229.w,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      _buildTitle(),
+                      _buildSubtitle(),
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

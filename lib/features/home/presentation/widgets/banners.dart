@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/features/home/presentation/widgets/banner_item.dart';
 
+
 class Banners extends StatelessWidget {
   const Banners({super.key});
 
@@ -9,6 +10,7 @@ class Banners extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 180.h,
+     
       child: ListView.separated(
           scrollDirection: Axis.horizontal,
           shrinkWrap: true,

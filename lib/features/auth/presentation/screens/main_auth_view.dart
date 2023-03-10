@@ -53,7 +53,7 @@ class MainAuthView extends StatelessWidget {
         ImageAssets.authLogo,
         width: 294.66.w,
         height: 273.66.h,
-        fit: BoxFit.fill,
+        fit: BoxFit.contain,
       ),
     );
   }
@@ -70,12 +70,13 @@ class MainAuthView extends StatelessWidget {
 
   _buildSocialButtons() {
     return Row(
-      children: const [
-        SocialButton(
+      children: [
+        const SocialButton(
           icon: ImageAssets.facebook,
           title: AppStrings.facebook,
         ),
-        SocialButton(
+        SizedBox(width: 8.w),
+        const SocialButton(
           icon: ImageAssets.google,
           title: AppStrings.login,
         ),

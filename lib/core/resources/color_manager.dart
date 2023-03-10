@@ -16,6 +16,11 @@ class ColorManager {
   static Color amber = const Color(0xffFFDF00);
   static Color green = const Color(0xff08D100);
   static Color gold = const Color(0xffAF7900);
+  static Color black5 = const Color(0xff282730);
+  static Color grey5 = const Color(0xff6d6c71);
+
+
+  
 
   static Color darkPrimary = const Color(0xff3799C9);
   static Color defaultBackground = const Color(0xffF0F7FA);

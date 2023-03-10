@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/resources/color_manager.dart';
 import 'package:pip/core/resources/route_manager.dart';
 
-import '../widgets/custom_network_image.dart';
 import 'constants.dart';
 
 String getCountryFlag() {

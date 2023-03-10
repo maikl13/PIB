@@ -38,7 +38,7 @@ class OnBoardingView extends StatelessWidget {
   _buildBackground() {
     return Image.asset(
       ImageAssets.onBoarding,
-      fit: BoxFit.fill,
+      fit: BoxFit.cover,
     );
   }
 
@@ -81,46 +81,45 @@ class OnBoardingView extends StatelessWidget {
         ),
         borderRadius: BorderRadius.circular(31.r),
       ),
-      child: Padding(
-        padding: EdgeInsets.only(right: 76.w),
-        child: Row(
-          // mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            _buildTitle(),
-            SizedBox(width: 30.w),
-            _buildIcon(context),
-          ],
-        ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          _buildTitle(),
+          SizedBox(width: 30.w),
+          _buildIcon(context),
+        ],
       ),
     );
   }
 
   _buildTitle() {
-    return Text(
-      AppStrings.start,
-      style: getBoldStyle(
-        color: ColorManager.white,
-        fontSize: 20.sp,
+    return Padding(
+      padding: EdgeInsets.only(right: 70.w),
+      child: Text(
+        AppStrings.start,
+        style: getBoldStyle(
+          color: ColorManager.white,
+          fontSize: 20.sp,
+        ),
       ),
     );
   }
 
   _buildIcon(BuildContext context) {
-    return Container(
-      width: 45.w,
-      height: 45.h,
-      decoration: BoxDecoration(
-        color: ColorManager.white,
-        borderRadius: BorderRadius.circular(25.r),
-      ),
+    return Padding(
+      padding: EdgeInsets.only(left: 12.w, top: 5.h, bottom: 5.h),
       child: InkWell(
         onTap: () {
           Navigator.pushReplacementNamed(context, Routes.mainAuthViewRoute);
         },
-        child: Icon(
-          Icons.arrow_back,
-          color: ColorManager.lightSeconadary,
-          size: 20.sp,
+        child: CircleAvatar(
+          backgroundColor: ColorManager.white,
+          radius: 25.r,
+          child: Icon(
+            Icons.arrow_forward,
+            color: ColorManager.lightSeconadary,
+            size: 15.sp,
+          ),
         ),
       ),
     );

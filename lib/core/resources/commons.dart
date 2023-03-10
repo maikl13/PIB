@@ -1,4 +1,3 @@
-import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -126,59 +125,36 @@ void showErrorDialog(BuildContext context, String message) {
 
 void showSuccessDialog(BuildContext context) {
   AlertDialog alertDialog = AlertDialog(
+    // insetPadding: EdgeInsets.zero,
+    // alignment: Alignment.center,
     backgroundColor: ColorManager.transparent,
     contentPadding: EdgeInsets.zero,
     clipBehavior: Clip.antiAlias,
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.r)),
     content: Stack(children: [
-      Image.asset(
-        ImageAssets.successBackground,
-        fit: BoxFit.cover,
-        width: 295.w,
-        height: 492.h,
-        // width: double.infinity,
-      ),
+      _buildBackGround(),
+      _buildCloseButton(context),
       Padding(
-        padding: EdgeInsets.only(top: 20.h, right: 20.w),
-        child: InkWell(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: Icon(
-              Icons.close,
-              color: ColorManager.white,
-              size: 20.sp,
-            )),
-      ),
-      Padding(
-        padding: EdgeInsets.only(top: 264.h),
+        padding: EdgeInsets.only(
+          top: 264.h,
+        ),
         // alignment: Alignment.center,
         child: Column(
-          // crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(
-              AppStrings.thankYou,
-              style: getBoldStyle(fontSize: 22.sp, color: ColorManager.white),
-            ),
+            _buildTitle(),
             SizedBox(height: 22.h),
-            Padding(
-              padding: EdgeInsets.only(left: 44.w, right: 44.w),
-              child: Text(
-                textAlign: TextAlign.center,
-                AppStrings.successAuthDesc,
-                style:
-                    getRegularStyle(fontSize: 13.sp, color: ColorManager.grey),
-              ),
-            ),
+            _buildDescription(),
             SizedBox(height: 62.h),
-            DefaultButton(
-              text: AppStrings.agree,
-              widht: 165.w,
-              onTap: () {
-              Navigator.pop(context);
-                
-              },
+            Padding(
+              padding: EdgeInsets.only(right: 65.h, left: 65.h),
+              child: DefaultButton(
+                text: AppStrings.agree,
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
             ),
           ],
         ),
@@ -195,6 +171,49 @@ void showSuccessDialog(BuildContext context) {
   );
 }
 
+_buildCloseButton(BuildContext context) {
+  return Padding(
+    padding: EdgeInsets.only(top: 20.h, right: 20.w),
+    child: InkWell(
+        onTap: () {
+          Navigator.pop(context);
+        },
+        child: Icon(
+          Icons.close,
+          color: ColorManager.white,
+          size: 20.sp,
+        )),
+  );
+}
+
+_buildBackGround() {
+  return Image.asset(
+    ImageAssets.successBackground,
+    fit: BoxFit.cover,
+    width: 295.w,
+    height: 492.h,
+    // width: double.infinity,
+  );
+}
+
+_buildTitle() {
+  return Text(
+    AppStrings.thankYou,
+    style: getBoldStyle(fontSize: 22.sp, color: ColorManager.white),
+  );
+}
+
+_buildDescription() {
+  return Padding(
+    padding: EdgeInsets.only(left: 44.h, right: 44.h),
+    child: Text(
+      textAlign: TextAlign.center,
+      AppStrings.successAuthDesc,
+      style: getRegularStyle(fontSize: 13.sp, color: ColorManager.grey),
+    ),
+  );
+}
+
 void showProgressIndicator(BuildContext context) {
   AlertDialog alertDialog = AlertDialog(
     backgroundColor: ColorManager.primary,
@@ -208,7 +227,7 @@ void showProgressIndicator(BuildContext context) {
 
   showDialog(
     barrierColor: Colors.white.withOpacity(0),
-    barrierDismissible: false,
+    barrierDismissible: true,
     context: context,
     builder: (context) {
       return alertDialog;

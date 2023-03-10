@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/resources/color_manager.dart';
 
 class DefaultTextField extends StatefulWidget {
   const DefaultTextField(
@@ -10,7 +11,7 @@ class DefaultTextField extends StatefulWidget {
       this.validator,
       this.onSaved,
       this.controller,
-      this.prefix});
+      this.prefix, this.style, this.maxLines, this.hintStyle});
 
   final Widget? suffix;
   final Widget? prefix;
@@ -19,6 +20,9 @@ class DefaultTextField extends StatefulWidget {
   final String? Function(String?)? validator;
   final void Function(String?)? onSaved;
   final TextEditingController? controller;
+  final TextStyle? style;
+  final int? maxLines;
+   final TextStyle? hintStyle;
 
   @override
   State<DefaultTextField> createState() => _DefaultTextFieldState();
@@ -28,13 +32,18 @@ class _DefaultTextFieldState extends State<DefaultTextField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      maxLines: widget.maxLines,
+      cursorColor: ColorManager.darkSeconadry,
+      style: widget.style,
       controller: widget.controller,
       onSaved: widget.onSaved,
       validator: widget.validator,
       decoration: InputDecoration(
+        
         contentPadding: widget.contentPadding ??
             EdgeInsets.only(top: 12.h, bottom: 11.h, right: 20.w),
         hintText: widget.hint,
+        hintStyle: widget.hintStyle,
         prefixIcon: widget.prefix,
         suffixIcon: Padding(
           padding: EdgeInsets.only(top: 0.h, left: 20.w),

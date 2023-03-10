@@ -7,6 +7,10 @@ import 'package:pip/features/auth/presentation/screens/register_view.dart';
 import 'package:pip/features/home/presentation/screens/jop_details_view.dart';
 import 'package:pip/features/home/presentation/screens/main_home_view.dart';
 import 'package:pip/features/notification/presentation/screens/notification_view.dart';
+import 'package:pip/features/pip/presentation/screens/fast_request_view.dart';
+import 'package:pip/features/pip/presentation/screens/pick_request_type.dart';
+import 'package:pip/features/pip/presentation/screens/special_request_details.dart';
+import 'package:pip/features/requests/presentation/screens/my_requests_main_view.dart';
 import 'package:pip/features/search/presentation/screens/search_main_view.dart';
 
 import 'package:pip/features/splash/presentation/screens/on_boarding_view.dart';
@@ -31,7 +35,8 @@ class Routes {
   static const String notificationViewRoute = "/notificationViewRoute";
 
   static const String searchMainViewRoute = "/searchMainViewRoute";
-
+  static const String specialRequestViewRoute = "/specialRequestViewRoute";
+  static const String fastRequestViewRoute = "/fastRequestViewRoute";
 
 }
 
@@ -43,8 +48,8 @@ class RouteGenerator {
   }
   static List screens = <Widget>[
     const HomeView(),
-    const HomeView(),
-    const HomeView(),
+    const PickRequestTypeView(),
+    const MyRequestsMainView(),
     const HomeView(),
     const HomeView(),
   ];
@@ -87,21 +92,27 @@ class RouteGenerator {
           ),
         );
 
-         case Routes.notificationViewRoute:
+      case Routes.notificationViewRoute:
         return MaterialPageRoute(
           builder: (_) => const NotificationView(),
-
-          
         );
 
-          case Routes.jobDetailsViewRoute:
+      case Routes.jobDetailsViewRoute:
         return MaterialPageRoute(
-          builder: (_) => const JobDetailsView(),          
+          builder: (_) => const JobDetailsView(),
         );
 
-          case Routes.searchMainViewRoute:
+      case Routes.searchMainViewRoute:
         return MaterialPageRoute(
-          builder: (_) => const SearchMainView(),          
+          builder: (_) => const SearchMainView(),
+        );
+      case Routes.specialRequestViewRoute:
+        return MaterialPageRoute(
+          builder: (_) => const SpecialRequestDetailsView(),
+        );
+           case Routes.fastRequestViewRoute:
+        return MaterialPageRoute(
+          builder: (_) => const FastRequestView(),
         );
       default:
         return unDefinedRoute();
