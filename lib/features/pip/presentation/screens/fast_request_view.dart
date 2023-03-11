@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/widgets/custom_title.dart';
-import 'package:pip/features/pip/presentation/widgets/pick_request_item.dart';
+import '../../../../core/widgets/custom_title.dart';
+import '../widgets/pick_request_item.dart';
 
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/strings_manager.dart';

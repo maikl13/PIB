@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/resources/color_manager.dart';
-import 'package:pip/core/resources/strings_manager.dart';
-import 'package:pip/core/resources/style_manager.dart';
-import 'package:pip/features/home/presentation/widgets/image_with_stars.dart';
+import '../../../../core/resources/color_manager.dart';
+import '../../../../core/resources/strings_manager.dart';
+import '../../../../core/resources/style_manager.dart';
+import 'image_with_stars.dart';
 
 class JobItem extends StatelessWidget {
   const JobItem({super.key});

@@ -13,6 +13,8 @@ class ImageAssets {
   static const String bell = "$imagePath/bell.png";
   static const String emptySearch = "$imagePath/empty_search.png";
   static const String resultBackground = "$imagePath/result_background.png";
+  static const String bigBackground = "$imagePath/big_background.png";
+
 }
 
 

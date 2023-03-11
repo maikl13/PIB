@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/resources/strings_manager.dart';
-import 'package:pip/core/widgets/custom_title.dart';
-import 'package:pip/features/search/presentation/widgets/search_result_item.dart';
+import '../../../../core/resources/strings_manager.dart';
+import '../../../../core/widgets/custom_title.dart';
+import 'search_result_item.dart';
 
 class SearchResultsView extends StatelessWidget {
   const SearchResultsView({super.key});

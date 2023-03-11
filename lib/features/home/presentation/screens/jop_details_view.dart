@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/resources/color_manager.dart';
-import 'package:pip/core/resources/strings_manager.dart';
-import 'package:pip/core/resources/style_manager.dart';
-import 'package:pip/core/widgets/custom_appbar.dart';
+import '../../../../core/resources/color_manager.dart';
+import '../../../../core/resources/strings_manager.dart';
+import '../../../../core/resources/style_manager.dart';
+import '../../../../core/widgets/custom_appbar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:pip/core/widgets/default_button.dart';
-import 'package:pip/features/home/presentation/widgets/info_item.dart';
-import 'package:pip/features/home/presentation/widgets/job_details_image.dart';
-import 'package:pip/features/home/presentation/widgets/main_info_item.dart';
-import 'package:pip/features/notification/presentation/widgets/clock_date.dart';
+import '../../../../core/widgets/default_button.dart';
+import '../widgets/info_item.dart';
+import '../widgets/job_details_image.dart';
+import '../widgets/main_info_item.dart';
+import '../../../notification/presentation/widgets/clock_date.dart';
 import 'package:share_plus/share_plus.dart';
 
 class JobDetailsView extends StatelessWidget {

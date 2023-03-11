@@ -54,6 +54,7 @@ dependencies:
   freezed: ^2.3.0
   freezed_annotation: ^2.2.0
   get_it: ^7.2.0
+  google_maps_flutter: ^2.2.5
   google_sign_in: null
   http: ^0.13.5
   json_annotation: ^4.7.0

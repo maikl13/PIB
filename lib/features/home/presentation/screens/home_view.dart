@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/resources/color_manager.dart';
-import 'package:pip/core/resources/strings_manager.dart';
-import 'package:pip/features/home/presentation/widgets/banners.dart';
-import 'package:pip/features/home/presentation/widgets/jobs_part.dart';
-import 'package:pip/features/home/presentation/widgets/search_bar.dart';
+import '../../../../core/resources/color_manager.dart';
+import '../../../../core/resources/strings_manager.dart';
+import '../widgets/banners.dart';
+import '../widgets/jobs_part.dart';
+import '../widgets/search_bar.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});

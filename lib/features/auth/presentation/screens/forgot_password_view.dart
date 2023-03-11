@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/resources/strings_manager.dart';
-import 'package:pip/core/widgets/custom_appbar.dart';
-import 'package:pip/core/widgets/default_button.dart';
-import 'package:pip/core/widgets/default_phone_textfield.dart';
-import 'package:pip/core/widgets/headline.dart';
-import 'package:pip/core/widgets/sub_headline.dart';
+import '../../../../core/resources/strings_manager.dart';
+import '../../../../core/widgets/custom_appbar.dart';
+import '../../../../core/widgets/default_button.dart';
+import '../../../../core/widgets/default_phone_textfield.dart';
+import '../../../../core/widgets/headline.dart';
+import '../../../../core/widgets/sub_headline.dart';
 
 class ForgotPasswordView extends StatelessWidget {
   const ForgotPasswordView({super.key});

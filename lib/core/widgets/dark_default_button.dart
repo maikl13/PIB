@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/resources/color_manager.dart';
-import 'package:pip/core/resources/style_manager.dart';
+import '../resources/color_manager.dart';
+import '../resources/style_manager.dart';
 
 class DarkDefaultButton extends StatelessWidget {
   const DarkDefaultButton(
@@ -12,7 +12,7 @@ class DarkDefaultButton extends StatelessWidget {
       this.onTap,
       this.color,
       this.textStyle,
-      this.child});
+      this.child, this.borderColor});
   final String? text;
   final double? height;
   final double? widht;
@@ -20,6 +20,7 @@ class DarkDefaultButton extends StatelessWidget {
   final void Function()? onTap;
   final TextStyle? textStyle;
   final Widget? child;
+  final Color? borderColor;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +31,7 @@ class DarkDefaultButton extends StatelessWidget {
         height: height ?? 49.h,
         decoration: BoxDecoration(
             color: color ?? ColorManager.transparent,
-            border: Border.all(color: ColorManager.darkGrey),
+            border: Border.all(color: borderColor ?? ColorManager.darkGrey),
             borderRadius: BorderRadius.all(Radius.circular(31.r))),
         child: child ??
             Center(

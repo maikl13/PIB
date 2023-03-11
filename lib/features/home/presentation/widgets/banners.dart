@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/features/home/presentation/widgets/banner_item.dart';
+import 'banner_item.dart';
 
 
 class Banners extends StatelessWidget {

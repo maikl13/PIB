@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/resources/color_manager.dart';
-import 'package:pip/core/resources/commons.dart';
-import 'package:pip/core/resources/route_manager.dart';
-import 'package:pip/core/widgets/custom_appbar.dart';
-import 'package:pip/core/widgets/default_textfield.dart';
-import 'package:pip/features/auth/presentation/widgets/custom_bottom_phrase.dart';
-import 'package:pip/features/auth/presentation/widgets/custom_hint_text.dart';
+import '../../../../core/resources/color_manager.dart';
+import '../../../../core/resources/commons.dart';
+import '../../../../core/resources/route_manager.dart';
+import '../../../../core/widgets/custom_appbar.dart';
+import '../../../../core/widgets/default_textfield.dart';
+import '../widgets/custom_bottom_phrase.dart';
+import '../widgets/custom_hint_text.dart';
 
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/widgets/default_button.dart';

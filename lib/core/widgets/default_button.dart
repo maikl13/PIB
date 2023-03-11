@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/resources/color_manager.dart';
-import 'package:pip/core/resources/style_manager.dart';
+import '../resources/color_manager.dart';
+import '../resources/style_manager.dart';
 
 class DefaultButton extends StatelessWidget {
   const DefaultButton(

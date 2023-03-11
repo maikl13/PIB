@@ -1,4 +1,4 @@
-import 'package:pip/core/resources/strings_manager.dart';
+import 'strings_manager.dart';
 
 class AppConstants {
   static const int splashDelay = 3;

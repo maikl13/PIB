@@ -76,7 +76,8 @@ class AppStrings {
 
   static const String fastRequest = 'طلب سريع';
   static const String specialRequest = 'طلب خاص';
-  static const String requestDescription = 'من هنا يمكنك طلب ما تحتاجه من خدمتي طلب التاكسي والديلفري وسيقوم الاشخاص المعنين بالتواصل معك لاختيار المناسب واتمام حاجتك.';
+  static const String requestDescription =
+      'من هنا يمكنك طلب ما تحتاجه من خدمتي طلب التاكسي والديلفري وسيقوم الاشخاص المعنين بالتواصل معك لاختيار المناسب واتمام حاجتك.';
   static const String chooseType = 'اختيار النوع :';
 
   static const String startWithPrice = 'يبدأ من ٥٠ ريال';
@@ -85,12 +86,36 @@ class AppStrings {
   static const String uploadPhotos = 'ارفق صور وفديوهات';
   static const String puplish = 'نشر';
   static const String location = 'العنوان';
-  static const String wantReieveFastRequsets = 'هل تريد استقبال طلبات الخدمة السريعة';
+  static const String wantReieveFastRequsets =
+      'هل تريد استقبال طلبات الخدمة السريعة';
   static const String chooseTypeOfRequest = 'اختار نوع الطلب :';
   static const String fastDelivery = 'توصيل سريع';
   static const String taxi = 'التاكسي';
-  static const String taxiDescription = 'لطلب حجزات السيارات لتوصيل الركاب بشكل سريع وامن.';
-  static const String fastDeliveryDescription = 'قم بطلب اي شي من المحلات المجاورة لك مع خدمة توصيل احترافية';
+  static const String taxiDescription =
+      'لطلب حجزات السيارات لتوصيل الركاب بشكل سريع وامن.';
+  static const String fastDeliveryDescription =
+      'قم بطلب اي شي من المحلات المجاورة لك مع خدمة توصيل احترافية';
+  static const String specialSendedRequests = 'طلباتي الخاصة المرسلة';
+  static const String recievedRequests = 'طلبات التوظيف المستلمة';
+  static const String jobsDownlodedPreviously = 'وظائف قمت بتنزيلها مسبقا :';
+  static const String requestDetails = 'تفاصيل الطلب';
+  static const String requestStatus = 'تلقي العروض';
+  static const String showOffers = 'عرض العروض المقدمة  15';
+  static const String fifteenOffer = '15 عرض مقدم';
+  static const String hundredRyal = '100 ريال';
+  static const String recieveOffers = 'تلقي العروض';
+  static const String modifyRequest = 'تعديل الطلب';
+  static const String cancelRequest = 'إلغاء الطلب';
+  static const String recievedOffers = 'العروض المقدمة';
+  static const String userName = 'ادهم الشرقاوي';
+  static const String offerDesc =
+      'السلا عليكم اخي :\n انا سباك ماهر منذ زمن طويل مشكلةك ليست معقدة استطيع حلها بسهولة وبتكلفة قليلة ببدائل موجودة';
+  static const String negotiate = 'تفاوض';
+  static const String accept = 'قبول';
+  static const String plumber = 'سباك';
+  static const String giveOffer = 'تقديم طلب';
+  static const String timeToComplete = 'مدة التنفيذ';
+  static const String days = 'ايام';
   // static const String local = 'محلي';
   // static const String local = 'محلي';
   // static const String local = 'محلي';
