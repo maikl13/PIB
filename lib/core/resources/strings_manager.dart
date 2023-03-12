@@ -116,6 +116,26 @@ class AppStrings {
   static const String giveOffer = 'تقديم طلب';
   static const String timeToComplete = 'مدة التنفيذ';
   static const String days = 'ايام';
+  static const String conversation = 'المحادثة';
+  static const String serviceProviderMessages = 'رسائل مقدم الخدمة';
+  static const String serviceRequesterMessages = 'رسائل طالب الخدمة';
+  static const String serviceRequesterMessagesTitle =
+      'محادثتك على الوظائف الخاصة بك :';
+  static const String twenyTotalMessage = 'اجمالي الرسائل : 20';
+  static const String serviceProviderMessagesTitle =
+      'محادثتك مع مقدمي الخدمات :';
+  static const String chatsTitle = 'الأشخاص التابعين لوظيفة بحاجة لسباك :';
+  static const String chatAppbar = 'بحاجة لسباك صرف';
+  static const String today = 'اليوم';
+  static const String writeYourMessage = 'اكتب رسالتك هنا';
+  static String addOffer = 'اضافة عرض';
+  static const String camera = 'الكاميرا';
+  static const String picturesAndVidoes = 'الصور والفديو';
+  static const String docs = 'مستندات';
+  static const String deleteChat = 'حذف الدردشة';
+  static const String report = 'ابلاغ';
+  static const String jobName=  'اسم الوظيفة';
+  // static const String local = 'محلي';
   // static const String local = 'محلي';
   // static const String local = 'محلي';
   // static const String local = 'محلي';

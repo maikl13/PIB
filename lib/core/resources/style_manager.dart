@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/resources/strings_manager.dart';
 import 'color_manager.dart';
 
 import 'font_manager.dart';
@@ -59,5 +61,35 @@ TextStyle getSemiBoldStyle({double fontSize = FontSize.s12, Color? color}) {
     fontSize,
     FontWeightManager.semiBold,
     color ?? ColorManager.primary,
+  );
+}
+
+getdefaultTextFieldStyle(Widget suffix) {
+  return InputDecoration(
+    border: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(34.r),
+      borderSide: const BorderSide(color: Color.fromRGBO(133, 133, 133, 0.26)),
+    ),
+    enabledBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(34.r),
+      borderSide: const BorderSide(color: Color.fromRGBO(133, 133, 133, 0.26)),
+    ),
+    focusedBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(34.r),
+      borderSide: const BorderSide(color: Color.fromRGBO(133, 133, 133, 0.26)),
+    ),
+    isDense: true,
+    contentPadding: EdgeInsets.only(right: 25.w, left: 25.w, top: 25.h),
+    fillColor: ColorManager.lightBlack,
+    filled: true,
+    prefixIcon: Icon(
+      Icons.camera_alt_outlined,
+      color: ColorManager.darkGrey,
+      size: 20.sp,
+    ),
+    suffixIcon: suffix,
+    hintText: AppStrings.writeYourMessage,
+    hintStyle: getRegularStyle(
+        color: ColorManager.grey.withOpacity(.50), fontSize: 15.sp),
   );
 }

@@ -6,7 +6,9 @@ import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 
 class CustomTabBar extends StatelessWidget {
-  const CustomTabBar({Key? key}) : super(key: key);
+  const CustomTabBar({Key? key, required this.title1, required this.title2}) : super(key: key);
+  final String title1 ;
+  final String title2 ;
 
   @override
   Widget build(BuildContext context) {
@@ -36,9 +38,9 @@ class CustomTabBar extends StatelessWidget {
               getRegularStyle(color: ColorManager.primary, fontSize: 14.sp),
           unselectedLabelStyle:
               getRegularStyle(color: ColorManager.grey, fontSize: 14.sp),
-          tabs: const [
-            Tab(text: AppStrings.specialSendedRequests),
-            Tab(text: AppStrings.recievedRequests),
+          tabs:  [
+            Tab(text: title1),
+            Tab(text:title2),
           ],
         ),
       ),

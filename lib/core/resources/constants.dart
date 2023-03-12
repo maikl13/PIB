@@ -22,6 +22,6 @@ final List<String> viewsTitles = [
   AppStrings.main,
   AppStrings.pib,
   AppStrings.myOrders,
-  AppStrings.messages,
+  AppStrings.conversation,
   AppStrings.personalInfo,
 ];

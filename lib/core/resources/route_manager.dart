@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pip/features/chat/presentation/screens/chat_add_offer_view.dart';
+import 'package:pip/features/chat/presentation/screens/chats_view.dart';
+import 'package:pip/features/chat/presentation/screens/conversation_type_view.dart';
 import '../../features/auth/presentation/screens/forgot_password_view.dart';
 import '../../features/auth/presentation/screens/login_view.dart';
 import '../../features/auth/presentation/screens/main_auth_view.dart';
 import '../../features/auth/presentation/screens/register_view.dart';
+import '../../features/chat/presentation/screens/contact_us_view.dart';
 import '../../features/home/presentation/screens/jop_details_view.dart';
 import '../../features/home/presentation/screens/main_home_view.dart';
 import '../../features/map/presentation/screens/order_taxi_view.dart';
@@ -52,7 +56,9 @@ class Routes {
   static const String availableJobDetailsViewRoute =
       "/availableJobDetailsViewRoute";
   static const String giveOffersViewRoute = "/giveOffersViewRoute";
-
+  static const String chatsViewRoute = "/chatsViewRoute";
+  static const String chatViewRoute = "/chatViewRoute";
+  static const String chatAddOfferViewRoute = "/chatAddOfferViewRoute";
 }
 
 class RouteGenerator {
@@ -65,7 +71,7 @@ class RouteGenerator {
     const HomeView(),
     const PickRequestTypeView(),
     const MyRequestsMainView(),
-    const HomeView(),
+    const ConversationsTypeView(),
     const HomeView(),
   ];
 
@@ -154,9 +160,22 @@ class RouteGenerator {
           builder: (_) => const AvailableJobDetailsView(),
         );
 
- case Routes.giveOffersViewRoute:
+      case Routes.giveOffersViewRoute:
         return MaterialPageRoute(
           builder: (_) => const GiveOfferView(),
+        );
+
+      case Routes.chatsViewRoute:
+        return MaterialPageRoute(
+          builder: (_) => const ChatsView(),
+        );
+      case Routes.chatViewRoute:
+        return MaterialPageRoute(
+          builder: (_) => const ChatView(),
+        );
+           case Routes.chatAddOfferViewRoute:
+        return MaterialPageRoute(
+          builder: (_) => const ChatAddOfferViewRoute(),
         );
       default:
         return unDefinedRoute();

@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -94,6 +93,68 @@ class Commons {
     if (!await launchUrl(url)) {
       throw 'Could not launch $url';
     }
+  }
+
+  static Future<void> showChatSettingDialog(BuildContext context) async {
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) => AlertDialog(
+              backgroundColor: ColorManager.transparent,
+              contentPadding: EdgeInsets.zero,
+              insetPadding: EdgeInsets.zero,
+              content: Container(
+                height: 248.h,
+                width: 295.w,
+                decoration: BoxDecoration(
+                  color: ColorManager.lightBlack,
+                  borderRadius: BorderRadius.circular(10.r),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.only(right: 20.w, left: 20.w, top: 20.h),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      InkWell(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: Icon(Icons.close,
+                              color: ColorManager.white, size: 20.sp)),
+                      SizedBox(height: 27.h),
+                      Container(
+                        width: double.infinity,
+                        height: 63.h,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.r),
+                            color: ColorManager.grey6),
+                        child: Center(
+                          child: Text(
+                            AppStrings.deleteChat,
+                            style: getRegularStyle(
+                                fontSize: 16.sp, color: ColorManager.white),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 12.h),
+                      Container(
+                        width: double.infinity,
+                        height: 63.h,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.r),
+                            color: ColorManager.grey6),
+                        child: Center(
+                          child: Text(
+                            AppStrings.report,
+                            style: getRegularStyle(
+                                fontSize: 16.sp, color: ColorManager.white),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ));
   }
 
   static Future<void> showSettingDialog(BuildContext context) async {
