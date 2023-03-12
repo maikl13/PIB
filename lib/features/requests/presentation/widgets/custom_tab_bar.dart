@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/resources/color_manager.dart';
-import '../../../../core/resources/strings_manager.dart';
 
 class CustomTabBar extends StatelessWidget {
   const CustomTabBar({Key? key, required this.title1, required this.title2}) : super(key: key);

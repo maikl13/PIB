@@ -21,7 +21,7 @@ class _SplashViewState extends State<SplashView> {
   }
 
   void _goNext() {
-    Navigator.pushReplacementNamed(context, Routes.chatAddOfferViewRoute);
+    Navigator.pushReplacementNamed(context, Routes.skillsViewRoute);
   }
 
   @override

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/features/home/presentation/widgets/job_rate_container.dart';
 
 import '../../../../core/resources/assets_manager.dart';
-import '../../../../core/resources/color_manager.dart';
 
 class ImageWithRating extends StatelessWidget {
   const ImageWithRating({super.key});
@@ -16,7 +16,10 @@ class ImageWithRating extends StatelessWidget {
           // color: Colors.amber,
         ),
         _buildJobImage(),
-        _buildJobRate(),
+        const Positioned.fill(
+          child:
+              Align(alignment: Alignment.bottomLeft, child: JobRateContainer()),
+        ),
       ],
     );
   }
@@ -46,37 +49,6 @@ class ImageWithRating extends StatelessWidget {
     //     fit: BoxFit.fill,
     //   ),
     // );
-  }
-
-  _buildJobRate() {
-    return Positioned.fill(
-      child: Align(
-        alignment: Alignment.bottomLeft,
-        child: Container(
-          width: 49.w,
-          height: 19.w,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(25.r), color: Colors.white),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                '04',
-                style: TextStyle(fontSize: 10.sp),
-              ),
-              SizedBox(
-                width: 5.w,
-              ),
-              Icon(
-                Icons.star,
-                color: ColorManager.darkSeconadry,
-                size: 11.sp,
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
   }
 
   @override

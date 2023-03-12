@@ -20,7 +20,7 @@ class ClockDate extends StatelessWidget {
         ),
         SizedBox(width: 10.w),
         Text(
-          "23/2/2021",
+          "23-2-2021",
           style: getRegularStyle(color: color, fontSize: 11.sp),
         )
       ],

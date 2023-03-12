@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/resources/color_manager.dart';
 
 class CustomSwitch extends StatefulWidget {
   const CustomSwitch({super.key});
@@ -18,6 +19,8 @@ class _CustomSwitchState extends State<CustomSwitch> {
         scale: .7,
         transformHitTests: false,
         child: CupertinoSwitch(
+          activeColor: val ? ColorManager.green : ColorManager.white,
+          trackColor: val ? ColorManager.green : ColorManager.white5,
           value: val,
           onChanged: (value) {
             setState(() {

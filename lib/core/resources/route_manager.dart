@@ -3,6 +3,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pip/features/chat/presentation/screens/chat_add_offer_view.dart';
 import 'package:pip/features/chat/presentation/screens/chats_view.dart';
 import 'package:pip/features/chat/presentation/screens/conversation_type_view.dart';
+import 'package:pip/features/menu/presentation/screens/contact_us_view.dart';
+import 'package:pip/features/menu/presentation/screens/edit_password_view.dart';
+import 'package:pip/features/menu/presentation/screens/edit_profile_view.dart';
+import 'package:pip/features/menu/presentation/screens/menu_view.dart';
+import 'package:pip/features/menu/presentation/screens/skills_view.dart';
+import 'package:pip/features/menu/presentation/screens/wallet_view.dart';
+import 'package:pip/features/menu/presentation/screens/who_we_are_view.dart';
+import 'package:pip/features/menu/presentation/screens/work_with_us_view.dart';
 import '../../features/auth/presentation/screens/forgot_password_view.dart';
 import '../../features/auth/presentation/screens/login_view.dart';
 import '../../features/auth/presentation/screens/main_auth_view.dart';
@@ -59,6 +67,15 @@ class Routes {
   static const String chatsViewRoute = "/chatsViewRoute";
   static const String chatViewRoute = "/chatViewRoute";
   static const String chatAddOfferViewRoute = "/chatAddOfferViewRoute";
+  static const String editProfileViewRoute = "/editProfileViewRoute";
+  static const String editPasswordViewRoute = "/editPasswordViewRoute";
+  static const String contactViewRoute = "/contactViewRoute";
+  static const String walletViewRoute = "/walletViewRoute";
+  static const String whoWeAreViewRoute = "/whoWeAreViewRoute";
+  static const String workWithUsViewRoute = "/workWithUsViewRoute";
+  static const String skillsViewRoute = "/skillsViewRoute";
+
+
 }
 
 class RouteGenerator {
@@ -72,7 +89,7 @@ class RouteGenerator {
     const PickRequestTypeView(),
     const MyRequestsMainView(),
     const ConversationsTypeView(),
-    const HomeView(),
+    const MenuView(),
   ];
 
   Route? getRoute(RouteSettings settings) {
@@ -173,9 +190,39 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (_) => const ChatView(),
         );
-           case Routes.chatAddOfferViewRoute:
+      case Routes.chatAddOfferViewRoute:
         return MaterialPageRoute(
           builder: (_) => const ChatAddOfferViewRoute(),
+        );
+      case Routes.editProfileViewRoute:
+        return MaterialPageRoute(
+          builder: (_) => const EditProfileView(),
+        );
+
+      case Routes.editPasswordViewRoute:
+        return MaterialPageRoute(
+          builder: (_) => const EditPasswordView(),
+        );
+
+      case Routes.contactViewRoute:
+        return MaterialPageRoute(
+          builder: (_) => const ContactUsView(),
+        );
+      case Routes.walletViewRoute:
+        return MaterialPageRoute(
+          builder: (_) => const WalletView(),
+        );
+      case Routes.whoWeAreViewRoute:
+        return MaterialPageRoute(
+          builder: (_) => const WhoWeAreView(),
+        );
+           case Routes.workWithUsViewRoute:
+        return MaterialPageRoute(
+          builder: (_) => const WorkWithUsView(),
+        );
+               case Routes.skillsViewRoute:
+        return MaterialPageRoute(
+          builder: (_) => const SkillsView(),
         );
       default:
         return unDefinedRoute();

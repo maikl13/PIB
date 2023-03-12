@@ -134,17 +134,28 @@ class AppStrings {
   static const String docs = 'مستندات';
   static const String deleteChat = 'حذف الدردشة';
   static const String report = 'ابلاغ';
-  static const String jobName=  'اسم الوظيفة';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
-  // static const String local = 'محلي';
+  static const String jobName = 'اسم الوظيفة';
+  static const String editProfile = 'تعديل الملف الشخصي';
+  static const String editData = 'تعديل البيانات';
+  static const String theMenue = 'القائمة';
+  static const String contactUs = 'تواصل معنا';
+  static const String userEmail = 'marawanmoubark@gmail.com';
+  static const String giveYourComplain = 'قدم شكواك او اقتراحك :';
+  static const String lastTransaction = 'اخر العمليات :';
+  static const String currentBalance = 'رصيدك الحالي';
+  static const String chargeWallet = 'أشحن رصيدك';
+  static const String chargeTo = 'شحن لمحفظة';
+  static const String defaText =
+      'هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارج للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذاستخدام طريقة لوريم إيبسوم لأنها تعطي توزيعاَ طبيعياَ -إلى حد ما- للأحرف عوضاً عن استخدام "هنا يوجد محتوى نصي، هنا يوجد يطسذيسذيسذيسذسيييذسيذسذسيذسييييمحتوى نصي" فتجعلها تبدو (أي الأحرف) وكأنها نص مقروء.';
+  static const String welcome = 'مرحبا بك كمندوب تسويق';
+
+  static const String yourSpecialNub = 'الرقم الخاص بك';
+  static const String workAs = 'اعمل كمندوب تسويق';
+  static const String skills = 'مهاراتي';
+  static const String chooseSkills = 'قم باختيار مهاراتي :';
+  // static const String theMenue = 'القائمة';
+  // static const String theMenue = 'القائمة';
+  // static const String theMenue = 'القائمة';
+  // static const String theMenue = 'القائمة';
+  // static const String theMenue = 'القائمة';
 }

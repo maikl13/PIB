@@ -1,3 +1,7 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:pip/core/resources/route_manager.dart';
+
 import 'strings_manager.dart';
 
 class AppConstants {
@@ -23,5 +27,40 @@ final List<String> viewsTitles = [
   AppStrings.pib,
   AppStrings.myOrders,
   AppStrings.conversation,
-  AppStrings.personalInfo,
+  AppStrings.theMenue,
+];
+
+List<String> menuViewItemTitles = [
+  AppStrings.days,
+  AppStrings.myOrders,
+  AppStrings.myOrders,
+  AppStrings.myOrders,
+  AppStrings.myOrders,
+  AppStrings.myOrders,
+  AppStrings.myOrders,
+  AppStrings.myOrders,
+];
+
+List<String> menuViewItemRoutes = [
+  Routes.mainHomeViewRoute,
+  Routes.mainHomeViewRoute,
+  Routes.mainHomeViewRoute,
+  Routes.mainHomeViewRoute,
+
+  Routes.mainHomeViewRoute,
+  Routes.mainHomeViewRoute,
+  Routes.mainHomeViewRoute,
+  Routes.mainHomeViewRoute,
+
+  // Routes.splashRoute,
+];
+List<IconData> menuViewItemIcons = [
+  Icons.perm_data_setting_sharp,
+  Icons.cases,
+  Icons.account_balance_wallet_rounded,
+  Icons.star,
+  Icons.perm_phone_msg,
+  Icons.info,
+  Icons.lock_outline_rounded,
+  Icons.logout_rounded,
 ];

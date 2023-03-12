@@ -5,7 +5,6 @@ import 'package:pip/core/resources/color_manager.dart';
 import 'package:pip/core/resources/commons.dart';
 import 'package:pip/core/resources/strings_manager.dart';
 import 'package:pip/core/resources/style_manager.dart';
-import 'package:pip/core/widgets/custom_appbar.dart';
 import 'package:pip/core/widgets/leading_arrow.dart';
 import 'package:pip/features/chat/presentation/widgets/chat_messages.dart';
 
