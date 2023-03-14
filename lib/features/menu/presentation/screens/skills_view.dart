@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/resources/color_manager.dart';
+import 'package:pip/core/resources/constants.dart';
 import 'package:pip/core/resources/strings_manager.dart';
 import 'package:pip/core/widgets/custom_appbar.dart';
 import 'package:pip/core/widgets/custom_title.dart';
@@ -28,12 +29,15 @@ class SkillsView extends StatelessWidget {
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         itemBuilder: (context, index) {
-          return const SkillItem();
+          return SkillItem(
+            title: typesTitles[index],
+            image: typeIcons[index],
+          );
         },
         separatorBuilder: (context, index) {
           return const SizedBox(height: 10);
         },
-        itemCount: 10);
+        itemCount: typeIcons.length);
   }
 
   @override

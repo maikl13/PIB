@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/resources/assets_manager.dart';
 import 'color_manager.dart';
 import 'route_manager.dart';
 
@@ -36,16 +37,16 @@ buildMainSearchViewAppBarTitle(BuildContext context) {
 buildMainSearchViewAppBarActions(BuildContext context) {
   return [
     Padding(
-      padding: EdgeInsets.only(left: 20.w),
-      child: InkWell(
-          onTap: () {
-            Navigator.pushNamed(context, Routes.notificationViewRoute);
-          },
-          child: Icon(
-            CupertinoIcons.bell,
-            color: ColorManager.white,
-            size: 20.sp,
-          )),
-    )
+        padding: EdgeInsets.only(left: 20.w),
+        child: InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, Routes.notificationViewRoute);
+            },
+            child: Image.asset(
+              ImageAssets.notification,
+              width: 20.h,
+              height: 20.h,
+              fit: BoxFit.contain,
+            )))
   ];
 }

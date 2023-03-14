@@ -37,9 +37,10 @@ class WalletCard extends StatelessWidget {
           color: ColorManager.lightBlack,
           borderRadius: BorderRadius.all(Radius.circular(20.r))),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           _buildAmount(),
-          SizedBox(height: 16.h),
+          SizedBox(height: 8.h),
           _buildHint(),
           SizedBox(height: 29.h),
           Padding(

@@ -13,7 +13,7 @@ class EditPasswordView extends StatelessWidget {
 
   _buildBody() {
     return ListView(
-      padding: EdgeInsets.only(top: 40.h, right: 20.w, left: 20.w),
+      padding: EdgeInsets.only(top: 50.h, right: 20.w, left: 20.w),
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       children: [
@@ -45,7 +45,7 @@ class EditPasswordView extends StatelessWidget {
           color: ColorManager.darkSeconadry,
           size: 20.sp,
         ),
-        hint: AppStrings.password);
+        hint: 'كلمة المرور القديمة');
   }
 
   _buildNewPasswordTextField() {
@@ -55,7 +55,7 @@ class EditPasswordView extends StatelessWidget {
           color: ColorManager.darkSeconadry,
           size: 20.sp,
         ),
-        hint: AppStrings.password);
+        hint: 'كلمة المرور الجديدة');
   }
 
   _buildConfirmPasswordTextField() {
@@ -65,7 +65,7 @@ class EditPasswordView extends StatelessWidget {
           color: ColorManager.darkSeconadry,
           size: 20.sp,
         ),
-        hint: AppStrings.password);
+        hint: 'تاكيد كلمة المرور الجديدة');
   }
 
   _buildButton() {
@@ -77,7 +77,7 @@ class EditPasswordView extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(
         appBarColor: ColorManager.lightBlack,
-        title: 'Edit Password',
+        title: AppStrings.editPassword,
         actions: const [],
       ),
       body: _buildBody(),

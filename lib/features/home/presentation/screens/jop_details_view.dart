@@ -139,7 +139,12 @@ class JobDetailsView extends StatelessWidget {
         title: AppStrings.jobDetailsAppBarTitle,
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () async {
+              await Share.share(
+                AppStrings.companyName,
+                // subject: AppStrings.jobLink,
+              );
+            },
             icon: const Icon(FontAwesomeIcons.share),
           ),
           // Text(AppStrings.share)

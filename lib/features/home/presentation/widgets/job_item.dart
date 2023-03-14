@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/resources/color_manager.dart';
+import '../../../../core/resources/route_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/resources/style_manager.dart';
 import 'image_with_stars.dart';
@@ -24,14 +25,19 @@ class JobItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const ImageWithRating(),
-        SizedBox(height: 10.h),
-        _buildCompanyName(),
-        SizedBox(height: 6.h),
-        _buildJobtitle(),
-      ],
+    return InkWell(
+      onTap: () {
+        Navigator.pushNamed(context, Routes.jobDetailsViewRoute);
+      },
+      child: Column(
+        children: [
+          const ImageWithRating(),
+          SizedBox(height: 10.h),
+          _buildCompanyName(),
+          SizedBox(height: 6.h),
+          _buildJobtitle(),
+        ],
+      ),
     );
   }
 }

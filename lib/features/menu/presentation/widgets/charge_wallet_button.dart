@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/resources/color_manager.dart';
@@ -14,6 +13,7 @@ class ChargeWalletButton extends StatefulWidget {
 }
 
 class _ChargeWalletButtonState extends State<ChargeWalletButton> {
+  // ignore: unused_field
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   _buildChargeButton(BuildContext context) {

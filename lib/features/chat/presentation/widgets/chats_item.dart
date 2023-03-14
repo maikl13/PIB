@@ -5,6 +5,8 @@ import 'package:pip/core/resources/color_manager.dart';
 import 'package:pip/core/resources/strings_manager.dart';
 import 'package:pip/core/resources/style_manager.dart';
 
+import '../../../../core/resources/route_manager.dart';
+
 class ChatsItem extends StatelessWidget {
   const ChatsItem({super.key});
   _buildBackground() {
@@ -16,7 +18,7 @@ class ChatsItem extends StatelessWidget {
 
   Widget _buildAvatar() {
     return SizedBox(
-        height: 60.h,
+        height: 60.w,
         width: 60.w,
         child: CircleAvatar(
           radius: 80.r,
@@ -60,39 +62,44 @@ class ChatsItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      height: 100.h,
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(10.r),
-        child: Stack(
-          fit: StackFit.expand,
-          children: [
-            _buildBackground(),
-            Padding(
-              padding: EdgeInsets.only(top: 20.h, right: 20.w, left: 20.w),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  _buildAvatar(),
-                  SizedBox(width: 20.w),
-                  Padding(
-                    padding: EdgeInsets.only(top: 4.h),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        _buildTitle(),
-                        SizedBox(height: 10.sp),
-                        _buildSubtitle(),
-                      ],
+    return InkWell(
+      onTap: () {
+        Navigator.pushNamed(context, Routes.chatViewRoute);
+      },
+      child: SizedBox(
+        width: double.infinity,
+        height: 100.w,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(10.r),
+          child: Stack(
+            fit: StackFit.expand,
+            children: [
+              _buildBackground(),
+              Padding(
+                padding: EdgeInsets.only(top: 20.w, right: 20.w, left: 20.w),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _buildAvatar(),
+                    SizedBox(width: 20.w),
+                    Padding(
+                      padding: EdgeInsets.only(top: 4.w),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          _buildTitle(),
+                          SizedBox(height: 10.sp),
+                          _buildSubtitle(),
+                        ],
+                      ),
                     ),
-                  ),
-                  const Spacer(),
-                  _buildArrow(),
-                ],
+                    const Spacer(),
+                    _buildArrow(),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/resources/route_manager.dart';
 import '../../../../core/widgets/custom_title.dart';
 import '../widgets/pick_request_item.dart';
 
@@ -11,7 +12,7 @@ import '../widgets/custom_switch.dart';
 
 class FastRequestView extends StatelessWidget {
   const FastRequestView({super.key});
-  _buildBody() {
+  _buildBody(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(right: 20.w, left: 20.w, top: 30.h),
       child: Column(
@@ -23,14 +24,20 @@ class FastRequestView extends StatelessWidget {
           SizedBox(height: 20.h),
           PickRequestItem(
             height: 108.h,
-            title: AppStrings.fastDelivery,
-            description: AppStrings.fastDeliveryDescription,
+            title: AppStrings.taxi,
+            description: AppStrings.taxiDescription,
+            onTap: () {
+              Navigator.pushNamed(context, Routes.chooseTaxiViewRoute);
+            },
           ),
           SizedBox(height: 20.h),
           PickRequestItem(
             height: 108.h,
-            title: AppStrings.taxi,
-            description: AppStrings.taxiDescription,
+            title: AppStrings.fastDelivery,
+            description: AppStrings.fastDeliveryDescription,
+            onTap: () {
+              // Navigator.pushNamed(context, Routes.fas);
+            },
           ),
         ],
       ),
@@ -69,7 +76,7 @@ class FastRequestView extends StatelessWidget {
         title: AppStrings.fastRequest,
         actions: const [],
       ),
-      body: _buildBody(),
+      body: _buildBody(context),
     );
   }
 }

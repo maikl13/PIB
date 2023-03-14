@@ -6,8 +6,9 @@ import '../../../../core/resources/style_manager.dart';
 
 class ShowAllText extends StatelessWidget {
   const ShowAllText({
-    super.key,
+    super.key, this.onTap,
   });
+  final void Function()? onTap;
 
   _buildTitle() {
     return Text(
@@ -26,13 +27,16 @@ class ShowAllText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        _buildTitle(),
-        SizedBox(width: 12.w),
-        _buildArrow(),
-      ],
+    return InkWell(
+      onTap: onTap,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          _buildTitle(),
+          SizedBox(width: 12.w),
+          _buildArrow(),
+        ],
+      ),
     );
   }
 }

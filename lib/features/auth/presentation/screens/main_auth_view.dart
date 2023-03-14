@@ -17,9 +17,9 @@ class MainAuthView extends StatelessWidget {
 
   _buildBody(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(right: 20.w, left: 20.w),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      padding: EdgeInsets.only(right: 20.w, left: 20, bottom: 30.h),
+      child: ListView(
+        // crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const MainAuthHeadline(),
           _buildLogo(),

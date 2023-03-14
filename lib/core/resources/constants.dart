@@ -1,5 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pip/core/resources/assets_manager.dart';
 import 'package:pip/core/resources/route_manager.dart';
 
 import 'strings_manager.dart';
@@ -21,6 +22,7 @@ String userImage = '';
 
 int selectedTab = 0;
 int screenIndex = 0;
+double rateNumber = 1.0;
 
 final List<String> viewsTitles = [
   AppStrings.main,
@@ -31,36 +33,55 @@ final List<String> viewsTitles = [
 ];
 
 List<String> menuViewItemTitles = [
-  AppStrings.days,
-  AppStrings.myOrders,
-  AppStrings.myOrders,
-  AppStrings.myOrders,
-  AppStrings.myOrders,
-  AppStrings.myOrders,
-  AppStrings.myOrders,
-  AppStrings.myOrders,
+  AppStrings.skills,
+  AppStrings.workAs,
+  AppStrings.myWallet,
+  AppStrings.rateUs,
+  AppStrings.contactUs,
+  AppStrings.whoAreWe,
+  AppStrings.editPassword,
+  AppStrings.logOut,
 ];
 
 List<String> menuViewItemRoutes = [
-  Routes.mainHomeViewRoute,
-  Routes.mainHomeViewRoute,
-  Routes.mainHomeViewRoute,
-  Routes.mainHomeViewRoute,
+  Routes.skillsViewRoute,
+  Routes.workWithUsViewRoute,
+  Routes.walletViewRoute,
+  Routes.rateUsViewRoute,
 
-  Routes.mainHomeViewRoute,
-  Routes.mainHomeViewRoute,
-  Routes.mainHomeViewRoute,
-  Routes.mainHomeViewRoute,
+  Routes.contactViewRoute,
+  Routes.whoWeAreViewRoute,
+  Routes.editPasswordViewRoute,
+  Routes.splashRoute,
 
   // Routes.splashRoute,
 ];
 List<IconData> menuViewItemIcons = [
-  Icons.perm_data_setting_sharp,
-  Icons.cases,
+  Icons.manage_accounts,
+  Icons.work,
   Icons.account_balance_wallet_rounded,
   Icons.star,
   Icons.perm_phone_msg,
   Icons.info,
   Icons.lock_outline_rounded,
   Icons.logout_rounded,
+];
+
+List<String> typesTitles = [
+  AppStrings.deliverPresents,
+  AppStrings.moveFurnititure,
+  AppStrings.wall,
+  AppStrings.wireMan,
+  AppStrings.plumber,
+  AppStrings.carpenter,
+
+  // Routes.splashRoute,
+];
+List<String> typeIcons = [
+  ImageAssets.gift,
+  ImageAssets.sofa,
+  ImageAssets.paint,
+  ImageAssets.electrician,
+  ImageAssets.wrench,
+  ImageAssets.hammers,
 ];

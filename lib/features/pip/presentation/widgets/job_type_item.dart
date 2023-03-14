@@ -5,26 +5,28 @@ import '../../../../core/resources/style_manager.dart';
 import '../../../../core/resources/color_manager.dart';
 
 class JobTypeItem extends StatelessWidget {
-  const JobTypeItem({super.key});
+  const JobTypeItem({super.key, required this.title, required this.image});
+  final String title;
+  final String image;
   _buildIcon() {
     return SizedBox(
       width: 35.w,
       height: 35.h,
       child: CircleAvatar(
-        radius: 25.r,
-        backgroundColor: ColorManager.darkSeconadry,
-        child: Icon(
-          Icons.home,
-          color: ColorManager.white,
-          size: 18.sp,
-        ),
-      ),
+          radius: 25.r,
+          backgroundColor: ColorManager.darkSeconadry,
+          child: Image.asset(
+            image,
+            width: 18.w,
+            height: 18.h,
+            fit: BoxFit.contain,
+          )),
     );
   }
 
   _buildTitle() {
     return Text(
-      'Home',
+      title,
       style: getBoldStyle(fontSize: 15.sp, color: ColorManager.grey),
     );
   }

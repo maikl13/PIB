@@ -1,3 +1,4 @@
+import 'package:pip/core/resources/route_manager.dart';
 import 'package:pip/core/widgets/default_button.dart';
 import 'package:pip/features/chat/presentation/widgets/action_item.dart';
 
@@ -32,6 +33,10 @@ class _NewMessageState extends State<NewMessage> {
     return DefaultButton(
       text: AppStrings.addOffer,
       widht: 148.w,
+      onTap: () {
+        Navigator.of(context).pushNamed(Routes.chatAddOfferViewRoute);
+        //
+      },
     );
   }
 

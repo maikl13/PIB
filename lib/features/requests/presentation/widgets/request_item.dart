@@ -71,7 +71,7 @@ class RequestItem extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(8.r),
       child: SizedBox(
-        width: 120.w,
+        width: 120.h,
         height: 80.h,
         child: Image.asset(
           ImageAssets.banner,

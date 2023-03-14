@@ -9,7 +9,7 @@ import '../resources/utils.dart';
 class DefaultPhoneTextField extends StatelessWidget {
   const DefaultPhoneTextField(
       {super.key,
-       this.suffix,
+      this.suffix,
       this.hint,
       this.contentPadding,
       this.validator,
@@ -17,7 +17,7 @@ class DefaultPhoneTextField extends StatelessWidget {
       this.prefixIcon,
       this.controller});
 
-  final Widget ?suffix;
+  final Widget? suffix;
   final String? hint;
   final EdgeInsetsGeometry? contentPadding;
   final String? Function(String?)? validator;
@@ -66,13 +66,15 @@ class DefaultPhoneTextField extends StatelessWidget {
         // hintStyle: ,
         suffixIcon: Padding(
           padding: EdgeInsets.only(top: 0.h, left: 20.w, bottom: 28.h),
-          child: suffix ?? Padding(
-          padding: EdgeInsets.only(top: 10.h),
-          child: Text(
-            '${getCountryFlag()}    ${AppStrings.countryCode}',
-            style: getBoldStyle(color: ColorManager.grey, fontSize: 17.sp),
-          ),
-        ) ,
+          child: suffix ??
+              Padding(
+                padding: EdgeInsets.only(top: 10.h),
+                child: Text(
+                  '${getCountryFlag()}    ${AppStrings.countryCode}',
+                  style:
+                      getBoldStyle(color: ColorManager.grey, fontSize: 17.sp),
+                ),
+              ),
         ),
       ),
     );

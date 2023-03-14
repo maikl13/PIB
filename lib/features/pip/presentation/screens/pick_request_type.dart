@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/resources/route_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/widgets/custom_title.dart';
 
@@ -17,9 +18,19 @@ class PickRequestTypeView extends StatelessWidget {
         children: [
           const CustomTitle(title: AppStrings.chooseRequestType),
           SizedBox(height: 20.h),
-          const PickRequestItem(title: AppStrings.fastRequest),
+          PickRequestItem(
+            title: AppStrings.fastRequest,
+            onTap: () {
+              Navigator.pushNamed(context, Routes.fastRequestViewRoute);
+            },
+          ),
           SizedBox(height: 20.h),
-          const PickRequestItem(title: AppStrings.specialRequest),
+          PickRequestItem(
+            title: AppStrings.specialRequest,
+            onTap: () {
+              Navigator.pushNamed(context, Routes.specialRequestViewRoute);
+            },
+          ),
         ],
       ),
     );

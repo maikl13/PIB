@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/widgets/custom_appbar.dart';
 import 'package:pip/core/widgets/custom_title.dart';
 
 import '../../../../core/resources/color_manager.dart';
-import '../../../../core/resources/commons.dart';
 import '../../../../core/resources/strings_manager.dart';
-import '../../../../core/resources/style_manager.dart';
 
 import '../widgets/transaction_item.dart';
 import '../widgets/wallet_card.dart';
@@ -61,7 +58,7 @@ class _WalletViewState extends State<WalletView> {
     return Scaffold(
       appBar: CustomAppBar(
         appBarColor: ColorManager.lightBlack,
-        title: AppStrings.accept,
+        title: AppStrings.myWallet,
         actions: const [],
       ),
       body: _buildWalletViewBody(),

@@ -14,6 +14,7 @@ class UploadedPhotos extends StatelessWidget {
         width: 136.w,
         height: 85.h,
         decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10.r),
           image: DecorationImage(
             colorFilter: ColorFilter.mode(
                 ColorManager.black.withOpacity(.3), BlendMode.darken),

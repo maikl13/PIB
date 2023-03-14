@@ -7,8 +7,10 @@ import '../../../../core/widgets/custom_title.dart';
 import 'job_item.dart';
 
 class JobsPart extends StatelessWidget {
-  const JobsPart({super.key, required this.headline});
+  const JobsPart({super.key, required this.headline, this.onShowAllTap});
   final String headline;
+  final  void Function()? onShowAllTap;
+  
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,9 @@ class JobsPart extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             CustomTitle(title: headline),
-            const ShowAllText(),
+             ShowAllText(
+              onTap: onShowAllTap,
+            ),
           ],
         ),
         SizedBox(height: 25.h),

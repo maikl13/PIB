@@ -246,7 +246,7 @@ void showErrorDialog(BuildContext context, String message) {
           ));
 }
 
-void showSuccessDialog(BuildContext context) {
+void showSuccessDialog(BuildContext context, {void Function()? onOk}) {
   AlertDialog alertDialog = AlertDialog(
     backgroundColor: ColorManager.transparent,
     contentPadding: EdgeInsets.zero,
@@ -273,9 +273,7 @@ void showSuccessDialog(BuildContext context) {
                   padding: EdgeInsets.only(right: 65.h, left: 65.h),
                   child: DefaultButton(
                     text: AppStrings.agree,
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
+                    onTap: onOk,
                   ),
                 ),
               ],

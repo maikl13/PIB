@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/resources/constants.dart';
+import 'package:pip/core/resources/route_manager.dart';
 import 'package:pip/core/resources/strings_manager.dart';
 import 'package:pip/core/resources/style_manager.dart';
 import 'package:pip/core/widgets/dark_default_button.dart';
@@ -27,7 +28,7 @@ class MenuView extends StatelessWidget {
             SizedBox(height: 17.h),
             _buildPhoneNumber(),
             SizedBox(height: 32.h),
-            _buildEditButton(),
+            _buildEditButton(context),
           ],
         ),
         _buildList(),
@@ -35,7 +36,7 @@ class MenuView extends StatelessWidget {
     );
   }
 
-  _buildEditButton() {
+  _buildEditButton(BuildContext context) {
     return DarkDefaultButton(
       widht: 195.w,
       height: 39.h,
@@ -43,6 +44,9 @@ class MenuView extends StatelessWidget {
           getRegularStyle(fontSize: 15.sp, color: ColorManager.darkSeconadry),
       text: AppStrings.editData,
       borderColor: ColorManager.darkSeconadry,
+      onTap: () {
+        Navigator.pushNamed(context, Routes.editProfileViewRoute);
+      },
     );
   }
 
@@ -69,8 +73,8 @@ class MenuView extends StatelessWidget {
 
   _buildProfileImage() {
     return SizedBox(
-        width: 103.h,
-        height: 103.h,
+        width: 103.w,
+        height: 103.w,
         child: Stack(
           // fit: StackFit.expand,
           children: [
@@ -85,8 +89,8 @@ class MenuView extends StatelessWidget {
     return Align(
       alignment: Alignment.center,
       child: Container(
-        width: 103.h,
-        height: 103.h,
+        width: 103.w,
+        height: 103.w,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           border: Border.all(color: ColorManager.darkSeconadry, width: 3.sp),
@@ -111,6 +115,12 @@ class MenuView extends StatelessWidget {
             title: menuViewItemTitles[index],
             icon: menuViewItemIcons[index],
             index: index,
+            onTap: () {
+              index == menuViewItemRoutes.length - 1
+                  ? Navigator.pushReplacementNamed(
+                      context, menuViewItemRoutes[index])
+                  : Navigator.pushNamed(context, menuViewItemRoutes[index]);
+            },
           );
         },
         separatorBuilder: (context, index) {

@@ -11,13 +11,13 @@ class MenuViewItem extends StatelessWidget {
     required this.icon,
     required this.title,
     required this.index,
-    // this.onTap,
+    this.onTap,
   });
 
   final IconData icon;
   final String title;
   final int index;
-  // final void Function()? onTap;
+  final void Function()? onTap;
 
   Widget _buildLeading(BuildContext context) {
     return Padding(
@@ -62,7 +62,7 @@ class MenuViewItem extends StatelessWidget {
         child: ListTile(
           // selectedTileColor: ColorManager.grey,
           // selected: defaultIndex == index ? true : false,
-          // onTap: onTap,
+          onTap: onTap,
           contentPadding: EdgeInsets.only(top: 15.h, right: 15.w, left: 30.w),
           dense: true,
           horizontalTitleGap: 20.w,

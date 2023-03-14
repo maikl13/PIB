@@ -76,7 +76,12 @@ class RegisterView extends StatelessWidget {
     return DefaultButton(
       text: AppStrings.registerNewAcc,
       onTap: () {
-        showSuccessDialog(context);
+        showSuccessDialog(
+          context,
+          onOk: () {
+            Navigator.pushNamed(context, Routes.mainHomeViewRoute);
+          },
+        );
       },
     );
   }

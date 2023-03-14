@@ -17,7 +17,8 @@ class ContactUsView extends StatelessWidget {
 
   _buildBody(BuildContext context) {
     return ListView(
-      padding: const EdgeInsets.only(top: 40, right: 20, left: 20),
+      padding:
+          EdgeInsets.only(top: 40.h, right: 20.w, left: 20.w, bottom: 40.h),
       shrinkWrap: true,
       children: [
         _buildInfo(),
@@ -57,7 +58,7 @@ class ContactUsView extends StatelessWidget {
       bottomPadding: 70,
       maxLines: 3,
       hint: AppStrings.description,
-      icon: FontAwesomeIcons.alignLeft,
+      icon: Icons.text_fields_outlined,
     );
   }
 
@@ -66,15 +67,15 @@ class ContactUsView extends StatelessWidget {
       children: const [
         Expanded(
           child: ContactUsInfoItem(
-            title: '01000000000',
-            icon: Icons.phone_enabled_outlined,
+            title: AppStrings.userEmail,
+            icon: Icons.email_outlined,
           ),
         ),
         SizedBox(width: 20),
         Expanded(
           child: ContactUsInfoItem(
-            title: AppStrings.userEmail,
-            icon: Icons.email_outlined,
+            title: '01000000000',
+            icon: Icons.phone_enabled_outlined,
           ),
         ),
       ],
@@ -113,7 +114,7 @@ class ContactUsView extends StatelessWidget {
       appBar: CustomAppBar(
         appBarColor: ColorManager.lightBlack,
         title: AppStrings.contactUs,
-        actions: [],
+        actions: const [],
       ),
       body: _buildBody(context),
     );

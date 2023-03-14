@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
+import '../../../../core/resources/route_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/resources/style_manager.dart';
 import '../../../home/presentation/widgets/image_with_stars.dart';
@@ -89,30 +90,35 @@ class SearchResultItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 131.h,
-      width: double.infinity,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10.r),
-      ),
-      // color: Colors.red,
-      child: Stack(
-        fit: StackFit.expand,
-        children: [
-          _buildBackground(),
-          _buildMainInfo(),
-          Padding(
-            padding: EdgeInsets.only(left: 10.w, top: 17.h),
-            child: Align(
-                alignment: Alignment.topLeft,
-                child: ClockDate(color: ColorManager.grey)),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 90.h, left: 20.w),
-            child: const Align(
-                alignment: Alignment.centerLeft, child: ShowAllText()),
-          ),
-        ],
+    return InkWell(
+      onTap: () {
+        Navigator.pushNamed(context, Routes.jobDetailsViewRoute);
+      },
+      child: Container(
+        height: 131.w,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10.r),
+        ),
+        // color: Colors.red,
+        child: Stack(
+          fit: StackFit.expand,
+          children: [
+            _buildBackground(),
+            _buildMainInfo(),
+            Padding(
+              padding: EdgeInsets.only(left: 10.w, top: 17.h),
+              child: Align(
+                  alignment: Alignment.topLeft,
+                  child: ClockDate(color: ColorManager.grey)),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 90.h, left: 20.w),
+              child: const Align(
+                  alignment: Alignment.centerLeft, child: ShowAllText()),
+            ),
+          ],
+        ),
       ),
     );
   }

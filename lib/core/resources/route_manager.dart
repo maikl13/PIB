@@ -3,10 +3,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pip/features/chat/presentation/screens/chat_add_offer_view.dart';
 import 'package:pip/features/chat/presentation/screens/chats_view.dart';
 import 'package:pip/features/chat/presentation/screens/conversation_type_view.dart';
+import 'package:pip/features/home/presentation/screens/companeis_need_jobs.view.dart';
+import 'package:pip/features/home/presentation/screens/full_time_jobs_view.dart';
+import 'package:pip/features/home/presentation/screens/part_time_jobs_view.dart';
 import 'package:pip/features/menu/presentation/screens/contact_us_view.dart';
 import 'package:pip/features/menu/presentation/screens/edit_password_view.dart';
 import 'package:pip/features/menu/presentation/screens/edit_profile_view.dart';
 import 'package:pip/features/menu/presentation/screens/menu_view.dart';
+import 'package:pip/features/menu/presentation/screens/rate_us_view.dart';
 import 'package:pip/features/menu/presentation/screens/skills_view.dart';
 import 'package:pip/features/menu/presentation/screens/wallet_view.dart';
 import 'package:pip/features/menu/presentation/screens/who_we_are_view.dart';
@@ -74,8 +78,11 @@ class Routes {
   static const String whoWeAreViewRoute = "/whoWeAreViewRoute";
   static const String workWithUsViewRoute = "/workWithUsViewRoute";
   static const String skillsViewRoute = "/skillsViewRoute";
-
-
+  static const String rateUsViewRoute = "/rateUsViewRoute";
+  static const String companiesNeedJobsViewRoute =
+      "/companiesNeedJobsViewRoute";
+  static const String partTimeViewRoute = "/partTimeViewRoute";
+  static const String fullTimeViewRoute = "/fullTimeViewRoute";
 }
 
 class RouteGenerator {
@@ -216,13 +223,30 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (_) => const WhoWeAreView(),
         );
-           case Routes.workWithUsViewRoute:
+      case Routes.workWithUsViewRoute:
         return MaterialPageRoute(
           builder: (_) => const WorkWithUsView(),
         );
-               case Routes.skillsViewRoute:
+      case Routes.skillsViewRoute:
         return MaterialPageRoute(
           builder: (_) => const SkillsView(),
+        );
+      case Routes.rateUsViewRoute:
+        return MaterialPageRoute(
+          builder: (_) => const RateUsView(),
+        );
+
+      case Routes.companiesNeedJobsViewRoute:
+        return MaterialPageRoute(
+          builder: (_) => const CompaniesNeedJobsView(),
+        );
+      case Routes.partTimeViewRoute:
+        return MaterialPageRoute(
+          builder: (_) => const PartTimeJobs(),
+        );
+      case Routes.fullTimeViewRoute:
+        return MaterialPageRoute(
+          builder: (_) => const FullTimeJobsView(),
         );
       default:
         return unDefinedRoute();

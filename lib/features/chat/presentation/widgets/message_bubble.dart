@@ -19,7 +19,7 @@ class MessageBubble extends StatelessWidget {
 
   _buildUserAvatar() {
     return SizedBox(
-      height: 27.h,
+      height: 27.w,
       width: 27.w,
       child: CircleAvatar(
         radius: 33.r,

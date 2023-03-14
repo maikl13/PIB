@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pip/core/resources/constants.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/resources/style_manager.dart';
@@ -52,7 +53,10 @@ class SpecialRequestDetailsView extends StatelessWidget {
         childAspectRatio: 1.5,
       ),
       itemBuilder: (context, index) {
-        return const JobTypeItem();
+        return JobTypeItem(
+          title: typesTitles[index],
+          image: typeIcons[index],
+        );
       },
     );
   }

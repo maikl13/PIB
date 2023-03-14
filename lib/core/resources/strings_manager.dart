@@ -24,6 +24,9 @@ class AppStrings {
   static const String you = 'بك';
   static const String registerNewAcc = 'تسجيل حساب جديد';
   static const String login = 'تسجيل دخول';
+  static const String logOut =  'تسجيل خروج';
+
+
   static const String orLoginWith = 'او تسجيل باستخدام';
   static const String facebook = 'facebook';
   static const String google = 'google';
@@ -153,7 +156,16 @@ class AppStrings {
   static const String workAs = 'اعمل كمندوب تسويق';
   static const String skills = 'مهاراتي';
   static const String chooseSkills = 'قم باختيار مهاراتي :';
-  // static const String theMenue = 'القائمة';
+  static const String easyToUse = 'سهوله الاستخدام';
+  static const String deliverPresents = 'توصيل هدايا';
+  static const String moveFurnititure = 'نقل عفش';
+  static const String wireMan = 'كهربائي';
+  static const String carpenter = 'نجار';
+  static const String wall = 'دهان';
+  static const String myWallet =  'محفظتي';
+  static const String rateUs =  'قيمنا';
+  static const String whoAreWe =  'من نحن';
+  static const String editPassword=  'تعديل كلمة المرور';
   // static const String theMenue = 'القائمة';
   // static const String theMenue = 'القائمة';
   // static const String theMenue = 'القائمة';

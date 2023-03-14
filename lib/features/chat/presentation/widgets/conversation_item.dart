@@ -17,7 +17,7 @@ class ConversationItem extends StatelessWidget {
 
   Widget _buildAvatar() {
     return SizedBox(
-        height: 60.h,
+        height: 60.w,
         width: 60.w,
         child: CircleAvatar(
           radius: 80.r,
@@ -57,7 +57,7 @@ class ConversationItem extends StatelessWidget {
       },
       child: SizedBox(
         width: double.infinity,
-        height: 100.h,
+        height: 100.w,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(10.r),
           child: Stack(
@@ -65,18 +65,18 @@ class ConversationItem extends StatelessWidget {
             children: [
               _buildBackground(),
               Padding(
-                padding: EdgeInsets.only(top: 20.h, right: 20.w, left: 20.w),
+                padding: EdgeInsets.only(top: 20.w, right: 20.w, left: 20.w),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     _buildAvatar(),
                     SizedBox(width: 20.w),
                     Padding(
-                      padding: EdgeInsets.only(top: 4.h),
+                      padding: EdgeInsets.only(top: 4.w),
                       child: Column(
                         children: [
                           _buildTitle(),
-                          SizedBox(height: 10.sp),
+                          SizedBox(height: 10.w),
                           _buildSubtitle(),
                         ],
                       ),

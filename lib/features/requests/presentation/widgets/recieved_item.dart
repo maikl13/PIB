@@ -22,7 +22,7 @@ class RecievedOfferItem extends StatelessWidget {
   }
 
   _buildAvatar() {
-    return SizedBox(width: 75.w, height: 65.h, child: const ImageWithRating());
+    return SizedBox(width: 75.w, height: 65.w, child: const ImageWithRating());
   }
 
   _buildMainInfo() {

@@ -1,7 +1,13 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:pip/core/resources/color_manager.dart';
+import 'package:pip/core/resources/strings_manager.dart';
+import 'package:pip/core/resources/style_manager.dart';
+import 'package:pip/core/widgets/default_button.dart';
+import 'package:pip/core/widgets/leading_arrow.dart';
 import '../../../../core/resources/assets_manager.dart';
 
 class SelectLocation extends StatefulWidget {
@@ -24,25 +30,98 @@ class _SelectLocationState extends State<SelectLocation> {
   final Set<Marker> _markers = {};
 
   late BitmapDescriptor pinIcon;
-  
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(extendBody: true, body: buildMap());
-  }
 
   Widget buildMap() {
-    return GoogleMap(
-        // mapType: MapType.terrain,
-        markers: _markers,
-        initialCameraPosition: _kGooglePlex,
-        zoomControlsEnabled: false,
-        onMapCreated: mapCreated);
+    return Stack(
+      children: [
+        GoogleMap(
+            // mapType: MapType.terrain,
+            markers: _markers,
+            initialCameraPosition: _kGooglePlex,
+            zoomControlsEnabled: false,
+            onMapCreated: mapCreated),
+        _buildAppBar(),
+        _buildFloatingContainer(),
+      ],
+    );
+  }
+
+  _buildAppBar() {
+    return Padding(
+      padding: EdgeInsets.only(top: 63.h, right: 20.w),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const LeadingArrow(),
+          SizedBox(width: 84.w),
+          Text('طلب تاكسي',
+              style:
+                  getRegularStyle(fontSize: 20.sp, color: ColorManager.black))
+        ],
+      ),
+    );
+  }
+
+  _buildFloatingContainer() {
+    return Align(
+      alignment: Alignment.bottomCenter,
+      child: Padding(
+        padding: EdgeInsets.only(bottom: 30.h, left: 20.w, right: 20.w),
+        child: Container(
+          height: 219.h,
+          width: double.infinity,
+          decoration: BoxDecoration(
+              color: ColorManager.black5,
+              borderRadius: BorderRadius.circular(10.r)),
+          child: Padding(
+            padding: EdgeInsets.only(top: 20.h, right: 20.w, left: 20.w),
+            child: Column(
+              children: [
+                _buildFloatingContainerHeader(),
+                SizedBox(height: 17.h),
+                Divider(
+                    color: ColorManager.grey.withOpacity(.5), thickness: 1.sp),
+                SizedBox(height: 20.h),
+                _buildFloatingContainerBody(),
+                SizedBox(height: 24.h),
+                const DefaultButton(text: 'أكد موعد اللقاء مع السائق'),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  _buildFloatingContainerHeader() {
+    return Text('حدد نقطة الالتقاء',
+        style: getBoldStyle(fontSize: 15.sp, color: ColorManager.white));
+  }
+
+  _buildFloatingContainerBody() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          'جدة - شارع قريش',
+          style:
+              getBoldStyle(fontSize: 15.sp, color: ColorManager.darkSeconadry),
+        ),
+        Container(
+          width: 62.w,
+          height: 31.h,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(31.r),
+              color: ColorManager.white.withOpacity(.2)),
+          child: Center(
+            child: Text(
+              AppStrings.search,
+              style: getBoldStyle(fontSize: 10.sp, color: ColorManager.white),
+            ),
+          ),
+        ),
+      ],
+    );
   }
 
   void mapCreated(GoogleMapController controller) async {
@@ -63,5 +142,19 @@ class _SelectLocationState extends State<SelectLocation> {
           infoWindow: const InfoWindow(title: "Client"),
           onTap: () {}));
     });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        // backgroundColor: ColorManager.transparent,
+        extendBody: true,
+        // appBar: AppBar(),
+        body: buildMap());
   }
 }

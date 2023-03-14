@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/commons.dart';
+import '../../../../core/resources/route_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/widgets/custom_appbar.dart';
 
@@ -28,7 +29,7 @@ class WantedJobRequestsDetailsView extends StatelessWidget {
     );
   }
 
-  _buildBody() {
+  _buildBody(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(right: 20.w, left: 20.w, top: 60.h),
       child: SingleChildScrollView(
@@ -58,8 +59,11 @@ class WantedJobRequestsDetailsView extends StatelessWidget {
             _buildPhoto(),
 
             SizedBox(height: 70.h),
-            const DefaultButton(
+            DefaultButton(
               text: AppStrings.showOffers,
+              onTap: () {
+                Navigator.of(context).pushNamed(Routes.recievedOffersViewRoute);
+              },
               // widht: 249.w,
             ),
             SizedBox(height: 30.h),
@@ -152,7 +156,7 @@ class WantedJobRequestsDetailsView extends StatelessWidget {
           ),
         ],
       ),
-      body: _buildBody(),
+      body: _buildBody(context),
     );
   }
 }

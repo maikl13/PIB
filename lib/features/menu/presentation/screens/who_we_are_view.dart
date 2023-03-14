@@ -50,9 +50,11 @@ class WhoWeAreView extends StatelessWidget {
 
   _buildDescription() {
     return Text(
+      textAlign: TextAlign.center,
       AppStrings.defaText,
       style: getRegularStyle(
-          fontSize: 13.sp, color: ColorManager.white.withOpacity(.6)),
+              fontSize: 13.sp, color: ColorManager.white.withOpacity(.6))
+          .copyWith(height: 2),
     );
   }
 

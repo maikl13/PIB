@@ -5,25 +5,29 @@ import 'package:pip/core/resources/style_manager.dart';
 import 'package:pip/features/pip/presentation/widgets/custom_switch.dart';
 
 class SkillItem extends StatelessWidget {
-  const SkillItem({super.key});
+  const SkillItem({super.key, required this.title, required this.image});
+
+  final String title;
+  final String image;
   _buildIcon() {
     return SizedBox(
       width: 35.w,
       height: 35.h,
       child: CircleAvatar(
-        radius: 25.r,
-        backgroundColor: ColorManager.darkSeconadry,
-        child: Icon(
-          Icons.add_a_photo,
-          color: ColorManager.white,
-        ),
-      ),
+          radius: 25.r,
+          backgroundColor: ColorManager.darkSeconadry,
+          child: Image.asset(
+            image,
+            width: 15.w,
+            height: 15.h,
+            fit: BoxFit.contain,
+          )),
     );
   }
 
   _buildTitle() {
     return Text(
-      "data",
+      title,
       style: getBoldStyle(fontSize: 15.sp, color: ColorManager.grey),
     );
   }
@@ -38,20 +42,22 @@ class SkillItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(10.r),
       ),
       child: Padding(
-        padding:
-            EdgeInsets.only(right: 31.w, left: 21.w, top: 21.h, bottom: 21.h),
-        child: Column(
+        padding: EdgeInsets.only(right: 20.w, left: 20.w, top: 20.h),
+        child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              // crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // SizedBox(height: 20.h),
                 _buildIcon(),
-                const CustomSwitch(),
+                SizedBox(height: 15.h),
+                _buildTitle(),
               ],
             ),
-            _buildTitle(),
+            const CustomSwitch(),
           ],
         ),
       ),

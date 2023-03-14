@@ -61,6 +61,7 @@ class LoginView extends StatelessWidget {
 
   _buildPasswordTextField() {
     return DefaultTextField(
+      
         prefix: Icon(
           Icons.lock,
           color: ColorManager.lightSeconadary,
