@@ -61,7 +61,8 @@ class LoginView extends StatelessWidget {
 
   _buildPasswordTextField() {
     return DefaultTextField(
-      
+        isPassword: true,
+        // keyboardType: TextInputType,
         prefix: Icon(
           Icons.lock,
           color: ColorManager.lightSeconadary,

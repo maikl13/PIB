@@ -5,7 +5,8 @@ import 'package:pip/features/home/presentation/widgets/job_rate_container.dart';
 import '../../../../core/resources/assets_manager.dart';
 
 class ImageWithRating extends StatelessWidget {
-  const ImageWithRating({super.key});
+  const ImageWithRating({super.key, this.height});
+   final double? height;
   _buildImage() {
     return Stack(
       // fit: StackFit.expand,
@@ -16,9 +17,9 @@ class ImageWithRating extends StatelessWidget {
           // color: Colors.amber,
         ),
         _buildJobImage(),
-        const Positioned.fill(
+         Positioned.fill(
           child:
-              Align(alignment: Alignment.bottomLeft, child: JobRateContainer()),
+              Align(alignment: Alignment.bottomLeft, child: JobRateContainer(height: height,)),
         ),
       ],
     );

@@ -42,7 +42,12 @@ class ContactUsView extends StatelessWidget {
     return DefaultButton(
         text: AppStrings.send,
         onTap: () {
-          showSuccessDialog(context);
+          showContactSuccessDialog(
+            context,
+            onOk: () {
+              Navigator.pop(context);
+            },
+          );
         });
   }
 

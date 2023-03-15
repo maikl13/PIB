@@ -35,7 +35,7 @@ class SkillsView extends StatelessWidget {
           );
         },
         separatorBuilder: (context, index) {
-          return const SizedBox(height: 10);
+          return SizedBox(height: 15.h);
         },
         itemCount: typeIcons.length);
   }

@@ -265,9 +265,9 @@ void showSuccessDialog(BuildContext context, {void Function()? onOk}) {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
               children: [
-                _buildTitle(),
+                _buildTitle(AppStrings.thankYou),
                 SizedBox(height: 22.h),
-                _buildDescription(),
+                _buildDescription(AppStrings.successAuthDesc),
                 SizedBox(height: 62.h),
                 Padding(
                   padding: EdgeInsets.only(right: 65.h, left: 65.h),
@@ -290,6 +290,160 @@ void showSuccessDialog(BuildContext context, {void Function()? onOk}) {
     builder: (context) {
       return alertDialog;
     },
+  );
+}
+
+void showContactSuccessDialog(BuildContext context, {void Function()? onOk}) {
+  AlertDialog alertDialog = AlertDialog(
+    backgroundColor: ColorManager.transparent,
+    contentPadding: EdgeInsets.zero,
+    content: ClipRRect(
+      borderRadius: BorderRadius.circular(10.r),
+      child: SizedBox(
+        height: 492.h,
+        child: Stack(fit: StackFit.expand, children: [
+          _buildBackGround(),
+          _buildCloseButton(context),
+          Padding(
+            padding: EdgeInsets.only(
+              top: 264.h,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                _buildTitle(AppStrings.thanksForContacting),
+                SizedBox(height: 22.h),
+                _buildDescription(AppStrings.willTry),
+                SizedBox(height: 62.h),
+                Padding(
+                  padding: EdgeInsets.only(right: 65.h, left: 65.h),
+                  child: DefaultButton(
+                    text: AppStrings.agree,
+                    onTap: onOk,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ]),
+      ),
+    ),
+  );
+  showDialog(
+    barrierColor: Colors.black.withOpacity(0.8),
+    barrierDismissible: false,
+    context: context,
+    builder: (context) {
+      return alertDialog;
+    },
+  );
+}
+
+void showSuccessOfferDialog(BuildContext context, {void Function()? onOk}) {
+  AlertDialog alertDialog = AlertDialog(
+    backgroundColor: ColorManager.transparent,
+    contentPadding: EdgeInsets.zero,
+    content: ClipRRect(
+      borderRadius: BorderRadius.circular(10.r),
+      child: SizedBox(
+        height: 515.h,
+        child: Stack(fit: StackFit.expand, children: [
+          _buildBackGround(),
+          _buildCloseButton(context),
+          Padding(
+            padding: EdgeInsets.only(
+              top: 264.h,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                _buildTitle(AppStrings.succesOperation),
+                SizedBox(height: 22.h),
+                _buildDescription(AppStrings.succsesAdd),
+                SizedBox(height: 22.h),
+                _buildSubtitle(AppStrings.plumber),
+                SizedBox(height: 62.h),
+                Padding(
+                  padding: EdgeInsets.only(right: 65.h, left: 65.h),
+                  child: DefaultButton(
+                    text: AppStrings.agree,
+                    onTap: onOk,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ]),
+      ),
+    ),
+  );
+  showDialog(
+    barrierColor: Colors.black.withOpacity(0.8),
+    barrierDismissible: false,
+    context: context,
+    builder: (context) {
+      return alertDialog;
+    },
+  );
+}
+
+void showSuccessAddOfferInChatDialog(BuildContext context,
+    {void Function()? onOk}) {
+  AlertDialog alertDialog = AlertDialog(
+    backgroundColor: ColorManager.transparent,
+    contentPadding: EdgeInsets.zero,
+    content: ClipRRect(
+      borderRadius: BorderRadius.circular(10.r),
+      child: SizedBox(
+        height: 515.h,
+        child: Stack(fit: StackFit.expand, children: [
+          _buildBackGround(),
+          _buildCloseButton(context),
+          Padding(
+            padding: EdgeInsets.only(
+              top: 264.h,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                _buildTitle(AppStrings.succesOperation),
+                SizedBox(height: 22.h),
+                _buildDescription(AppStrings.succsesAddOnJob),
+                SizedBox(height: 22.h),
+                _buildSubtitle(AppStrings.needPlumber),
+                SizedBox(height: 62.h),
+                Padding(
+                  padding: EdgeInsets.only(right: 65.h, left: 65.h),
+                  child: DefaultButton(
+                    text: AppStrings.agree,
+                    onTap: onOk,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ]),
+      ),
+    ),
+  );
+  showDialog(
+    barrierColor: Colors.black.withOpacity(0.8),
+    barrierDismissible: false,
+    context: context,
+    builder: (context) {
+      return alertDialog;
+    },
+  );
+}
+
+_buildSubtitle(String title) {
+  return Text(
+    title,
+    style: getRegularStyle(fontSize: 14.sp, color: ColorManager.darkSeconadry)
+        .copyWith(decoration: TextDecoration.underline, decorationThickness: 2),
   );
 }
 
@@ -321,19 +475,19 @@ _buildBackGround() {
   );
 }
 
-_buildTitle() {
+_buildTitle(String title) {
   return Text(
-    AppStrings.thankYou,
+    title,
     style: getBoldStyle(fontSize: 22.sp, color: ColorManager.white),
   );
 }
 
-_buildDescription() {
+_buildDescription(String desc) {
   return Padding(
     padding: EdgeInsets.only(left: 44.h, right: 44.h),
     child: Text(
       textAlign: TextAlign.center,
-      AppStrings.successAuthDesc,
+      desc,
       style: getRegularStyle(fontSize: 13.sp, color: ColorManager.grey),
     ),
   );

@@ -21,7 +21,7 @@ class SearchResultItem extends StatelessWidget {
 
   _buildMainInfo() {
     return Padding(
-      padding: EdgeInsets.only(top: 30.h, right: 25.w),
+      padding: EdgeInsets.only(top: 30.w, right: 25.w),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -31,7 +31,7 @@ class SearchResultItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _buildCompanyName(),
-              SizedBox(height: 18.h),
+              SizedBox(height: 18.w),
               Row(
                 children: [
                   _buildJobtitleIcon(),
@@ -107,13 +107,13 @@ class SearchResultItem extends StatelessWidget {
             _buildBackground(),
             _buildMainInfo(),
             Padding(
-              padding: EdgeInsets.only(left: 10.w, top: 17.h),
+              padding: EdgeInsets.only(left: 10.w, top: 17.w),
               child: Align(
                   alignment: Alignment.topLeft,
                   child: ClockDate(color: ColorManager.grey)),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 90.h, left: 20.w),
+              padding: EdgeInsets.only(top: 90.w, left: 20.w),
               child: const Align(
                   alignment: Alignment.centerLeft, child: ShowAllText()),
             ),

@@ -98,7 +98,7 @@ class RequestItem extends StatelessWidget {
 
   _buildNumberOfRequestsIcon() {
     return Icon(
-      FontAwesomeIcons.solidComments,
+      Icons.person,
       color: ColorManager.darkSeconadry,
       size: 12.sp,
     );

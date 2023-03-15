@@ -56,6 +56,9 @@ List<String> menuViewItemRoutes = [
 
   // Routes.splashRoute,
 ];
+bool val = false;
+int isSelected = -1;
+
 List<IconData> menuViewItemIcons = [
   Icons.manage_accounts,
   Icons.work,

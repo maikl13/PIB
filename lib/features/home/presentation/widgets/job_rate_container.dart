@@ -4,12 +4,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/resources/color_manager.dart';
 
 class JobRateContainer extends StatelessWidget {
-  const JobRateContainer({super.key});
+  const JobRateContainer({super.key, this.height});
+  final double? height;
 
   _buildJobRate() {
     return  Container(
           width: 49.w,
-          height: 19.w,
+          height: height??19.w,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(25.r), color: Colors.white),
           child: Row(

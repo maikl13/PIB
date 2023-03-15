@@ -15,7 +15,9 @@ class DefaultTextField extends StatefulWidget {
       this.prefix,
       this.style,
       this.maxLines,
-      this.hintStyle, this.keyboardType});
+      this.hintStyle,
+      this.keyboardType,
+      this.isPassword});
 
   final Widget? suffix;
   final Widget? prefix;
@@ -28,6 +30,7 @@ class DefaultTextField extends StatefulWidget {
   final int? maxLines;
   final TextStyle? hintStyle;
   final TextInputType? keyboardType;
+  final bool? isPassword;
 
   @override
   State<DefaultTextField> createState() => _DefaultTextFieldState();
@@ -38,13 +41,14 @@ class _DefaultTextFieldState extends State<DefaultTextField> {
   Widget build(BuildContext context) {
     return TextFormField(
       keyboardType: widget.keyboardType,
-      maxLines: widget.maxLines,
+      maxLines: widget.maxLines ?? 1,
       cursorColor: ColorManager.darkSeconadry,
       style: widget.style ??
           getBoldStyle(
             color: ColorManager.darkGrey,
             fontSize: 18.sp,
           ),
+      obscureText: widget.isPassword ?? false,
       controller: widget.controller,
       onSaved: widget.onSaved,
       validator: widget.validator,

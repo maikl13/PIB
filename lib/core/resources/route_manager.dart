@@ -6,6 +6,8 @@ import 'package:pip/features/chat/presentation/screens/conversation_type_view.da
 import 'package:pip/features/home/presentation/screens/companeis_need_jobs.view.dart';
 import 'package:pip/features/home/presentation/screens/full_time_jobs_view.dart';
 import 'package:pip/features/home/presentation/screens/part_time_jobs_view.dart';
+import 'package:pip/features/map/presentation/screens/available_drivers.dart';
+import 'package:pip/features/map/presentation/screens/confirm_driver.dart';
 import 'package:pip/features/menu/presentation/screens/contact_us_view.dart';
 import 'package:pip/features/menu/presentation/screens/edit_password_view.dart';
 import 'package:pip/features/menu/presentation/screens/edit_profile_view.dart';
@@ -83,6 +85,10 @@ class Routes {
       "/companiesNeedJobsViewRoute";
   static const String partTimeViewRoute = "/partTimeViewRoute";
   static const String fullTimeViewRoute = "/fullTimeViewRoute";
+  static const String confirDriverViewRoute = "/confirDriverViewRoute";
+  static const String availableDriversViewRoute = "/availableDriversViewRoute";
+
+
 }
 
 class RouteGenerator {
@@ -247,6 +253,16 @@ class RouteGenerator {
       case Routes.fullTimeViewRoute:
         return MaterialPageRoute(
           builder: (_) => const FullTimeJobsView(),
+        );
+
+          case Routes.confirDriverViewRoute:
+        return MaterialPageRoute(
+          builder: (_) => const ConfirmDriverView(),
+        );
+
+         case Routes.availableDriversViewRoute:
+        return MaterialPageRoute(
+          builder: (_) => const AvailableDriversView(),
         );
       default:
         return unDefinedRoute();

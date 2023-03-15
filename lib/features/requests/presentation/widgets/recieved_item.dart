@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pip/core/resources/constants.dart';
 import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/route_manager.dart';
@@ -25,7 +26,7 @@ class RecievedOfferItem extends StatelessWidget {
     return SizedBox(width: 75.w, height: 65.w, child: const ImageWithRating());
   }
 
-  _buildMainInfo() {
+  _buildMainInfo(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(top: 20.h, right: 13.w),
       child: SizedBox(
@@ -55,7 +56,7 @@ class RecievedOfferItem extends StatelessWidget {
                 _buildDescription(),
                 SizedBox(height: 25.h),
 
-                _buildButtons(),
+                _buildButtons(context),
                 // _buildPrice(),
               ],
             ),
@@ -65,26 +66,30 @@ class RecievedOfferItem extends StatelessWidget {
     );
   }
 
-  _buildButtons() {
+  _buildButtons(BuildContext context) {
     return Row(
       children: [
-        _buildAcceptButton(),
+        _buildAcceptButton(context),
         SizedBox(width: 10.w),
-        _buildNegotiateButton(),
+        _buildNegotiateButton(context),
       ],
     );
   }
 
-  _buildAcceptButton() {
+  _buildAcceptButton(BuildContext context) {
     return DefaultButton(
       text: AppStrings.accept,
       height: 32.h,
       widht: 108.w,
       textStyle: getBoldStyle(fontSize: 12.sp, color: ColorManager.black),
+      onTap: () {
+        screenIndex = 2;
+        Navigator.of(context).pushNamed(Routes.mainHomeViewRoute);
+      },
     );
   }
 
-  _buildNegotiateButton() {
+  _buildNegotiateButton(BuildContext context) {
     return DarkDefaultButton(
       text: AppStrings.negotiate,
       height: 32.h,
@@ -92,6 +97,9 @@ class RecievedOfferItem extends StatelessWidget {
       borderColor: ColorManager.darkSeconadry,
       textStyle:
           getBoldStyle(fontSize: 12.sp, color: ColorManager.darkSeconadry),
+      onTap: () {
+        Navigator.pushNamed(context, Routes.chatViewRoute);
+      },
     );
   }
 
@@ -161,7 +169,7 @@ class RecievedOfferItem extends StatelessWidget {
           fit: StackFit.expand,
           children: [
             _buildBackground(),
-            _buildMainInfo(),
+            _buildMainInfo(context),
             Padding(
               padding: EdgeInsets.only(left: 10.w, top: 14.h),
               child: Align(

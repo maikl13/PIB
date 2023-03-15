@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/resources/constants.dart';
+import 'package:pip/core/resources/route_manager.dart';
 import 'package:pip/core/widgets/custom_appbar.dart';
 import 'package:pip/core/widgets/default_button.dart';
 
@@ -11,7 +13,7 @@ import '../../../../core/widgets/default_textfield.dart';
 class EditPasswordView extends StatelessWidget {
   const EditPasswordView({super.key});
 
-  _buildBody() {
+  _buildBody(BuildContext context) {
     return ListView(
       padding: EdgeInsets.only(top: 50.h, right: 20.w, left: 20.w),
       shrinkWrap: true,
@@ -25,7 +27,7 @@ class EditPasswordView extends StatelessWidget {
         SizedBox(height: 20.h),
         _buildConfirmPasswordTextField(),
         SizedBox(height: 292.h),
-        _buildButton(),
+        _buildButton(context),
       ],
     );
   }
@@ -40,6 +42,7 @@ class EditPasswordView extends StatelessWidget {
 
   _buildOldPasswordTextField() {
     return DefaultTextField(
+        isPassword: true,
         prefix: Icon(
           Icons.lock,
           color: ColorManager.darkSeconadry,
@@ -50,6 +53,7 @@ class EditPasswordView extends StatelessWidget {
 
   _buildNewPasswordTextField() {
     return DefaultTextField(
+        isPassword: true,
         prefix: Icon(
           Icons.lock,
           color: ColorManager.darkSeconadry,
@@ -60,6 +64,7 @@ class EditPasswordView extends StatelessWidget {
 
   _buildConfirmPasswordTextField() {
     return DefaultTextField(
+        isPassword: true,
         prefix: Icon(
           Icons.lock,
           color: ColorManager.darkSeconadry,
@@ -68,8 +73,13 @@ class EditPasswordView extends StatelessWidget {
         hint: 'تاكيد كلمة المرور الجديدة');
   }
 
-  _buildButton() {
-    return DefaultButton(text: AppStrings.addOffer, onTap: () {});
+  _buildButton(BuildContext context) {
+    return DefaultButton(
+        text: AppStrings.editPassword,
+        onTap: () {
+          screenIndex = 4;
+          Navigator.pushNamed(context, Routes.mainHomeViewRoute);
+        });
   }
 
   @override
@@ -80,7 +90,7 @@ class EditPasswordView extends StatelessWidget {
         title: AppStrings.editPassword,
         actions: const [],
       ),
-      body: _buildBody(),
+      body: _buildBody(context),
     );
   }
 }

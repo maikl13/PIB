@@ -24,8 +24,7 @@ class AppStrings {
   static const String you = 'بك';
   static const String registerNewAcc = 'تسجيل حساب جديد';
   static const String login = 'تسجيل دخول';
-  static const String logOut =  'تسجيل خروج';
-
+  static const String logOut = 'تسجيل خروج';
 
   static const String orLoginWith = 'او تسجيل باستخدام';
   static const String facebook = 'facebook';
@@ -162,12 +161,21 @@ class AppStrings {
   static const String wireMan = 'كهربائي';
   static const String carpenter = 'نجار';
   static const String wall = 'دهان';
-  static const String myWallet =  'محفظتي';
-  static const String rateUs =  'قيمنا';
-  static const String whoAreWe =  'من نحن';
-  static const String editPassword=  'تعديل كلمة المرور';
+  static const String myWallet = 'محفظتي';
+  static const String rateUs = 'قيمنا';
+  static const String whoAreWe = 'من نحن';
+  static const String editPassword = 'تعديل كلمة المرور';
+  static const String succesOperation = 'تمت العملية بنجاح';
+  static const String succsesAdd = 'تمت اضافة عرضك على وظيفة ';
+  static const String needPlumber = 'بحاجة لسباك صرف';
+
+  static const String succsesAddOnJob = 'تمت اضافة عرضك على الوظيفة بنجاح';
+
+
+  static const String thanksForContacting = 'شكرا لتواصلك معنا';
+  static const String willTry = 'سنحاول التواصل معك باسرع وقت ممكن';
   // static const String theMenue = 'القائمة';
   // static const String theMenue = 'القائمة';
   // static const String theMenue = 'القائمة';
-  // static const String theMenue = 'القائمة';
+
 }

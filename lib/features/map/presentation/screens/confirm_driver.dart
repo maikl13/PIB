@@ -11,14 +11,14 @@ import 'package:pip/core/widgets/default_button.dart';
 import 'package:pip/core/widgets/leading_arrow.dart';
 import '../../../../core/resources/assets_manager.dart';
 
-class SelectLocation extends StatefulWidget {
-  const SelectLocation({super.key});
+class ConfirmDriverView extends StatefulWidget {
+  const ConfirmDriverView({super.key});
 
   @override
-  State<SelectLocation> createState() => _SelectLocationState();
+  State<ConfirmDriverView> createState() => _ConfirmDriverViewState();
 }
 
-class _SelectLocationState extends State<SelectLocation> {
+class _ConfirmDriverViewState extends State<ConfirmDriverView> {
   final Completer<GoogleMapController> _controller =
       Completer<GoogleMapController>();
   late GoogleMapController mapController;
@@ -85,8 +85,8 @@ class _SelectLocationState extends State<SelectLocation> {
                 SizedBox(height: 20.h),
                 _buildFloatingContainerBody(),
                 SizedBox(height: 24.h),
-                 DefaultButton(text: 'أكد موعد اللقاء مع السائق',onTap: () {
-                  Navigator.pushNamed(context, Routes.confirDriverViewRoute);
+                 DefaultButton(text: 'أكد الوجهة',onTap: () {
+                  Navigator.pushNamed(context, Routes.availableDriversViewRoute);
                 },),
               ],
             ),

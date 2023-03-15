@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pip/core/resources/constants.dart';
+import 'package:pip/core/resources/route_manager.dart';
 import '../../../home/presentation/widgets/job_details_image.dart';
 
 import '../../../../core/resources/assets_manager.dart';
@@ -13,9 +15,14 @@ import '../../../../core/widgets/default_button.dart';
 import '../../../home/presentation/widgets/main_info_item.dart';
 import '../../../notification/presentation/widgets/clock_date.dart';
 
-class RecievedOfferDetails extends StatelessWidget {
+class RecievedOfferDetails extends StatefulWidget {
   const RecievedOfferDetails({super.key});
 
+  @override
+  State<RecievedOfferDetails> createState() => _RecievedOfferDetailsState();
+}
+
+class _RecievedOfferDetailsState extends State<RecievedOfferDetails> {
   _buildBody() {
     return Padding(
       padding: EdgeInsets.only(right: 20.w, left: 20.w, top: 60.h),
@@ -55,9 +62,16 @@ class RecievedOfferDetails extends StatelessWidget {
   }
 
   _buildAcceptButton() {
-    return const Expanded(
+    return Expanded(
       child: DefaultButton(
         text: AppStrings.accept,
+        onTap: () {
+          setState(() {
+            screenIndex = 2;
+          });
+          Navigator.pushNamed(context, Routes.mainHomeViewRoute);
+          //
+        },
       ),
     );
   }
@@ -69,6 +83,9 @@ class RecievedOfferDetails extends StatelessWidget {
         borderColor: ColorManager.darkSeconadry,
         textStyle:
             getBoldStyle(fontSize: 16.sp, color: ColorManager.darkSeconadry),
+        onTap: () {
+          Navigator.pushNamed(context, Routes.chatViewRoute);
+        },
       ),
     );
   }

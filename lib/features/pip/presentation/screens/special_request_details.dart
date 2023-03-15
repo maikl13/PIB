@@ -13,31 +13,41 @@ import '../widgets/request_custom_tetfield.dart';
 
 import '../widgets/upload_photos.dart';
 
-class SpecialRequestDetailsView extends StatelessWidget {
+class SpecialRequestDetailsView extends StatefulWidget {
   const SpecialRequestDetailsView({super.key});
 
+  @override
+  State<SpecialRequestDetailsView> createState() =>
+      _SpecialRequestDetailsViewState();
+}
+
+class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
   _buildBody() {
-    return ListView(
+    return Padding(
       padding:
           EdgeInsets.only(right: 20.w, left: 20.w, top: 35.h, bottom: 35.h),
-      shrinkWrap: true,
-      children: [
-        const CustomTitle(title: AppStrings.chooseType),
-        SizedBox(height: 20.h),
-        _buildAvaialbleTypesOfJobs(),
-        SizedBox(height: 20.h),
-        _buildPriceTextField(),
-        SizedBox(height: 20.h),
-        _buildLocationTextField(),
-        SizedBox(height: 20.h),
-        _buildDescriptionTextField(),
-        SizedBox(height: 20.h),
-        _buildUploadPhotoTextField(),
-        SizedBox(height: 20.h),
-        const UploadedPhotos(),
-        SizedBox(height: 100.h),
-        const DefaultButton(text: AppStrings.puplish),
-      ],
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const CustomTitle(title: AppStrings.chooseType),
+            SizedBox(height: 20.h),
+            _buildAvaialbleTypesOfJobs(),
+            SizedBox(height: 20.h),
+            _buildPriceTextField(),
+            SizedBox(height: 20.h),
+            _buildLocationTextField(),
+            SizedBox(height: 20.h),
+            _buildDescriptionTextField(),
+            SizedBox(height: 20.h),
+            _buildUploadPhotoTextField(),
+            SizedBox(height: 20.h),
+            const UploadedPhotos(),
+            SizedBox(height: 100.h),
+            const DefaultButton(text: AppStrings.puplish),
+          ],
+        ),
+      ),
     );
   }
 
@@ -54,8 +64,14 @@ class SpecialRequestDetailsView extends StatelessWidget {
       ),
       itemBuilder: (context, index) {
         return JobTypeItem(
+          index: index,
           title: typesTitles[index],
           image: typeIcons[index],
+          onTap: () {
+            setState(() {
+              isSelected = index;
+            });
+          },
         );
       },
     );
@@ -98,17 +114,58 @@ class SpecialRequestDetailsView extends StatelessWidget {
   }
 
   _buildUploadPhotoTextField() {
-    return RequestCustomTextField(
-      suffix: Padding(
-        padding: EdgeInsets.only(left: 5.w, top: 10.h),
-        child: Icon(
-          Icons.add,
-          color: ColorManager.darkSeconadry,
-          size: 20.sp,
+    return InkWell(
+      onTap: () {
+        // Navigator.pushNamed(context, Routes.searchMainViewRoute);
+      },
+      child: Container(
+        width: double.infinity,
+        height: 52.h,
+        decoration: BoxDecoration(
+          color: ColorManager.lightBlack,
+          borderRadius: BorderRadius.circular(10.r),
+        ),
+        child: Padding(
+          padding: EdgeInsets.only(left: 25.w, right: 15.w),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  SizedBox(
+                    width: 35.w,
+                    height: 35.h,
+                    child: CircleAvatar(
+                      radius: 25.r,
+                      backgroundColor: ColorManager.darkSeconadry,
+                      child: Icon(
+                        Icons.upload,
+                        color: ColorManager.white,
+                        size: 18.sp,
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 30.w),
+                  Text(AppStrings.uploadPhotos,
+                      style: getRegularStyle(
+                          fontSize: 15.sp, color: ColorManager.grey5)),
+                ],
+              ),
+              IconButton(
+                  splashColor: ColorManager.transparent,
+                  icon: Icon(
+                    Icons.add,
+                    color: ColorManager.darkSeconadry,
+                    size: 20.sp,
+                  ),
+                  onPressed: () {
+                    // Navigator.pushNamed(Ro.search);
+                  })
+            ],
+          ),
         ),
       ),
-      hint: AppStrings.uploadPhotos,
-      icon: Icons.upload,
     );
   }
 

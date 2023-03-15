@@ -9,16 +9,17 @@ import 'package:pip/core/resources/strings_manager.dart';
 import 'package:pip/core/resources/style_manager.dart';
 import 'package:pip/core/widgets/default_button.dart';
 import 'package:pip/core/widgets/leading_arrow.dart';
+import 'package:pip/features/home/presentation/widgets/image_with_stars.dart';
 import '../../../../core/resources/assets_manager.dart';
 
-class SelectLocation extends StatefulWidget {
-  const SelectLocation({super.key});
+class AvailableDriversView extends StatefulWidget {
+  const AvailableDriversView({super.key});
 
   @override
-  State<SelectLocation> createState() => _SelectLocationState();
+  State<AvailableDriversView> createState() => _AvailableDriversViewState();
 }
 
-class _SelectLocationState extends State<SelectLocation> {
+class _AvailableDriversViewState extends State<AvailableDriversView> {
   final Completer<GoogleMapController> _controller =
       Completer<GoogleMapController>();
   late GoogleMapController mapController;
@@ -69,7 +70,7 @@ class _SelectLocationState extends State<SelectLocation> {
       child: Padding(
         padding: EdgeInsets.only(bottom: 30.h, left: 20.w, right: 20.w),
         child: Container(
-          height: 219.h,
+          height: 206.h,
           width: double.infinity,
           decoration: BoxDecoration(
               color: ColorManager.black5,
@@ -84,10 +85,6 @@ class _SelectLocationState extends State<SelectLocation> {
                     color: ColorManager.grey.withOpacity(.5), thickness: 1.sp),
                 SizedBox(height: 20.h),
                 _buildFloatingContainerBody(),
-                SizedBox(height: 24.h),
-                 DefaultButton(text: 'أكد موعد اللقاء مع السائق',onTap: () {
-                  Navigator.pushNamed(context, Routes.confirDriverViewRoute);
-                },),
               ],
             ),
           ),
@@ -97,33 +94,92 @@ class _SelectLocationState extends State<SelectLocation> {
   }
 
   _buildFloatingContainerHeader() {
-    return Text('حدد نقطة الالتقاء',
+    return Text('المشاوير المتاحة',
         style: getBoldStyle(fontSize: 15.sp, color: ColorManager.white));
   }
 
   _buildFloatingContainerBody() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          'جدة - شارع قريش',
-          style:
-              getBoldStyle(fontSize: 15.sp, color: ColorManager.darkSeconadry),
-        ),
-        Container(
-          width: 62.w,
-          height: 31.h,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(31.r),
-              color: ColorManager.white.withOpacity(.2)),
-          child: Center(
-            child: Text(
-              AppStrings.search,
-              style: getBoldStyle(fontSize: 10.sp, color: ColorManager.white),
+    return Container(
+      height: 89.h,
+      decoration: BoxDecoration(
+          color: ColorManager.white.withOpacity(.10),
+          borderRadius: BorderRadius.circular(10.r)),
+      child: Stack(
+        children: [
+          _buildLeadingImage(),
+          Padding(
+            padding: EdgeInsets.only(top: 27.h, right: 97.w),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _buildUserName(),
+                SizedBox(height: 9.h),
+                Row(
+                  children: [
+                    _buildLocationIcon(),
+                    SizedBox(width: 8.w),
+                    _buildDistance(),
+                  ],
+                )
+              ],
+            ),
+          ),
+          _buildButton(),
+        ],
+      ),
+    );
+  }
+
+  _buildButton() {
+    return Padding(
+      padding: EdgeInsets.only(top: 12.h, left: 15.w),
+      child: Align(
+        alignment: Alignment.topLeft,
+        child: InkWell(
+          onTap: () {
+            Navigator.pushNamed(context, Routes.chatViewRoute);
+          },
+          child: Container(
+            width: 62.w,
+            height: 27.w,
+            decoration: BoxDecoration(
+                color: ColorManager.white.withOpacity(.2),
+                borderRadius: BorderRadius.circular(31.r)),
+            child: Center(
+              child: Text('تواصل',
+                  style: getBoldStyle(
+                      fontSize: 10.sp, color: ColorManager.darkSeconadry)),
             ),
           ),
         ),
-      ],
+      ),
+    );
+  }
+
+  _buildDistance() {
+    return Text('يبعد ١٠ ددقائق عن مكان اللقاء',
+        style: getRegularStyle(fontSize: 10.sp, color: ColorManager.grey));
+  }
+
+  _buildLocationIcon() {
+    return Icon(Icons.location_on,
+        color: ColorManager.darkSeconadry, size: 12.sp);
+  }
+
+  _buildUserName() {
+    return Text(AppStrings.userName,
+        style: getBoldStyle(fontSize: 15.sp, color: ColorManager.white));
+  }
+
+  _buildLeadingImage() {
+    return Padding(
+      padding: EdgeInsets.only(top: 12.h, right: 12.w),
+      child: SizedBox(
+          width: 75.w,
+          height: 65.w,
+          child: ImageWithRating(
+            height: 27.h,
+          )),
     );
   }
 

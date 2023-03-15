@@ -30,7 +30,7 @@ class RequestCustomTextField extends StatelessWidget {
       hintStyle:
           hintStyle ?? getBoldStyle(fontSize: 15.sp, color: ColorManager.grey5),
       maxLines: maxLines,
-      style: getBoldStyle(fontSize: 22.sp, color: ColorManager.darkSeconadry),
+      style: getBoldStyle(fontSize: 18.sp, color: ColorManager.darkGrey),
       hint: hint,
       contentPadding:
           contentPadding ?? EdgeInsets.only(top: 15.h, bottom: 15.h),

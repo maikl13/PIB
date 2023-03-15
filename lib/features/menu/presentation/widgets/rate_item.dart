@@ -66,7 +66,7 @@ class _RateItemState extends State<RateItem> {
                 unratedColor: ColorManager.grey,
                 // wrapAlignment: WrapAlignment.spaceBetween,
                 updateOnDrag: true,
-                itemPadding: EdgeInsets.symmetric(horizontal: 6.w),
+                itemPadding: EdgeInsets.symmetric(horizontal: 7.w),
                 initialRating: 0,
                 itemCount: 5,
 
@@ -113,12 +113,15 @@ class _RateItemState extends State<RateItem> {
               ),
             ),
           ),
-          Container(
-            width: 72 * rateNumber + 1.h,
-            height: 50.w,
-            decoration: BoxDecoration(
-                color: ColorManager.white.withOpacity(.1),
-                borderRadius: BorderRadius.circular(26.r)),
+          IgnorePointer(
+            ignoring: true,
+            child: Container(
+              width: 335.w * rateNumber * .19,
+              height: 50.w,
+              decoration: BoxDecoration(
+                  color: ColorManager.white.withOpacity(.1),
+                  borderRadius: BorderRadius.circular(26.r)),
+            ),
           )
         ],
       ),

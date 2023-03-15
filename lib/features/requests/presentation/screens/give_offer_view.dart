@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pip/core/resources/constants.dart';
+import 'package:pip/core/resources/route_manager.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/commons.dart';
 import '../../../../core/resources/strings_manager.dart';
@@ -43,7 +45,13 @@ class GiveOfferView extends StatelessWidget {
     return DefaultButton(
       text: AppStrings.send,
       onTap: () {
-        showSuccessDialog(context);
+        showSuccessOfferDialog(
+          context,
+          onOk: () {
+            screenIndex = 2;
+            Navigator.pushReplacementNamed(context, Routes.mainHomeViewRoute);
+          },
+        );
       },
     );
   }

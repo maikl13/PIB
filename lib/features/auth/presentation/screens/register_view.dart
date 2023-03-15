@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/features/home/presentation/screens/main_home_view.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/commons.dart';
 import '../../../../core/resources/route_manager.dart';
@@ -64,6 +66,7 @@ class RegisterView extends StatelessWidget {
 
   _buildPasswordTextField() {
     return DefaultTextField(
+        isPassword: true,
         prefix: Icon(
           Icons.lock,
           color: ColorManager.darkSeconadry,
@@ -79,7 +82,8 @@ class RegisterView extends StatelessWidget {
         showSuccessDialog(
           context,
           onOk: () {
-            Navigator.pushNamed(context, Routes.mainHomeViewRoute);
+            Navigator.pushNamedAndRemoveUntil(
+                context, Routes.mainHomeViewRoute, (route) => false);
           },
         );
       },

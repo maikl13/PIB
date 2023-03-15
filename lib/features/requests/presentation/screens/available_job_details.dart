@@ -72,7 +72,7 @@ class AvailableJobDetailsView extends StatelessWidget {
       children: [
         _buildGiveOffer(context),
         SizedBox(width: 10.w),
-        _buildNegotiateButton(),
+        _buildNegotiateButton(context),
       ],
     );
   }
@@ -88,13 +88,17 @@ class AvailableJobDetailsView extends StatelessWidget {
     );
   }
 
-  _buildNegotiateButton() {
+  _buildNegotiateButton(BuildContext context) {
     return Expanded(
       child: DarkDefaultButton(
         text: AppStrings.negotiate,
         borderColor: ColorManager.darkSeconadry,
         textStyle:
             getBoldStyle(fontSize: 16.sp, color: ColorManager.darkSeconadry),
+        onTap: () {
+          Navigator.pushNamed(context, Routes.chatViewRoute);
+          
+        },
       ),
     );
   }

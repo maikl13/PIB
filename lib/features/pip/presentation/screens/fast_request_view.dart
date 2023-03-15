@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/resources/constants.dart';
 import '../../../../core/resources/route_manager.dart';
 import '../../../../core/widgets/custom_title.dart';
 import '../widgets/pick_request_item.dart';
@@ -10,8 +11,14 @@ import '../../../../core/resources/style_manager.dart';
 import '../../../../core/widgets/custom_appbar.dart';
 import '../widgets/custom_switch.dart';
 
-class FastRequestView extends StatelessWidget {
+class FastRequestView extends StatefulWidget {
   const FastRequestView({super.key});
+
+  @override
+  State<FastRequestView> createState() => _FastRequestViewState();
+}
+
+class _FastRequestViewState extends State<FastRequestView> {
   _buildBody(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(right: 20.w, left: 20.w, top: 30.h),
@@ -61,7 +68,13 @@ class FastRequestView extends StatelessWidget {
                   color: ColorManager.darkGrey, fontSize: 15.sp),
             ),
             const Spacer(),
-            const CustomSwitch(),
+            CustomSwitch(
+              onChanged: (value) {
+                setState(() {
+                  val = value;
+                });
+              },
+            ),
           ],
         ),
       ),

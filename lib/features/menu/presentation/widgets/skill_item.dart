@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/resources/color_manager.dart';
+import 'package:pip/core/resources/constants.dart';
 import 'package:pip/core/resources/style_manager.dart';
 import 'package:pip/features/pip/presentation/widgets/custom_switch.dart';
 
-class SkillItem extends StatelessWidget {
+class SkillItem extends StatefulWidget {
   const SkillItem({super.key, required this.title, required this.image});
 
   final String title;
   final String image;
+
+  @override
+  State<SkillItem> createState() => _SkillItemState();
+}
+
+class _SkillItemState extends State<SkillItem> {
   _buildIcon() {
     return SizedBox(
       width: 35.w,
@@ -17,7 +24,7 @@ class SkillItem extends StatelessWidget {
           radius: 25.r,
           backgroundColor: ColorManager.darkSeconadry,
           child: Image.asset(
-            image,
+            widget.image,
             width: 15.w,
             height: 15.h,
             fit: BoxFit.contain,
@@ -27,7 +34,7 @@ class SkillItem extends StatelessWidget {
 
   _buildTitle() {
     return Text(
-      title,
+      widget.title,
       style: getBoldStyle(fontSize: 15.sp, color: ColorManager.grey),
     );
   }
@@ -38,6 +45,8 @@ class SkillItem extends StatelessWidget {
       width: double.infinity,
       height: 115.h,
       decoration: BoxDecoration(
+        border: Border.all(
+            color: val ? ColorManager.darkSeconadry : ColorManager.transparent),
         color: ColorManager.black5,
         borderRadius: BorderRadius.circular(10.r),
       ),
@@ -57,7 +66,13 @@ class SkillItem extends StatelessWidget {
                 _buildTitle(),
               ],
             ),
-            const CustomSwitch(),
+            CustomSwitch(
+              onChanged: (value) {
+                setState(() {
+                  val = value;
+                });
+              },
+            ),
           ],
         ),
       ),
