@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pip/features/auth/business_logic/cubit/auth_cubit.dart';
+import 'package:pip/features/auth/presentation/screens/confirm_otb_view.dart';
 import 'package:pip/features/chat/presentation/screens/chat_add_offer_view.dart';
 import 'package:pip/features/chat/presentation/screens/chats_view.dart';
 import 'package:pip/features/chat/presentation/screens/conversation_type_view.dart';
@@ -51,6 +53,8 @@ class Routes {
   static const String mainAuthViewRoute = "/mainAuthViewRoute";
   static const String registerViewRoute = "/registerViewRoute";
   static const String loginViewRoute = "/loginViewRoute";
+  static const String confirmOtbViewRoute = "/confirmOtbViewRoute";
+
   static const String forgotPasswordViewRoute = "/forgotPasswordViewRoute";
 
   static const String mainHomeViewRoute = "/mainHomeViewRoute";
@@ -87,15 +91,16 @@ class Routes {
   static const String fullTimeViewRoute = "/fullTimeViewRoute";
   static const String confirDriverViewRoute = "/confirDriverViewRoute";
   static const String availableDriversViewRoute = "/availableDriversViewRoute";
-
-
 }
 
 class RouteGenerator {
+  static late AuthCubit authCubit;
+
   static late HomeCubit homeCubit;
 
   RouteGenerator() {
     homeCubit = getIt<HomeCubit>();
+    authCubit = getIt<AuthCubit>();
   }
   static List screens = <Widget>[
     const HomeView(),
@@ -117,7 +122,10 @@ class RouteGenerator {
         );
       case Routes.mainAuthViewRoute:
         return MaterialPageRoute(
-          builder: (_) => const MainAuthView(),
+          builder: (_) => BlocProvider.value(
+            value: authCubit,
+            child: const MainAuthView(),
+          ),
         );
 
       case Routes.loginViewRoute:
@@ -132,7 +140,10 @@ class RouteGenerator {
 
       case Routes.registerViewRoute:
         return MaterialPageRoute(
-          builder: (_) => const RegisterView(),
+          builder: (_) => BlocProvider.value(
+            value: authCubit,
+            child: const RegisterView(),
+          ),
         );
 
       case Routes.mainHomeViewRoute:
@@ -255,14 +266,25 @@ class RouteGenerator {
           builder: (_) => const FullTimeJobsView(),
         );
 
-          case Routes.confirDriverViewRoute:
+      case Routes.confirDriverViewRoute:
         return MaterialPageRoute(
-          builder: (_) => const ConfirmDriverView(),
+          builder: (_) => BlocProvider.value(
+            value: authCubit,
+            child: const ConfirmDriverView(),
+          ),
         );
 
-         case Routes.availableDriversViewRoute:
+      case Routes.availableDriversViewRoute:
         return MaterialPageRoute(
           builder: (_) => const AvailableDriversView(),
+        );
+
+      case Routes.confirmOtbViewRoute:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider.value(
+            value: authCubit,
+            child: const ConfirmPhoneView(),
+          ),
         );
       default:
         return unDefinedRoute();

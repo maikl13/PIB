@@ -11,7 +11,12 @@ class AppStrings {
 
   static const String main = 'الرئيسية ';
   static const String messages = 'الرسائل ';
-
+static const String confirmPhoneNumber = 'تأكيد رقم الهاتف';
+  static const String confirmPhoneHint =
+      'يرجى ادخال الرقم المرسل على الجوال لتسجيل الدخول';
+  static const String resendCode = 'إعادة إرسال الكود';
+  static const String confirm = 'تأكيد';
+  static const String remainngTime = 'sec 00 : 59';
   static const String myOrders = 'طلباتي';
   static const String personalInfo = 'الملف الشخصي ';
 

@@ -6,9 +6,10 @@ import '../../../../core/resources/style_manager.dart';
 import '../../../../core/widgets/dark_default_button.dart';
 
 class SocialButton extends StatelessWidget {
-  const SocialButton({super.key, required this.icon, required this.title});
+  const SocialButton({super.key, required this.icon, required this.title, this.onTap});
   final String icon;
   final String title;
+  final void Function()? onTap;
 
   _buildIcon() {
     return Image.asset(
@@ -32,6 +33,7 @@ class SocialButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
         child: DarkDefaultButton(
+      onTap: onTap,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

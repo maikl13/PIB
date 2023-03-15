@@ -1,27 +1,30 @@
-// ignore: depend_on_referenced_packages
 import 'package:dio/dio.dart';
 import 'package:dio_smart_retry/dio_smart_retry.dart';
 import 'package:get_it/get_it.dart';
 
+import '../../features/auth/business_logic/cubit/auth_cubit.dart';
+import '../../features/auth/data/repository/auth_repository.dart';
 import '../../features/home/business_logic/cubit/home_cubit.dart';
+import '../web_services/web_services.dart';
 import 'constants.dart';
 
 final getIt = GetIt.instance;
 
 void initGetIt() {
+  getIt.registerLazySingleton<AuthRepoistry>(() => AuthRepoistry(getIt()));
+  getIt.registerLazySingleton<AuthCubit>(() => AuthCubit(getIt()));
   getIt.registerLazySingleton<HomeCubit>(() => HomeCubit());
   // getIt.registerLazySingleton<HomeRepository>(() => HomeRepository(getIt()));
   // getIt.registerLazySingleton<HomeCubit>(() => HomeCubit(getIt()));
-  // getIt.registerLazySingleton<AuthRepoistry>(() => AuthRepoistry(getIt()));
-  // getIt.registerLazySingleton<AuthCubit>(() => AuthCubit(getIt()));
-
+  getIt.registerLazySingleton<WebServices>(
+      () => WebServices(createAndSetupDio()));
 }
 
 Dio createAndSetupDio() {
   Dio dio = Dio();
   dio
-    ..options.connectTimeout = const Duration(seconds: 10)
-    ..options.receiveTimeout =  const Duration(seconds: 10)
+    ..options.connectTimeout = 10 * 1000
+    ..options.receiveTimeout = 10 * 1000
     ..options.baseUrl = AppConstants.baseUrl;
   dio.interceptors.add(
     RetryInterceptor(

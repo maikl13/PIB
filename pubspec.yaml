@@ -28,57 +28,58 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  auto_route: ^5.0.4
-  auto_route_generator: ^5.0.3
-  bloc: ^8.1.0
-  bubble: ^1.2.1
-  build_runner: ^2.3.2
-  cached_network_image: ^3.2.3
-  carousel_slider: ^4.2.1
-  cupertino_icons: ^1.0.2
-  dartz: ^0.10.1
-  dio: ^5.0.1
-  dio_smart_retry: null
-  equatable: ^2.0.5
-  firebase_auth: null
-  firebase_core: null
+  auto_route:
+  auto_route_generator:
+  bloc:
+  bubble:
+  build_runner:
+  cached_network_image:
+  carousel_slider:
+  cupertino_icons:
+  dartz:
+  dio: ^4.0.6
+  dio_smart_retry:
+  equatable:
+  firebase_auth:
+  firebase_core:
   flutter:
     sdk: flutter
-  flutter_bloc: ^8.1.1
-  flutter_launcher_icons: ^0.12.0
+  flutter_bloc:
+  flutter_facebook_auth:
+  flutter_launcher_icons:
   flutter_localizations:
     sdk: flutter
-  flutter_screenutil: ^5.6.0
+  flutter_screenutil:
   flutter_svg: null
-  fluttertoast: ^8.1.1
-  font_awesome_flutter: ^10.4.0
-  freezed: ^2.3.0
-  freezed_annotation: ^2.2.0
-  get_it: ^7.2.0
-  google_maps_flutter: ^2.2.5
+  fluttertoast:
+  font_awesome_flutter:
+  freezed:
+  freezed_annotation:
+  get_it:
+  google_maps_flutter:
   google_sign_in: null
-  http: ^0.13.5
-  json_annotation: ^4.7.0
-  json_serializable: ^6.5.4
-  pin_code_fields: ^7.4.0
-  rename: ^2.1.1
-  requests_inspector: ^2.3.5
-  retrofit: ^4.0.1
-  retrofit_generator: ^6.0.0
-  rxdart: ^0.27.7
-  share_plus: ^6.3.1
-  shared_preferences: ^2.0.15
-  shimmer: ^2.0.0
-  url_launcher: ^6.1.7
+  http:
+  json_annotation:
+  json_serializable:
+  pin_code_fields:
+  rename:
+  requests_inspector:
+  retrofit:
+  retrofit_generator:
+  rxdart:
+  share_plus:
+  shared_preferences:
+  shimmer:
+  url_launcher:
 
 dev_dependencies:
-  flutter_lints: ^2.0.0
+  flutter_lints:
   flutter_test:
     sdk: flutter
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/app_logo.png"    
+  image_path: "assets/app_logo.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

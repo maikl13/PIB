@@ -1,0 +1,7 @@
+    <resources>
+        <string name="app_name">PIB</string>
+        <string name="facebook_app_id">733704814905092</string>
+        <string name="fb_login_protocol_scheme">fb16a39485fd130fb624e0d033a7afeb60</string>
+        <string name="facebook_client_token">85eacf160142197d7b692880feb026eb</string>
+    </resources>
+    

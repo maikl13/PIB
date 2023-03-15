@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:pip/core/resources/route_manager.dart';
 import 'assets_manager.dart';
 import 'strings_manager.dart';
 import 'style_manager.dart';
@@ -246,7 +247,7 @@ void showErrorDialog(BuildContext context, String message) {
           ));
 }
 
-void showSuccessDialog(BuildContext context, {void Function()? onOk}) {
+void showSuccessDialog(BuildContext context) {
   AlertDialog alertDialog = AlertDialog(
     backgroundColor: ColorManager.transparent,
     contentPadding: EdgeInsets.zero,
@@ -273,7 +274,10 @@ void showSuccessDialog(BuildContext context, {void Function()? onOk}) {
                   padding: EdgeInsets.only(right: 65.h, left: 65.h),
                   child: DefaultButton(
                     text: AppStrings.agree,
-                    onTap: onOk,
+                    onTap: () {
+                                   Navigator.pushNamedAndRemoveUntil(
+                    context, Routes.mainHomeViewRoute, (route) => false);
+                    },
                   ),
                 ),
               ],

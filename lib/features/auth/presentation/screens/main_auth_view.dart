@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
+import '../../../../core/resources/commons.dart';
+import '../../../../core/resources/constants.dart';
 import '../../../../core/resources/route_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
+import '../../../../core/web_services/network_exceptions.dart';
 import '../../../../core/widgets/dark_default_button.dart';
 import '../../../../core/widgets/default_button.dart';
 import '../../../../core/widgets/skip_text.dart';
+import '../../business_logic/cubit/auth_cubit.dart';
+import '../../business_logic/cubit/auth_state.dart';
 import '../widgets/main_auth_headline.dart';
 import '../widgets/social_button.dart';
 
@@ -40,9 +46,77 @@ class MainAuthView extends StatelessWidget {
           SizedBox(height: 76.h),
           _buildOrLoginWith(),
           SizedBox(height: 29.h),
-          _buildSocialButtons(),
+          _buildSocialButtons(context),
+          _buildBloc(),
         ],
       ),
+    );
+  }
+
+  _buildBloc() {
+    return BlocConsumer<AuthCubit, AuthResultState>(
+      listener: (context, state) {
+        state.whenOrNull(
+          firebaseFacebookLoginSuccess: (uid) {
+            BlocProvider.of<AuthCubit>(context).login(uid: uid);
+          },
+          firebaseFacebookLoginError: (networkExceptions) {
+            Commons.showToast(
+              color: ColorManager.error,
+              message: NetworkExceptions.getErrorMessage(networkExceptions),
+            );
+          },
+          firebaseGoogleLoginSuccess: (uid) {
+            BlocProvider.of<AuthCubit>(context).login(uid: uid);
+          },
+          firebaseGoogleLoginError: (networkExceptions) {
+            Commons.showToast(
+              color: ColorManager.error,
+              message: NetworkExceptions.getErrorMessage(networkExceptions),
+            );
+          },
+          loginLoading: () {
+            Commons.showLoadingDialog(context);
+          },
+          loginSuccess: (uid) {
+            Navigator.pop(context);
+            showSuccessDialog(context);
+
+            // _goToHomeSuccessfully(context);
+          },
+          loginError: (networkExceptions) {
+            Navigator.pop(context);
+            if (NetworkExceptions.getErrorMessage(networkExceptions) ==
+                "not_found") {
+              BlocProvider.of<AuthCubit>(context).register(
+                uid: token!,
+                name: userName!,
+              );
+            } else {
+              Commons.showToast(
+                color: ColorManager.error,
+                message: NetworkExceptions.getErrorMessage(networkExceptions),
+              );
+            }
+          },
+          registerLoading: () {
+            Commons.showLoadingDialog(context);
+          },
+          registerSuccess: (uid) {
+            showSuccessDialog(context);
+          },
+          registerError: (networkExceptions) {
+            Navigator.pop(context);
+            Commons.showToast(
+              color: ColorManager.error,
+              message: NetworkExceptions.getErrorMessage(networkExceptions),
+            );
+          },
+        );
+      },
+      builder: (context, state) {
+        return Container();
+      },
     );
   }
 
@@ -68,17 +142,23 @@ class MainAuthView extends StatelessWidget {
     );
   }
 
-  _buildSocialButtons() {
+  _buildSocialButtons(BuildContext context) {
     return Row(
       children: [
-        const SocialButton(
+        SocialButton(
           icon: ImageAssets.facebook,
           title: AppStrings.facebook,
+          onTap: () {
+            BlocProvider.of<AuthCubit>(context).signInWithFacebook(context);
+          },
         ),
         SizedBox(width: 8.w),
-        const SocialButton(
+        SocialButton(
           icon: ImageAssets.google,
           title: AppStrings.login,
+          onTap: () {
+            BlocProvider.of<AuthCubit>(context).signInWithGoogle(context);
+          },
         ),
       ],
     );
