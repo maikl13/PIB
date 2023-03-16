@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:dio_smart_retry/dio_smart_retry.dart';
 import 'package:get_it/get_it.dart';
+import 'package:pip/features/notification/business_logic/cubit/notification_cubit.dart';
+import 'package:pip/features/notification/data/repository/notification_repository.dart';
 
 import '../../features/auth/business_logic/cubit/auth_cubit.dart';
 import '../../features/auth/data/repository/auth_repository.dart';
@@ -13,6 +15,10 @@ final getIt = GetIt.instance;
 void initGetIt() {
   getIt.registerLazySingleton<AuthRepoistry>(() => AuthRepoistry(getIt()));
   getIt.registerLazySingleton<AuthCubit>(() => AuthCubit(getIt()));
+  getIt.registerLazySingleton<NotificationRepository>(
+      () => NotificationRepository(getIt()));
+  getIt.registerLazySingleton<NotificationCubit>(
+      () => NotificationCubit(getIt()));
   getIt.registerLazySingleton<HomeCubit>(() => HomeCubit());
   // getIt.registerLazySingleton<HomeRepository>(() => HomeRepository(getIt()));
   // getIt.registerLazySingleton<HomeCubit>(() => HomeCubit(getIt()));

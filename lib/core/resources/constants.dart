@@ -16,7 +16,7 @@ class AppConstants {
 
 String defaultUId = '0';
 String? userName ;
-String? token ;
+String? token='123';
 String? userEmail ;
 
 String? userPhone ;

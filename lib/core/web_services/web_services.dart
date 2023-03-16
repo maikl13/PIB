@@ -3,6 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../../features/auth/data/models/auth_model.dart';
+import '../../features/notification/data/models/notification_model.dart';
 
 
 part 'web_services.g.dart';
@@ -11,9 +12,9 @@ part 'web_services.g.dart';
 abstract class WebServices {
   factory WebServices(Dio dio, {String baseUrl}) = _WebServices;
 
-  // @GET("user/notifications")
-  // Future<List<NotifiticationModel>> getAllNotifications(
-  //     @Header('Authorization') String token);
+  @GET("user/notifications")
+  Future<List<NotifiticationModel>> getAllNotifications(
+      @Header('Authorization') String token);
 
   // @GET("sliders")
   // Future<List<SliderModel>> getAllSliders(

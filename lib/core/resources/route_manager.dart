@@ -19,6 +19,7 @@ import 'package:pip/features/menu/presentation/screens/skills_view.dart';
 import 'package:pip/features/menu/presentation/screens/wallet_view.dart';
 import 'package:pip/features/menu/presentation/screens/who_we_are_view.dart';
 import 'package:pip/features/menu/presentation/screens/work_with_us_view.dart';
+import 'package:pip/features/notification/business_logic/cubit/notification_cubit.dart';
 import '../../features/auth/presentation/screens/forgot_password_view.dart';
 import '../../features/auth/presentation/screens/login_view.dart';
 import '../../features/auth/presentation/screens/main_auth_view.dart';
@@ -97,10 +98,12 @@ class RouteGenerator {
   static late AuthCubit authCubit;
 
   static late HomeCubit homeCubit;
+  static late NotificationCubit notificationCubit;
 
   RouteGenerator() {
     homeCubit = getIt<HomeCubit>();
     authCubit = getIt<AuthCubit>();
+    notificationCubit = getIt<NotificationCubit>();
   }
   static List screens = <Widget>[
     const HomeView(),
@@ -156,7 +159,10 @@ class RouteGenerator {
 
       case Routes.notificationViewRoute:
         return MaterialPageRoute(
-          builder: (_) => const NotificationView(),
+          builder: (_) => BlocProvider.value(
+            value: notificationCubit,
+            child: const NotificationView(),
+          ),
         );
 
       case Routes.jobDetailsViewRoute:
