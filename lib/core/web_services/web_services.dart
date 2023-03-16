@@ -1,8 +1,12 @@
 import 'package:dio/dio.dart';
+import 'package:pip/features/home/data/models/ad_model.dart';
 
 import 'package:retrofit/retrofit.dart';
 
 import '../../features/auth/data/models/auth_model.dart';
+import '../../features/home/data/models/slider_model.dart';
+import '../../features/menu/data/models/add_balance.dart';
+import '../../features/menu/data/models/wallet_info.dart';
 import '../../features/notification/data/models/notification_model.dart';
 
 
@@ -16,9 +20,9 @@ abstract class WebServices {
   Future<List<NotifiticationModel>> getAllNotifications(
       @Header('Authorization') String token);
 
-  // @GET("sliders")
-  // Future<List<SliderModel>> getAllSliders(
-  //     @Header('Authorization') String token);
+  @GET("sliders")
+  Future<List<SliderModel>> getAllSliders(
+      @Header('Authorization') String token);
 
   @POST("user/authentication")
   Future<AuthModel> login(
@@ -40,12 +44,17 @@ abstract class WebServices {
   //   @GET("categories")
   // Future<List<CategoryModel>> getAllCategories(@Header('Authorization') String token);
 
-  //     @GET("categories/2/products")
-  // Future<List<ProductsModel>> getAllProducts(@Header('Authorization') String token);
+      @GET("ads/search")
+  Future<List<Ads>> getSearchResults(
+    @Header('Authorization') String token,
+  @Query("keyword") String keyword);
 
 
-  //       @GET("user/wallet")
-  // Future<WalletInfo> getWalletInfo(@Header('Authorization') String token);
+        @GET("user/wallet")
+  Future<WalletInfo> getWalletInfo(@Header('Authorization') String token);
+
+   @GET("ads")
+  Future<List<AdModel>> getAllAds(@Header('Authorization') String token);
 
   //         @GET("deals/top?geography=international")
   // Future<List<DealModel> >getInternationalTopDeals(@Header('Authorization') String token);
@@ -53,11 +62,11 @@ abstract class WebServices {
   //         @GET("deals/top?geography=locale")
   // Future<List<DealModel> >getLocalTopDeals(@Header('Authorization') String token);
 
-  // @POST("user/wallet/balance/add")
-  // Future<AddBalance> addBalanceToWallet(
-  //   @Header('Authorization') String token,
-  //   @Field("amount") amount,
-  // );
+  @POST("user/wallet/balance/add")
+  Future<AddBalance> addBalanceToWallet(
+    @Header('Authorization') String token,
+    @Field("amount") amount,
+  );
 //getAllArticles
 //    @GET("articles")
 //   Future<Article> getAllArticles(@Header('Authorization') String token);

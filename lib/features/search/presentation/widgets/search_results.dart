@@ -1,22 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/features/home/data/models/ad_model.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/widgets/custom_title.dart';
 import 'search_result_item.dart';
 
 class SearchResultsView extends StatelessWidget {
-  const SearchResultsView({super.key});
+  const SearchResultsView({super.key, required this.ads});
+
+  final List<Ads> ads;
   _buildResults() {
     return ListView.separated(
         physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         itemBuilder: (context, index) {
-          return const SearchResultItem();
+          return SearchResultItem(
+            companyName: ads[index].title,
+            image: ads[index].image,
+            jobTitle: ads[index].skillName,
+            //TODO modify headline type
+            typeHeadline: AppStrings.fullTimeJobs.replaceAll(':', ''),
+          );
         },
         separatorBuilder: (context, index) {
           return SizedBox(height: 12.h);
         },
-        itemCount: 10);
+        itemCount: ads.length);
   }
 
   @override

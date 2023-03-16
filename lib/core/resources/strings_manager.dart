@@ -11,7 +11,7 @@ class AppStrings {
 
   static const String main = 'الرئيسية ';
   static const String messages = 'الرسائل ';
-static const String confirmPhoneNumber = 'تأكيد رقم الهاتف';
+  static const String confirmPhoneNumber = 'تأكيد رقم الهاتف';
   static const String confirmPhoneHint =
       'يرجى ادخال الرقم المرسل على الجوال لتسجيل الدخول';
   static const String resendCode = 'إعادة إرسال الكود';
@@ -176,11 +176,9 @@ static const String confirmPhoneNumber = 'تأكيد رقم الهاتف';
 
   static const String succsesAddOnJob = 'تمت اضافة عرضك على الوظيفة بنجاح';
 
-
   static const String thanksForContacting = 'شكرا لتواصلك معنا';
   static const String willTry = 'سنحاول التواصل معك باسرع وقت ممكن';
+  static const String showJob = 'عرض الوظيفة';
   // static const String theMenue = 'القائمة';
   // static const String theMenue = 'القائمة';
-  // static const String theMenue = 'القائمة';
-
 }

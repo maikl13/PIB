@@ -2,23 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/route_manager.dart';
-import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/resources/style_manager.dart';
 import 'image_with_stars.dart';
 
 class JobItem extends StatelessWidget {
-  const JobItem({super.key});
+  const JobItem({super.key, this.image, this.companyName, this.skillName});
+  final String? image;
+  final String? companyName;
+  final String? skillName ;
 
   _buildCompanyName() {
     return Text(
-      AppStrings.companyName,
+     companyName ??'',
       style: getBoldStyle(fontSize: 12.sp, color: ColorManager.white),
     );
   }
 
   _buildJobtitle() {
     return Text(
-      AppStrings.jobTitle,
+      skillName??'',
       style: getBoldStyle(fontSize: 12.sp, color: ColorManager.grey),
     );
   }
@@ -31,7 +33,7 @@ class JobItem extends StatelessWidget {
       },
       child: Column(
         children: [
-          const ImageWithRating(),
+           ImageWithRating(image: image),
           SizedBox(height: 10.h),
           _buildCompanyName(),
           SizedBox(height: 6.h),

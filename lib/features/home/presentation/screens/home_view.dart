@@ -1,16 +1,41 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/features/home/business_logic/cubit/home_cubit.dart';
+import 'package:pip/features/home/business_logic/cubit/home_state.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/route_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/resources/style_manager.dart';
+import '../../../../core/widgets/loading_indicator.dart';
+import '../../data/models/ad_model.dart';
 import '../widgets/banners.dart';
 import '../widgets/jobs_part.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
-  _buildHome(BuildContext context) {
+  _buildBloc() {
+    return BlocConsumer<HomeCubit, HomeState>(
+      listener: (context, state) {},
+      buildWhen: (previous, next) => next is HomeAdsSuccess,
+      builder: (context, state) {
+        return state.maybeWhen(
+          homeAdsSuccess: (ads) {
+            return _buildHome(context, ads);
+          },
+          homeAdsLoading: () {
+            return const LoadingIndicator();
+          },
+          orElse: () {
+            return Container();
+          },
+        );
+      },
+    );
+  }
+
+  _buildHome(BuildContext context, List<AdModel> ads) {
     return ListView(
       padding: EdgeInsets.only(top: 25.h, left: 20.w, right: 20.w),
       shrinkWrap: true,
@@ -19,15 +44,15 @@ class HomeView extends StatelessWidget {
         SizedBox(height: 30.h),
         _buildBanners(),
         SizedBox(height: 41.h),
-        _buildJobsRequestByCompanies(context),
+        _buildJobsRequestByCompanies(context, ads[0]),
         SizedBox(height: 30.h),
         Divider(height: 1.h, color: ColorManager.grey),
         SizedBox(height: 35.h),
-        _buildPartTimeJops(context),
+        _buildPartTimeJops(context, ads[1]),
         SizedBox(height: 30.h),
         Divider(height: 1.h, color: ColorManager.grey),
         SizedBox(height: 35.h),
-        _buildFullTimeJops(context),
+        _buildFullTimeJops(context, ads[2]),
       ],
     );
   }
@@ -73,38 +98,52 @@ class HomeView extends StatelessWidget {
     return const Banners();
   }
 
-  _buildJobsRequestByCompanies(BuildContext context) {
+  _buildJobsRequestByCompanies(BuildContext context, AdModel ad) {
     return JobsPart(
-      headline: AppStrings.companiesRequireJobs,
+      ads: ad.ads!,
+      headline: ad.name ?? '',
       onShowAllTap: () {
         // print('adasd');
-        Navigator.pushNamed(context, Routes.companiesNeedJobsViewRoute);
+        Navigator.pushNamed(context, Routes.companiesNeedJobsViewRoute,
+            arguments: {
+              'ads': ad.ads,
+              'headline': ad.name,
+            });
       },
     );
   }
 
-  _buildPartTimeJops(BuildContext context) {
+  _buildPartTimeJops(BuildContext context, AdModel ad) {
     return JobsPart(
-      headline: AppStrings.partTimeJobs,
+      ads: ad.ads!,
+      headline: ad.name ?? '',
       onShowAllTap: () {
         // print('adasd');
-        Navigator.pushNamed(context, Routes.partTimeViewRoute);
+        Navigator.pushNamed(context, Routes.partTimeViewRoute, arguments: {
+          'ads': ad.ads,
+          'headline': ad.name,
+        });
       },
     );
   }
 
-  _buildFullTimeJops(BuildContext context) {
+  _buildFullTimeJops(BuildContext context, AdModel ad) {
     return JobsPart(
-      headline: AppStrings.fullTimeJobs,
+      ads: ad.ads!,
+      headline: ad.name ?? '',
       onShowAllTap: () {
         // print('adasd');
-        Navigator.pushNamed(context, Routes.fullTimeViewRoute);
+        Navigator.pushNamed(context, Routes.fullTimeViewRoute, arguments: {
+          'ads': ad.ads,
+          'headline': ad.name,
+        });
       },
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return _buildHome(context);
+    BlocProvider.of<HomeCubit>(context).getAllAds();
+    return _buildBloc();
   }
 }

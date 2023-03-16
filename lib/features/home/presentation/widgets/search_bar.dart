@@ -6,13 +6,18 @@ import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 
 class SearchBar extends StatelessWidget {
-  const SearchBar({super.key, this.fillColor});
+  const SearchBar({super.key, this.fillColor, this.onChanged, this.controller});
 
   final Color? fillColor;
+  final void Function(String)? onChanged;
+  final TextEditingController? controller;
+
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
+      onChanged: onChanged,
         style: getBoldStyle(fontSize: 14.sp, color: ColorManager.darkSeconadry),
         cursorColor: ColorManager.darkSeconadry,
         decoration: InputDecoration(

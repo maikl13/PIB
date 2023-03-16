@@ -10,8 +10,17 @@ import '../../../home/presentation/widgets/show_all_text.dart';
 import '../../../notification/presentation/widgets/clock_date.dart';
 
 class SearchResultItem extends StatelessWidget {
-  const SearchResultItem({super.key});
+  const SearchResultItem(
+      {super.key,
+      this.image,
+      this.companyName,
+      this.jobTitle,
+      this.typeHeadline});
 
+  final String? image;
+  final String? companyName;
+  final String? jobTitle;
+  final String? typeHeadline;
   _buildBackground() {
     return Image.asset(
       ImageAssets.resultBackground,
@@ -25,21 +34,24 @@ class SearchResultItem extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const ImageWithRating(),
-          SizedBox(width: 20.w),
+          ImageWithRating(
+            image: image,
+          ),
+          SizedBox(width: 10.w),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _buildCompanyName(),
-              SizedBox(height: 18.w),
+              SizedBox(height: 15.w),
               Row(
+                // mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   _buildJobtitleIcon(),
-                  SizedBox(width: 10.w),
+                  SizedBox(width: 6.w),
                   _buildJobtitle(),
-                  SizedBox(width: 13.w),
-                  _buildJobTypeIcon(),
                   SizedBox(width: 10.w),
+                  _buildJobTypeIcon(),
+                  SizedBox(width: 6.w),
                   _buildJobType(),
                 ],
               ),
@@ -61,7 +73,9 @@ class SearchResultItem extends StatelessWidget {
 
   _buildJobtitle() {
     return Text(
-      AppStrings.jobTitle,
+      maxLines: 1,
+      overflow: TextOverflow.clip,
+      jobTitle ?? '',
       style: getBoldStyle(fontSize: 12.sp, color: ColorManager.grey),
     );
   }
@@ -76,14 +90,16 @@ class SearchResultItem extends StatelessWidget {
 
   _buildJobType() {
     return Text(
-      AppStrings.partTimeJobs,
+      maxLines: 1,
+      overflow: TextOverflow.clip,
+      typeHeadline ?? '',
       style: getBoldStyle(fontSize: 12.sp, color: ColorManager.grey),
     );
   }
 
   _buildCompanyName() {
     return Text(
-      AppStrings.companyName,
+      companyName ?? '',
       style: getBoldStyle(fontSize: 15.sp, color: ColorManager.white),
     );
   }
@@ -115,7 +131,10 @@ class SearchResultItem extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(top: 90.w, left: 20.w),
               child: const Align(
-                  alignment: Alignment.centerLeft, child: ShowAllText()),
+                  alignment: Alignment.centerLeft,
+                  child: ShowAllText(
+                    text: AppStrings.showJob,
+                  )),
             ),
           ],
         ),

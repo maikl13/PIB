@@ -5,21 +5,29 @@ import 'package:pip/core/resources/strings_manager.dart';
 import 'package:pip/core/widgets/custom_appbar.dart';
 
 import '../../../search/presentation/widgets/search_result_item.dart';
+import '../../data/models/ad_model.dart';
 
 class PartTimeJobs extends StatelessWidget {
-  const PartTimeJobs({super.key});
+  const PartTimeJobs({super.key, required this.ads, this.typeHeadline});
+    final List<Ads> ads;
+  final String ?typeHeadline ;
   _buildBody() {
     return ListView.separated(
         padding: EdgeInsets.only(top: 40.h, left: 20.w, right: 20.w),
         // physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         itemBuilder: (context, index) {
-          return const SearchResultItem();
+          return  SearchResultItem(
+              companyName: ads[index].title,
+            image: ads[index].image,
+            jobTitle: ads[index].skillName,
+            typeHeadline:typeHeadline ,
+          );
         },
         separatorBuilder: (context, index) {
           return SizedBox(height: 12.h);
         },
-        itemCount: 10);
+        itemCount: ads.length);
   }
 
   @override

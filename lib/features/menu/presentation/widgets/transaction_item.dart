@@ -48,7 +48,10 @@ class TransactionItem extends StatelessWidget {
           style: getBoldStyle(color: ColorManager.white, fontSize: 18.sp),
         ),
         SizedBox(height: 8.h),
-        ClockDate(color: ColorManager.grey)
+        ClockDate(
+          color: ColorManager.grey,
+          date: date,
+        )
       ],
     );
   }

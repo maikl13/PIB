@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../data/models/ad_model.dart';
 import 'show_all_text.dart';
 
 import '../../../../core/widgets/custom_title.dart';
@@ -7,20 +8,25 @@ import '../../../../core/widgets/custom_title.dart';
 import 'job_item.dart';
 
 class JobsPart extends StatelessWidget {
-  const JobsPart({super.key, required this.headline, this.onShowAllTap});
+  const JobsPart(
+      {super.key,
+      required this.headline,
+      this.onShowAllTap,
+      required this.ads});
   final String headline;
-  final  void Function()? onShowAllTap;
-  
+  final void Function()? onShowAllTap;
+  final List<Ads> ads;
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             CustomTitle(title: headline),
-             ShowAllText(
+            ShowAllText(
               onTap: onShowAllTap,
             ),
           ],
@@ -37,9 +43,13 @@ class JobsPart extends StatelessWidget {
                   width: 11.w,
                 );
               },
-              itemCount: 10,
+              itemCount: ads.length,
               itemBuilder: (context, index) {
-                return const JobItem();
+                return JobItem(
+                  image: ads[index].image,
+                  companyName: ads[index].title,
+                  skillName: ads[index].skillName,
+                );
               }),
         ),
       ],

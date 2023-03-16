@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/widgets/custom_network_image.dart';
 import 'package:pip/features/home/presentation/widgets/job_rate_container.dart';
 
-import '../../../../core/resources/assets_manager.dart';
-
 class ImageWithRating extends StatelessWidget {
-  const ImageWithRating({super.key, this.height});
-   final double? height;
+  const ImageWithRating({super.key, this.height, this.image});
+  final double? height;
+  final String? image;
   _buildImage() {
     return Stack(
       // fit: StackFit.expand,
@@ -17,9 +17,12 @@ class ImageWithRating extends StatelessWidget {
           // color: Colors.amber,
         ),
         _buildJobImage(),
-         Positioned.fill(
-          child:
-              Align(alignment: Alignment.bottomLeft, child: JobRateContainer(height: height,)),
+        Positioned.fill(
+          child: Align(
+              alignment: Alignment.bottomLeft,
+              child: JobRateContainer(
+                height: height,
+              )),
         ),
       ],
     );
@@ -31,9 +34,7 @@ class ImageWithRating extends StatelessWidget {
       height: 70.w,
       child: CircleAvatar(
         radius: 50.r,
-        backgroundImage: const AssetImage(
-          ImageAssets.banner,
-        ),
+        child: ClipOval(child: CustomNetworkCachedImage(url: image!)),
       ),
     );
     // return Container(

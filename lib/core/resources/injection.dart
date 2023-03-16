@@ -3,10 +3,15 @@ import 'package:dio_smart_retry/dio_smart_retry.dart';
 import 'package:get_it/get_it.dart';
 import 'package:pip/features/notification/business_logic/cubit/notification_cubit.dart';
 import 'package:pip/features/notification/data/repository/notification_repository.dart';
+import 'package:pip/features/search/business_logic/bloc/search_bloc.dart';
+import 'package:pip/features/search/data/repository/repository.dart';
 
 import '../../features/auth/business_logic/cubit/auth_cubit.dart';
 import '../../features/auth/data/repository/auth_repository.dart';
 import '../../features/home/business_logic/cubit/home_cubit.dart';
+import '../../features/home/data/repository/home_repository.dart';
+import '../../features/menu/business_logic/menu_cubit.dart';
+import '../../features/menu/data/repository/menu_repository.dart';
 import '../web_services/web_services.dart';
 import 'constants.dart';
 
@@ -19,9 +24,15 @@ void initGetIt() {
       () => NotificationRepository(getIt()));
   getIt.registerLazySingleton<NotificationCubit>(
       () => NotificationCubit(getIt()));
-  getIt.registerLazySingleton<HomeCubit>(() => HomeCubit());
-  // getIt.registerLazySingleton<HomeRepository>(() => HomeRepository(getIt()));
-  // getIt.registerLazySingleton<HomeCubit>(() => HomeCubit(getIt()));
+  // getIt.registerLazySingleton<HomeCubit>(() => HomeCubit());
+  getIt.registerLazySingleton<HomeRepository>(() => HomeRepository(getIt()));
+  getIt.registerLazySingleton<HomeCubit>(() => HomeCubit(getIt()));
+
+      getIt.registerLazySingleton<MenuRepository>(() => MenuRepository(getIt()));
+  getIt.registerLazySingleton<MenuCubit>(() => MenuCubit(getIt()));
+
+        getIt.registerLazySingleton<SearchRepository>(() => SearchRepository(getIt()));
+  getIt.registerLazySingleton<SearchBloc>(() => SearchBloc(getIt()));
   getIt.registerLazySingleton<WebServices>(
       () => WebServices(createAndSetupDio()));
 }

@@ -4,8 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/resources/style_manager.dart';
 
 class ClockDate extends StatelessWidget {
-  const ClockDate({super.key, required this.color});
+  const ClockDate({super.key, required this.color, this.date});
   final Color color;
+  final String? date;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class ClockDate extends StatelessWidget {
         ),
         SizedBox(width: 10.w),
         Text(
-          "23-2-2021",
+         date?? "23-2-2021",
           style: getRegularStyle(color: color, fontSize: 11.sp),
         )
       ],

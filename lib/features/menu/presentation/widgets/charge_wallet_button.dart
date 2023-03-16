@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/resources/style_manager.dart';
+import '../../business_logic/menu_cubit.dart';
 
 class ChargeWalletButton extends StatefulWidget {
   const ChargeWalletButton({super.key});
@@ -13,12 +15,19 @@ class ChargeWalletButton extends StatefulWidget {
 }
 
 class _ChargeWalletButtonState extends State<ChargeWalletButton> {
-  // ignore: unused_field
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   _buildChargeButton(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        BlocProvider.of<MenuCubit>(context).showWalletAddAmountDialog(
+          context,
+          _formKey,
+          onTap: () {
+            BlocProvider.of<MenuCubit>(context).addAmountToWallet();
+          },
+        );
+      },
       child: Container(
         width: 138.w,
         height: 37.h,

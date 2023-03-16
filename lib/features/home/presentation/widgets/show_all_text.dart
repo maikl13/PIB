@@ -6,13 +6,14 @@ import '../../../../core/resources/style_manager.dart';
 
 class ShowAllText extends StatelessWidget {
   const ShowAllText({
-    super.key, this.onTap,
+    super.key, this.onTap, this.text,
   });
   final void Function()? onTap;
+  final String? text;
 
   _buildTitle() {
     return Text(
-      AppStrings.showAll,
+   text ??   AppStrings.showAll,
       style: getBoldStyle(fontSize: 12.sp, color: ColorManager.darkSeconadry),
     );
   }

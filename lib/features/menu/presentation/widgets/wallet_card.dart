@@ -15,7 +15,7 @@ class WalletCard extends StatelessWidget {
 
   _buildAmount() {
     return Text(
-      "90000 \$",
+      "$totalBalance \$",
       style: getBoldStyle(fontSize: 40.sp, color: ColorManager.white),
     );
   }
@@ -50,7 +50,10 @@ class WalletCard extends StatelessWidget {
               // mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                ClockDate(color: ColorManager.grey),
+                ClockDate(
+                  color: ColorManager.grey,
+                  date: date,
+                ),
                 const ChargeWalletButton(),
                 // SizedBox(width: 68.w, child: ClockDate(color: ColorManager.grey)),
               ],
