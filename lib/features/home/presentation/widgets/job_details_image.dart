@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/widgets/custom_network_image.dart';
 
 import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
 
 class JobDetailsImage extends StatelessWidget {
-  const JobDetailsImage({super.key});
+  const JobDetailsImage({super.key, this.imageUrl});
+  final String? imageUrl;
 
   _buildImage() {
     return Stack(
@@ -28,9 +30,7 @@ class JobDetailsImage extends StatelessWidget {
       height: 150.w,
       child: CircleAvatar(
         radius: 80.r,
-        backgroundImage: const AssetImage(
-          ImageAssets.banner,
-        ),
+        child: ClipOval(child: CustomNetworkCachedImage(url: imageUrl!)),
       ),
     );
     // return SizedBox(

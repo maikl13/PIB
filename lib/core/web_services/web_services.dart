@@ -11,6 +11,7 @@ import '../../features/menu/data/models/add_balance.dart';
 import '../../features/menu/data/models/wallet_info.dart';
 import '../../features/notification/data/models/notification_model.dart';
 import '../../features/requests/data/models/my_request_model.dart';
+import '../../features/requests/data/models/offer_model.dart';
 
 
 part 'web_services.g.dart';
@@ -72,6 +73,10 @@ abstract class WebServices {
 
        @GET("requests/hirings")
   Future<List<MyRequestModel>>getAllAvailableJobs(@Header('Authorization') String token);
+
+
+          @GET("user/offers")
+  Future<List<OfferModel>>getAllOffers(@Header('Authorization') String token);
 
   //         @GET("deals/top?geography=locale")
   // Future<List<DealModel> >getLocalTopDeals(@Header('Authorization') String token);

@@ -24,6 +24,9 @@ mixin _$RequestState<T> {
         myRequestsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         myRequestsError,
+    required TResult Function() offersLoading,
+    required TResult Function(List<OfferModel> offers) offersSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) offersError,
     required TResult Function() myAvailableJobsLoading,
     required TResult Function(List<MyRequestModel> myRequests)
         myAvailableJobsSuccess,
@@ -37,6 +40,9 @@ mixin _$RequestState<T> {
     TResult? Function()? myRequestsLoading,
     TResult? Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult? Function()? offersLoading,
+    TResult? Function(List<OfferModel> offers)? offersSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? offersError,
     TResult? Function()? myAvailableJobsLoading,
     TResult? Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
@@ -49,6 +55,9 @@ mixin _$RequestState<T> {
     TResult Function()? myRequestsLoading,
     TResult Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult Function()? offersLoading,
+    TResult Function(List<OfferModel> offers)? offersSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? offersError,
     TResult Function()? myAvailableJobsLoading,
     TResult Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? myAvailableJobsError,
@@ -61,6 +70,9 @@ mixin _$RequestState<T> {
     required TResult Function(MyRequestsLoading<T> value) myRequestsLoading,
     required TResult Function(MyRequestsSuccess<T> value) myRequestsSuccess,
     required TResult Function(MyRequestsError<T> value) myRequestsError,
+    required TResult Function(OffersLoading<T> value) offersLoading,
+    required TResult Function(OffersSuccess<T> value) offersSuccess,
+    required TResult Function(OffersError<T> value) offersError,
     required TResult Function(MyAvailableJobsLoading<T> value)
         myAvailableJobsLoading,
     required TResult Function(MyAvailableJobsSuccess<T> value)
@@ -75,6 +87,9 @@ mixin _$RequestState<T> {
     TResult? Function(MyRequestsLoading<T> value)? myRequestsLoading,
     TResult? Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
     TResult? Function(MyRequestsError<T> value)? myRequestsError,
+    TResult? Function(OffersLoading<T> value)? offersLoading,
+    TResult? Function(OffersSuccess<T> value)? offersSuccess,
+    TResult? Function(OffersError<T> value)? offersError,
     TResult? Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
     TResult? Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
     TResult? Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
@@ -86,6 +101,9 @@ mixin _$RequestState<T> {
     TResult Function(MyRequestsLoading<T> value)? myRequestsLoading,
     TResult Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
     TResult Function(MyRequestsError<T> value)? myRequestsError,
+    TResult Function(OffersLoading<T> value)? offersLoading,
+    TResult Function(OffersSuccess<T> value)? offersSuccess,
+    TResult Function(OffersError<T> value)? offersError,
     TResult Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
     TResult Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
     TResult Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
@@ -154,6 +172,9 @@ class _$Idle<T> implements Idle<T> {
         myRequestsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         myRequestsError,
+    required TResult Function() offersLoading,
+    required TResult Function(List<OfferModel> offers) offersSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) offersError,
     required TResult Function() myAvailableJobsLoading,
     required TResult Function(List<MyRequestModel> myRequests)
         myAvailableJobsSuccess,
@@ -170,6 +191,9 @@ class _$Idle<T> implements Idle<T> {
     TResult? Function()? myRequestsLoading,
     TResult? Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult? Function()? offersLoading,
+    TResult? Function(List<OfferModel> offers)? offersSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? offersError,
     TResult? Function()? myAvailableJobsLoading,
     TResult? Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
@@ -185,6 +209,9 @@ class _$Idle<T> implements Idle<T> {
     TResult Function()? myRequestsLoading,
     TResult Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult Function()? offersLoading,
+    TResult Function(List<OfferModel> offers)? offersSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? offersError,
     TResult Function()? myAvailableJobsLoading,
     TResult Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? myAvailableJobsError,
@@ -203,6 +230,9 @@ class _$Idle<T> implements Idle<T> {
     required TResult Function(MyRequestsLoading<T> value) myRequestsLoading,
     required TResult Function(MyRequestsSuccess<T> value) myRequestsSuccess,
     required TResult Function(MyRequestsError<T> value) myRequestsError,
+    required TResult Function(OffersLoading<T> value) offersLoading,
+    required TResult Function(OffersSuccess<T> value) offersSuccess,
+    required TResult Function(OffersError<T> value) offersError,
     required TResult Function(MyAvailableJobsLoading<T> value)
         myAvailableJobsLoading,
     required TResult Function(MyAvailableJobsSuccess<T> value)
@@ -220,6 +250,9 @@ class _$Idle<T> implements Idle<T> {
     TResult? Function(MyRequestsLoading<T> value)? myRequestsLoading,
     TResult? Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
     TResult? Function(MyRequestsError<T> value)? myRequestsError,
+    TResult? Function(OffersLoading<T> value)? offersLoading,
+    TResult? Function(OffersSuccess<T> value)? offersSuccess,
+    TResult? Function(OffersError<T> value)? offersError,
     TResult? Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
     TResult? Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
     TResult? Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
@@ -234,6 +267,9 @@ class _$Idle<T> implements Idle<T> {
     TResult Function(MyRequestsLoading<T> value)? myRequestsLoading,
     TResult Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
     TResult Function(MyRequestsError<T> value)? myRequestsError,
+    TResult Function(OffersLoading<T> value)? offersLoading,
+    TResult Function(OffersSuccess<T> value)? offersSuccess,
+    TResult Function(OffersError<T> value)? offersError,
     TResult Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
     TResult Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
     TResult Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
@@ -294,6 +330,9 @@ class _$MyRequestsLoading<T> implements MyRequestsLoading<T> {
         myRequestsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         myRequestsError,
+    required TResult Function() offersLoading,
+    required TResult Function(List<OfferModel> offers) offersSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) offersError,
     required TResult Function() myAvailableJobsLoading,
     required TResult Function(List<MyRequestModel> myRequests)
         myAvailableJobsSuccess,
@@ -310,6 +349,9 @@ class _$MyRequestsLoading<T> implements MyRequestsLoading<T> {
     TResult? Function()? myRequestsLoading,
     TResult? Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult? Function()? offersLoading,
+    TResult? Function(List<OfferModel> offers)? offersSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? offersError,
     TResult? Function()? myAvailableJobsLoading,
     TResult? Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
@@ -325,6 +367,9 @@ class _$MyRequestsLoading<T> implements MyRequestsLoading<T> {
     TResult Function()? myRequestsLoading,
     TResult Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult Function()? offersLoading,
+    TResult Function(List<OfferModel> offers)? offersSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? offersError,
     TResult Function()? myAvailableJobsLoading,
     TResult Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? myAvailableJobsError,
@@ -343,6 +388,9 @@ class _$MyRequestsLoading<T> implements MyRequestsLoading<T> {
     required TResult Function(MyRequestsLoading<T> value) myRequestsLoading,
     required TResult Function(MyRequestsSuccess<T> value) myRequestsSuccess,
     required TResult Function(MyRequestsError<T> value) myRequestsError,
+    required TResult Function(OffersLoading<T> value) offersLoading,
+    required TResult Function(OffersSuccess<T> value) offersSuccess,
+    required TResult Function(OffersError<T> value) offersError,
     required TResult Function(MyAvailableJobsLoading<T> value)
         myAvailableJobsLoading,
     required TResult Function(MyAvailableJobsSuccess<T> value)
@@ -360,6 +408,9 @@ class _$MyRequestsLoading<T> implements MyRequestsLoading<T> {
     TResult? Function(MyRequestsLoading<T> value)? myRequestsLoading,
     TResult? Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
     TResult? Function(MyRequestsError<T> value)? myRequestsError,
+    TResult? Function(OffersLoading<T> value)? offersLoading,
+    TResult? Function(OffersSuccess<T> value)? offersSuccess,
+    TResult? Function(OffersError<T> value)? offersError,
     TResult? Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
     TResult? Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
     TResult? Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
@@ -374,6 +425,9 @@ class _$MyRequestsLoading<T> implements MyRequestsLoading<T> {
     TResult Function(MyRequestsLoading<T> value)? myRequestsLoading,
     TResult Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
     TResult Function(MyRequestsError<T> value)? myRequestsError,
+    TResult Function(OffersLoading<T> value)? offersLoading,
+    TResult Function(OffersSuccess<T> value)? offersSuccess,
+    TResult Function(OffersError<T> value)? offersError,
     TResult Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
     TResult Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
     TResult Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
@@ -469,6 +523,9 @@ class _$MyRequestsSuccess<T> implements MyRequestsSuccess<T> {
         myRequestsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         myRequestsError,
+    required TResult Function() offersLoading,
+    required TResult Function(List<OfferModel> offers) offersSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) offersError,
     required TResult Function() myAvailableJobsLoading,
     required TResult Function(List<MyRequestModel> myRequests)
         myAvailableJobsSuccess,
@@ -485,6 +542,9 @@ class _$MyRequestsSuccess<T> implements MyRequestsSuccess<T> {
     TResult? Function()? myRequestsLoading,
     TResult? Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult? Function()? offersLoading,
+    TResult? Function(List<OfferModel> offers)? offersSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? offersError,
     TResult? Function()? myAvailableJobsLoading,
     TResult? Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
@@ -500,6 +560,9 @@ class _$MyRequestsSuccess<T> implements MyRequestsSuccess<T> {
     TResult Function()? myRequestsLoading,
     TResult Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult Function()? offersLoading,
+    TResult Function(List<OfferModel> offers)? offersSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? offersError,
     TResult Function()? myAvailableJobsLoading,
     TResult Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? myAvailableJobsError,
@@ -518,6 +581,9 @@ class _$MyRequestsSuccess<T> implements MyRequestsSuccess<T> {
     required TResult Function(MyRequestsLoading<T> value) myRequestsLoading,
     required TResult Function(MyRequestsSuccess<T> value) myRequestsSuccess,
     required TResult Function(MyRequestsError<T> value) myRequestsError,
+    required TResult Function(OffersLoading<T> value) offersLoading,
+    required TResult Function(OffersSuccess<T> value) offersSuccess,
+    required TResult Function(OffersError<T> value) offersError,
     required TResult Function(MyAvailableJobsLoading<T> value)
         myAvailableJobsLoading,
     required TResult Function(MyAvailableJobsSuccess<T> value)
@@ -535,6 +601,9 @@ class _$MyRequestsSuccess<T> implements MyRequestsSuccess<T> {
     TResult? Function(MyRequestsLoading<T> value)? myRequestsLoading,
     TResult? Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
     TResult? Function(MyRequestsError<T> value)? myRequestsError,
+    TResult? Function(OffersLoading<T> value)? offersLoading,
+    TResult? Function(OffersSuccess<T> value)? offersSuccess,
+    TResult? Function(OffersError<T> value)? offersError,
     TResult? Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
     TResult? Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
     TResult? Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
@@ -549,6 +618,9 @@ class _$MyRequestsSuccess<T> implements MyRequestsSuccess<T> {
     TResult Function(MyRequestsLoading<T> value)? myRequestsLoading,
     TResult Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
     TResult Function(MyRequestsError<T> value)? myRequestsError,
+    TResult Function(OffersLoading<T> value)? offersLoading,
+    TResult Function(OffersSuccess<T> value)? offersSuccess,
+    TResult Function(OffersError<T> value)? offersError,
     TResult Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
     TResult Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
     TResult Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
@@ -653,6 +725,9 @@ class _$MyRequestsError<T> implements MyRequestsError<T> {
         myRequestsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         myRequestsError,
+    required TResult Function() offersLoading,
+    required TResult Function(List<OfferModel> offers) offersSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) offersError,
     required TResult Function() myAvailableJobsLoading,
     required TResult Function(List<MyRequestModel> myRequests)
         myAvailableJobsSuccess,
@@ -669,6 +744,9 @@ class _$MyRequestsError<T> implements MyRequestsError<T> {
     TResult? Function()? myRequestsLoading,
     TResult? Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult? Function()? offersLoading,
+    TResult? Function(List<OfferModel> offers)? offersSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? offersError,
     TResult? Function()? myAvailableJobsLoading,
     TResult? Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
@@ -684,6 +762,9 @@ class _$MyRequestsError<T> implements MyRequestsError<T> {
     TResult Function()? myRequestsLoading,
     TResult Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult Function()? offersLoading,
+    TResult Function(List<OfferModel> offers)? offersSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? offersError,
     TResult Function()? myAvailableJobsLoading,
     TResult Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? myAvailableJobsError,
@@ -702,6 +783,9 @@ class _$MyRequestsError<T> implements MyRequestsError<T> {
     required TResult Function(MyRequestsLoading<T> value) myRequestsLoading,
     required TResult Function(MyRequestsSuccess<T> value) myRequestsSuccess,
     required TResult Function(MyRequestsError<T> value) myRequestsError,
+    required TResult Function(OffersLoading<T> value) offersLoading,
+    required TResult Function(OffersSuccess<T> value) offersSuccess,
+    required TResult Function(OffersError<T> value) offersError,
     required TResult Function(MyAvailableJobsLoading<T> value)
         myAvailableJobsLoading,
     required TResult Function(MyAvailableJobsSuccess<T> value)
@@ -719,6 +803,9 @@ class _$MyRequestsError<T> implements MyRequestsError<T> {
     TResult? Function(MyRequestsLoading<T> value)? myRequestsLoading,
     TResult? Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
     TResult? Function(MyRequestsError<T> value)? myRequestsError,
+    TResult? Function(OffersLoading<T> value)? offersLoading,
+    TResult? Function(OffersSuccess<T> value)? offersSuccess,
+    TResult? Function(OffersError<T> value)? offersError,
     TResult? Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
     TResult? Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
     TResult? Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
@@ -733,6 +820,9 @@ class _$MyRequestsError<T> implements MyRequestsError<T> {
     TResult Function(MyRequestsLoading<T> value)? myRequestsLoading,
     TResult Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
     TResult Function(MyRequestsError<T> value)? myRequestsError,
+    TResult Function(OffersLoading<T> value)? offersLoading,
+    TResult Function(OffersSuccess<T> value)? offersSuccess,
+    TResult Function(OffersError<T> value)? offersError,
     TResult Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
     TResult Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
     TResult Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
@@ -752,6 +842,561 @@ abstract class MyRequestsError<T> implements RequestState<T> {
   NetworkExceptions get networkExceptions;
   @JsonKey(ignore: true)
   _$$MyRequestsErrorCopyWith<T, _$MyRequestsError<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OffersLoadingCopyWith<T, $Res> {
+  factory _$$OffersLoadingCopyWith(
+          _$OffersLoading<T> value, $Res Function(_$OffersLoading<T>) then) =
+      __$$OffersLoadingCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$OffersLoadingCopyWithImpl<T, $Res>
+    extends _$RequestStateCopyWithImpl<T, $Res, _$OffersLoading<T>>
+    implements _$$OffersLoadingCopyWith<T, $Res> {
+  __$$OffersLoadingCopyWithImpl(
+      _$OffersLoading<T> _value, $Res Function(_$OffersLoading<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$OffersLoading<T> implements OffersLoading<T> {
+  const _$OffersLoading();
+
+  @override
+  String toString() {
+    return 'RequestState<$T>.offersLoading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$OffersLoading<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() myRequestsLoading,
+    required TResult Function(List<MyRequestModel> myRequests)
+        myRequestsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        myRequestsError,
+    required TResult Function() offersLoading,
+    required TResult Function(List<OfferModel> offers) offersSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) offersError,
+    required TResult Function() myAvailableJobsLoading,
+    required TResult Function(List<MyRequestModel> myRequests)
+        myAvailableJobsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        myAvailableJobsError,
+  }) {
+    return offersLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? myRequestsLoading,
+    TResult? Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult? Function()? offersLoading,
+    TResult? Function(List<OfferModel> offers)? offersSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? offersError,
+    TResult? Function()? myAvailableJobsLoading,
+    TResult? Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        myAvailableJobsError,
+  }) {
+    return offersLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? myRequestsLoading,
+    TResult Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult Function()? offersLoading,
+    TResult Function(List<OfferModel> offers)? offersSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? offersError,
+    TResult Function()? myAvailableJobsLoading,
+    TResult Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? myAvailableJobsError,
+    required TResult orElse(),
+  }) {
+    if (offersLoading != null) {
+      return offersLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(MyRequestsLoading<T> value) myRequestsLoading,
+    required TResult Function(MyRequestsSuccess<T> value) myRequestsSuccess,
+    required TResult Function(MyRequestsError<T> value) myRequestsError,
+    required TResult Function(OffersLoading<T> value) offersLoading,
+    required TResult Function(OffersSuccess<T> value) offersSuccess,
+    required TResult Function(OffersError<T> value) offersError,
+    required TResult Function(MyAvailableJobsLoading<T> value)
+        myAvailableJobsLoading,
+    required TResult Function(MyAvailableJobsSuccess<T> value)
+        myAvailableJobsSuccess,
+    required TResult Function(MyAvailableJobsError<T> value)
+        myAvailableJobsError,
+  }) {
+    return offersLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(MyRequestsLoading<T> value)? myRequestsLoading,
+    TResult? Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
+    TResult? Function(MyRequestsError<T> value)? myRequestsError,
+    TResult? Function(OffersLoading<T> value)? offersLoading,
+    TResult? Function(OffersSuccess<T> value)? offersSuccess,
+    TResult? Function(OffersError<T> value)? offersError,
+    TResult? Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
+    TResult? Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
+    TResult? Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
+  }) {
+    return offersLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(MyRequestsLoading<T> value)? myRequestsLoading,
+    TResult Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
+    TResult Function(MyRequestsError<T> value)? myRequestsError,
+    TResult Function(OffersLoading<T> value)? offersLoading,
+    TResult Function(OffersSuccess<T> value)? offersSuccess,
+    TResult Function(OffersError<T> value)? offersError,
+    TResult Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
+    TResult Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
+    TResult Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
+    required TResult orElse(),
+  }) {
+    if (offersLoading != null) {
+      return offersLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OffersLoading<T> implements RequestState<T> {
+  const factory OffersLoading() = _$OffersLoading<T>;
+}
+
+/// @nodoc
+abstract class _$$OffersSuccessCopyWith<T, $Res> {
+  factory _$$OffersSuccessCopyWith(
+          _$OffersSuccess<T> value, $Res Function(_$OffersSuccess<T>) then) =
+      __$$OffersSuccessCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({List<OfferModel> offers});
+}
+
+/// @nodoc
+class __$$OffersSuccessCopyWithImpl<T, $Res>
+    extends _$RequestStateCopyWithImpl<T, $Res, _$OffersSuccess<T>>
+    implements _$$OffersSuccessCopyWith<T, $Res> {
+  __$$OffersSuccessCopyWithImpl(
+      _$OffersSuccess<T> _value, $Res Function(_$OffersSuccess<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? offers = null,
+  }) {
+    return _then(_$OffersSuccess<T>(
+      null == offers
+          ? _value._offers
+          : offers // ignore: cast_nullable_to_non_nullable
+              as List<OfferModel>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$OffersSuccess<T> implements OffersSuccess<T> {
+  const _$OffersSuccess(final List<OfferModel> offers) : _offers = offers;
+
+  final List<OfferModel> _offers;
+  @override
+  List<OfferModel> get offers {
+    if (_offers is EqualUnmodifiableListView) return _offers;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_offers);
+  }
+
+  @override
+  String toString() {
+    return 'RequestState<$T>.offersSuccess(offers: $offers)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OffersSuccess<T> &&
+            const DeepCollectionEquality().equals(other._offers, _offers));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_offers));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OffersSuccessCopyWith<T, _$OffersSuccess<T>> get copyWith =>
+      __$$OffersSuccessCopyWithImpl<T, _$OffersSuccess<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() myRequestsLoading,
+    required TResult Function(List<MyRequestModel> myRequests)
+        myRequestsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        myRequestsError,
+    required TResult Function() offersLoading,
+    required TResult Function(List<OfferModel> offers) offersSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) offersError,
+    required TResult Function() myAvailableJobsLoading,
+    required TResult Function(List<MyRequestModel> myRequests)
+        myAvailableJobsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        myAvailableJobsError,
+  }) {
+    return offersSuccess(offers);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? myRequestsLoading,
+    TResult? Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult? Function()? offersLoading,
+    TResult? Function(List<OfferModel> offers)? offersSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? offersError,
+    TResult? Function()? myAvailableJobsLoading,
+    TResult? Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        myAvailableJobsError,
+  }) {
+    return offersSuccess?.call(offers);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? myRequestsLoading,
+    TResult Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult Function()? offersLoading,
+    TResult Function(List<OfferModel> offers)? offersSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? offersError,
+    TResult Function()? myAvailableJobsLoading,
+    TResult Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? myAvailableJobsError,
+    required TResult orElse(),
+  }) {
+    if (offersSuccess != null) {
+      return offersSuccess(offers);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(MyRequestsLoading<T> value) myRequestsLoading,
+    required TResult Function(MyRequestsSuccess<T> value) myRequestsSuccess,
+    required TResult Function(MyRequestsError<T> value) myRequestsError,
+    required TResult Function(OffersLoading<T> value) offersLoading,
+    required TResult Function(OffersSuccess<T> value) offersSuccess,
+    required TResult Function(OffersError<T> value) offersError,
+    required TResult Function(MyAvailableJobsLoading<T> value)
+        myAvailableJobsLoading,
+    required TResult Function(MyAvailableJobsSuccess<T> value)
+        myAvailableJobsSuccess,
+    required TResult Function(MyAvailableJobsError<T> value)
+        myAvailableJobsError,
+  }) {
+    return offersSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(MyRequestsLoading<T> value)? myRequestsLoading,
+    TResult? Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
+    TResult? Function(MyRequestsError<T> value)? myRequestsError,
+    TResult? Function(OffersLoading<T> value)? offersLoading,
+    TResult? Function(OffersSuccess<T> value)? offersSuccess,
+    TResult? Function(OffersError<T> value)? offersError,
+    TResult? Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
+    TResult? Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
+    TResult? Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
+  }) {
+    return offersSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(MyRequestsLoading<T> value)? myRequestsLoading,
+    TResult Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
+    TResult Function(MyRequestsError<T> value)? myRequestsError,
+    TResult Function(OffersLoading<T> value)? offersLoading,
+    TResult Function(OffersSuccess<T> value)? offersSuccess,
+    TResult Function(OffersError<T> value)? offersError,
+    TResult Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
+    TResult Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
+    TResult Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
+    required TResult orElse(),
+  }) {
+    if (offersSuccess != null) {
+      return offersSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OffersSuccess<T> implements RequestState<T> {
+  const factory OffersSuccess(final List<OfferModel> offers) =
+      _$OffersSuccess<T>;
+
+  List<OfferModel> get offers;
+  @JsonKey(ignore: true)
+  _$$OffersSuccessCopyWith<T, _$OffersSuccess<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OffersErrorCopyWith<T, $Res> {
+  factory _$$OffersErrorCopyWith(
+          _$OffersError<T> value, $Res Function(_$OffersError<T>) then) =
+      __$$OffersErrorCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({NetworkExceptions networkExceptions});
+
+  $NetworkExceptionsCopyWith<$Res> get networkExceptions;
+}
+
+/// @nodoc
+class __$$OffersErrorCopyWithImpl<T, $Res>
+    extends _$RequestStateCopyWithImpl<T, $Res, _$OffersError<T>>
+    implements _$$OffersErrorCopyWith<T, $Res> {
+  __$$OffersErrorCopyWithImpl(
+      _$OffersError<T> _value, $Res Function(_$OffersError<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? networkExceptions = null,
+  }) {
+    return _then(_$OffersError<T>(
+      null == networkExceptions
+          ? _value.networkExceptions
+          : networkExceptions // ignore: cast_nullable_to_non_nullable
+              as NetworkExceptions,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $NetworkExceptionsCopyWith<$Res> get networkExceptions {
+    return $NetworkExceptionsCopyWith<$Res>(_value.networkExceptions, (value) {
+      return _then(_value.copyWith(networkExceptions: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$OffersError<T> implements OffersError<T> {
+  const _$OffersError(this.networkExceptions);
+
+  @override
+  final NetworkExceptions networkExceptions;
+
+  @override
+  String toString() {
+    return 'RequestState<$T>.offersError(networkExceptions: $networkExceptions)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OffersError<T> &&
+            (identical(other.networkExceptions, networkExceptions) ||
+                other.networkExceptions == networkExceptions));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, networkExceptions);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OffersErrorCopyWith<T, _$OffersError<T>> get copyWith =>
+      __$$OffersErrorCopyWithImpl<T, _$OffersError<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() myRequestsLoading,
+    required TResult Function(List<MyRequestModel> myRequests)
+        myRequestsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        myRequestsError,
+    required TResult Function() offersLoading,
+    required TResult Function(List<OfferModel> offers) offersSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) offersError,
+    required TResult Function() myAvailableJobsLoading,
+    required TResult Function(List<MyRequestModel> myRequests)
+        myAvailableJobsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        myAvailableJobsError,
+  }) {
+    return offersError(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? myRequestsLoading,
+    TResult? Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult? Function()? offersLoading,
+    TResult? Function(List<OfferModel> offers)? offersSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? offersError,
+    TResult? Function()? myAvailableJobsLoading,
+    TResult? Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        myAvailableJobsError,
+  }) {
+    return offersError?.call(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? myRequestsLoading,
+    TResult Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult Function()? offersLoading,
+    TResult Function(List<OfferModel> offers)? offersSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? offersError,
+    TResult Function()? myAvailableJobsLoading,
+    TResult Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? myAvailableJobsError,
+    required TResult orElse(),
+  }) {
+    if (offersError != null) {
+      return offersError(networkExceptions);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(MyRequestsLoading<T> value) myRequestsLoading,
+    required TResult Function(MyRequestsSuccess<T> value) myRequestsSuccess,
+    required TResult Function(MyRequestsError<T> value) myRequestsError,
+    required TResult Function(OffersLoading<T> value) offersLoading,
+    required TResult Function(OffersSuccess<T> value) offersSuccess,
+    required TResult Function(OffersError<T> value) offersError,
+    required TResult Function(MyAvailableJobsLoading<T> value)
+        myAvailableJobsLoading,
+    required TResult Function(MyAvailableJobsSuccess<T> value)
+        myAvailableJobsSuccess,
+    required TResult Function(MyAvailableJobsError<T> value)
+        myAvailableJobsError,
+  }) {
+    return offersError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(MyRequestsLoading<T> value)? myRequestsLoading,
+    TResult? Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
+    TResult? Function(MyRequestsError<T> value)? myRequestsError,
+    TResult? Function(OffersLoading<T> value)? offersLoading,
+    TResult? Function(OffersSuccess<T> value)? offersSuccess,
+    TResult? Function(OffersError<T> value)? offersError,
+    TResult? Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
+    TResult? Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
+    TResult? Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
+  }) {
+    return offersError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(MyRequestsLoading<T> value)? myRequestsLoading,
+    TResult Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
+    TResult Function(MyRequestsError<T> value)? myRequestsError,
+    TResult Function(OffersLoading<T> value)? offersLoading,
+    TResult Function(OffersSuccess<T> value)? offersSuccess,
+    TResult Function(OffersError<T> value)? offersError,
+    TResult Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
+    TResult Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
+    TResult Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
+    required TResult orElse(),
+  }) {
+    if (offersError != null) {
+      return offersError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OffersError<T> implements RequestState<T> {
+  const factory OffersError(final NetworkExceptions networkExceptions) =
+      _$OffersError<T>;
+
+  NetworkExceptions get networkExceptions;
+  @JsonKey(ignore: true)
+  _$$OffersErrorCopyWith<T, _$OffersError<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -800,6 +1445,9 @@ class _$MyAvailableJobsLoading<T> implements MyAvailableJobsLoading<T> {
         myRequestsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         myRequestsError,
+    required TResult Function() offersLoading,
+    required TResult Function(List<OfferModel> offers) offersSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) offersError,
     required TResult Function() myAvailableJobsLoading,
     required TResult Function(List<MyRequestModel> myRequests)
         myAvailableJobsSuccess,
@@ -816,6 +1464,9 @@ class _$MyAvailableJobsLoading<T> implements MyAvailableJobsLoading<T> {
     TResult? Function()? myRequestsLoading,
     TResult? Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult? Function()? offersLoading,
+    TResult? Function(List<OfferModel> offers)? offersSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? offersError,
     TResult? Function()? myAvailableJobsLoading,
     TResult? Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
@@ -831,6 +1482,9 @@ class _$MyAvailableJobsLoading<T> implements MyAvailableJobsLoading<T> {
     TResult Function()? myRequestsLoading,
     TResult Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult Function()? offersLoading,
+    TResult Function(List<OfferModel> offers)? offersSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? offersError,
     TResult Function()? myAvailableJobsLoading,
     TResult Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? myAvailableJobsError,
@@ -849,6 +1503,9 @@ class _$MyAvailableJobsLoading<T> implements MyAvailableJobsLoading<T> {
     required TResult Function(MyRequestsLoading<T> value) myRequestsLoading,
     required TResult Function(MyRequestsSuccess<T> value) myRequestsSuccess,
     required TResult Function(MyRequestsError<T> value) myRequestsError,
+    required TResult Function(OffersLoading<T> value) offersLoading,
+    required TResult Function(OffersSuccess<T> value) offersSuccess,
+    required TResult Function(OffersError<T> value) offersError,
     required TResult Function(MyAvailableJobsLoading<T> value)
         myAvailableJobsLoading,
     required TResult Function(MyAvailableJobsSuccess<T> value)
@@ -866,6 +1523,9 @@ class _$MyAvailableJobsLoading<T> implements MyAvailableJobsLoading<T> {
     TResult? Function(MyRequestsLoading<T> value)? myRequestsLoading,
     TResult? Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
     TResult? Function(MyRequestsError<T> value)? myRequestsError,
+    TResult? Function(OffersLoading<T> value)? offersLoading,
+    TResult? Function(OffersSuccess<T> value)? offersSuccess,
+    TResult? Function(OffersError<T> value)? offersError,
     TResult? Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
     TResult? Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
     TResult? Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
@@ -880,6 +1540,9 @@ class _$MyAvailableJobsLoading<T> implements MyAvailableJobsLoading<T> {
     TResult Function(MyRequestsLoading<T> value)? myRequestsLoading,
     TResult Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
     TResult Function(MyRequestsError<T> value)? myRequestsError,
+    TResult Function(OffersLoading<T> value)? offersLoading,
+    TResult Function(OffersSuccess<T> value)? offersSuccess,
+    TResult Function(OffersError<T> value)? offersError,
     TResult Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
     TResult Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
     TResult Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
@@ -975,6 +1638,9 @@ class _$MyAvailableJobsSuccess<T> implements MyAvailableJobsSuccess<T> {
         myRequestsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         myRequestsError,
+    required TResult Function() offersLoading,
+    required TResult Function(List<OfferModel> offers) offersSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) offersError,
     required TResult Function() myAvailableJobsLoading,
     required TResult Function(List<MyRequestModel> myRequests)
         myAvailableJobsSuccess,
@@ -991,6 +1657,9 @@ class _$MyAvailableJobsSuccess<T> implements MyAvailableJobsSuccess<T> {
     TResult? Function()? myRequestsLoading,
     TResult? Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult? Function()? offersLoading,
+    TResult? Function(List<OfferModel> offers)? offersSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? offersError,
     TResult? Function()? myAvailableJobsLoading,
     TResult? Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
@@ -1006,6 +1675,9 @@ class _$MyAvailableJobsSuccess<T> implements MyAvailableJobsSuccess<T> {
     TResult Function()? myRequestsLoading,
     TResult Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult Function()? offersLoading,
+    TResult Function(List<OfferModel> offers)? offersSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? offersError,
     TResult Function()? myAvailableJobsLoading,
     TResult Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? myAvailableJobsError,
@@ -1024,6 +1696,9 @@ class _$MyAvailableJobsSuccess<T> implements MyAvailableJobsSuccess<T> {
     required TResult Function(MyRequestsLoading<T> value) myRequestsLoading,
     required TResult Function(MyRequestsSuccess<T> value) myRequestsSuccess,
     required TResult Function(MyRequestsError<T> value) myRequestsError,
+    required TResult Function(OffersLoading<T> value) offersLoading,
+    required TResult Function(OffersSuccess<T> value) offersSuccess,
+    required TResult Function(OffersError<T> value) offersError,
     required TResult Function(MyAvailableJobsLoading<T> value)
         myAvailableJobsLoading,
     required TResult Function(MyAvailableJobsSuccess<T> value)
@@ -1041,6 +1716,9 @@ class _$MyAvailableJobsSuccess<T> implements MyAvailableJobsSuccess<T> {
     TResult? Function(MyRequestsLoading<T> value)? myRequestsLoading,
     TResult? Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
     TResult? Function(MyRequestsError<T> value)? myRequestsError,
+    TResult? Function(OffersLoading<T> value)? offersLoading,
+    TResult? Function(OffersSuccess<T> value)? offersSuccess,
+    TResult? Function(OffersError<T> value)? offersError,
     TResult? Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
     TResult? Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
     TResult? Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
@@ -1055,6 +1733,9 @@ class _$MyAvailableJobsSuccess<T> implements MyAvailableJobsSuccess<T> {
     TResult Function(MyRequestsLoading<T> value)? myRequestsLoading,
     TResult Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
     TResult Function(MyRequestsError<T> value)? myRequestsError,
+    TResult Function(OffersLoading<T> value)? offersLoading,
+    TResult Function(OffersSuccess<T> value)? offersSuccess,
+    TResult Function(OffersError<T> value)? offersError,
     TResult Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
     TResult Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
     TResult Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
@@ -1159,6 +1840,9 @@ class _$MyAvailableJobsError<T> implements MyAvailableJobsError<T> {
         myRequestsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         myRequestsError,
+    required TResult Function() offersLoading,
+    required TResult Function(List<OfferModel> offers) offersSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) offersError,
     required TResult Function() myAvailableJobsLoading,
     required TResult Function(List<MyRequestModel> myRequests)
         myAvailableJobsSuccess,
@@ -1175,6 +1859,9 @@ class _$MyAvailableJobsError<T> implements MyAvailableJobsError<T> {
     TResult? Function()? myRequestsLoading,
     TResult? Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult? Function()? offersLoading,
+    TResult? Function(List<OfferModel> offers)? offersSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? offersError,
     TResult? Function()? myAvailableJobsLoading,
     TResult? Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
@@ -1190,6 +1877,9 @@ class _$MyAvailableJobsError<T> implements MyAvailableJobsError<T> {
     TResult Function()? myRequestsLoading,
     TResult Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult Function()? offersLoading,
+    TResult Function(List<OfferModel> offers)? offersSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? offersError,
     TResult Function()? myAvailableJobsLoading,
     TResult Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? myAvailableJobsError,
@@ -1208,6 +1898,9 @@ class _$MyAvailableJobsError<T> implements MyAvailableJobsError<T> {
     required TResult Function(MyRequestsLoading<T> value) myRequestsLoading,
     required TResult Function(MyRequestsSuccess<T> value) myRequestsSuccess,
     required TResult Function(MyRequestsError<T> value) myRequestsError,
+    required TResult Function(OffersLoading<T> value) offersLoading,
+    required TResult Function(OffersSuccess<T> value) offersSuccess,
+    required TResult Function(OffersError<T> value) offersError,
     required TResult Function(MyAvailableJobsLoading<T> value)
         myAvailableJobsLoading,
     required TResult Function(MyAvailableJobsSuccess<T> value)
@@ -1225,6 +1918,9 @@ class _$MyAvailableJobsError<T> implements MyAvailableJobsError<T> {
     TResult? Function(MyRequestsLoading<T> value)? myRequestsLoading,
     TResult? Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
     TResult? Function(MyRequestsError<T> value)? myRequestsError,
+    TResult? Function(OffersLoading<T> value)? offersLoading,
+    TResult? Function(OffersSuccess<T> value)? offersSuccess,
+    TResult? Function(OffersError<T> value)? offersError,
     TResult? Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
     TResult? Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
     TResult? Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
@@ -1239,6 +1935,9 @@ class _$MyAvailableJobsError<T> implements MyAvailableJobsError<T> {
     TResult Function(MyRequestsLoading<T> value)? myRequestsLoading,
     TResult Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
     TResult Function(MyRequestsError<T> value)? myRequestsError,
+    TResult Function(OffersLoading<T> value)? offersLoading,
+    TResult Function(OffersSuccess<T> value)? offersSuccess,
+    TResult Function(OffersError<T> value)? offersError,
     TResult Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
     TResult Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
     TResult Function(MyAvailableJobsError<T> value)? myAvailableJobsError,

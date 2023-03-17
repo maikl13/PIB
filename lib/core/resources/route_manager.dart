@@ -24,6 +24,7 @@ import 'package:pip/features/menu/presentation/screens/work_with_us_view.dart';
 import 'package:pip/features/notification/business_logic/cubit/notification_cubit.dart';
 import 'package:pip/features/pip/business_logic/cubit/pip_cubit.dart';
 import 'package:pip/features/requests/data/models/my_request_model.dart';
+import 'package:pip/features/requests/data/models/offer_model.dart';
 import 'package:pip/features/search/business_logic/bloc/search_bloc.dart';
 import '../../features/auth/presentation/screens/forgot_password_view.dart';
 import '../../features/auth/presentation/screens/login_view.dart';
@@ -233,22 +234,30 @@ class RouteGenerator {
 
       case Routes.recievedOffersViewRoute:
         return MaterialPageRoute(
-          builder: (_) => const RecievedOffersView(),
+          builder: (_) =>  BlocProvider.value(
+            value: requestsCubit,
+         
+            child: const RecievedOffersView(),
+          ),
         );
 
       case Routes.recievedOffersDetailsViewRoute:
+              final arguments = settings.arguments as Map;
+
+        final OfferModel offer = arguments['offer'];
         return MaterialPageRoute(
-          builder: (_) => const RecievedOfferDetails(),
+          builder: (_) =>  RecievedOfferDetails(
+            offer: offer,
+          ),
         );
 
       case Routes.availableJobDetailsViewRoute:
-         final arguments = settings.arguments as Map;
+        final arguments = settings.arguments as Map;
 
         final MyRequestModel availableJob = arguments['job'];
         return MaterialPageRoute(
-          builder: (_) =>  AvailableJobDetailsView(
+          builder: (_) => AvailableJobDetailsView(
             availableJob: availableJob,
-            
           ),
         );
 

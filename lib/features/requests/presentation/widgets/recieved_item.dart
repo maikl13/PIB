@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pip/core/resources/constants.dart';
+import 'package:pip/core/widgets/custom_clock_date.dart';
 import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/route_manager.dart';
@@ -11,9 +12,13 @@ import '../../../../core/widgets/dark_default_button.dart';
 import '../../../../core/widgets/default_button.dart';
 import '../../../home/presentation/widgets/image_with_stars.dart';
 import '../../../notification/presentation/widgets/clock_date.dart';
+import '../../data/models/offer_model.dart';
 
 class RecievedOfferItem extends StatelessWidget {
-  const RecievedOfferItem({super.key});
+  const RecievedOfferItem(
+      {super.key, required this.offers, required this.index});
+  final List<OfferModel> offers;
+  final int index;
 
   _buildBackground() {
     return Image.asset(
@@ -23,7 +28,12 @@ class RecievedOfferItem extends StatelessWidget {
   }
 
   _buildAvatar() {
-    return SizedBox(width: 75.w, height: 65.w, child: const ImageWithRating());
+    return SizedBox(
+        width: 75.w,
+        height: 65.w,
+        child: ImageWithRating(
+          image: offers[index].user!.imageUrl!,
+        ));
   }
 
   _buildMainInfo(BuildContext context) {
@@ -109,7 +119,7 @@ class RecievedOfferItem extends StatelessWidget {
       child: Text(
         maxLines: 2,
         overflow: TextOverflow.ellipsis,
-        AppStrings.offerDesc,
+        offers[index].description ?? '',
         style: getRegularStyle(fontSize: 12.sp, color: ColorManager.darkGrey),
       ),
     );
@@ -125,7 +135,7 @@ class RecievedOfferItem extends StatelessWidget {
 
   _buildPrice() {
     return Text(
-      '30 \$',
+      '${offers[index].price} \$',
       style: getRegularStyle(fontSize: 12.sp, color: ColorManager.grey),
     );
   }
@@ -140,14 +150,14 @@ class RecievedOfferItem extends StatelessWidget {
 
   _buildTime() {
     return Text(
-      '6 days',
+      '${offers[index].duration} ايام',
       style: getRegularStyle(fontSize: 12.sp, color: ColorManager.grey),
     );
   }
 
   _buildUserName() {
     return Text(
-      AppStrings.userName,
+      offers[index].user!.name ?? '',
       style: getBoldStyle(fontSize: 15.sp, color: ColorManager.white),
     );
   }
@@ -156,7 +166,9 @@ class RecievedOfferItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.pushNamed(context, Routes.recievedOffersDetailsViewRoute);
+        Navigator.pushNamed(context, Routes.recievedOffersDetailsViewRoute,arguments: {
+          'offer': offers[index],
+        });
       },
       child: Container(
         height: 198.h,
@@ -174,7 +186,7 @@ class RecievedOfferItem extends StatelessWidget {
               padding: EdgeInsets.only(left: 10.w, top: 14.h),
               child: Align(
                   alignment: Alignment.topLeft,
-                  child: ClockDate(color: ColorManager.grey)),
+                  child: CustomClockDate(date: offers[index].createdAt!)),
             ),
           ],
         ),

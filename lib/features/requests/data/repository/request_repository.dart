@@ -1,6 +1,8 @@
 
 
 
+import 'package:pip/features/requests/data/models/offer_model.dart';
+
 import '../../../../core/resources/constants.dart';
 import '../../../../core/web_services/api_result.dart';
 import '../../../../core/web_services/network_exceptions.dart';
@@ -27,6 +29,17 @@ class RequestRepository{
     Future<ApiResult<List<MyRequestModel>>> getAllAvailableJobs() async {
     try {
       var response = await webServices.getAllAvailableJobs(
+          'Bearer $token');
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(NetworkExceptions.getDioException(error));
+    }
+  }
+
+
+    Future<ApiResult<List<OfferModel>>> getAllOffers() async {
+    try {
+      var response = await webServices.getAllOffers(
           'Bearer $token');
       return ApiResult.success(response);
     } catch (error) {

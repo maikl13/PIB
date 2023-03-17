@@ -3,6 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pip/core/resources/constants.dart';
 import 'package:pip/core/resources/route_manager.dart';
+import 'package:pip/core/widgets/custom_clock_date.dart';
+import 'package:pip/features/requests/data/models/offer_model.dart';
+import '../../../../core/widgets/image_item.dart';
 import '../../../home/presentation/widgets/job_details_image.dart';
 
 import '../../../../core/resources/assets_manager.dart';
@@ -13,37 +16,33 @@ import '../../../../core/widgets/custom_appbar.dart';
 import '../../../../core/widgets/dark_default_button.dart';
 import '../../../../core/widgets/default_button.dart';
 import '../../../home/presentation/widgets/main_info_item.dart';
-import '../../../notification/presentation/widgets/clock_date.dart';
 
-class RecievedOfferDetails extends StatefulWidget {
-  const RecievedOfferDetails({super.key});
+class RecievedOfferDetails extends StatelessWidget {
+  const RecievedOfferDetails({super.key, required this.offer});
 
-  @override
-  State<RecievedOfferDetails> createState() => _RecievedOfferDetailsState();
-}
+  final OfferModel offer;
 
-class _RecievedOfferDetailsState extends State<RecievedOfferDetails> {
-  _buildBody() {
+  _buildBody(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(right: 20.w, left: 20.w, top: 60.h),
       child: SingleChildScrollView(
         child: Column(
           children: [
-            const JobDetailsImage(),
+            JobDetailsImage(
+              imageUrl: offer.user!.imageUrl,
+            ),
             SizedBox(height: 48.h),
             _buildUserName(),
-            // SizedBox(height: 15.h),
-            // _buildJobname(),
             SizedBox(height: 20.h),
             _buildDescriptionText(),
             SizedBox(height: 12.h),
-            ClockDate(color: ColorManager.grey),
+            _buildDate(),
             SizedBox(height: 40.h),
             _buildMainInfo(),
             SizedBox(height: 25.h),
-            _buildPhoto(),
+            _buildPhotos(),
             SizedBox(height: 70.h),
-            _buildButtons(),
+            _buildButtons(context),
             SizedBox(height: 30.h),
           ],
         ),
@@ -51,24 +50,27 @@ class _RecievedOfferDetailsState extends State<RecievedOfferDetails> {
     );
   }
 
-  _buildButtons() {
+  _buildDate() {
+    return CustomClockDate(date: offer.createdAt.toString());
+  }
+
+  _buildButtons(BuildContext context) {
     return Row(
       children: [
-        _buildAcceptButton(),
+        _buildAcceptButton(context),
         SizedBox(width: 10.w),
-        _buildNegotiateButton(),
+        _buildNegotiateButton(context),
       ],
     );
   }
 
-  _buildAcceptButton() {
+  _buildAcceptButton(BuildContext context) {
     return Expanded(
       child: DefaultButton(
         text: AppStrings.accept,
         onTap: () {
-          setState(() {
-            screenIndex = 2;
-          });
+          screenIndex = 2;
+
           Navigator.pushNamed(context, Routes.mainHomeViewRoute);
           //
         },
@@ -76,7 +78,7 @@ class _RecievedOfferDetailsState extends State<RecievedOfferDetails> {
     );
   }
 
-  _buildNegotiateButton() {
+  _buildNegotiateButton(BuildContext context) {
     return Expanded(
       child: DarkDefaultButton(
         text: AppStrings.negotiate,
@@ -90,34 +92,27 @@ class _RecievedOfferDetailsState extends State<RecievedOfferDetails> {
     );
   }
 
-  _buildPhoto() {
-    return Align(
-      alignment: Alignment.bottomRight,
-      child: Column(
-        children: [
-          Container(
-            width: 136.w,
-            height: 85.h,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(5.r)),
-              image: DecorationImage(
-                colorFilter: ColorFilter.mode(
-                    ColorManager.black.withOpacity(.3), BlendMode.darken),
-                image: const AssetImage(ImageAssets.banner),
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-          SizedBox(height: 14.h),
-          Text("identity card .png",
-              style: getRegularStyle(fontSize: 14.sp, color: ColorManager.grey))
-        ],
-      ),
+  _buildPhotos() {
+    return SizedBox(
+      height: 120.h,
+      child: ListView.separated(
+          // shrinkWrap: true,
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (context, index) {
+            return ImageItem(
+                imageUrl: offer.attachments![index].attachmentUrl!);
+          },
+          separatorBuilder: (context, index) {
+            return SizedBox(
+              width: 10.w,
+            );
+          },
+          itemCount: offer.attachments!.length),
     );
   }
 
   _buildUserName() {
-    return Text(AppStrings.userName,
+    return Text(offer.user!.name ?? '',
         style:
             getBoldStyle(fontSize: 20.sp, color: ColorManager.darkSeconadry));
   }
@@ -128,7 +123,7 @@ class _RecievedOfferDetailsState extends State<RecievedOfferDetails> {
       child: Text(
           maxLines: 3,
           overflow: TextOverflow.ellipsis,
-          AppStrings.offerDesc,
+          offer.description ?? '',
           textAlign: TextAlign.center,
           style:
               getBoldStyle(fontSize: 13.sp, color: ColorManager.grey).copyWith(
@@ -150,11 +145,16 @@ class _RecievedOfferDetailsState extends State<RecievedOfferDetails> {
         padding: EdgeInsets.only(top: 20.h),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: const [
-            MainInfoItem(title: AppStrings.plumber, icon: Icons.cases_rounded),
+          children: [
             MainInfoItem(
-                title: AppStrings.ryal, icon: FontAwesomeIcons.tags),
-            MainInfoItem(title: '6 days', icon: FontAwesomeIcons.solidClock),
+                title: offer.request!.category ?? '',
+                icon: Icons.cases_rounded),
+            MainInfoItem(
+                title: "${offer.price} ${AppStrings.ryal}",
+                icon: FontAwesomeIcons.tags),
+            MainInfoItem(
+                title: '${offer.duration} ايام',
+                icon: FontAwesomeIcons.solidClock),
           ],
         ),
       ),
@@ -169,7 +169,7 @@ class _RecievedOfferDetailsState extends State<RecievedOfferDetails> {
         title: AppStrings.userName,
         actions: const [],
       ),
-      body: _buildBody(),
+      body: _buildBody(context),
     );
   }
 }
