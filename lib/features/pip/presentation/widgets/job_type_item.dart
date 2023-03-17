@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/resources/constants.dart';
+import 'package:pip/core/widgets/custom_network_image.dart';
 import '../../../../core/resources/style_manager.dart';
 
 import '../../../../core/resources/color_manager.dart';
@@ -24,12 +25,10 @@ class JobTypeItem extends StatelessWidget {
       child: CircleAvatar(
           radius: 25.r,
           backgroundColor: ColorManager.darkSeconadry,
-          child: Image.asset(
-            image,
-            width: 18.w,
-            height: 18.h,
-            fit: BoxFit.contain,
-          )),
+          child: SizedBox(
+              width: 18.w,
+              height: 18.h,
+              child: CustomNetworkCachedImage(url: image))),
     );
   }
 

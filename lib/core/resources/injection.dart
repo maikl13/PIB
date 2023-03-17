@@ -3,6 +3,8 @@ import 'package:dio_smart_retry/dio_smart_retry.dart';
 import 'package:get_it/get_it.dart';
 import 'package:pip/features/notification/business_logic/cubit/notification_cubit.dart';
 import 'package:pip/features/notification/data/repository/notification_repository.dart';
+import 'package:pip/features/pip/business_logic/cubit/pip_cubit.dart';
+import 'package:pip/features/pip/data/repository/pip_repository.dart';
 import 'package:pip/features/search/business_logic/bloc/search_bloc.dart';
 import 'package:pip/features/search/data/repository/repository.dart';
 
@@ -30,6 +32,8 @@ void initGetIt() {
 
       getIt.registerLazySingleton<MenuRepository>(() => MenuRepository(getIt()));
   getIt.registerLazySingleton<MenuCubit>(() => MenuCubit(getIt()));
+        getIt.registerLazySingleton<PipRepsitory>(() => PipRepsitory(getIt()));
+  getIt.registerLazySingleton<PipCubit>(() => PipCubit(getIt()));
 
         getIt.registerLazySingleton<SearchRepository>(() => SearchRepository(getIt()));
   getIt.registerLazySingleton<SearchBloc>(() => SearchBloc(getIt()));

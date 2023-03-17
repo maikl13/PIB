@@ -5,8 +5,9 @@ import 'package:pip/core/resources/color_manager.dart';
 import '../../../../core/resources/constants.dart';
 
 class CustomSwitch extends StatefulWidget {
-  const CustomSwitch({super.key, this.onChanged});
+  const CustomSwitch({super.key, this.onChanged, this.enabled});
   final void Function(bool)? onChanged;
+  final bool? enabled;
 
   @override
   State<CustomSwitch> createState() => _CustomSwitchState();
@@ -21,9 +22,11 @@ class _CustomSwitchState extends State<CustomSwitch> {
         scale: .7,
         transformHitTests: false,
         child: CupertinoSwitch(
-          activeColor: val ? ColorManager.green : ColorManager.white,
-          trackColor: val ? ColorManager.green : ColorManager.white5,
-          value: val,
+          activeColor:
+              widget.enabled! ? ColorManager.green : ColorManager.white,
+          trackColor:
+              widget.enabled! ? ColorManager.green : ColorManager.white5,
+          value: widget.enabled ?? false,
           onChanged: widget.onChanged,
         ),
       ),

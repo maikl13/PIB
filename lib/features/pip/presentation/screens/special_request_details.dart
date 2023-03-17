@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pip/core/resources/constants.dart';
+import 'package:pip/features/pip/business_logic/cubit/pip_cubit.dart';
+import 'package:pip/features/pip/business_logic/cubit/pip_state.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/resources/style_manager.dart';
 import '../../../../core/widgets/custom_appbar.dart';
 import '../../../../core/widgets/custom_title.dart';
 import '../../../../core/widgets/default_button.dart';
+import '../../data/models/skills_model.dart';
 import '../widgets/job_type_item.dart';
 import '../widgets/request_custom_tetfield.dart';
 
@@ -51,32 +55,48 @@ class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
     );
   }
 
+
+
   _buildAvaialbleTypesOfJobs() {
-    return GridView.builder(
-      itemCount: 6,
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        crossAxisSpacing: 10,
-        mainAxisSpacing: 10,
-        childAspectRatio: 1.5,
-      ),
-      itemBuilder: (context, index) {
-        return JobTypeItem(
-          index: index,
-          title: typesTitles[index],
-          image: typeIcons[index],
-          onTap: () {
-            setState(() {
-              isSelected = index;
-            });
+    return BlocConsumer<PipCubit, PipState>(
+      listener: (context, state) {
+      },
+      buildWhen: (previous, next) => next is Success,
+      builder: (context, state) {
+        return state.maybeWhen (
+          success: (skills) {
+            return _buildSkills(skills);
           },
+          orElse: () => Container(),
         );
       },
     );
   }
-
+_buildSkills(List<SkillModel> skills) {
+  return GridView.builder(
+          itemCount: skills.length,
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+            childAspectRatio: 1.5,
+          ),
+          itemBuilder: (context, index) {
+            return JobTypeItem(
+              index: index,
+              title: skills[index].name!,
+              image: skills[index].imageUrl!,
+              onTap: () {
+                setState(() {
+                  isSelected = index;
+                });
+              },
+            );
+          },
+        );
+}
   _buildPriceTextField() {
     return RequestCustomTextField(
       suffix: Padding(
@@ -167,6 +187,13 @@ class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
         ),
       ),
     );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+
+    BlocProvider.of<PipCubit>(context).getAllSkills();
   }
 
   @override

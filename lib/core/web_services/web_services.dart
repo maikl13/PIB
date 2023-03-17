@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:pip/features/home/data/models/ad_model.dart';
+import 'package:pip/features/menu/data/models/update_skill.dart';
+import 'package:pip/features/pip/data/models/skills_model.dart';
 
 import 'package:retrofit/retrofit.dart';
 
@@ -38,11 +40,19 @@ abstract class WebServices {
     @Field("phone") String? phone,
     @Field("image_url") String? imageUrl,
   );
-  //  @GET("countries")
-  // Future<List<CountriesCurrencies>> getAllCountriesCurrencies();
 
-  //   @GET("categories")
-  // Future<List<CategoryModel>> getAllCategories(@Header('Authorization') String token);
+
+   @GET("skills")
+  Future<List<SkillModel>> getAllSkills(
+      @Header('Authorization') String token,
+  );
+
+  @GET("user/skills")
+  Future<List<SkillModel>> getAllUserSkills(
+      @Header('Authorization') String token,
+  );
+    @POST("user/skills/update")
+  Future<UpdateSkill> updateSkill(@Header('Authorization') String token, @Body() List<int> skills);
 
       @GET("ads/search")
   Future<List<Ads>> getSearchResults(

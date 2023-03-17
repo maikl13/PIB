@@ -1,15 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/resources/color_manager.dart';
 import 'package:pip/core/resources/constants.dart';
 import 'package:pip/core/resources/style_manager.dart';
+import 'package:pip/core/widgets/custom_network_image.dart';
+import 'package:pip/features/menu/business_logic/menu_cubit.dart';
 import 'package:pip/features/pip/presentation/widgets/custom_switch.dart';
 
-class SkillItem extends StatefulWidget {
-  const SkillItem({super.key, required this.title, required this.image});
+import '../../../pip/data/models/skills_model.dart';
 
-  final String title;
-  final String image;
+class SkillItem extends StatefulWidget {
+  SkillItem({
+    super.key,
+    required this.skills,
+    required this.index,
+  });
+
+  final List<SkillModel> skills;
+  final int index;
 
   @override
   State<SkillItem> createState() => _SkillItemState();
@@ -23,18 +32,17 @@ class _SkillItemState extends State<SkillItem> {
       child: CircleAvatar(
           radius: 25.r,
           backgroundColor: ColorManager.darkSeconadry,
-          child: Image.asset(
-            widget.image,
-            width: 15.w,
-            height: 15.h,
-            fit: BoxFit.contain,
-          )),
+          child: SizedBox(
+              width: 15.w,
+              height: 15.h,
+              child: CustomNetworkCachedImage(
+                  url: widget.skills[widget.index].imageUrl!))),
     );
   }
 
   _buildTitle() {
     return Text(
-      widget.title,
+      widget.skills[widget.index].name ?? '',
       style: getBoldStyle(fontSize: 15.sp, color: ColorManager.grey),
     );
   }
@@ -67,9 +75,23 @@ class _SkillItemState extends State<SkillItem> {
               ],
             ),
             CustomSwitch(
+              enabled: widget.skills[widget.index].enabled == 0 ? false : true,
               onChanged: (value) {
+                if (value == true) {
+                  BlocProvider.of<MenuCubit>(context)
+                      .skills
+                      .add(widget.skills[widget.index].id!);
+                  BlocProvider.of<MenuCubit>(context).updateSkill();
+                } else {
+                  BlocProvider.of<MenuCubit>(context)
+                      .skills
+                      .remove(widget.skills[widget.index].id!);
+                  BlocProvider.of<MenuCubit>(context).updateSkill();
+                }
                 setState(() {
-                  val = value;
+                  value == true
+                      ? widget.skills[widget.index].enabled = 1
+                      : widget.skills[widget.index].enabled = 0;
                 });
               },
             ),

@@ -97,7 +97,9 @@ class _WalletViewState extends State<WalletView> {
         separatorBuilder: (context, index) {
           return SizedBox(height: 15.h);
         },
-        itemCount: walletInfo.transactions!.length);
+        itemCount: walletInfo.transactions!.length > 5
+            ? 5
+            : walletInfo.transactions!.length);
   }
 
   //walletInfo.transactions!.length

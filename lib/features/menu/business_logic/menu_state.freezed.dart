@@ -23,6 +23,14 @@ mixin _$MenuState<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
     required TResult Function() walletBlanceAddedLoading,
     required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -35,6 +43,12 @@ mixin _$MenuState<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
     TResult? Function()? walletBlanceAddedLoading,
     TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)?
@@ -47,6 +61,12 @@ mixin _$MenuState<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
     TResult Function()? walletBlanceAddedLoading,
     TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
     TResult Function(NetworkExceptions networkExceptions)?
@@ -60,6 +80,12 @@ mixin _$MenuState<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
     required TResult Function(WalletBlanceAddedLoading<T> value)
         walletBlanceAddedLoading,
     required TResult Function(WalletBalanceAddedSuccedded<T> value)
@@ -74,6 +100,12 @@ mixin _$MenuState<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
     TResult? Function(WalletBlanceAddedLoading<T> value)?
         walletBlanceAddedLoading,
     TResult? Function(WalletBalanceAddedSuccedded<T> value)?
@@ -88,6 +120,12 @@ mixin _$MenuState<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
     TResult Function(WalletBlanceAddedLoading<T> value)?
         walletBlanceAddedLoading,
     TResult Function(WalletBalanceAddedSuccedded<T> value)?
@@ -158,6 +196,14 @@ class _$Idle<T> implements Idle<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
     required TResult Function() walletBlanceAddedLoading,
     required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -173,6 +219,12 @@ class _$Idle<T> implements Idle<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
     TResult? Function()? walletBlanceAddedLoading,
     TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)?
@@ -188,6 +240,12 @@ class _$Idle<T> implements Idle<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
     TResult Function()? walletBlanceAddedLoading,
     TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
     TResult Function(NetworkExceptions networkExceptions)?
@@ -207,6 +265,12 @@ class _$Idle<T> implements Idle<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
     required TResult Function(WalletBlanceAddedLoading<T> value)
         walletBlanceAddedLoading,
     required TResult Function(WalletBalanceAddedSuccedded<T> value)
@@ -224,6 +288,12 @@ class _$Idle<T> implements Idle<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
     TResult? Function(WalletBlanceAddedLoading<T> value)?
         walletBlanceAddedLoading,
     TResult? Function(WalletBalanceAddedSuccedded<T> value)?
@@ -241,6 +311,12 @@ class _$Idle<T> implements Idle<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
     TResult Function(WalletBlanceAddedLoading<T> value)?
         walletBlanceAddedLoading,
     TResult Function(WalletBalanceAddedSuccedded<T> value)?
@@ -303,6 +379,14 @@ class _$WalletInfoLoading<T> implements WalletInfoLoading<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
     required TResult Function() walletBlanceAddedLoading,
     required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -318,6 +402,12 @@ class _$WalletInfoLoading<T> implements WalletInfoLoading<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
     TResult? Function()? walletBlanceAddedLoading,
     TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)?
@@ -333,6 +423,12 @@ class _$WalletInfoLoading<T> implements WalletInfoLoading<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
     TResult Function()? walletBlanceAddedLoading,
     TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
     TResult Function(NetworkExceptions networkExceptions)?
@@ -352,6 +448,12 @@ class _$WalletInfoLoading<T> implements WalletInfoLoading<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
     required TResult Function(WalletBlanceAddedLoading<T> value)
         walletBlanceAddedLoading,
     required TResult Function(WalletBalanceAddedSuccedded<T> value)
@@ -369,6 +471,12 @@ class _$WalletInfoLoading<T> implements WalletInfoLoading<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
     TResult? Function(WalletBlanceAddedLoading<T> value)?
         walletBlanceAddedLoading,
     TResult? Function(WalletBalanceAddedSuccedded<T> value)?
@@ -386,6 +494,12 @@ class _$WalletInfoLoading<T> implements WalletInfoLoading<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
     TResult Function(WalletBlanceAddedLoading<T> value)?
         walletBlanceAddedLoading,
     TResult Function(WalletBalanceAddedSuccedded<T> value)?
@@ -475,6 +589,14 @@ class _$WalletInfoSuccedded<T> implements WalletInfoSuccedded<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
     required TResult Function() walletBlanceAddedLoading,
     required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -490,6 +612,12 @@ class _$WalletInfoSuccedded<T> implements WalletInfoSuccedded<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
     TResult? Function()? walletBlanceAddedLoading,
     TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)?
@@ -505,6 +633,12 @@ class _$WalletInfoSuccedded<T> implements WalletInfoSuccedded<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
     TResult Function()? walletBlanceAddedLoading,
     TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
     TResult Function(NetworkExceptions networkExceptions)?
@@ -524,6 +658,12 @@ class _$WalletInfoSuccedded<T> implements WalletInfoSuccedded<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
     required TResult Function(WalletBlanceAddedLoading<T> value)
         walletBlanceAddedLoading,
     required TResult Function(WalletBalanceAddedSuccedded<T> value)
@@ -541,6 +681,12 @@ class _$WalletInfoSuccedded<T> implements WalletInfoSuccedded<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
     TResult? Function(WalletBlanceAddedLoading<T> value)?
         walletBlanceAddedLoading,
     TResult? Function(WalletBalanceAddedSuccedded<T> value)?
@@ -558,6 +704,12 @@ class _$WalletInfoSuccedded<T> implements WalletInfoSuccedded<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
     TResult Function(WalletBlanceAddedLoading<T> value)?
         walletBlanceAddedLoading,
     TResult Function(WalletBalanceAddedSuccedded<T> value)?
@@ -664,6 +816,14 @@ class _$WalletInfoError<T> implements WalletInfoError<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
     required TResult Function() walletBlanceAddedLoading,
     required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -679,6 +839,12 @@ class _$WalletInfoError<T> implements WalletInfoError<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
     TResult? Function()? walletBlanceAddedLoading,
     TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)?
@@ -694,6 +860,12 @@ class _$WalletInfoError<T> implements WalletInfoError<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
     TResult Function()? walletBlanceAddedLoading,
     TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
     TResult Function(NetworkExceptions networkExceptions)?
@@ -713,6 +885,12 @@ class _$WalletInfoError<T> implements WalletInfoError<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
     required TResult Function(WalletBlanceAddedLoading<T> value)
         walletBlanceAddedLoading,
     required TResult Function(WalletBalanceAddedSuccedded<T> value)
@@ -730,6 +908,12 @@ class _$WalletInfoError<T> implements WalletInfoError<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
     TResult? Function(WalletBlanceAddedLoading<T> value)?
         walletBlanceAddedLoading,
     TResult? Function(WalletBalanceAddedSuccedded<T> value)?
@@ -747,6 +931,12 @@ class _$WalletInfoError<T> implements WalletInfoError<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
     TResult Function(WalletBlanceAddedLoading<T> value)?
         walletBlanceAddedLoading,
     TResult Function(WalletBalanceAddedSuccedded<T> value)?
@@ -769,6 +959,1264 @@ abstract class WalletInfoError<T> implements MenuState<T> {
   NetworkExceptions get networkExceptions;
   @JsonKey(ignore: true)
   _$$WalletInfoErrorCopyWith<T, _$WalletInfoError<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UserSkillsLoadingCopyWith<T, $Res> {
+  factory _$$UserSkillsLoadingCopyWith(_$UserSkillsLoading<T> value,
+          $Res Function(_$UserSkillsLoading<T>) then) =
+      __$$UserSkillsLoadingCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$UserSkillsLoadingCopyWithImpl<T, $Res>
+    extends _$MenuStateCopyWithImpl<T, $Res, _$UserSkillsLoading<T>>
+    implements _$$UserSkillsLoadingCopyWith<T, $Res> {
+  __$$UserSkillsLoadingCopyWithImpl(_$UserSkillsLoading<T> _value,
+      $Res Function(_$UserSkillsLoading<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UserSkillsLoading<T> implements UserSkillsLoading<T> {
+  const _$UserSkillsLoading();
+
+  @override
+  String toString() {
+    return 'MenuState<$T>.userSkillsLoading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$UserSkillsLoading<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() walletInfoLoading,
+    required TResult Function(WalletInfo data) walletInfoSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
+    required TResult Function() walletBlanceAddedLoading,
+    required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletBalanceAdddedError,
+  }) {
+    return userSkillsLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? walletInfoLoading,
+    TResult? Function(WalletInfo data)? walletInfoSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult? Function()? walletBlanceAddedLoading,
+    TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+  }) {
+    return userSkillsLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? walletInfoLoading,
+    TResult Function(WalletInfo data)? walletInfoSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult Function()? walletBlanceAddedLoading,
+    TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    required TResult orElse(),
+  }) {
+    if (userSkillsLoading != null) {
+      return userSkillsLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
+    required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
+    required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
+    required TResult Function(WalletBlanceAddedLoading<T> value)
+        walletBlanceAddedLoading,
+    required TResult Function(WalletBalanceAddedSuccedded<T> value)
+        walletBalanceAddedSuccedded,
+    required TResult Function(WalletBalanceAdddedError<T> value)
+        walletBalanceAdddedError,
+  }) {
+    return userSkillsLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult? Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult? Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult? Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+  }) {
+    return userSkillsLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    required TResult orElse(),
+  }) {
+    if (userSkillsLoading != null) {
+      return userSkillsLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserSkillsLoading<T> implements MenuState<T> {
+  const factory UserSkillsLoading() = _$UserSkillsLoading<T>;
+}
+
+/// @nodoc
+abstract class _$$UserSkillsSuccessCopyWith<T, $Res> {
+  factory _$$UserSkillsSuccessCopyWith(_$UserSkillsSuccess<T> value,
+          $Res Function(_$UserSkillsSuccess<T>) then) =
+      __$$UserSkillsSuccessCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({List<SkillModel> skills});
+}
+
+/// @nodoc
+class __$$UserSkillsSuccessCopyWithImpl<T, $Res>
+    extends _$MenuStateCopyWithImpl<T, $Res, _$UserSkillsSuccess<T>>
+    implements _$$UserSkillsSuccessCopyWith<T, $Res> {
+  __$$UserSkillsSuccessCopyWithImpl(_$UserSkillsSuccess<T> _value,
+      $Res Function(_$UserSkillsSuccess<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? skills = null,
+  }) {
+    return _then(_$UserSkillsSuccess<T>(
+      null == skills
+          ? _value._skills
+          : skills // ignore: cast_nullable_to_non_nullable
+              as List<SkillModel>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UserSkillsSuccess<T> implements UserSkillsSuccess<T> {
+  const _$UserSkillsSuccess(final List<SkillModel> skills) : _skills = skills;
+
+  final List<SkillModel> _skills;
+  @override
+  List<SkillModel> get skills {
+    if (_skills is EqualUnmodifiableListView) return _skills;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_skills);
+  }
+
+  @override
+  String toString() {
+    return 'MenuState<$T>.userSkillsSuccess(skills: $skills)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserSkillsSuccess<T> &&
+            const DeepCollectionEquality().equals(other._skills, _skills));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_skills));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UserSkillsSuccessCopyWith<T, _$UserSkillsSuccess<T>> get copyWith =>
+      __$$UserSkillsSuccessCopyWithImpl<T, _$UserSkillsSuccess<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() walletInfoLoading,
+    required TResult Function(WalletInfo data) walletInfoSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
+    required TResult Function() walletBlanceAddedLoading,
+    required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletBalanceAdddedError,
+  }) {
+    return userSkillsSuccess(skills);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? walletInfoLoading,
+    TResult? Function(WalletInfo data)? walletInfoSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult? Function()? walletBlanceAddedLoading,
+    TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+  }) {
+    return userSkillsSuccess?.call(skills);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? walletInfoLoading,
+    TResult Function(WalletInfo data)? walletInfoSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult Function()? walletBlanceAddedLoading,
+    TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    required TResult orElse(),
+  }) {
+    if (userSkillsSuccess != null) {
+      return userSkillsSuccess(skills);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
+    required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
+    required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
+    required TResult Function(WalletBlanceAddedLoading<T> value)
+        walletBlanceAddedLoading,
+    required TResult Function(WalletBalanceAddedSuccedded<T> value)
+        walletBalanceAddedSuccedded,
+    required TResult Function(WalletBalanceAdddedError<T> value)
+        walletBalanceAdddedError,
+  }) {
+    return userSkillsSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult? Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult? Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult? Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+  }) {
+    return userSkillsSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    required TResult orElse(),
+  }) {
+    if (userSkillsSuccess != null) {
+      return userSkillsSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserSkillsSuccess<T> implements MenuState<T> {
+  const factory UserSkillsSuccess(final List<SkillModel> skills) =
+      _$UserSkillsSuccess<T>;
+
+  List<SkillModel> get skills;
+  @JsonKey(ignore: true)
+  _$$UserSkillsSuccessCopyWith<T, _$UserSkillsSuccess<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UserSkillsErrorCopyWith<T, $Res> {
+  factory _$$UserSkillsErrorCopyWith(_$UserSkillsError<T> value,
+          $Res Function(_$UserSkillsError<T>) then) =
+      __$$UserSkillsErrorCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({NetworkExceptions networkExceptions});
+
+  $NetworkExceptionsCopyWith<$Res> get networkExceptions;
+}
+
+/// @nodoc
+class __$$UserSkillsErrorCopyWithImpl<T, $Res>
+    extends _$MenuStateCopyWithImpl<T, $Res, _$UserSkillsError<T>>
+    implements _$$UserSkillsErrorCopyWith<T, $Res> {
+  __$$UserSkillsErrorCopyWithImpl(
+      _$UserSkillsError<T> _value, $Res Function(_$UserSkillsError<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? networkExceptions = null,
+  }) {
+    return _then(_$UserSkillsError<T>(
+      null == networkExceptions
+          ? _value.networkExceptions
+          : networkExceptions // ignore: cast_nullable_to_non_nullable
+              as NetworkExceptions,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $NetworkExceptionsCopyWith<$Res> get networkExceptions {
+    return $NetworkExceptionsCopyWith<$Res>(_value.networkExceptions, (value) {
+      return _then(_value.copyWith(networkExceptions: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$UserSkillsError<T> implements UserSkillsError<T> {
+  const _$UserSkillsError(this.networkExceptions);
+
+  @override
+  final NetworkExceptions networkExceptions;
+
+  @override
+  String toString() {
+    return 'MenuState<$T>.userSkillsError(networkExceptions: $networkExceptions)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserSkillsError<T> &&
+            (identical(other.networkExceptions, networkExceptions) ||
+                other.networkExceptions == networkExceptions));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, networkExceptions);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UserSkillsErrorCopyWith<T, _$UserSkillsError<T>> get copyWith =>
+      __$$UserSkillsErrorCopyWithImpl<T, _$UserSkillsError<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() walletInfoLoading,
+    required TResult Function(WalletInfo data) walletInfoSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
+    required TResult Function() walletBlanceAddedLoading,
+    required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletBalanceAdddedError,
+  }) {
+    return userSkillsError(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? walletInfoLoading,
+    TResult? Function(WalletInfo data)? walletInfoSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult? Function()? walletBlanceAddedLoading,
+    TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+  }) {
+    return userSkillsError?.call(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? walletInfoLoading,
+    TResult Function(WalletInfo data)? walletInfoSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult Function()? walletBlanceAddedLoading,
+    TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    required TResult orElse(),
+  }) {
+    if (userSkillsError != null) {
+      return userSkillsError(networkExceptions);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
+    required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
+    required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
+    required TResult Function(WalletBlanceAddedLoading<T> value)
+        walletBlanceAddedLoading,
+    required TResult Function(WalletBalanceAddedSuccedded<T> value)
+        walletBalanceAddedSuccedded,
+    required TResult Function(WalletBalanceAdddedError<T> value)
+        walletBalanceAdddedError,
+  }) {
+    return userSkillsError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult? Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult? Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult? Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+  }) {
+    return userSkillsError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    required TResult orElse(),
+  }) {
+    if (userSkillsError != null) {
+      return userSkillsError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserSkillsError<T> implements MenuState<T> {
+  const factory UserSkillsError(final NetworkExceptions networkExceptions) =
+      _$UserSkillsError<T>;
+
+  NetworkExceptions get networkExceptions;
+  @JsonKey(ignore: true)
+  _$$UserSkillsErrorCopyWith<T, _$UserSkillsError<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateSkillLoadingCopyWith<T, $Res> {
+  factory _$$UpdateSkillLoadingCopyWith(_$UpdateSkillLoading<T> value,
+          $Res Function(_$UpdateSkillLoading<T>) then) =
+      __$$UpdateSkillLoadingCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$UpdateSkillLoadingCopyWithImpl<T, $Res>
+    extends _$MenuStateCopyWithImpl<T, $Res, _$UpdateSkillLoading<T>>
+    implements _$$UpdateSkillLoadingCopyWith<T, $Res> {
+  __$$UpdateSkillLoadingCopyWithImpl(_$UpdateSkillLoading<T> _value,
+      $Res Function(_$UpdateSkillLoading<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UpdateSkillLoading<T> implements UpdateSkillLoading<T> {
+  const _$UpdateSkillLoading();
+
+  @override
+  String toString() {
+    return 'MenuState<$T>.updateSkillLoading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$UpdateSkillLoading<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() walletInfoLoading,
+    required TResult Function(WalletInfo data) walletInfoSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
+    required TResult Function() walletBlanceAddedLoading,
+    required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletBalanceAdddedError,
+  }) {
+    return updateSkillLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? walletInfoLoading,
+    TResult? Function(WalletInfo data)? walletInfoSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult? Function()? walletBlanceAddedLoading,
+    TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+  }) {
+    return updateSkillLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? walletInfoLoading,
+    TResult Function(WalletInfo data)? walletInfoSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult Function()? walletBlanceAddedLoading,
+    TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    required TResult orElse(),
+  }) {
+    if (updateSkillLoading != null) {
+      return updateSkillLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
+    required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
+    required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
+    required TResult Function(WalletBlanceAddedLoading<T> value)
+        walletBlanceAddedLoading,
+    required TResult Function(WalletBalanceAddedSuccedded<T> value)
+        walletBalanceAddedSuccedded,
+    required TResult Function(WalletBalanceAdddedError<T> value)
+        walletBalanceAdddedError,
+  }) {
+    return updateSkillLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult? Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult? Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult? Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+  }) {
+    return updateSkillLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    required TResult orElse(),
+  }) {
+    if (updateSkillLoading != null) {
+      return updateSkillLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateSkillLoading<T> implements MenuState<T> {
+  const factory UpdateSkillLoading() = _$UpdateSkillLoading<T>;
+}
+
+/// @nodoc
+abstract class _$$UpdateSkillSuccessCopyWith<T, $Res> {
+  factory _$$UpdateSkillSuccessCopyWith(_$UpdateSkillSuccess<T> value,
+          $Res Function(_$UpdateSkillSuccess<T>) then) =
+      __$$UpdateSkillSuccessCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({UpdateSkill data});
+}
+
+/// @nodoc
+class __$$UpdateSkillSuccessCopyWithImpl<T, $Res>
+    extends _$MenuStateCopyWithImpl<T, $Res, _$UpdateSkillSuccess<T>>
+    implements _$$UpdateSkillSuccessCopyWith<T, $Res> {
+  __$$UpdateSkillSuccessCopyWithImpl(_$UpdateSkillSuccess<T> _value,
+      $Res Function(_$UpdateSkillSuccess<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UpdateSkillSuccess<T>(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as UpdateSkill,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateSkillSuccess<T> implements UpdateSkillSuccess<T> {
+  const _$UpdateSkillSuccess(this.data);
+
+  @override
+  final UpdateSkill data;
+
+  @override
+  String toString() {
+    return 'MenuState<$T>.updateSkillSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateSkillSuccess<T> &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateSkillSuccessCopyWith<T, _$UpdateSkillSuccess<T>> get copyWith =>
+      __$$UpdateSkillSuccessCopyWithImpl<T, _$UpdateSkillSuccess<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() walletInfoLoading,
+    required TResult Function(WalletInfo data) walletInfoSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
+    required TResult Function() walletBlanceAddedLoading,
+    required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletBalanceAdddedError,
+  }) {
+    return updateSkillSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? walletInfoLoading,
+    TResult? Function(WalletInfo data)? walletInfoSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult? Function()? walletBlanceAddedLoading,
+    TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+  }) {
+    return updateSkillSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? walletInfoLoading,
+    TResult Function(WalletInfo data)? walletInfoSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult Function()? walletBlanceAddedLoading,
+    TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    required TResult orElse(),
+  }) {
+    if (updateSkillSuccess != null) {
+      return updateSkillSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
+    required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
+    required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
+    required TResult Function(WalletBlanceAddedLoading<T> value)
+        walletBlanceAddedLoading,
+    required TResult Function(WalletBalanceAddedSuccedded<T> value)
+        walletBalanceAddedSuccedded,
+    required TResult Function(WalletBalanceAdddedError<T> value)
+        walletBalanceAdddedError,
+  }) {
+    return updateSkillSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult? Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult? Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult? Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+  }) {
+    return updateSkillSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    required TResult orElse(),
+  }) {
+    if (updateSkillSuccess != null) {
+      return updateSkillSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateSkillSuccess<T> implements MenuState<T> {
+  const factory UpdateSkillSuccess(final UpdateSkill data) =
+      _$UpdateSkillSuccess<T>;
+
+  UpdateSkill get data;
+  @JsonKey(ignore: true)
+  _$$UpdateSkillSuccessCopyWith<T, _$UpdateSkillSuccess<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateSkillErrorCopyWith<T, $Res> {
+  factory _$$UpdateSkillErrorCopyWith(_$UpdateSkillError<T> value,
+          $Res Function(_$UpdateSkillError<T>) then) =
+      __$$UpdateSkillErrorCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({NetworkExceptions networkExceptions});
+
+  $NetworkExceptionsCopyWith<$Res> get networkExceptions;
+}
+
+/// @nodoc
+class __$$UpdateSkillErrorCopyWithImpl<T, $Res>
+    extends _$MenuStateCopyWithImpl<T, $Res, _$UpdateSkillError<T>>
+    implements _$$UpdateSkillErrorCopyWith<T, $Res> {
+  __$$UpdateSkillErrorCopyWithImpl(
+      _$UpdateSkillError<T> _value, $Res Function(_$UpdateSkillError<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? networkExceptions = null,
+  }) {
+    return _then(_$UpdateSkillError<T>(
+      null == networkExceptions
+          ? _value.networkExceptions
+          : networkExceptions // ignore: cast_nullable_to_non_nullable
+              as NetworkExceptions,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $NetworkExceptionsCopyWith<$Res> get networkExceptions {
+    return $NetworkExceptionsCopyWith<$Res>(_value.networkExceptions, (value) {
+      return _then(_value.copyWith(networkExceptions: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$UpdateSkillError<T> implements UpdateSkillError<T> {
+  const _$UpdateSkillError(this.networkExceptions);
+
+  @override
+  final NetworkExceptions networkExceptions;
+
+  @override
+  String toString() {
+    return 'MenuState<$T>.updateSkillError(networkExceptions: $networkExceptions)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateSkillError<T> &&
+            (identical(other.networkExceptions, networkExceptions) ||
+                other.networkExceptions == networkExceptions));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, networkExceptions);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateSkillErrorCopyWith<T, _$UpdateSkillError<T>> get copyWith =>
+      __$$UpdateSkillErrorCopyWithImpl<T, _$UpdateSkillError<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() walletInfoLoading,
+    required TResult Function(WalletInfo data) walletInfoSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
+    required TResult Function() walletBlanceAddedLoading,
+    required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletBalanceAdddedError,
+  }) {
+    return updateSkillError(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? walletInfoLoading,
+    TResult? Function(WalletInfo data)? walletInfoSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult? Function()? walletBlanceAddedLoading,
+    TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+  }) {
+    return updateSkillError?.call(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? walletInfoLoading,
+    TResult Function(WalletInfo data)? walletInfoSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult Function()? walletBlanceAddedLoading,
+    TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    required TResult orElse(),
+  }) {
+    if (updateSkillError != null) {
+      return updateSkillError(networkExceptions);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
+    required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
+    required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
+    required TResult Function(WalletBlanceAddedLoading<T> value)
+        walletBlanceAddedLoading,
+    required TResult Function(WalletBalanceAddedSuccedded<T> value)
+        walletBalanceAddedSuccedded,
+    required TResult Function(WalletBalanceAdddedError<T> value)
+        walletBalanceAdddedError,
+  }) {
+    return updateSkillError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult? Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult? Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult? Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+  }) {
+    return updateSkillError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    required TResult orElse(),
+  }) {
+    if (updateSkillError != null) {
+      return updateSkillError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateSkillError<T> implements MenuState<T> {
+  const factory UpdateSkillError(final NetworkExceptions networkExceptions) =
+      _$UpdateSkillError<T>;
+
+  NetworkExceptions get networkExceptions;
+  @JsonKey(ignore: true)
+  _$$UpdateSkillErrorCopyWith<T, _$UpdateSkillError<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -817,6 +2265,14 @@ class _$WalletBlanceAddedLoading<T> implements WalletBlanceAddedLoading<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
     required TResult Function() walletBlanceAddedLoading,
     required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -832,6 +2288,12 @@ class _$WalletBlanceAddedLoading<T> implements WalletBlanceAddedLoading<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
     TResult? Function()? walletBlanceAddedLoading,
     TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)?
@@ -847,6 +2309,12 @@ class _$WalletBlanceAddedLoading<T> implements WalletBlanceAddedLoading<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
     TResult Function()? walletBlanceAddedLoading,
     TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
     TResult Function(NetworkExceptions networkExceptions)?
@@ -866,6 +2334,12 @@ class _$WalletBlanceAddedLoading<T> implements WalletBlanceAddedLoading<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
     required TResult Function(WalletBlanceAddedLoading<T> value)
         walletBlanceAddedLoading,
     required TResult Function(WalletBalanceAddedSuccedded<T> value)
@@ -883,6 +2357,12 @@ class _$WalletBlanceAddedLoading<T> implements WalletBlanceAddedLoading<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
     TResult? Function(WalletBlanceAddedLoading<T> value)?
         walletBlanceAddedLoading,
     TResult? Function(WalletBalanceAddedSuccedded<T> value)?
@@ -900,6 +2380,12 @@ class _$WalletBlanceAddedLoading<T> implements WalletBlanceAddedLoading<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
     TResult Function(WalletBlanceAddedLoading<T> value)?
         walletBlanceAddedLoading,
     TResult Function(WalletBalanceAddedSuccedded<T> value)?
@@ -992,6 +2478,14 @@ class _$WalletBalanceAddedSuccedded<T>
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
     required TResult Function() walletBlanceAddedLoading,
     required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -1007,6 +2501,12 @@ class _$WalletBalanceAddedSuccedded<T>
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
     TResult? Function()? walletBlanceAddedLoading,
     TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)?
@@ -1022,6 +2522,12 @@ class _$WalletBalanceAddedSuccedded<T>
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
     TResult Function()? walletBlanceAddedLoading,
     TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
     TResult Function(NetworkExceptions networkExceptions)?
@@ -1041,6 +2547,12 @@ class _$WalletBalanceAddedSuccedded<T>
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
     required TResult Function(WalletBlanceAddedLoading<T> value)
         walletBlanceAddedLoading,
     required TResult Function(WalletBalanceAddedSuccedded<T> value)
@@ -1058,6 +2570,12 @@ class _$WalletBalanceAddedSuccedded<T>
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
     TResult? Function(WalletBlanceAddedLoading<T> value)?
         walletBlanceAddedLoading,
     TResult? Function(WalletBalanceAddedSuccedded<T> value)?
@@ -1075,6 +2593,12 @@ class _$WalletBalanceAddedSuccedded<T>
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
     TResult Function(WalletBlanceAddedLoading<T> value)?
         walletBlanceAddedLoading,
     TResult Function(WalletBalanceAddedSuccedded<T> value)?
@@ -1182,6 +2706,14 @@ class _$WalletBalanceAdddedError<T> implements WalletBalanceAdddedError<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
     required TResult Function() walletBlanceAddedLoading,
     required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -1197,6 +2729,12 @@ class _$WalletBalanceAdddedError<T> implements WalletBalanceAdddedError<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
     TResult? Function()? walletBlanceAddedLoading,
     TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)?
@@ -1212,6 +2750,12 @@ class _$WalletBalanceAdddedError<T> implements WalletBalanceAdddedError<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
     TResult Function()? walletBlanceAddedLoading,
     TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
     TResult Function(NetworkExceptions networkExceptions)?
@@ -1231,6 +2775,12 @@ class _$WalletBalanceAdddedError<T> implements WalletBalanceAdddedError<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
     required TResult Function(WalletBlanceAddedLoading<T> value)
         walletBlanceAddedLoading,
     required TResult Function(WalletBalanceAddedSuccedded<T> value)
@@ -1248,6 +2798,12 @@ class _$WalletBalanceAdddedError<T> implements WalletBalanceAdddedError<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
     TResult? Function(WalletBlanceAddedLoading<T> value)?
         walletBlanceAddedLoading,
     TResult? Function(WalletBalanceAddedSuccedded<T> value)?
@@ -1265,6 +2821,12 @@ class _$WalletBalanceAdddedError<T> implements WalletBalanceAdddedError<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
     TResult Function(WalletBlanceAddedLoading<T> value)?
         walletBlanceAddedLoading,
     TResult Function(WalletBalanceAddedSuccedded<T> value)?

@@ -22,6 +22,7 @@ import 'package:pip/features/menu/presentation/screens/wallet_view.dart';
 import 'package:pip/features/menu/presentation/screens/who_we_are_view.dart';
 import 'package:pip/features/menu/presentation/screens/work_with_us_view.dart';
 import 'package:pip/features/notification/business_logic/cubit/notification_cubit.dart';
+import 'package:pip/features/pip/business_logic/cubit/pip_cubit.dart';
 import 'package:pip/features/search/business_logic/bloc/search_bloc.dart';
 import '../../features/auth/presentation/screens/forgot_password_view.dart';
 import '../../features/auth/presentation/screens/login_view.dart';
@@ -104,6 +105,7 @@ class RouteGenerator {
   static late NotificationCubit notificationCubit;
   static late MenuCubit menuCubit;
   static late SearchBloc searchBloc;
+  static late PipCubit pipCubit;
 
   RouteGenerator() {
     homeCubit = getIt<HomeCubit>();
@@ -111,6 +113,7 @@ class RouteGenerator {
     notificationCubit = getIt<NotificationCubit>();
     menuCubit = getIt<MenuCubit>();
     searchBloc = getIt<SearchBloc>();
+    pipCubit = getIt<PipCubit>();
   }
   static List screens = <Widget>[
     const HomeView(),
@@ -182,14 +185,17 @@ class RouteGenerator {
 
       case Routes.searchMainViewRoute:
         return MaterialPageRoute(
-          builder: (_) =>  BlocProvider.value(
-          value:searchBloc,
+          builder: (_) => BlocProvider.value(
+            value: searchBloc,
             child: const SearchMainView(),
           ),
         );
       case Routes.specialRequestViewRoute:
         return MaterialPageRoute(
-          builder: (_) => const SpecialRequestDetailsView(),
+          builder: (_) => BlocProvider.value(
+            value: pipCubit,
+            child: const SpecialRequestDetailsView(),
+          ),
         );
       case Routes.fastRequestViewRoute:
         return MaterialPageRoute(
@@ -268,7 +274,11 @@ class RouteGenerator {
         );
       case Routes.skillsViewRoute:
         return MaterialPageRoute(
-          builder: (_) => const SkillsView(),
+          builder: (_) =>  BlocProvider.value(
+            value: menuCubit,
+       
+            child:const SkillsView(),
+          ),
         );
       case Routes.rateUsViewRoute:
         return MaterialPageRoute(

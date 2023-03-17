@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pip/core/resources/assets_manager.dart';
 import 'package:pip/core/resources/route_manager.dart';
 
@@ -15,12 +14,12 @@ class AppConstants {
 }
 
 String defaultUId = '0';
-String? userName ;
-String? token='123';
-String? userEmail ;
+String? userName;
+String? token = '1234';
+String? userEmail;
 
-String? userPhone ;
-String? userImage ;
+String? userPhone;
+String? userImage;
 
 int selectedTab = 0;
 int screenIndex = 0;
