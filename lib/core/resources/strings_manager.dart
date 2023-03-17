@@ -107,9 +107,9 @@ class AppStrings {
   static const String jobsDownlodedPreviously = 'وظائف قمت بتنزيلها مسبقا :';
   static const String requestDetails = 'تفاصيل الطلب';
   static const String requestStatus = 'تلقي العروض';
-  static const String showOffers = 'عرض العروض المقدمة  15';
-  static const String fifteenOffer = '15 عرض مقدم';
-  static const String hundredRyal = '100 ريال';
+  static const String showOffers = 'عرض العروض المقدمة';
+  static const String offerd = 'عرض مقدم';
+  static const String ryal = 'ريال';
   static const String recieveOffers = 'تلقي العروض';
   static const String modifyRequest = 'تعديل الطلب';
   static const String cancelRequest = 'إلغاء الطلب';

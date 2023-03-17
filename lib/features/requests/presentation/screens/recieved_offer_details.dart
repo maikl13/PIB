@@ -153,7 +153,7 @@ class _RecievedOfferDetailsState extends State<RecievedOfferDetails> {
           children: const [
             MainInfoItem(title: AppStrings.plumber, icon: Icons.cases_rounded),
             MainInfoItem(
-                title: AppStrings.hundredRyal, icon: FontAwesomeIcons.tags),
+                title: AppStrings.ryal, icon: FontAwesomeIcons.tags),
             MainInfoItem(title: '6 days', icon: FontAwesomeIcons.solidClock),
           ],
         ),

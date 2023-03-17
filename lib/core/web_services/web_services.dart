@@ -10,6 +10,7 @@ import '../../features/home/data/models/slider_model.dart';
 import '../../features/menu/data/models/add_balance.dart';
 import '../../features/menu/data/models/wallet_info.dart';
 import '../../features/notification/data/models/notification_model.dart';
+import '../../features/requests/data/models/my_request_model.dart';
 
 
 part 'web_services.g.dart';
@@ -66,8 +67,11 @@ abstract class WebServices {
    @GET("ads")
   Future<List<AdModel>> getAllAds(@Header('Authorization') String token);
 
-  //         @GET("deals/top?geography=international")
-  // Future<List<DealModel> >getInternationalTopDeals(@Header('Authorization') String token);
+          @GET("user/deals")
+  Future<List<MyRequestModel>>getAllMyRequests(@Header('Authorization') String token);
+
+       @GET("requests/hirings")
+  Future<List<MyRequestModel>>getAllAvailableJobs(@Header('Authorization') String token);
 
   //         @GET("deals/top?geography=locale")
   // Future<List<DealModel> >getLocalTopDeals(@Header('Authorization') String token);

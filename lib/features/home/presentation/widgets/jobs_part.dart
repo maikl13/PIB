@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/resources/route_manager.dart';
 import '../../data/models/ad_model.dart';
 import 'show_all_text.dart';
 
@@ -49,6 +50,12 @@ class JobsPart extends StatelessWidget {
                   image: ads[index].image,
                   companyName: ads[index].title,
                   skillName: ads[index].skillName,
+                  onTap: () {
+        Navigator.pushNamed(context, Routes.jobDetailsViewRoute,
+            arguments: {
+              'ad': ads[index],
+            });
+      },
                 );
               }),
         ),

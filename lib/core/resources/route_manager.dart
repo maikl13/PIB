@@ -23,6 +23,7 @@ import 'package:pip/features/menu/presentation/screens/who_we_are_view.dart';
 import 'package:pip/features/menu/presentation/screens/work_with_us_view.dart';
 import 'package:pip/features/notification/business_logic/cubit/notification_cubit.dart';
 import 'package:pip/features/pip/business_logic/cubit/pip_cubit.dart';
+import 'package:pip/features/requests/data/models/my_request_model.dart';
 import 'package:pip/features/search/business_logic/bloc/search_bloc.dart';
 import '../../features/auth/presentation/screens/forgot_password_view.dart';
 import '../../features/auth/presentation/screens/login_view.dart';
@@ -36,6 +37,7 @@ import '../../features/notification/presentation/screens/notification_view.dart'
 import '../../features/pip/presentation/screens/fast_request_view.dart';
 import '../../features/pip/presentation/screens/pick_request_type.dart';
 import '../../features/pip/presentation/screens/special_request_details.dart';
+import '../../features/requests/business_logic/cubit/requests_cubit.dart';
 import '../../features/requests/presentation/screens/available_job_details.dart';
 import '../../features/requests/presentation/screens/give_offer_view.dart';
 import '../../features/requests/presentation/screens/my_requests_main_view.dart';
@@ -106,6 +108,7 @@ class RouteGenerator {
   static late MenuCubit menuCubit;
   static late SearchBloc searchBloc;
   static late PipCubit pipCubit;
+  static late RequestsCubit requestsCubit;
 
   RouteGenerator() {
     homeCubit = getIt<HomeCubit>();
@@ -114,11 +117,15 @@ class RouteGenerator {
     menuCubit = getIt<MenuCubit>();
     searchBloc = getIt<SearchBloc>();
     pipCubit = getIt<PipCubit>();
+    requestsCubit = getIt<RequestsCubit>();
   }
   static List screens = <Widget>[
     const HomeView(),
     const PickRequestTypeView(),
-    const MyRequestsMainView(),
+    BlocProvider.value(
+      value: requestsCubit,
+      child: const MyRequestsMainView(),
+    ),
     const ConversationsTypeView(),
     BlocProvider.value(
       value: menuCubit,
@@ -179,8 +186,13 @@ class RouteGenerator {
         );
 
       case Routes.jobDetailsViewRoute:
+        final arguments = settings.arguments as Map;
+
+        final Ads ad = arguments['ad'];
         return MaterialPageRoute(
-          builder: (_) => const JobDetailsView(),
+          builder: (_) => JobDetailsView(
+            ad: ad,
+          ),
         );
 
       case Routes.searchMainViewRoute:
@@ -203,8 +215,16 @@ class RouteGenerator {
         );
 
       case Routes.requestDetailsViewRoute:
+        final arguments = settings.arguments as Map;
+
+        final MyRequestModel request = arguments['request'];
         return MaterialPageRoute(
-          builder: (_) => const WantedJobRequestsDetailsView(),
+          builder: (_) => BlocProvider.value(
+            value: requestsCubit,
+            child: WantedJobRequestsDetailsView(
+              request: request,
+            ),
+          ),
         );
       case Routes.chooseTaxiViewRoute:
         return MaterialPageRoute(
@@ -222,8 +242,14 @@ class RouteGenerator {
         );
 
       case Routes.availableJobDetailsViewRoute:
+         final arguments = settings.arguments as Map;
+
+        final MyRequestModel availableJob = arguments['job'];
         return MaterialPageRoute(
-          builder: (_) => const AvailableJobDetailsView(),
+          builder: (_) =>  AvailableJobDetailsView(
+            availableJob: availableJob,
+            
+          ),
         );
 
       case Routes.giveOffersViewRoute:
@@ -274,10 +300,9 @@ class RouteGenerator {
         );
       case Routes.skillsViewRoute:
         return MaterialPageRoute(
-          builder: (_) =>  BlocProvider.value(
+          builder: (_) => BlocProvider.value(
             value: menuCubit,
-       
-            child:const SkillsView(),
+            child: const SkillsView(),
           ),
         );
       case Routes.rateUsViewRoute:

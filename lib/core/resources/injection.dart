@@ -5,6 +5,8 @@ import 'package:pip/features/notification/business_logic/cubit/notification_cubi
 import 'package:pip/features/notification/data/repository/notification_repository.dart';
 import 'package:pip/features/pip/business_logic/cubit/pip_cubit.dart';
 import 'package:pip/features/pip/data/repository/pip_repository.dart';
+import 'package:pip/features/requests/business_logic/cubit/requests_cubit.dart';
+import 'package:pip/features/requests/data/repository/request_repository.dart';
 import 'package:pip/features/search/business_logic/bloc/search_bloc.dart';
 import 'package:pip/features/search/data/repository/repository.dart';
 
@@ -37,6 +39,10 @@ void initGetIt() {
 
         getIt.registerLazySingleton<SearchRepository>(() => SearchRepository(getIt()));
   getIt.registerLazySingleton<SearchBloc>(() => SearchBloc(getIt()));
+
+          getIt.registerLazySingleton<RequestRepository>(() => RequestRepository(getIt()));
+  getIt.registerLazySingleton<RequestsCubit>(() => RequestsCubit(getIt()));
+
   getIt.registerLazySingleton<WebServices>(
       () => WebServices(createAndSetupDio()));
 }

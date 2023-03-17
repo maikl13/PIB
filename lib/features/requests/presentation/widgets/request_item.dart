@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../../../../core/resources/assets_manager.dart';
+import 'package:pip/core/widgets/custom_network_image.dart';
+import 'package:pip/features/requests/data/models/my_request_model.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../notification/presentation/widgets/clock_date.dart';
-
+// ignore: depend_on_referenced_packages
+import 'package:intl/intl.dart';
 import '../../../../core/resources/style_manager.dart';
 
 class RequestItem extends StatelessWidget {
-  const RequestItem({super.key, required this.onTap});
+  const RequestItem(
+      {super.key, required this.onTap, this.requests, this.index});
   final void Function() onTap;
+  final List<MyRequestModel>? requests;
+  final int? index;
   _buildInfo() {
     return Padding(
       padding: EdgeInsets.only(top: 15.h, right: 15.w),
@@ -44,7 +49,7 @@ class RequestItem extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 10.h),
-                ClockDate(color: ColorManager.grey)
+                _buildClock(requests![index!].createdAt.toString()),
               ],
             ),
           ),
@@ -53,9 +58,20 @@ class RequestItem extends StatelessWidget {
     );
   }
 
+  _buildClock(String date) {
+    final result = DateTime.parse(date).toLocal();
+
+    String formattedDate = DateFormat('d-M-yyyy').format(result);
+
+    return ClockDate(
+      color: ColorManager.grey,
+      date: formattedDate,
+    );
+  }
+
   _buildJobTitle() {
     return Text(
-      AppStrings.jobTitle,
+      requests![index!].category!.name ?? '',
       style: getBoldStyle(color: ColorManager.white, fontSize: 15.sp),
     );
   }
@@ -73,10 +89,8 @@ class RequestItem extends StatelessWidget {
       child: SizedBox(
         width: 120.h,
         height: 80.h,
-        child: Image.asset(
-          ImageAssets.banner,
-          fit: BoxFit.cover,
-        ),
+        child: CustomNetworkCachedImage(
+            url: requests![index!].category!.imageUrl!),
       ),
     );
   }
@@ -91,7 +105,7 @@ class RequestItem extends StatelessWidget {
 
   _buildPrice() {
     return Text(
-      '1000 usd',
+      requests![index!].price.toString(),
       style: getRegularStyle(color: ColorManager.grey, fontSize: 12.sp),
     );
   }
@@ -106,7 +120,7 @@ class RequestItem extends StatelessWidget {
 
   _buildNumberOfRequests() {
     return Text(
-      '15 offers',
+      '${requests![index!].offersCount} عرض',
       style: getRegularStyle(color: ColorManager.grey, fontSize: 12.sp),
     );
   }

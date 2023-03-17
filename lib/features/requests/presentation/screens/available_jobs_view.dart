@@ -1,16 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/resources/route_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/widgets/custom_title.dart';
+import '../../../../core/widgets/loading_indicator.dart';
+import '../../business_logic/cubit/requests_cubit.dart';
+import '../../business_logic/cubit/requests_state.dart';
+import '../../data/models/my_request_model.dart';
 import '../widgets/request_item.dart';
 
-class AvailableJobsView extends StatelessWidget {
+class AvailableJobsView extends StatefulWidget {
   const AvailableJobsView({super.key});
-  _buildList() {
+
+  @override
+  State<AvailableJobsView> createState() => _AvailableJobsViewState();
+}
+
+class _AvailableJobsViewState extends State<AvailableJobsView> {
+  _buildBloc() {
+    return BlocConsumer<RequestsCubit, RequestState>(
+      listener: (context, state) {},
+      buildWhen: (previous, next) => next is MyAvailableJobsSuccess,
+      builder: (context, state) {
+        return state.maybeWhen(
+            myAvailableJobsLoading: () {
+              return const LoadingIndicator();
+            },
+            myAvailableJobsSuccess: (avaliableJobs) {
+              return _buildList(avaliableJobs);
+            },
+            orElse: () => Container());
+      },
+    );
+  }
+
+  _buildList(List<MyRequestModel> availableJobs) {
     return ListView.separated(
-      itemCount: 10,
+      itemCount: availableJobs.length,
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       separatorBuilder: (context, index) {
@@ -18,8 +46,11 @@ class AvailableJobsView extends StatelessWidget {
       },
       itemBuilder: (context, index) {
         return RequestItem(
+          requests: availableJobs,
+          index: index,
           onTap: () {
-            Navigator.pushNamed(context, Routes.availableJobDetailsViewRoute);
+            Navigator.pushNamed(context, Routes.availableJobDetailsViewRoute,
+                arguments: {'job': availableJobs[index]});
           },
         );
       },
@@ -27,14 +58,22 @@ class AvailableJobsView extends StatelessWidget {
   }
 
   @override
+  void initState() {
+        BlocProvider.of<RequestsCubit>(context).getAllAvailableJobs();
+
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
+
     return ListView(
       padding: EdgeInsets.only(top: 37.h),
       shrinkWrap: true,
       children: [
         const CustomTitle(title: AppStrings.recievedRequests),
         SizedBox(height: 20.h),
-        _buildList(),
+        _buildBloc(),
       ],
     );
   }

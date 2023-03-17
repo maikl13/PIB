@@ -1,6 +1,3 @@
-
-
-
 import 'package:pip/features/menu/data/models/update_skill.dart';
 
 import '../../../../core/resources/constants.dart';
@@ -17,38 +14,35 @@ class MenuRepository {
   MenuRepository(this.webServices);
   Future<ApiResult<List<SkillModel>>> getAllUserSkills() async {
     try {
-      var response = await webServices.getAllUserSkills(
-          'Bearer $token');
+      var response = await webServices.getAllUserSkills('Bearer $token');
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(NetworkExceptions.getDioException(error));
     }
   }
-
 
   Future<ApiResult<UpdateSkill>> updateSkill(List<int> skills) async {
     try {
-      var response = await webServices.updateSkill(
-          'Bearer $token',skills);
-      return ApiResult.success(response);
-    } catch (error) {
-      return ApiResult.failure(NetworkExceptions.getDioException(error));
-    }
-  }
-  Future<ApiResult<WalletInfo>> getWalletInfo() async {
-    try {
-      var response = await webServices.getWalletInfo(
-          'Bearer $token');
+      var response = await webServices.updateSkill('Bearer $token', skills);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(NetworkExceptions.getDioException(error));
     }
   }
 
-   Future<ApiResult<AddBalance>> addBalanceToWallet(String amount) async {
+  Future<ApiResult<WalletInfo>> getWalletInfo() async {
     try {
-      var response = await webServices.addBalanceToWallet(
-          'Bearer $token',amount);
+      var response = await webServices.getWalletInfo('Bearer $token');
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(NetworkExceptions.getDioException(error));
+    }
+  }
+
+  Future<ApiResult<AddBalance>> addBalanceToWallet(String amount) async {
+    try {
+      var response =
+          await webServices.addBalanceToWallet('Bearer $token', amount);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(NetworkExceptions.getDioException(error));

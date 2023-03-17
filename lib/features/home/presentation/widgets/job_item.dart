@@ -6,10 +6,11 @@ import '../../../../core/resources/style_manager.dart';
 import 'image_with_stars.dart';
 
 class JobItem extends StatelessWidget {
-  const JobItem({super.key, this.image, this.companyName, this.skillName});
+  const JobItem({super.key, this.image, this.companyName, this.skillName, this.onTap});
   final String? image;
   final String? companyName;
   final String? skillName ;
+  final void Function()? onTap;
 
   _buildCompanyName() {
     return Text(
@@ -28,9 +29,7 @@ class JobItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        Navigator.pushNamed(context, Routes.jobDetailsViewRoute);
-      },
+      onTap: onTap,
       child: Column(
         children: [
            ImageWithRating(image: image),

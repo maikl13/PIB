@@ -1,16 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/features/requests/business_logic/cubit/requests_cubit.dart';
+import 'package:pip/features/requests/business_logic/cubit/requests_state.dart';
+import 'package:pip/features/requests/data/models/my_request_model.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/widgets/custom_title.dart';
 
 import '../../../../core/resources/route_manager.dart';
+import '../../../../core/widgets/loading_indicator.dart';
 import '../widgets/request_item.dart';
 
-class WantedJobRequestsView extends StatelessWidget {
+class WantedJobRequestsView extends StatefulWidget {
   const WantedJobRequestsView({super.key});
-  _buildList() {
+
+  @override
+  State<WantedJobRequestsView> createState() => _WantedJobRequestsViewState();
+}
+
+class _WantedJobRequestsViewState extends State<WantedJobRequestsView> {
+  _buildBloc() {
+    return BlocConsumer<RequestsCubit, RequestState>(
+      listener: (context, state) {},
+      buildWhen: (previous, next) => next is MyRequestsSuccess,
+      builder: (context, state) {
+        return state.maybeWhen(
+            myRequestsLoading: () {
+              return const LoadingIndicator();
+            },
+            myRequestsSuccess: (requests) {
+              return _buildList(requests);
+            },
+            orElse: () => Container());
+      },
+    );
+  }
+
+  _buildList(List<MyRequestModel> requests) {
     return ListView.separated(
-      itemCount: 10,
+      itemCount: requests.length,
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       separatorBuilder: (context, index) {
@@ -18,12 +46,21 @@ class WantedJobRequestsView extends StatelessWidget {
       },
       itemBuilder: (context, index) {
         return RequestItem(
+          requests: requests,
+          index: index,
           onTap: () {
-            Navigator.pushNamed(context, Routes.requestDetailsViewRoute);
+            Navigator.pushNamed(context, Routes.requestDetailsViewRoute,
+                arguments: {'request': requests[index]});
           },
         );
       },
     );
+  }
+
+  @override
+  void initState() {
+    BlocProvider.of<RequestsCubit>(context).getAllMyRequests();
+    super.initState();
   }
 
   @override
@@ -34,7 +71,7 @@ class WantedJobRequestsView extends StatelessWidget {
       children: [
         const CustomTitle(title: AppStrings.jobsDownlodedPreviously),
         SizedBox(height: 20.h),
-        _buildList(),
+        _buildBloc(),
       ],
     );
   }

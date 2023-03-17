@@ -6,14 +6,19 @@ import '../../../../core/resources/style_manager.dart';
 import '../../../../core/widgets/custom_appbar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../../core/widgets/default_button.dart';
+import '../../data/models/ad_model.dart';
 import '../widgets/info_item.dart';
 import '../widgets/job_details_image.dart';
 import '../widgets/main_info_item.dart';
 import '../../../notification/presentation/widgets/clock_date.dart';
 import 'package:share_plus/share_plus.dart';
+// ignore: depend_on_referenced_packages
+import 'package:intl/intl.dart';
 
 class JobDetailsView extends StatelessWidget {
-  const JobDetailsView({super.key});
+  const JobDetailsView({super.key, required this.ad});
+
+  final Ads ad;
 
   _buildBody() {
     return Padding(
@@ -32,18 +37,18 @@ class JobDetailsView extends StatelessWidget {
             SizedBox(height: 20.h),
             _buildRandomText(),
             SizedBox(height: 12.h),
-            ClockDate(color: ColorManager.grey),
+            _buildDate(ad.createdAt.toString()),
             SizedBox(height: 40.h),
             _buildMainInfo(),
             SizedBox(height: 15.h),
-            const InfoItem(
+            InfoItem(
               leading: FontAwesomeIcons.globe,
-              title: AppStrings.jobLink,
+              title: ad.website ?? '',
             ),
             SizedBox(height: 15.h),
-            const InfoItem(
+            InfoItem(
               leading: FontAwesomeIcons.locationDot,
-              title: AppStrings.jobLocation,
+              title: ad.location ?? '',
               trailling: FontAwesomeIcons.mapLocationDot,
             ),
             SizedBox(height: 70.h),
@@ -64,21 +69,31 @@ class JobDetailsView extends StatelessWidget {
     );
   }
 
+  _buildDate(String date) {
+    final result = DateTime.parse(date).toLocal();
+
+    String formattedDate = DateFormat('d-M-yyyy').format(result);
+    return ClockDate(
+      color: ColorManager.grey,
+      date: formattedDate,
+    );
+  }
+
   _buildCompanyName() {
-    return Text(AppStrings.companyName,
+    return Text(ad.title ?? '',
         style:
             getBoldStyle(fontSize: 20.sp, color: ColorManager.darkSeconadry));
   }
 
   _buildJobname() {
-    return Text(AppStrings.jobTitle,
+    return Text(ad.skillName ?? '',
         style: getRegularStyle(fontSize: 18.sp, color: ColorManager.white));
   }
 
   _buildRandomText() {
     return Padding(
       padding: EdgeInsets.only(right: 20.w, left: 20.w),
-      child: Text(AppStrings.randomText,
+      child: Text(ad.content ?? '',
           textAlign: TextAlign.center,
           style: getRegularStyle(fontSize: 13.sp, color: ColorManager.grey)),
     );
@@ -96,12 +111,12 @@ class JobDetailsView extends StatelessWidget {
         padding: EdgeInsets.only(top: 20.h),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: const [
+          children: [
             MainInfoItem(
-                title: AppStrings.partTimeJobs,
+                title: ad.categoryName ?? '',
                 icon: FontAwesomeIcons.bagShopping),
-            MainInfoItem(title: AppStrings.zeros, icon: Icons.phone),
-            MainInfoItem(title: AppStrings.adPayed, icon: Icons.layers),
+            MainInfoItem(title: ad.phone ?? '', icon: Icons.phone),
+            const MainInfoItem(title: AppStrings.adPayed, icon: Icons.layers),
           ],
         ),
       ),
@@ -133,6 +148,7 @@ class JobDetailsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // print(ad.id.toString());
     return Scaffold(
       appBar: CustomAppBar(
         appBarColor: ColorManager.lightBlack,
