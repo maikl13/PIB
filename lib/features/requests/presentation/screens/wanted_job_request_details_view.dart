@@ -9,7 +9,6 @@ import '../../../../core/resources/commons.dart';
 import '../../../../core/resources/route_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/widgets/custom_appbar.dart';
-import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/style_manager.dart';
 import '../../../../core/widgets/default_button.dart';
 import '../../../../core/widgets/image_item.dart';
@@ -23,14 +22,19 @@ class WantedJobRequestsDetailsView extends StatelessWidget {
 
   _buildImage() {
     return SizedBox(
-      width: 150.w,
-      height: 150.w,
-      child: CircleAvatar(
-        radius: 80.r,
-        child: ClipOval(
-            child: CustomNetworkCachedImage(url: request.category!.imageUrl!)),
-      ),
-    );
+        width: 150.w,
+        height: 150.w,
+        child: CircleAvatar(
+          radius: 80.r,
+          child: ClipOval(
+            child: request.images!.isEmpty && request.category == null
+                ? Container()
+                : CustomNetworkCachedImage(
+                    url: request.images!.isEmpty
+                        ? request.category!.imageUrl!
+                        : request.images!.first.attachmentUrl!),
+          ),
+        ));
   }
 
   _buildBody(BuildContext context) {
@@ -95,7 +99,7 @@ class WantedJobRequestsDetailsView extends StatelessWidget {
   }
 
   _buildJobname() {
-    return Text(request.category!.name ?? '',
+    return Text(request.category == null ? '' : request.category!.name ?? '',
         style:
             getBoldStyle(fontSize: 20.sp, color: ColorManager.darkSeconadry));
   }
@@ -126,7 +130,7 @@ class WantedJobRequestsDetailsView extends StatelessWidget {
                 title: '${request.offersCount} ${AppStrings.offerd}',
                 icon: Icons.person),
             MainInfoItem(
-                title: '${request.price} ${AppStrings.ryal}',
+                title: '${request.price ?? ''} ${AppStrings.ryal}',
                 icon: FontAwesomeIcons.tags),
             const MainInfoItem(
                 title: AppStrings.recieveOffers, icon: Icons.layers),

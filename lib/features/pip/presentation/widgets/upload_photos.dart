@@ -1,13 +1,18 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
 
 import '../../../../core/resources/style_manager.dart';
 
 class UploadedPhotos extends StatelessWidget {
-  const UploadedPhotos({super.key});
-  _buildPhoto() {
+  const UploadedPhotos({super.key, this.imageFile, this.onTap});
+
+  final File? imageFile;
+  final Function()? onTap;
+
+  _buildPhoto(BuildContext context) {
     return Align(
       alignment: Alignment.bottomRight,
       child: Container(
@@ -18,7 +23,9 @@ class UploadedPhotos extends StatelessWidget {
           image: DecorationImage(
             colorFilter: ColorFilter.mode(
                 ColorManager.black.withOpacity(.3), BlendMode.darken),
-            image: const AssetImage(ImageAssets.banner),
+            image: FileImage(
+              imageFile!,
+            ),
             fit: BoxFit.cover,
           ),
         ),
@@ -29,30 +36,33 @@ class UploadedPhotos extends StatelessWidget {
   _buildDeleteImageButton() {
     return Align(
       alignment: Alignment.topLeft,
-      child: Container(
-        width: 30.w,
-        height: 30.h,
-        decoration: BoxDecoration(
-          color: ColorManager.white,
-          shape: BoxShape.circle,
-        ),
-        child: Icon(
-          Icons.close,
-          size: 12.sp,
-          color: ColorManager.darkSeconadry,
+      child: InkWell(
+        onTap: onTap,
+        child: Container(
+          width: 30.w,
+          height: 30.h,
+          decoration: BoxDecoration(
+            color: ColorManager.white,
+            shape: BoxShape.circle,
+          ),
+          child: Icon(
+            Icons.close,
+            size: 12.sp,
+            color: ColorManager.darkSeconadry,
+          ),
         ),
       ),
     );
   }
 
-  _buildStack() {
+  _buildStack(BuildContext context) {
     return SizedBox(
       width: 151.w,
       height: 95.h,
       // color: Colors.red,
       child: Stack(
         children: [
-          _buildPhoto(),
+          _buildPhoto(context),
           _buildDeleteImageButton(),
         ],
       ),
@@ -75,7 +85,7 @@ class UploadedPhotos extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        _buildStack(),
+        _buildStack(context),
         _buildImageTitle(),
       ],
     );

@@ -14,6 +14,10 @@ class MyRequestModel {
   String? status;
   @JsonKey(name: 'user_id')
   String? userId;
+  @JsonKey(name: 'accepted_offer_id')
+  String? acceptedOfferID;
+  String? type;
+  
   @JsonKey(name: 'created_at')
   String? createdAt;
   String? time;

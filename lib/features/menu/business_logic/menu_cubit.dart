@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/features/menu/data/models/rates_model.dart';
 import 'package:pip/features/menu/data/models/update_skill.dart';
 import '../../../../core/web_services/network_exceptions.dart';
 import '../../../core/resources/color_manager.dart';
@@ -19,6 +20,7 @@ class MenuCubit extends Cubit<MenuState> {
   final MenuRepository menuRepository;
   final TextEditingController _amountController = TextEditingController();
   List<int> skills = [];
+  List<String> ratesFromOneToFive = [];
 //  WalletInfo walletInfo ;
 
   void getWalletInfo() async {
@@ -35,6 +37,28 @@ class MenuCubit extends Cubit<MenuState> {
       },
     );
   }
+
+   void getAllRates() async {
+    emit(const MenuState.getRatesLoading());
+    // ignore: prefer_typing_uninitialized_variables
+    var result = await menuRepository.getAllRates();
+    result.when(
+      success: (RatesModel rates) {
+        // notifications = notifications;
+        ratesFromOneToFive.add(rates.fiveStarsTotal.toString());
+        ratesFromOneToFive.add(rates.fourStarsTotal.toString());
+        ratesFromOneToFive.add(rates.threeStarsTotal.toString());
+        ratesFromOneToFive.add(rates.twoStarsTotal.toString());
+        ratesFromOneToFive.add(rates.oneStarTotal.toString());
+
+        emit(MenuState.getRatesSuccess(rates));
+      },
+      failure: (NetworkExceptions networkExceptions) {
+        emit(MenuState.getRatesError(networkExceptions));
+      },
+    );
+  }
+
 
   void updateSkill() async {
     emit(const MenuState.updateSkillLoading());

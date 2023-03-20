@@ -1,20 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/resources/color_manager.dart';
 import 'package:pip/core/resources/style_manager.dart';
 import 'package:pip/core/widgets/custom_appbar.dart';
 import 'package:pip/core/widgets/rating_stars.dart';
+import 'package:pip/features/menu/business_logic/menu_cubit.dart';
+import 'package:pip/features/menu/business_logic/menu_state.dart';
+import 'package:pip/features/menu/data/models/rates_model.dart';
 
+import '../../../../core/widgets/loading_indicator.dart';
 import '../widgets/rate_item.dart';
 
-class RateUsView extends StatelessWidget {
+class RateUsView extends StatefulWidget {
   const RateUsView({super.key});
+
+  @override
+  State<RateUsView> createState() => _RateUsViewState();
+}
+
+class _RateUsViewState extends State<RateUsView> {
   _buildBody() {
     return ListView(
       padding: EdgeInsets.only(right: 20.w, left: 16.w, top: 48.h),
       shrinkWrap: true,
       children: [
-        _buildNumberOfEveryRate(),
+        _buildBLoc(),
         Divider(color: ColorManager.darkGrey, thickness: 1.h),
         _buildRatingList(),
       ],
@@ -34,12 +45,30 @@ class RateUsView extends StatelessWidget {
         itemCount: 4);
   }
 
-  _buildNumberOfEveryRate() {
+  _buildBLoc() {
+    return BlocConsumer<MenuCubit, MenuState>(
+      listener: (context, state) {},
+      buildWhen: (previous, next) => next is GetRatesSuccess,
+      builder: (context, state) {
+        return state.maybeWhen(
+            getRatesLoading: () {
+              return const LoadingIndicator();
+            },
+            getRatesSuccess: (rates) {
+              return _buildRates(rates);
+            },
+            orElse: () => Container());
+      },
+    );
+  }
+
+  _buildRates(RatesModel rates) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        _buildAverageRating(),
+        _buildAverageRating(
+            rates.avgRating.toString(), rates.ratingsCount.toString()),
         // SizedBox(width: 42.w),
         _buildRatingBarsChart(),
         _buildRatingNumbers(),
@@ -47,15 +76,15 @@ class RateUsView extends StatelessWidget {
     );
   }
 
-  _buildAverageRating() {
+  _buildAverageRating(String averageOfRates, String totalNumberOfRates) {
     return Column(
       children: [
         Text(
-          '2.0',
+          averageOfRates,
           style: getBoldStyle(fontSize: 35.sp, color: ColorManager.white),
         ),
         Text(
-          '12 تقيم',
+          totalNumberOfRates,
           style: getLightStyle(fontSize: 13.sp, color: ColorManager.grey),
         ),
       ],
@@ -118,7 +147,7 @@ class RateUsView extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (context, index) {
             return Text(
-              '${index}0',
+              '0${BlocProvider.of<MenuCubit>(context).ratesFromOneToFive[index]}',
               style: getRegularStyle(fontSize: 15.sp, color: ColorManager.grey),
             );
           },
@@ -127,6 +156,12 @@ class RateUsView extends StatelessWidget {
           },
           itemCount: 5),
     );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    BlocProvider.of<MenuCubit>(context).getAllRates();
   }
 
   @override

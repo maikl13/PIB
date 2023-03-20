@@ -12,10 +12,10 @@ import '../../../../core/resources/style_manager.dart';
 
 class RequestItem extends StatelessWidget {
   const RequestItem(
-      {super.key, required this.onTap, this.requests, this.index});
+      {super.key, required this.onTap, this.requests, required this.index});
   final void Function() onTap;
   final List<MyRequestModel>? requests;
-  final int? index;
+  final int index;
   _buildInfo() {
     return Padding(
       padding: EdgeInsets.only(top: 15.h, right: 15.w),
@@ -49,7 +49,7 @@ class RequestItem extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 10.h),
-                _buildClock(requests![index!].createdAt.toString()),
+                _buildClock(requests![index].createdAt.toString()),
               ],
             ),
           ),
@@ -71,7 +71,9 @@ class RequestItem extends StatelessWidget {
 
   _buildJobTitle() {
     return Text(
-      requests![index!].category!.name ?? '',
+      requests![index].category == null
+          ? ''
+          : requests![index].category!.name ?? '',
       style: getBoldStyle(color: ColorManager.white, fontSize: 15.sp),
     );
   }
@@ -89,8 +91,13 @@ class RequestItem extends StatelessWidget {
       child: SizedBox(
         width: 120.h,
         height: 80.h,
-        child: CustomNetworkCachedImage(
-            url: requests![index!].category!.imageUrl!),
+        child: requests![index].images!.isEmpty &&
+                requests![index].category == null
+            ? Container()
+            : CustomNetworkCachedImage(
+                url: requests![index].images!.isEmpty
+                    ? requests![index].category!.imageUrl!
+                    : requests![index].images!.first.attachmentUrl!),
       ),
     );
   }
@@ -105,7 +112,7 @@ class RequestItem extends StatelessWidget {
 
   _buildPrice() {
     return Text(
-      requests![index!].price.toString(),
+      requests![index].price ?? '',
       style: getRegularStyle(color: ColorManager.grey, fontSize: 12.sp),
     );
   }
@@ -120,7 +127,7 @@ class RequestItem extends StatelessWidget {
 
   _buildNumberOfRequests() {
     return Text(
-      '${requests![index!].offersCount} عرض',
+      '${requests![index].offersCount} عرض',
       style: getRegularStyle(color: ColorManager.grey, fontSize: 12.sp),
     );
   }

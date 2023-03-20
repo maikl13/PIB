@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -26,45 +28,102 @@ class SpecialRequestDetailsView extends StatefulWidget {
 }
 
 class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
+  TextEditingController _priceController = TextEditingController();
+  TextEditingController _locationController = TextEditingController();
+  TextEditingController _descriptionController = TextEditingController();
+
   _buildBody() {
-    return Padding(
-      padding:
-          EdgeInsets.only(right: 20.w, left: 20.w, top: 35.h, bottom: 35.h),
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const CustomTitle(title: AppStrings.chooseType),
-            SizedBox(height: 20.h),
-            _buildAvaialbleTypesOfJobs(),
-            SizedBox(height: 20.h),
-            _buildPriceTextField(),
-            SizedBox(height: 20.h),
-            _buildLocationTextField(),
-            SizedBox(height: 20.h),
-            _buildDescriptionTextField(),
-            SizedBox(height: 20.h),
-            _buildUploadPhotoTextField(),
-            SizedBox(height: 20.h),
-            const UploadedPhotos(),
-            SizedBox(height: 100.h),
-            const DefaultButton(text: AppStrings.puplish),
-          ],
+    return BlocListener<PipCubit, PipState>(
+      listener: (context, state) {},
+      child: Padding(
+        padding:
+            EdgeInsets.only(right: 20.w, left: 20.w, top: 35.h, bottom: 35.h),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const CustomTitle(title: AppStrings.chooseType),
+              SizedBox(height: 20.h),
+              _buildAvaialbleTypesOfJobs(),
+              SizedBox(height: 20.h),
+              _buildPriceTextField(),
+              SizedBox(height: 20.h),
+              _buildLocationTextField(),
+              SizedBox(height: 20.h),
+              _buildDescriptionTextField(),
+              SizedBox(height: 20.h),
+              _buildUploadPhotoTextField(),
+              SizedBox(height: 20.h),
+              _buildPhotos(),
+              SizedBox(height: 100.h),
+              _buildButton(),
+            ],
+          ),
         ),
       ),
     );
   }
 
+  _buildPhotos() {
+    return BlocConsumer<PipCubit, PipState>(
+      listener: (context, state) {},
+      buildWhen: (previous, next) =>
+          next is ImageSelectedSuccess || next is ImageSelectedDeleted,
+      builder: (context, state) {
+        return state.maybeWhen(
+          imageSelectedSuccess: (images) {
+            return _buildListPhotos(images);
+          },
+          imageSelectedDeleted: (images) {
+            return _buildListPhotos(images);
+          },
+          orElse: () => Container(),
+        );
+      },
+    );
+  }
 
+  _buildListPhotos(List<File> images) {
+    return SizedBox(
+      height: 130.h,
+      child: ListView.separated(
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (context, index) {
+            return UploadedPhotos(
+              imageFile: images[index],
+              onTap: () {
+                BlocProvider.of<PipCubit>(context).deleteImage(index);
+              },
+            );
+          },
+          separatorBuilder: (context, index) {
+            return SizedBox(width: 10.w);
+          },
+          itemCount: images.length),
+    );
+  }
+
+  _buildButton() {
+    return DefaultButton(
+      text: AppStrings.puplish,
+      onTap: () {
+        BlocProvider.of<PipCubit>(context).createSpecialRequest(
+          categoryId: '2',
+          price: '500',
+          location: 'Cairo',
+          description: 'WANT TRY THIS',
+        );
+      },
+    );
+  }
 
   _buildAvaialbleTypesOfJobs() {
     return BlocConsumer<PipCubit, PipState>(
-      listener: (context, state) {
-      },
-      buildWhen: (previous, next) => next is Success,
+      listener: (context, state) {},
+      buildWhen: (previous, next) => next is SkillsSuccess,
       builder: (context, state) {
-        return state.maybeWhen (
-          success: (skills) {
+        return state.maybeWhen(
+          skillssuccess: (skills) {
             return _buildSkills(skills);
           },
           orElse: () => Container(),
@@ -72,33 +131,36 @@ class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
       },
     );
   }
-_buildSkills(List<SkillModel> skills) {
-  return GridView.builder(
-          itemCount: skills.length,
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-            childAspectRatio: 1.5,
-          ),
-          itemBuilder: (context, index) {
-            return JobTypeItem(
-              index: index,
-              title: skills[index].name!,
-              image: skills[index].imageUrl!,
-              onTap: () {
-                setState(() {
-                  isSelected = index;
-                });
-              },
-            );
+
+  _buildSkills(List<SkillModel> skills) {
+    return GridView.builder(
+      itemCount: skills.length,
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
+        childAspectRatio: 1.5,
+      ),
+      itemBuilder: (context, index) {
+        return JobTypeItem(
+          index: index,
+          title: skills[index].name!,
+          image: skills[index].imageUrl!,
+          onTap: () {
+            setState(() {
+              isSelected = index;
+            });
           },
         );
-}
+      },
+    );
+  }
+
   _buildPriceTextField() {
     return RequestCustomTextField(
+      controller: _priceController,
       suffix: Padding(
         padding: EdgeInsets.only(left: 5.w, top: 10.h),
         child: Text(
@@ -113,7 +175,8 @@ _buildSkills(List<SkillModel> skills) {
   }
 
   _buildLocationTextField() {
-    return const RequestCustomTextField(
+    return RequestCustomTextField(
+      controller: _locationController,
       hint: AppStrings.location,
       // ignore: deprecated_member_use
       icon: FontAwesomeIcons.mapMarkerAlt,
@@ -121,12 +184,9 @@ _buildSkills(List<SkillModel> skills) {
   }
 
   _buildDescriptionTextField() {
-    // ignore: prefer_const_constructors
     return RequestCustomTextField(
+      controller: _descriptionController,
       bottomPadding: 70,
-      // suffix: Container(),
-
-      // contentPadding: EdgeInsets.only(bottom: 72.h),
       maxLines: 3,
       hint: AppStrings.description,
       icon: FontAwesomeIcons.alignLeft,
@@ -136,6 +196,7 @@ _buildSkills(List<SkillModel> skills) {
   _buildUploadPhotoTextField() {
     return InkWell(
       onTap: () {
+        BlocProvider.of<PipCubit>(context).pickImage();
         // Navigator.pushNamed(context, Routes.searchMainViewRoute);
       },
       child: Container(

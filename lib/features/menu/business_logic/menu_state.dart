@@ -3,6 +3,7 @@ import 'package:pip/features/menu/data/models/update_skill.dart';
 import 'package:pip/features/pip/data/models/skills_model.dart';
 import '../../../../core/web_services/network_exceptions.dart';
 import '../data/models/add_balance.dart';
+import '../data/models/rates_model.dart';
 import '../data/models/wallet_info.dart';
 part 'menu_state.freezed.dart';
 
@@ -46,4 +47,15 @@ class MenuState<T> with _$MenuState<T> {
 
   const factory MenuState.walletBalanceAdddedError(
       NetworkExceptions networkExceptions) = WalletBalanceAdddedError<T>;
+
+
+
+        const factory MenuState.getRatesLoading() =
+      GetRatesLoading<T>;
+
+  const factory MenuState.getRatesSuccess(RatesModel rates) =
+      GetRatesSuccess<T>;
+
+  const factory MenuState.getRatesError(
+      NetworkExceptions networkExceptions) = GetRatesError<T>;
 }

@@ -1,3 +1,4 @@
+import 'package:pip/features/menu/data/models/rates_model.dart';
 import 'package:pip/features/menu/data/models/update_skill.dart';
 
 import '../../../../core/resources/constants.dart';
@@ -12,9 +13,19 @@ class MenuRepository {
   final WebServices webServices;
 
   MenuRepository(this.webServices);
+
   Future<ApiResult<List<SkillModel>>> getAllUserSkills() async {
     try {
       var response = await webServices.getAllUserSkills('Bearer $token');
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(NetworkExceptions.getDioException(error));
+    }
+  }
+
+    Future<ApiResult<RatesModel>> getAllRates( ) async {
+    try {
+      var response = await webServices.getAllRates('Bearer $token');
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(NetworkExceptions.getDioException(error));

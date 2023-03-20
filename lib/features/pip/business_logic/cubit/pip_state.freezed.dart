@@ -19,50 +19,107 @@ mixin _$PipState<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() loading,
-    required TResult Function(List<SkillModel> data) success,
-    required TResult Function(NetworkExceptions networkExceptions) error,
+    required TResult Function() skillsLoading,
+    required TResult Function(List<SkillModel> data) skillssuccess,
+    required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(List<File> images) imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function(List<File> images) imageSelectedDeleted,
+    required TResult Function() createSpecialRequestLoading,
+    required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        createSpecialRequestError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? loading,
-    TResult? Function(List<SkillModel> data)? success,
-    TResult? Function(NetworkExceptions networkExceptions)? error,
+    TResult? Function()? skillsLoading,
+    TResult? Function(List<SkillModel> data)? skillssuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(List<File> images)? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function(List<File> images)? imageSelectedDeleted,
+    TResult? Function()? createSpecialRequestLoading,
+    TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? loading,
-    TResult Function(List<SkillModel> data)? success,
-    TResult Function(NetworkExceptions networkExceptions)? error,
+    TResult Function()? skillsLoading,
+    TResult Function(List<SkillModel> data)? skillssuccess,
+    TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(List<File> images)? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function(List<File> images)? imageSelectedDeleted,
+    TResult Function()? createSpecialRequestLoading,
+    TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(Loading<T> value) loading,
-    required TResult Function(Success<T> value) success,
-    required TResult Function(Error<T> value) error,
+    required TResult Function(SkillsLoading<T> value) skillsLoading,
+    required TResult Function(SkillsSuccess<T> value) skillssuccess,
+    required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(ImageSelectedDeleted<T> value)
+        imageSelectedDeleted,
+    required TResult Function(CreateSpecialRequestLoading<T> value)
+        createSpecialRequestLoading,
+    required TResult Function(CreateSpecialRequestSuccess<T> value)
+        createSpecialRequestSuccess,
+    required TResult Function(CreateSpecialRequestError<T> value)
+        createSpecialRequestError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(Loading<T> value)? loading,
-    TResult? Function(Success<T> value)? success,
-    TResult? Function(Error<T> value)? error,
+    TResult? Function(SkillsLoading<T> value)? skillsLoading,
+    TResult? Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult? Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult? Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult? Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(Loading<T> value)? loading,
-    TResult Function(Success<T> value)? success,
-    TResult Function(Error<T> value)? error,
+    TResult Function(SkillsLoading<T> value)? skillsLoading,
+    TResult Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -123,9 +180,17 @@ class _$Idle<T> implements Idle<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() loading,
-    required TResult Function(List<SkillModel> data) success,
-    required TResult Function(NetworkExceptions networkExceptions) error,
+    required TResult Function() skillsLoading,
+    required TResult Function(List<SkillModel> data) skillssuccess,
+    required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(List<File> images) imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function(List<File> images) imageSelectedDeleted,
+    required TResult Function() createSpecialRequestLoading,
+    required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        createSpecialRequestError,
   }) {
     return idle();
   }
@@ -134,9 +199,17 @@ class _$Idle<T> implements Idle<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? loading,
-    TResult? Function(List<SkillModel> data)? success,
-    TResult? Function(NetworkExceptions networkExceptions)? error,
+    TResult? Function()? skillsLoading,
+    TResult? Function(List<SkillModel> data)? skillssuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(List<File> images)? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function(List<File> images)? imageSelectedDeleted,
+    TResult? Function()? createSpecialRequestLoading,
+    TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
   }) {
     return idle?.call();
   }
@@ -145,9 +218,17 @@ class _$Idle<T> implements Idle<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? loading,
-    TResult Function(List<SkillModel> data)? success,
-    TResult Function(NetworkExceptions networkExceptions)? error,
+    TResult Function()? skillsLoading,
+    TResult Function(List<SkillModel> data)? skillssuccess,
+    TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(List<File> images)? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function(List<File> images)? imageSelectedDeleted,
+    TResult Function()? createSpecialRequestLoading,
+    TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
     required TResult orElse(),
   }) {
     if (idle != null) {
@@ -160,9 +241,22 @@ class _$Idle<T> implements Idle<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(Loading<T> value) loading,
-    required TResult Function(Success<T> value) success,
-    required TResult Function(Error<T> value) error,
+    required TResult Function(SkillsLoading<T> value) skillsLoading,
+    required TResult Function(SkillsSuccess<T> value) skillssuccess,
+    required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(ImageSelectedDeleted<T> value)
+        imageSelectedDeleted,
+    required TResult Function(CreateSpecialRequestLoading<T> value)
+        createSpecialRequestLoading,
+    required TResult Function(CreateSpecialRequestSuccess<T> value)
+        createSpecialRequestSuccess,
+    required TResult Function(CreateSpecialRequestError<T> value)
+        createSpecialRequestError,
   }) {
     return idle(this);
   }
@@ -171,9 +265,19 @@ class _$Idle<T> implements Idle<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(Loading<T> value)? loading,
-    TResult? Function(Success<T> value)? success,
-    TResult? Function(Error<T> value)? error,
+    TResult? Function(SkillsLoading<T> value)? skillsLoading,
+    TResult? Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult? Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult? Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult? Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
   }) {
     return idle?.call(this);
   }
@@ -182,9 +286,19 @@ class _$Idle<T> implements Idle<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(Loading<T> value)? loading,
-    TResult Function(Success<T> value)? success,
-    TResult Function(Error<T> value)? error,
+    TResult Function(SkillsLoading<T> value)? skillsLoading,
+    TResult Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
     required TResult orElse(),
   }) {
     if (idle != null) {
@@ -199,35 +313,35 @@ abstract class Idle<T> implements PipState<T> {
 }
 
 /// @nodoc
-abstract class _$$LoadingCopyWith<T, $Res> {
-  factory _$$LoadingCopyWith(
-          _$Loading<T> value, $Res Function(_$Loading<T>) then) =
-      __$$LoadingCopyWithImpl<T, $Res>;
+abstract class _$$SkillsLoadingCopyWith<T, $Res> {
+  factory _$$SkillsLoadingCopyWith(
+          _$SkillsLoading<T> value, $Res Function(_$SkillsLoading<T>) then) =
+      __$$SkillsLoadingCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class __$$LoadingCopyWithImpl<T, $Res>
-    extends _$PipStateCopyWithImpl<T, $Res, _$Loading<T>>
-    implements _$$LoadingCopyWith<T, $Res> {
-  __$$LoadingCopyWithImpl(
-      _$Loading<T> _value, $Res Function(_$Loading<T>) _then)
+class __$$SkillsLoadingCopyWithImpl<T, $Res>
+    extends _$PipStateCopyWithImpl<T, $Res, _$SkillsLoading<T>>
+    implements _$$SkillsLoadingCopyWith<T, $Res> {
+  __$$SkillsLoadingCopyWithImpl(
+      _$SkillsLoading<T> _value, $Res Function(_$SkillsLoading<T>) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$Loading<T> implements Loading<T> {
-  const _$Loading();
+class _$SkillsLoading<T> implements SkillsLoading<T> {
+  const _$SkillsLoading();
 
   @override
   String toString() {
-    return 'PipState<$T>.loading()';
+    return 'PipState<$T>.skillsLoading()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Loading<T>);
+        (other.runtimeType == runtimeType && other is _$SkillsLoading<T>);
   }
 
   @override
@@ -237,35 +351,59 @@ class _$Loading<T> implements Loading<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() loading,
-    required TResult Function(List<SkillModel> data) success,
-    required TResult Function(NetworkExceptions networkExceptions) error,
+    required TResult Function() skillsLoading,
+    required TResult Function(List<SkillModel> data) skillssuccess,
+    required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(List<File> images) imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function(List<File> images) imageSelectedDeleted,
+    required TResult Function() createSpecialRequestLoading,
+    required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        createSpecialRequestError,
   }) {
-    return loading();
+    return skillsLoading();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? loading,
-    TResult? Function(List<SkillModel> data)? success,
-    TResult? Function(NetworkExceptions networkExceptions)? error,
+    TResult? Function()? skillsLoading,
+    TResult? Function(List<SkillModel> data)? skillssuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(List<File> images)? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function(List<File> images)? imageSelectedDeleted,
+    TResult? Function()? createSpecialRequestLoading,
+    TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
   }) {
-    return loading?.call();
+    return skillsLoading?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? loading,
-    TResult Function(List<SkillModel> data)? success,
-    TResult Function(NetworkExceptions networkExceptions)? error,
+    TResult Function()? skillsLoading,
+    TResult Function(List<SkillModel> data)? skillssuccess,
+    TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(List<File> images)? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function(List<File> images)? imageSelectedDeleted,
+    TResult Function()? createSpecialRequestLoading,
+    TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
     required TResult orElse(),
   }) {
-    if (loading != null) {
-      return loading();
+    if (skillsLoading != null) {
+      return skillsLoading();
     }
     return orElse();
   }
@@ -274,59 +412,92 @@ class _$Loading<T> implements Loading<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(Loading<T> value) loading,
-    required TResult Function(Success<T> value) success,
-    required TResult Function(Error<T> value) error,
+    required TResult Function(SkillsLoading<T> value) skillsLoading,
+    required TResult Function(SkillsSuccess<T> value) skillssuccess,
+    required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(ImageSelectedDeleted<T> value)
+        imageSelectedDeleted,
+    required TResult Function(CreateSpecialRequestLoading<T> value)
+        createSpecialRequestLoading,
+    required TResult Function(CreateSpecialRequestSuccess<T> value)
+        createSpecialRequestSuccess,
+    required TResult Function(CreateSpecialRequestError<T> value)
+        createSpecialRequestError,
   }) {
-    return loading(this);
+    return skillsLoading(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(Loading<T> value)? loading,
-    TResult? Function(Success<T> value)? success,
-    TResult? Function(Error<T> value)? error,
+    TResult? Function(SkillsLoading<T> value)? skillsLoading,
+    TResult? Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult? Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult? Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult? Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
   }) {
-    return loading?.call(this);
+    return skillsLoading?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(Loading<T> value)? loading,
-    TResult Function(Success<T> value)? success,
-    TResult Function(Error<T> value)? error,
+    TResult Function(SkillsLoading<T> value)? skillsLoading,
+    TResult Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
     required TResult orElse(),
   }) {
-    if (loading != null) {
-      return loading(this);
+    if (skillsLoading != null) {
+      return skillsLoading(this);
     }
     return orElse();
   }
 }
 
-abstract class Loading<T> implements PipState<T> {
-  const factory Loading() = _$Loading<T>;
+abstract class SkillsLoading<T> implements PipState<T> {
+  const factory SkillsLoading() = _$SkillsLoading<T>;
 }
 
 /// @nodoc
-abstract class _$$SuccessCopyWith<T, $Res> {
-  factory _$$SuccessCopyWith(
-          _$Success<T> value, $Res Function(_$Success<T>) then) =
-      __$$SuccessCopyWithImpl<T, $Res>;
+abstract class _$$SkillsSuccessCopyWith<T, $Res> {
+  factory _$$SkillsSuccessCopyWith(
+          _$SkillsSuccess<T> value, $Res Function(_$SkillsSuccess<T>) then) =
+      __$$SkillsSuccessCopyWithImpl<T, $Res>;
   @useResult
   $Res call({List<SkillModel> data});
 }
 
 /// @nodoc
-class __$$SuccessCopyWithImpl<T, $Res>
-    extends _$PipStateCopyWithImpl<T, $Res, _$Success<T>>
-    implements _$$SuccessCopyWith<T, $Res> {
-  __$$SuccessCopyWithImpl(
-      _$Success<T> _value, $Res Function(_$Success<T>) _then)
+class __$$SkillsSuccessCopyWithImpl<T, $Res>
+    extends _$PipStateCopyWithImpl<T, $Res, _$SkillsSuccess<T>>
+    implements _$$SkillsSuccessCopyWith<T, $Res> {
+  __$$SkillsSuccessCopyWithImpl(
+      _$SkillsSuccess<T> _value, $Res Function(_$SkillsSuccess<T>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -334,7 +505,7 @@ class __$$SuccessCopyWithImpl<T, $Res>
   $Res call({
     Object? data = null,
   }) {
-    return _then(_$Success<T>(
+    return _then(_$SkillsSuccess<T>(
       null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
@@ -345,8 +516,8 @@ class __$$SuccessCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$Success<T> implements Success<T> {
-  const _$Success(final List<SkillModel> data) : _data = data;
+class _$SkillsSuccess<T> implements SkillsSuccess<T> {
+  const _$SkillsSuccess(final List<SkillModel> data) : _data = data;
 
   final List<SkillModel> _data;
   @override
@@ -358,14 +529,14 @@ class _$Success<T> implements Success<T> {
 
   @override
   String toString() {
-    return 'PipState<$T>.success(data: $data)';
+    return 'PipState<$T>.skillssuccess(data: $data)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$Success<T> &&
+            other is _$SkillsSuccess<T> &&
             const DeepCollectionEquality().equals(other._data, _data));
   }
 
@@ -376,42 +547,66 @@ class _$Success<T> implements Success<T> {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SuccessCopyWith<T, _$Success<T>> get copyWith =>
-      __$$SuccessCopyWithImpl<T, _$Success<T>>(this, _$identity);
+  _$$SkillsSuccessCopyWith<T, _$SkillsSuccess<T>> get copyWith =>
+      __$$SkillsSuccessCopyWithImpl<T, _$SkillsSuccess<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() loading,
-    required TResult Function(List<SkillModel> data) success,
-    required TResult Function(NetworkExceptions networkExceptions) error,
+    required TResult Function() skillsLoading,
+    required TResult Function(List<SkillModel> data) skillssuccess,
+    required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(List<File> images) imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function(List<File> images) imageSelectedDeleted,
+    required TResult Function() createSpecialRequestLoading,
+    required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        createSpecialRequestError,
   }) {
-    return success(data);
+    return skillssuccess(data);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? loading,
-    TResult? Function(List<SkillModel> data)? success,
-    TResult? Function(NetworkExceptions networkExceptions)? error,
+    TResult? Function()? skillsLoading,
+    TResult? Function(List<SkillModel> data)? skillssuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(List<File> images)? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function(List<File> images)? imageSelectedDeleted,
+    TResult? Function()? createSpecialRequestLoading,
+    TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
   }) {
-    return success?.call(data);
+    return skillssuccess?.call(data);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? loading,
-    TResult Function(List<SkillModel> data)? success,
-    TResult Function(NetworkExceptions networkExceptions)? error,
+    TResult Function()? skillsLoading,
+    TResult Function(List<SkillModel> data)? skillssuccess,
+    TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(List<File> images)? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function(List<File> images)? imageSelectedDeleted,
+    TResult Function()? createSpecialRequestLoading,
+    TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
     required TResult orElse(),
   }) {
-    if (success != null) {
-      return success(data);
+    if (skillssuccess != null) {
+      return skillssuccess(data);
     }
     return orElse();
   }
@@ -420,53 +615,87 @@ class _$Success<T> implements Success<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(Loading<T> value) loading,
-    required TResult Function(Success<T> value) success,
-    required TResult Function(Error<T> value) error,
+    required TResult Function(SkillsLoading<T> value) skillsLoading,
+    required TResult Function(SkillsSuccess<T> value) skillssuccess,
+    required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(ImageSelectedDeleted<T> value)
+        imageSelectedDeleted,
+    required TResult Function(CreateSpecialRequestLoading<T> value)
+        createSpecialRequestLoading,
+    required TResult Function(CreateSpecialRequestSuccess<T> value)
+        createSpecialRequestSuccess,
+    required TResult Function(CreateSpecialRequestError<T> value)
+        createSpecialRequestError,
   }) {
-    return success(this);
+    return skillssuccess(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(Loading<T> value)? loading,
-    TResult? Function(Success<T> value)? success,
-    TResult? Function(Error<T> value)? error,
+    TResult? Function(SkillsLoading<T> value)? skillsLoading,
+    TResult? Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult? Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult? Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult? Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
   }) {
-    return success?.call(this);
+    return skillssuccess?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(Loading<T> value)? loading,
-    TResult Function(Success<T> value)? success,
-    TResult Function(Error<T> value)? error,
+    TResult Function(SkillsLoading<T> value)? skillsLoading,
+    TResult Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
     required TResult orElse(),
   }) {
-    if (success != null) {
-      return success(this);
+    if (skillssuccess != null) {
+      return skillssuccess(this);
     }
     return orElse();
   }
 }
 
-abstract class Success<T> implements PipState<T> {
-  const factory Success(final List<SkillModel> data) = _$Success<T>;
+abstract class SkillsSuccess<T> implements PipState<T> {
+  const factory SkillsSuccess(final List<SkillModel> data) = _$SkillsSuccess<T>;
 
   List<SkillModel> get data;
   @JsonKey(ignore: true)
-  _$$SuccessCopyWith<T, _$Success<T>> get copyWith =>
+  _$$SkillsSuccessCopyWith<T, _$SkillsSuccess<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ErrorCopyWith<T, $Res> {
-  factory _$$ErrorCopyWith(_$Error<T> value, $Res Function(_$Error<T>) then) =
-      __$$ErrorCopyWithImpl<T, $Res>;
+abstract class _$$SkillsErrorCopyWith<T, $Res> {
+  factory _$$SkillsErrorCopyWith(
+          _$SkillsError<T> value, $Res Function(_$SkillsError<T>) then) =
+      __$$SkillsErrorCopyWithImpl<T, $Res>;
   @useResult
   $Res call({NetworkExceptions networkExceptions});
 
@@ -474,10 +703,11 @@ abstract class _$$ErrorCopyWith<T, $Res> {
 }
 
 /// @nodoc
-class __$$ErrorCopyWithImpl<T, $Res>
-    extends _$PipStateCopyWithImpl<T, $Res, _$Error<T>>
-    implements _$$ErrorCopyWith<T, $Res> {
-  __$$ErrorCopyWithImpl(_$Error<T> _value, $Res Function(_$Error<T>) _then)
+class __$$SkillsErrorCopyWithImpl<T, $Res>
+    extends _$PipStateCopyWithImpl<T, $Res, _$SkillsError<T>>
+    implements _$$SkillsErrorCopyWith<T, $Res> {
+  __$$SkillsErrorCopyWithImpl(
+      _$SkillsError<T> _value, $Res Function(_$SkillsError<T>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -485,7 +715,7 @@ class __$$ErrorCopyWithImpl<T, $Res>
   $Res call({
     Object? networkExceptions = null,
   }) {
-    return _then(_$Error<T>(
+    return _then(_$SkillsError<T>(
       null == networkExceptions
           ? _value.networkExceptions
           : networkExceptions // ignore: cast_nullable_to_non_nullable
@@ -504,22 +734,22 @@ class __$$ErrorCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$Error<T> implements Error<T> {
-  const _$Error(this.networkExceptions);
+class _$SkillsError<T> implements SkillsError<T> {
+  const _$SkillsError(this.networkExceptions);
 
   @override
   final NetworkExceptions networkExceptions;
 
   @override
   String toString() {
-    return 'PipState<$T>.error(networkExceptions: $networkExceptions)';
+    return 'PipState<$T>.skillserror(networkExceptions: $networkExceptions)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$Error<T> &&
+            other is _$SkillsError<T> &&
             (identical(other.networkExceptions, networkExceptions) ||
                 other.networkExceptions == networkExceptions));
   }
@@ -530,42 +760,66 @@ class _$Error<T> implements Error<T> {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ErrorCopyWith<T, _$Error<T>> get copyWith =>
-      __$$ErrorCopyWithImpl<T, _$Error<T>>(this, _$identity);
+  _$$SkillsErrorCopyWith<T, _$SkillsError<T>> get copyWith =>
+      __$$SkillsErrorCopyWithImpl<T, _$SkillsError<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() loading,
-    required TResult Function(List<SkillModel> data) success,
-    required TResult Function(NetworkExceptions networkExceptions) error,
+    required TResult Function() skillsLoading,
+    required TResult Function(List<SkillModel> data) skillssuccess,
+    required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(List<File> images) imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function(List<File> images) imageSelectedDeleted,
+    required TResult Function() createSpecialRequestLoading,
+    required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        createSpecialRequestError,
   }) {
-    return error(networkExceptions);
+    return skillserror(networkExceptions);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? loading,
-    TResult? Function(List<SkillModel> data)? success,
-    TResult? Function(NetworkExceptions networkExceptions)? error,
+    TResult? Function()? skillsLoading,
+    TResult? Function(List<SkillModel> data)? skillssuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(List<File> images)? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function(List<File> images)? imageSelectedDeleted,
+    TResult? Function()? createSpecialRequestLoading,
+    TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
   }) {
-    return error?.call(networkExceptions);
+    return skillserror?.call(networkExceptions);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? loading,
-    TResult Function(List<SkillModel> data)? success,
-    TResult Function(NetworkExceptions networkExceptions)? error,
+    TResult Function()? skillsLoading,
+    TResult Function(List<SkillModel> data)? skillssuccess,
+    TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(List<File> images)? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function(List<File> images)? imageSelectedDeleted,
+    TResult Function()? createSpecialRequestLoading,
+    TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
     required TResult orElse(),
   }) {
-    if (error != null) {
-      return error(networkExceptions);
+    if (skillserror != null) {
+      return skillserror(networkExceptions);
     }
     return orElse();
   }
@@ -574,45 +828,1443 @@ class _$Error<T> implements Error<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(Loading<T> value) loading,
-    required TResult Function(Success<T> value) success,
-    required TResult Function(Error<T> value) error,
+    required TResult Function(SkillsLoading<T> value) skillsLoading,
+    required TResult Function(SkillsSuccess<T> value) skillssuccess,
+    required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(ImageSelectedDeleted<T> value)
+        imageSelectedDeleted,
+    required TResult Function(CreateSpecialRequestLoading<T> value)
+        createSpecialRequestLoading,
+    required TResult Function(CreateSpecialRequestSuccess<T> value)
+        createSpecialRequestSuccess,
+    required TResult Function(CreateSpecialRequestError<T> value)
+        createSpecialRequestError,
   }) {
-    return error(this);
+    return skillserror(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(Loading<T> value)? loading,
-    TResult? Function(Success<T> value)? success,
-    TResult? Function(Error<T> value)? error,
+    TResult? Function(SkillsLoading<T> value)? skillsLoading,
+    TResult? Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult? Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult? Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult? Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
   }) {
-    return error?.call(this);
+    return skillserror?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(Loading<T> value)? loading,
-    TResult Function(Success<T> value)? success,
-    TResult Function(Error<T> value)? error,
+    TResult Function(SkillsLoading<T> value)? skillsLoading,
+    TResult Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
     required TResult orElse(),
   }) {
-    if (error != null) {
-      return error(this);
+    if (skillserror != null) {
+      return skillserror(this);
     }
     return orElse();
   }
 }
 
-abstract class Error<T> implements PipState<T> {
-  const factory Error(final NetworkExceptions networkExceptions) = _$Error<T>;
+abstract class SkillsError<T> implements PipState<T> {
+  const factory SkillsError(final NetworkExceptions networkExceptions) =
+      _$SkillsError<T>;
 
   NetworkExceptions get networkExceptions;
   @JsonKey(ignore: true)
-  _$$ErrorCopyWith<T, _$Error<T>> get copyWith =>
+  _$$SkillsErrorCopyWith<T, _$SkillsError<T>> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ImageSelectedSuccessCopyWith<T, $Res> {
+  factory _$$ImageSelectedSuccessCopyWith(_$ImageSelectedSuccess<T> value,
+          $Res Function(_$ImageSelectedSuccess<T>) then) =
+      __$$ImageSelectedSuccessCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({List<File> images});
+}
+
+/// @nodoc
+class __$$ImageSelectedSuccessCopyWithImpl<T, $Res>
+    extends _$PipStateCopyWithImpl<T, $Res, _$ImageSelectedSuccess<T>>
+    implements _$$ImageSelectedSuccessCopyWith<T, $Res> {
+  __$$ImageSelectedSuccessCopyWithImpl(_$ImageSelectedSuccess<T> _value,
+      $Res Function(_$ImageSelectedSuccess<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? images = null,
+  }) {
+    return _then(_$ImageSelectedSuccess<T>(
+      null == images
+          ? _value._images
+          : images // ignore: cast_nullable_to_non_nullable
+              as List<File>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
+  const _$ImageSelectedSuccess(final List<File> images) : _images = images;
+
+  final List<File> _images;
+  @override
+  List<File> get images {
+    if (_images is EqualUnmodifiableListView) return _images;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_images);
+  }
+
+  @override
+  String toString() {
+    return 'PipState<$T>.imageSelectedSuccess(images: $images)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ImageSelectedSuccess<T> &&
+            const DeepCollectionEquality().equals(other._images, _images));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_images));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ImageSelectedSuccessCopyWith<T, _$ImageSelectedSuccess<T>> get copyWith =>
+      __$$ImageSelectedSuccessCopyWithImpl<T, _$ImageSelectedSuccess<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() skillsLoading,
+    required TResult Function(List<SkillModel> data) skillssuccess,
+    required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(List<File> images) imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function(List<File> images) imageSelectedDeleted,
+    required TResult Function() createSpecialRequestLoading,
+    required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        createSpecialRequestError,
+  }) {
+    return imageSelectedSuccess(images);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? skillsLoading,
+    TResult? Function(List<SkillModel> data)? skillssuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(List<File> images)? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function(List<File> images)? imageSelectedDeleted,
+    TResult? Function()? createSpecialRequestLoading,
+    TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+  }) {
+    return imageSelectedSuccess?.call(images);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? skillsLoading,
+    TResult Function(List<SkillModel> data)? skillssuccess,
+    TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(List<File> images)? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function(List<File> images)? imageSelectedDeleted,
+    TResult Function()? createSpecialRequestLoading,
+    TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (imageSelectedSuccess != null) {
+      return imageSelectedSuccess(images);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(SkillsLoading<T> value) skillsLoading,
+    required TResult Function(SkillsSuccess<T> value) skillssuccess,
+    required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(ImageSelectedDeleted<T> value)
+        imageSelectedDeleted,
+    required TResult Function(CreateSpecialRequestLoading<T> value)
+        createSpecialRequestLoading,
+    required TResult Function(CreateSpecialRequestSuccess<T> value)
+        createSpecialRequestSuccess,
+    required TResult Function(CreateSpecialRequestError<T> value)
+        createSpecialRequestError,
+  }) {
+    return imageSelectedSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(SkillsLoading<T> value)? skillsLoading,
+    TResult? Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult? Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult? Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult? Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+  }) {
+    return imageSelectedSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(SkillsLoading<T> value)? skillsLoading,
+    TResult Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (imageSelectedSuccess != null) {
+      return imageSelectedSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ImageSelectedSuccess<T> implements PipState<T> {
+  const factory ImageSelectedSuccess(final List<File> images) =
+      _$ImageSelectedSuccess<T>;
+
+  List<File> get images;
+  @JsonKey(ignore: true)
+  _$$ImageSelectedSuccessCopyWith<T, _$ImageSelectedSuccess<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ImageSelectedLoadingCopyWith<T, $Res> {
+  factory _$$ImageSelectedLoadingCopyWith(_$ImageSelectedLoading<T> value,
+          $Res Function(_$ImageSelectedLoading<T>) then) =
+      __$$ImageSelectedLoadingCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$ImageSelectedLoadingCopyWithImpl<T, $Res>
+    extends _$PipStateCopyWithImpl<T, $Res, _$ImageSelectedLoading<T>>
+    implements _$$ImageSelectedLoadingCopyWith<T, $Res> {
+  __$$ImageSelectedLoadingCopyWithImpl(_$ImageSelectedLoading<T> _value,
+      $Res Function(_$ImageSelectedLoading<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
+  const _$ImageSelectedLoading();
+
+  @override
+  String toString() {
+    return 'PipState<$T>.imageSelectedLoading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ImageSelectedLoading<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() skillsLoading,
+    required TResult Function(List<SkillModel> data) skillssuccess,
+    required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(List<File> images) imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function(List<File> images) imageSelectedDeleted,
+    required TResult Function() createSpecialRequestLoading,
+    required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        createSpecialRequestError,
+  }) {
+    return imageSelectedLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? skillsLoading,
+    TResult? Function(List<SkillModel> data)? skillssuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(List<File> images)? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function(List<File> images)? imageSelectedDeleted,
+    TResult? Function()? createSpecialRequestLoading,
+    TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+  }) {
+    return imageSelectedLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? skillsLoading,
+    TResult Function(List<SkillModel> data)? skillssuccess,
+    TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(List<File> images)? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function(List<File> images)? imageSelectedDeleted,
+    TResult Function()? createSpecialRequestLoading,
+    TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (imageSelectedLoading != null) {
+      return imageSelectedLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(SkillsLoading<T> value) skillsLoading,
+    required TResult Function(SkillsSuccess<T> value) skillssuccess,
+    required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(ImageSelectedDeleted<T> value)
+        imageSelectedDeleted,
+    required TResult Function(CreateSpecialRequestLoading<T> value)
+        createSpecialRequestLoading,
+    required TResult Function(CreateSpecialRequestSuccess<T> value)
+        createSpecialRequestSuccess,
+    required TResult Function(CreateSpecialRequestError<T> value)
+        createSpecialRequestError,
+  }) {
+    return imageSelectedLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(SkillsLoading<T> value)? skillsLoading,
+    TResult? Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult? Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult? Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult? Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+  }) {
+    return imageSelectedLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(SkillsLoading<T> value)? skillsLoading,
+    TResult Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (imageSelectedLoading != null) {
+      return imageSelectedLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ImageSelectedLoading<T> implements PipState<T> {
+  const factory ImageSelectedLoading() = _$ImageSelectedLoading<T>;
+}
+
+/// @nodoc
+abstract class _$$ImageSelectedErrorCopyWith<T, $Res> {
+  factory _$$ImageSelectedErrorCopyWith(_$ImageSelectedError<T> value,
+          $Res Function(_$ImageSelectedError<T>) then) =
+      __$$ImageSelectedErrorCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$ImageSelectedErrorCopyWithImpl<T, $Res>
+    extends _$PipStateCopyWithImpl<T, $Res, _$ImageSelectedError<T>>
+    implements _$$ImageSelectedErrorCopyWith<T, $Res> {
+  __$$ImageSelectedErrorCopyWithImpl(_$ImageSelectedError<T> _value,
+      $Res Function(_$ImageSelectedError<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ImageSelectedError<T> implements ImageSelectedError<T> {
+  const _$ImageSelectedError();
+
+  @override
+  String toString() {
+    return 'PipState<$T>.imageSelectedError()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ImageSelectedError<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() skillsLoading,
+    required TResult Function(List<SkillModel> data) skillssuccess,
+    required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(List<File> images) imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function(List<File> images) imageSelectedDeleted,
+    required TResult Function() createSpecialRequestLoading,
+    required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        createSpecialRequestError,
+  }) {
+    return imageSelectedError();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? skillsLoading,
+    TResult? Function(List<SkillModel> data)? skillssuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(List<File> images)? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function(List<File> images)? imageSelectedDeleted,
+    TResult? Function()? createSpecialRequestLoading,
+    TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+  }) {
+    return imageSelectedError?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? skillsLoading,
+    TResult Function(List<SkillModel> data)? skillssuccess,
+    TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(List<File> images)? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function(List<File> images)? imageSelectedDeleted,
+    TResult Function()? createSpecialRequestLoading,
+    TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (imageSelectedError != null) {
+      return imageSelectedError();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(SkillsLoading<T> value) skillsLoading,
+    required TResult Function(SkillsSuccess<T> value) skillssuccess,
+    required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(ImageSelectedDeleted<T> value)
+        imageSelectedDeleted,
+    required TResult Function(CreateSpecialRequestLoading<T> value)
+        createSpecialRequestLoading,
+    required TResult Function(CreateSpecialRequestSuccess<T> value)
+        createSpecialRequestSuccess,
+    required TResult Function(CreateSpecialRequestError<T> value)
+        createSpecialRequestError,
+  }) {
+    return imageSelectedError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(SkillsLoading<T> value)? skillsLoading,
+    TResult? Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult? Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult? Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult? Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+  }) {
+    return imageSelectedError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(SkillsLoading<T> value)? skillsLoading,
+    TResult Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (imageSelectedError != null) {
+      return imageSelectedError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ImageSelectedError<T> implements PipState<T> {
+  const factory ImageSelectedError() = _$ImageSelectedError<T>;
+}
+
+/// @nodoc
+abstract class _$$ImageSelectedDeletedCopyWith<T, $Res> {
+  factory _$$ImageSelectedDeletedCopyWith(_$ImageSelectedDeleted<T> value,
+          $Res Function(_$ImageSelectedDeleted<T>) then) =
+      __$$ImageSelectedDeletedCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({List<File> images});
+}
+
+/// @nodoc
+class __$$ImageSelectedDeletedCopyWithImpl<T, $Res>
+    extends _$PipStateCopyWithImpl<T, $Res, _$ImageSelectedDeleted<T>>
+    implements _$$ImageSelectedDeletedCopyWith<T, $Res> {
+  __$$ImageSelectedDeletedCopyWithImpl(_$ImageSelectedDeleted<T> _value,
+      $Res Function(_$ImageSelectedDeleted<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? images = null,
+  }) {
+    return _then(_$ImageSelectedDeleted<T>(
+      null == images
+          ? _value._images
+          : images // ignore: cast_nullable_to_non_nullable
+              as List<File>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ImageSelectedDeleted<T> implements ImageSelectedDeleted<T> {
+  const _$ImageSelectedDeleted(final List<File> images) : _images = images;
+
+  final List<File> _images;
+  @override
+  List<File> get images {
+    if (_images is EqualUnmodifiableListView) return _images;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_images);
+  }
+
+  @override
+  String toString() {
+    return 'PipState<$T>.imageSelectedDeleted(images: $images)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ImageSelectedDeleted<T> &&
+            const DeepCollectionEquality().equals(other._images, _images));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_images));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ImageSelectedDeletedCopyWith<T, _$ImageSelectedDeleted<T>> get copyWith =>
+      __$$ImageSelectedDeletedCopyWithImpl<T, _$ImageSelectedDeleted<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() skillsLoading,
+    required TResult Function(List<SkillModel> data) skillssuccess,
+    required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(List<File> images) imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function(List<File> images) imageSelectedDeleted,
+    required TResult Function() createSpecialRequestLoading,
+    required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        createSpecialRequestError,
+  }) {
+    return imageSelectedDeleted(images);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? skillsLoading,
+    TResult? Function(List<SkillModel> data)? skillssuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(List<File> images)? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function(List<File> images)? imageSelectedDeleted,
+    TResult? Function()? createSpecialRequestLoading,
+    TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+  }) {
+    return imageSelectedDeleted?.call(images);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? skillsLoading,
+    TResult Function(List<SkillModel> data)? skillssuccess,
+    TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(List<File> images)? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function(List<File> images)? imageSelectedDeleted,
+    TResult Function()? createSpecialRequestLoading,
+    TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (imageSelectedDeleted != null) {
+      return imageSelectedDeleted(images);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(SkillsLoading<T> value) skillsLoading,
+    required TResult Function(SkillsSuccess<T> value) skillssuccess,
+    required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(ImageSelectedDeleted<T> value)
+        imageSelectedDeleted,
+    required TResult Function(CreateSpecialRequestLoading<T> value)
+        createSpecialRequestLoading,
+    required TResult Function(CreateSpecialRequestSuccess<T> value)
+        createSpecialRequestSuccess,
+    required TResult Function(CreateSpecialRequestError<T> value)
+        createSpecialRequestError,
+  }) {
+    return imageSelectedDeleted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(SkillsLoading<T> value)? skillsLoading,
+    TResult? Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult? Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult? Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult? Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+  }) {
+    return imageSelectedDeleted?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(SkillsLoading<T> value)? skillsLoading,
+    TResult Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (imageSelectedDeleted != null) {
+      return imageSelectedDeleted(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ImageSelectedDeleted<T> implements PipState<T> {
+  const factory ImageSelectedDeleted(final List<File> images) =
+      _$ImageSelectedDeleted<T>;
+
+  List<File> get images;
+  @JsonKey(ignore: true)
+  _$$ImageSelectedDeletedCopyWith<T, _$ImageSelectedDeleted<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CreateSpecialRequestLoadingCopyWith<T, $Res> {
+  factory _$$CreateSpecialRequestLoadingCopyWith(
+          _$CreateSpecialRequestLoading<T> value,
+          $Res Function(_$CreateSpecialRequestLoading<T>) then) =
+      __$$CreateSpecialRequestLoadingCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$CreateSpecialRequestLoadingCopyWithImpl<T, $Res>
+    extends _$PipStateCopyWithImpl<T, $Res, _$CreateSpecialRequestLoading<T>>
+    implements _$$CreateSpecialRequestLoadingCopyWith<T, $Res> {
+  __$$CreateSpecialRequestLoadingCopyWithImpl(
+      _$CreateSpecialRequestLoading<T> _value,
+      $Res Function(_$CreateSpecialRequestLoading<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$CreateSpecialRequestLoading<T>
+    implements CreateSpecialRequestLoading<T> {
+  const _$CreateSpecialRequestLoading();
+
+  @override
+  String toString() {
+    return 'PipState<$T>.createSpecialRequestLoading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CreateSpecialRequestLoading<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() skillsLoading,
+    required TResult Function(List<SkillModel> data) skillssuccess,
+    required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(List<File> images) imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function(List<File> images) imageSelectedDeleted,
+    required TResult Function() createSpecialRequestLoading,
+    required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        createSpecialRequestError,
+  }) {
+    return createSpecialRequestLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? skillsLoading,
+    TResult? Function(List<SkillModel> data)? skillssuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(List<File> images)? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function(List<File> images)? imageSelectedDeleted,
+    TResult? Function()? createSpecialRequestLoading,
+    TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+  }) {
+    return createSpecialRequestLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? skillsLoading,
+    TResult Function(List<SkillModel> data)? skillssuccess,
+    TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(List<File> images)? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function(List<File> images)? imageSelectedDeleted,
+    TResult Function()? createSpecialRequestLoading,
+    TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (createSpecialRequestLoading != null) {
+      return createSpecialRequestLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(SkillsLoading<T> value) skillsLoading,
+    required TResult Function(SkillsSuccess<T> value) skillssuccess,
+    required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(ImageSelectedDeleted<T> value)
+        imageSelectedDeleted,
+    required TResult Function(CreateSpecialRequestLoading<T> value)
+        createSpecialRequestLoading,
+    required TResult Function(CreateSpecialRequestSuccess<T> value)
+        createSpecialRequestSuccess,
+    required TResult Function(CreateSpecialRequestError<T> value)
+        createSpecialRequestError,
+  }) {
+    return createSpecialRequestLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(SkillsLoading<T> value)? skillsLoading,
+    TResult? Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult? Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult? Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult? Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+  }) {
+    return createSpecialRequestLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(SkillsLoading<T> value)? skillsLoading,
+    TResult Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (createSpecialRequestLoading != null) {
+      return createSpecialRequestLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CreateSpecialRequestLoading<T> implements PipState<T> {
+  const factory CreateSpecialRequestLoading() =
+      _$CreateSpecialRequestLoading<T>;
+}
+
+/// @nodoc
+abstract class _$$CreateSpecialRequestSuccessCopyWith<T, $Res> {
+  factory _$$CreateSpecialRequestSuccessCopyWith(
+          _$CreateSpecialRequestSuccess<T> value,
+          $Res Function(_$CreateSpecialRequestSuccess<T>) then) =
+      __$$CreateSpecialRequestSuccessCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({UpdateSkill data});
+}
+
+/// @nodoc
+class __$$CreateSpecialRequestSuccessCopyWithImpl<T, $Res>
+    extends _$PipStateCopyWithImpl<T, $Res, _$CreateSpecialRequestSuccess<T>>
+    implements _$$CreateSpecialRequestSuccessCopyWith<T, $Res> {
+  __$$CreateSpecialRequestSuccessCopyWithImpl(
+      _$CreateSpecialRequestSuccess<T> _value,
+      $Res Function(_$CreateSpecialRequestSuccess<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$CreateSpecialRequestSuccess<T>(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as UpdateSkill,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CreateSpecialRequestSuccess<T>
+    implements CreateSpecialRequestSuccess<T> {
+  const _$CreateSpecialRequestSuccess(this.data);
+
+  @override
+  final UpdateSkill data;
+
+  @override
+  String toString() {
+    return 'PipState<$T>.createSpecialRequestSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CreateSpecialRequestSuccess<T> &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CreateSpecialRequestSuccessCopyWith<T, _$CreateSpecialRequestSuccess<T>>
+      get copyWith => __$$CreateSpecialRequestSuccessCopyWithImpl<T,
+          _$CreateSpecialRequestSuccess<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() skillsLoading,
+    required TResult Function(List<SkillModel> data) skillssuccess,
+    required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(List<File> images) imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function(List<File> images) imageSelectedDeleted,
+    required TResult Function() createSpecialRequestLoading,
+    required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        createSpecialRequestError,
+  }) {
+    return createSpecialRequestSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? skillsLoading,
+    TResult? Function(List<SkillModel> data)? skillssuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(List<File> images)? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function(List<File> images)? imageSelectedDeleted,
+    TResult? Function()? createSpecialRequestLoading,
+    TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+  }) {
+    return createSpecialRequestSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? skillsLoading,
+    TResult Function(List<SkillModel> data)? skillssuccess,
+    TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(List<File> images)? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function(List<File> images)? imageSelectedDeleted,
+    TResult Function()? createSpecialRequestLoading,
+    TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (createSpecialRequestSuccess != null) {
+      return createSpecialRequestSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(SkillsLoading<T> value) skillsLoading,
+    required TResult Function(SkillsSuccess<T> value) skillssuccess,
+    required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(ImageSelectedDeleted<T> value)
+        imageSelectedDeleted,
+    required TResult Function(CreateSpecialRequestLoading<T> value)
+        createSpecialRequestLoading,
+    required TResult Function(CreateSpecialRequestSuccess<T> value)
+        createSpecialRequestSuccess,
+    required TResult Function(CreateSpecialRequestError<T> value)
+        createSpecialRequestError,
+  }) {
+    return createSpecialRequestSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(SkillsLoading<T> value)? skillsLoading,
+    TResult? Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult? Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult? Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult? Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+  }) {
+    return createSpecialRequestSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(SkillsLoading<T> value)? skillsLoading,
+    TResult Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (createSpecialRequestSuccess != null) {
+      return createSpecialRequestSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CreateSpecialRequestSuccess<T> implements PipState<T> {
+  const factory CreateSpecialRequestSuccess(final UpdateSkill data) =
+      _$CreateSpecialRequestSuccess<T>;
+
+  UpdateSkill get data;
+  @JsonKey(ignore: true)
+  _$$CreateSpecialRequestSuccessCopyWith<T, _$CreateSpecialRequestSuccess<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CreateSpecialRequestErrorCopyWith<T, $Res> {
+  factory _$$CreateSpecialRequestErrorCopyWith(
+          _$CreateSpecialRequestError<T> value,
+          $Res Function(_$CreateSpecialRequestError<T>) then) =
+      __$$CreateSpecialRequestErrorCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({NetworkExceptions networkExceptions});
+
+  $NetworkExceptionsCopyWith<$Res> get networkExceptions;
+}
+
+/// @nodoc
+class __$$CreateSpecialRequestErrorCopyWithImpl<T, $Res>
+    extends _$PipStateCopyWithImpl<T, $Res, _$CreateSpecialRequestError<T>>
+    implements _$$CreateSpecialRequestErrorCopyWith<T, $Res> {
+  __$$CreateSpecialRequestErrorCopyWithImpl(
+      _$CreateSpecialRequestError<T> _value,
+      $Res Function(_$CreateSpecialRequestError<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? networkExceptions = null,
+  }) {
+    return _then(_$CreateSpecialRequestError<T>(
+      null == networkExceptions
+          ? _value.networkExceptions
+          : networkExceptions // ignore: cast_nullable_to_non_nullable
+              as NetworkExceptions,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $NetworkExceptionsCopyWith<$Res> get networkExceptions {
+    return $NetworkExceptionsCopyWith<$Res>(_value.networkExceptions, (value) {
+      return _then(_value.copyWith(networkExceptions: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$CreateSpecialRequestError<T> implements CreateSpecialRequestError<T> {
+  const _$CreateSpecialRequestError(this.networkExceptions);
+
+  @override
+  final NetworkExceptions networkExceptions;
+
+  @override
+  String toString() {
+    return 'PipState<$T>.createSpecialRequestError(networkExceptions: $networkExceptions)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CreateSpecialRequestError<T> &&
+            (identical(other.networkExceptions, networkExceptions) ||
+                other.networkExceptions == networkExceptions));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, networkExceptions);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CreateSpecialRequestErrorCopyWith<T, _$CreateSpecialRequestError<T>>
+      get copyWith => __$$CreateSpecialRequestErrorCopyWithImpl<T,
+          _$CreateSpecialRequestError<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() skillsLoading,
+    required TResult Function(List<SkillModel> data) skillssuccess,
+    required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(List<File> images) imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function(List<File> images) imageSelectedDeleted,
+    required TResult Function() createSpecialRequestLoading,
+    required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        createSpecialRequestError,
+  }) {
+    return createSpecialRequestError(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? skillsLoading,
+    TResult? Function(List<SkillModel> data)? skillssuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(List<File> images)? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function(List<File> images)? imageSelectedDeleted,
+    TResult? Function()? createSpecialRequestLoading,
+    TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+  }) {
+    return createSpecialRequestError?.call(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? skillsLoading,
+    TResult Function(List<SkillModel> data)? skillssuccess,
+    TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(List<File> images)? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function(List<File> images)? imageSelectedDeleted,
+    TResult Function()? createSpecialRequestLoading,
+    TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (createSpecialRequestError != null) {
+      return createSpecialRequestError(networkExceptions);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(SkillsLoading<T> value) skillsLoading,
+    required TResult Function(SkillsSuccess<T> value) skillssuccess,
+    required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(ImageSelectedDeleted<T> value)
+        imageSelectedDeleted,
+    required TResult Function(CreateSpecialRequestLoading<T> value)
+        createSpecialRequestLoading,
+    required TResult Function(CreateSpecialRequestSuccess<T> value)
+        createSpecialRequestSuccess,
+    required TResult Function(CreateSpecialRequestError<T> value)
+        createSpecialRequestError,
+  }) {
+    return createSpecialRequestError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(SkillsLoading<T> value)? skillsLoading,
+    TResult? Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult? Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult? Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult? Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+  }) {
+    return createSpecialRequestError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(SkillsLoading<T> value)? skillsLoading,
+    TResult Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (createSpecialRequestError != null) {
+      return createSpecialRequestError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CreateSpecialRequestError<T> implements PipState<T> {
+  const factory CreateSpecialRequestError(
+          final NetworkExceptions networkExceptions) =
+      _$CreateSpecialRequestError<T>;
+
+  NetworkExceptions get networkExceptions;
+  @JsonKey(ignore: true)
+  _$$CreateSpecialRequestErrorCopyWith<T, _$CreateSpecialRequestError<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }

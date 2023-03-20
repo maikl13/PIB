@@ -32,7 +32,9 @@ MyRequestModel _$MyRequestModelFromJson(Map<String, dynamic> json) =>
       offersCount: json['offers_count'] as int?,
       belongToCurrentUser: json['belong_to_current_user'] as bool?,
       submittedOffer: json['submitted_offer'] as bool?,
-    );
+    )
+      ..acceptedOfferID = json['accepted_offer_id'] as String?
+      ..type = json['type'] as String?;
 
 Map<String, dynamic> _$MyRequestModelToJson(MyRequestModel instance) =>
     <String, dynamic>{
@@ -43,6 +45,8 @@ Map<String, dynamic> _$MyRequestModelToJson(MyRequestModel instance) =>
       'location': instance.location,
       'status': instance.status,
       'user_id': instance.userId,
+      'accepted_offer_id': instance.acceptedOfferID,
+      'type': instance.type,
       'created_at': instance.createdAt,
       'time': instance.time,
       'category': instance.category?.toJson(),

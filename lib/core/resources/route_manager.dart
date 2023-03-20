@@ -234,19 +234,18 @@ class RouteGenerator {
 
       case Routes.recievedOffersViewRoute:
         return MaterialPageRoute(
-          builder: (_) =>  BlocProvider.value(
+          builder: (_) => BlocProvider.value(
             value: requestsCubit,
-         
             child: const RecievedOffersView(),
           ),
         );
 
       case Routes.recievedOffersDetailsViewRoute:
-              final arguments = settings.arguments as Map;
+        final arguments = settings.arguments as Map;
 
         final OfferModel offer = arguments['offer'];
         return MaterialPageRoute(
-          builder: (_) =>  RecievedOfferDetails(
+          builder: (_) => RecievedOfferDetails(
             offer: offer,
           ),
         );
@@ -316,7 +315,10 @@ class RouteGenerator {
         );
       case Routes.rateUsViewRoute:
         return MaterialPageRoute(
-          builder: (_) => const RateUsView(),
+          builder: (_) => BlocProvider.value(
+            value: menuCubit,
+            child: const RateUsView(),
+          ),
         );
 
       case Routes.companiesNeedJobsViewRoute:
