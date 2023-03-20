@@ -2,15 +2,18 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:pip/features/home/data/models/ad_model.dart';
+import 'package:pip/features/menu/data/models/setting_model.dart';
 import 'package:pip/features/menu/data/models/update_skill.dart';
 import 'package:pip/features/pip/data/models/skills_model.dart';
 
 import 'package:retrofit/retrofit.dart';
 
 import '../../features/auth/data/models/auth_model.dart';
+import '../../features/chat/data/models/hiring_chat_model.dart';
 import '../../features/home/data/models/slider_model.dart';
 import '../../features/menu/data/models/add_balance.dart';
 import '../../features/menu/data/models/rates_model.dart';
+import '../../features/menu/data/models/user_info_model.dart';
 import '../../features/menu/data/models/wallet_info.dart';
 import '../../features/notification/data/models/notification_model.dart';
 import '../../features/requests/data/models/my_request_model.dart';
@@ -111,44 +114,41 @@ abstract class WebServices {
 
    @GET("ratings")
   Future<RatesModel> getAllRates(@Header('Authorization') String token);
-// //-----------------------------------------------------------------------
-// //get All STaff Data
-//      @GET("staff")
-//   Future<Doctor> getAllDoctors();
 
-//   //auth with google
-//   @POST("auth/google")
-//   Future<SocialAuth> googleAuth(
-//     @Field("id") id,
-//     @Field("email") email,
-//     @Field("firstName") firstName,
-//     @Field("lastName") lastName,
-//     @Field('picture') picture,
-//   );
 
-//   //register
-//   @POST("auth/signup")
-//   Future<AuthModel> register(
-//     @Field("firstName") firstName,
-//     @Field("lastName") lastName,
-//     @Field("email") email,
-//     @Field("password") password,
-//   );
+  @POST("ratings/create")
+  Future<UpdateSkill> sendRates(
+    @Header('Authorization') String token,
+    @Field("experience_stars") experienceStars,
+    @Field("professionl_stars") proffesionalStars,
+      
+    @Field("communication_stars") communicationStars,
+    @Field("quality_stars") qualityStars,
+    @Field("time_stars") timeStars,
+    
+  );
 
-//   //get planets producs
-//   @GET("products")
-//   Future<ProductModel> fetchProducts(@Header('Authorization') String token);
-// //get all tools
-//    @GET("tools")
-//   Future<ToolModel> fetchTools(@Header('Authorization') String token);
-//   //get all plants
-//     @GET("plants")
-//   Future<PlantsModel> fetchPlants(@Header('Authorization') String token);
-//   //get all seeds
-//     @GET("seeds")
-//   Future<SeedsModel> fetchSeeds(@Header('Authorization') String token);
+     @GET("user/info")
+  Future<UserInfoModel> getUserInfo(@Header('Authorization') String token);
 
-//   //get all forums
-//    @GET("forums")
-//   Future<ForumsModel> fetchForums(@Header('Authorization') String token);
+  @POST("update/profile")
+  @MultiPart()
+  Future<UserInfoModel> updateProfile(
+    @Part(name: 'name') String? name,
+    @Part(name: 'email') String? email,
+    @Part(name: 'phone') String? phone,
+    @Part(name: 'image') File img,
+    @Header('Authorization') String token,
+  );
+   @GET("app/settings")
+  Future<List<SettingModel>> getAllSettings(@Header('Authorization') String token);
+
+
+   @GET("user/chats/hirings")
+  Future<List<HiringChatModel>> getAllHiringChats(@Header('Authorization') String token);
+
+
+
+   @GET("user/chats/requests")
+  Future<List<HiringChatModel>> getAllRequestsChats(@Header('Authorization') String token);
 }

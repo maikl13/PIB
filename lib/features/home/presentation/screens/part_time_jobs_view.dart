@@ -9,19 +9,20 @@ import '../../data/models/ad_model.dart';
 
 class PartTimeJobs extends StatelessWidget {
   const PartTimeJobs({super.key, required this.ads, this.typeHeadline});
-    final List<Ads> ads;
-  final String ?typeHeadline ;
+  final List<Ads> ads;
+  final String? typeHeadline;
   _buildBody() {
     return ListView.separated(
         padding: EdgeInsets.only(top: 40.h, left: 20.w, right: 20.w),
         // physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         itemBuilder: (context, index) {
-          return  SearchResultItem(
-              companyName: ads[index].title,
+          return SearchResultItem(
+            companyName: ads[index].title,
             image: ads[index].image,
             jobTitle: ads[index].skillName,
-            typeHeadline:typeHeadline ,
+            typeHeadline: typeHeadline,
+            ad: ads[index],
           );
         },
         separatorBuilder: (context, index) {

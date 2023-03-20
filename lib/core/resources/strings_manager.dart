@@ -128,7 +128,7 @@ class AppStrings {
   static const String serviceRequesterMessages = 'رسائل طالب الخدمة';
   static const String serviceRequesterMessagesTitle =
       'محادثتك على الوظائف الخاصة بك :';
-  static const String twenyTotalMessage = 'اجمالي الرسائل : 20';
+  static const String totalMessage = 'اجمالي الرسائل :';
   static const String serviceProviderMessagesTitle =
       'محادثتك مع مقدمي الخدمات :';
   static const String chatsTitle = 'الأشخاص التابعين لوظيفة بحاجة لسباك :';

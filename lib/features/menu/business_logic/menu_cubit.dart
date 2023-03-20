@@ -1,10 +1,20 @@
+import 'dart:io';
+
 import 'package:bloc/bloc.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:pip/features/menu/data/models/rates_model.dart';
+import 'package:pip/features/menu/data/models/setting_model.dart';
 import 'package:pip/features/menu/data/models/update_skill.dart';
+import 'package:pip/features/menu/data/models/user_info_model.dart';
 import '../../../../core/web_services/network_exceptions.dart';
 import '../../../core/resources/color_manager.dart';
+import '../../../core/resources/commons.dart';
+import '../../../core/resources/route_manager.dart';
+import '../../../core/resources/shared_prefrences.dart';
 import '../../../core/resources/style_manager.dart';
 import '../../../core/widgets/default_button.dart';
 import '../../../core/widgets/default_textfield.dart';
@@ -21,7 +31,132 @@ class MenuCubit extends Cubit<MenuState> {
   final TextEditingController _amountController = TextEditingController();
   List<int> skills = [];
   List<String> ratesFromOneToFive = [];
-//  WalletInfo walletInfo ;
+
+  double experienceRate = 0.0;
+  double professionlRate = 0.0;
+  double communicationRate = 0.0;
+  double qualityRate = 0.0;
+  double timeRate = 0.0;
+  double initialRating = 0.0;
+
+  File? imageFile;
+  String? image;
+
+  void sendRate() {}
+
+  void updateExperienceRate(double rate) {
+    experienceRate = rate;
+    emit(const MenuState.updateExperienceRateSuccess());
+  }
+
+  void updateProfessionlRate(double rate) {
+    professionlRate = rate;
+    emit(const MenuState.updateProfessionlRateSuccess());
+  }
+
+  void updateCommunicationRate(double rate) {
+    communicationRate = rate;
+    emit(const MenuState.updateCommunicationRateSuccess());
+  }
+
+  void updateQualityRate(double rate) {
+    qualityRate = rate;
+    emit(const MenuState.updateQualityRate());
+  }
+
+  void updateTimeRate(double rate) {
+    timeRate = rate;
+    emit(const MenuState.updateTimeRateSuccess());
+  }
+
+  Future pickImage() async {
+    try {
+      emit(const MenuState.imageSelectedLoading());
+      final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+      if (image == null) return;
+      final imageTemporry = File(image.path);
+
+      imageFile = imageTemporry;
+      this.image = image.path;
+      emit(const MenuState.imageSelectedSuccess());
+    } on PlatformException catch (e) {
+      emit(const MenuState.imageSelectedError());
+      Commons.showToast(message: e.toString());
+      // print('Failed to pick image $e ');
+    }
+  }
+
+  Future<void> signOut(BuildContext context) async {
+    try {
+      await FirebaseAuth.instance.signOut();
+      Commons.showToast(
+          message: "User signed out successfully.", color: ColorManager.green);
+      CacheHelper.removeData(key: 'uid');
+      CacheHelper.removeData(key: 'token');
+      CacheHelper.removeData(key: 'userImage');
+      CacheHelper.removeData(key: 'userName');
+      CacheHelper.removeData(key: 'userPhone');
+      CacheHelper.removeData(key: 'goToHome');
+
+      // ignore: use_build_context_synchronously
+      Navigator.pushReplacementNamed(context, Routes.onBoardingViewRoute);
+
+      // emit(const AuthResultState.firebaseSignOutSuccess());
+    } catch (e) {
+      Commons.showToast(
+        message: e.toString(),
+      );
+    }
+  }
+
+  //  void updateProfile(String name, String email, String phone) async {
+  //   emit(const MenuState.imageSelectedLoading());
+  //   // ignore: prefer_typing_uninitialized_variables
+  //   var result = await menuRepository.updateProfile(name, phone,email, imageFile!);
+  //   result.when(
+  //     success: (UserInfoModel userInfoModel) {
+  //       userImage = userInfoModel.userInfo!.img!;
+  //       emit(MenuState.updateProfileSuccess(userInfoModel));
+  //     },
+  //     failure: (NetworkExceptions networkExceptions) {
+  //       emit(MenuState.updateProfileError(networkExceptions));
+  //     },
+  //   );
+  // }
+
+  void getUserInfo() async {
+    emit(const MenuState.getUserInfoLoading());
+    var result = await menuRepository.getUserInfo();
+    result.when(
+      success: (UserInfoModel userInfo) {
+        emit(MenuState.getUserInfoSuccess(userInfo));
+      },
+      failure: (NetworkExceptions networkExceptions) {
+        emit(MenuState.getUserInfoError(networkExceptions));
+      },
+    );
+  }
+
+  void updateRate() async {
+    emit(const MenuState.updateRateLoading());
+    var result = await menuRepository.sendRates(experienceRate, professionlRate,
+        communicationRate, qualityRate, timeRate);
+    result.when(
+      success: (UpdateSkill data) {
+        emit(MenuState.updateRateSuccess(data));
+        ratesFromOneToFive.clear();
+        experienceRate = 0.0;
+        professionlRate = 0.0;
+        communicationRate = 0.0;
+        qualityRate = 0.0;
+        timeRate = 0.0;
+        initialRating = 0.0;
+      },
+      failure: (NetworkExceptions networkExceptions) {
+        emit(MenuState.updateRateError(networkExceptions));
+      },
+    );
+  }
 
   void getWalletInfo() async {
     emit(const MenuState.walletInfoLoading());
@@ -38,20 +173,20 @@ class MenuCubit extends Cubit<MenuState> {
     );
   }
 
-   void getAllRates() async {
+  void getAllRates() async {
     emit(const MenuState.getRatesLoading());
     // ignore: prefer_typing_uninitialized_variables
     var result = await menuRepository.getAllRates();
     result.when(
       success: (RatesModel rates) {
+        emit(MenuState.getRatesSuccess(rates));
+
         // notifications = notifications;
         ratesFromOneToFive.add(rates.fiveStarsTotal.toString());
         ratesFromOneToFive.add(rates.fourStarsTotal.toString());
         ratesFromOneToFive.add(rates.threeStarsTotal.toString());
         ratesFromOneToFive.add(rates.twoStarsTotal.toString());
         ratesFromOneToFive.add(rates.oneStarTotal.toString());
-
-        emit(MenuState.getRatesSuccess(rates));
       },
       failure: (NetworkExceptions networkExceptions) {
         emit(MenuState.getRatesError(networkExceptions));
@@ -59,6 +194,21 @@ class MenuCubit extends Cubit<MenuState> {
     );
   }
 
+  void getAllSettings() async {
+    emit(const MenuState.getSettingLoading());
+    // ignore: prefer_typing_uninitialized_variables
+    var result = await menuRepository.getAllSettings();
+    result.when(
+      success: (List<SettingModel> settings) {
+        // notifications = notifications;
+
+        emit(MenuState.getSettingSuccess(settings));
+      },
+      failure: (NetworkExceptions networkExceptions) {
+        emit(MenuState.getSettingError(networkExceptions));
+      },
+    );
+  }
 
   void updateSkill() async {
     emit(const MenuState.updateSkillLoading());

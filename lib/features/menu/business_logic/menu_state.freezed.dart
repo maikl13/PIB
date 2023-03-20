@@ -39,6 +39,26 @@ mixin _$MenuState<T> {
     required TResult Function(RatesModel rates) getRatesSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,6 +80,23 @@ mixin _$MenuState<T> {
     TResult? Function()? getRatesLoading,
     TResult? Function(RatesModel rates)? getRatesSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -81,6 +118,23 @@ mixin _$MenuState<T> {
     TResult Function()? getRatesLoading,
     TResult Function(RatesModel rates)? getRatesSuccess,
     TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -105,6 +159,29 @@ mixin _$MenuState<T> {
     required TResult Function(GetRatesLoading<T> value) getRatesLoading,
     required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
     required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -128,6 +205,26 @@ mixin _$MenuState<T> {
     TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -151,6 +248,26 @@ mixin _$MenuState<T> {
     TResult Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -231,6 +348,26 @@ class _$Idle<T> implements Idle<T> {
     required TResult Function(RatesModel rates) getRatesSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
   }) {
     return idle();
   }
@@ -255,6 +392,23 @@ class _$Idle<T> implements Idle<T> {
     TResult? Function()? getRatesLoading,
     TResult? Function(RatesModel rates)? getRatesSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
   }) {
     return idle?.call();
   }
@@ -279,6 +433,23 @@ class _$Idle<T> implements Idle<T> {
     TResult Function()? getRatesLoading,
     TResult Function(RatesModel rates)? getRatesSuccess,
     TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
     required TResult orElse(),
   }) {
     if (idle != null) {
@@ -309,6 +480,29 @@ class _$Idle<T> implements Idle<T> {
     required TResult Function(GetRatesLoading<T> value) getRatesLoading,
     required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
     required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
   }) {
     return idle(this);
   }
@@ -335,6 +529,26 @@ class _$Idle<T> implements Idle<T> {
     TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
   }) {
     return idle?.call(this);
   }
@@ -361,6 +575,26 @@ class _$Idle<T> implements Idle<T> {
     TResult Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
     required TResult orElse(),
   }) {
     if (idle != null) {
@@ -433,6 +667,26 @@ class _$WalletInfoLoading<T> implements WalletInfoLoading<T> {
     required TResult Function(RatesModel rates) getRatesSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
   }) {
     return walletInfoLoading();
   }
@@ -457,6 +711,23 @@ class _$WalletInfoLoading<T> implements WalletInfoLoading<T> {
     TResult? Function()? getRatesLoading,
     TResult? Function(RatesModel rates)? getRatesSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
   }) {
     return walletInfoLoading?.call();
   }
@@ -481,6 +752,23 @@ class _$WalletInfoLoading<T> implements WalletInfoLoading<T> {
     TResult Function()? getRatesLoading,
     TResult Function(RatesModel rates)? getRatesSuccess,
     TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
     required TResult orElse(),
   }) {
     if (walletInfoLoading != null) {
@@ -511,6 +799,29 @@ class _$WalletInfoLoading<T> implements WalletInfoLoading<T> {
     required TResult Function(GetRatesLoading<T> value) getRatesLoading,
     required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
     required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
   }) {
     return walletInfoLoading(this);
   }
@@ -537,6 +848,26 @@ class _$WalletInfoLoading<T> implements WalletInfoLoading<T> {
     TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
   }) {
     return walletInfoLoading?.call(this);
   }
@@ -563,6 +894,26 @@ class _$WalletInfoLoading<T> implements WalletInfoLoading<T> {
     TResult Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
     required TResult orElse(),
   }) {
     if (walletInfoLoading != null) {
@@ -662,6 +1013,26 @@ class _$WalletInfoSuccedded<T> implements WalletInfoSuccedded<T> {
     required TResult Function(RatesModel rates) getRatesSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
   }) {
     return walletInfoSuccedded(data);
   }
@@ -686,6 +1057,23 @@ class _$WalletInfoSuccedded<T> implements WalletInfoSuccedded<T> {
     TResult? Function()? getRatesLoading,
     TResult? Function(RatesModel rates)? getRatesSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
   }) {
     return walletInfoSuccedded?.call(data);
   }
@@ -710,6 +1098,23 @@ class _$WalletInfoSuccedded<T> implements WalletInfoSuccedded<T> {
     TResult Function()? getRatesLoading,
     TResult Function(RatesModel rates)? getRatesSuccess,
     TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
     required TResult orElse(),
   }) {
     if (walletInfoSuccedded != null) {
@@ -740,6 +1145,29 @@ class _$WalletInfoSuccedded<T> implements WalletInfoSuccedded<T> {
     required TResult Function(GetRatesLoading<T> value) getRatesLoading,
     required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
     required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
   }) {
     return walletInfoSuccedded(this);
   }
@@ -766,6 +1194,26 @@ class _$WalletInfoSuccedded<T> implements WalletInfoSuccedded<T> {
     TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
   }) {
     return walletInfoSuccedded?.call(this);
   }
@@ -792,6 +1240,26 @@ class _$WalletInfoSuccedded<T> implements WalletInfoSuccedded<T> {
     TResult Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
     required TResult orElse(),
   }) {
     if (walletInfoSuccedded != null) {
@@ -908,6 +1376,26 @@ class _$WalletInfoError<T> implements WalletInfoError<T> {
     required TResult Function(RatesModel rates) getRatesSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
   }) {
     return walletInfoError(networkExceptions);
   }
@@ -932,6 +1420,23 @@ class _$WalletInfoError<T> implements WalletInfoError<T> {
     TResult? Function()? getRatesLoading,
     TResult? Function(RatesModel rates)? getRatesSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
   }) {
     return walletInfoError?.call(networkExceptions);
   }
@@ -956,6 +1461,23 @@ class _$WalletInfoError<T> implements WalletInfoError<T> {
     TResult Function()? getRatesLoading,
     TResult Function(RatesModel rates)? getRatesSuccess,
     TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
     required TResult orElse(),
   }) {
     if (walletInfoError != null) {
@@ -986,6 +1508,29 @@ class _$WalletInfoError<T> implements WalletInfoError<T> {
     required TResult Function(GetRatesLoading<T> value) getRatesLoading,
     required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
     required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
   }) {
     return walletInfoError(this);
   }
@@ -1012,6 +1557,26 @@ class _$WalletInfoError<T> implements WalletInfoError<T> {
     TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
   }) {
     return walletInfoError?.call(this);
   }
@@ -1038,6 +1603,26 @@ class _$WalletInfoError<T> implements WalletInfoError<T> {
     TResult Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
     required TResult orElse(),
   }) {
     if (walletInfoError != null) {
@@ -1116,6 +1701,26 @@ class _$UserSkillsLoading<T> implements UserSkillsLoading<T> {
     required TResult Function(RatesModel rates) getRatesSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
   }) {
     return userSkillsLoading();
   }
@@ -1140,6 +1745,23 @@ class _$UserSkillsLoading<T> implements UserSkillsLoading<T> {
     TResult? Function()? getRatesLoading,
     TResult? Function(RatesModel rates)? getRatesSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
   }) {
     return userSkillsLoading?.call();
   }
@@ -1164,6 +1786,23 @@ class _$UserSkillsLoading<T> implements UserSkillsLoading<T> {
     TResult Function()? getRatesLoading,
     TResult Function(RatesModel rates)? getRatesSuccess,
     TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
     required TResult orElse(),
   }) {
     if (userSkillsLoading != null) {
@@ -1194,6 +1833,29 @@ class _$UserSkillsLoading<T> implements UserSkillsLoading<T> {
     required TResult Function(GetRatesLoading<T> value) getRatesLoading,
     required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
     required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
   }) {
     return userSkillsLoading(this);
   }
@@ -1220,6 +1882,26 @@ class _$UserSkillsLoading<T> implements UserSkillsLoading<T> {
     TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
   }) {
     return userSkillsLoading?.call(this);
   }
@@ -1246,6 +1928,26 @@ class _$UserSkillsLoading<T> implements UserSkillsLoading<T> {
     TResult Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
     required TResult orElse(),
   }) {
     if (userSkillsLoading != null) {
@@ -1351,6 +2053,26 @@ class _$UserSkillsSuccess<T> implements UserSkillsSuccess<T> {
     required TResult Function(RatesModel rates) getRatesSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
   }) {
     return userSkillsSuccess(skills);
   }
@@ -1375,6 +2097,23 @@ class _$UserSkillsSuccess<T> implements UserSkillsSuccess<T> {
     TResult? Function()? getRatesLoading,
     TResult? Function(RatesModel rates)? getRatesSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
   }) {
     return userSkillsSuccess?.call(skills);
   }
@@ -1399,6 +2138,23 @@ class _$UserSkillsSuccess<T> implements UserSkillsSuccess<T> {
     TResult Function()? getRatesLoading,
     TResult Function(RatesModel rates)? getRatesSuccess,
     TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
     required TResult orElse(),
   }) {
     if (userSkillsSuccess != null) {
@@ -1429,6 +2185,29 @@ class _$UserSkillsSuccess<T> implements UserSkillsSuccess<T> {
     required TResult Function(GetRatesLoading<T> value) getRatesLoading,
     required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
     required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
   }) {
     return userSkillsSuccess(this);
   }
@@ -1455,6 +2234,26 @@ class _$UserSkillsSuccess<T> implements UserSkillsSuccess<T> {
     TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
   }) {
     return userSkillsSuccess?.call(this);
   }
@@ -1481,6 +2280,26 @@ class _$UserSkillsSuccess<T> implements UserSkillsSuccess<T> {
     TResult Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
     required TResult orElse(),
   }) {
     if (userSkillsSuccess != null) {
@@ -1597,6 +2416,26 @@ class _$UserSkillsError<T> implements UserSkillsError<T> {
     required TResult Function(RatesModel rates) getRatesSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
   }) {
     return userSkillsError(networkExceptions);
   }
@@ -1621,6 +2460,23 @@ class _$UserSkillsError<T> implements UserSkillsError<T> {
     TResult? Function()? getRatesLoading,
     TResult? Function(RatesModel rates)? getRatesSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
   }) {
     return userSkillsError?.call(networkExceptions);
   }
@@ -1645,6 +2501,23 @@ class _$UserSkillsError<T> implements UserSkillsError<T> {
     TResult Function()? getRatesLoading,
     TResult Function(RatesModel rates)? getRatesSuccess,
     TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
     required TResult orElse(),
   }) {
     if (userSkillsError != null) {
@@ -1675,6 +2548,29 @@ class _$UserSkillsError<T> implements UserSkillsError<T> {
     required TResult Function(GetRatesLoading<T> value) getRatesLoading,
     required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
     required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
   }) {
     return userSkillsError(this);
   }
@@ -1701,6 +2597,26 @@ class _$UserSkillsError<T> implements UserSkillsError<T> {
     TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
   }) {
     return userSkillsError?.call(this);
   }
@@ -1727,6 +2643,26 @@ class _$UserSkillsError<T> implements UserSkillsError<T> {
     TResult Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
     required TResult orElse(),
   }) {
     if (userSkillsError != null) {
@@ -1805,6 +2741,26 @@ class _$UpdateSkillLoading<T> implements UpdateSkillLoading<T> {
     required TResult Function(RatesModel rates) getRatesSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
   }) {
     return updateSkillLoading();
   }
@@ -1829,6 +2785,23 @@ class _$UpdateSkillLoading<T> implements UpdateSkillLoading<T> {
     TResult? Function()? getRatesLoading,
     TResult? Function(RatesModel rates)? getRatesSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
   }) {
     return updateSkillLoading?.call();
   }
@@ -1853,6 +2826,23 @@ class _$UpdateSkillLoading<T> implements UpdateSkillLoading<T> {
     TResult Function()? getRatesLoading,
     TResult Function(RatesModel rates)? getRatesSuccess,
     TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
     required TResult orElse(),
   }) {
     if (updateSkillLoading != null) {
@@ -1883,6 +2873,29 @@ class _$UpdateSkillLoading<T> implements UpdateSkillLoading<T> {
     required TResult Function(GetRatesLoading<T> value) getRatesLoading,
     required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
     required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
   }) {
     return updateSkillLoading(this);
   }
@@ -1909,6 +2922,26 @@ class _$UpdateSkillLoading<T> implements UpdateSkillLoading<T> {
     TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
   }) {
     return updateSkillLoading?.call(this);
   }
@@ -1935,6 +2968,26 @@ class _$UpdateSkillLoading<T> implements UpdateSkillLoading<T> {
     TResult Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
     required TResult orElse(),
   }) {
     if (updateSkillLoading != null) {
@@ -2034,6 +3087,26 @@ class _$UpdateSkillSuccess<T> implements UpdateSkillSuccess<T> {
     required TResult Function(RatesModel rates) getRatesSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
   }) {
     return updateSkillSuccess(data);
   }
@@ -2058,6 +3131,23 @@ class _$UpdateSkillSuccess<T> implements UpdateSkillSuccess<T> {
     TResult? Function()? getRatesLoading,
     TResult? Function(RatesModel rates)? getRatesSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
   }) {
     return updateSkillSuccess?.call(data);
   }
@@ -2082,6 +3172,23 @@ class _$UpdateSkillSuccess<T> implements UpdateSkillSuccess<T> {
     TResult Function()? getRatesLoading,
     TResult Function(RatesModel rates)? getRatesSuccess,
     TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
     required TResult orElse(),
   }) {
     if (updateSkillSuccess != null) {
@@ -2112,6 +3219,29 @@ class _$UpdateSkillSuccess<T> implements UpdateSkillSuccess<T> {
     required TResult Function(GetRatesLoading<T> value) getRatesLoading,
     required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
     required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
   }) {
     return updateSkillSuccess(this);
   }
@@ -2138,6 +3268,26 @@ class _$UpdateSkillSuccess<T> implements UpdateSkillSuccess<T> {
     TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
   }) {
     return updateSkillSuccess?.call(this);
   }
@@ -2164,6 +3314,26 @@ class _$UpdateSkillSuccess<T> implements UpdateSkillSuccess<T> {
     TResult Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
     required TResult orElse(),
   }) {
     if (updateSkillSuccess != null) {
@@ -2280,6 +3450,26 @@ class _$UpdateSkillError<T> implements UpdateSkillError<T> {
     required TResult Function(RatesModel rates) getRatesSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
   }) {
     return updateSkillError(networkExceptions);
   }
@@ -2304,6 +3494,23 @@ class _$UpdateSkillError<T> implements UpdateSkillError<T> {
     TResult? Function()? getRatesLoading,
     TResult? Function(RatesModel rates)? getRatesSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
   }) {
     return updateSkillError?.call(networkExceptions);
   }
@@ -2328,6 +3535,23 @@ class _$UpdateSkillError<T> implements UpdateSkillError<T> {
     TResult Function()? getRatesLoading,
     TResult Function(RatesModel rates)? getRatesSuccess,
     TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
     required TResult orElse(),
   }) {
     if (updateSkillError != null) {
@@ -2358,6 +3582,29 @@ class _$UpdateSkillError<T> implements UpdateSkillError<T> {
     required TResult Function(GetRatesLoading<T> value) getRatesLoading,
     required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
     required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
   }) {
     return updateSkillError(this);
   }
@@ -2384,6 +3631,26 @@ class _$UpdateSkillError<T> implements UpdateSkillError<T> {
     TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
   }) {
     return updateSkillError?.call(this);
   }
@@ -2410,6 +3677,26 @@ class _$UpdateSkillError<T> implements UpdateSkillError<T> {
     TResult Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
     required TResult orElse(),
   }) {
     if (updateSkillError != null) {
@@ -2490,6 +3777,26 @@ class _$WalletBlanceAddedLoading<T> implements WalletBlanceAddedLoading<T> {
     required TResult Function(RatesModel rates) getRatesSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
   }) {
     return walletBlanceAddedLoading();
   }
@@ -2514,6 +3821,23 @@ class _$WalletBlanceAddedLoading<T> implements WalletBlanceAddedLoading<T> {
     TResult? Function()? getRatesLoading,
     TResult? Function(RatesModel rates)? getRatesSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
   }) {
     return walletBlanceAddedLoading?.call();
   }
@@ -2538,6 +3862,23 @@ class _$WalletBlanceAddedLoading<T> implements WalletBlanceAddedLoading<T> {
     TResult Function()? getRatesLoading,
     TResult Function(RatesModel rates)? getRatesSuccess,
     TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
     required TResult orElse(),
   }) {
     if (walletBlanceAddedLoading != null) {
@@ -2568,6 +3909,29 @@ class _$WalletBlanceAddedLoading<T> implements WalletBlanceAddedLoading<T> {
     required TResult Function(GetRatesLoading<T> value) getRatesLoading,
     required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
     required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
   }) {
     return walletBlanceAddedLoading(this);
   }
@@ -2594,6 +3958,26 @@ class _$WalletBlanceAddedLoading<T> implements WalletBlanceAddedLoading<T> {
     TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
   }) {
     return walletBlanceAddedLoading?.call(this);
   }
@@ -2620,6 +4004,26 @@ class _$WalletBlanceAddedLoading<T> implements WalletBlanceAddedLoading<T> {
     TResult Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
     required TResult orElse(),
   }) {
     if (walletBlanceAddedLoading != null) {
@@ -2722,6 +4126,26 @@ class _$WalletBalanceAddedSuccedded<T>
     required TResult Function(RatesModel rates) getRatesSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
   }) {
     return walletBalanceAddedSuccedded(data);
   }
@@ -2746,6 +4170,23 @@ class _$WalletBalanceAddedSuccedded<T>
     TResult? Function()? getRatesLoading,
     TResult? Function(RatesModel rates)? getRatesSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
   }) {
     return walletBalanceAddedSuccedded?.call(data);
   }
@@ -2770,6 +4211,23 @@ class _$WalletBalanceAddedSuccedded<T>
     TResult Function()? getRatesLoading,
     TResult Function(RatesModel rates)? getRatesSuccess,
     TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
     required TResult orElse(),
   }) {
     if (walletBalanceAddedSuccedded != null) {
@@ -2800,6 +4258,29 @@ class _$WalletBalanceAddedSuccedded<T>
     required TResult Function(GetRatesLoading<T> value) getRatesLoading,
     required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
     required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
   }) {
     return walletBalanceAddedSuccedded(this);
   }
@@ -2826,6 +4307,26 @@ class _$WalletBalanceAddedSuccedded<T>
     TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
   }) {
     return walletBalanceAddedSuccedded?.call(this);
   }
@@ -2852,6 +4353,26 @@ class _$WalletBalanceAddedSuccedded<T>
     TResult Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
     required TResult orElse(),
   }) {
     if (walletBalanceAddedSuccedded != null) {
@@ -2969,6 +4490,26 @@ class _$WalletBalanceAdddedError<T> implements WalletBalanceAdddedError<T> {
     required TResult Function(RatesModel rates) getRatesSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
   }) {
     return walletBalanceAdddedError(networkExceptions);
   }
@@ -2993,6 +4534,23 @@ class _$WalletBalanceAdddedError<T> implements WalletBalanceAdddedError<T> {
     TResult? Function()? getRatesLoading,
     TResult? Function(RatesModel rates)? getRatesSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
   }) {
     return walletBalanceAdddedError?.call(networkExceptions);
   }
@@ -3017,6 +4575,23 @@ class _$WalletBalanceAdddedError<T> implements WalletBalanceAdddedError<T> {
     TResult Function()? getRatesLoading,
     TResult Function(RatesModel rates)? getRatesSuccess,
     TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
     required TResult orElse(),
   }) {
     if (walletBalanceAdddedError != null) {
@@ -3047,6 +4622,29 @@ class _$WalletBalanceAdddedError<T> implements WalletBalanceAdddedError<T> {
     required TResult Function(GetRatesLoading<T> value) getRatesLoading,
     required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
     required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
   }) {
     return walletBalanceAdddedError(this);
   }
@@ -3073,6 +4671,26 @@ class _$WalletBalanceAdddedError<T> implements WalletBalanceAdddedError<T> {
     TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
   }) {
     return walletBalanceAdddedError?.call(this);
   }
@@ -3099,6 +4717,26 @@ class _$WalletBalanceAdddedError<T> implements WalletBalanceAdddedError<T> {
     TResult Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
     required TResult orElse(),
   }) {
     if (walletBalanceAdddedError != null) {
@@ -3178,6 +4816,26 @@ class _$GetRatesLoading<T> implements GetRatesLoading<T> {
     required TResult Function(RatesModel rates) getRatesSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
   }) {
     return getRatesLoading();
   }
@@ -3202,6 +4860,23 @@ class _$GetRatesLoading<T> implements GetRatesLoading<T> {
     TResult? Function()? getRatesLoading,
     TResult? Function(RatesModel rates)? getRatesSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
   }) {
     return getRatesLoading?.call();
   }
@@ -3226,6 +4901,23 @@ class _$GetRatesLoading<T> implements GetRatesLoading<T> {
     TResult Function()? getRatesLoading,
     TResult Function(RatesModel rates)? getRatesSuccess,
     TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
     required TResult orElse(),
   }) {
     if (getRatesLoading != null) {
@@ -3256,6 +4948,29 @@ class _$GetRatesLoading<T> implements GetRatesLoading<T> {
     required TResult Function(GetRatesLoading<T> value) getRatesLoading,
     required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
     required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
   }) {
     return getRatesLoading(this);
   }
@@ -3282,6 +4997,26 @@ class _$GetRatesLoading<T> implements GetRatesLoading<T> {
     TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
   }) {
     return getRatesLoading?.call(this);
   }
@@ -3308,6 +5043,26 @@ class _$GetRatesLoading<T> implements GetRatesLoading<T> {
     TResult Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
     required TResult orElse(),
   }) {
     if (getRatesLoading != null) {
@@ -3407,6 +5162,26 @@ class _$GetRatesSuccess<T> implements GetRatesSuccess<T> {
     required TResult Function(RatesModel rates) getRatesSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
   }) {
     return getRatesSuccess(rates);
   }
@@ -3431,6 +5206,23 @@ class _$GetRatesSuccess<T> implements GetRatesSuccess<T> {
     TResult? Function()? getRatesLoading,
     TResult? Function(RatesModel rates)? getRatesSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
   }) {
     return getRatesSuccess?.call(rates);
   }
@@ -3455,6 +5247,23 @@ class _$GetRatesSuccess<T> implements GetRatesSuccess<T> {
     TResult Function()? getRatesLoading,
     TResult Function(RatesModel rates)? getRatesSuccess,
     TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
     required TResult orElse(),
   }) {
     if (getRatesSuccess != null) {
@@ -3485,6 +5294,29 @@ class _$GetRatesSuccess<T> implements GetRatesSuccess<T> {
     required TResult Function(GetRatesLoading<T> value) getRatesLoading,
     required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
     required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
   }) {
     return getRatesSuccess(this);
   }
@@ -3511,6 +5343,26 @@ class _$GetRatesSuccess<T> implements GetRatesSuccess<T> {
     TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
   }) {
     return getRatesSuccess?.call(this);
   }
@@ -3537,6 +5389,26 @@ class _$GetRatesSuccess<T> implements GetRatesSuccess<T> {
     TResult Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
     required TResult orElse(),
   }) {
     if (getRatesSuccess != null) {
@@ -3651,6 +5523,26 @@ class _$GetRatesError<T> implements GetRatesError<T> {
     required TResult Function(RatesModel rates) getRatesSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
   }) {
     return getRatesError(networkExceptions);
   }
@@ -3675,6 +5567,23 @@ class _$GetRatesError<T> implements GetRatesError<T> {
     TResult? Function()? getRatesLoading,
     TResult? Function(RatesModel rates)? getRatesSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
   }) {
     return getRatesError?.call(networkExceptions);
   }
@@ -3699,6 +5608,23 @@ class _$GetRatesError<T> implements GetRatesError<T> {
     TResult Function()? getRatesLoading,
     TResult Function(RatesModel rates)? getRatesSuccess,
     TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
     required TResult orElse(),
   }) {
     if (getRatesError != null) {
@@ -3729,6 +5655,29 @@ class _$GetRatesError<T> implements GetRatesError<T> {
     required TResult Function(GetRatesLoading<T> value) getRatesLoading,
     required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
     required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
   }) {
     return getRatesError(this);
   }
@@ -3755,6 +5704,26 @@ class _$GetRatesError<T> implements GetRatesError<T> {
     TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
   }) {
     return getRatesError?.call(this);
   }
@@ -3781,6 +5750,26 @@ class _$GetRatesError<T> implements GetRatesError<T> {
     TResult Function(GetRatesLoading<T> value)? getRatesLoading,
     TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
     TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
     required TResult orElse(),
   }) {
     if (getRatesError != null) {
@@ -3797,5 +5786,5686 @@ abstract class GetRatesError<T> implements MenuState<T> {
   NetworkExceptions get networkExceptions;
   @JsonKey(ignore: true)
   _$$GetRatesErrorCopyWith<T, _$GetRatesError<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetSettingLoadingCopyWith<T, $Res> {
+  factory _$$GetSettingLoadingCopyWith(_$GetSettingLoading<T> value,
+          $Res Function(_$GetSettingLoading<T>) then) =
+      __$$GetSettingLoadingCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$GetSettingLoadingCopyWithImpl<T, $Res>
+    extends _$MenuStateCopyWithImpl<T, $Res, _$GetSettingLoading<T>>
+    implements _$$GetSettingLoadingCopyWith<T, $Res> {
+  __$$GetSettingLoadingCopyWithImpl(_$GetSettingLoading<T> _value,
+      $Res Function(_$GetSettingLoading<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetSettingLoading<T> implements GetSettingLoading<T> {
+  const _$GetSettingLoading();
+
+  @override
+  String toString() {
+    return 'MenuState<$T>.getSettingLoading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetSettingLoading<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() walletInfoLoading,
+    required TResult Function(WalletInfo data) walletInfoSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
+    required TResult Function() walletBlanceAddedLoading,
+    required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletBalanceAdddedError,
+    required TResult Function() getRatesLoading,
+    required TResult Function(RatesModel rates) getRatesSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
+  }) {
+    return getSettingLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? walletInfoLoading,
+    TResult? Function(WalletInfo data)? walletInfoSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult? Function()? walletBlanceAddedLoading,
+    TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult? Function()? getRatesLoading,
+    TResult? Function(RatesModel rates)? getRatesSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
+  }) {
+    return getSettingLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? walletInfoLoading,
+    TResult Function(WalletInfo data)? walletInfoSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult Function()? walletBlanceAddedLoading,
+    TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult Function()? getRatesLoading,
+    TResult Function(RatesModel rates)? getRatesSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (getSettingLoading != null) {
+      return getSettingLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
+    required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
+    required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
+    required TResult Function(WalletBlanceAddedLoading<T> value)
+        walletBlanceAddedLoading,
+    required TResult Function(WalletBalanceAddedSuccedded<T> value)
+        walletBalanceAddedSuccedded,
+    required TResult Function(WalletBalanceAdddedError<T> value)
+        walletBalanceAdddedError,
+    required TResult Function(GetRatesLoading<T> value) getRatesLoading,
+    required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
+    required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
+  }) {
+    return getSettingLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult? Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult? Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult? Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
+  }) {
+    return getSettingLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (getSettingLoading != null) {
+      return getSettingLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetSettingLoading<T> implements MenuState<T> {
+  const factory GetSettingLoading() = _$GetSettingLoading<T>;
+}
+
+/// @nodoc
+abstract class _$$GetSettingSuccessCopyWith<T, $Res> {
+  factory _$$GetSettingSuccessCopyWith(_$GetSettingSuccess<T> value,
+          $Res Function(_$GetSettingSuccess<T>) then) =
+      __$$GetSettingSuccessCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({List<SettingModel> settings});
+}
+
+/// @nodoc
+class __$$GetSettingSuccessCopyWithImpl<T, $Res>
+    extends _$MenuStateCopyWithImpl<T, $Res, _$GetSettingSuccess<T>>
+    implements _$$GetSettingSuccessCopyWith<T, $Res> {
+  __$$GetSettingSuccessCopyWithImpl(_$GetSettingSuccess<T> _value,
+      $Res Function(_$GetSettingSuccess<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? settings = null,
+  }) {
+    return _then(_$GetSettingSuccess<T>(
+      null == settings
+          ? _value._settings
+          : settings // ignore: cast_nullable_to_non_nullable
+              as List<SettingModel>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetSettingSuccess<T> implements GetSettingSuccess<T> {
+  const _$GetSettingSuccess(final List<SettingModel> settings)
+      : _settings = settings;
+
+  final List<SettingModel> _settings;
+  @override
+  List<SettingModel> get settings {
+    if (_settings is EqualUnmodifiableListView) return _settings;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_settings);
+  }
+
+  @override
+  String toString() {
+    return 'MenuState<$T>.getSettingSuccess(settings: $settings)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetSettingSuccess<T> &&
+            const DeepCollectionEquality().equals(other._settings, _settings));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_settings));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetSettingSuccessCopyWith<T, _$GetSettingSuccess<T>> get copyWith =>
+      __$$GetSettingSuccessCopyWithImpl<T, _$GetSettingSuccess<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() walletInfoLoading,
+    required TResult Function(WalletInfo data) walletInfoSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
+    required TResult Function() walletBlanceAddedLoading,
+    required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletBalanceAdddedError,
+    required TResult Function() getRatesLoading,
+    required TResult Function(RatesModel rates) getRatesSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
+  }) {
+    return getSettingSuccess(settings);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? walletInfoLoading,
+    TResult? Function(WalletInfo data)? walletInfoSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult? Function()? walletBlanceAddedLoading,
+    TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult? Function()? getRatesLoading,
+    TResult? Function(RatesModel rates)? getRatesSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
+  }) {
+    return getSettingSuccess?.call(settings);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? walletInfoLoading,
+    TResult Function(WalletInfo data)? walletInfoSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult Function()? walletBlanceAddedLoading,
+    TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult Function()? getRatesLoading,
+    TResult Function(RatesModel rates)? getRatesSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (getSettingSuccess != null) {
+      return getSettingSuccess(settings);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
+    required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
+    required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
+    required TResult Function(WalletBlanceAddedLoading<T> value)
+        walletBlanceAddedLoading,
+    required TResult Function(WalletBalanceAddedSuccedded<T> value)
+        walletBalanceAddedSuccedded,
+    required TResult Function(WalletBalanceAdddedError<T> value)
+        walletBalanceAdddedError,
+    required TResult Function(GetRatesLoading<T> value) getRatesLoading,
+    required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
+    required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
+  }) {
+    return getSettingSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult? Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult? Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult? Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
+  }) {
+    return getSettingSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (getSettingSuccess != null) {
+      return getSettingSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetSettingSuccess<T> implements MenuState<T> {
+  const factory GetSettingSuccess(final List<SettingModel> settings) =
+      _$GetSettingSuccess<T>;
+
+  List<SettingModel> get settings;
+  @JsonKey(ignore: true)
+  _$$GetSettingSuccessCopyWith<T, _$GetSettingSuccess<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetSettingErrorCopyWith<T, $Res> {
+  factory _$$GetSettingErrorCopyWith(_$GetSettingError<T> value,
+          $Res Function(_$GetSettingError<T>) then) =
+      __$$GetSettingErrorCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({NetworkExceptions networkExceptions});
+
+  $NetworkExceptionsCopyWith<$Res> get networkExceptions;
+}
+
+/// @nodoc
+class __$$GetSettingErrorCopyWithImpl<T, $Res>
+    extends _$MenuStateCopyWithImpl<T, $Res, _$GetSettingError<T>>
+    implements _$$GetSettingErrorCopyWith<T, $Res> {
+  __$$GetSettingErrorCopyWithImpl(
+      _$GetSettingError<T> _value, $Res Function(_$GetSettingError<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? networkExceptions = null,
+  }) {
+    return _then(_$GetSettingError<T>(
+      null == networkExceptions
+          ? _value.networkExceptions
+          : networkExceptions // ignore: cast_nullable_to_non_nullable
+              as NetworkExceptions,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $NetworkExceptionsCopyWith<$Res> get networkExceptions {
+    return $NetworkExceptionsCopyWith<$Res>(_value.networkExceptions, (value) {
+      return _then(_value.copyWith(networkExceptions: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$GetSettingError<T> implements GetSettingError<T> {
+  const _$GetSettingError(this.networkExceptions);
+
+  @override
+  final NetworkExceptions networkExceptions;
+
+  @override
+  String toString() {
+    return 'MenuState<$T>.getSettingError(networkExceptions: $networkExceptions)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetSettingError<T> &&
+            (identical(other.networkExceptions, networkExceptions) ||
+                other.networkExceptions == networkExceptions));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, networkExceptions);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetSettingErrorCopyWith<T, _$GetSettingError<T>> get copyWith =>
+      __$$GetSettingErrorCopyWithImpl<T, _$GetSettingError<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() walletInfoLoading,
+    required TResult Function(WalletInfo data) walletInfoSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
+    required TResult Function() walletBlanceAddedLoading,
+    required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletBalanceAdddedError,
+    required TResult Function() getRatesLoading,
+    required TResult Function(RatesModel rates) getRatesSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
+  }) {
+    return getSettingError(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? walletInfoLoading,
+    TResult? Function(WalletInfo data)? walletInfoSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult? Function()? walletBlanceAddedLoading,
+    TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult? Function()? getRatesLoading,
+    TResult? Function(RatesModel rates)? getRatesSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
+  }) {
+    return getSettingError?.call(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? walletInfoLoading,
+    TResult Function(WalletInfo data)? walletInfoSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult Function()? walletBlanceAddedLoading,
+    TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult Function()? getRatesLoading,
+    TResult Function(RatesModel rates)? getRatesSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (getSettingError != null) {
+      return getSettingError(networkExceptions);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
+    required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
+    required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
+    required TResult Function(WalletBlanceAddedLoading<T> value)
+        walletBlanceAddedLoading,
+    required TResult Function(WalletBalanceAddedSuccedded<T> value)
+        walletBalanceAddedSuccedded,
+    required TResult Function(WalletBalanceAdddedError<T> value)
+        walletBalanceAdddedError,
+    required TResult Function(GetRatesLoading<T> value) getRatesLoading,
+    required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
+    required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
+  }) {
+    return getSettingError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult? Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult? Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult? Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
+  }) {
+    return getSettingError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (getSettingError != null) {
+      return getSettingError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetSettingError<T> implements MenuState<T> {
+  const factory GetSettingError(final NetworkExceptions networkExceptions) =
+      _$GetSettingError<T>;
+
+  NetworkExceptions get networkExceptions;
+  @JsonKey(ignore: true)
+  _$$GetSettingErrorCopyWith<T, _$GetSettingError<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateRateLoadingCopyWith<T, $Res> {
+  factory _$$UpdateRateLoadingCopyWith(_$UpdateRateLoading<T> value,
+          $Res Function(_$UpdateRateLoading<T>) then) =
+      __$$UpdateRateLoadingCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$UpdateRateLoadingCopyWithImpl<T, $Res>
+    extends _$MenuStateCopyWithImpl<T, $Res, _$UpdateRateLoading<T>>
+    implements _$$UpdateRateLoadingCopyWith<T, $Res> {
+  __$$UpdateRateLoadingCopyWithImpl(_$UpdateRateLoading<T> _value,
+      $Res Function(_$UpdateRateLoading<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UpdateRateLoading<T> implements UpdateRateLoading<T> {
+  const _$UpdateRateLoading();
+
+  @override
+  String toString() {
+    return 'MenuState<$T>.updateRateLoading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$UpdateRateLoading<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() walletInfoLoading,
+    required TResult Function(WalletInfo data) walletInfoSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
+    required TResult Function() walletBlanceAddedLoading,
+    required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletBalanceAdddedError,
+    required TResult Function() getRatesLoading,
+    required TResult Function(RatesModel rates) getRatesSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
+  }) {
+    return updateRateLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? walletInfoLoading,
+    TResult? Function(WalletInfo data)? walletInfoSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult? Function()? walletBlanceAddedLoading,
+    TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult? Function()? getRatesLoading,
+    TResult? Function(RatesModel rates)? getRatesSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
+  }) {
+    return updateRateLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? walletInfoLoading,
+    TResult Function(WalletInfo data)? walletInfoSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult Function()? walletBlanceAddedLoading,
+    TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult Function()? getRatesLoading,
+    TResult Function(RatesModel rates)? getRatesSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (updateRateLoading != null) {
+      return updateRateLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
+    required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
+    required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
+    required TResult Function(WalletBlanceAddedLoading<T> value)
+        walletBlanceAddedLoading,
+    required TResult Function(WalletBalanceAddedSuccedded<T> value)
+        walletBalanceAddedSuccedded,
+    required TResult Function(WalletBalanceAdddedError<T> value)
+        walletBalanceAdddedError,
+    required TResult Function(GetRatesLoading<T> value) getRatesLoading,
+    required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
+    required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
+  }) {
+    return updateRateLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult? Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult? Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult? Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
+  }) {
+    return updateRateLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (updateRateLoading != null) {
+      return updateRateLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateRateLoading<T> implements MenuState<T> {
+  const factory UpdateRateLoading() = _$UpdateRateLoading<T>;
+}
+
+/// @nodoc
+abstract class _$$UpdateRateSuccessCopyWith<T, $Res> {
+  factory _$$UpdateRateSuccessCopyWith(_$UpdateRateSuccess<T> value,
+          $Res Function(_$UpdateRateSuccess<T>) then) =
+      __$$UpdateRateSuccessCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({UpdateSkill data});
+}
+
+/// @nodoc
+class __$$UpdateRateSuccessCopyWithImpl<T, $Res>
+    extends _$MenuStateCopyWithImpl<T, $Res, _$UpdateRateSuccess<T>>
+    implements _$$UpdateRateSuccessCopyWith<T, $Res> {
+  __$$UpdateRateSuccessCopyWithImpl(_$UpdateRateSuccess<T> _value,
+      $Res Function(_$UpdateRateSuccess<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UpdateRateSuccess<T>(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as UpdateSkill,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateRateSuccess<T> implements UpdateRateSuccess<T> {
+  const _$UpdateRateSuccess(this.data);
+
+  @override
+  final UpdateSkill data;
+
+  @override
+  String toString() {
+    return 'MenuState<$T>.updateRateSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateRateSuccess<T> &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateRateSuccessCopyWith<T, _$UpdateRateSuccess<T>> get copyWith =>
+      __$$UpdateRateSuccessCopyWithImpl<T, _$UpdateRateSuccess<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() walletInfoLoading,
+    required TResult Function(WalletInfo data) walletInfoSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
+    required TResult Function() walletBlanceAddedLoading,
+    required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletBalanceAdddedError,
+    required TResult Function() getRatesLoading,
+    required TResult Function(RatesModel rates) getRatesSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
+  }) {
+    return updateRateSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? walletInfoLoading,
+    TResult? Function(WalletInfo data)? walletInfoSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult? Function()? walletBlanceAddedLoading,
+    TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult? Function()? getRatesLoading,
+    TResult? Function(RatesModel rates)? getRatesSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
+  }) {
+    return updateRateSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? walletInfoLoading,
+    TResult Function(WalletInfo data)? walletInfoSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult Function()? walletBlanceAddedLoading,
+    TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult Function()? getRatesLoading,
+    TResult Function(RatesModel rates)? getRatesSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (updateRateSuccess != null) {
+      return updateRateSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
+    required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
+    required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
+    required TResult Function(WalletBlanceAddedLoading<T> value)
+        walletBlanceAddedLoading,
+    required TResult Function(WalletBalanceAddedSuccedded<T> value)
+        walletBalanceAddedSuccedded,
+    required TResult Function(WalletBalanceAdddedError<T> value)
+        walletBalanceAdddedError,
+    required TResult Function(GetRatesLoading<T> value) getRatesLoading,
+    required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
+    required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
+  }) {
+    return updateRateSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult? Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult? Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult? Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
+  }) {
+    return updateRateSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (updateRateSuccess != null) {
+      return updateRateSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateRateSuccess<T> implements MenuState<T> {
+  const factory UpdateRateSuccess(final UpdateSkill data) =
+      _$UpdateRateSuccess<T>;
+
+  UpdateSkill get data;
+  @JsonKey(ignore: true)
+  _$$UpdateRateSuccessCopyWith<T, _$UpdateRateSuccess<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateRateErrorCopyWith<T, $Res> {
+  factory _$$UpdateRateErrorCopyWith(_$UpdateRateError<T> value,
+          $Res Function(_$UpdateRateError<T>) then) =
+      __$$UpdateRateErrorCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({NetworkExceptions networkExceptions});
+
+  $NetworkExceptionsCopyWith<$Res> get networkExceptions;
+}
+
+/// @nodoc
+class __$$UpdateRateErrorCopyWithImpl<T, $Res>
+    extends _$MenuStateCopyWithImpl<T, $Res, _$UpdateRateError<T>>
+    implements _$$UpdateRateErrorCopyWith<T, $Res> {
+  __$$UpdateRateErrorCopyWithImpl(
+      _$UpdateRateError<T> _value, $Res Function(_$UpdateRateError<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? networkExceptions = null,
+  }) {
+    return _then(_$UpdateRateError<T>(
+      null == networkExceptions
+          ? _value.networkExceptions
+          : networkExceptions // ignore: cast_nullable_to_non_nullable
+              as NetworkExceptions,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $NetworkExceptionsCopyWith<$Res> get networkExceptions {
+    return $NetworkExceptionsCopyWith<$Res>(_value.networkExceptions, (value) {
+      return _then(_value.copyWith(networkExceptions: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$UpdateRateError<T> implements UpdateRateError<T> {
+  const _$UpdateRateError(this.networkExceptions);
+
+  @override
+  final NetworkExceptions networkExceptions;
+
+  @override
+  String toString() {
+    return 'MenuState<$T>.updateRateError(networkExceptions: $networkExceptions)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateRateError<T> &&
+            (identical(other.networkExceptions, networkExceptions) ||
+                other.networkExceptions == networkExceptions));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, networkExceptions);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateRateErrorCopyWith<T, _$UpdateRateError<T>> get copyWith =>
+      __$$UpdateRateErrorCopyWithImpl<T, _$UpdateRateError<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() walletInfoLoading,
+    required TResult Function(WalletInfo data) walletInfoSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
+    required TResult Function() walletBlanceAddedLoading,
+    required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletBalanceAdddedError,
+    required TResult Function() getRatesLoading,
+    required TResult Function(RatesModel rates) getRatesSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
+  }) {
+    return updateRateError(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? walletInfoLoading,
+    TResult? Function(WalletInfo data)? walletInfoSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult? Function()? walletBlanceAddedLoading,
+    TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult? Function()? getRatesLoading,
+    TResult? Function(RatesModel rates)? getRatesSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
+  }) {
+    return updateRateError?.call(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? walletInfoLoading,
+    TResult Function(WalletInfo data)? walletInfoSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult Function()? walletBlanceAddedLoading,
+    TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult Function()? getRatesLoading,
+    TResult Function(RatesModel rates)? getRatesSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (updateRateError != null) {
+      return updateRateError(networkExceptions);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
+    required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
+    required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
+    required TResult Function(WalletBlanceAddedLoading<T> value)
+        walletBlanceAddedLoading,
+    required TResult Function(WalletBalanceAddedSuccedded<T> value)
+        walletBalanceAddedSuccedded,
+    required TResult Function(WalletBalanceAdddedError<T> value)
+        walletBalanceAdddedError,
+    required TResult Function(GetRatesLoading<T> value) getRatesLoading,
+    required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
+    required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
+  }) {
+    return updateRateError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult? Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult? Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult? Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
+  }) {
+    return updateRateError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (updateRateError != null) {
+      return updateRateError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateRateError<T> implements MenuState<T> {
+  const factory UpdateRateError(final NetworkExceptions networkExceptions) =
+      _$UpdateRateError<T>;
+
+  NetworkExceptions get networkExceptions;
+  @JsonKey(ignore: true)
+  _$$UpdateRateErrorCopyWith<T, _$UpdateRateError<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ImageSelectedSuccessCopyWith<T, $Res> {
+  factory _$$ImageSelectedSuccessCopyWith(_$ImageSelectedSuccess<T> value,
+          $Res Function(_$ImageSelectedSuccess<T>) then) =
+      __$$ImageSelectedSuccessCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$ImageSelectedSuccessCopyWithImpl<T, $Res>
+    extends _$MenuStateCopyWithImpl<T, $Res, _$ImageSelectedSuccess<T>>
+    implements _$$ImageSelectedSuccessCopyWith<T, $Res> {
+  __$$ImageSelectedSuccessCopyWithImpl(_$ImageSelectedSuccess<T> _value,
+      $Res Function(_$ImageSelectedSuccess<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
+  const _$ImageSelectedSuccess();
+
+  @override
+  String toString() {
+    return 'MenuState<$T>.imageSelectedSuccess()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ImageSelectedSuccess<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() walletInfoLoading,
+    required TResult Function(WalletInfo data) walletInfoSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
+    required TResult Function() walletBlanceAddedLoading,
+    required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletBalanceAdddedError,
+    required TResult Function() getRatesLoading,
+    required TResult Function(RatesModel rates) getRatesSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
+  }) {
+    return imageSelectedSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? walletInfoLoading,
+    TResult? Function(WalletInfo data)? walletInfoSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult? Function()? walletBlanceAddedLoading,
+    TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult? Function()? getRatesLoading,
+    TResult? Function(RatesModel rates)? getRatesSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
+  }) {
+    return imageSelectedSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? walletInfoLoading,
+    TResult Function(WalletInfo data)? walletInfoSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult Function()? walletBlanceAddedLoading,
+    TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult Function()? getRatesLoading,
+    TResult Function(RatesModel rates)? getRatesSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (imageSelectedSuccess != null) {
+      return imageSelectedSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
+    required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
+    required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
+    required TResult Function(WalletBlanceAddedLoading<T> value)
+        walletBlanceAddedLoading,
+    required TResult Function(WalletBalanceAddedSuccedded<T> value)
+        walletBalanceAddedSuccedded,
+    required TResult Function(WalletBalanceAdddedError<T> value)
+        walletBalanceAdddedError,
+    required TResult Function(GetRatesLoading<T> value) getRatesLoading,
+    required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
+    required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
+  }) {
+    return imageSelectedSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult? Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult? Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult? Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
+  }) {
+    return imageSelectedSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (imageSelectedSuccess != null) {
+      return imageSelectedSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ImageSelectedSuccess<T> implements MenuState<T> {
+  const factory ImageSelectedSuccess() = _$ImageSelectedSuccess<T>;
+}
+
+/// @nodoc
+abstract class _$$ImageSelectedLoadingCopyWith<T, $Res> {
+  factory _$$ImageSelectedLoadingCopyWith(_$ImageSelectedLoading<T> value,
+          $Res Function(_$ImageSelectedLoading<T>) then) =
+      __$$ImageSelectedLoadingCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$ImageSelectedLoadingCopyWithImpl<T, $Res>
+    extends _$MenuStateCopyWithImpl<T, $Res, _$ImageSelectedLoading<T>>
+    implements _$$ImageSelectedLoadingCopyWith<T, $Res> {
+  __$$ImageSelectedLoadingCopyWithImpl(_$ImageSelectedLoading<T> _value,
+      $Res Function(_$ImageSelectedLoading<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
+  const _$ImageSelectedLoading();
+
+  @override
+  String toString() {
+    return 'MenuState<$T>.imageSelectedLoading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ImageSelectedLoading<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() walletInfoLoading,
+    required TResult Function(WalletInfo data) walletInfoSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
+    required TResult Function() walletBlanceAddedLoading,
+    required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletBalanceAdddedError,
+    required TResult Function() getRatesLoading,
+    required TResult Function(RatesModel rates) getRatesSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
+  }) {
+    return imageSelectedLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? walletInfoLoading,
+    TResult? Function(WalletInfo data)? walletInfoSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult? Function()? walletBlanceAddedLoading,
+    TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult? Function()? getRatesLoading,
+    TResult? Function(RatesModel rates)? getRatesSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
+  }) {
+    return imageSelectedLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? walletInfoLoading,
+    TResult Function(WalletInfo data)? walletInfoSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult Function()? walletBlanceAddedLoading,
+    TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult Function()? getRatesLoading,
+    TResult Function(RatesModel rates)? getRatesSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (imageSelectedLoading != null) {
+      return imageSelectedLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
+    required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
+    required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
+    required TResult Function(WalletBlanceAddedLoading<T> value)
+        walletBlanceAddedLoading,
+    required TResult Function(WalletBalanceAddedSuccedded<T> value)
+        walletBalanceAddedSuccedded,
+    required TResult Function(WalletBalanceAdddedError<T> value)
+        walletBalanceAdddedError,
+    required TResult Function(GetRatesLoading<T> value) getRatesLoading,
+    required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
+    required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
+  }) {
+    return imageSelectedLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult? Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult? Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult? Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
+  }) {
+    return imageSelectedLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (imageSelectedLoading != null) {
+      return imageSelectedLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ImageSelectedLoading<T> implements MenuState<T> {
+  const factory ImageSelectedLoading() = _$ImageSelectedLoading<T>;
+}
+
+/// @nodoc
+abstract class _$$ImageSelectedErrorCopyWith<T, $Res> {
+  factory _$$ImageSelectedErrorCopyWith(_$ImageSelectedError<T> value,
+          $Res Function(_$ImageSelectedError<T>) then) =
+      __$$ImageSelectedErrorCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$ImageSelectedErrorCopyWithImpl<T, $Res>
+    extends _$MenuStateCopyWithImpl<T, $Res, _$ImageSelectedError<T>>
+    implements _$$ImageSelectedErrorCopyWith<T, $Res> {
+  __$$ImageSelectedErrorCopyWithImpl(_$ImageSelectedError<T> _value,
+      $Res Function(_$ImageSelectedError<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ImageSelectedError<T> implements ImageSelectedError<T> {
+  const _$ImageSelectedError();
+
+  @override
+  String toString() {
+    return 'MenuState<$T>.imageSelectedError()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ImageSelectedError<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() walletInfoLoading,
+    required TResult Function(WalletInfo data) walletInfoSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
+    required TResult Function() walletBlanceAddedLoading,
+    required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletBalanceAdddedError,
+    required TResult Function() getRatesLoading,
+    required TResult Function(RatesModel rates) getRatesSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
+  }) {
+    return imageSelectedError();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? walletInfoLoading,
+    TResult? Function(WalletInfo data)? walletInfoSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult? Function()? walletBlanceAddedLoading,
+    TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult? Function()? getRatesLoading,
+    TResult? Function(RatesModel rates)? getRatesSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
+  }) {
+    return imageSelectedError?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? walletInfoLoading,
+    TResult Function(WalletInfo data)? walletInfoSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult Function()? walletBlanceAddedLoading,
+    TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult Function()? getRatesLoading,
+    TResult Function(RatesModel rates)? getRatesSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (imageSelectedError != null) {
+      return imageSelectedError();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
+    required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
+    required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
+    required TResult Function(WalletBlanceAddedLoading<T> value)
+        walletBlanceAddedLoading,
+    required TResult Function(WalletBalanceAddedSuccedded<T> value)
+        walletBalanceAddedSuccedded,
+    required TResult Function(WalletBalanceAdddedError<T> value)
+        walletBalanceAdddedError,
+    required TResult Function(GetRatesLoading<T> value) getRatesLoading,
+    required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
+    required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
+  }) {
+    return imageSelectedError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult? Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult? Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult? Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
+  }) {
+    return imageSelectedError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (imageSelectedError != null) {
+      return imageSelectedError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ImageSelectedError<T> implements MenuState<T> {
+  const factory ImageSelectedError() = _$ImageSelectedError<T>;
+}
+
+/// @nodoc
+abstract class _$$GetUserInfoLoadingCopyWith<T, $Res> {
+  factory _$$GetUserInfoLoadingCopyWith(_$GetUserInfoLoading<T> value,
+          $Res Function(_$GetUserInfoLoading<T>) then) =
+      __$$GetUserInfoLoadingCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$GetUserInfoLoadingCopyWithImpl<T, $Res>
+    extends _$MenuStateCopyWithImpl<T, $Res, _$GetUserInfoLoading<T>>
+    implements _$$GetUserInfoLoadingCopyWith<T, $Res> {
+  __$$GetUserInfoLoadingCopyWithImpl(_$GetUserInfoLoading<T> _value,
+      $Res Function(_$GetUserInfoLoading<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetUserInfoLoading<T> implements GetUserInfoLoading<T> {
+  const _$GetUserInfoLoading();
+
+  @override
+  String toString() {
+    return 'MenuState<$T>.getUserInfoLoading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetUserInfoLoading<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() walletInfoLoading,
+    required TResult Function(WalletInfo data) walletInfoSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
+    required TResult Function() walletBlanceAddedLoading,
+    required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletBalanceAdddedError,
+    required TResult Function() getRatesLoading,
+    required TResult Function(RatesModel rates) getRatesSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
+  }) {
+    return getUserInfoLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? walletInfoLoading,
+    TResult? Function(WalletInfo data)? walletInfoSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult? Function()? walletBlanceAddedLoading,
+    TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult? Function()? getRatesLoading,
+    TResult? Function(RatesModel rates)? getRatesSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
+  }) {
+    return getUserInfoLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? walletInfoLoading,
+    TResult Function(WalletInfo data)? walletInfoSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult Function()? walletBlanceAddedLoading,
+    TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult Function()? getRatesLoading,
+    TResult Function(RatesModel rates)? getRatesSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (getUserInfoLoading != null) {
+      return getUserInfoLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
+    required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
+    required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
+    required TResult Function(WalletBlanceAddedLoading<T> value)
+        walletBlanceAddedLoading,
+    required TResult Function(WalletBalanceAddedSuccedded<T> value)
+        walletBalanceAddedSuccedded,
+    required TResult Function(WalletBalanceAdddedError<T> value)
+        walletBalanceAdddedError,
+    required TResult Function(GetRatesLoading<T> value) getRatesLoading,
+    required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
+    required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
+  }) {
+    return getUserInfoLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult? Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult? Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult? Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
+  }) {
+    return getUserInfoLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (getUserInfoLoading != null) {
+      return getUserInfoLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetUserInfoLoading<T> implements MenuState<T> {
+  const factory GetUserInfoLoading() = _$GetUserInfoLoading<T>;
+}
+
+/// @nodoc
+abstract class _$$UpdateExperienceRateSuccessCopyWith<T, $Res> {
+  factory _$$UpdateExperienceRateSuccessCopyWith(
+          _$UpdateExperienceRateSuccess<T> value,
+          $Res Function(_$UpdateExperienceRateSuccess<T>) then) =
+      __$$UpdateExperienceRateSuccessCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$UpdateExperienceRateSuccessCopyWithImpl<T, $Res>
+    extends _$MenuStateCopyWithImpl<T, $Res, _$UpdateExperienceRateSuccess<T>>
+    implements _$$UpdateExperienceRateSuccessCopyWith<T, $Res> {
+  __$$UpdateExperienceRateSuccessCopyWithImpl(
+      _$UpdateExperienceRateSuccess<T> _value,
+      $Res Function(_$UpdateExperienceRateSuccess<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UpdateExperienceRateSuccess<T>
+    implements UpdateExperienceRateSuccess<T> {
+  const _$UpdateExperienceRateSuccess();
+
+  @override
+  String toString() {
+    return 'MenuState<$T>.updateExperienceRateSuccess()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateExperienceRateSuccess<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() walletInfoLoading,
+    required TResult Function(WalletInfo data) walletInfoSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
+    required TResult Function() walletBlanceAddedLoading,
+    required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletBalanceAdddedError,
+    required TResult Function() getRatesLoading,
+    required TResult Function(RatesModel rates) getRatesSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
+  }) {
+    return updateExperienceRateSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? walletInfoLoading,
+    TResult? Function(WalletInfo data)? walletInfoSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult? Function()? walletBlanceAddedLoading,
+    TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult? Function()? getRatesLoading,
+    TResult? Function(RatesModel rates)? getRatesSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
+  }) {
+    return updateExperienceRateSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? walletInfoLoading,
+    TResult Function(WalletInfo data)? walletInfoSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult Function()? walletBlanceAddedLoading,
+    TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult Function()? getRatesLoading,
+    TResult Function(RatesModel rates)? getRatesSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (updateExperienceRateSuccess != null) {
+      return updateExperienceRateSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
+    required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
+    required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
+    required TResult Function(WalletBlanceAddedLoading<T> value)
+        walletBlanceAddedLoading,
+    required TResult Function(WalletBalanceAddedSuccedded<T> value)
+        walletBalanceAddedSuccedded,
+    required TResult Function(WalletBalanceAdddedError<T> value)
+        walletBalanceAdddedError,
+    required TResult Function(GetRatesLoading<T> value) getRatesLoading,
+    required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
+    required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
+  }) {
+    return updateExperienceRateSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult? Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult? Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult? Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
+  }) {
+    return updateExperienceRateSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (updateExperienceRateSuccess != null) {
+      return updateExperienceRateSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateExperienceRateSuccess<T> implements MenuState<T> {
+  const factory UpdateExperienceRateSuccess() =
+      _$UpdateExperienceRateSuccess<T>;
+}
+
+/// @nodoc
+abstract class _$$UpdateQualityRateCopyWith<T, $Res> {
+  factory _$$UpdateQualityRateCopyWith(_$UpdateQualityRate<T> value,
+          $Res Function(_$UpdateQualityRate<T>) then) =
+      __$$UpdateQualityRateCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$UpdateQualityRateCopyWithImpl<T, $Res>
+    extends _$MenuStateCopyWithImpl<T, $Res, _$UpdateQualityRate<T>>
+    implements _$$UpdateQualityRateCopyWith<T, $Res> {
+  __$$UpdateQualityRateCopyWithImpl(_$UpdateQualityRate<T> _value,
+      $Res Function(_$UpdateQualityRate<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UpdateQualityRate<T> implements UpdateQualityRate<T> {
+  const _$UpdateQualityRate();
+
+  @override
+  String toString() {
+    return 'MenuState<$T>.updateQualityRate()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$UpdateQualityRate<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() walletInfoLoading,
+    required TResult Function(WalletInfo data) walletInfoSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
+    required TResult Function() walletBlanceAddedLoading,
+    required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletBalanceAdddedError,
+    required TResult Function() getRatesLoading,
+    required TResult Function(RatesModel rates) getRatesSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
+  }) {
+    return updateQualityRate();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? walletInfoLoading,
+    TResult? Function(WalletInfo data)? walletInfoSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult? Function()? walletBlanceAddedLoading,
+    TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult? Function()? getRatesLoading,
+    TResult? Function(RatesModel rates)? getRatesSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
+  }) {
+    return updateQualityRate?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? walletInfoLoading,
+    TResult Function(WalletInfo data)? walletInfoSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult Function()? walletBlanceAddedLoading,
+    TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult Function()? getRatesLoading,
+    TResult Function(RatesModel rates)? getRatesSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (updateQualityRate != null) {
+      return updateQualityRate();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
+    required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
+    required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
+    required TResult Function(WalletBlanceAddedLoading<T> value)
+        walletBlanceAddedLoading,
+    required TResult Function(WalletBalanceAddedSuccedded<T> value)
+        walletBalanceAddedSuccedded,
+    required TResult Function(WalletBalanceAdddedError<T> value)
+        walletBalanceAdddedError,
+    required TResult Function(GetRatesLoading<T> value) getRatesLoading,
+    required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
+    required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
+  }) {
+    return updateQualityRate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult? Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult? Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult? Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
+  }) {
+    return updateQualityRate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (updateQualityRate != null) {
+      return updateQualityRate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateQualityRate<T> implements MenuState<T> {
+  const factory UpdateQualityRate() = _$UpdateQualityRate<T>;
+}
+
+/// @nodoc
+abstract class _$$UpdateCommunicationRateSuccessCopyWith<T, $Res> {
+  factory _$$UpdateCommunicationRateSuccessCopyWith(
+          _$UpdateCommunicationRateSuccess<T> value,
+          $Res Function(_$UpdateCommunicationRateSuccess<T>) then) =
+      __$$UpdateCommunicationRateSuccessCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$UpdateCommunicationRateSuccessCopyWithImpl<T, $Res>
+    extends _$MenuStateCopyWithImpl<T, $Res,
+        _$UpdateCommunicationRateSuccess<T>>
+    implements _$$UpdateCommunicationRateSuccessCopyWith<T, $Res> {
+  __$$UpdateCommunicationRateSuccessCopyWithImpl(
+      _$UpdateCommunicationRateSuccess<T> _value,
+      $Res Function(_$UpdateCommunicationRateSuccess<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UpdateCommunicationRateSuccess<T>
+    implements UpdateCommunicationRateSuccess<T> {
+  const _$UpdateCommunicationRateSuccess();
+
+  @override
+  String toString() {
+    return 'MenuState<$T>.updateCommunicationRateSuccess()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateCommunicationRateSuccess<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() walletInfoLoading,
+    required TResult Function(WalletInfo data) walletInfoSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
+    required TResult Function() walletBlanceAddedLoading,
+    required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletBalanceAdddedError,
+    required TResult Function() getRatesLoading,
+    required TResult Function(RatesModel rates) getRatesSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
+  }) {
+    return updateCommunicationRateSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? walletInfoLoading,
+    TResult? Function(WalletInfo data)? walletInfoSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult? Function()? walletBlanceAddedLoading,
+    TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult? Function()? getRatesLoading,
+    TResult? Function(RatesModel rates)? getRatesSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
+  }) {
+    return updateCommunicationRateSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? walletInfoLoading,
+    TResult Function(WalletInfo data)? walletInfoSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult Function()? walletBlanceAddedLoading,
+    TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult Function()? getRatesLoading,
+    TResult Function(RatesModel rates)? getRatesSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (updateCommunicationRateSuccess != null) {
+      return updateCommunicationRateSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
+    required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
+    required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
+    required TResult Function(WalletBlanceAddedLoading<T> value)
+        walletBlanceAddedLoading,
+    required TResult Function(WalletBalanceAddedSuccedded<T> value)
+        walletBalanceAddedSuccedded,
+    required TResult Function(WalletBalanceAdddedError<T> value)
+        walletBalanceAdddedError,
+    required TResult Function(GetRatesLoading<T> value) getRatesLoading,
+    required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
+    required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
+  }) {
+    return updateCommunicationRateSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult? Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult? Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult? Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
+  }) {
+    return updateCommunicationRateSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (updateCommunicationRateSuccess != null) {
+      return updateCommunicationRateSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateCommunicationRateSuccess<T> implements MenuState<T> {
+  const factory UpdateCommunicationRateSuccess() =
+      _$UpdateCommunicationRateSuccess<T>;
+}
+
+/// @nodoc
+abstract class _$$UpdateTimeRateSuccessCopyWith<T, $Res> {
+  factory _$$UpdateTimeRateSuccessCopyWith(_$UpdateTimeRateSuccess<T> value,
+          $Res Function(_$UpdateTimeRateSuccess<T>) then) =
+      __$$UpdateTimeRateSuccessCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$UpdateTimeRateSuccessCopyWithImpl<T, $Res>
+    extends _$MenuStateCopyWithImpl<T, $Res, _$UpdateTimeRateSuccess<T>>
+    implements _$$UpdateTimeRateSuccessCopyWith<T, $Res> {
+  __$$UpdateTimeRateSuccessCopyWithImpl(_$UpdateTimeRateSuccess<T> _value,
+      $Res Function(_$UpdateTimeRateSuccess<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UpdateTimeRateSuccess<T> implements UpdateTimeRateSuccess<T> {
+  const _$UpdateTimeRateSuccess();
+
+  @override
+  String toString() {
+    return 'MenuState<$T>.updateTimeRateSuccess()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateTimeRateSuccess<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() walletInfoLoading,
+    required TResult Function(WalletInfo data) walletInfoSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
+    required TResult Function() walletBlanceAddedLoading,
+    required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletBalanceAdddedError,
+    required TResult Function() getRatesLoading,
+    required TResult Function(RatesModel rates) getRatesSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
+  }) {
+    return updateTimeRateSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? walletInfoLoading,
+    TResult? Function(WalletInfo data)? walletInfoSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult? Function()? walletBlanceAddedLoading,
+    TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult? Function()? getRatesLoading,
+    TResult? Function(RatesModel rates)? getRatesSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
+  }) {
+    return updateTimeRateSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? walletInfoLoading,
+    TResult Function(WalletInfo data)? walletInfoSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult Function()? walletBlanceAddedLoading,
+    TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult Function()? getRatesLoading,
+    TResult Function(RatesModel rates)? getRatesSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (updateTimeRateSuccess != null) {
+      return updateTimeRateSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
+    required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
+    required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
+    required TResult Function(WalletBlanceAddedLoading<T> value)
+        walletBlanceAddedLoading,
+    required TResult Function(WalletBalanceAddedSuccedded<T> value)
+        walletBalanceAddedSuccedded,
+    required TResult Function(WalletBalanceAdddedError<T> value)
+        walletBalanceAdddedError,
+    required TResult Function(GetRatesLoading<T> value) getRatesLoading,
+    required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
+    required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
+  }) {
+    return updateTimeRateSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult? Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult? Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult? Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
+  }) {
+    return updateTimeRateSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (updateTimeRateSuccess != null) {
+      return updateTimeRateSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateTimeRateSuccess<T> implements MenuState<T> {
+  const factory UpdateTimeRateSuccess() = _$UpdateTimeRateSuccess<T>;
+}
+
+/// @nodoc
+abstract class _$$UpdateProfessionlRateSuccessCopyWith<T, $Res> {
+  factory _$$UpdateProfessionlRateSuccessCopyWith(
+          _$UpdateProfessionlRateSuccess<T> value,
+          $Res Function(_$UpdateProfessionlRateSuccess<T>) then) =
+      __$$UpdateProfessionlRateSuccessCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$UpdateProfessionlRateSuccessCopyWithImpl<T, $Res>
+    extends _$MenuStateCopyWithImpl<T, $Res, _$UpdateProfessionlRateSuccess<T>>
+    implements _$$UpdateProfessionlRateSuccessCopyWith<T, $Res> {
+  __$$UpdateProfessionlRateSuccessCopyWithImpl(
+      _$UpdateProfessionlRateSuccess<T> _value,
+      $Res Function(_$UpdateProfessionlRateSuccess<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UpdateProfessionlRateSuccess<T>
+    implements UpdateProfessionlRateSuccess<T> {
+  const _$UpdateProfessionlRateSuccess();
+
+  @override
+  String toString() {
+    return 'MenuState<$T>.updateProfessionlRateSuccess()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateProfessionlRateSuccess<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() walletInfoLoading,
+    required TResult Function(WalletInfo data) walletInfoSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
+    required TResult Function() walletBlanceAddedLoading,
+    required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletBalanceAdddedError,
+    required TResult Function() getRatesLoading,
+    required TResult Function(RatesModel rates) getRatesSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
+  }) {
+    return updateProfessionlRateSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? walletInfoLoading,
+    TResult? Function(WalletInfo data)? walletInfoSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult? Function()? walletBlanceAddedLoading,
+    TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult? Function()? getRatesLoading,
+    TResult? Function(RatesModel rates)? getRatesSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
+  }) {
+    return updateProfessionlRateSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? walletInfoLoading,
+    TResult Function(WalletInfo data)? walletInfoSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult Function()? walletBlanceAddedLoading,
+    TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult Function()? getRatesLoading,
+    TResult Function(RatesModel rates)? getRatesSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (updateProfessionlRateSuccess != null) {
+      return updateProfessionlRateSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
+    required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
+    required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
+    required TResult Function(WalletBlanceAddedLoading<T> value)
+        walletBlanceAddedLoading,
+    required TResult Function(WalletBalanceAddedSuccedded<T> value)
+        walletBalanceAddedSuccedded,
+    required TResult Function(WalletBalanceAdddedError<T> value)
+        walletBalanceAdddedError,
+    required TResult Function(GetRatesLoading<T> value) getRatesLoading,
+    required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
+    required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
+  }) {
+    return updateProfessionlRateSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult? Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult? Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult? Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
+  }) {
+    return updateProfessionlRateSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (updateProfessionlRateSuccess != null) {
+      return updateProfessionlRateSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateProfessionlRateSuccess<T> implements MenuState<T> {
+  const factory UpdateProfessionlRateSuccess() =
+      _$UpdateProfessionlRateSuccess<T>;
+}
+
+/// @nodoc
+abstract class _$$GetUserInfoSuccessCopyWith<T, $Res> {
+  factory _$$GetUserInfoSuccessCopyWith(_$GetUserInfoSuccess<T> value,
+          $Res Function(_$GetUserInfoSuccess<T>) then) =
+      __$$GetUserInfoSuccessCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({UserInfoModel userInfo});
+}
+
+/// @nodoc
+class __$$GetUserInfoSuccessCopyWithImpl<T, $Res>
+    extends _$MenuStateCopyWithImpl<T, $Res, _$GetUserInfoSuccess<T>>
+    implements _$$GetUserInfoSuccessCopyWith<T, $Res> {
+  __$$GetUserInfoSuccessCopyWithImpl(_$GetUserInfoSuccess<T> _value,
+      $Res Function(_$GetUserInfoSuccess<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? userInfo = null,
+  }) {
+    return _then(_$GetUserInfoSuccess<T>(
+      null == userInfo
+          ? _value.userInfo
+          : userInfo // ignore: cast_nullable_to_non_nullable
+              as UserInfoModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetUserInfoSuccess<T> implements GetUserInfoSuccess<T> {
+  const _$GetUserInfoSuccess(this.userInfo);
+
+  @override
+  final UserInfoModel userInfo;
+
+  @override
+  String toString() {
+    return 'MenuState<$T>.getUserInfoSuccess(userInfo: $userInfo)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetUserInfoSuccess<T> &&
+            (identical(other.userInfo, userInfo) ||
+                other.userInfo == userInfo));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, userInfo);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetUserInfoSuccessCopyWith<T, _$GetUserInfoSuccess<T>> get copyWith =>
+      __$$GetUserInfoSuccessCopyWithImpl<T, _$GetUserInfoSuccess<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() walletInfoLoading,
+    required TResult Function(WalletInfo data) walletInfoSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
+    required TResult Function() walletBlanceAddedLoading,
+    required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletBalanceAdddedError,
+    required TResult Function() getRatesLoading,
+    required TResult Function(RatesModel rates) getRatesSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
+  }) {
+    return getUserInfoSuccess(userInfo);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? walletInfoLoading,
+    TResult? Function(WalletInfo data)? walletInfoSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult? Function()? walletBlanceAddedLoading,
+    TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult? Function()? getRatesLoading,
+    TResult? Function(RatesModel rates)? getRatesSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
+  }) {
+    return getUserInfoSuccess?.call(userInfo);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? walletInfoLoading,
+    TResult Function(WalletInfo data)? walletInfoSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult Function()? walletBlanceAddedLoading,
+    TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult Function()? getRatesLoading,
+    TResult Function(RatesModel rates)? getRatesSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (getUserInfoSuccess != null) {
+      return getUserInfoSuccess(userInfo);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
+    required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
+    required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
+    required TResult Function(WalletBlanceAddedLoading<T> value)
+        walletBlanceAddedLoading,
+    required TResult Function(WalletBalanceAddedSuccedded<T> value)
+        walletBalanceAddedSuccedded,
+    required TResult Function(WalletBalanceAdddedError<T> value)
+        walletBalanceAdddedError,
+    required TResult Function(GetRatesLoading<T> value) getRatesLoading,
+    required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
+    required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
+  }) {
+    return getUserInfoSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult? Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult? Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult? Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
+  }) {
+    return getUserInfoSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (getUserInfoSuccess != null) {
+      return getUserInfoSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetUserInfoSuccess<T> implements MenuState<T> {
+  const factory GetUserInfoSuccess(final UserInfoModel userInfo) =
+      _$GetUserInfoSuccess<T>;
+
+  UserInfoModel get userInfo;
+  @JsonKey(ignore: true)
+  _$$GetUserInfoSuccessCopyWith<T, _$GetUserInfoSuccess<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetUserInfoErrorCopyWith<T, $Res> {
+  factory _$$GetUserInfoErrorCopyWith(_$GetUserInfoError<T> value,
+          $Res Function(_$GetUserInfoError<T>) then) =
+      __$$GetUserInfoErrorCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({NetworkExceptions networkExceptions});
+
+  $NetworkExceptionsCopyWith<$Res> get networkExceptions;
+}
+
+/// @nodoc
+class __$$GetUserInfoErrorCopyWithImpl<T, $Res>
+    extends _$MenuStateCopyWithImpl<T, $Res, _$GetUserInfoError<T>>
+    implements _$$GetUserInfoErrorCopyWith<T, $Res> {
+  __$$GetUserInfoErrorCopyWithImpl(
+      _$GetUserInfoError<T> _value, $Res Function(_$GetUserInfoError<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? networkExceptions = null,
+  }) {
+    return _then(_$GetUserInfoError<T>(
+      null == networkExceptions
+          ? _value.networkExceptions
+          : networkExceptions // ignore: cast_nullable_to_non_nullable
+              as NetworkExceptions,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $NetworkExceptionsCopyWith<$Res> get networkExceptions {
+    return $NetworkExceptionsCopyWith<$Res>(_value.networkExceptions, (value) {
+      return _then(_value.copyWith(networkExceptions: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$GetUserInfoError<T> implements GetUserInfoError<T> {
+  const _$GetUserInfoError(this.networkExceptions);
+
+  @override
+  final NetworkExceptions networkExceptions;
+
+  @override
+  String toString() {
+    return 'MenuState<$T>.getUserInfoError(networkExceptions: $networkExceptions)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetUserInfoError<T> &&
+            (identical(other.networkExceptions, networkExceptions) ||
+                other.networkExceptions == networkExceptions));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, networkExceptions);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetUserInfoErrorCopyWith<T, _$GetUserInfoError<T>> get copyWith =>
+      __$$GetUserInfoErrorCopyWithImpl<T, _$GetUserInfoError<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() walletInfoLoading,
+    required TResult Function(WalletInfo data) walletInfoSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
+    required TResult Function() walletBlanceAddedLoading,
+    required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletBalanceAdddedError,
+    required TResult Function() getRatesLoading,
+    required TResult Function(RatesModel rates) getRatesSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
+  }) {
+    return getUserInfoError(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? walletInfoLoading,
+    TResult? Function(WalletInfo data)? walletInfoSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult? Function()? walletBlanceAddedLoading,
+    TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult? Function()? getRatesLoading,
+    TResult? Function(RatesModel rates)? getRatesSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
+  }) {
+    return getUserInfoError?.call(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? walletInfoLoading,
+    TResult Function(WalletInfo data)? walletInfoSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult Function()? walletBlanceAddedLoading,
+    TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult Function()? getRatesLoading,
+    TResult Function(RatesModel rates)? getRatesSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (getUserInfoError != null) {
+      return getUserInfoError(networkExceptions);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
+    required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
+    required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
+    required TResult Function(WalletBlanceAddedLoading<T> value)
+        walletBlanceAddedLoading,
+    required TResult Function(WalletBalanceAddedSuccedded<T> value)
+        walletBalanceAddedSuccedded,
+    required TResult Function(WalletBalanceAdddedError<T> value)
+        walletBalanceAdddedError,
+    required TResult Function(GetRatesLoading<T> value) getRatesLoading,
+    required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
+    required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
+  }) {
+    return getUserInfoError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult? Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult? Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult? Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
+  }) {
+    return getUserInfoError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (getUserInfoError != null) {
+      return getUserInfoError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetUserInfoError<T> implements MenuState<T> {
+  const factory GetUserInfoError(final NetworkExceptions networkExceptions) =
+      _$GetUserInfoError<T>;
+
+  NetworkExceptions get networkExceptions;
+  @JsonKey(ignore: true)
+  _$$GetUserInfoErrorCopyWith<T, _$GetUserInfoError<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

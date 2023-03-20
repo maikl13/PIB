@@ -7,14 +7,21 @@ class CustomNetworkCachedImage extends StatelessWidget {
   const CustomNetworkCachedImage(
       {super.key, required this.url, this.fit, this.filter});
 
-  final String url;
+  final String? url;
   final BoxFit? fit;
   final ColorFilter? filter;
   @override
   Widget build(BuildContext context) {
+    if (url == null) {
+      // Return a default placeholder widget if url is null
+      return Container(
+        color: Colors.grey[300],
+        child: const Icon(Icons.image, size: 50),
+      );
+    }
     return CachedNetworkImage(
       // color: ColorManager.amber,
-      imageUrl: url,
+      imageUrl: url!,
       imageBuilder: (context, imageProvider) => Container(
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -24,8 +31,7 @@ class CustomNetworkCachedImage extends StatelessWidget {
           ),
         ),
       ),
-      // ColorFilter.mode(
-      //           Colors.black.withOpacity(.4), BlendMode.darken)
+
       placeholder: (context, url) => const LoadingIndicator(),
       errorWidget: (context, url, error) => const Icon(Icons.error),
     );

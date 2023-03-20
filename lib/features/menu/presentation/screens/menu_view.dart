@@ -1,19 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/resources/constants.dart';
 import 'package:pip/core/resources/route_manager.dart';
 import 'package:pip/core/resources/strings_manager.dart';
 import 'package:pip/core/resources/style_manager.dart';
+import 'package:pip/core/widgets/custom_network_image.dart';
 import 'package:pip/core/widgets/dark_default_button.dart';
 import 'package:pip/features/home/presentation/widgets/job_rate_container.dart';
+import 'package:pip/features/menu/business_logic/menu_cubit.dart';
+import 'package:pip/features/menu/business_logic/menu_state.dart';
 
-import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
+import '../../../../core/widgets/loading_indicator.dart';
 import '../widgets/menu_item.dart';
 
-class MenuView extends StatelessWidget {
+class MenuView extends StatefulWidget {
   const MenuView({super.key});
 
+  @override
+  State<MenuView> createState() => _MenuViewState();
+}
+
+class _MenuViewState extends State<MenuView> {
   _buildBody(BuildContext context) {
     return ListView(
       shrinkWrap: true,
@@ -22,11 +31,7 @@ class MenuView extends StatelessWidget {
       children: [
         Column(
           children: [
-            _buildProfileImage(),
-            SizedBox(height: 27.h),
-            _buildUserName(),
-            SizedBox(height: 17.h),
-            _buildPhoneNumber(),
+            _buildUserInfo(),
             SizedBox(height: 32.h),
             _buildEditButton(context),
           ],
@@ -34,6 +39,34 @@ class MenuView extends StatelessWidget {
         _buildList(),
       ],
     );
+  }
+
+  _buildUserInfo() {
+    return BlocConsumer<MenuCubit, MenuState>(
+        listener: (context, state) {},
+        buildWhen: (previous, current) => current is GetUserInfoSuccess,
+        builder: (context, state) {
+          return state.maybeWhen(
+            getUserInfoLoading: () {
+              return const LoadingIndicator();
+            },
+            getUserInfoSuccess: (userInfo) {
+              return Column(
+                children: [
+                  if (userInfo.imageUrl != null)
+                    _buildProfileImage(userInfo.imageUrl!),
+                  SizedBox(height: 27.h),
+                  _buildUserName(userInfo.name),
+                  SizedBox(height: 17.h),
+                  _buildPhoneNumber(userInfo.phone),
+                ],
+              );
+            },
+            orElse: () {
+              return const SizedBox();
+            },
+          );
+        });
   }
 
   _buildEditButton(BuildContext context) {
@@ -50,11 +83,11 @@ class MenuView extends StatelessWidget {
     );
   }
 
-  _buildPhoneNumber() {
+  _buildPhoneNumber(String? phone) {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Text(AppStrings.zeros,
+        Text(phone ?? '',
             style: getLightStyle(fontSize: 13.sp, color: ColorManager.grey)),
         const SizedBox(width: 15),
         Icon(
@@ -65,27 +98,27 @@ class MenuView extends StatelessWidget {
     );
   }
 
-  _buildUserName() {
-    return Text(AppStrings.userName,
+  _buildUserName(String? name) {
+    return Text(name ?? '',
         style:
             getBoldStyle(fontSize: 20.sp, color: ColorManager.darkSeconadry));
   }
 
-  _buildProfileImage() {
+  _buildProfileImage(String? imageUrl) {
     return SizedBox(
         width: 103.w,
         height: 103.w,
         child: Stack(
           // fit: StackFit.expand,
           children: [
-            _buildImage(),
+            _buildImage(imageUrl!),
             const Align(
                 alignment: Alignment.bottomLeft, child: JobRateContainer()),
           ],
         ));
   }
 
-  _buildImage() {
+  _buildImage(String? imageUrl) {
     return Align(
       alignment: Alignment.center,
       child: Container(
@@ -97,8 +130,8 @@ class MenuView extends StatelessWidget {
         ),
         child: CircleAvatar(
           backgroundColor: ColorManager.black,
-          backgroundImage: const AssetImage(
-            ImageAssets.banner,
+          child: ClipOval(
+            child: CustomNetworkCachedImage(url: imageUrl!),
           ),
         ),
       ),
@@ -117,9 +150,9 @@ class MenuView extends StatelessWidget {
             index: index,
             onTap: () {
               index == menuViewItemRoutes.length - 1
-                  ? Navigator.pushReplacementNamed(
-                      context, menuViewItemRoutes[index])
-                  : Navigator.pushNamed(context, menuViewItemRoutes[index]);
+                  ? BlocProvider.of<MenuCubit>(context).signOut(context)
+                  : Navigator.pushReplacementNamed(
+                      context, menuViewItemRoutes[index]);
             },
           );
         },
@@ -127,6 +160,12 @@ class MenuView extends StatelessWidget {
           return const SizedBox(height: 20);
         },
         itemCount: menuViewItemIcons.length);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    BlocProvider.of<MenuCubit>(context).getUserInfo();
   }
 
   @override

@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/resources/color_manager.dart';
+import 'package:pip/core/resources/commons.dart';
+import 'package:pip/core/resources/strings_manager.dart';
 import 'package:pip/core/resources/style_manager.dart';
 import 'package:pip/core/widgets/custom_appbar.dart';
+import 'package:pip/core/widgets/default_button.dart';
 import 'package:pip/core/widgets/rating_stars.dart';
 import 'package:pip/features/menu/business_logic/menu_cubit.dart';
 import 'package:pip/features/menu/business_logic/menu_state.dart';
@@ -21,33 +24,158 @@ class RateUsView extends StatefulWidget {
 
 class _RateUsViewState extends State<RateUsView> {
   _buildBody() {
-    return ListView(
-      padding: EdgeInsets.only(right: 20.w, left: 16.w, top: 48.h),
-      shrinkWrap: true,
-      children: [
-        _buildBLoc(),
-        Divider(color: ColorManager.darkGrey, thickness: 1.h),
-        _buildRatingList(),
-      ],
+    return Padding(
+      padding:
+          EdgeInsets.only(right: 20.w, left: 16.w, top: 48.h, bottom: 30.h),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            _buildBLoc(),
+            Divider(color: ColorManager.darkGrey, thickness: 1.h),
+            _buildRatingList(),
+            SizedBox(height: 150.h),
+            _buildButton(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  _buildButton() {
+    return DefaultButton(
+      text: AppStrings.send,
+      onTap: () {
+        BlocProvider.of<MenuCubit>(context).updateRate();
+      },
     );
   }
 
   _buildRatingList() {
-    return ListView.separated(
-        physics: const NeverScrollableScrollPhysics(),
-        shrinkWrap: true,
-        itemBuilder: (context, index) {
-          return const RateItem();
-        },
-        separatorBuilder: (context, index) {
-          return SizedBox(height: 12.h);
-        },
-        itemCount: 4);
+    return BlocConsumer<MenuCubit, MenuState>(
+      listener: (context, state) {},
+      builder: (context, state) {
+        return Column(
+          children: [
+            _buildExperienceRate(),
+            SizedBox(height: 40.h),
+            _buildProfiisenalRate(),
+            SizedBox(height: 40.h),
+            _buildCommunicationRate(),
+            SizedBox(height: 40.h),
+            _buildQualityRate(),
+            SizedBox(height: 40.h),
+            _buildTimeRate(),
+          ],
+        );
+      },
+    );
+  }
+
+  _buildExperienceRate() {
+    return BlocConsumer<MenuCubit, MenuState>(
+      listener: (context, state) {},
+      buildWhen: (previous, current) => current is UpdateExperienceRateSuccess,
+      builder: (context, state) {
+        return RateItem(
+          rateNumber: BlocProvider.of<MenuCubit>(context).experienceRate,
+          onRatingUpdate: (rate) {
+            setState(() {
+              BlocProvider.of<MenuCubit>(context).updateExperienceRate(rate);
+              // print(BlocProvider.of<MenuCubit>(context).experienceRate);
+            });
+          },
+        );
+      },
+    );
+  }
+
+  _buildProfiisenalRate() {
+    return BlocConsumer<MenuCubit, MenuState>(
+      listener: (context, state) {},
+      buildWhen: (previous, current) => current is UpdateProfessionlRateSuccess,
+      builder: (context, state) {
+        return RateItem(
+          rateNumber: BlocProvider.of<MenuCubit>(context).professionlRate,
+          onRatingUpdate: (rate) {
+            setState(() {
+              BlocProvider.of<MenuCubit>(context).updateProfessionlRate(rate);
+              // print(BlocProvider.of<MenuCubit>(context).professionlRate);
+            });
+          },
+        );
+      },
+    );
+  }
+
+  _buildCommunicationRate() {
+    return BlocConsumer<MenuCubit, MenuState>(
+      listener: (context, state) {},
+      buildWhen: (previous, current) =>
+          current is UpdateCommunicationRateSuccess,
+      builder: (context, state) {
+        return RateItem(
+          rateNumber: BlocProvider.of<MenuCubit>(context).communicationRate,
+          onRatingUpdate: (rate) {
+            setState(() {
+              BlocProvider.of<MenuCubit>(context).updateCommunicationRate(rate);
+              // print(BlocProvider.of<MenuCubit>(context).communicationRate);
+            });
+          },
+        );
+      },
+    );
+  }
+
+  _buildQualityRate() {
+    return BlocConsumer<MenuCubit, MenuState>(
+      listener: (context, state) {},
+      buildWhen: (previous, current) => current is UpdateQualityRate,
+      builder: (context, state) {
+        return RateItem(
+          rateNumber: BlocProvider.of<MenuCubit>(context).qualityRate,
+          onRatingUpdate: (rate) {
+            setState(() {
+              BlocProvider.of<MenuCubit>(context).updateQualityRate(rate);
+              // print(BlocProvider.of<MenuCubit>(context).qualityRate);
+            });
+          },
+        );
+      },
+    );
+  }
+
+  _buildTimeRate() {
+    return BlocConsumer<MenuCubit, MenuState>(
+      listener: (context, state) {},
+      buildWhen: (previous, current) => current is UpdateTimeRateSuccess,
+      builder: (context, state) {
+        return RateItem(
+          rateNumber: BlocProvider.of<MenuCubit>(context).timeRate,
+          onRatingUpdate: (p0) {
+            setState(() {
+              BlocProvider.of<MenuCubit>(context).updateTimeRate(p0);
+              // print(BlocProvider.of<MenuCubit>(context).timeRate);
+            });
+          },
+        );
+      },
+    );
   }
 
   _buildBLoc() {
     return BlocConsumer<MenuCubit, MenuState>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        state.whenOrNull(
+          updateRateSuccess: (rates) {
+            Commons.showToast(
+                message: 'تم التقييم بنجاح', color: ColorManager.green);
+            BlocProvider.of<MenuCubit>(context).getAllRates();
+          },
+          updateRateError: (networkExceptions) {
+            Commons.showToast(message: networkExceptions.toString());
+          },
+        );
+      },
       buildWhen: (previous, next) => next is GetRatesSuccess,
       builder: (context, state) {
         return state.maybeWhen(
@@ -68,7 +196,9 @@ class _RateUsViewState extends State<RateUsView> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         _buildAverageRating(
-            rates.avgRating.toString(), rates.ratingsCount.toString()),
+          rates.avgRating.toString(),
+          rates.ratingsCount.toString(),
+        ),
         // SizedBox(width: 42.w),
         _buildRatingBarsChart(),
         _buildRatingNumbers(),
@@ -139,22 +269,35 @@ class _RateUsViewState extends State<RateUsView> {
   }
 
   _buildRatingNumbers() {
-    return SizedBox(
-      // height: 120.h,
-      width: 18.w,
-      child: ListView.separated(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          itemBuilder: (context, index) {
-            return Text(
-              '0${BlocProvider.of<MenuCubit>(context).ratesFromOneToFive[index]}',
-              style: getRegularStyle(fontSize: 15.sp, color: ColorManager.grey),
+    return BlocConsumer<MenuCubit, MenuState>(
+      listener: (context, state) {},
+      buildWhen: (previous, current) => current is GetRatesSuccess,
+      builder: (context, state) {
+        return state.maybeWhen(
+          getRatesSuccess: (rates) {
+            return SizedBox(
+              // height: 120.h,
+              width: 18.w,
+              child: ListView.separated(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemBuilder: (context, index) {
+                    return Text(
+                      BlocProvider.of<MenuCubit>(context)
+                          .ratesFromOneToFive[index],
+                      style: getRegularStyle(
+                          fontSize: 15.sp, color: ColorManager.grey),
+                    );
+                  },
+                  separatorBuilder: (context, index) {
+                    return SizedBox(height: 4.h);
+                  },
+                  itemCount: 5),
             );
           },
-          separatorBuilder: (context, index) {
-            return SizedBox(height: 4.h);
-          },
-          itemCount: 5),
+          orElse: () => Container(),
+        );
+      },
     );
   }
 

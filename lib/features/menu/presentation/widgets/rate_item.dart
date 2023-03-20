@@ -1,22 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/resources/assets_manager.dart';
+import 'package:pip/core/resources/constants.dart';
 
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/resources/style_manager.dart';
 import '../../../../core/widgets/rating_bar.dart';
+import '../../business_logic/menu_cubit.dart';
 
 class RateItem extends StatefulWidget {
-  const RateItem({super.key});
+  RateItem({
+    super.key,
+    required this.rateNumber, required this.onRatingUpdate,
+  });
+  void Function(double) onRatingUpdate;
+  double rateNumber;
+  
 
   @override
   State<RateItem> createState() => _RateItemState();
 }
 
 class _RateItemState extends State<RateItem> {
-  double rateNumber = 0;
-  // Color backColor = ColorManager.red;
   _buildTitle(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -34,7 +41,7 @@ class _RateItemState extends State<RateItem> {
 
   _buildRateNumber() {
     return Text(
-      rateNumber.toString(),
+      widget.rateNumber.toString(),
       style: getBoldStyle(color: ColorManager.darkSeconadry, fontSize: 22.sp),
     );
   }
@@ -47,7 +54,7 @@ class _RateItemState extends State<RateItem> {
         fit: StackFit.loose,
         children: [
           Container(
-            width: 90 * (rateNumber + 1).w,
+            width: 90 * (widget.rateNumber + 1).w,
             height: 50.w,
             decoration: BoxDecoration(
                 color: ColorManager.white.withOpacity(.1),
@@ -67,13 +74,13 @@ class _RateItemState extends State<RateItem> {
                 // wrapAlignment: WrapAlignment.spaceBetween,
                 updateOnDrag: true,
                 itemPadding: EdgeInsets.symmetric(horizontal: 7.w),
-                initialRating: 0,
+                initialRating: BlocProvider.of<MenuCubit>(context).initialRating,
                 itemCount: 5,
 
                 // itemSize: 30.sp,
                 itemBuilder: (context, index) {
                   // print(index.toString());
-                  return rateNumber.toInt() == index + 1
+                  return widget.rateNumber.toInt() == index + 1
                       ? Container(
                           decoration: BoxDecoration(
                             color: ColorManager.white.withOpacity(.2),
@@ -103,20 +110,14 @@ class _RateItemState extends State<RateItem> {
                           ),
                         );
                 },
-                onRatingUpdate: (rating) {
-                  setState(() {
-                    // print(rateNumber);
-                    rateNumber = rating;
-                    // backColor = ColorManager.white;
-                  });
-                },
+                onRatingUpdate:widget. onRatingUpdate,
               ),
             ),
           ),
           IgnorePointer(
             ignoring: true,
             child: Container(
-              width: 335.w * rateNumber * .19,
+              width: 335.w * widget.rateNumber * .19,
               height: 50.w,
               decoration: BoxDecoration(
                   color: ColorManager.white.withOpacity(.1),

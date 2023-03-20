@@ -29,6 +29,7 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
         userName = userData.user!.name;
         userPhone = userData.user!.phone;
         userImage = userData.user!.imageUrl;
+        userEmail = userData.user!.email;
         emit(AuthResultState.loginSuccess(userData));
       },
       failure: (NetworkExceptions networkExceptions) {
@@ -40,9 +41,9 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
   void register({
     required String uid,
     required String name,
-    String? email = '',
-    String? phone = '',
-    String? imageUrl = '',
+    String? email,
+    String? phone ,
+    String? imageUrl,
   }) async {
     emit(const AuthResultState.registerLoading());
     var result = await authRepoistry.registerNewUser(
@@ -51,6 +52,9 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
       success: (AuthModel userData) {
         token = userData.token!;
         userName = userData.user!.name!;
+        userPhone = userData.user!.phone!;
+        userImage = userData.user!.imageUrl!;
+        userEmail = userData.user!.email!;
 
         emit(AuthResultState.registerSuccess(userData));
       },
@@ -133,7 +137,7 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
     print('codeSent');
     this.verificationId = verificationId;
 
-    emit( AuthResultState.phoneNumberSubmited(_auth.currentUser!.uid));
+    emit(AuthResultState.phoneNumberSubmited(_auth.currentUser!.uid));
   }
 
   void codeAutoRetrievalTimeout(String verificationId) {

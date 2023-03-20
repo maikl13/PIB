@@ -5,9 +5,14 @@ import 'package:pip/core/resources/color_manager.dart';
 import 'package:pip/core/resources/route_manager.dart';
 import 'package:pip/core/resources/strings_manager.dart';
 import 'package:pip/core/resources/style_manager.dart';
+import 'package:pip/core/widgets/custom_network_image.dart';
 
 class ConversationItem extends StatelessWidget {
-  const ConversationItem({super.key});
+  const ConversationItem({super.key, this.name, this.totalMessage,  this.imageUrl});
+
+  final String? name;
+  final int ?totalMessage;
+  final String ?imageUrl ;
   _buildBackground() {
     return Image.asset(
       ImageAssets.conversationItemBackground,
@@ -21,20 +26,23 @@ class ConversationItem extends StatelessWidget {
         width: 60.w,
         child: CircleAvatar(
           radius: 80.r,
-          backgroundImage: const AssetImage(ImageAssets.banner),
+          child:imageUrl ==null? Container() :  ClipOval(
+
+            child: CustomNetworkCachedImage(url: imageUrl!),
+          ),
         ));
   }
 
-  _buildTitle() {
+  _buildTitle(  ) {
     return Text(
-      AppStrings.plumber,
+      name ?? '',
       style: getBoldStyle(fontSize: 18.sp, color: ColorManager.darkSeconadry),
     );
   }
 
-  _buildSubtitle() {
+  _buildSubtitle( ) {
     return Text(
-      AppStrings.twenyTotalMessage,
+     "${AppStrings.totalMessage} ${totalMessage ?? 0}",
       style: getRegularStyle(fontSize: 12.sp, color: ColorManager.darkGrey),
     );
   }

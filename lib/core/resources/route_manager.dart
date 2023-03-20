@@ -30,6 +30,7 @@ import '../../features/auth/presentation/screens/forgot_password_view.dart';
 import '../../features/auth/presentation/screens/login_view.dart';
 import '../../features/auth/presentation/screens/main_auth_view.dart';
 import '../../features/auth/presentation/screens/register_view.dart';
+import '../../features/chat/business_logic/chat_cubit.dart';
 import '../../features/chat/presentation/screens/contact_us_view.dart';
 import '../../features/home/presentation/screens/jop_details_view.dart';
 import '../../features/home/presentation/screens/main_home_view.dart';
@@ -110,6 +111,7 @@ class RouteGenerator {
   static late SearchBloc searchBloc;
   static late PipCubit pipCubit;
   static late RequestsCubit requestsCubit;
+  static late ChatCubit chatCubit;
 
   RouteGenerator() {
     homeCubit = getIt<HomeCubit>();
@@ -119,6 +121,7 @@ class RouteGenerator {
     searchBloc = getIt<SearchBloc>();
     pipCubit = getIt<PipCubit>();
     requestsCubit = getIt<RequestsCubit>();
+    chatCubit = getIt<ChatCubit>();
   }
   static List screens = <Widget>[
     const HomeView(),
@@ -127,7 +130,10 @@ class RouteGenerator {
       value: requestsCubit,
       child: const MyRequestsMainView(),
     ),
-    const ConversationsTypeView(),
+    BlocProvider.value(
+      value: chatCubit,
+      child: const ConversationsTypeView(),
+    ),
     BlocProvider.value(
       value: menuCubit,
       child: const MenuView(),
@@ -267,7 +273,10 @@ class RouteGenerator {
 
       case Routes.chatsViewRoute:
         return MaterialPageRoute(
-          builder: (_) => const ChatsView(),
+          builder: (_) => BlocProvider.value(
+            value: chatCubit,
+            child: const ChatsView(),
+          ),
         );
       case Routes.chatViewRoute:
         return MaterialPageRoute(
@@ -289,7 +298,10 @@ class RouteGenerator {
 
       case Routes.contactViewRoute:
         return MaterialPageRoute(
-          builder: (_) => const ContactUsView(),
+          builder: (_) => BlocProvider.value(
+            value: menuCubit,
+            child: const ContactUsView(),
+          ),
         );
       case Routes.walletViewRoute:
         return MaterialPageRoute(
@@ -300,7 +312,10 @@ class RouteGenerator {
         );
       case Routes.whoWeAreViewRoute:
         return MaterialPageRoute(
-          builder: (_) => const WhoWeAreView(),
+          builder: (_) => BlocProvider.value(
+            value: menuCubit,
+            child: const WhoWeAreView(),
+          ),
         );
       case Routes.workWithUsViewRoute:
         return MaterialPageRoute(

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/features/chat/business_logic/chat_cubit.dart';
+import 'package:pip/features/chat/business_logic/chat_state.dart';
 import 'package:pip/features/chat/presentation/screens/service_provider_messages_view.dart';
 import 'package:pip/features/chat/presentation/screens/service_requester_messages_view.dart';
 
@@ -25,16 +28,22 @@ class ConversationsTypeView extends StatelessWidget {
   }
 
   Widget _buildTabBarBody() {
-    return Expanded(
-      child: Padding(
-        padding: EdgeInsets.only(left: 20.w, right: 20.w, bottom: 30.w),
-        child: const TabBarView(
-          children: [
-            ServiceRequesterMessagesView(),
-            ServiceProviderMessagesView(),
-          ],
-        ),
-      ),
+    return BlocConsumer<ChatCubit, ChatState>(
+      listener: (context, state) {
+      },
+      builder: (context, state) {
+        return Expanded(
+          child: Padding(
+            padding: EdgeInsets.only(left: 20.w, right: 20.w, bottom: 30.w),
+            child: const TabBarView(
+              children: [
+                ServiceRequesterMessagesView(),
+                ServiceProviderMessagesView(),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 

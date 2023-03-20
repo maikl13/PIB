@@ -5,6 +5,7 @@ import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/route_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/resources/style_manager.dart';
+import '../../../home/data/models/ad_model.dart';
 import '../../../home/presentation/widgets/image_with_stars.dart';
 import '../../../home/presentation/widgets/show_all_text.dart';
 import '../../../notification/presentation/widgets/clock_date.dart';
@@ -15,12 +16,14 @@ class SearchResultItem extends StatelessWidget {
       this.image,
       this.companyName,
       this.jobTitle,
-      this.typeHeadline});
+      this.typeHeadline, required this.ad});
 
   final String? image;
   final String? companyName;
   final String? jobTitle;
   final String? typeHeadline;
+
+  final Ads ad;
   _buildBackground() {
     return Image.asset(
       ImageAssets.resultBackground,
@@ -108,7 +111,9 @@ class SearchResultItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.pushNamed(context, Routes.jobDetailsViewRoute);
+        Navigator.pushNamed(context, Routes.jobDetailsViewRoute,arguments: {
+          'ad': ad,
+        });
       },
       child: Container(
         height: 131.w,

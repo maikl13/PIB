@@ -90,7 +90,10 @@ class MainAuthView extends StatelessWidget {
                 "not_found") {
               BlocProvider.of<AuthCubit>(context).register(
                 uid: token!,
-                name: userName!,
+                name: userName ?? '',
+                imageUrl: userImage ?? '',
+                email: userEmail ?? '',
+                phone: userPhone ?? '',
               );
             } else {
               Commons.showToast(

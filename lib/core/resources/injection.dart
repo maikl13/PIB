@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:dio_smart_retry/dio_smart_retry.dart';
 import 'package:get_it/get_it.dart';
+import 'package:pip/features/chat/business_logic/chat_cubit.dart';
+import 'package:pip/features/chat/data/repository/chat_repository.dart';
 import 'package:pip/features/notification/business_logic/cubit/notification_cubit.dart';
 import 'package:pip/features/notification/data/repository/notification_repository.dart';
 import 'package:pip/features/pip/business_logic/cubit/pip_cubit.dart';
@@ -42,6 +44,9 @@ void initGetIt() {
 
           getIt.registerLazySingleton<RequestRepository>(() => RequestRepository(getIt()));
   getIt.registerLazySingleton<RequestsCubit>(() => RequestsCubit(getIt()));
+
+    getIt.registerLazySingleton<ChatRepository>(() => ChatRepository(getIt()));
+  getIt.registerLazySingleton<ChatCubit>(() => ChatCubit(getIt()));
 
   getIt.registerLazySingleton<WebServices>(
       () => WebServices(createAndSetupDio()));

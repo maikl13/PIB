@@ -7,10 +7,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'app/app.dart';
 import 'core/resources/bloc_observer.dart';
 import 'core/resources/injection.dart';
+import 'core/resources/shared_prefrences.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+    await CacheHelper.init();
+
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,

@@ -18,6 +18,7 @@ class SearchResultsView extends StatelessWidget {
             companyName: ads[index].title,
             image: ads[index].image,
             jobTitle: ads[index].skillName,
+            ad: ads[index],
             //TODO modify headline type
             typeHeadline: AppStrings.fullTimeJobs.replaceAll(':', ''),
           );

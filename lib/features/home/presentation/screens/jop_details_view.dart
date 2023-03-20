@@ -29,7 +29,9 @@ class JobDetailsView extends StatelessWidget {
           // mainAxisAlignment: MainAxisAlignment.c,
           // shrinkWrap: true,
           children: [
-            const JobDetailsImage(),
+            JobDetailsImage(
+              imageUrl: ad.image,
+            ),
             SizedBox(height: 48.h),
             _buildCompanyName(),
             SizedBox(height: 15.h),

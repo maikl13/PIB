@@ -23,6 +23,7 @@ class FullTimeJobsView extends StatelessWidget {
             image: ads[index].image,
             jobTitle: ads[index].skillName,
             typeHeadline: typeHeadline,
+            ad: ads[index],
           );
         },
         separatorBuilder: (context, index) {
