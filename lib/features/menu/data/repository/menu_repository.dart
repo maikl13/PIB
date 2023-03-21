@@ -88,6 +88,26 @@ class MenuRepository {
     }
   }
 
+  Future<ApiResult<UpdateSkill>> sendComplain(
+      String name,
+      String phone,
+      String email,
+      String notes,
+     ) async {
+    try {
+      var response = await webServices.sendComplain(
+          'Bearer $token',
+          name,
+          phone,
+          email,
+          notes,
+          );
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(NetworkExceptions.getDioException(error));
+    }
+  }
+
   Future<ApiResult<UpdateSkill>> sendRates(
       double experienceStars,
       double proffesionalStars,

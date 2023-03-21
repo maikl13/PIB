@@ -24,23 +24,52 @@ class ContactUsView extends StatefulWidget {
 }
 
 class _ContactUsViewState extends State<ContactUsView> {
+  final TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _notesController = TextEditingController();
+
   _buildBody(BuildContext context) {
-    return ListView(
-      padding:
-          EdgeInsets.only(top: 40.h, right: 20.w, left: 20.w, bottom: 40.h),
-      shrinkWrap: true,
-      children: [
-        _buildHowToContactUs(),
-        _builDivider(),
-        SizedBox(height: 46.h),
-        const CustomTitle(title: AppStrings.giveYourComplain),
-        SizedBox(height: 20.h),
-        const DefaultPhoneTextField(),
-        SizedBox(height: 40.h),
-        _buildDescriptionTextField(),
-        SizedBox(height: 150.h),
-        _buildButton(context),
-      ],
+    return BlocListener<MenuCubit, MenuState>(
+      listener: (context, state) {
+        state.whenOrNull(
+          sendComplainSuccess: (data) {
+            showContactSuccessDialog(
+              context,
+              onOk: () {
+                Navigator.pop(context);
+                _notesController.clear();
+                _phoneController.clear();
+              },
+            );
+          },
+          sendComplainError: (error) {
+            Commons.showToast(message: error.toString());
+          },
+        );
+      },
+      child: Padding(
+        padding:
+            EdgeInsets.only(top: 40.h, right: 20.w, left: 20.w, bottom: 40.h),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            // shrinkWrap: true,
+            children: [
+              _buildHowToContactUs(),
+              _builDivider(),
+              SizedBox(height: 46.h),
+              const CustomTitle(title: AppStrings.giveYourComplain),
+              SizedBox(height: 20.h),
+              DefaultPhoneTextField(
+                controller: _phoneController,
+              ),
+              SizedBox(height: 40.h),
+              _buildDescriptionTextField(),
+              SizedBox(height: 150.h),
+              _buildButton(context),
+            ],
+          ),
+        ),
+      ),
     );
   }
 
@@ -79,12 +108,8 @@ class _ContactUsViewState extends State<ContactUsView> {
     return DefaultButton(
         text: AppStrings.send,
         onTap: () {
-          // showContactSuccessDialog(
-          //   context,
-          //   onOk: () {
-          //     Navigator.pop(context);
-          //   },
-          // );
+          BlocProvider.of<MenuCubit>(context)
+              .sendComplain(_phoneController.text, _notesController.text);
         });
   }
 
@@ -96,7 +121,8 @@ class _ContactUsViewState extends State<ContactUsView> {
   }
 
   _buildDescriptionTextField() {
-    return const RequestCustomTextField(
+    return RequestCustomTextField(
+      controller: _notesController,
       bottomPadding: 70,
       maxLines: 3,
       hint: AppStrings.description,

@@ -27,6 +27,7 @@ class RequestCustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTextField(
+      controller: controller,
       hintStyle:
           hintStyle ?? getBoldStyle(fontSize: 15.sp, color: ColorManager.grey5),
       maxLines: maxLines,

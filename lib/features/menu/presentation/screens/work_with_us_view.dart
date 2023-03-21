@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/resources/assets_manager.dart';
 import 'package:pip/core/resources/color_manager.dart';
+import 'package:pip/core/resources/commons.dart';
 import 'package:pip/core/resources/strings_manager.dart';
 import 'package:pip/core/widgets/custom_appbar.dart';
 
@@ -9,7 +11,7 @@ import '../../../../core/resources/style_manager.dart';
 
 class WorkWithUsView extends StatelessWidget {
   const WorkWithUsView({super.key});
-  _buildBody() {
+  _buildBody(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(top: 70.h, right: 20.w, left: 20.w),
       child: SingleChildScrollView(
@@ -17,7 +19,7 @@ class WorkWithUsView extends StatelessWidget {
           children: [
             _buildLogo(),
             SizedBox(height: 60.h),
-            _buildCopyContainer(),
+            _buildCopyContainer(context),
           ],
         ),
       ),
@@ -31,7 +33,7 @@ class WorkWithUsView extends StatelessWidget {
     );
   }
 
-  _buildCopyContainer() {
+  _buildCopyContainer(BuildContext context) {
     return Container(
       width: double.infinity,
       height: 213.h,
@@ -46,7 +48,7 @@ class WorkWithUsView extends StatelessWidget {
           SizedBox(height: 18.h),
           _buildDescription(),
           SizedBox(height: 39.h),
-          _buildCopy(),
+          _buildCopy(context),
         ],
       ),
     );
@@ -66,7 +68,7 @@ class WorkWithUsView extends StatelessWidget {
     );
   }
 
-  _buildCopy() {
+  _buildCopy(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(right: 30.w, left: 30.w),
       child: Container(
@@ -82,7 +84,7 @@ class WorkWithUsView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               _buildCopyText(),
-              _buildCopyIcon(),
+              _buildCopyIcon(context),
             ],
           ),
         ),
@@ -97,11 +99,17 @@ class WorkWithUsView extends StatelessWidget {
     );
   }
 
-  _buildCopyIcon() {
-    return Icon(
-      Icons.copy,
-      color: ColorManager.darkSeconadry,
-      size: 20.sp,
+  _buildCopyIcon(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        Clipboard.setData(const ClipboardData(text: '12323425'));
+        Commons.showToast(message: "Copied", color: ColorManager.darkSeconadry);
+      },
+      child: Icon(
+        Icons.copy,
+        color: ColorManager.darkSeconadry,
+        size: 20.sp,
+      ),
     );
   }
 
@@ -113,7 +121,7 @@ class WorkWithUsView extends StatelessWidget {
         title: AppStrings.workAs,
         actions: const [],
       ),
-      body: _buildBody(),
+      body: _buildBody(context),
     );
   }
 }

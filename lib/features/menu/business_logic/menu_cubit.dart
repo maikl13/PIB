@@ -125,6 +125,21 @@ class MenuCubit extends Cubit<MenuState> {
     );
   }
 
+
+  void sendComplain(  String phone,String notes ) async {
+    emit(const MenuState.sendComplainLoading());
+    var result =
+        await menuRepository.sendComplain(userName ??'', phone, userEmail??'', notes);
+    result.when(
+      success: (UpdateSkill data) {
+        emit(MenuState.sendComplainSuccess(data));
+      },
+      failure: (NetworkExceptions networkExceptions) {
+        emit(MenuState.sendComplainError(networkExceptions));
+      },
+    );
+  }
+
   void getUserInfo() async {
     emit(const MenuState.getUserInfoLoading());
     var result = await menuRepository.getUserInfo();

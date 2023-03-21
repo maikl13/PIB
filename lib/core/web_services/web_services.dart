@@ -28,17 +28,16 @@ abstract class WebServices {
   @GET("user/notifications")
   Future<List<NotifiticationModel>> getAllNotifications(
       @Header('Authorization') String token);
-
+//-----------------------new-----------------------------------------------------------------
   @GET("sliders")
   Future<List<SliderModel>> getAllSliders(
       @Header('Authorization') String token);
-
+//-----------------------new-----------------------------------------------------------------
   @POST("user/authentication")
   Future<AuthModel> login(
     @Field("token") String token,
   );
-
-  //register
+//-----------------------new-----------------------------------------------------------------
   @POST("user/signup")
   Future<AuthModel> register(
     @Field("token") String? token,
@@ -47,50 +46,49 @@ abstract class WebServices {
     @Field("phone") String? phone,
     @Field("image_url") String? imageUrl,
   );
-
+//-----------------------new-----------------------------------------------------------------
   @GET("skills")
   Future<List<SkillModel>> getAllSkills(
     @Header('Authorization') String token,
   );
-
+//-----------------------new-----------------------------------------------------------------
   @GET("user/skills")
   Future<List<SkillModel>> getAllUserSkills(
     @Header('Authorization') String token,
   );
+//-----------------------new-----------------------------------------------------------------
   @POST("user/skills/update")
   Future<UpdateSkill> updateSkill(
       @Header('Authorization') String token, @Body() List<int> skills);
-
+//-----------------------new-----------------------------------------------------------------
   @GET("ads/search")
   Future<List<Ads>> getSearchResults(
       @Header('Authorization') String token, @Query("keyword") String keyword);
-
+//-----------------------new-----------------------------------------------------------------
   @GET("user/wallet")
   Future<WalletInfo> getWalletInfo(@Header('Authorization') String token);
-
+//-----------------------new-----------------------------------------------------------------
   @GET("ads")
   Future<List<AdModel>> getAllAds(@Header('Authorization') String token);
-
+//-----------------------new-----------------------------------------------------------------
   @GET("user/deals")
   Future<List<MyRequestModel>> getAllMyRequests(
       @Header('Authorization') String token);
-
+//-----------------------new-----------------------------------------------------------------
   @GET("requests/hirings")
   Future<List<MyRequestModel>> getAllAvailableJobs(
       @Header('Authorization') String token);
-
+//-----------------------new-----------------------------------------------------------------
   @GET("user/offers")
   Future<List<OfferModel>> getAllOffers(@Header('Authorization') String token);
 
-  //         @GET("deals/top?geography=locale")
-  // Future<List<DealModel> >getLocalTopDeals(@Header('Authorization') String token);
-
+//-----------------------new-----------------------------------------------------------------
   @POST("user/wallet/balance/add")
   Future<AddBalance> addBalanceToWallet(
     @Header('Authorization') String token,
     @Field("amount") amount,
   );
-
+//-----------------------new-----------------------------------------------------------------
   @POST("deals/create")
   @MultiPart()
   Future<UpdateSkill> createSpecialRequest(
@@ -101,7 +99,7 @@ abstract class WebServices {
     @Part(name: 'description') String? description,
     @Part(name: 'images[]') List<File> img,
   );
-
+//-----------------------new-----------------------------------------------------------------
   @POST("deals/create")
   @MultiPart()
   Future<UpdateSkill> createSpecialRequestWithoutImage(
@@ -111,26 +109,23 @@ abstract class WebServices {
     @Field('location') String? location,
     @Field('description') String? description,
   );
-
+//-----------------------new-----------------------------------------------------------------
    @GET("ratings")
   Future<RatesModel> getAllRates(@Header('Authorization') String token);
-
-
+//-----------------------new-----------------------------------------------------------------
   @POST("ratings/create")
   Future<UpdateSkill> sendRates(
     @Header('Authorization') String token,
     @Field("experience_stars") experienceStars,
     @Field("professionl_stars") proffesionalStars,
-      
     @Field("communication_stars") communicationStars,
     @Field("quality_stars") qualityStars,
     @Field("time_stars") timeStars,
-    
   );
-
+//-----------------------new-----------------------------------------------------------------
      @GET("user/info")
   Future<UserInfoModel> getUserInfo(@Header('Authorization') String token);
-
+//-----------------------new-----------------------------------------------------------------
   @POST("user/update")
   @MultiPart()
   Future<UpdateSkill> updateProfile(
@@ -140,6 +135,7 @@ abstract class WebServices {
     @Part(name: 'image') File img,
     @Header('Authorization') String token,
   );
+//-----------------------new-----------------------------------------------------------------
     @POST("user/update")
   @MultiPart()
   Future<UpdateSkill> updateProfileWithoutImage(
@@ -149,15 +145,22 @@ abstract class WebServices {
     // @Part(name: 'image') File img,
     @Header('Authorization') String token,
   );
+//-----------------------new-----------------------------------------------------------------
    @GET("app/settings")
   Future<List<SettingModel>> getAllSettings(@Header('Authorization') String token);
-
-
+//-----------------------new-----------------------------------------------------------------
    @GET("user/chats/hirings")
   Future<List<HiringChatModel>> getAllHiringChats(@Header('Authorization') String token);
-
-
-
+//-----------------------new-----------------------------------------------------------------
    @GET("user/chats/requests")
   Future<List<HiringChatModel>> getAllRequestsChats(@Header('Authorization') String token);
+//-----------------------new-----------------------------------------------------------------
+@POST("support/tickets/create")
+  Future<UpdateSkill> sendComplain(
+    @Header('Authorization') String token,
+    @Field("name") name,
+    @Field("phone") phone,
+    @Field("email") email,
+    @Field("notes") notes,
+  );
 }

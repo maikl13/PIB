@@ -23,6 +23,10 @@ mixin _$MenuState<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -71,6 +75,9 @@ mixin _$MenuState<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -112,6 +119,9 @@ mixin _$MenuState<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -154,6 +164,9 @@ mixin _$MenuState<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -205,6 +218,9 @@ mixin _$MenuState<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -251,6 +267,9 @@ mixin _$MenuState<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -353,6 +372,10 @@ class _$Idle<T> implements Idle<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -404,6 +427,9 @@ class _$Idle<T> implements Idle<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -448,6 +474,9 @@ class _$Idle<T> implements Idle<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -496,6 +525,9 @@ class _$Idle<T> implements Idle<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -550,6 +582,9 @@ class _$Idle<T> implements Idle<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -599,6 +634,9 @@ class _$Idle<T> implements Idle<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -693,6 +731,10 @@ class _$WalletInfoLoading<T> implements WalletInfoLoading<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -744,6 +786,9 @@ class _$WalletInfoLoading<T> implements WalletInfoLoading<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -788,6 +833,9 @@ class _$WalletInfoLoading<T> implements WalletInfoLoading<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -836,6 +884,9 @@ class _$WalletInfoLoading<T> implements WalletInfoLoading<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -890,6 +941,9 @@ class _$WalletInfoLoading<T> implements WalletInfoLoading<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -939,6 +993,9 @@ class _$WalletInfoLoading<T> implements WalletInfoLoading<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -1060,6 +1117,10 @@ class _$WalletInfoSuccedded<T> implements WalletInfoSuccedded<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -1111,6 +1172,9 @@ class _$WalletInfoSuccedded<T> implements WalletInfoSuccedded<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -1155,6 +1219,9 @@ class _$WalletInfoSuccedded<T> implements WalletInfoSuccedded<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -1203,6 +1270,9 @@ class _$WalletInfoSuccedded<T> implements WalletInfoSuccedded<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -1257,6 +1327,9 @@ class _$WalletInfoSuccedded<T> implements WalletInfoSuccedded<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -1306,6 +1379,9 @@ class _$WalletInfoSuccedded<T> implements WalletInfoSuccedded<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -1444,6 +1520,10 @@ class _$WalletInfoError<T> implements WalletInfoError<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -1495,6 +1575,9 @@ class _$WalletInfoError<T> implements WalletInfoError<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -1539,6 +1622,9 @@ class _$WalletInfoError<T> implements WalletInfoError<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -1587,6 +1673,9 @@ class _$WalletInfoError<T> implements WalletInfoError<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -1641,6 +1730,9 @@ class _$WalletInfoError<T> implements WalletInfoError<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -1690,6 +1782,9 @@ class _$WalletInfoError<T> implements WalletInfoError<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -1748,6 +1843,1160 @@ abstract class WalletInfoError<T> implements MenuState<T> {
 }
 
 /// @nodoc
+abstract class _$$SendComplainLoadingCopyWith<T, $Res> {
+  factory _$$SendComplainLoadingCopyWith(_$SendComplainLoading<T> value,
+          $Res Function(_$SendComplainLoading<T>) then) =
+      __$$SendComplainLoadingCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$SendComplainLoadingCopyWithImpl<T, $Res>
+    extends _$MenuStateCopyWithImpl<T, $Res, _$SendComplainLoading<T>>
+    implements _$$SendComplainLoadingCopyWith<T, $Res> {
+  __$$SendComplainLoadingCopyWithImpl(_$SendComplainLoading<T> _value,
+      $Res Function(_$SendComplainLoading<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SendComplainLoading<T> implements SendComplainLoading<T> {
+  const _$SendComplainLoading();
+
+  @override
+  String toString() {
+    return 'MenuState<$T>.sendComplainLoading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SendComplainLoading<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() walletInfoLoading,
+    required TResult Function(WalletInfo data) walletInfoSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
+    required TResult Function() updateUserInfoLoading,
+    required TResult Function(UpdateSkill data) updateUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateUserInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
+    required TResult Function() walletBlanceAddedLoading,
+    required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletBalanceAdddedError,
+    required TResult Function() getRatesLoading,
+    required TResult Function(RatesModel rates) getRatesSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
+  }) {
+    return sendComplainLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? walletInfoLoading,
+    TResult? Function(WalletInfo data)? walletInfoSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
+    TResult? Function()? updateUserInfoLoading,
+    TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult? Function()? walletBlanceAddedLoading,
+    TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult? Function()? getRatesLoading,
+    TResult? Function(RatesModel rates)? getRatesSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
+  }) {
+    return sendComplainLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? walletInfoLoading,
+    TResult Function(WalletInfo data)? walletInfoSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
+    TResult Function()? updateUserInfoLoading,
+    TResult Function(UpdateSkill data)? updateUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult Function()? walletBlanceAddedLoading,
+    TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult Function()? getRatesLoading,
+    TResult Function(RatesModel rates)? getRatesSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (sendComplainLoading != null) {
+      return sendComplainLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
+    required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
+    required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
+    required TResult Function(UpdateUserInfoLoading<T> value)
+        updateUserInfoLoading,
+    required TResult Function(UpdateUserInfoSuccess<T> value)
+        updateUserInfoSuccess,
+    required TResult Function(UpdateUserInfoError<T> value) updateUserInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
+    required TResult Function(WalletBlanceAddedLoading<T> value)
+        walletBlanceAddedLoading,
+    required TResult Function(WalletBalanceAddedSuccedded<T> value)
+        walletBalanceAddedSuccedded,
+    required TResult Function(WalletBalanceAdddedError<T> value)
+        walletBalanceAdddedError,
+    required TResult Function(GetRatesLoading<T> value) getRatesLoading,
+    required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
+    required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
+  }) {
+    return sendComplainLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
+    TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
+    TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
+    TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult? Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult? Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult? Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
+  }) {
+    return sendComplainLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
+    TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
+    TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
+    TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (sendComplainLoading != null) {
+      return sendComplainLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SendComplainLoading<T> implements MenuState<T> {
+  const factory SendComplainLoading() = _$SendComplainLoading<T>;
+}
+
+/// @nodoc
+abstract class _$$SendComplainSuccessCopyWith<T, $Res> {
+  factory _$$SendComplainSuccessCopyWith(_$SendComplainSuccess<T> value,
+          $Res Function(_$SendComplainSuccess<T>) then) =
+      __$$SendComplainSuccessCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({UpdateSkill data});
+}
+
+/// @nodoc
+class __$$SendComplainSuccessCopyWithImpl<T, $Res>
+    extends _$MenuStateCopyWithImpl<T, $Res, _$SendComplainSuccess<T>>
+    implements _$$SendComplainSuccessCopyWith<T, $Res> {
+  __$$SendComplainSuccessCopyWithImpl(_$SendComplainSuccess<T> _value,
+      $Res Function(_$SendComplainSuccess<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$SendComplainSuccess<T>(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as UpdateSkill,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SendComplainSuccess<T> implements SendComplainSuccess<T> {
+  const _$SendComplainSuccess(this.data);
+
+  @override
+  final UpdateSkill data;
+
+  @override
+  String toString() {
+    return 'MenuState<$T>.sendComplainSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SendComplainSuccess<T> &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SendComplainSuccessCopyWith<T, _$SendComplainSuccess<T>> get copyWith =>
+      __$$SendComplainSuccessCopyWithImpl<T, _$SendComplainSuccess<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() walletInfoLoading,
+    required TResult Function(WalletInfo data) walletInfoSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
+    required TResult Function() updateUserInfoLoading,
+    required TResult Function(UpdateSkill data) updateUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateUserInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
+    required TResult Function() walletBlanceAddedLoading,
+    required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletBalanceAdddedError,
+    required TResult Function() getRatesLoading,
+    required TResult Function(RatesModel rates) getRatesSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
+  }) {
+    return sendComplainSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? walletInfoLoading,
+    TResult? Function(WalletInfo data)? walletInfoSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
+    TResult? Function()? updateUserInfoLoading,
+    TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult? Function()? walletBlanceAddedLoading,
+    TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult? Function()? getRatesLoading,
+    TResult? Function(RatesModel rates)? getRatesSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
+  }) {
+    return sendComplainSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? walletInfoLoading,
+    TResult Function(WalletInfo data)? walletInfoSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
+    TResult Function()? updateUserInfoLoading,
+    TResult Function(UpdateSkill data)? updateUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult Function()? walletBlanceAddedLoading,
+    TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult Function()? getRatesLoading,
+    TResult Function(RatesModel rates)? getRatesSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (sendComplainSuccess != null) {
+      return sendComplainSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
+    required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
+    required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
+    required TResult Function(UpdateUserInfoLoading<T> value)
+        updateUserInfoLoading,
+    required TResult Function(UpdateUserInfoSuccess<T> value)
+        updateUserInfoSuccess,
+    required TResult Function(UpdateUserInfoError<T> value) updateUserInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
+    required TResult Function(WalletBlanceAddedLoading<T> value)
+        walletBlanceAddedLoading,
+    required TResult Function(WalletBalanceAddedSuccedded<T> value)
+        walletBalanceAddedSuccedded,
+    required TResult Function(WalletBalanceAdddedError<T> value)
+        walletBalanceAdddedError,
+    required TResult Function(GetRatesLoading<T> value) getRatesLoading,
+    required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
+    required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
+  }) {
+    return sendComplainSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
+    TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
+    TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
+    TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult? Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult? Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult? Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
+  }) {
+    return sendComplainSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
+    TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
+    TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
+    TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (sendComplainSuccess != null) {
+      return sendComplainSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SendComplainSuccess<T> implements MenuState<T> {
+  const factory SendComplainSuccess(final UpdateSkill data) =
+      _$SendComplainSuccess<T>;
+
+  UpdateSkill get data;
+  @JsonKey(ignore: true)
+  _$$SendComplainSuccessCopyWith<T, _$SendComplainSuccess<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SendComplainErrorCopyWith<T, $Res> {
+  factory _$$SendComplainErrorCopyWith(_$SendComplainError<T> value,
+          $Res Function(_$SendComplainError<T>) then) =
+      __$$SendComplainErrorCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({NetworkExceptions networkExceptions});
+
+  $NetworkExceptionsCopyWith<$Res> get networkExceptions;
+}
+
+/// @nodoc
+class __$$SendComplainErrorCopyWithImpl<T, $Res>
+    extends _$MenuStateCopyWithImpl<T, $Res, _$SendComplainError<T>>
+    implements _$$SendComplainErrorCopyWith<T, $Res> {
+  __$$SendComplainErrorCopyWithImpl(_$SendComplainError<T> _value,
+      $Res Function(_$SendComplainError<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? networkExceptions = null,
+  }) {
+    return _then(_$SendComplainError<T>(
+      null == networkExceptions
+          ? _value.networkExceptions
+          : networkExceptions // ignore: cast_nullable_to_non_nullable
+              as NetworkExceptions,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $NetworkExceptionsCopyWith<$Res> get networkExceptions {
+    return $NetworkExceptionsCopyWith<$Res>(_value.networkExceptions, (value) {
+      return _then(_value.copyWith(networkExceptions: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$SendComplainError<T> implements SendComplainError<T> {
+  const _$SendComplainError(this.networkExceptions);
+
+  @override
+  final NetworkExceptions networkExceptions;
+
+  @override
+  String toString() {
+    return 'MenuState<$T>.sendComplainError(networkExceptions: $networkExceptions)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SendComplainError<T> &&
+            (identical(other.networkExceptions, networkExceptions) ||
+                other.networkExceptions == networkExceptions));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, networkExceptions);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SendComplainErrorCopyWith<T, _$SendComplainError<T>> get copyWith =>
+      __$$SendComplainErrorCopyWithImpl<T, _$SendComplainError<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() walletInfoLoading,
+    required TResult Function(WalletInfo data) walletInfoSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
+    required TResult Function() updateUserInfoLoading,
+    required TResult Function(UpdateSkill data) updateUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateUserInfoError,
+    required TResult Function() userSkillsLoading,
+    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        userSkillsError,
+    required TResult Function() updateSkillLoading,
+    required TResult Function(UpdateSkill data) updateSkillSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateSkillError,
+    required TResult Function() walletBlanceAddedLoading,
+    required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
+    required TResult Function(NetworkExceptions networkExceptions)
+        walletBalanceAdddedError,
+    required TResult Function() getRatesLoading,
+    required TResult Function(RatesModel rates) getRatesSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getRatesError,
+    required TResult Function() getSettingLoading,
+    required TResult Function(List<SettingModel> settings) getSettingSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getSettingError,
+    required TResult Function() updateRateLoading,
+    required TResult Function(UpdateSkill data) updateRateSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRateError,
+    required TResult Function() imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function() getUserInfoLoading,
+    required TResult Function() updateExperienceRateSuccess,
+    required TResult Function() updateQualityRate,
+    required TResult Function() updateCommunicationRateSuccess,
+    required TResult Function() updateTimeRateSuccess,
+    required TResult Function() updateProfessionlRateSuccess,
+    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        getUserInfoError,
+  }) {
+    return sendComplainError(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? walletInfoLoading,
+    TResult? Function(WalletInfo data)? walletInfoSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
+    TResult? Function()? updateUserInfoLoading,
+    TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
+    TResult? Function()? userSkillsLoading,
+    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult? Function()? updateSkillLoading,
+    TResult? Function(UpdateSkill data)? updateSkillSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult? Function()? walletBlanceAddedLoading,
+    TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult? Function()? getRatesLoading,
+    TResult? Function(RatesModel rates)? getRatesSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult? Function()? getSettingLoading,
+    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult? Function()? updateRateLoading,
+    TResult? Function(UpdateSkill data)? updateRateSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult? Function()? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function()? getUserInfoLoading,
+    TResult? Function()? updateExperienceRateSuccess,
+    TResult? Function()? updateQualityRate,
+    TResult? Function()? updateCommunicationRateSuccess,
+    TResult? Function()? updateTimeRateSuccess,
+    TResult? Function()? updateProfessionlRateSuccess,
+    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
+  }) {
+    return sendComplainError?.call(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? walletInfoLoading,
+    TResult Function(WalletInfo data)? walletInfoSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
+    TResult Function()? updateUserInfoLoading,
+    TResult Function(UpdateSkill data)? updateUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
+    TResult Function()? userSkillsLoading,
+    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
+    TResult Function()? updateSkillLoading,
+    TResult Function(UpdateSkill data)? updateSkillSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
+    TResult Function()? walletBlanceAddedLoading,
+    TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult Function(NetworkExceptions networkExceptions)?
+        walletBalanceAdddedError,
+    TResult Function()? getRatesLoading,
+    TResult Function(RatesModel rates)? getRatesSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getRatesError,
+    TResult Function()? getSettingLoading,
+    TResult Function(List<SettingModel> settings)? getSettingSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
+    TResult Function()? updateRateLoading,
+    TResult Function(UpdateSkill data)? updateRateSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
+    TResult Function()? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function()? getUserInfoLoading,
+    TResult Function()? updateExperienceRateSuccess,
+    TResult Function()? updateQualityRate,
+    TResult Function()? updateCommunicationRateSuccess,
+    TResult Function()? updateTimeRateSuccess,
+    TResult Function()? updateProfessionlRateSuccess,
+    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (sendComplainError != null) {
+      return sendComplainError(networkExceptions);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
+    required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
+    required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
+    required TResult Function(UpdateUserInfoLoading<T> value)
+        updateUserInfoLoading,
+    required TResult Function(UpdateUserInfoSuccess<T> value)
+        updateUserInfoSuccess,
+    required TResult Function(UpdateUserInfoError<T> value) updateUserInfoError,
+    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
+    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
+    required TResult Function(UserSkillsError<T> value) userSkillsError,
+    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
+    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
+    required TResult Function(UpdateSkillError<T> value) updateSkillError,
+    required TResult Function(WalletBlanceAddedLoading<T> value)
+        walletBlanceAddedLoading,
+    required TResult Function(WalletBalanceAddedSuccedded<T> value)
+        walletBalanceAddedSuccedded,
+    required TResult Function(WalletBalanceAdddedError<T> value)
+        walletBalanceAdddedError,
+    required TResult Function(GetRatesLoading<T> value) getRatesLoading,
+    required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
+    required TResult Function(GetRatesError<T> value) getRatesError,
+    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
+    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
+    required TResult Function(GetSettingError<T> value) getSettingError,
+    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
+    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
+    required TResult Function(UpdateRateError<T> value) updateRateError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
+    required TResult Function(UpdateExperienceRateSuccess<T> value)
+        updateExperienceRateSuccess,
+    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
+    required TResult Function(UpdateCommunicationRateSuccess<T> value)
+        updateCommunicationRateSuccess,
+    required TResult Function(UpdateTimeRateSuccess<T> value)
+        updateTimeRateSuccess,
+    required TResult Function(UpdateProfessionlRateSuccess<T> value)
+        updateProfessionlRateSuccess,
+    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
+    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
+  }) {
+    return sendComplainError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
+    TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
+    TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
+    TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
+    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult? Function(UserSkillsError<T> value)? userSkillsError,
+    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult? Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult? Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult? Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult? Function(GetRatesError<T> value)? getRatesError,
+    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult? Function(GetSettingError<T> value)? getSettingError,
+    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult? Function(UpdateRateError<T> value)? updateRateError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult? Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
+  }) {
+    return sendComplainError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
+    TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
+    TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
+    TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
+    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
+    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
+    TResult Function(UserSkillsError<T> value)? userSkillsError,
+    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
+    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
+    TResult Function(UpdateSkillError<T> value)? updateSkillError,
+    TResult Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult Function(GetRatesLoading<T> value)? getRatesLoading,
+    TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
+    TResult Function(GetRatesError<T> value)? getRatesError,
+    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
+    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
+    TResult Function(GetSettingError<T> value)? getSettingError,
+    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
+    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
+    TResult Function(UpdateRateError<T> value)? updateRateError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
+    TResult Function(UpdateExperienceRateSuccess<T> value)?
+        updateExperienceRateSuccess,
+    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
+    TResult Function(UpdateCommunicationRateSuccess<T> value)?
+        updateCommunicationRateSuccess,
+    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
+    TResult Function(UpdateProfessionlRateSuccess<T> value)?
+        updateProfessionlRateSuccess,
+    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
+    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
+    required TResult orElse(),
+  }) {
+    if (sendComplainError != null) {
+      return sendComplainError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SendComplainError<T> implements MenuState<T> {
+  const factory SendComplainError(final NetworkExceptions networkExceptions) =
+      _$SendComplainError<T>;
+
+  NetworkExceptions get networkExceptions;
+  @JsonKey(ignore: true)
+  _$$SendComplainErrorCopyWith<T, _$SendComplainError<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 abstract class _$$UpdateUserInfoLoadingCopyWith<T, $Res> {
   factory _$$UpdateUserInfoLoadingCopyWith(_$UpdateUserInfoLoading<T> value,
           $Res Function(_$UpdateUserInfoLoading<T>) then) =
@@ -1791,6 +3040,10 @@ class _$UpdateUserInfoLoading<T> implements UpdateUserInfoLoading<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -1842,6 +3095,9 @@ class _$UpdateUserInfoLoading<T> implements UpdateUserInfoLoading<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -1886,6 +3142,9 @@ class _$UpdateUserInfoLoading<T> implements UpdateUserInfoLoading<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -1934,6 +3193,9 @@ class _$UpdateUserInfoLoading<T> implements UpdateUserInfoLoading<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -1988,6 +3250,9 @@ class _$UpdateUserInfoLoading<T> implements UpdateUserInfoLoading<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -2037,6 +3302,9 @@ class _$UpdateUserInfoLoading<T> implements UpdateUserInfoLoading<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -2159,6 +3427,10 @@ class _$UpdateUserInfoSuccess<T> implements UpdateUserInfoSuccess<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -2210,6 +3482,9 @@ class _$UpdateUserInfoSuccess<T> implements UpdateUserInfoSuccess<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -2254,6 +3529,9 @@ class _$UpdateUserInfoSuccess<T> implements UpdateUserInfoSuccess<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -2302,6 +3580,9 @@ class _$UpdateUserInfoSuccess<T> implements UpdateUserInfoSuccess<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -2356,6 +3637,9 @@ class _$UpdateUserInfoSuccess<T> implements UpdateUserInfoSuccess<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -2405,6 +3689,9 @@ class _$UpdateUserInfoSuccess<T> implements UpdateUserInfoSuccess<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -2543,6 +3830,10 @@ class _$UpdateUserInfoError<T> implements UpdateUserInfoError<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -2594,6 +3885,9 @@ class _$UpdateUserInfoError<T> implements UpdateUserInfoError<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -2638,6 +3932,9 @@ class _$UpdateUserInfoError<T> implements UpdateUserInfoError<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -2686,6 +3983,9 @@ class _$UpdateUserInfoError<T> implements UpdateUserInfoError<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -2740,6 +4040,9 @@ class _$UpdateUserInfoError<T> implements UpdateUserInfoError<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -2789,6 +4092,9 @@ class _$UpdateUserInfoError<T> implements UpdateUserInfoError<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -2889,6 +4195,10 @@ class _$UserSkillsLoading<T> implements UserSkillsLoading<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -2940,6 +4250,9 @@ class _$UserSkillsLoading<T> implements UserSkillsLoading<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -2984,6 +4297,9 @@ class _$UserSkillsLoading<T> implements UserSkillsLoading<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -3032,6 +4348,9 @@ class _$UserSkillsLoading<T> implements UserSkillsLoading<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -3086,6 +4405,9 @@ class _$UserSkillsLoading<T> implements UserSkillsLoading<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -3135,6 +4457,9 @@ class _$UserSkillsLoading<T> implements UserSkillsLoading<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -3262,6 +4587,10 @@ class _$UserSkillsSuccess<T> implements UserSkillsSuccess<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -3313,6 +4642,9 @@ class _$UserSkillsSuccess<T> implements UserSkillsSuccess<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -3357,6 +4689,9 @@ class _$UserSkillsSuccess<T> implements UserSkillsSuccess<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -3405,6 +4740,9 @@ class _$UserSkillsSuccess<T> implements UserSkillsSuccess<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -3459,6 +4797,9 @@ class _$UserSkillsSuccess<T> implements UserSkillsSuccess<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -3508,6 +4849,9 @@ class _$UserSkillsSuccess<T> implements UserSkillsSuccess<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -3646,6 +4990,10 @@ class _$UserSkillsError<T> implements UserSkillsError<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -3697,6 +5045,9 @@ class _$UserSkillsError<T> implements UserSkillsError<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -3741,6 +5092,9 @@ class _$UserSkillsError<T> implements UserSkillsError<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -3789,6 +5143,9 @@ class _$UserSkillsError<T> implements UserSkillsError<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -3843,6 +5200,9 @@ class _$UserSkillsError<T> implements UserSkillsError<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -3892,6 +5252,9 @@ class _$UserSkillsError<T> implements UserSkillsError<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -3992,6 +5355,10 @@ class _$UpdateSkillLoading<T> implements UpdateSkillLoading<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -4043,6 +5410,9 @@ class _$UpdateSkillLoading<T> implements UpdateSkillLoading<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -4087,6 +5457,9 @@ class _$UpdateSkillLoading<T> implements UpdateSkillLoading<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -4135,6 +5508,9 @@ class _$UpdateSkillLoading<T> implements UpdateSkillLoading<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -4189,6 +5565,9 @@ class _$UpdateSkillLoading<T> implements UpdateSkillLoading<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -4238,6 +5617,9 @@ class _$UpdateSkillLoading<T> implements UpdateSkillLoading<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -4359,6 +5741,10 @@ class _$UpdateSkillSuccess<T> implements UpdateSkillSuccess<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -4410,6 +5796,9 @@ class _$UpdateSkillSuccess<T> implements UpdateSkillSuccess<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -4454,6 +5843,9 @@ class _$UpdateSkillSuccess<T> implements UpdateSkillSuccess<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -4502,6 +5894,9 @@ class _$UpdateSkillSuccess<T> implements UpdateSkillSuccess<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -4556,6 +5951,9 @@ class _$UpdateSkillSuccess<T> implements UpdateSkillSuccess<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -4605,6 +6003,9 @@ class _$UpdateSkillSuccess<T> implements UpdateSkillSuccess<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -4743,6 +6144,10 @@ class _$UpdateSkillError<T> implements UpdateSkillError<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -4794,6 +6199,9 @@ class _$UpdateSkillError<T> implements UpdateSkillError<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -4838,6 +6246,9 @@ class _$UpdateSkillError<T> implements UpdateSkillError<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -4886,6 +6297,9 @@ class _$UpdateSkillError<T> implements UpdateSkillError<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -4940,6 +6354,9 @@ class _$UpdateSkillError<T> implements UpdateSkillError<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -4989,6 +6406,9 @@ class _$UpdateSkillError<T> implements UpdateSkillError<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -5091,6 +6511,10 @@ class _$WalletBlanceAddedLoading<T> implements WalletBlanceAddedLoading<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -5142,6 +6566,9 @@ class _$WalletBlanceAddedLoading<T> implements WalletBlanceAddedLoading<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -5186,6 +6613,9 @@ class _$WalletBlanceAddedLoading<T> implements WalletBlanceAddedLoading<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -5234,6 +6664,9 @@ class _$WalletBlanceAddedLoading<T> implements WalletBlanceAddedLoading<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -5288,6 +6721,9 @@ class _$WalletBlanceAddedLoading<T> implements WalletBlanceAddedLoading<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -5337,6 +6773,9 @@ class _$WalletBlanceAddedLoading<T> implements WalletBlanceAddedLoading<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -5461,6 +6900,10 @@ class _$WalletBalanceAddedSuccedded<T>
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -5512,6 +6955,9 @@ class _$WalletBalanceAddedSuccedded<T>
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -5556,6 +7002,9 @@ class _$WalletBalanceAddedSuccedded<T>
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -5604,6 +7053,9 @@ class _$WalletBalanceAddedSuccedded<T>
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -5658,6 +7110,9 @@ class _$WalletBalanceAddedSuccedded<T>
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -5707,6 +7162,9 @@ class _$WalletBalanceAddedSuccedded<T>
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -5846,6 +7304,10 @@ class _$WalletBalanceAdddedError<T> implements WalletBalanceAdddedError<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -5897,6 +7359,9 @@ class _$WalletBalanceAdddedError<T> implements WalletBalanceAdddedError<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -5941,6 +7406,9 @@ class _$WalletBalanceAdddedError<T> implements WalletBalanceAdddedError<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -5989,6 +7457,9 @@ class _$WalletBalanceAdddedError<T> implements WalletBalanceAdddedError<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -6043,6 +7514,9 @@ class _$WalletBalanceAdddedError<T> implements WalletBalanceAdddedError<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -6092,6 +7566,9 @@ class _$WalletBalanceAdddedError<T> implements WalletBalanceAdddedError<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -6193,6 +7670,10 @@ class _$GetRatesLoading<T> implements GetRatesLoading<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -6244,6 +7725,9 @@ class _$GetRatesLoading<T> implements GetRatesLoading<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -6288,6 +7772,9 @@ class _$GetRatesLoading<T> implements GetRatesLoading<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -6336,6 +7823,9 @@ class _$GetRatesLoading<T> implements GetRatesLoading<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -6390,6 +7880,9 @@ class _$GetRatesLoading<T> implements GetRatesLoading<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -6439,6 +7932,9 @@ class _$GetRatesLoading<T> implements GetRatesLoading<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -6560,6 +8056,10 @@ class _$GetRatesSuccess<T> implements GetRatesSuccess<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -6611,6 +8111,9 @@ class _$GetRatesSuccess<T> implements GetRatesSuccess<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -6655,6 +8158,9 @@ class _$GetRatesSuccess<T> implements GetRatesSuccess<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -6703,6 +8209,9 @@ class _$GetRatesSuccess<T> implements GetRatesSuccess<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -6757,6 +8266,9 @@ class _$GetRatesSuccess<T> implements GetRatesSuccess<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -6806,6 +8318,9 @@ class _$GetRatesSuccess<T> implements GetRatesSuccess<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -6942,6 +8457,10 @@ class _$GetRatesError<T> implements GetRatesError<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -6993,6 +8512,9 @@ class _$GetRatesError<T> implements GetRatesError<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -7037,6 +8559,9 @@ class _$GetRatesError<T> implements GetRatesError<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -7085,6 +8610,9 @@ class _$GetRatesError<T> implements GetRatesError<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -7139,6 +8667,9 @@ class _$GetRatesError<T> implements GetRatesError<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -7188,6 +8719,9 @@ class _$GetRatesError<T> implements GetRatesError<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -7288,6 +8822,10 @@ class _$GetSettingLoading<T> implements GetSettingLoading<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -7339,6 +8877,9 @@ class _$GetSettingLoading<T> implements GetSettingLoading<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -7383,6 +8924,9 @@ class _$GetSettingLoading<T> implements GetSettingLoading<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -7431,6 +8975,9 @@ class _$GetSettingLoading<T> implements GetSettingLoading<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -7485,6 +9032,9 @@ class _$GetSettingLoading<T> implements GetSettingLoading<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -7534,6 +9084,9 @@ class _$GetSettingLoading<T> implements GetSettingLoading<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -7662,6 +9215,10 @@ class _$GetSettingSuccess<T> implements GetSettingSuccess<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -7713,6 +9270,9 @@ class _$GetSettingSuccess<T> implements GetSettingSuccess<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -7757,6 +9317,9 @@ class _$GetSettingSuccess<T> implements GetSettingSuccess<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -7805,6 +9368,9 @@ class _$GetSettingSuccess<T> implements GetSettingSuccess<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -7859,6 +9425,9 @@ class _$GetSettingSuccess<T> implements GetSettingSuccess<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -7908,6 +9477,9 @@ class _$GetSettingSuccess<T> implements GetSettingSuccess<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -8046,6 +9618,10 @@ class _$GetSettingError<T> implements GetSettingError<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -8097,6 +9673,9 @@ class _$GetSettingError<T> implements GetSettingError<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -8141,6 +9720,9 @@ class _$GetSettingError<T> implements GetSettingError<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -8189,6 +9771,9 @@ class _$GetSettingError<T> implements GetSettingError<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -8243,6 +9828,9 @@ class _$GetSettingError<T> implements GetSettingError<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -8292,6 +9880,9 @@ class _$GetSettingError<T> implements GetSettingError<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -8392,6 +9983,10 @@ class _$UpdateRateLoading<T> implements UpdateRateLoading<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -8443,6 +10038,9 @@ class _$UpdateRateLoading<T> implements UpdateRateLoading<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -8487,6 +10085,9 @@ class _$UpdateRateLoading<T> implements UpdateRateLoading<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -8535,6 +10136,9 @@ class _$UpdateRateLoading<T> implements UpdateRateLoading<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -8589,6 +10193,9 @@ class _$UpdateRateLoading<T> implements UpdateRateLoading<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -8638,6 +10245,9 @@ class _$UpdateRateLoading<T> implements UpdateRateLoading<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -8759,6 +10369,10 @@ class _$UpdateRateSuccess<T> implements UpdateRateSuccess<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -8810,6 +10424,9 @@ class _$UpdateRateSuccess<T> implements UpdateRateSuccess<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -8854,6 +10471,9 @@ class _$UpdateRateSuccess<T> implements UpdateRateSuccess<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -8902,6 +10522,9 @@ class _$UpdateRateSuccess<T> implements UpdateRateSuccess<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -8956,6 +10579,9 @@ class _$UpdateRateSuccess<T> implements UpdateRateSuccess<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -9005,6 +10631,9 @@ class _$UpdateRateSuccess<T> implements UpdateRateSuccess<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -9143,6 +10772,10 @@ class _$UpdateRateError<T> implements UpdateRateError<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -9194,6 +10827,9 @@ class _$UpdateRateError<T> implements UpdateRateError<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -9238,6 +10874,9 @@ class _$UpdateRateError<T> implements UpdateRateError<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -9286,6 +10925,9 @@ class _$UpdateRateError<T> implements UpdateRateError<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -9340,6 +10982,9 @@ class _$UpdateRateError<T> implements UpdateRateError<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -9389,6 +11034,9 @@ class _$UpdateRateError<T> implements UpdateRateError<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -9490,6 +11138,10 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -9541,6 +11193,9 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -9585,6 +11240,9 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -9633,6 +11291,9 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -9687,6 +11348,9 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -9736,6 +11400,9 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -9831,6 +11498,10 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -9882,6 +11553,9 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -9926,6 +11600,9 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -9974,6 +11651,9 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -10028,6 +11708,9 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -10077,6 +11760,9 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -10171,6 +11857,10 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -10222,6 +11912,9 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -10266,6 +11959,9 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -10314,6 +12010,9 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -10368,6 +12067,9 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -10417,6 +12119,9 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -10511,6 +12216,10 @@ class _$GetUserInfoLoading<T> implements GetUserInfoLoading<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -10562,6 +12271,9 @@ class _$GetUserInfoLoading<T> implements GetUserInfoLoading<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -10606,6 +12318,9 @@ class _$GetUserInfoLoading<T> implements GetUserInfoLoading<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -10654,6 +12369,9 @@ class _$GetUserInfoLoading<T> implements GetUserInfoLoading<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -10708,6 +12426,9 @@ class _$GetUserInfoLoading<T> implements GetUserInfoLoading<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -10757,6 +12478,9 @@ class _$GetUserInfoLoading<T> implements GetUserInfoLoading<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -10855,6 +12579,10 @@ class _$UpdateExperienceRateSuccess<T>
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -10906,6 +12634,9 @@ class _$UpdateExperienceRateSuccess<T>
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -10950,6 +12681,9 @@ class _$UpdateExperienceRateSuccess<T>
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -10998,6 +12732,9 @@ class _$UpdateExperienceRateSuccess<T>
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -11052,6 +12789,9 @@ class _$UpdateExperienceRateSuccess<T>
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -11101,6 +12841,9 @@ class _$UpdateExperienceRateSuccess<T>
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -11196,6 +12939,10 @@ class _$UpdateQualityRate<T> implements UpdateQualityRate<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -11247,6 +12994,9 @@ class _$UpdateQualityRate<T> implements UpdateQualityRate<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -11291,6 +13041,9 @@ class _$UpdateQualityRate<T> implements UpdateQualityRate<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -11339,6 +13092,9 @@ class _$UpdateQualityRate<T> implements UpdateQualityRate<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -11393,6 +13149,9 @@ class _$UpdateQualityRate<T> implements UpdateQualityRate<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -11442,6 +13201,9 @@ class _$UpdateQualityRate<T> implements UpdateQualityRate<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -11541,6 +13303,10 @@ class _$UpdateCommunicationRateSuccess<T>
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -11592,6 +13358,9 @@ class _$UpdateCommunicationRateSuccess<T>
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -11636,6 +13405,9 @@ class _$UpdateCommunicationRateSuccess<T>
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -11684,6 +13456,9 @@ class _$UpdateCommunicationRateSuccess<T>
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -11738,6 +13513,9 @@ class _$UpdateCommunicationRateSuccess<T>
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -11787,6 +13565,9 @@ class _$UpdateCommunicationRateSuccess<T>
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -11883,6 +13664,10 @@ class _$UpdateTimeRateSuccess<T> implements UpdateTimeRateSuccess<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -11934,6 +13719,9 @@ class _$UpdateTimeRateSuccess<T> implements UpdateTimeRateSuccess<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -11978,6 +13766,9 @@ class _$UpdateTimeRateSuccess<T> implements UpdateTimeRateSuccess<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -12026,6 +13817,9 @@ class _$UpdateTimeRateSuccess<T> implements UpdateTimeRateSuccess<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -12080,6 +13874,9 @@ class _$UpdateTimeRateSuccess<T> implements UpdateTimeRateSuccess<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -12129,6 +13926,9 @@ class _$UpdateTimeRateSuccess<T> implements UpdateTimeRateSuccess<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -12227,6 +14027,10 @@ class _$UpdateProfessionlRateSuccess<T>
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -12278,6 +14082,9 @@ class _$UpdateProfessionlRateSuccess<T>
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -12322,6 +14129,9 @@ class _$UpdateProfessionlRateSuccess<T>
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -12370,6 +14180,9 @@ class _$UpdateProfessionlRateSuccess<T>
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -12424,6 +14237,9 @@ class _$UpdateProfessionlRateSuccess<T>
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -12473,6 +14289,9 @@ class _$UpdateProfessionlRateSuccess<T>
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -12596,6 +14415,10 @@ class _$GetUserInfoSuccess<T> implements GetUserInfoSuccess<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -12647,6 +14470,9 @@ class _$GetUserInfoSuccess<T> implements GetUserInfoSuccess<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -12691,6 +14517,9 @@ class _$GetUserInfoSuccess<T> implements GetUserInfoSuccess<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -12739,6 +14568,9 @@ class _$GetUserInfoSuccess<T> implements GetUserInfoSuccess<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -12793,6 +14625,9 @@ class _$GetUserInfoSuccess<T> implements GetUserInfoSuccess<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -12842,6 +14677,9 @@ class _$GetUserInfoSuccess<T> implements GetUserInfoSuccess<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -12980,6 +14818,10 @@ class _$GetUserInfoError<T> implements GetUserInfoError<T> {
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
         walletInfoError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function(UpdateSkill data) sendComplainSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendComplainError,
     required TResult Function() updateUserInfoLoading,
     required TResult Function(UpdateSkill data) updateUserInfoSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -13031,6 +14873,9 @@ class _$GetUserInfoError<T> implements GetUserInfoError<T> {
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function(UpdateSkill data)? sendComplainSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult? Function()? updateUserInfoLoading,
     TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -13075,6 +14920,9 @@ class _$GetUserInfoError<T> implements GetUserInfoError<T> {
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
+    TResult Function()? sendComplainLoading,
+    TResult Function(UpdateSkill data)? sendComplainSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
     TResult Function()? updateUserInfoLoading,
     TResult Function(UpdateSkill data)? updateUserInfoSuccess,
     TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
@@ -13123,6 +14971,9 @@ class _$GetUserInfoError<T> implements GetUserInfoError<T> {
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
     required TResult Function(UpdateUserInfoLoading<T> value)
         updateUserInfoLoading,
     required TResult Function(UpdateUserInfoSuccess<T> value)
@@ -13177,6 +15028,9 @@ class _$GetUserInfoError<T> implements GetUserInfoError<T> {
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
     TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
@@ -13226,6 +15080,9 @@ class _$GetUserInfoError<T> implements GetUserInfoError<T> {
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
     TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
     TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
     TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
