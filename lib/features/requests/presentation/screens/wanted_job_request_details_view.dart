@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:pip/core/widgets/custom_clock_date.dart';
-import 'package:pip/core/widgets/custom_network_image.dart';
-import 'package:pip/features/requests/data/models/my_request_model.dart';
+import '../../../../core/widgets/custom_clock_date.dart';
+import '../../../../core/widgets/custom_network_image.dart';
+import '../../data/models/my_request_model.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/commons.dart';
 import '../../../../core/resources/route_manager.dart';

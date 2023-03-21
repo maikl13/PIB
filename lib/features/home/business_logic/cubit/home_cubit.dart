@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pip/features/home/data/models/ad_model.dart';
+import '../../data/models/ad_model.dart';
 
 import '../../../../core/resources/constants.dart';
 import '../../../../core/web_services/network_exceptions.dart';

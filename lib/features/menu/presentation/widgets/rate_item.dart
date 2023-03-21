@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/resources/assets_manager.dart';
-import 'package:pip/core/resources/constants.dart';
+import '../../../../core/resources/assets_manager.dart';
 
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
@@ -10,13 +9,14 @@ import '../../../../core/resources/style_manager.dart';
 import '../../../../core/widgets/rating_bar.dart';
 import '../../business_logic/menu_cubit.dart';
 
+// ignore: must_be_immutable
 class RateItem extends StatefulWidget {
   RateItem({
     super.key,
     required this.rateNumber, required this.onRatingUpdate,
   });
   void Function(double) onRatingUpdate;
-  double rateNumber;
+  final double rateNumber;
   
 
   @override

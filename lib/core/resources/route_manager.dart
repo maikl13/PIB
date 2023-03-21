@@ -1,31 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pip/features/auth/business_logic/cubit/auth_cubit.dart';
-import 'package:pip/features/auth/presentation/screens/confirm_otb_view.dart';
-import 'package:pip/features/chat/presentation/screens/chat_add_offer_view.dart';
-import 'package:pip/features/chat/presentation/screens/chats_view.dart';
-import 'package:pip/features/chat/presentation/screens/conversation_type_view.dart';
-import 'package:pip/features/home/data/models/ad_model.dart';
-import 'package:pip/features/home/presentation/screens/companeis_need_jobs.view.dart';
-import 'package:pip/features/home/presentation/screens/full_time_jobs_view.dart';
-import 'package:pip/features/home/presentation/screens/part_time_jobs_view.dart';
-import 'package:pip/features/map/presentation/screens/available_drivers.dart';
-import 'package:pip/features/map/presentation/screens/confirm_driver.dart';
-import 'package:pip/features/menu/business_logic/menu_cubit.dart';
-import 'package:pip/features/menu/presentation/screens/contact_us_view.dart';
-import 'package:pip/features/menu/presentation/screens/edit_password_view.dart';
-import 'package:pip/features/menu/presentation/screens/edit_profile_view.dart';
-import 'package:pip/features/menu/presentation/screens/menu_view.dart';
-import 'package:pip/features/menu/presentation/screens/rate_us_view.dart';
-import 'package:pip/features/menu/presentation/screens/skills_view.dart';
-import 'package:pip/features/menu/presentation/screens/wallet_view.dart';
-import 'package:pip/features/menu/presentation/screens/who_we_are_view.dart';
-import 'package:pip/features/menu/presentation/screens/work_with_us_view.dart';
-import 'package:pip/features/notification/business_logic/cubit/notification_cubit.dart';
-import 'package:pip/features/pip/business_logic/cubit/pip_cubit.dart';
-import 'package:pip/features/requests/data/models/my_request_model.dart';
-import 'package:pip/features/requests/data/models/offer_model.dart';
-import 'package:pip/features/search/business_logic/bloc/search_bloc.dart';
+import '../../features/auth/business_logic/cubit/auth_cubit.dart';
+import '../../features/auth/presentation/screens/confirm_otb_view.dart';
+import '../../features/chat/presentation/screens/chat_add_offer_view.dart';
+import '../../features/chat/presentation/screens/chats_view.dart';
+import '../../features/chat/presentation/screens/conversation_type_view.dart';
+import '../../features/home/data/models/ad_model.dart';
+import '../../features/home/presentation/screens/companeis_need_jobs.view.dart';
+import '../../features/home/presentation/screens/full_time_jobs_view.dart';
+import '../../features/home/presentation/screens/part_time_jobs_view.dart';
+import '../../features/map/presentation/screens/available_drivers.dart';
+import '../../features/map/presentation/screens/confirm_driver.dart';
+import '../../features/menu/business_logic/menu_cubit.dart';
+import '../../features/menu/presentation/screens/contact_us_view.dart';
+import '../../features/menu/presentation/screens/edit_password_view.dart';
+import '../../features/menu/presentation/screens/edit_profile_view.dart';
+import '../../features/menu/presentation/screens/menu_view.dart';
+import '../../features/menu/presentation/screens/rate_us_view.dart';
+import '../../features/menu/presentation/screens/skills_view.dart';
+import '../../features/menu/presentation/screens/wallet_view.dart';
+import '../../features/menu/presentation/screens/who_we_are_view.dart';
+import '../../features/menu/presentation/screens/work_with_us_view.dart';
+import '../../features/notification/business_logic/cubit/notification_cubit.dart';
+import '../../features/pip/business_logic/cubit/pip_cubit.dart';
+import '../../features/requests/data/models/my_request_model.dart';
+import '../../features/requests/data/models/offer_model.dart';
+import '../../features/search/business_logic/bloc/search_bloc.dart';
 import '../../features/auth/presentation/screens/forgot_password_view.dart';
 import '../../features/auth/presentation/screens/login_view.dart';
 import '../../features/auth/presentation/screens/main_auth_view.dart';
@@ -251,8 +251,11 @@ class RouteGenerator {
 
         final OfferModel offer = arguments['offer'];
         return MaterialPageRoute(
-          builder: (_) => RecievedOfferDetails(
-            offer: offer,
+          builder: (_) => BlocProvider.value(
+            value: requestsCubit,
+            child: RecievedOfferDetails(
+              offer: offer,
+            ),
           ),
         );
 
@@ -267,8 +270,16 @@ class RouteGenerator {
         );
 
       case Routes.giveOffersViewRoute:
+        final arguments = settings.arguments as Map;
+
+        final String requestId = arguments['requestId'];
         return MaterialPageRoute(
-          builder: (_) => const GiveOfferView(),
+          builder: (_) => BlocProvider.value(
+            value: requestsCubit,
+            child: GiveOfferView(
+              requestId: requestId,
+            ),
+          ),
         );
 
       case Routes.chatsViewRoute:
@@ -288,9 +299,9 @@ class RouteGenerator {
         );
       case Routes.editProfileViewRoute:
         return MaterialPageRoute(
-          builder: (_) =>  BlocProvider.value(
+          builder: (_) => BlocProvider.value(
             value: menuCubit,
-            child:const EditProfileView(),
+            child: const EditProfileView(),
           ),
         );
 

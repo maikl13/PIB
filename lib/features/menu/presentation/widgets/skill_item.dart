@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/resources/color_manager.dart';
-import 'package:pip/core/resources/constants.dart';
-import 'package:pip/core/resources/style_manager.dart';
-import 'package:pip/core/widgets/custom_network_image.dart';
-import 'package:pip/features/menu/business_logic/menu_cubit.dart';
-import 'package:pip/features/pip/presentation/widgets/custom_switch.dart';
+import '../../../../core/resources/color_manager.dart';
+import '../../../../core/resources/constants.dart';
+import '../../../../core/resources/style_manager.dart';
+import '../../../../core/widgets/custom_network_image.dart';
+import '../../business_logic/menu_cubit.dart';
+import '../../../pip/presentation/widgets/custom_switch.dart';
 
 import '../../../pip/data/models/skills_model.dart';
 
 class SkillItem extends StatefulWidget {
-  SkillItem({
+  const SkillItem({
     super.key,
     required this.skills,
     required this.index,

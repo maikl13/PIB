@@ -6,10 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:pip/features/menu/data/models/rates_model.dart';
-import 'package:pip/features/menu/data/models/setting_model.dart';
-import 'package:pip/features/menu/data/models/update_skill.dart';
-import 'package:pip/features/menu/data/models/user_info_model.dart';
+import '../data/models/rates_model.dart';
+import '../data/models/setting_model.dart';
+import '../data/models/update_skill.dart';
+import '../data/models/user_info_model.dart';
 import '../../../../core/web_services/network_exceptions.dart';
 import '../../../core/resources/color_manager.dart';
 import '../../../core/resources/commons.dart';
@@ -125,11 +125,10 @@ class MenuCubit extends Cubit<MenuState> {
     );
   }
 
-
-  void sendComplain(  String phone,String notes ) async {
+  void sendComplain(String phone, String notes) async {
     emit(const MenuState.sendComplainLoading());
-    var result =
-        await menuRepository.sendComplain(userName ??'', phone, userEmail??'', notes);
+    var result = await menuRepository.sendComplain(
+        userName ?? '', phone, userEmail ?? '', notes);
     result.when(
       success: (UpdateSkill data) {
         emit(MenuState.sendComplainSuccess(data));
@@ -229,7 +228,7 @@ class MenuCubit extends Cubit<MenuState> {
   void updateSkill() async {
     emit(const MenuState.updateSkillLoading());
     // ignore: prefer_typing_uninitialized_variables
-    var result = await menuRepository.updateSkill(skills);
+    var result = await menuRepository.updateSkill(skills.join(','));
     result.when(
       success: (UpdateSkill data) {
         // notifications = notifications;
@@ -264,6 +263,11 @@ class MenuCubit extends Cubit<MenuState> {
     var result = await menuRepository.getAllUserSkills();
     result.when(
       success: (List<SkillModel> skills) {
+        for (var element in skills) {
+          if (element.enabled == 1) {
+            this.skills.add(element.id!);
+          }
+        }
         emit(MenuState.userSkillsSuccess(skills));
       },
       failure: (NetworkExceptions networkExceptions) {

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/resources/commons.dart';
-import 'package:pip/core/resources/constants.dart';
-import 'package:pip/core/resources/strings_manager.dart';
-import 'package:pip/core/widgets/custom_appbar.dart';
-import 'package:pip/core/widgets/custom_network_image.dart';
-import 'package:pip/core/widgets/default_button.dart';
-import 'package:pip/features/menu/business_logic/menu_cubit.dart';
-import 'package:pip/features/menu/business_logic/menu_state.dart';
+import '../../../../core/resources/commons.dart';
+import '../../../../core/resources/constants.dart';
+import '../../../../core/resources/strings_manager.dart';
+import '../../../../core/widgets/custom_appbar.dart';
+import '../../../../core/widgets/custom_network_image.dart';
+import '../../../../core/widgets/default_button.dart';
+import '../../business_logic/menu_cubit.dart';
+import '../../business_logic/menu_state.dart';
 
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/widgets/default_phone_textfield.dart';
@@ -22,9 +22,9 @@ class EditProfileView extends StatefulWidget {
 }
 
 class _EditProfileViewState extends State<EditProfileView> {
-  TextEditingController _nameController = TextEditingController();
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _phoneController = TextEditingController();
   _buildBody(BuildContext context) {
     return BlocListener<MenuCubit, MenuState>(
       listener: (context, state) {

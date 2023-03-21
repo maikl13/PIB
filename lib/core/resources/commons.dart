@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:pip/core/resources/route_manager.dart';
+import 'route_manager.dart';
 import 'assets_manager.dart';
 import 'strings_manager.dart';
 import 'style_manager.dart';

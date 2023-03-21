@@ -1,6 +1,6 @@
-import 'package:pip/core/resources/route_manager.dart';
-import 'package:pip/core/widgets/default_button.dart';
-import 'package:pip/features/chat/presentation/widgets/action_item.dart';
+import '../../../../core/resources/route_manager.dart';
+import '../../../../core/widgets/default_button.dart';
+import 'action_item.dart';
 
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/strings_manager.dart';

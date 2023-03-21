@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/features/requests/business_logic/cubit/requests_cubit.dart';
-import 'package:pip/features/requests/business_logic/cubit/requests_state.dart';
-import 'package:pip/features/requests/data/models/my_request_model.dart';
+import '../../business_logic/cubit/requests_cubit.dart';
+import '../../business_logic/cubit/requests_state.dart';
+import '../../data/models/my_request_model.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/widgets/custom_title.dart';
 

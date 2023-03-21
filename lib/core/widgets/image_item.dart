@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/widgets/custom_network_image.dart';
+import 'custom_network_image.dart';
 
 import '../resources/color_manager.dart';
 import '../resources/style_manager.dart';

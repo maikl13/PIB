@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/resources/strings_manager.dart';
+import 'strings_manager.dart';
 import 'color_manager.dart';
 
 import 'font_manager.dart';

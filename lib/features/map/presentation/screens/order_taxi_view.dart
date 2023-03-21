@@ -3,12 +3,12 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:pip/core/resources/color_manager.dart';
-import 'package:pip/core/resources/route_manager.dart';
-import 'package:pip/core/resources/strings_manager.dart';
-import 'package:pip/core/resources/style_manager.dart';
-import 'package:pip/core/widgets/default_button.dart';
-import 'package:pip/core/widgets/leading_arrow.dart';
+import '../../../../core/resources/color_manager.dart';
+import '../../../../core/resources/route_manager.dart';
+import '../../../../core/resources/strings_manager.dart';
+import '../../../../core/resources/style_manager.dart';
+import '../../../../core/widgets/default_button.dart';
+import '../../../../core/widgets/leading_arrow.dart';
 import '../../../../core/resources/assets_manager.dart';
 
 class SelectLocation extends StatefulWidget {

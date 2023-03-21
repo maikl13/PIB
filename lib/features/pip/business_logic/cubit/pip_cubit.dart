@@ -2,10 +2,10 @@ import 'dart:io';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/services.dart';
-import 'package:pip/features/menu/data/models/update_skill.dart';
-import 'package:pip/features/pip/business_logic/cubit/pip_state.dart';
-import 'package:pip/features/pip/data/models/skills_model.dart';
-import 'package:pip/features/pip/data/repository/pip_repository.dart';
+import '../../../menu/data/models/update_skill.dart';
+import 'pip_state.dart';
+import '../../data/models/skills_model.dart';
+import '../../data/repository/pip_repository.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../../../../core/resources/commons.dart';
@@ -19,7 +19,7 @@ class PipCubit extends Cubit<PipState> {
   List<File> imagesFile = [];
   deleteImage(int index) {
     imagesFile.removeAt(index);
-    emit( PipState.imageSelectedDeleted(imagesFile));
+    emit(PipState.imageSelectedDeleted(imagesFile));
   }
 
   Future pickImage() async {
@@ -34,7 +34,7 @@ class PipCubit extends Cubit<PipState> {
     } on PlatformException catch (e) {
       emit(const PipState.imageSelectedError());
       Commons.showToast(message: e.toString());
-      print('Failed to pick image $e ');
+      // print('Failed to pick image $e ');
     }
   }
 
@@ -63,7 +63,7 @@ class PipCubit extends Cubit<PipState> {
     emit(const PipState.createSpecialRequestLoading());
 
     // ignore: prefer_typing_uninitialized_variables
-    var result = imagesFile == null
+    var result = imagesFile.isEmpty
         ? await pipRepsitory.createSpecialWithoutImageRequest(
             categoryId!, price!, location!, description!)
         : await pipRepsitory.createSpecialRequest(
@@ -72,7 +72,7 @@ class PipCubit extends Cubit<PipState> {
     result.when(
       success: (UpdateSkill data) {
         emit(PipState.createSpecialRequestSuccess(data));
-        print(data.toString());
+        // print(data.toString());
       },
       failure: (NetworkExceptions networkExceptions) {
         emit(PipState.createSpecialRequestError(networkExceptions));

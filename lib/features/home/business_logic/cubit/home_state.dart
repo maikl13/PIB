@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:pip/features/home/data/models/ad_model.dart';
+import '../../data/models/ad_model.dart';
 
 import '../../../../core/web_services/network_exceptions.dart';
 import '../../data/models/slider_model.dart';

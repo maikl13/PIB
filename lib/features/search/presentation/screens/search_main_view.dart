@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/widgets/loading_indicator.dart';
+import '../../../../core/widgets/loading_indicator.dart';
 import '../../../../core/widgets/leading_arrow.dart';
 import '../../../home/presentation/widgets/search_bar.dart';
 

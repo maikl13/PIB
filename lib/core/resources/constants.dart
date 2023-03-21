@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pip/core/resources/assets_manager.dart';
-import 'package:pip/core/resources/route_manager.dart';
+import 'assets_manager.dart';
+import 'route_manager.dart';
 
 import 'strings_manager.dart';
 
@@ -15,7 +15,7 @@ class AppConstants {
 
 String defaultUId = '0';
 String? userName;
-String? token = '1234';
+String? token = '123';
 String? userEmail;
 
 String? userPhone;

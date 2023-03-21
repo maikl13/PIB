@@ -1,4 +1,4 @@
-import 'package:pip/features/home/data/models/ad_model.dart';
+import '../../../home/data/models/ad_model.dart';
 
 abstract class SearchState {}
 

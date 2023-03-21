@@ -1,9 +1,8 @@
 import 'dart:io';
 
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:pip/features/menu/data/models/rates_model.dart';
-import 'package:pip/features/menu/data/models/setting_model.dart';
-import 'package:pip/features/menu/data/models/update_skill.dart';
+import '../models/rates_model.dart';
+import '../models/setting_model.dart';
+import '../models/update_skill.dart';
 
 import '../../../../core/resources/constants.dart';
 import '../../../../core/web_services/api_result.dart';
@@ -37,7 +36,7 @@ class MenuRepository {
     }
   }
 
-  Future<ApiResult<UpdateSkill>> updateSkill(List<int> skills) async {
+  Future<ApiResult<UpdateSkill>> updateSkill(String skills) async {
     try {
       var response = await webServices.updateSkill('Bearer $token', skills);
       return ApiResult.success(response);

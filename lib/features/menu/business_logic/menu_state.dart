@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:pip/features/menu/data/models/update_skill.dart';
-import 'package:pip/features/pip/data/models/skills_model.dart';
+import '../data/models/update_skill.dart';
+import '../../pip/data/models/skills_model.dart';
 import '../../../../core/web_services/network_exceptions.dart';
 import '../data/models/add_balance.dart';
 import '../data/models/rates_model.dart';

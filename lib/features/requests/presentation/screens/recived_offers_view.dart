@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/widgets/loading_indicator.dart';
-import 'package:pip/features/requests/business_logic/cubit/requests_cubit.dart';
-import 'package:pip/features/requests/business_logic/cubit/requests_state.dart';
+import '../../../../core/resources/commons.dart';
+import '../../../../core/widgets/loading_indicator.dart';
+import '../../business_logic/cubit/requests_cubit.dart';
+import '../../business_logic/cubit/requests_state.dart';
+import '../../../../core/resources/constants.dart';
+import '../../../../core/resources/route_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/widgets/custom_appbar.dart';
 
@@ -21,7 +24,19 @@ class RecievedOffersView extends StatefulWidget {
 class _RecievedOffersViewState extends State<RecievedOffersView> {
   _buildBloc() {
     return BlocConsumer<RequestsCubit, RequestState>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        state.whenOrNull(
+          acceptOfferSuccess: (data) {
+            Commons.showToast(
+                message: 'تم قبول العرض بنجاح', color: ColorManager.green);
+            screenIndex = 2;
+            Navigator.of(context).pushNamed(Routes.mainHomeViewRoute);
+          },
+          acceptOfferError: (error) {
+            Commons.showToast(message: error.toString());
+          },
+        );
+      },
       buildWhen: (previous, next) => next is OffersSuccess,
       builder: (context, state) {
         return state.maybeWhen(

@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:pip/features/chat/data/models/hiring_chat_model.dart';
+import '../data/models/hiring_chat_model.dart';
 
 
 import '../../../core/web_services/network_exceptions.dart';

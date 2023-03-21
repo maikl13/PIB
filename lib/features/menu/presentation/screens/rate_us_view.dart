@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/resources/color_manager.dart';
-import 'package:pip/core/resources/commons.dart';
-import 'package:pip/core/resources/strings_manager.dart';
-import 'package:pip/core/resources/style_manager.dart';
-import 'package:pip/core/widgets/custom_appbar.dart';
-import 'package:pip/core/widgets/default_button.dart';
-import 'package:pip/core/widgets/rating_stars.dart';
-import 'package:pip/features/menu/business_logic/menu_cubit.dart';
-import 'package:pip/features/menu/business_logic/menu_state.dart';
-import 'package:pip/features/menu/data/models/rates_model.dart';
+import '../../../../core/resources/color_manager.dart';
+import '../../../../core/resources/commons.dart';
+import '../../../../core/resources/strings_manager.dart';
+import '../../../../core/resources/style_manager.dart';
+import '../../../../core/widgets/custom_appbar.dart';
+import '../../../../core/widgets/default_button.dart';
+import '../../../../core/widgets/rating_stars.dart';
+import '../../business_logic/menu_cubit.dart';
+import '../../business_logic/menu_state.dart';
+import '../../data/models/rates_model.dart';
 
 import '../../../../core/widgets/loading_indicator.dart';
 import '../widgets/rate_item.dart';

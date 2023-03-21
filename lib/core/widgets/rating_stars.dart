@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/widgets/rating_bar.dart';
+import 'rating_bar.dart';
 
 import '../resources/assets_manager.dart';
 import '../resources/color_manager.dart';

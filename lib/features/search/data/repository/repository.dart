@@ -1,7 +1,7 @@
 
 
 
-import 'package:pip/features/home/data/models/ad_model.dart';
+import '../../../home/data/models/ad_model.dart';
 
 import '../../../../core/resources/constants.dart';
 import '../../../../core/web_services/api_result.dart';

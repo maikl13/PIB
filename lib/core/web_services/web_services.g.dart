@@ -186,13 +186,13 @@ class _WebServices implements WebServices {
   @override
   Future<UpdateSkill> updateSkill(
     token,
-    skills,
+    skill,
   ) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{r'Authorization': token};
     _headers.removeWhere((k, v) => v == null);
-    final _data = skills;
+    final _data = {'id': skill};
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<UpdateSkill>(Options(
       method: 'POST',
@@ -458,6 +458,125 @@ class _WebServices implements WebServices {
   }
 
   @override
+  Future<UpdateSkill> giveOffer(
+    token,
+    price,
+    duration,
+    description,
+    img,
+    requestId,
+  ) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
+    final _data = FormData();
+    if (price != null) {
+      _data.fields.add(MapEntry(
+        'price',
+        price,
+      ));
+    }
+    if (duration != null) {
+      _data.fields.add(MapEntry(
+        'duration',
+        duration,
+      ));
+    }
+    if (description != null) {
+      _data.fields.add(MapEntry(
+        'description',
+        description,
+      ));
+    }
+    _data.files.addAll(img.map((i) => MapEntry(
+        'images[]',
+        MultipartFile.fromFileSync(
+          i.path,
+          filename: i.path.split(Platform.pathSeparator).last,
+        ))));
+    if (requestId != null) {
+      _data.fields.add(MapEntry(
+        'request_id',
+        requestId,
+      ));
+    }
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<UpdateSkill>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+      contentType: 'multipart/form-data',
+    )
+            .compose(
+              _dio.options,
+              'offers/create',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = UpdateSkill.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<UpdateSkill> giveOfferWithoutImages(
+    token,
+    price,
+    duration,
+    description,
+    requestId,
+  ) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
+    final _data = FormData();
+    if (price != null) {
+      _data.fields.add(MapEntry(
+        'price',
+        price,
+      ));
+    }
+    if (duration != null) {
+      _data.fields.add(MapEntry(
+        'duration',
+        duration,
+      ));
+    }
+    if (description != null) {
+      _data.fields.add(MapEntry(
+        'description',
+        description,
+      ));
+    }
+    if (requestId != null) {
+      _data.fields.add(MapEntry(
+        'request_id',
+        requestId,
+      ));
+    }
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<UpdateSkill>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+      contentType: 'multipart/form-data',
+    )
+            .compose(
+              _dio.options,
+              'offers/create',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = UpdateSkill.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
   Future<UpdateSkill> createSpecialRequestWithoutImage(
     token,
     categoryId,
@@ -482,11 +601,39 @@ class _WebServices implements WebServices {
       method: 'POST',
       headers: _headers,
       extra: _extra,
-      contentType: 'multipart/form-data',
     )
             .compose(
               _dio.options,
               'deals/create',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = UpdateSkill.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<UpdateSkill> acceptOffer(
+    token,
+    offerId,
+  ) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
+    final _data = {'offer_id': offerId};
+    _data.removeWhere((k, v) => v == null);
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<UpdateSkill>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'deals/offers/accept',
               queryParameters: queryParameters,
               data: _data,
             )

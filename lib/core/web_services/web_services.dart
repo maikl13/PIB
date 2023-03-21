@@ -1,10 +1,10 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:pip/features/home/data/models/ad_model.dart';
-import 'package:pip/features/menu/data/models/setting_model.dart';
-import 'package:pip/features/menu/data/models/update_skill.dart';
-import 'package:pip/features/pip/data/models/skills_model.dart';
+import '../../features/home/data/models/ad_model.dart';
+import '../../features/menu/data/models/setting_model.dart';
+import '../../features/menu/data/models/update_skill.dart';
+import '../../features/pip/data/models/skills_model.dart';
 
 import 'package:retrofit/retrofit.dart';
 
@@ -59,7 +59,7 @@ abstract class WebServices {
 //-----------------------new-----------------------------------------------------------------
   @POST("user/skills/update")
   Future<UpdateSkill> updateSkill(
-      @Header('Authorization') String token, @Body() List<int> skills);
+      @Header('Authorization') String token, @Field('id') String skill);
 //-----------------------new-----------------------------------------------------------------
   @GET("ads/search")
   Future<List<Ads>> getSearchResults(
@@ -99,9 +99,30 @@ abstract class WebServices {
     @Part(name: 'description') String? description,
     @Part(name: 'images[]') List<File> img,
   );
+  //-----------------------new-----------------------------------------------------------------
+  @POST("offers/create")
+  @MultiPart()
+  Future<UpdateSkill> giveOffer(
+    @Header('Authorization') String token,
+    @Part(name: 'price') String? price,
+    @Part(name: 'duration') String? duration,
+    @Part(name: 'description') String? description,
+    @Part(name: 'images[]') List<File> img,
+    @Part(name: 'request_id') String? requestId,
+  );
+  //-----------------------new-----------------------------------------------------------------
+  @POST("offers/create")
+  @MultiPart()
+  Future<UpdateSkill> giveOfferWithoutImages(
+    @Header('Authorization') String token,
+    @Part(name: 'price') String? price,
+    @Part(name: 'duration') String? duration,
+    @Part(name: 'description') String? description,
+    // @Part(name: 'images[]') List<File> img,
+    @Part(name: 'request_id') String? requestId,
+  );
 //-----------------------new-----------------------------------------------------------------
   @POST("deals/create")
-  @MultiPart()
   Future<UpdateSkill> createSpecialRequestWithoutImage(
     @Header('Authorization') String token,
     @Field('category_id') String? categoryId,
@@ -109,8 +130,14 @@ abstract class WebServices {
     @Field('location') String? location,
     @Field('description') String? description,
   );
+  //-----------------------new-----------------------------------------------------------------
+  @POST("deals/offers/accept")
+  Future<UpdateSkill> acceptOffer(
+    @Header('Authorization') String token,
+    @Field('offer_id') String? offerId,
+  );
 //-----------------------new-----------------------------------------------------------------
-   @GET("ratings")
+  @GET("ratings")
   Future<RatesModel> getAllRates(@Header('Authorization') String token);
 //-----------------------new-----------------------------------------------------------------
   @POST("ratings/create")
@@ -123,7 +150,7 @@ abstract class WebServices {
     @Field("time_stars") timeStars,
   );
 //-----------------------new-----------------------------------------------------------------
-     @GET("user/info")
+  @GET("user/info")
   Future<UserInfoModel> getUserInfo(@Header('Authorization') String token);
 //-----------------------new-----------------------------------------------------------------
   @POST("user/update")
@@ -136,7 +163,7 @@ abstract class WebServices {
     @Header('Authorization') String token,
   );
 //-----------------------new-----------------------------------------------------------------
-    @POST("user/update")
+  @POST("user/update")
   @MultiPart()
   Future<UpdateSkill> updateProfileWithoutImage(
     @Part(name: 'name') String? name,
@@ -146,16 +173,19 @@ abstract class WebServices {
     @Header('Authorization') String token,
   );
 //-----------------------new-----------------------------------------------------------------
-   @GET("app/settings")
-  Future<List<SettingModel>> getAllSettings(@Header('Authorization') String token);
+  @GET("app/settings")
+  Future<List<SettingModel>> getAllSettings(
+      @Header('Authorization') String token);
 //-----------------------new-----------------------------------------------------------------
-   @GET("user/chats/hirings")
-  Future<List<HiringChatModel>> getAllHiringChats(@Header('Authorization') String token);
+  @GET("user/chats/hirings")
+  Future<List<HiringChatModel>> getAllHiringChats(
+      @Header('Authorization') String token);
 //-----------------------new-----------------------------------------------------------------
-   @GET("user/chats/requests")
-  Future<List<HiringChatModel>> getAllRequestsChats(@Header('Authorization') String token);
+  @GET("user/chats/requests")
+  Future<List<HiringChatModel>> getAllRequestsChats(
+      @Header('Authorization') String token);
 //-----------------------new-----------------------------------------------------------------
-@POST("support/tickets/create")
+  @POST("support/tickets/create")
   Future<UpdateSkill> sendComplain(
     @Header('Authorization') String token,
     @Field("name") name,

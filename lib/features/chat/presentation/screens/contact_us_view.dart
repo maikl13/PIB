@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/resources/assets_manager.dart';
-import 'package:pip/core/resources/color_manager.dart';
-import 'package:pip/core/resources/commons.dart';
-import 'package:pip/core/resources/strings_manager.dart';
-import 'package:pip/core/resources/style_manager.dart';
-import 'package:pip/core/widgets/leading_arrow.dart';
-import 'package:pip/features/chat/presentation/widgets/chat_messages.dart';
+import '../../../../core/resources/assets_manager.dart';
+import '../../../../core/resources/color_manager.dart';
+import '../../../../core/resources/commons.dart';
+import '../../../../core/resources/strings_manager.dart';
+import '../../../../core/resources/style_manager.dart';
+import '../../../../core/widgets/leading_arrow.dart';
+import '../widgets/chat_messages.dart';
 
 import '../widgets/new_message.dart';
 

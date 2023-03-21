@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/resources/color_manager.dart';
+import '../../../../core/resources/color_manager.dart';
 
-import '../../../../core/resources/constants.dart';
 
 class CustomSwitch extends StatefulWidget {
   const CustomSwitch({super.key, this.onChanged, this.enabled});

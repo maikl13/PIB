@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:pip/core/resources/constants.dart';
-import 'package:pip/core/widgets/custom_clock_date.dart';
+import '../../../../core/widgets/custom_clock_date.dart';
+import '../../business_logic/cubit/requests_cubit.dart';
 import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/route_manager.dart';
@@ -11,7 +12,6 @@ import '../../../../core/resources/style_manager.dart';
 import '../../../../core/widgets/dark_default_button.dart';
 import '../../../../core/widgets/default_button.dart';
 import '../../../home/presentation/widgets/image_with_stars.dart';
-import '../../../notification/presentation/widgets/clock_date.dart';
 import '../../data/models/offer_model.dart';
 
 class RecievedOfferItem extends StatelessWidget {
@@ -93,8 +93,8 @@ class RecievedOfferItem extends StatelessWidget {
       widht: 108.w,
       textStyle: getBoldStyle(fontSize: 12.sp, color: ColorManager.black),
       onTap: () {
-        screenIndex = 2;
-        Navigator.of(context).pushNamed(Routes.mainHomeViewRoute);
+         BlocProvider.of<RequestsCubit>(context).acceptOffer(offerId: offers[index].id.toString());
+       
       },
     );
   }

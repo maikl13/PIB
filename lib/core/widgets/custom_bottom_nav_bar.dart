@@ -2,11 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/resources/route_manager.dart';
-import 'package:pip/core/widgets/custom_network_image.dart';
-import 'package:pip/features/menu/business_logic/menu_cubit.dart';
-import 'package:pip/features/menu/business_logic/menu_state.dart';
-import '../resources/assets_manager.dart';
+import '../resources/route_manager.dart';
+import 'custom_network_image.dart';
+import '../../features/menu/business_logic/menu_cubit.dart';
+import '../../features/menu/business_logic/menu_state.dart';
 import '../resources/color_manager.dart';
 import '../resources/constants.dart';
 import '../resources/style_manager.dart';
@@ -62,7 +61,6 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
             value: RouteGenerator.menuCubit,
             child: BlocConsumer<MenuCubit, MenuState>(
               listener: (context, state) {
-                // TODO: implement listener
               },
               builder: (context, state) {
                 return CircleAvatar(

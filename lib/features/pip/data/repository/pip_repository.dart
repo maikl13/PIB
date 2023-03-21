@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:pip/features/menu/data/models/update_skill.dart';
-import 'package:pip/features/pip/data/models/skills_model.dart';
+import '../../../menu/data/models/update_skill.dart';
+import '../models/skills_model.dart';
 
 import '../../../../core/resources/constants.dart';
 import '../../../../core/web_services/api_result.dart';

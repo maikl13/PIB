@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:pip/core/resources/constants.dart';
-import 'package:pip/features/pip/business_logic/cubit/pip_cubit.dart';
-import 'package:pip/features/pip/business_logic/cubit/pip_state.dart';
+import '../../../../core/resources/constants.dart';
+import '../../business_logic/cubit/pip_cubit.dart';
+import '../../business_logic/cubit/pip_state.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/resources/style_manager.dart';
@@ -28,9 +28,9 @@ class SpecialRequestDetailsView extends StatefulWidget {
 }
 
 class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
-  TextEditingController _priceController = TextEditingController();
-  TextEditingController _locationController = TextEditingController();
-  TextEditingController _descriptionController = TextEditingController();
+  final TextEditingController _priceController = TextEditingController();
+  final TextEditingController _locationController = TextEditingController();
+  final TextEditingController _descriptionController = TextEditingController();
 
   _buildBody() {
     return BlocListener<PipCubit, PipState>(

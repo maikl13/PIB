@@ -1,8 +1,8 @@
 import 'dart:io';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:pip/features/menu/data/models/update_skill.dart';
-import 'package:pip/features/pip/data/models/skills_model.dart';
+import '../../../menu/data/models/update_skill.dart';
+import '../../data/models/skills_model.dart';
 import '../../../../core/web_services/network_exceptions.dart';
 part 'pip_state.freezed.dart';
 

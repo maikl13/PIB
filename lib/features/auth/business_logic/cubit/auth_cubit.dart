@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -73,10 +75,10 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
       userName = googleUser.displayName!;
       userEmail = googleUser.email;
       emit(AuthResultState.firebaseGoogleLoginSuccess(googleUser.id));
-      print('gooooooogle ${googleUser.displayName!}');
+      // print('gooooooogle ${googleUser.displayName!}');
       userImage = googleUser.photoUrl!;
     } catch (e) {
-      print(e.toString());
+      // print(e.toString());
       emit(AuthResultState.firebaseGoogleLoginError(
           NetworkExceptions.getDioException(e)));
     }
@@ -102,7 +104,7 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
 
       emit(AuthResultState.firebaseFacebookLoginSuccess(userData['id']));
     } catch (e) {
-      print(e.toString());
+      // print(e.toString());
       emit(AuthResultState.firebaseFacebookLoginError(
           NetworkExceptions.getDioException(e)));
     }

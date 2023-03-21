@@ -110,6 +110,7 @@ class _RegisterViewState extends State<RegisterView> {
             showProgressIndicator(context);
           },
           phoneNumberSubmited: (uid) {
+            // ignore: avoid_print
             print(uid);
             Navigator.pop(context);
             Navigator.of(context).pushNamed(Routes.confirmOtbViewRoute);

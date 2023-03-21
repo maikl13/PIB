@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
-import 'package:pip/features/home/data/models/ad_model.dart';
-import 'package:pip/features/search/business_logic/bloc/search_event.dart';
-import 'package:pip/features/search/business_logic/bloc/search_state.dart';
+import '../../../home/data/models/ad_model.dart';
+import 'search_event.dart';
+import 'search_state.dart';
 import 'package:rxdart/rxdart.dart';
 
 import '../../../../core/web_services/network_exceptions.dart';

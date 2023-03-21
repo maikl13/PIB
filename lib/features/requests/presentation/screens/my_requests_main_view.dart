@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/features/requests/business_logic/cubit/requests_cubit.dart';
-import 'package:pip/features/requests/business_logic/cubit/requests_state.dart';
+import '../../business_logic/cubit/requests_cubit.dart';
+import '../../business_logic/cubit/requests_state.dart';
 import '../../../../core/resources/strings_manager.dart';
 import 'available_jobs_view.dart';
 import 'wanted_job_requests_view.dart';

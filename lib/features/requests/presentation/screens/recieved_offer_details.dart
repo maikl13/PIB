@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:pip/core/resources/constants.dart';
-import 'package:pip/core/resources/route_manager.dart';
-import 'package:pip/core/widgets/custom_clock_date.dart';
-import 'package:pip/features/requests/data/models/offer_model.dart';
+import '../../../../core/resources/route_manager.dart';
+import '../../../../core/widgets/custom_clock_date.dart';
+import '../../data/models/offer_model.dart';
 import '../../../../core/widgets/image_item.dart';
 import '../../../home/presentation/widgets/job_details_image.dart';
 
-import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/resources/style_manager.dart';
@@ -16,6 +15,7 @@ import '../../../../core/widgets/custom_appbar.dart';
 import '../../../../core/widgets/dark_default_button.dart';
 import '../../../../core/widgets/default_button.dart';
 import '../../../home/presentation/widgets/main_info_item.dart';
+import '../../business_logic/cubit/requests_cubit.dart';
 
 class RecievedOfferDetails extends StatelessWidget {
   const RecievedOfferDetails({super.key, required this.offer});
@@ -69,9 +69,11 @@ class RecievedOfferDetails extends StatelessWidget {
       child: DefaultButton(
         text: AppStrings.accept,
         onTap: () {
-          screenIndex = 2;
+          BlocProvider.of<RequestsCubit>(context)
+              .acceptOffer(offerId: offer.id.toString());
+          // screenIndex = 2;
 
-          Navigator.pushNamed(context, Routes.mainHomeViewRoute);
+          // Navigator.pushNamed(context, Routes.mainHomeViewRoute);
           //
         },
       ),

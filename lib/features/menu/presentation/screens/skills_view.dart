@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/resources/color_manager.dart';
-import 'package:pip/core/resources/constants.dart';
-import 'package:pip/core/resources/strings_manager.dart';
-import 'package:pip/core/widgets/custom_appbar.dart';
-import 'package:pip/core/widgets/custom_title.dart';
-import 'package:pip/core/widgets/loading_indicator.dart';
-import 'package:pip/features/menu/business_logic/menu_cubit.dart';
-import 'package:pip/features/menu/business_logic/menu_state.dart';
-import 'package:pip/features/pip/data/models/skills_model.dart';
+import '../../../../core/resources/color_manager.dart';
+import '../../../../core/resources/strings_manager.dart';
+import '../../../../core/widgets/custom_appbar.dart';
+import '../../../../core/widgets/custom_title.dart';
+import '../../../../core/widgets/loading_indicator.dart';
+import '../../business_logic/menu_cubit.dart';
+import '../../business_logic/menu_state.dart';
+import '../../../pip/data/models/skills_model.dart';
 
 import '../widgets/skill_item.dart';
 
@@ -59,9 +58,6 @@ class _SkillsViewState extends State<SkillsView> {
           return SkillItem(
             skills: skills,
             index: index,
-            // title: skills[index].name!,
-            // image:  skills[index].imageUrl!,
-            // enabled: skills[index].enabled ==1 ? true : false,
           );
         },
         separatorBuilder: (context, index) {

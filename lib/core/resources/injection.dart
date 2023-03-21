@@ -1,16 +1,16 @@
 import 'package:dio/dio.dart';
 import 'package:dio_smart_retry/dio_smart_retry.dart';
 import 'package:get_it/get_it.dart';
-import 'package:pip/features/chat/business_logic/chat_cubit.dart';
-import 'package:pip/features/chat/data/repository/chat_repository.dart';
-import 'package:pip/features/notification/business_logic/cubit/notification_cubit.dart';
-import 'package:pip/features/notification/data/repository/notification_repository.dart';
-import 'package:pip/features/pip/business_logic/cubit/pip_cubit.dart';
-import 'package:pip/features/pip/data/repository/pip_repository.dart';
-import 'package:pip/features/requests/business_logic/cubit/requests_cubit.dart';
-import 'package:pip/features/requests/data/repository/request_repository.dart';
-import 'package:pip/features/search/business_logic/bloc/search_bloc.dart';
-import 'package:pip/features/search/data/repository/repository.dart';
+import '../../features/chat/business_logic/chat_cubit.dart';
+import '../../features/chat/data/repository/chat_repository.dart';
+import '../../features/notification/business_logic/cubit/notification_cubit.dart';
+import '../../features/notification/data/repository/notification_repository.dart';
+import '../../features/pip/business_logic/cubit/pip_cubit.dart';
+import '../../features/pip/data/repository/pip_repository.dart';
+import '../../features/requests/business_logic/cubit/requests_cubit.dart';
+import '../../features/requests/data/repository/request_repository.dart';
+import '../../features/search/business_logic/bloc/search_bloc.dart';
+import '../../features/search/data/repository/repository.dart';
 
 import '../../features/auth/business_logic/cubit/auth_cubit.dart';
 import '../../features/auth/data/repository/auth_repository.dart';

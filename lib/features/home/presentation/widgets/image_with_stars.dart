@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/widgets/custom_network_image.dart';
-import 'package:pip/features/home/presentation/widgets/job_rate_container.dart';
+import '../../../../core/widgets/custom_network_image.dart';
+import 'job_rate_container.dart';
 
 class ImageWithRating extends StatelessWidget {
   const ImageWithRating({super.key, this.height, this.image});

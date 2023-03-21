@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/resources/assets_manager.dart';
-import 'package:pip/core/resources/color_manager.dart';
-import 'package:pip/core/resources/strings_manager.dart';
-import 'package:pip/core/resources/style_manager.dart';
-import 'package:pip/core/widgets/custom_appbar.dart';
-import 'package:pip/core/widgets/loading_indicator.dart';
-import 'package:pip/features/menu/business_logic/menu_cubit.dart';
-import 'package:pip/features/menu/business_logic/menu_state.dart';
+import '../../../../core/resources/assets_manager.dart';
+import '../../../../core/resources/color_manager.dart';
+import '../../../../core/resources/strings_manager.dart';
+import '../../../../core/resources/style_manager.dart';
+import '../../../../core/widgets/custom_appbar.dart';
+import '../../../../core/widgets/loading_indicator.dart';
+import '../../business_logic/menu_cubit.dart';
+import '../../business_logic/menu_state.dart';
 
 class WhoWeAreView extends StatefulWidget {
   const WhoWeAreView({super.key});
@@ -27,7 +27,7 @@ class _WhoWeAreViewState extends State<WhoWeAreView> {
   }
 
   _buildBody() {
-    return Container(
+    return SizedBox(
       width: double.infinity,
       child: Padding(
         padding: EdgeInsets.only(top: 50.h, right: 20.w, left: 20.w),

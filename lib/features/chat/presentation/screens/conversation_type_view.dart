@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/features/chat/business_logic/chat_cubit.dart';
-import 'package:pip/features/chat/business_logic/chat_state.dart';
-import 'package:pip/features/chat/presentation/screens/service_provider_messages_view.dart';
-import 'package:pip/features/chat/presentation/screens/service_requester_messages_view.dart';
+import '../../business_logic/chat_cubit.dart';
+import '../../business_logic/chat_state.dart';
+import 'service_provider_messages_view.dart';
+import 'service_requester_messages_view.dart';
 
 import '../../../../core/resources/strings_manager.dart';
 

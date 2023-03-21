@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:pip/core/widgets/custom_clock_date.dart';
-import 'package:pip/core/widgets/custom_network_image.dart';
-import 'package:pip/core/widgets/image_item.dart';
+import '../../../../core/widgets/custom_clock_date.dart';
+import '../../../../core/widgets/custom_network_image.dart';
+import '../../../../core/widgets/image_item.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/widgets/custom_appbar.dart';
 
-import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/route_manager.dart';
 import '../../../../core/resources/style_manager.dart';
 import '../../../../core/widgets/dark_default_button.dart';
@@ -88,7 +87,9 @@ class AvailableJobDetailsView extends StatelessWidget {
       child: DefaultButton(
         text: AppStrings.giveOffer,
         onTap: () {
-          Navigator.pushNamed(context, Routes.giveOffersViewRoute);
+          Navigator.pushNamed(context, Routes.giveOffersViewRoute, arguments: {
+            'requestId': availableJob.id.toString(),
+          });
         },
       ),
     );
@@ -114,7 +115,7 @@ class AvailableJobDetailsView extends StatelessWidget {
       child: ListView.separated(
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
-            return  ImageItem(
+            return ImageItem(
                 imageUrl: availableJob.images![index].attachmentUrl!);
           },
           separatorBuilder: (context, index) {
