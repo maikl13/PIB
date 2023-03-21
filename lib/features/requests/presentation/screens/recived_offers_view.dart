@@ -15,7 +15,9 @@ import '../../data/models/offer_model.dart';
 import '../widgets/recieved_item.dart';
 
 class RecievedOffersView extends StatefulWidget {
-  const RecievedOffersView({super.key});
+  const RecievedOffersView({super.key, required this.id});
+
+  final int id;
 
   @override
   State<RecievedOffersView> createState() => _RecievedOffersViewState();
@@ -37,13 +39,13 @@ class _RecievedOffersViewState extends State<RecievedOffersView> {
           },
         );
       },
-      buildWhen: (previous, next) => next is OffersSuccess,
+      buildWhen: (previous, next) => next is OffersRequestSuccess,
       builder: (context, state) {
         return state.maybeWhen(
-          offersSuccess: (offers) {
+          offersRequestSuccess: (offers) {
             return _buildListOfOffers(offers);
           },
-          offersLoading: () {
+          offersRequestLoading: () {
             return const LoadingIndicator();
           },
           orElse: () => Container(),
@@ -69,7 +71,7 @@ class _RecievedOffersViewState extends State<RecievedOffersView> {
 
   @override
   void initState() {
-    BlocProvider.of<RequestsCubit>(context).getAllOffers();
+    BlocProvider.of<RequestsCubit>(context).getAllRequestOffers(widget.id);
     super.initState();
   }
 

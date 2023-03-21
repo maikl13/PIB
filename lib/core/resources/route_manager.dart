@@ -239,10 +239,13 @@ class RouteGenerator {
         );
 
       case Routes.recievedOffersViewRoute:
+              final arguments = settings.arguments as Map;
+
+        final int id = arguments['requestId'];
         return MaterialPageRoute(
           builder: (_) => BlocProvider.value(
             value: requestsCubit,
-            child: const RecievedOffersView(),
+            child:  RecievedOffersView(id: id),
           ),
         );
 

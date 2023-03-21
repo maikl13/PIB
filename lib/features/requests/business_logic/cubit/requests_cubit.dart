@@ -93,6 +93,21 @@ class RequestsCubit extends Cubit<RequestState> {
     );
   }
 
+
+  void getAllRequestOffers(int id) async {
+    emit(const RequestState.offersRequestLoading());
+
+    var result = await requestRepository.getAllRequestOffers(id);
+    result.when(
+      success: (List<OfferModel> offers) {
+        emit(RequestState.offersRequestSuccess(offers));
+      },
+      failure: (NetworkExceptions networkExceptions) {
+        emit(RequestState.offersRequestError(networkExceptions));
+      },
+    );
+  }
+
   void giveOffer({
     String? price,
     String? duration,

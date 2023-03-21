@@ -27,6 +27,17 @@ class RequestState<T> with _$RequestState<T> {
   const factory RequestState.offersError(NetworkExceptions networkExceptions) =
       OffersError<T>;
 
+
+  const factory RequestState.offersRequestLoading() = OffersRequestLoading<T>;
+
+  const factory RequestState.offersRequestSuccess(List<OfferModel> offers) =
+      OffersRequestSuccess<T>;
+
+  const factory RequestState.offersRequestError(NetworkExceptions networkExceptions) =
+      OffersRequestError<T>;
+
+
+
   const factory RequestState.myAvailableJobsLoading() =
       MyAvailableJobsLoading<T>;
 

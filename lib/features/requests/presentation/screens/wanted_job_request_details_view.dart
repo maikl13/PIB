@@ -70,7 +70,9 @@ class WantedJobRequestsDetailsView extends StatelessWidget {
             DefaultButton(
               text: '${AppStrings.showOffers}  ${request.offersCount}',
               onTap: () {
-                Navigator.of(context).pushNamed(Routes.recievedOffersViewRoute);
+                Navigator.of(context).pushNamed(Routes.recievedOffersViewRoute,arguments: {
+                  'requestId':request.id,
+                });
               },
               // widht: 249.w,
             ),

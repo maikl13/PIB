@@ -42,6 +42,15 @@ class RequestRepository {
     }
   }
 
+   Future<ApiResult<List<OfferModel>>> getAllRequestOffers(int id) async {
+    try {
+      var response = await webServices.getAllRequestOffers('Bearer $token',id);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(NetworkExceptions.getDioException(error));
+    }
+  }
+
   Future<ApiResult<UpdateSkill>> giveOffer(
     String price,
     String duration,

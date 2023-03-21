@@ -56,6 +56,13 @@ abstract class WebServices {
   Future<List<SkillModel>> getAllUserSkills(
     @Header('Authorization') String token,
   );
+
+  //-----------------------new-----------------------------------------------------------------
+  @GET("deals/{id}/offers")
+ Future<List<OfferModel>> getAllRequestOffers(
+    @Header('Authorization') String token,
+    @Path('id') int id,
+    );
 //-----------------------new-----------------------------------------------------------------
   @POST("user/skills/update")
   Future<UpdateSkill> updateSkill(
