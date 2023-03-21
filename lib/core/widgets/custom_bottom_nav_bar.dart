@@ -1,7 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/resources/route_manager.dart';
 import 'package:pip/core/widgets/custom_network_image.dart';
+import 'package:pip/features/menu/business_logic/menu_cubit.dart';
+import 'package:pip/features/menu/business_logic/menu_state.dart';
 import '../resources/assets_manager.dart';
 import '../resources/color_manager.dart';
 import '../resources/constants.dart';
@@ -54,13 +58,21 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
           label: AppStrings.messages,
         ),
         BottomNavigationBarItem(
-          icon: userImage == null
-              ? Image.asset(ImageAssets.userImage, height: 25.h)
-              : CircleAvatar(
-                  radius: 12.5.h,
-                  child: ClipOval(
-                    child: CustomNetworkCachedImage(url: userImage!),
-                  )),
+          icon: BlocProvider.value(
+            value: RouteGenerator.menuCubit,
+            child: BlocConsumer<MenuCubit, MenuState>(
+              listener: (context, state) {
+                // TODO: implement listener
+              },
+              builder: (context, state) {
+                return CircleAvatar(
+                    radius: 12.5.h,
+                    child: ClipOval(
+                      child: CustomNetworkCachedImage(url: userImage),
+                    ));
+              },
+            ),
+          ),
           label: AppStrings.personalInfo,
         ),
       ],

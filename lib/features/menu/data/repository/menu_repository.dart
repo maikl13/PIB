@@ -28,7 +28,7 @@ class MenuRepository {
     }
   }
 
-    Future<ApiResult<RatesModel>> getAllRates( ) async {
+  Future<ApiResult<RatesModel>> getAllRates() async {
     try {
       var response = await webServices.getAllRates('Bearer $token');
       return ApiResult.success(response);
@@ -65,46 +65,52 @@ class MenuRepository {
     }
   }
 
-   Future<ApiResult<List<SettingModel>>> getAllSettings() async {
+  Future<ApiResult<List<SettingModel>>> getAllSettings() async {
     try {
-      var response =
-          await webServices.getAllSettings('Bearer $token');
+      var response = await webServices.getAllSettings('Bearer $token');
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(NetworkExceptions.getDioException(error));
     }
   }
-  
 
-  Future<ApiResult<UserInfoModel>> updateProfile(
-      String name, String email, String phone, File image) async {
+  Future<ApiResult<UpdateSkill>> updateProfile(
+      String name, String email, String phone, File? image) async {
     try {
-      var response =
-          await webServices.updateProfile(name, email,phone, image, 'Bearer $token');
+      var response = image == null
+          ? await webServices.updateProfileWithoutImage(
+              name, email, phone, 'Bearer $token')
+          : await webServices.updateProfile(
+              name, email, phone, image, 'Bearer $token');
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(NetworkExceptions.getDioException(error));
     }
   }
- Future<ApiResult<UpdateSkill>> sendRates(
-      double experienceStars, double proffesionalStars, double communicationStars, double qualityStars, double timeStars
-     ) async {
+
+  Future<ApiResult<UpdateSkill>> sendRates(
+      double experienceStars,
+      double proffesionalStars,
+      double communicationStars,
+      double qualityStars,
+      double timeStars) async {
     try {
-      var response =
-          await webServices.sendRates('Bearer $token', experienceStars, proffesionalStars, communicationStars, qualityStars, timeStars);
+      var response = await webServices.sendRates(
+          'Bearer $token',
+          experienceStars,
+          proffesionalStars,
+          communicationStars,
+          qualityStars,
+          timeStars);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(NetworkExceptions.getDioException(error));
     }
   }
-  
 
-
-
-   Future<ApiResult<UserInfoModel>> getUserInfo() async {
+  Future<ApiResult<UserInfoModel>> getUserInfo() async {
     try {
-      var response =
-          await webServices.getUserInfo('Bearer $token');
+      var response = await webServices.getUserInfo('Bearer $token');
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(NetworkExceptions.getDioException(error));

@@ -131,13 +131,22 @@ abstract class WebServices {
      @GET("user/info")
   Future<UserInfoModel> getUserInfo(@Header('Authorization') String token);
 
-  @POST("update/profile")
+  @POST("user/update")
   @MultiPart()
-  Future<UserInfoModel> updateProfile(
+  Future<UpdateSkill> updateProfile(
     @Part(name: 'name') String? name,
     @Part(name: 'email') String? email,
     @Part(name: 'phone') String? phone,
     @Part(name: 'image') File img,
+    @Header('Authorization') String token,
+  );
+    @POST("user/update")
+  @MultiPart()
+  Future<UpdateSkill> updateProfileWithoutImage(
+    @Part(name: 'name') String? name,
+    @Part(name: 'email') String? email,
+    @Part(name: 'phone') String? phone,
+    // @Part(name: 'image') File img,
     @Header('Authorization') String token,
   );
    @GET("app/settings")

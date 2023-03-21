@@ -581,7 +581,7 @@ class _WebServices implements WebServices {
   }
 
   @override
-  Future<UserInfoModel> updateProfile(
+  Future<UpdateSkill> updateProfile(
     name,
     email,
     phone,
@@ -620,7 +620,7 @@ class _WebServices implements WebServices {
       ),
     ));
     final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<UserInfoModel>(Options(
+        .fetch<Map<String, dynamic>>(_setStreamType<UpdateSkill>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -628,12 +628,61 @@ class _WebServices implements WebServices {
     )
             .compose(
               _dio.options,
-              'update/profile',
+              'user/update',
               queryParameters: queryParameters,
               data: _data,
             )
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = UserInfoModel.fromJson(_result.data!);
+    final value = UpdateSkill.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<UpdateSkill> updateProfileWithoutImage(
+    name,
+    email,
+    phone,
+    token,
+  ) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
+    final _data = FormData();
+    if (name != null) {
+      _data.fields.add(MapEntry(
+        'name',
+        name,
+      ));
+    }
+    if (email != null) {
+      _data.fields.add(MapEntry(
+        'email',
+        email,
+      ));
+    }
+    if (phone != null) {
+      _data.fields.add(MapEntry(
+        'phone',
+        phone,
+      ));
+    }
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<UpdateSkill>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+      contentType: 'multipart/form-data',
+    )
+            .compose(
+              _dio.options,
+              'user/update',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = UpdateSkill.fromJson(_result.data!);
     return value;
   }
 

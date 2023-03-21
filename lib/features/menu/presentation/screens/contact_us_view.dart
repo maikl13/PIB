@@ -79,12 +79,12 @@ class _ContactUsViewState extends State<ContactUsView> {
     return DefaultButton(
         text: AppStrings.send,
         onTap: () {
-          showContactSuccessDialog(
-            context,
-            onOk: () {
-              Navigator.pop(context);
-            },
-          );
+          // showContactSuccessDialog(
+          //   context,
+          //   onOk: () {
+          //     Navigator.pop(context);
+          //   },
+          // );
         });
   }
 

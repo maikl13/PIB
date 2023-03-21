@@ -51,10 +51,13 @@ class _MenuViewState extends State<MenuView> {
               return const LoadingIndicator();
             },
             getUserInfoSuccess: (userInfo) {
+              userImage = userInfo.imageUrl;
+              userName = userInfo.name;
+              userPhone = userInfo.phone;
+              userEmail = userInfo.email;
               return Column(
                 children: [
-                  if (userInfo.imageUrl != null)
-                    _buildProfileImage(userInfo.imageUrl!),
+                  _buildProfileImage(userInfo.imageUrl),
                   SizedBox(height: 27.h),
                   _buildUserName(userInfo.name),
                   SizedBox(height: 17.h),
@@ -111,7 +114,7 @@ class _MenuViewState extends State<MenuView> {
         child: Stack(
           // fit: StackFit.expand,
           children: [
-            _buildImage(imageUrl!),
+            _buildImage(imageUrl),
             const Align(
                 alignment: Alignment.bottomLeft, child: JobRateContainer()),
           ],
@@ -131,7 +134,7 @@ class _MenuViewState extends State<MenuView> {
         child: CircleAvatar(
           backgroundColor: ColorManager.black,
           child: ClipOval(
-            child: CustomNetworkCachedImage(url: imageUrl!),
+            child: CustomNetworkCachedImage(url: imageUrl),
           ),
         ),
       ),
@@ -151,8 +154,7 @@ class _MenuViewState extends State<MenuView> {
             onTap: () {
               index == menuViewItemRoutes.length - 1
                   ? BlocProvider.of<MenuCubit>(context).signOut(context)
-                  : Navigator.pushReplacementNamed(
-                      context, menuViewItemRoutes[index]);
+                  : Navigator.pushNamed(context, menuViewItemRoutes[index]);
             },
           );
         },

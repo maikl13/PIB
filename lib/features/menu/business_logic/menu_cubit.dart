@@ -13,6 +13,7 @@ import 'package:pip/features/menu/data/models/user_info_model.dart';
 import '../../../../core/web_services/network_exceptions.dart';
 import '../../../core/resources/color_manager.dart';
 import '../../../core/resources/commons.dart';
+import '../../../core/resources/constants.dart';
 import '../../../core/resources/route_manager.dart';
 import '../../../core/resources/shared_prefrences.dart';
 import '../../../core/resources/style_manager.dart';
@@ -109,20 +110,20 @@ class MenuCubit extends Cubit<MenuState> {
     }
   }
 
-  //  void updateProfile(String name, String email, String phone) async {
-  //   emit(const MenuState.imageSelectedLoading());
-  //   // ignore: prefer_typing_uninitialized_variables
-  //   var result = await menuRepository.updateProfile(name, phone,email, imageFile!);
-  //   result.when(
-  //     success: (UserInfoModel userInfoModel) {
-  //       userImage = userInfoModel.userInfo!.img!;
-  //       emit(MenuState.updateProfileSuccess(userInfoModel));
-  //     },
-  //     failure: (NetworkExceptions networkExceptions) {
-  //       emit(MenuState.updateProfileError(networkExceptions));
-  //     },
-  //   );
-  // }
+  void updateProfile(String name, String email, String phone) async {
+    emit(const MenuState.updateUserInfoLoading());
+    var result =
+        await menuRepository.updateProfile(name, email, phone, imageFile);
+    result.when(
+      success: (UpdateSkill data) {
+        // userImage = userInfoModel.userInfo!.img!;
+        emit(MenuState.updateUserInfoSuccess(data));
+      },
+      failure: (NetworkExceptions networkExceptions) {
+        emit(MenuState.updateUserInfoError(networkExceptions));
+      },
+    );
+  }
 
   void getUserInfo() async {
     emit(const MenuState.getUserInfoLoading());

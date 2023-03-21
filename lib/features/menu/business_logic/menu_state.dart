@@ -22,6 +22,15 @@ class MenuState<T> with _$MenuState<T> {
       WalletInfoError<T>;
 
 
+        const factory MenuState.updateUserInfoLoading() = UpdateUserInfoLoading<T>;
+
+  const factory MenuState.updateUserInfoSuccess(UpdateSkill data) =
+      UpdateUserInfoSuccess<T>;
+
+  const factory MenuState.updateUserInfoError(NetworkExceptions networkExceptions) =
+      UpdateUserInfoError<T>;
+
+
 
         const factory MenuState.userSkillsLoading() = UserSkillsLoading<T>;
 

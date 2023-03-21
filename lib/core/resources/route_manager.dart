@@ -288,7 +288,10 @@ class RouteGenerator {
         );
       case Routes.editProfileViewRoute:
         return MaterialPageRoute(
-          builder: (_) => const EditProfileView(),
+          builder: (_) =>  BlocProvider.value(
+            value: menuCubit,
+            child:const EditProfileView(),
+          ),
         );
 
       case Routes.editPasswordViewRoute:
