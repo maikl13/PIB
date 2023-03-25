@@ -4,6 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/commons.dart';
+import '../../../../core/resources/style_manager.dart';
+import '../../../../core/web_services/network_exceptions.dart';
 import '../../../../core/widgets/custom_appbar.dart';
 import '../../../../core/widgets/custom_title.dart';
 import '../../../../core/widgets/default_button.dart';
@@ -25,7 +27,7 @@ class ContactUsView extends StatefulWidget {
 
 class _ContactUsViewState extends State<ContactUsView> {
   final TextEditingController _phoneController = TextEditingController();
-  final TextEditingController _notesController = TextEditingController();
+  final TextEditingController _descriptionController = TextEditingController();
 
   _buildBody(BuildContext context) {
     return BlocListener<MenuCubit, MenuState>(
@@ -36,7 +38,7 @@ class _ContactUsViewState extends State<ContactUsView> {
               context,
               onOk: () {
                 Navigator.pop(context);
-                _notesController.clear();
+                _descriptionController.clear();
                 _phoneController.clear();
               },
             );
@@ -75,7 +77,16 @@ class _ContactUsViewState extends State<ContactUsView> {
 
   _buildHowToContactUs() {
     return BlocConsumer<MenuCubit, MenuState>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        state.whenOrNull(
+          getSettingError: (networkExceptions) {
+            Commons.showToast(
+              color: ColorManager.error,
+              message: NetworkExceptions.getErrorMessage(networkExceptions),
+            );
+          },
+        );
+      },
       builder: (context, state) {
         return state.maybeWhen(
           getSettingLoading: () {
@@ -109,7 +120,7 @@ class _ContactUsViewState extends State<ContactUsView> {
         text: AppStrings.send,
         onTap: () {
           BlocProvider.of<MenuCubit>(context)
-              .sendComplain(_phoneController.text, _notesController.text);
+              .sendComplain(_phoneController.text, _descriptionController.text);
         });
   }
 
@@ -122,11 +133,26 @@ class _ContactUsViewState extends State<ContactUsView> {
 
   _buildDescriptionTextField() {
     return RequestCustomTextField(
-      controller: _notesController,
-      bottomPadding: 70,
+      floatingLabelBehavior: FloatingLabelBehavior.never,
+      controller: _descriptionController,
+      bottomPadding: 40.h,
+      topPadding: 0.h,
       maxLines: 3,
-      hint: AppStrings.description,
-      icon: Icons.text_fields_outlined,
+      label: Padding(
+        padding: EdgeInsets.only(bottom: 40.h),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text(AppStrings.description,
+                style:
+                    getBoldStyle(fontSize: 15.sp, color: ColorManager.grey5)),
+          ],
+        ),
+      ),
+      // hint: AppStrings.description,
+      icon: FontAwesomeIcons.alignLeft,
     );
   }
 

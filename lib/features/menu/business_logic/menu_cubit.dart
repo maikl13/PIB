@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:pip/core/resources/strings_manager.dart';
 import '../data/models/rates_model.dart';
 import '../data/models/setting_model.dart';
 import '../data/models/update_skill.dart';
@@ -286,31 +287,38 @@ class MenuCubit extends Cubit<MenuState> {
               ),
               title: Center(
                 child: Text(
-                  "Please Add Amount",
+                  "من فضلك ادخل المبلغ",
                   style: getBoldStyle(
                       color: ColorManager.primary, fontSize: 18.sp),
                 ),
               ),
               content: Form(
+                  key: formKey,
                   child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  DefaultTextField(
-                    controller: _amountController,
-                    suffix: Text(
-                      "",
-                      style: getRegularStyle(
-                          color: ColorManager.primary, fontSize: 14.sp),
-                    ),
-                    hint: "Enter Amount",
-                  ),
-                  SizedBox(height: 15.h),
-                  DefaultButton(
-                    text: 'Confirm',
-                    onTap: onTap,
-                  ),
-                ],
-              )),
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      DefaultTextField(
+                        validator: (p0) {
+                          if (p0!.isEmpty) {
+                            return "من فضلك ادخل المبلغ";
+                          }
+                          return null;
+                        },
+                        controller: _amountController,
+                        suffix: Text(
+                          "",
+                          style: getRegularStyle(
+                              color: ColorManager.primary, fontSize: 14.sp),
+                        ),
+                        hint: "ادخل المبلغ",
+                      ),
+                      SizedBox(height: 15.h),
+                      DefaultButton(
+                        text: AppStrings.confirm,
+                        onTap: onTap,
+                      ),
+                    ],
+                  )),
             ));
   }
 }

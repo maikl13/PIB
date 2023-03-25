@@ -50,29 +50,23 @@ class MenuViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        if (index == menuViewItemIcons.length - 1) {
-        } else {
-          Navigator.pushNamed(context, menuViewItemRoutes[index]);
-        }
-      },
-      child: SizedBox(
+      onTap: onTap,
+      child: Container(
         height: 62.h,
         width: double.infinity,
-        child: ListTile(
-          // selectedTileColor: ColorManager.grey,
-          // selected: defaultIndex == index ? true : false,
-          onTap: onTap,
-          contentPadding: EdgeInsets.only(top: 15.h, right: 15.w, left: 30.w),
-          dense: true,
-          horizontalTitleGap: 20.w,
-          tileColor: ColorManager.black5,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(10.r)),
-          ),
-          leading: _buildLeading(context),
-          title: _buildTitle(),
-          trailing: _buildTrailing(context),
+        padding: EdgeInsets.only(right: 20.h, left: 25.w),
+        decoration: BoxDecoration(
+          color: ColorManager.black5,
+          borderRadius: BorderRadius.circular(10.r),
+        ),
+        child: Row(
+          children: [
+            _buildLeading(context),
+            SizedBox(width: 20.w),
+            _buildTitle(),
+            const Spacer(),
+            _buildTrailing(context),
+          ],
         ),
       ),
     );

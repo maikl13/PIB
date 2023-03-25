@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/widgets/empty_screen.dart';
 import '../../../../core/widgets/custom_appbar.dart';
 import '../../../../core/widgets/custom_title.dart';
 import '../../data/models/wallet_info.dart';
@@ -31,14 +32,14 @@ class _WalletViewState extends State<WalletView> {
         state.whenOrNull(
           walletInfoError: (NetworkExceptions networkExceptions) {
             Commons.showToast(
-              message: networkExceptions.toString(),
+              message: NetworkExceptions.getErrorMessage(networkExceptions),
               color: ColorManager.red,
             );
           },
           walletBalanceAddedSuccedded: (AddBalance addBalance) {
             Navigator.pop(context);
             Commons.showToast(
-              message: addBalance.status.toString(),
+              message: 'تم اضافة رصيد بنجاح',
               color: ColorManager.green,
             );
             BlocProvider.of<MenuCubit>(context).getWalletInfo();
@@ -46,7 +47,7 @@ class _WalletViewState extends State<WalletView> {
           walletBalanceAdddedError: (NetworkExceptions networkExceptions) {
             Navigator.pop(context);
             Commons.showToast(
-              message: networkExceptions.toString(),
+              message: NetworkExceptions.getErrorMessage(networkExceptions),
               color: ColorManager.red,
             );
           },
@@ -73,7 +74,9 @@ class _WalletViewState extends State<WalletView> {
       children: [
         WalletCard(
           totalBalance: walletInfo.totalBalance.toString(),
-          date: walletInfo.transactions![0].time!,
+          date: walletInfo.transactions!.isEmpty
+              ? '${DateTime.now().day}/${DateTime.now().month}/${DateTime.now().year}'
+              : walletInfo.transactions![0].time!,
         ),
         SizedBox(height: 32.h),
         const CustomTitle(title: AppStrings.lastTransaction),
@@ -84,22 +87,27 @@ class _WalletViewState extends State<WalletView> {
   }
 
   _buildListOfTransactions(WalletInfo walletInfo) {
-    return ListView.separated(
-        physics: const NeverScrollableScrollPhysics(),
-        shrinkWrap: true,
-        itemBuilder: (context, index) {
-          return TransactionItem(
-            date: walletInfo.transactions![index].time!,
-            amount: walletInfo.transactions![index].amount.toString(),
-            type: walletInfo.transactions![index].type!,
-          );
-        },
-        separatorBuilder: (context, index) {
-          return SizedBox(height: 15.h);
-        },
-        itemCount: walletInfo.transactions!.length > 5
-            ? 5
-            : walletInfo.transactions!.length);
+    return walletInfo.transactions!.isEmpty
+        ? Padding(
+            padding: EdgeInsets.only(top: 100.h),
+            child: const EmptyScreen(),
+          )
+        : ListView.separated(
+            physics: const NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemBuilder: (context, index) {
+              return TransactionItem(
+                date: walletInfo.transactions![index].time!,
+                amount: walletInfo.transactions![index].amount.toString(),
+                type: walletInfo.transactions![index].type!,
+              );
+            },
+            separatorBuilder: (context, index) {
+              return SizedBox(height: 15.h);
+            },
+            itemCount: walletInfo.transactions!.length > 5
+                ? 5
+                : walletInfo.transactions!.length);
   }
 
   //walletInfo.transactions!.length

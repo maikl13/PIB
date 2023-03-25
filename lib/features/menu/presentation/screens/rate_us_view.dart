@@ -5,6 +5,7 @@ import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/commons.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/resources/style_manager.dart';
+import '../../../../core/web_services/network_exceptions.dart';
 import '../../../../core/widgets/custom_appbar.dart';
 import '../../../../core/widgets/default_button.dart';
 import '../../../../core/widgets/rating_stars.dart';
@@ -77,6 +78,7 @@ class _RateUsViewState extends State<RateUsView> {
       buildWhen: (previous, current) => current is UpdateExperienceRateSuccess,
       builder: (context, state) {
         return RateItem(
+          title: 'التجربة',
           rateNumber: BlocProvider.of<MenuCubit>(context).experienceRate,
           onRatingUpdate: (rate) {
             setState(() {
@@ -95,6 +97,7 @@ class _RateUsViewState extends State<RateUsView> {
       buildWhen: (previous, current) => current is UpdateProfessionlRateSuccess,
       builder: (context, state) {
         return RateItem(
+          title: 'المهنية',
           rateNumber: BlocProvider.of<MenuCubit>(context).professionlRate,
           onRatingUpdate: (rate) {
             setState(() {
@@ -114,6 +117,7 @@ class _RateUsViewState extends State<RateUsView> {
           current is UpdateCommunicationRateSuccess,
       builder: (context, state) {
         return RateItem(
+          title: 'التواصل',
           rateNumber: BlocProvider.of<MenuCubit>(context).communicationRate,
           onRatingUpdate: (rate) {
             setState(() {
@@ -132,6 +136,7 @@ class _RateUsViewState extends State<RateUsView> {
       buildWhen: (previous, current) => current is UpdateQualityRate,
       builder: (context, state) {
         return RateItem(
+          title: 'الجودة',
           rateNumber: BlocProvider.of<MenuCubit>(context).qualityRate,
           onRatingUpdate: (rate) {
             setState(() {
@@ -150,6 +155,7 @@ class _RateUsViewState extends State<RateUsView> {
       buildWhen: (previous, current) => current is UpdateTimeRateSuccess,
       builder: (context, state) {
         return RateItem(
+          title: 'الوقت',
           rateNumber: BlocProvider.of<MenuCubit>(context).timeRate,
           onRatingUpdate: (p0) {
             setState(() {
@@ -172,7 +178,10 @@ class _RateUsViewState extends State<RateUsView> {
             BlocProvider.of<MenuCubit>(context).getAllRates();
           },
           updateRateError: (networkExceptions) {
-            Commons.showToast(message: networkExceptions.toString());
+         Commons.showToast(
+              color: ColorManager.error,
+              message: NetworkExceptions.getErrorMessage(networkExceptions),
+            );
           },
         );
       },

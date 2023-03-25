@@ -162,7 +162,7 @@ class _MenuViewState extends State<MenuView> {
         separatorBuilder: (context, index) {
           return const SizedBox(height: 20);
         },
-        itemCount: menuViewItemIcons.length);
+        itemCount: menuViewItemTitles.length);
   }
 
   @override

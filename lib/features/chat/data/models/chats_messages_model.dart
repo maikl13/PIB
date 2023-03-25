@@ -27,14 +27,14 @@ class ChatMessagesModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['message'] = this.message;
-    data['sender_id'] = this.senderId;
-    data['receiver_id'] = this.receiverId;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['message'] = message;
+    data['sender_id'] = senderId;
+    data['receiver_id'] = receiverId;
     // data['is_read'] = this.isRead;
-    data['attachment'] = this.attachment;
-    data['time'] = this.time;
+    data['attachment'] = attachment;
+    data['time'] = time;
     return data;
   }
 }

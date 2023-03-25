@@ -17,7 +17,7 @@ class DefaultTextField extends StatefulWidget {
       this.maxLines,
       this.hintStyle,
       this.keyboardType,
-      this.isPassword});
+      this.isPassword,  this.floatingLabelBehavior, this.label});
 
   final Widget? suffix;
   final Widget? prefix;
@@ -31,6 +31,8 @@ class DefaultTextField extends StatefulWidget {
   final TextStyle? hintStyle;
   final TextInputType? keyboardType;
   final bool? isPassword;
+  final FloatingLabelBehavior? floatingLabelBehavior;
+  final Widget? label;
 
   @override
   State<DefaultTextField> createState() => _DefaultTextFieldState();
@@ -40,6 +42,7 @@ class _DefaultTextFieldState extends State<DefaultTextField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      
       keyboardType: widget.keyboardType,
       maxLines: widget.maxLines ?? 1,
       cursorColor: ColorManager.darkSeconadry,
@@ -48,11 +51,15 @@ class _DefaultTextFieldState extends State<DefaultTextField> {
             color: ColorManager.darkGrey,
             fontSize: 18.sp,
           ),
+          
       obscureText: widget.isPassword ?? false,
       controller: widget.controller,
       onSaved: widget.onSaved,
       validator: widget.validator,
       decoration: InputDecoration(
+        label: widget.label,
+                floatingLabelBehavior: widget.floatingLabelBehavior,
+
         contentPadding: widget.contentPadding ??
             EdgeInsets.only(top: 12.h, bottom: 11.h, right: 20.w),
         hintText: widget.hint,

@@ -15,7 +15,8 @@ class RequestCustomTextField extends StatelessWidget {
       this.controller,
       this.contentPadding,
       this.bottomPadding,
-      this.hintStyle, this.validator});
+      this.hintStyle,
+      this.validator, this.topPadding, this.floatingLabelBehavior, this.label});
   final String? hint;
   final IconData? icon;
   final Widget? suffix;
@@ -23,11 +24,16 @@ class RequestCustomTextField extends StatelessWidget {
   final TextEditingController? controller;
   final EdgeInsets? contentPadding;
   final double? bottomPadding;
+  final double? topPadding;
   final TextStyle? hintStyle;
   final String? Function(String?)? validator;
+  final FloatingLabelBehavior? floatingLabelBehavior;
+  final Widget? label;
   @override
   Widget build(BuildContext context) {
     return DefaultTextField(
+      floatingLabelBehavior:floatingLabelBehavior ,
+      label:label ,
       validator: validator,
       controller: controller,
       hintStyle:
@@ -40,7 +46,7 @@ class RequestCustomTextField extends StatelessWidget {
       suffix: suffix,
       prefix: Padding(
         padding: EdgeInsets.only(
-            right: 15.w, left: 20.w, bottom: bottomPadding ?? 0),
+            right: 15.w, left: 20.w, bottom: bottomPadding ?? 0 , top: topPadding ?? 0),
         child: SizedBox(
           width: 35.w,
           height: 35.h,

@@ -7,6 +7,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pip/core/resources/commons.dart';
 import 'package:pip/core/widgets/loading_indicator.dart';
 import '../../../../core/resources/constants.dart';
+import '../../../../core/web_services/network_exceptions.dart';
 import '../../business_logic/cubit/pip_cubit.dart';
 import '../../business_logic/cubit/pip_state.dart';
 import '../../../../core/resources/color_manager.dart';
@@ -56,9 +57,12 @@ class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
             _clear();
             Navigator.pop(context);
           },
-          createSpecialRequestError: (error) {
+          createSpecialRequestError: (networkExceptions) {
             Navigator.pop(context);
-            Commons.showToast(message: error.toString());
+            Commons.showToast(
+              color: ColorManager.error,
+              message: NetworkExceptions.getErrorMessage(networkExceptions),
+            );
           },
         );
       },
@@ -96,14 +100,23 @@ class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
 
   _buildPhotos() {
     return BlocConsumer<PipCubit, PipState>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        state.whenOrNull(
+          imageSelectedLoading: () {
+            Commons.showLoadingDialog(context);
+          },
+          imageSelectedSuccess: (data) {
+            Navigator.pop(context);
+          },
+          imageSelectedError: () {
+            Navigator.pop(context);
+          },
+        );
+      },
       buildWhen: (previous, next) =>
           next is ImageSelectedSuccess || next is ImageSelectedDeleted,
       builder: (context, state) {
         return state.maybeWhen(
-          imageSelectedLoading: () {
-            return const LoadingIndicator();
-          },
           imageSelectedSuccess: (images) {
             return _buildListPhotos(images);
           },
@@ -249,10 +262,26 @@ class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
         }
         return null;
       },
+      // contentPadding: EdgeInsets.only(top: 15.h, bottom: 60.h),
+      floatingLabelBehavior: FloatingLabelBehavior.never,
       controller: _descriptionController,
-      bottomPadding: 70,
+      bottomPadding: 40.h,
+      topPadding: 0.h,
       maxLines: 3,
-      hint: AppStrings.description,
+      label: Padding(
+        padding: EdgeInsets.only(bottom: 40.h),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text(AppStrings.description,
+                style:
+                    getBoldStyle(fontSize: 15.sp, color: ColorManager.grey5)),
+          ],
+        ),
+      ),
+      // hint: AppStrings.description,
       icon: FontAwesomeIcons.alignLeft,
     );
   }
@@ -297,16 +326,13 @@ class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
                           fontSize: 15.sp, color: ColorManager.grey5)),
                 ],
               ),
-              IconButton(
-                  splashColor: ColorManager.transparent,
-                  icon: Icon(
-                    Icons.add,
-                    color: ColorManager.darkSeconadry,
-                    size: 20.sp,
-                  ),
-                  onPressed: () {
-                    // Navigator.pushNamed(Ro.search);
-                  })
+
+              // splashColor: ColorManager.transparent,
+              Icon(
+                Icons.add,
+                color: ColorManager.darkSeconadry,
+                size: 20.sp,
+              ),
             ],
           ),
         ),

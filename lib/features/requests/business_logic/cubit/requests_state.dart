@@ -65,6 +65,30 @@ class RequestState<T> with _$RequestState<T> {
       NetworkExceptions networkExceptions) = CreateSpecialRequestError<T>;
 
 
+
+
+        const factory RequestState.updateRequestLoading() =
+      UpdateRequestLoading<T>;
+
+  const factory RequestState.updateRequestSuccess(UpdateSkill data) =
+      UpdateRequestSuccess<T>;
+
+  const factory RequestState.updateRequestError(
+      NetworkExceptions networkExceptions) = UpdateRequestError<T>;
+
+    const factory RequestState.deleteRequestTapped() =
+      DeleteRequestTapped<T>;
+
+              const factory RequestState.deleteRequestLoading() =
+      DeleteRequestLoading<T>;
+
+  const factory RequestState.deleteRequestSuccess(UpdateSkill data) =
+      DeleteRequestSuccess<T>;
+
+  const factory RequestState.deleteRequestError(
+      NetworkExceptions networkExceptions) = DeleteRequestError<T>;
+
+
       const factory RequestState.giveOfferLoading() = GiveOfferLoading<T>;
 
   const factory RequestState.giveOfferSuccess(UpdateSkill data) = GiveOfferSuccess<T>;

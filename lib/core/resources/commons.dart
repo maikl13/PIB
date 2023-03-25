@@ -34,8 +34,8 @@ class Commons {
                           height: 10,
                         ),
                         Text(
-                          "Please Wait....",
-                          style: TextStyle(color: ColorManager.black),
+                          "من فضلك انتظر ...",
+                          style: TextStyle(color: ColorManager.white),
                         )
                       ]),
                     )
@@ -162,7 +162,7 @@ class Commons {
             ));
   }
 
-  static Future<void> showSettingDialog(BuildContext context) async {
+  static Future<void> showSettingDialog(BuildContext context,{ void Function()? onEditTab,void Function()? onDeleteTap}) async {
     return showDialog(
         context: context,
         builder: (BuildContext context) => AlertDialog(
@@ -188,32 +188,38 @@ class Commons {
                           child: Icon(Icons.close,
                               color: ColorManager.white, size: 20.sp)),
                       SizedBox(height: 27.h),
-                      Container(
-                        width: double.infinity,
-                        height: 63.h,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10.r),
-                            color: ColorManager.grey6),
-                        child: Center(
-                          child: Text(
-                            AppStrings.modifyRequest,
-                            style: getRegularStyle(
-                                fontSize: 16.sp, color: ColorManager.white),
+                      InkWell(
+                        onTap: onEditTab,
+                        child: Container(
+                          width: double.infinity,
+                          height: 63.h,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10.r),
+                              color: ColorManager.grey6),
+                          child: Center(
+                            child: Text(
+                              AppStrings.modifyRequest,
+                              style: getRegularStyle(
+                                  fontSize: 16.sp, color: ColorManager.white),
+                            ),
                           ),
                         ),
                       ),
                       SizedBox(height: 12.h),
-                      Container(
-                        width: double.infinity,
-                        height: 63.h,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10.r),
-                            color: ColorManager.grey6),
-                        child: Center(
-                          child: Text(
-                            AppStrings.cancelRequest,
-                            style: getRegularStyle(
-                                fontSize: 16.sp, color: ColorManager.white),
+                      InkWell(
+                        onTap: onDeleteTap,
+                        child: Container(
+                          width: double.infinity,
+                          height: 63.h,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10.r),
+                              color: ColorManager.grey6),
+                          child: Center(
+                            child: Text(
+                              AppStrings.cancelRequest,
+                              style: getRegularStyle(
+                                  fontSize: 16.sp, color: ColorManager.white),
+                            ),
                           ),
                         ),
                       ),

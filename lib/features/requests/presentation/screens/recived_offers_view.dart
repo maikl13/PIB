@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/widgets/empty_screen.dart';
 import '../../../../core/resources/commons.dart';
+import '../../../../core/web_services/network_exceptions.dart';
 import '../../../../core/widgets/loading_indicator.dart';
 import '../../business_logic/cubit/requests_cubit.dart';
 import '../../business_logic/cubit/requests_state.dart';
@@ -36,7 +37,10 @@ class _RecievedOffersViewState extends State<RecievedOffersView> {
             Navigator.of(context).pushNamed(Routes.mainHomeViewRoute);
           },
           acceptOfferError: (error) {
-            Commons.showToast(message: error.toString());
+            Commons.showToast(
+              // color: ColorManager.error,
+              message: NetworkExceptions.getErrorMessage(error),
+            );
           },
         );
       },

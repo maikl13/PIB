@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/resources/assets_manager.dart';
 
 import '../../../../core/resources/color_manager.dart';
-import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/resources/style_manager.dart';
 import '../../../../core/widgets/rating_bar.dart';
 import '../../business_logic/menu_cubit.dart';
@@ -13,10 +12,11 @@ import '../../business_logic/menu_cubit.dart';
 class RateItem extends StatefulWidget {
   RateItem({
     super.key,
-    required this.rateNumber, required this.onRatingUpdate,
+    required this.rateNumber, required this.onRatingUpdate, required this.title,
   });
   void Function(double) onRatingUpdate;
   final double rateNumber;
+  final String title ;
   
 
   @override
@@ -35,7 +35,7 @@ class _RateItemState extends State<RateItem> {
   }
 
   _buildHeadline(BuildContext context) {
-    return Text(AppStrings.easyToUse,
+    return Text(widget.title,
         style: getBoldStyle(fontSize: 15.sp, color: ColorManager.grey));
   }
 

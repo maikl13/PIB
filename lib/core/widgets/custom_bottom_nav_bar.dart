@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/resources/assets_manager.dart';
 import '../resources/route_manager.dart';
 import 'custom_network_image.dart';
 import '../../features/menu/business_logic/menu_cubit.dart';
@@ -30,8 +31,14 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
       type: BottomNavigationBarType.fixed, // This is all you need!
 
       items: <BottomNavigationBarItem>[
-        const BottomNavigationBarItem(
-          icon: Icon(Icons.home_filled),
+        BottomNavigationBarItem(
+          icon: Image.asset(
+            widget.selectedIndex == 0
+                ? ImageAssets.selectedHouse
+                : ImageAssets.house,
+            color:
+                widget.selectedIndex == 0 ? ColorManager.darkSeconadry : null,
+          ),
           label: AppStrings.main,
         ),
         BottomNavigationBarItem(
@@ -60,8 +67,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
           icon: BlocProvider.value(
             value: RouteGenerator.menuCubit,
             child: BlocConsumer<MenuCubit, MenuState>(
-              listener: (context, state) {
-              },
+              listener: (context, state) {},
               builder: (context, state) {
                 return CircleAvatar(
                     radius: 12.5.h,

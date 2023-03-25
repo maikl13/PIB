@@ -44,6 +44,15 @@ mixin _$RequestState<T> {
     required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
     required TResult Function() giveOfferLoading,
     required TResult Function(UpdateSkill data) giveOfferSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -78,6 +87,13 @@ mixin _$RequestState<T> {
     TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult? Function()? giveOfferLoading,
     TResult? Function(UpdateSkill data)? giveOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -109,6 +125,13 @@ mixin _$RequestState<T> {
     TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult Function()? giveOfferLoading,
     TResult Function(UpdateSkill data)? giveOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -151,6 +174,17 @@ mixin _$RequestState<T> {
         createSpecialRequestSuccess,
     required TResult Function(CreateSpecialRequestError<T> value)
         createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
     required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
     required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
     required TResult Function(GiveOfferError<T> value) giveOfferError,
@@ -184,6 +218,13 @@ mixin _$RequestState<T> {
         createSpecialRequestSuccess,
     TResult? Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult? Function(GiveOfferError<T> value)? giveOfferError,
@@ -217,6 +258,13 @@ mixin _$RequestState<T> {
         createSpecialRequestSuccess,
     TResult Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult Function(GiveOfferError<T> value)? giveOfferError,
@@ -308,6 +356,15 @@ class _$Idle<T> implements Idle<T> {
     required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
     required TResult Function() giveOfferLoading,
     required TResult Function(UpdateSkill data) giveOfferSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -345,6 +402,13 @@ class _$Idle<T> implements Idle<T> {
     TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult? Function()? giveOfferLoading,
     TResult? Function(UpdateSkill data)? giveOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -379,6 +443,13 @@ class _$Idle<T> implements Idle<T> {
     TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult Function()? giveOfferLoading,
     TResult Function(UpdateSkill data)? giveOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -427,6 +498,17 @@ class _$Idle<T> implements Idle<T> {
         createSpecialRequestSuccess,
     required TResult Function(CreateSpecialRequestError<T> value)
         createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
     required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
     required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
     required TResult Function(GiveOfferError<T> value) giveOfferError,
@@ -463,6 +545,13 @@ class _$Idle<T> implements Idle<T> {
         createSpecialRequestSuccess,
     TResult? Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult? Function(GiveOfferError<T> value)? giveOfferError,
@@ -499,6 +588,13 @@ class _$Idle<T> implements Idle<T> {
         createSpecialRequestSuccess,
     TResult Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult Function(GiveOfferError<T> value)? giveOfferError,
@@ -582,6 +678,15 @@ class _$MyRequestsLoading<T> implements MyRequestsLoading<T> {
     required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
     required TResult Function() giveOfferLoading,
     required TResult Function(UpdateSkill data) giveOfferSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -619,6 +724,13 @@ class _$MyRequestsLoading<T> implements MyRequestsLoading<T> {
     TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult? Function()? giveOfferLoading,
     TResult? Function(UpdateSkill data)? giveOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -653,6 +765,13 @@ class _$MyRequestsLoading<T> implements MyRequestsLoading<T> {
     TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult Function()? giveOfferLoading,
     TResult Function(UpdateSkill data)? giveOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -701,6 +820,17 @@ class _$MyRequestsLoading<T> implements MyRequestsLoading<T> {
         createSpecialRequestSuccess,
     required TResult Function(CreateSpecialRequestError<T> value)
         createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
     required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
     required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
     required TResult Function(GiveOfferError<T> value) giveOfferError,
@@ -737,6 +867,13 @@ class _$MyRequestsLoading<T> implements MyRequestsLoading<T> {
         createSpecialRequestSuccess,
     TResult? Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult? Function(GiveOfferError<T> value)? giveOfferError,
@@ -773,6 +910,13 @@ class _$MyRequestsLoading<T> implements MyRequestsLoading<T> {
         createSpecialRequestSuccess,
     TResult Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult Function(GiveOfferError<T> value)? giveOfferError,
@@ -891,6 +1035,15 @@ class _$MyRequestsSuccess<T> implements MyRequestsSuccess<T> {
     required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
     required TResult Function() giveOfferLoading,
     required TResult Function(UpdateSkill data) giveOfferSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -928,6 +1081,13 @@ class _$MyRequestsSuccess<T> implements MyRequestsSuccess<T> {
     TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult? Function()? giveOfferLoading,
     TResult? Function(UpdateSkill data)? giveOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -962,6 +1122,13 @@ class _$MyRequestsSuccess<T> implements MyRequestsSuccess<T> {
     TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult Function()? giveOfferLoading,
     TResult Function(UpdateSkill data)? giveOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -1010,6 +1177,17 @@ class _$MyRequestsSuccess<T> implements MyRequestsSuccess<T> {
         createSpecialRequestSuccess,
     required TResult Function(CreateSpecialRequestError<T> value)
         createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
     required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
     required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
     required TResult Function(GiveOfferError<T> value) giveOfferError,
@@ -1046,6 +1224,13 @@ class _$MyRequestsSuccess<T> implements MyRequestsSuccess<T> {
         createSpecialRequestSuccess,
     TResult? Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult? Function(GiveOfferError<T> value)? giveOfferError,
@@ -1082,6 +1267,13 @@ class _$MyRequestsSuccess<T> implements MyRequestsSuccess<T> {
         createSpecialRequestSuccess,
     TResult Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult Function(GiveOfferError<T> value)? giveOfferError,
@@ -1209,6 +1401,15 @@ class _$MyRequestsError<T> implements MyRequestsError<T> {
     required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
     required TResult Function() giveOfferLoading,
     required TResult Function(UpdateSkill data) giveOfferSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -1246,6 +1447,13 @@ class _$MyRequestsError<T> implements MyRequestsError<T> {
     TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult? Function()? giveOfferLoading,
     TResult? Function(UpdateSkill data)? giveOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -1280,6 +1488,13 @@ class _$MyRequestsError<T> implements MyRequestsError<T> {
     TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult Function()? giveOfferLoading,
     TResult Function(UpdateSkill data)? giveOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -1328,6 +1543,17 @@ class _$MyRequestsError<T> implements MyRequestsError<T> {
         createSpecialRequestSuccess,
     required TResult Function(CreateSpecialRequestError<T> value)
         createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
     required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
     required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
     required TResult Function(GiveOfferError<T> value) giveOfferError,
@@ -1364,6 +1590,13 @@ class _$MyRequestsError<T> implements MyRequestsError<T> {
         createSpecialRequestSuccess,
     TResult? Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult? Function(GiveOfferError<T> value)? giveOfferError,
@@ -1400,6 +1633,13 @@ class _$MyRequestsError<T> implements MyRequestsError<T> {
         createSpecialRequestSuccess,
     TResult Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult Function(GiveOfferError<T> value)? giveOfferError,
@@ -1489,6 +1729,15 @@ class _$OffersLoading<T> implements OffersLoading<T> {
     required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
     required TResult Function() giveOfferLoading,
     required TResult Function(UpdateSkill data) giveOfferSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -1526,6 +1775,13 @@ class _$OffersLoading<T> implements OffersLoading<T> {
     TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult? Function()? giveOfferLoading,
     TResult? Function(UpdateSkill data)? giveOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -1560,6 +1816,13 @@ class _$OffersLoading<T> implements OffersLoading<T> {
     TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult Function()? giveOfferLoading,
     TResult Function(UpdateSkill data)? giveOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -1608,6 +1871,17 @@ class _$OffersLoading<T> implements OffersLoading<T> {
         createSpecialRequestSuccess,
     required TResult Function(CreateSpecialRequestError<T> value)
         createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
     required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
     required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
     required TResult Function(GiveOfferError<T> value) giveOfferError,
@@ -1644,6 +1918,13 @@ class _$OffersLoading<T> implements OffersLoading<T> {
         createSpecialRequestSuccess,
     TResult? Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult? Function(GiveOfferError<T> value)? giveOfferError,
@@ -1680,6 +1961,13 @@ class _$OffersLoading<T> implements OffersLoading<T> {
         createSpecialRequestSuccess,
     TResult Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult Function(GiveOfferError<T> value)? giveOfferError,
@@ -1795,6 +2083,15 @@ class _$OffersSuccess<T> implements OffersSuccess<T> {
     required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
     required TResult Function() giveOfferLoading,
     required TResult Function(UpdateSkill data) giveOfferSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -1832,6 +2129,13 @@ class _$OffersSuccess<T> implements OffersSuccess<T> {
     TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult? Function()? giveOfferLoading,
     TResult? Function(UpdateSkill data)? giveOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -1866,6 +2170,13 @@ class _$OffersSuccess<T> implements OffersSuccess<T> {
     TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult Function()? giveOfferLoading,
     TResult Function(UpdateSkill data)? giveOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -1914,6 +2225,17 @@ class _$OffersSuccess<T> implements OffersSuccess<T> {
         createSpecialRequestSuccess,
     required TResult Function(CreateSpecialRequestError<T> value)
         createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
     required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
     required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
     required TResult Function(GiveOfferError<T> value) giveOfferError,
@@ -1950,6 +2272,13 @@ class _$OffersSuccess<T> implements OffersSuccess<T> {
         createSpecialRequestSuccess,
     TResult? Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult? Function(GiveOfferError<T> value)? giveOfferError,
@@ -1986,6 +2315,13 @@ class _$OffersSuccess<T> implements OffersSuccess<T> {
         createSpecialRequestSuccess,
     TResult Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult Function(GiveOfferError<T> value)? giveOfferError,
@@ -2112,6 +2448,15 @@ class _$OffersError<T> implements OffersError<T> {
     required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
     required TResult Function() giveOfferLoading,
     required TResult Function(UpdateSkill data) giveOfferSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -2149,6 +2494,13 @@ class _$OffersError<T> implements OffersError<T> {
     TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult? Function()? giveOfferLoading,
     TResult? Function(UpdateSkill data)? giveOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -2183,6 +2535,13 @@ class _$OffersError<T> implements OffersError<T> {
     TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult Function()? giveOfferLoading,
     TResult Function(UpdateSkill data)? giveOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -2231,6 +2590,17 @@ class _$OffersError<T> implements OffersError<T> {
         createSpecialRequestSuccess,
     required TResult Function(CreateSpecialRequestError<T> value)
         createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
     required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
     required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
     required TResult Function(GiveOfferError<T> value) giveOfferError,
@@ -2267,6 +2637,13 @@ class _$OffersError<T> implements OffersError<T> {
         createSpecialRequestSuccess,
     TResult? Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult? Function(GiveOfferError<T> value)? giveOfferError,
@@ -2303,6 +2680,13 @@ class _$OffersError<T> implements OffersError<T> {
         createSpecialRequestSuccess,
     TResult Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult Function(GiveOfferError<T> value)? giveOfferError,
@@ -2393,6 +2777,15 @@ class _$OffersRequestLoading<T> implements OffersRequestLoading<T> {
     required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
     required TResult Function() giveOfferLoading,
     required TResult Function(UpdateSkill data) giveOfferSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -2430,6 +2823,13 @@ class _$OffersRequestLoading<T> implements OffersRequestLoading<T> {
     TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult? Function()? giveOfferLoading,
     TResult? Function(UpdateSkill data)? giveOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -2464,6 +2864,13 @@ class _$OffersRequestLoading<T> implements OffersRequestLoading<T> {
     TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult Function()? giveOfferLoading,
     TResult Function(UpdateSkill data)? giveOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -2512,6 +2919,17 @@ class _$OffersRequestLoading<T> implements OffersRequestLoading<T> {
         createSpecialRequestSuccess,
     required TResult Function(CreateSpecialRequestError<T> value)
         createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
     required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
     required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
     required TResult Function(GiveOfferError<T> value) giveOfferError,
@@ -2548,6 +2966,13 @@ class _$OffersRequestLoading<T> implements OffersRequestLoading<T> {
         createSpecialRequestSuccess,
     TResult? Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult? Function(GiveOfferError<T> value)? giveOfferError,
@@ -2584,6 +3009,13 @@ class _$OffersRequestLoading<T> implements OffersRequestLoading<T> {
         createSpecialRequestSuccess,
     TResult Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult Function(GiveOfferError<T> value)? giveOfferError,
@@ -2701,6 +3133,15 @@ class _$OffersRequestSuccess<T> implements OffersRequestSuccess<T> {
     required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
     required TResult Function() giveOfferLoading,
     required TResult Function(UpdateSkill data) giveOfferSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -2738,6 +3179,13 @@ class _$OffersRequestSuccess<T> implements OffersRequestSuccess<T> {
     TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult? Function()? giveOfferLoading,
     TResult? Function(UpdateSkill data)? giveOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -2772,6 +3220,13 @@ class _$OffersRequestSuccess<T> implements OffersRequestSuccess<T> {
     TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult Function()? giveOfferLoading,
     TResult Function(UpdateSkill data)? giveOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -2820,6 +3275,17 @@ class _$OffersRequestSuccess<T> implements OffersRequestSuccess<T> {
         createSpecialRequestSuccess,
     required TResult Function(CreateSpecialRequestError<T> value)
         createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
     required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
     required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
     required TResult Function(GiveOfferError<T> value) giveOfferError,
@@ -2856,6 +3322,13 @@ class _$OffersRequestSuccess<T> implements OffersRequestSuccess<T> {
         createSpecialRequestSuccess,
     TResult? Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult? Function(GiveOfferError<T> value)? giveOfferError,
@@ -2892,6 +3365,13 @@ class _$OffersRequestSuccess<T> implements OffersRequestSuccess<T> {
         createSpecialRequestSuccess,
     TResult Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult Function(GiveOfferError<T> value)? giveOfferError,
@@ -3019,6 +3499,15 @@ class _$OffersRequestError<T> implements OffersRequestError<T> {
     required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
     required TResult Function() giveOfferLoading,
     required TResult Function(UpdateSkill data) giveOfferSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -3056,6 +3545,13 @@ class _$OffersRequestError<T> implements OffersRequestError<T> {
     TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult? Function()? giveOfferLoading,
     TResult? Function(UpdateSkill data)? giveOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -3090,6 +3586,13 @@ class _$OffersRequestError<T> implements OffersRequestError<T> {
     TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult Function()? giveOfferLoading,
     TResult Function(UpdateSkill data)? giveOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -3138,6 +3641,17 @@ class _$OffersRequestError<T> implements OffersRequestError<T> {
         createSpecialRequestSuccess,
     required TResult Function(CreateSpecialRequestError<T> value)
         createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
     required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
     required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
     required TResult Function(GiveOfferError<T> value) giveOfferError,
@@ -3174,6 +3688,13 @@ class _$OffersRequestError<T> implements OffersRequestError<T> {
         createSpecialRequestSuccess,
     TResult? Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult? Function(GiveOfferError<T> value)? giveOfferError,
@@ -3210,6 +3731,13 @@ class _$OffersRequestError<T> implements OffersRequestError<T> {
         createSpecialRequestSuccess,
     TResult Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult Function(GiveOfferError<T> value)? giveOfferError,
@@ -3300,6 +3828,15 @@ class _$MyAvailableJobsLoading<T> implements MyAvailableJobsLoading<T> {
     required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
     required TResult Function() giveOfferLoading,
     required TResult Function(UpdateSkill data) giveOfferSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -3337,6 +3874,13 @@ class _$MyAvailableJobsLoading<T> implements MyAvailableJobsLoading<T> {
     TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult? Function()? giveOfferLoading,
     TResult? Function(UpdateSkill data)? giveOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -3371,6 +3915,13 @@ class _$MyAvailableJobsLoading<T> implements MyAvailableJobsLoading<T> {
     TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult Function()? giveOfferLoading,
     TResult Function(UpdateSkill data)? giveOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -3419,6 +3970,17 @@ class _$MyAvailableJobsLoading<T> implements MyAvailableJobsLoading<T> {
         createSpecialRequestSuccess,
     required TResult Function(CreateSpecialRequestError<T> value)
         createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
     required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
     required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
     required TResult Function(GiveOfferError<T> value) giveOfferError,
@@ -3455,6 +4017,13 @@ class _$MyAvailableJobsLoading<T> implements MyAvailableJobsLoading<T> {
         createSpecialRequestSuccess,
     TResult? Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult? Function(GiveOfferError<T> value)? giveOfferError,
@@ -3491,6 +4060,13 @@ class _$MyAvailableJobsLoading<T> implements MyAvailableJobsLoading<T> {
         createSpecialRequestSuccess,
     TResult Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult Function(GiveOfferError<T> value)? giveOfferError,
@@ -3609,6 +4185,15 @@ class _$MyAvailableJobsSuccess<T> implements MyAvailableJobsSuccess<T> {
     required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
     required TResult Function() giveOfferLoading,
     required TResult Function(UpdateSkill data) giveOfferSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -3646,6 +4231,13 @@ class _$MyAvailableJobsSuccess<T> implements MyAvailableJobsSuccess<T> {
     TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult? Function()? giveOfferLoading,
     TResult? Function(UpdateSkill data)? giveOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -3680,6 +4272,13 @@ class _$MyAvailableJobsSuccess<T> implements MyAvailableJobsSuccess<T> {
     TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult Function()? giveOfferLoading,
     TResult Function(UpdateSkill data)? giveOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -3728,6 +4327,17 @@ class _$MyAvailableJobsSuccess<T> implements MyAvailableJobsSuccess<T> {
         createSpecialRequestSuccess,
     required TResult Function(CreateSpecialRequestError<T> value)
         createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
     required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
     required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
     required TResult Function(GiveOfferError<T> value) giveOfferError,
@@ -3764,6 +4374,13 @@ class _$MyAvailableJobsSuccess<T> implements MyAvailableJobsSuccess<T> {
         createSpecialRequestSuccess,
     TResult? Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult? Function(GiveOfferError<T> value)? giveOfferError,
@@ -3800,6 +4417,13 @@ class _$MyAvailableJobsSuccess<T> implements MyAvailableJobsSuccess<T> {
         createSpecialRequestSuccess,
     TResult Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult Function(GiveOfferError<T> value)? giveOfferError,
@@ -3927,6 +4551,15 @@ class _$MyAvailableJobsError<T> implements MyAvailableJobsError<T> {
     required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
     required TResult Function() giveOfferLoading,
     required TResult Function(UpdateSkill data) giveOfferSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -3964,6 +4597,13 @@ class _$MyAvailableJobsError<T> implements MyAvailableJobsError<T> {
     TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult? Function()? giveOfferLoading,
     TResult? Function(UpdateSkill data)? giveOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -3998,6 +4638,13 @@ class _$MyAvailableJobsError<T> implements MyAvailableJobsError<T> {
     TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult Function()? giveOfferLoading,
     TResult Function(UpdateSkill data)? giveOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -4046,6 +4693,17 @@ class _$MyAvailableJobsError<T> implements MyAvailableJobsError<T> {
         createSpecialRequestSuccess,
     required TResult Function(CreateSpecialRequestError<T> value)
         createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
     required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
     required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
     required TResult Function(GiveOfferError<T> value) giveOfferError,
@@ -4082,6 +4740,13 @@ class _$MyAvailableJobsError<T> implements MyAvailableJobsError<T> {
         createSpecialRequestSuccess,
     TResult? Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult? Function(GiveOfferError<T> value)? giveOfferError,
@@ -4118,6 +4783,13 @@ class _$MyAvailableJobsError<T> implements MyAvailableJobsError<T> {
         createSpecialRequestSuccess,
     TResult Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult Function(GiveOfferError<T> value)? giveOfferError,
@@ -4240,6 +4912,15 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
     required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
     required TResult Function() giveOfferLoading,
     required TResult Function(UpdateSkill data) giveOfferSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -4277,6 +4958,13 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
     TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult? Function()? giveOfferLoading,
     TResult? Function(UpdateSkill data)? giveOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -4311,6 +4999,13 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
     TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult Function()? giveOfferLoading,
     TResult Function(UpdateSkill data)? giveOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -4359,6 +5054,17 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
         createSpecialRequestSuccess,
     required TResult Function(CreateSpecialRequestError<T> value)
         createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
     required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
     required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
     required TResult Function(GiveOfferError<T> value) giveOfferError,
@@ -4395,6 +5101,13 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
         createSpecialRequestSuccess,
     TResult? Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult? Function(GiveOfferError<T> value)? giveOfferError,
@@ -4431,6 +5144,13 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
         createSpecialRequestSuccess,
     TResult Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult Function(GiveOfferError<T> value)? giveOfferError,
@@ -4521,6 +5241,15 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
     required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
     required TResult Function() giveOfferLoading,
     required TResult Function(UpdateSkill data) giveOfferSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -4558,6 +5287,13 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
     TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult? Function()? giveOfferLoading,
     TResult? Function(UpdateSkill data)? giveOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -4592,6 +5328,13 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
     TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult Function()? giveOfferLoading,
     TResult Function(UpdateSkill data)? giveOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -4640,6 +5383,17 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
         createSpecialRequestSuccess,
     required TResult Function(CreateSpecialRequestError<T> value)
         createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
     required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
     required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
     required TResult Function(GiveOfferError<T> value) giveOfferError,
@@ -4676,6 +5430,13 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
         createSpecialRequestSuccess,
     TResult? Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult? Function(GiveOfferError<T> value)? giveOfferError,
@@ -4712,6 +5473,13 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
         createSpecialRequestSuccess,
     TResult Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult Function(GiveOfferError<T> value)? giveOfferError,
@@ -4795,6 +5563,15 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
     required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
     required TResult Function() giveOfferLoading,
     required TResult Function(UpdateSkill data) giveOfferSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -4832,6 +5609,13 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
     TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult? Function()? giveOfferLoading,
     TResult? Function(UpdateSkill data)? giveOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -4866,6 +5650,13 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
     TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult Function()? giveOfferLoading,
     TResult Function(UpdateSkill data)? giveOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -4914,6 +5705,17 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
         createSpecialRequestSuccess,
     required TResult Function(CreateSpecialRequestError<T> value)
         createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
     required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
     required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
     required TResult Function(GiveOfferError<T> value) giveOfferError,
@@ -4950,6 +5752,13 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
         createSpecialRequestSuccess,
     TResult? Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult? Function(GiveOfferError<T> value)? giveOfferError,
@@ -4986,6 +5795,13 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
         createSpecialRequestSuccess,
     TResult Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult Function(GiveOfferError<T> value)? giveOfferError,
@@ -5102,6 +5918,15 @@ class _$ImageSelectedDeleted<T> implements ImageSelectedDeleted<T> {
     required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
     required TResult Function() giveOfferLoading,
     required TResult Function(UpdateSkill data) giveOfferSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -5139,6 +5964,13 @@ class _$ImageSelectedDeleted<T> implements ImageSelectedDeleted<T> {
     TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult? Function()? giveOfferLoading,
     TResult? Function(UpdateSkill data)? giveOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -5173,6 +6005,13 @@ class _$ImageSelectedDeleted<T> implements ImageSelectedDeleted<T> {
     TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult Function()? giveOfferLoading,
     TResult Function(UpdateSkill data)? giveOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -5221,6 +6060,17 @@ class _$ImageSelectedDeleted<T> implements ImageSelectedDeleted<T> {
         createSpecialRequestSuccess,
     required TResult Function(CreateSpecialRequestError<T> value)
         createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
     required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
     required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
     required TResult Function(GiveOfferError<T> value) giveOfferError,
@@ -5257,6 +6107,13 @@ class _$ImageSelectedDeleted<T> implements ImageSelectedDeleted<T> {
         createSpecialRequestSuccess,
     TResult? Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult? Function(GiveOfferError<T> value)? giveOfferError,
@@ -5293,6 +6150,13 @@ class _$ImageSelectedDeleted<T> implements ImageSelectedDeleted<T> {
         createSpecialRequestSuccess,
     TResult Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult Function(GiveOfferError<T> value)? giveOfferError,
@@ -5387,6 +6251,15 @@ class _$CreateSpecialRequestLoading<T>
     required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
     required TResult Function() giveOfferLoading,
     required TResult Function(UpdateSkill data) giveOfferSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -5424,6 +6297,13 @@ class _$CreateSpecialRequestLoading<T>
     TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult? Function()? giveOfferLoading,
     TResult? Function(UpdateSkill data)? giveOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -5458,6 +6338,13 @@ class _$CreateSpecialRequestLoading<T>
     TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult Function()? giveOfferLoading,
     TResult Function(UpdateSkill data)? giveOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -5506,6 +6393,17 @@ class _$CreateSpecialRequestLoading<T>
         createSpecialRequestSuccess,
     required TResult Function(CreateSpecialRequestError<T> value)
         createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
     required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
     required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
     required TResult Function(GiveOfferError<T> value) giveOfferError,
@@ -5542,6 +6440,13 @@ class _$CreateSpecialRequestLoading<T>
         createSpecialRequestSuccess,
     TResult? Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult? Function(GiveOfferError<T> value)? giveOfferError,
@@ -5578,6 +6483,13 @@ class _$CreateSpecialRequestLoading<T>
         createSpecialRequestSuccess,
     TResult Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult Function(GiveOfferError<T> value)? giveOfferError,
@@ -5693,6 +6605,15 @@ class _$CreateSpecialRequestSuccess<T>
     required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
     required TResult Function() giveOfferLoading,
     required TResult Function(UpdateSkill data) giveOfferSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -5730,6 +6651,13 @@ class _$CreateSpecialRequestSuccess<T>
     TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult? Function()? giveOfferLoading,
     TResult? Function(UpdateSkill data)? giveOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -5764,6 +6692,13 @@ class _$CreateSpecialRequestSuccess<T>
     TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult Function()? giveOfferLoading,
     TResult Function(UpdateSkill data)? giveOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -5812,6 +6747,17 @@ class _$CreateSpecialRequestSuccess<T>
         createSpecialRequestSuccess,
     required TResult Function(CreateSpecialRequestError<T> value)
         createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
     required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
     required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
     required TResult Function(GiveOfferError<T> value) giveOfferError,
@@ -5848,6 +6794,13 @@ class _$CreateSpecialRequestSuccess<T>
         createSpecialRequestSuccess,
     TResult? Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult? Function(GiveOfferError<T> value)? giveOfferError,
@@ -5884,6 +6837,13 @@ class _$CreateSpecialRequestSuccess<T>
         createSpecialRequestSuccess,
     TResult Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult Function(GiveOfferError<T> value)? giveOfferError,
@@ -6013,6 +6973,15 @@ class _$CreateSpecialRequestError<T> implements CreateSpecialRequestError<T> {
     required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
     required TResult Function() giveOfferLoading,
     required TResult Function(UpdateSkill data) giveOfferSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -6050,6 +7019,13 @@ class _$CreateSpecialRequestError<T> implements CreateSpecialRequestError<T> {
     TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult? Function()? giveOfferLoading,
     TResult? Function(UpdateSkill data)? giveOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -6084,6 +7060,13 @@ class _$CreateSpecialRequestError<T> implements CreateSpecialRequestError<T> {
     TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult Function()? giveOfferLoading,
     TResult Function(UpdateSkill data)? giveOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -6132,6 +7115,17 @@ class _$CreateSpecialRequestError<T> implements CreateSpecialRequestError<T> {
         createSpecialRequestSuccess,
     required TResult Function(CreateSpecialRequestError<T> value)
         createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
     required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
     required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
     required TResult Function(GiveOfferError<T> value) giveOfferError,
@@ -6168,6 +7162,13 @@ class _$CreateSpecialRequestError<T> implements CreateSpecialRequestError<T> {
         createSpecialRequestSuccess,
     TResult? Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult? Function(GiveOfferError<T> value)? giveOfferError,
@@ -6204,6 +7205,13 @@ class _$CreateSpecialRequestError<T> implements CreateSpecialRequestError<T> {
         createSpecialRequestSuccess,
     TResult Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult Function(GiveOfferError<T> value)? giveOfferError,
@@ -6228,6 +7236,2416 @@ abstract class CreateSpecialRequestError<T> implements RequestState<T> {
   @JsonKey(ignore: true)
   _$$CreateSpecialRequestErrorCopyWith<T, _$CreateSpecialRequestError<T>>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateRequestLoadingCopyWith<T, $Res> {
+  factory _$$UpdateRequestLoadingCopyWith(_$UpdateRequestLoading<T> value,
+          $Res Function(_$UpdateRequestLoading<T>) then) =
+      __$$UpdateRequestLoadingCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$UpdateRequestLoadingCopyWithImpl<T, $Res>
+    extends _$RequestStateCopyWithImpl<T, $Res, _$UpdateRequestLoading<T>>
+    implements _$$UpdateRequestLoadingCopyWith<T, $Res> {
+  __$$UpdateRequestLoadingCopyWithImpl(_$UpdateRequestLoading<T> _value,
+      $Res Function(_$UpdateRequestLoading<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UpdateRequestLoading<T> implements UpdateRequestLoading<T> {
+  const _$UpdateRequestLoading();
+
+  @override
+  String toString() {
+    return 'RequestState<$T>.updateRequestLoading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateRequestLoading<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() myRequestsLoading,
+    required TResult Function(List<MyRequestModel> myRequests)
+        myRequestsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        myRequestsError,
+    required TResult Function() offersLoading,
+    required TResult Function(List<OfferModel> offers) offersSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) offersError,
+    required TResult Function() offersRequestLoading,
+    required TResult Function(List<OfferModel> offers) offersRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        offersRequestError,
+    required TResult Function() myAvailableJobsLoading,
+    required TResult Function(List<MyRequestModel> myRequests)
+        myAvailableJobsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        myAvailableJobsError,
+    required TResult Function(List<File> images) imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function(List<File> images) imageSelectedDeleted,
+    required TResult Function() createSpecialRequestLoading,
+    required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
+    required TResult Function() giveOfferLoading,
+    required TResult Function(UpdateSkill data) giveOfferSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        giveOfferError,
+    required TResult Function() acceptOfferLoading,
+    required TResult Function(UpdateSkill data) acceptOfferSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        acceptOfferError,
+  }) {
+    return updateRequestLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? myRequestsLoading,
+    TResult? Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult? Function()? offersLoading,
+    TResult? Function(List<OfferModel> offers)? offersSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? offersError,
+    TResult? Function()? offersRequestLoading,
+    TResult? Function(List<OfferModel> offers)? offersRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? offersRequestError,
+    TResult? Function()? myAvailableJobsLoading,
+    TResult? Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        myAvailableJobsError,
+    TResult? Function(List<File> images)? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function(List<File> images)? imageSelectedDeleted,
+    TResult? Function()? createSpecialRequestLoading,
+    TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
+    TResult? Function()? giveOfferLoading,
+    TResult? Function(UpdateSkill data)? giveOfferSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
+    TResult? Function()? acceptOfferLoading,
+    TResult? Function(UpdateSkill data)? acceptOfferSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
+  }) {
+    return updateRequestLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? myRequestsLoading,
+    TResult Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult Function()? offersLoading,
+    TResult Function(List<OfferModel> offers)? offersSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? offersError,
+    TResult Function()? offersRequestLoading,
+    TResult Function(List<OfferModel> offers)? offersRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? offersRequestError,
+    TResult Function()? myAvailableJobsLoading,
+    TResult Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? myAvailableJobsError,
+    TResult Function(List<File> images)? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function(List<File> images)? imageSelectedDeleted,
+    TResult Function()? createSpecialRequestLoading,
+    TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
+    TResult Function()? giveOfferLoading,
+    TResult Function(UpdateSkill data)? giveOfferSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
+    TResult Function()? acceptOfferLoading,
+    TResult Function(UpdateSkill data)? acceptOfferSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
+    required TResult orElse(),
+  }) {
+    if (updateRequestLoading != null) {
+      return updateRequestLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(MyRequestsLoading<T> value) myRequestsLoading,
+    required TResult Function(MyRequestsSuccess<T> value) myRequestsSuccess,
+    required TResult Function(MyRequestsError<T> value) myRequestsError,
+    required TResult Function(OffersLoading<T> value) offersLoading,
+    required TResult Function(OffersSuccess<T> value) offersSuccess,
+    required TResult Function(OffersError<T> value) offersError,
+    required TResult Function(OffersRequestLoading<T> value)
+        offersRequestLoading,
+    required TResult Function(OffersRequestSuccess<T> value)
+        offersRequestSuccess,
+    required TResult Function(OffersRequestError<T> value) offersRequestError,
+    required TResult Function(MyAvailableJobsLoading<T> value)
+        myAvailableJobsLoading,
+    required TResult Function(MyAvailableJobsSuccess<T> value)
+        myAvailableJobsSuccess,
+    required TResult Function(MyAvailableJobsError<T> value)
+        myAvailableJobsError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(ImageSelectedDeleted<T> value)
+        imageSelectedDeleted,
+    required TResult Function(CreateSpecialRequestLoading<T> value)
+        createSpecialRequestLoading,
+    required TResult Function(CreateSpecialRequestSuccess<T> value)
+        createSpecialRequestSuccess,
+    required TResult Function(CreateSpecialRequestError<T> value)
+        createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
+    required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
+    required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
+    required TResult Function(GiveOfferError<T> value) giveOfferError,
+    required TResult Function(AcceptOfferLoading<T> value) acceptOfferLoading,
+    required TResult Function(AcceptOfferSuccess<T> value) acceptOfferSuccess,
+    required TResult Function(AcceptOfferError<T> value) acceptOfferError,
+  }) {
+    return updateRequestLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(MyRequestsLoading<T> value)? myRequestsLoading,
+    TResult? Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
+    TResult? Function(MyRequestsError<T> value)? myRequestsError,
+    TResult? Function(OffersLoading<T> value)? offersLoading,
+    TResult? Function(OffersSuccess<T> value)? offersSuccess,
+    TResult? Function(OffersError<T> value)? offersError,
+    TResult? Function(OffersRequestLoading<T> value)? offersRequestLoading,
+    TResult? Function(OffersRequestSuccess<T> value)? offersRequestSuccess,
+    TResult? Function(OffersRequestError<T> value)? offersRequestError,
+    TResult? Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
+    TResult? Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
+    TResult? Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult? Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult? Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult? Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
+    TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
+    TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
+    TResult? Function(GiveOfferError<T> value)? giveOfferError,
+    TResult? Function(AcceptOfferLoading<T> value)? acceptOfferLoading,
+    TResult? Function(AcceptOfferSuccess<T> value)? acceptOfferSuccess,
+    TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
+  }) {
+    return updateRequestLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(MyRequestsLoading<T> value)? myRequestsLoading,
+    TResult Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
+    TResult Function(MyRequestsError<T> value)? myRequestsError,
+    TResult Function(OffersLoading<T> value)? offersLoading,
+    TResult Function(OffersSuccess<T> value)? offersSuccess,
+    TResult Function(OffersError<T> value)? offersError,
+    TResult Function(OffersRequestLoading<T> value)? offersRequestLoading,
+    TResult Function(OffersRequestSuccess<T> value)? offersRequestSuccess,
+    TResult Function(OffersRequestError<T> value)? offersRequestError,
+    TResult Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
+    TResult Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
+    TResult Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
+    TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
+    TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
+    TResult Function(GiveOfferError<T> value)? giveOfferError,
+    TResult Function(AcceptOfferLoading<T> value)? acceptOfferLoading,
+    TResult Function(AcceptOfferSuccess<T> value)? acceptOfferSuccess,
+    TResult Function(AcceptOfferError<T> value)? acceptOfferError,
+    required TResult orElse(),
+  }) {
+    if (updateRequestLoading != null) {
+      return updateRequestLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateRequestLoading<T> implements RequestState<T> {
+  const factory UpdateRequestLoading() = _$UpdateRequestLoading<T>;
+}
+
+/// @nodoc
+abstract class _$$UpdateRequestSuccessCopyWith<T, $Res> {
+  factory _$$UpdateRequestSuccessCopyWith(_$UpdateRequestSuccess<T> value,
+          $Res Function(_$UpdateRequestSuccess<T>) then) =
+      __$$UpdateRequestSuccessCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({UpdateSkill data});
+}
+
+/// @nodoc
+class __$$UpdateRequestSuccessCopyWithImpl<T, $Res>
+    extends _$RequestStateCopyWithImpl<T, $Res, _$UpdateRequestSuccess<T>>
+    implements _$$UpdateRequestSuccessCopyWith<T, $Res> {
+  __$$UpdateRequestSuccessCopyWithImpl(_$UpdateRequestSuccess<T> _value,
+      $Res Function(_$UpdateRequestSuccess<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UpdateRequestSuccess<T>(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as UpdateSkill,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateRequestSuccess<T> implements UpdateRequestSuccess<T> {
+  const _$UpdateRequestSuccess(this.data);
+
+  @override
+  final UpdateSkill data;
+
+  @override
+  String toString() {
+    return 'RequestState<$T>.updateRequestSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateRequestSuccess<T> &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateRequestSuccessCopyWith<T, _$UpdateRequestSuccess<T>> get copyWith =>
+      __$$UpdateRequestSuccessCopyWithImpl<T, _$UpdateRequestSuccess<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() myRequestsLoading,
+    required TResult Function(List<MyRequestModel> myRequests)
+        myRequestsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        myRequestsError,
+    required TResult Function() offersLoading,
+    required TResult Function(List<OfferModel> offers) offersSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) offersError,
+    required TResult Function() offersRequestLoading,
+    required TResult Function(List<OfferModel> offers) offersRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        offersRequestError,
+    required TResult Function() myAvailableJobsLoading,
+    required TResult Function(List<MyRequestModel> myRequests)
+        myAvailableJobsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        myAvailableJobsError,
+    required TResult Function(List<File> images) imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function(List<File> images) imageSelectedDeleted,
+    required TResult Function() createSpecialRequestLoading,
+    required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
+    required TResult Function() giveOfferLoading,
+    required TResult Function(UpdateSkill data) giveOfferSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        giveOfferError,
+    required TResult Function() acceptOfferLoading,
+    required TResult Function(UpdateSkill data) acceptOfferSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        acceptOfferError,
+  }) {
+    return updateRequestSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? myRequestsLoading,
+    TResult? Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult? Function()? offersLoading,
+    TResult? Function(List<OfferModel> offers)? offersSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? offersError,
+    TResult? Function()? offersRequestLoading,
+    TResult? Function(List<OfferModel> offers)? offersRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? offersRequestError,
+    TResult? Function()? myAvailableJobsLoading,
+    TResult? Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        myAvailableJobsError,
+    TResult? Function(List<File> images)? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function(List<File> images)? imageSelectedDeleted,
+    TResult? Function()? createSpecialRequestLoading,
+    TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
+    TResult? Function()? giveOfferLoading,
+    TResult? Function(UpdateSkill data)? giveOfferSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
+    TResult? Function()? acceptOfferLoading,
+    TResult? Function(UpdateSkill data)? acceptOfferSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
+  }) {
+    return updateRequestSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? myRequestsLoading,
+    TResult Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult Function()? offersLoading,
+    TResult Function(List<OfferModel> offers)? offersSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? offersError,
+    TResult Function()? offersRequestLoading,
+    TResult Function(List<OfferModel> offers)? offersRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? offersRequestError,
+    TResult Function()? myAvailableJobsLoading,
+    TResult Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? myAvailableJobsError,
+    TResult Function(List<File> images)? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function(List<File> images)? imageSelectedDeleted,
+    TResult Function()? createSpecialRequestLoading,
+    TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
+    TResult Function()? giveOfferLoading,
+    TResult Function(UpdateSkill data)? giveOfferSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
+    TResult Function()? acceptOfferLoading,
+    TResult Function(UpdateSkill data)? acceptOfferSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
+    required TResult orElse(),
+  }) {
+    if (updateRequestSuccess != null) {
+      return updateRequestSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(MyRequestsLoading<T> value) myRequestsLoading,
+    required TResult Function(MyRequestsSuccess<T> value) myRequestsSuccess,
+    required TResult Function(MyRequestsError<T> value) myRequestsError,
+    required TResult Function(OffersLoading<T> value) offersLoading,
+    required TResult Function(OffersSuccess<T> value) offersSuccess,
+    required TResult Function(OffersError<T> value) offersError,
+    required TResult Function(OffersRequestLoading<T> value)
+        offersRequestLoading,
+    required TResult Function(OffersRequestSuccess<T> value)
+        offersRequestSuccess,
+    required TResult Function(OffersRequestError<T> value) offersRequestError,
+    required TResult Function(MyAvailableJobsLoading<T> value)
+        myAvailableJobsLoading,
+    required TResult Function(MyAvailableJobsSuccess<T> value)
+        myAvailableJobsSuccess,
+    required TResult Function(MyAvailableJobsError<T> value)
+        myAvailableJobsError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(ImageSelectedDeleted<T> value)
+        imageSelectedDeleted,
+    required TResult Function(CreateSpecialRequestLoading<T> value)
+        createSpecialRequestLoading,
+    required TResult Function(CreateSpecialRequestSuccess<T> value)
+        createSpecialRequestSuccess,
+    required TResult Function(CreateSpecialRequestError<T> value)
+        createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
+    required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
+    required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
+    required TResult Function(GiveOfferError<T> value) giveOfferError,
+    required TResult Function(AcceptOfferLoading<T> value) acceptOfferLoading,
+    required TResult Function(AcceptOfferSuccess<T> value) acceptOfferSuccess,
+    required TResult Function(AcceptOfferError<T> value) acceptOfferError,
+  }) {
+    return updateRequestSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(MyRequestsLoading<T> value)? myRequestsLoading,
+    TResult? Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
+    TResult? Function(MyRequestsError<T> value)? myRequestsError,
+    TResult? Function(OffersLoading<T> value)? offersLoading,
+    TResult? Function(OffersSuccess<T> value)? offersSuccess,
+    TResult? Function(OffersError<T> value)? offersError,
+    TResult? Function(OffersRequestLoading<T> value)? offersRequestLoading,
+    TResult? Function(OffersRequestSuccess<T> value)? offersRequestSuccess,
+    TResult? Function(OffersRequestError<T> value)? offersRequestError,
+    TResult? Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
+    TResult? Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
+    TResult? Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult? Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult? Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult? Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
+    TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
+    TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
+    TResult? Function(GiveOfferError<T> value)? giveOfferError,
+    TResult? Function(AcceptOfferLoading<T> value)? acceptOfferLoading,
+    TResult? Function(AcceptOfferSuccess<T> value)? acceptOfferSuccess,
+    TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
+  }) {
+    return updateRequestSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(MyRequestsLoading<T> value)? myRequestsLoading,
+    TResult Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
+    TResult Function(MyRequestsError<T> value)? myRequestsError,
+    TResult Function(OffersLoading<T> value)? offersLoading,
+    TResult Function(OffersSuccess<T> value)? offersSuccess,
+    TResult Function(OffersError<T> value)? offersError,
+    TResult Function(OffersRequestLoading<T> value)? offersRequestLoading,
+    TResult Function(OffersRequestSuccess<T> value)? offersRequestSuccess,
+    TResult Function(OffersRequestError<T> value)? offersRequestError,
+    TResult Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
+    TResult Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
+    TResult Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
+    TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
+    TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
+    TResult Function(GiveOfferError<T> value)? giveOfferError,
+    TResult Function(AcceptOfferLoading<T> value)? acceptOfferLoading,
+    TResult Function(AcceptOfferSuccess<T> value)? acceptOfferSuccess,
+    TResult Function(AcceptOfferError<T> value)? acceptOfferError,
+    required TResult orElse(),
+  }) {
+    if (updateRequestSuccess != null) {
+      return updateRequestSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateRequestSuccess<T> implements RequestState<T> {
+  const factory UpdateRequestSuccess(final UpdateSkill data) =
+      _$UpdateRequestSuccess<T>;
+
+  UpdateSkill get data;
+  @JsonKey(ignore: true)
+  _$$UpdateRequestSuccessCopyWith<T, _$UpdateRequestSuccess<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateRequestErrorCopyWith<T, $Res> {
+  factory _$$UpdateRequestErrorCopyWith(_$UpdateRequestError<T> value,
+          $Res Function(_$UpdateRequestError<T>) then) =
+      __$$UpdateRequestErrorCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({NetworkExceptions networkExceptions});
+
+  $NetworkExceptionsCopyWith<$Res> get networkExceptions;
+}
+
+/// @nodoc
+class __$$UpdateRequestErrorCopyWithImpl<T, $Res>
+    extends _$RequestStateCopyWithImpl<T, $Res, _$UpdateRequestError<T>>
+    implements _$$UpdateRequestErrorCopyWith<T, $Res> {
+  __$$UpdateRequestErrorCopyWithImpl(_$UpdateRequestError<T> _value,
+      $Res Function(_$UpdateRequestError<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? networkExceptions = null,
+  }) {
+    return _then(_$UpdateRequestError<T>(
+      null == networkExceptions
+          ? _value.networkExceptions
+          : networkExceptions // ignore: cast_nullable_to_non_nullable
+              as NetworkExceptions,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $NetworkExceptionsCopyWith<$Res> get networkExceptions {
+    return $NetworkExceptionsCopyWith<$Res>(_value.networkExceptions, (value) {
+      return _then(_value.copyWith(networkExceptions: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$UpdateRequestError<T> implements UpdateRequestError<T> {
+  const _$UpdateRequestError(this.networkExceptions);
+
+  @override
+  final NetworkExceptions networkExceptions;
+
+  @override
+  String toString() {
+    return 'RequestState<$T>.updateRequestError(networkExceptions: $networkExceptions)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateRequestError<T> &&
+            (identical(other.networkExceptions, networkExceptions) ||
+                other.networkExceptions == networkExceptions));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, networkExceptions);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateRequestErrorCopyWith<T, _$UpdateRequestError<T>> get copyWith =>
+      __$$UpdateRequestErrorCopyWithImpl<T, _$UpdateRequestError<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() myRequestsLoading,
+    required TResult Function(List<MyRequestModel> myRequests)
+        myRequestsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        myRequestsError,
+    required TResult Function() offersLoading,
+    required TResult Function(List<OfferModel> offers) offersSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) offersError,
+    required TResult Function() offersRequestLoading,
+    required TResult Function(List<OfferModel> offers) offersRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        offersRequestError,
+    required TResult Function() myAvailableJobsLoading,
+    required TResult Function(List<MyRequestModel> myRequests)
+        myAvailableJobsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        myAvailableJobsError,
+    required TResult Function(List<File> images) imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function(List<File> images) imageSelectedDeleted,
+    required TResult Function() createSpecialRequestLoading,
+    required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
+    required TResult Function() giveOfferLoading,
+    required TResult Function(UpdateSkill data) giveOfferSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        giveOfferError,
+    required TResult Function() acceptOfferLoading,
+    required TResult Function(UpdateSkill data) acceptOfferSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        acceptOfferError,
+  }) {
+    return updateRequestError(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? myRequestsLoading,
+    TResult? Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult? Function()? offersLoading,
+    TResult? Function(List<OfferModel> offers)? offersSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? offersError,
+    TResult? Function()? offersRequestLoading,
+    TResult? Function(List<OfferModel> offers)? offersRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? offersRequestError,
+    TResult? Function()? myAvailableJobsLoading,
+    TResult? Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        myAvailableJobsError,
+    TResult? Function(List<File> images)? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function(List<File> images)? imageSelectedDeleted,
+    TResult? Function()? createSpecialRequestLoading,
+    TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
+    TResult? Function()? giveOfferLoading,
+    TResult? Function(UpdateSkill data)? giveOfferSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
+    TResult? Function()? acceptOfferLoading,
+    TResult? Function(UpdateSkill data)? acceptOfferSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
+  }) {
+    return updateRequestError?.call(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? myRequestsLoading,
+    TResult Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult Function()? offersLoading,
+    TResult Function(List<OfferModel> offers)? offersSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? offersError,
+    TResult Function()? offersRequestLoading,
+    TResult Function(List<OfferModel> offers)? offersRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? offersRequestError,
+    TResult Function()? myAvailableJobsLoading,
+    TResult Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? myAvailableJobsError,
+    TResult Function(List<File> images)? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function(List<File> images)? imageSelectedDeleted,
+    TResult Function()? createSpecialRequestLoading,
+    TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
+    TResult Function()? giveOfferLoading,
+    TResult Function(UpdateSkill data)? giveOfferSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
+    TResult Function()? acceptOfferLoading,
+    TResult Function(UpdateSkill data)? acceptOfferSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
+    required TResult orElse(),
+  }) {
+    if (updateRequestError != null) {
+      return updateRequestError(networkExceptions);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(MyRequestsLoading<T> value) myRequestsLoading,
+    required TResult Function(MyRequestsSuccess<T> value) myRequestsSuccess,
+    required TResult Function(MyRequestsError<T> value) myRequestsError,
+    required TResult Function(OffersLoading<T> value) offersLoading,
+    required TResult Function(OffersSuccess<T> value) offersSuccess,
+    required TResult Function(OffersError<T> value) offersError,
+    required TResult Function(OffersRequestLoading<T> value)
+        offersRequestLoading,
+    required TResult Function(OffersRequestSuccess<T> value)
+        offersRequestSuccess,
+    required TResult Function(OffersRequestError<T> value) offersRequestError,
+    required TResult Function(MyAvailableJobsLoading<T> value)
+        myAvailableJobsLoading,
+    required TResult Function(MyAvailableJobsSuccess<T> value)
+        myAvailableJobsSuccess,
+    required TResult Function(MyAvailableJobsError<T> value)
+        myAvailableJobsError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(ImageSelectedDeleted<T> value)
+        imageSelectedDeleted,
+    required TResult Function(CreateSpecialRequestLoading<T> value)
+        createSpecialRequestLoading,
+    required TResult Function(CreateSpecialRequestSuccess<T> value)
+        createSpecialRequestSuccess,
+    required TResult Function(CreateSpecialRequestError<T> value)
+        createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
+    required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
+    required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
+    required TResult Function(GiveOfferError<T> value) giveOfferError,
+    required TResult Function(AcceptOfferLoading<T> value) acceptOfferLoading,
+    required TResult Function(AcceptOfferSuccess<T> value) acceptOfferSuccess,
+    required TResult Function(AcceptOfferError<T> value) acceptOfferError,
+  }) {
+    return updateRequestError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(MyRequestsLoading<T> value)? myRequestsLoading,
+    TResult? Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
+    TResult? Function(MyRequestsError<T> value)? myRequestsError,
+    TResult? Function(OffersLoading<T> value)? offersLoading,
+    TResult? Function(OffersSuccess<T> value)? offersSuccess,
+    TResult? Function(OffersError<T> value)? offersError,
+    TResult? Function(OffersRequestLoading<T> value)? offersRequestLoading,
+    TResult? Function(OffersRequestSuccess<T> value)? offersRequestSuccess,
+    TResult? Function(OffersRequestError<T> value)? offersRequestError,
+    TResult? Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
+    TResult? Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
+    TResult? Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult? Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult? Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult? Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
+    TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
+    TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
+    TResult? Function(GiveOfferError<T> value)? giveOfferError,
+    TResult? Function(AcceptOfferLoading<T> value)? acceptOfferLoading,
+    TResult? Function(AcceptOfferSuccess<T> value)? acceptOfferSuccess,
+    TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
+  }) {
+    return updateRequestError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(MyRequestsLoading<T> value)? myRequestsLoading,
+    TResult Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
+    TResult Function(MyRequestsError<T> value)? myRequestsError,
+    TResult Function(OffersLoading<T> value)? offersLoading,
+    TResult Function(OffersSuccess<T> value)? offersSuccess,
+    TResult Function(OffersError<T> value)? offersError,
+    TResult Function(OffersRequestLoading<T> value)? offersRequestLoading,
+    TResult Function(OffersRequestSuccess<T> value)? offersRequestSuccess,
+    TResult Function(OffersRequestError<T> value)? offersRequestError,
+    TResult Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
+    TResult Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
+    TResult Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
+    TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
+    TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
+    TResult Function(GiveOfferError<T> value)? giveOfferError,
+    TResult Function(AcceptOfferLoading<T> value)? acceptOfferLoading,
+    TResult Function(AcceptOfferSuccess<T> value)? acceptOfferSuccess,
+    TResult Function(AcceptOfferError<T> value)? acceptOfferError,
+    required TResult orElse(),
+  }) {
+    if (updateRequestError != null) {
+      return updateRequestError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateRequestError<T> implements RequestState<T> {
+  const factory UpdateRequestError(final NetworkExceptions networkExceptions) =
+      _$UpdateRequestError<T>;
+
+  NetworkExceptions get networkExceptions;
+  @JsonKey(ignore: true)
+  _$$UpdateRequestErrorCopyWith<T, _$UpdateRequestError<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteRequestTappedCopyWith<T, $Res> {
+  factory _$$DeleteRequestTappedCopyWith(_$DeleteRequestTapped<T> value,
+          $Res Function(_$DeleteRequestTapped<T>) then) =
+      __$$DeleteRequestTappedCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$DeleteRequestTappedCopyWithImpl<T, $Res>
+    extends _$RequestStateCopyWithImpl<T, $Res, _$DeleteRequestTapped<T>>
+    implements _$$DeleteRequestTappedCopyWith<T, $Res> {
+  __$$DeleteRequestTappedCopyWithImpl(_$DeleteRequestTapped<T> _value,
+      $Res Function(_$DeleteRequestTapped<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$DeleteRequestTapped<T> implements DeleteRequestTapped<T> {
+  const _$DeleteRequestTapped();
+
+  @override
+  String toString() {
+    return 'RequestState<$T>.deleteRequestTapped()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$DeleteRequestTapped<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() myRequestsLoading,
+    required TResult Function(List<MyRequestModel> myRequests)
+        myRequestsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        myRequestsError,
+    required TResult Function() offersLoading,
+    required TResult Function(List<OfferModel> offers) offersSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) offersError,
+    required TResult Function() offersRequestLoading,
+    required TResult Function(List<OfferModel> offers) offersRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        offersRequestError,
+    required TResult Function() myAvailableJobsLoading,
+    required TResult Function(List<MyRequestModel> myRequests)
+        myAvailableJobsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        myAvailableJobsError,
+    required TResult Function(List<File> images) imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function(List<File> images) imageSelectedDeleted,
+    required TResult Function() createSpecialRequestLoading,
+    required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
+    required TResult Function() giveOfferLoading,
+    required TResult Function(UpdateSkill data) giveOfferSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        giveOfferError,
+    required TResult Function() acceptOfferLoading,
+    required TResult Function(UpdateSkill data) acceptOfferSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        acceptOfferError,
+  }) {
+    return deleteRequestTapped();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? myRequestsLoading,
+    TResult? Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult? Function()? offersLoading,
+    TResult? Function(List<OfferModel> offers)? offersSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? offersError,
+    TResult? Function()? offersRequestLoading,
+    TResult? Function(List<OfferModel> offers)? offersRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? offersRequestError,
+    TResult? Function()? myAvailableJobsLoading,
+    TResult? Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        myAvailableJobsError,
+    TResult? Function(List<File> images)? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function(List<File> images)? imageSelectedDeleted,
+    TResult? Function()? createSpecialRequestLoading,
+    TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
+    TResult? Function()? giveOfferLoading,
+    TResult? Function(UpdateSkill data)? giveOfferSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
+    TResult? Function()? acceptOfferLoading,
+    TResult? Function(UpdateSkill data)? acceptOfferSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
+  }) {
+    return deleteRequestTapped?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? myRequestsLoading,
+    TResult Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult Function()? offersLoading,
+    TResult Function(List<OfferModel> offers)? offersSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? offersError,
+    TResult Function()? offersRequestLoading,
+    TResult Function(List<OfferModel> offers)? offersRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? offersRequestError,
+    TResult Function()? myAvailableJobsLoading,
+    TResult Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? myAvailableJobsError,
+    TResult Function(List<File> images)? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function(List<File> images)? imageSelectedDeleted,
+    TResult Function()? createSpecialRequestLoading,
+    TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
+    TResult Function()? giveOfferLoading,
+    TResult Function(UpdateSkill data)? giveOfferSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
+    TResult Function()? acceptOfferLoading,
+    TResult Function(UpdateSkill data)? acceptOfferSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
+    required TResult orElse(),
+  }) {
+    if (deleteRequestTapped != null) {
+      return deleteRequestTapped();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(MyRequestsLoading<T> value) myRequestsLoading,
+    required TResult Function(MyRequestsSuccess<T> value) myRequestsSuccess,
+    required TResult Function(MyRequestsError<T> value) myRequestsError,
+    required TResult Function(OffersLoading<T> value) offersLoading,
+    required TResult Function(OffersSuccess<T> value) offersSuccess,
+    required TResult Function(OffersError<T> value) offersError,
+    required TResult Function(OffersRequestLoading<T> value)
+        offersRequestLoading,
+    required TResult Function(OffersRequestSuccess<T> value)
+        offersRequestSuccess,
+    required TResult Function(OffersRequestError<T> value) offersRequestError,
+    required TResult Function(MyAvailableJobsLoading<T> value)
+        myAvailableJobsLoading,
+    required TResult Function(MyAvailableJobsSuccess<T> value)
+        myAvailableJobsSuccess,
+    required TResult Function(MyAvailableJobsError<T> value)
+        myAvailableJobsError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(ImageSelectedDeleted<T> value)
+        imageSelectedDeleted,
+    required TResult Function(CreateSpecialRequestLoading<T> value)
+        createSpecialRequestLoading,
+    required TResult Function(CreateSpecialRequestSuccess<T> value)
+        createSpecialRequestSuccess,
+    required TResult Function(CreateSpecialRequestError<T> value)
+        createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
+    required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
+    required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
+    required TResult Function(GiveOfferError<T> value) giveOfferError,
+    required TResult Function(AcceptOfferLoading<T> value) acceptOfferLoading,
+    required TResult Function(AcceptOfferSuccess<T> value) acceptOfferSuccess,
+    required TResult Function(AcceptOfferError<T> value) acceptOfferError,
+  }) {
+    return deleteRequestTapped(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(MyRequestsLoading<T> value)? myRequestsLoading,
+    TResult? Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
+    TResult? Function(MyRequestsError<T> value)? myRequestsError,
+    TResult? Function(OffersLoading<T> value)? offersLoading,
+    TResult? Function(OffersSuccess<T> value)? offersSuccess,
+    TResult? Function(OffersError<T> value)? offersError,
+    TResult? Function(OffersRequestLoading<T> value)? offersRequestLoading,
+    TResult? Function(OffersRequestSuccess<T> value)? offersRequestSuccess,
+    TResult? Function(OffersRequestError<T> value)? offersRequestError,
+    TResult? Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
+    TResult? Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
+    TResult? Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult? Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult? Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult? Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
+    TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
+    TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
+    TResult? Function(GiveOfferError<T> value)? giveOfferError,
+    TResult? Function(AcceptOfferLoading<T> value)? acceptOfferLoading,
+    TResult? Function(AcceptOfferSuccess<T> value)? acceptOfferSuccess,
+    TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
+  }) {
+    return deleteRequestTapped?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(MyRequestsLoading<T> value)? myRequestsLoading,
+    TResult Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
+    TResult Function(MyRequestsError<T> value)? myRequestsError,
+    TResult Function(OffersLoading<T> value)? offersLoading,
+    TResult Function(OffersSuccess<T> value)? offersSuccess,
+    TResult Function(OffersError<T> value)? offersError,
+    TResult Function(OffersRequestLoading<T> value)? offersRequestLoading,
+    TResult Function(OffersRequestSuccess<T> value)? offersRequestSuccess,
+    TResult Function(OffersRequestError<T> value)? offersRequestError,
+    TResult Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
+    TResult Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
+    TResult Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
+    TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
+    TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
+    TResult Function(GiveOfferError<T> value)? giveOfferError,
+    TResult Function(AcceptOfferLoading<T> value)? acceptOfferLoading,
+    TResult Function(AcceptOfferSuccess<T> value)? acceptOfferSuccess,
+    TResult Function(AcceptOfferError<T> value)? acceptOfferError,
+    required TResult orElse(),
+  }) {
+    if (deleteRequestTapped != null) {
+      return deleteRequestTapped(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteRequestTapped<T> implements RequestState<T> {
+  const factory DeleteRequestTapped() = _$DeleteRequestTapped<T>;
+}
+
+/// @nodoc
+abstract class _$$DeleteRequestLoadingCopyWith<T, $Res> {
+  factory _$$DeleteRequestLoadingCopyWith(_$DeleteRequestLoading<T> value,
+          $Res Function(_$DeleteRequestLoading<T>) then) =
+      __$$DeleteRequestLoadingCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$DeleteRequestLoadingCopyWithImpl<T, $Res>
+    extends _$RequestStateCopyWithImpl<T, $Res, _$DeleteRequestLoading<T>>
+    implements _$$DeleteRequestLoadingCopyWith<T, $Res> {
+  __$$DeleteRequestLoadingCopyWithImpl(_$DeleteRequestLoading<T> _value,
+      $Res Function(_$DeleteRequestLoading<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$DeleteRequestLoading<T> implements DeleteRequestLoading<T> {
+  const _$DeleteRequestLoading();
+
+  @override
+  String toString() {
+    return 'RequestState<$T>.deleteRequestLoading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteRequestLoading<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() myRequestsLoading,
+    required TResult Function(List<MyRequestModel> myRequests)
+        myRequestsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        myRequestsError,
+    required TResult Function() offersLoading,
+    required TResult Function(List<OfferModel> offers) offersSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) offersError,
+    required TResult Function() offersRequestLoading,
+    required TResult Function(List<OfferModel> offers) offersRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        offersRequestError,
+    required TResult Function() myAvailableJobsLoading,
+    required TResult Function(List<MyRequestModel> myRequests)
+        myAvailableJobsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        myAvailableJobsError,
+    required TResult Function(List<File> images) imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function(List<File> images) imageSelectedDeleted,
+    required TResult Function() createSpecialRequestLoading,
+    required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
+    required TResult Function() giveOfferLoading,
+    required TResult Function(UpdateSkill data) giveOfferSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        giveOfferError,
+    required TResult Function() acceptOfferLoading,
+    required TResult Function(UpdateSkill data) acceptOfferSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        acceptOfferError,
+  }) {
+    return deleteRequestLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? myRequestsLoading,
+    TResult? Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult? Function()? offersLoading,
+    TResult? Function(List<OfferModel> offers)? offersSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? offersError,
+    TResult? Function()? offersRequestLoading,
+    TResult? Function(List<OfferModel> offers)? offersRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? offersRequestError,
+    TResult? Function()? myAvailableJobsLoading,
+    TResult? Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        myAvailableJobsError,
+    TResult? Function(List<File> images)? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function(List<File> images)? imageSelectedDeleted,
+    TResult? Function()? createSpecialRequestLoading,
+    TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
+    TResult? Function()? giveOfferLoading,
+    TResult? Function(UpdateSkill data)? giveOfferSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
+    TResult? Function()? acceptOfferLoading,
+    TResult? Function(UpdateSkill data)? acceptOfferSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
+  }) {
+    return deleteRequestLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? myRequestsLoading,
+    TResult Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult Function()? offersLoading,
+    TResult Function(List<OfferModel> offers)? offersSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? offersError,
+    TResult Function()? offersRequestLoading,
+    TResult Function(List<OfferModel> offers)? offersRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? offersRequestError,
+    TResult Function()? myAvailableJobsLoading,
+    TResult Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? myAvailableJobsError,
+    TResult Function(List<File> images)? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function(List<File> images)? imageSelectedDeleted,
+    TResult Function()? createSpecialRequestLoading,
+    TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
+    TResult Function()? giveOfferLoading,
+    TResult Function(UpdateSkill data)? giveOfferSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
+    TResult Function()? acceptOfferLoading,
+    TResult Function(UpdateSkill data)? acceptOfferSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
+    required TResult orElse(),
+  }) {
+    if (deleteRequestLoading != null) {
+      return deleteRequestLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(MyRequestsLoading<T> value) myRequestsLoading,
+    required TResult Function(MyRequestsSuccess<T> value) myRequestsSuccess,
+    required TResult Function(MyRequestsError<T> value) myRequestsError,
+    required TResult Function(OffersLoading<T> value) offersLoading,
+    required TResult Function(OffersSuccess<T> value) offersSuccess,
+    required TResult Function(OffersError<T> value) offersError,
+    required TResult Function(OffersRequestLoading<T> value)
+        offersRequestLoading,
+    required TResult Function(OffersRequestSuccess<T> value)
+        offersRequestSuccess,
+    required TResult Function(OffersRequestError<T> value) offersRequestError,
+    required TResult Function(MyAvailableJobsLoading<T> value)
+        myAvailableJobsLoading,
+    required TResult Function(MyAvailableJobsSuccess<T> value)
+        myAvailableJobsSuccess,
+    required TResult Function(MyAvailableJobsError<T> value)
+        myAvailableJobsError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(ImageSelectedDeleted<T> value)
+        imageSelectedDeleted,
+    required TResult Function(CreateSpecialRequestLoading<T> value)
+        createSpecialRequestLoading,
+    required TResult Function(CreateSpecialRequestSuccess<T> value)
+        createSpecialRequestSuccess,
+    required TResult Function(CreateSpecialRequestError<T> value)
+        createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
+    required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
+    required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
+    required TResult Function(GiveOfferError<T> value) giveOfferError,
+    required TResult Function(AcceptOfferLoading<T> value) acceptOfferLoading,
+    required TResult Function(AcceptOfferSuccess<T> value) acceptOfferSuccess,
+    required TResult Function(AcceptOfferError<T> value) acceptOfferError,
+  }) {
+    return deleteRequestLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(MyRequestsLoading<T> value)? myRequestsLoading,
+    TResult? Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
+    TResult? Function(MyRequestsError<T> value)? myRequestsError,
+    TResult? Function(OffersLoading<T> value)? offersLoading,
+    TResult? Function(OffersSuccess<T> value)? offersSuccess,
+    TResult? Function(OffersError<T> value)? offersError,
+    TResult? Function(OffersRequestLoading<T> value)? offersRequestLoading,
+    TResult? Function(OffersRequestSuccess<T> value)? offersRequestSuccess,
+    TResult? Function(OffersRequestError<T> value)? offersRequestError,
+    TResult? Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
+    TResult? Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
+    TResult? Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult? Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult? Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult? Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
+    TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
+    TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
+    TResult? Function(GiveOfferError<T> value)? giveOfferError,
+    TResult? Function(AcceptOfferLoading<T> value)? acceptOfferLoading,
+    TResult? Function(AcceptOfferSuccess<T> value)? acceptOfferSuccess,
+    TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
+  }) {
+    return deleteRequestLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(MyRequestsLoading<T> value)? myRequestsLoading,
+    TResult Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
+    TResult Function(MyRequestsError<T> value)? myRequestsError,
+    TResult Function(OffersLoading<T> value)? offersLoading,
+    TResult Function(OffersSuccess<T> value)? offersSuccess,
+    TResult Function(OffersError<T> value)? offersError,
+    TResult Function(OffersRequestLoading<T> value)? offersRequestLoading,
+    TResult Function(OffersRequestSuccess<T> value)? offersRequestSuccess,
+    TResult Function(OffersRequestError<T> value)? offersRequestError,
+    TResult Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
+    TResult Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
+    TResult Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
+    TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
+    TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
+    TResult Function(GiveOfferError<T> value)? giveOfferError,
+    TResult Function(AcceptOfferLoading<T> value)? acceptOfferLoading,
+    TResult Function(AcceptOfferSuccess<T> value)? acceptOfferSuccess,
+    TResult Function(AcceptOfferError<T> value)? acceptOfferError,
+    required TResult orElse(),
+  }) {
+    if (deleteRequestLoading != null) {
+      return deleteRequestLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteRequestLoading<T> implements RequestState<T> {
+  const factory DeleteRequestLoading() = _$DeleteRequestLoading<T>;
+}
+
+/// @nodoc
+abstract class _$$DeleteRequestSuccessCopyWith<T, $Res> {
+  factory _$$DeleteRequestSuccessCopyWith(_$DeleteRequestSuccess<T> value,
+          $Res Function(_$DeleteRequestSuccess<T>) then) =
+      __$$DeleteRequestSuccessCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({UpdateSkill data});
+}
+
+/// @nodoc
+class __$$DeleteRequestSuccessCopyWithImpl<T, $Res>
+    extends _$RequestStateCopyWithImpl<T, $Res, _$DeleteRequestSuccess<T>>
+    implements _$$DeleteRequestSuccessCopyWith<T, $Res> {
+  __$$DeleteRequestSuccessCopyWithImpl(_$DeleteRequestSuccess<T> _value,
+      $Res Function(_$DeleteRequestSuccess<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$DeleteRequestSuccess<T>(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as UpdateSkill,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteRequestSuccess<T> implements DeleteRequestSuccess<T> {
+  const _$DeleteRequestSuccess(this.data);
+
+  @override
+  final UpdateSkill data;
+
+  @override
+  String toString() {
+    return 'RequestState<$T>.deleteRequestSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteRequestSuccess<T> &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteRequestSuccessCopyWith<T, _$DeleteRequestSuccess<T>> get copyWith =>
+      __$$DeleteRequestSuccessCopyWithImpl<T, _$DeleteRequestSuccess<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() myRequestsLoading,
+    required TResult Function(List<MyRequestModel> myRequests)
+        myRequestsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        myRequestsError,
+    required TResult Function() offersLoading,
+    required TResult Function(List<OfferModel> offers) offersSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) offersError,
+    required TResult Function() offersRequestLoading,
+    required TResult Function(List<OfferModel> offers) offersRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        offersRequestError,
+    required TResult Function() myAvailableJobsLoading,
+    required TResult Function(List<MyRequestModel> myRequests)
+        myAvailableJobsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        myAvailableJobsError,
+    required TResult Function(List<File> images) imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function(List<File> images) imageSelectedDeleted,
+    required TResult Function() createSpecialRequestLoading,
+    required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
+    required TResult Function() giveOfferLoading,
+    required TResult Function(UpdateSkill data) giveOfferSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        giveOfferError,
+    required TResult Function() acceptOfferLoading,
+    required TResult Function(UpdateSkill data) acceptOfferSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        acceptOfferError,
+  }) {
+    return deleteRequestSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? myRequestsLoading,
+    TResult? Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult? Function()? offersLoading,
+    TResult? Function(List<OfferModel> offers)? offersSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? offersError,
+    TResult? Function()? offersRequestLoading,
+    TResult? Function(List<OfferModel> offers)? offersRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? offersRequestError,
+    TResult? Function()? myAvailableJobsLoading,
+    TResult? Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        myAvailableJobsError,
+    TResult? Function(List<File> images)? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function(List<File> images)? imageSelectedDeleted,
+    TResult? Function()? createSpecialRequestLoading,
+    TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
+    TResult? Function()? giveOfferLoading,
+    TResult? Function(UpdateSkill data)? giveOfferSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
+    TResult? Function()? acceptOfferLoading,
+    TResult? Function(UpdateSkill data)? acceptOfferSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
+  }) {
+    return deleteRequestSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? myRequestsLoading,
+    TResult Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult Function()? offersLoading,
+    TResult Function(List<OfferModel> offers)? offersSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? offersError,
+    TResult Function()? offersRequestLoading,
+    TResult Function(List<OfferModel> offers)? offersRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? offersRequestError,
+    TResult Function()? myAvailableJobsLoading,
+    TResult Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? myAvailableJobsError,
+    TResult Function(List<File> images)? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function(List<File> images)? imageSelectedDeleted,
+    TResult Function()? createSpecialRequestLoading,
+    TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
+    TResult Function()? giveOfferLoading,
+    TResult Function(UpdateSkill data)? giveOfferSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
+    TResult Function()? acceptOfferLoading,
+    TResult Function(UpdateSkill data)? acceptOfferSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
+    required TResult orElse(),
+  }) {
+    if (deleteRequestSuccess != null) {
+      return deleteRequestSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(MyRequestsLoading<T> value) myRequestsLoading,
+    required TResult Function(MyRequestsSuccess<T> value) myRequestsSuccess,
+    required TResult Function(MyRequestsError<T> value) myRequestsError,
+    required TResult Function(OffersLoading<T> value) offersLoading,
+    required TResult Function(OffersSuccess<T> value) offersSuccess,
+    required TResult Function(OffersError<T> value) offersError,
+    required TResult Function(OffersRequestLoading<T> value)
+        offersRequestLoading,
+    required TResult Function(OffersRequestSuccess<T> value)
+        offersRequestSuccess,
+    required TResult Function(OffersRequestError<T> value) offersRequestError,
+    required TResult Function(MyAvailableJobsLoading<T> value)
+        myAvailableJobsLoading,
+    required TResult Function(MyAvailableJobsSuccess<T> value)
+        myAvailableJobsSuccess,
+    required TResult Function(MyAvailableJobsError<T> value)
+        myAvailableJobsError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(ImageSelectedDeleted<T> value)
+        imageSelectedDeleted,
+    required TResult Function(CreateSpecialRequestLoading<T> value)
+        createSpecialRequestLoading,
+    required TResult Function(CreateSpecialRequestSuccess<T> value)
+        createSpecialRequestSuccess,
+    required TResult Function(CreateSpecialRequestError<T> value)
+        createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
+    required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
+    required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
+    required TResult Function(GiveOfferError<T> value) giveOfferError,
+    required TResult Function(AcceptOfferLoading<T> value) acceptOfferLoading,
+    required TResult Function(AcceptOfferSuccess<T> value) acceptOfferSuccess,
+    required TResult Function(AcceptOfferError<T> value) acceptOfferError,
+  }) {
+    return deleteRequestSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(MyRequestsLoading<T> value)? myRequestsLoading,
+    TResult? Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
+    TResult? Function(MyRequestsError<T> value)? myRequestsError,
+    TResult? Function(OffersLoading<T> value)? offersLoading,
+    TResult? Function(OffersSuccess<T> value)? offersSuccess,
+    TResult? Function(OffersError<T> value)? offersError,
+    TResult? Function(OffersRequestLoading<T> value)? offersRequestLoading,
+    TResult? Function(OffersRequestSuccess<T> value)? offersRequestSuccess,
+    TResult? Function(OffersRequestError<T> value)? offersRequestError,
+    TResult? Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
+    TResult? Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
+    TResult? Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult? Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult? Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult? Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
+    TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
+    TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
+    TResult? Function(GiveOfferError<T> value)? giveOfferError,
+    TResult? Function(AcceptOfferLoading<T> value)? acceptOfferLoading,
+    TResult? Function(AcceptOfferSuccess<T> value)? acceptOfferSuccess,
+    TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
+  }) {
+    return deleteRequestSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(MyRequestsLoading<T> value)? myRequestsLoading,
+    TResult Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
+    TResult Function(MyRequestsError<T> value)? myRequestsError,
+    TResult Function(OffersLoading<T> value)? offersLoading,
+    TResult Function(OffersSuccess<T> value)? offersSuccess,
+    TResult Function(OffersError<T> value)? offersError,
+    TResult Function(OffersRequestLoading<T> value)? offersRequestLoading,
+    TResult Function(OffersRequestSuccess<T> value)? offersRequestSuccess,
+    TResult Function(OffersRequestError<T> value)? offersRequestError,
+    TResult Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
+    TResult Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
+    TResult Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
+    TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
+    TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
+    TResult Function(GiveOfferError<T> value)? giveOfferError,
+    TResult Function(AcceptOfferLoading<T> value)? acceptOfferLoading,
+    TResult Function(AcceptOfferSuccess<T> value)? acceptOfferSuccess,
+    TResult Function(AcceptOfferError<T> value)? acceptOfferError,
+    required TResult orElse(),
+  }) {
+    if (deleteRequestSuccess != null) {
+      return deleteRequestSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteRequestSuccess<T> implements RequestState<T> {
+  const factory DeleteRequestSuccess(final UpdateSkill data) =
+      _$DeleteRequestSuccess<T>;
+
+  UpdateSkill get data;
+  @JsonKey(ignore: true)
+  _$$DeleteRequestSuccessCopyWith<T, _$DeleteRequestSuccess<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteRequestErrorCopyWith<T, $Res> {
+  factory _$$DeleteRequestErrorCopyWith(_$DeleteRequestError<T> value,
+          $Res Function(_$DeleteRequestError<T>) then) =
+      __$$DeleteRequestErrorCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({NetworkExceptions networkExceptions});
+
+  $NetworkExceptionsCopyWith<$Res> get networkExceptions;
+}
+
+/// @nodoc
+class __$$DeleteRequestErrorCopyWithImpl<T, $Res>
+    extends _$RequestStateCopyWithImpl<T, $Res, _$DeleteRequestError<T>>
+    implements _$$DeleteRequestErrorCopyWith<T, $Res> {
+  __$$DeleteRequestErrorCopyWithImpl(_$DeleteRequestError<T> _value,
+      $Res Function(_$DeleteRequestError<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? networkExceptions = null,
+  }) {
+    return _then(_$DeleteRequestError<T>(
+      null == networkExceptions
+          ? _value.networkExceptions
+          : networkExceptions // ignore: cast_nullable_to_non_nullable
+              as NetworkExceptions,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $NetworkExceptionsCopyWith<$Res> get networkExceptions {
+    return $NetworkExceptionsCopyWith<$Res>(_value.networkExceptions, (value) {
+      return _then(_value.copyWith(networkExceptions: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$DeleteRequestError<T> implements DeleteRequestError<T> {
+  const _$DeleteRequestError(this.networkExceptions);
+
+  @override
+  final NetworkExceptions networkExceptions;
+
+  @override
+  String toString() {
+    return 'RequestState<$T>.deleteRequestError(networkExceptions: $networkExceptions)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteRequestError<T> &&
+            (identical(other.networkExceptions, networkExceptions) ||
+                other.networkExceptions == networkExceptions));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, networkExceptions);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteRequestErrorCopyWith<T, _$DeleteRequestError<T>> get copyWith =>
+      __$$DeleteRequestErrorCopyWithImpl<T, _$DeleteRequestError<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() myRequestsLoading,
+    required TResult Function(List<MyRequestModel> myRequests)
+        myRequestsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        myRequestsError,
+    required TResult Function() offersLoading,
+    required TResult Function(List<OfferModel> offers) offersSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) offersError,
+    required TResult Function() offersRequestLoading,
+    required TResult Function(List<OfferModel> offers) offersRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        offersRequestError,
+    required TResult Function() myAvailableJobsLoading,
+    required TResult Function(List<MyRequestModel> myRequests)
+        myAvailableJobsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        myAvailableJobsError,
+    required TResult Function(List<File> images) imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function(List<File> images) imageSelectedDeleted,
+    required TResult Function() createSpecialRequestLoading,
+    required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
+    required TResult Function() giveOfferLoading,
+    required TResult Function(UpdateSkill data) giveOfferSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        giveOfferError,
+    required TResult Function() acceptOfferLoading,
+    required TResult Function(UpdateSkill data) acceptOfferSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        acceptOfferError,
+  }) {
+    return deleteRequestError(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? myRequestsLoading,
+    TResult? Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult? Function()? offersLoading,
+    TResult? Function(List<OfferModel> offers)? offersSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? offersError,
+    TResult? Function()? offersRequestLoading,
+    TResult? Function(List<OfferModel> offers)? offersRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? offersRequestError,
+    TResult? Function()? myAvailableJobsLoading,
+    TResult? Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        myAvailableJobsError,
+    TResult? Function(List<File> images)? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function(List<File> images)? imageSelectedDeleted,
+    TResult? Function()? createSpecialRequestLoading,
+    TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
+    TResult? Function()? giveOfferLoading,
+    TResult? Function(UpdateSkill data)? giveOfferSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
+    TResult? Function()? acceptOfferLoading,
+    TResult? Function(UpdateSkill data)? acceptOfferSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
+  }) {
+    return deleteRequestError?.call(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? myRequestsLoading,
+    TResult Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult Function()? offersLoading,
+    TResult Function(List<OfferModel> offers)? offersSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? offersError,
+    TResult Function()? offersRequestLoading,
+    TResult Function(List<OfferModel> offers)? offersRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? offersRequestError,
+    TResult Function()? myAvailableJobsLoading,
+    TResult Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? myAvailableJobsError,
+    TResult Function(List<File> images)? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function(List<File> images)? imageSelectedDeleted,
+    TResult Function()? createSpecialRequestLoading,
+    TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
+    TResult Function()? giveOfferLoading,
+    TResult Function(UpdateSkill data)? giveOfferSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
+    TResult Function()? acceptOfferLoading,
+    TResult Function(UpdateSkill data)? acceptOfferSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
+    required TResult orElse(),
+  }) {
+    if (deleteRequestError != null) {
+      return deleteRequestError(networkExceptions);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(MyRequestsLoading<T> value) myRequestsLoading,
+    required TResult Function(MyRequestsSuccess<T> value) myRequestsSuccess,
+    required TResult Function(MyRequestsError<T> value) myRequestsError,
+    required TResult Function(OffersLoading<T> value) offersLoading,
+    required TResult Function(OffersSuccess<T> value) offersSuccess,
+    required TResult Function(OffersError<T> value) offersError,
+    required TResult Function(OffersRequestLoading<T> value)
+        offersRequestLoading,
+    required TResult Function(OffersRequestSuccess<T> value)
+        offersRequestSuccess,
+    required TResult Function(OffersRequestError<T> value) offersRequestError,
+    required TResult Function(MyAvailableJobsLoading<T> value)
+        myAvailableJobsLoading,
+    required TResult Function(MyAvailableJobsSuccess<T> value)
+        myAvailableJobsSuccess,
+    required TResult Function(MyAvailableJobsError<T> value)
+        myAvailableJobsError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(ImageSelectedDeleted<T> value)
+        imageSelectedDeleted,
+    required TResult Function(CreateSpecialRequestLoading<T> value)
+        createSpecialRequestLoading,
+    required TResult Function(CreateSpecialRequestSuccess<T> value)
+        createSpecialRequestSuccess,
+    required TResult Function(CreateSpecialRequestError<T> value)
+        createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
+    required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
+    required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
+    required TResult Function(GiveOfferError<T> value) giveOfferError,
+    required TResult Function(AcceptOfferLoading<T> value) acceptOfferLoading,
+    required TResult Function(AcceptOfferSuccess<T> value) acceptOfferSuccess,
+    required TResult Function(AcceptOfferError<T> value) acceptOfferError,
+  }) {
+    return deleteRequestError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(MyRequestsLoading<T> value)? myRequestsLoading,
+    TResult? Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
+    TResult? Function(MyRequestsError<T> value)? myRequestsError,
+    TResult? Function(OffersLoading<T> value)? offersLoading,
+    TResult? Function(OffersSuccess<T> value)? offersSuccess,
+    TResult? Function(OffersError<T> value)? offersError,
+    TResult? Function(OffersRequestLoading<T> value)? offersRequestLoading,
+    TResult? Function(OffersRequestSuccess<T> value)? offersRequestSuccess,
+    TResult? Function(OffersRequestError<T> value)? offersRequestError,
+    TResult? Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
+    TResult? Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
+    TResult? Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult? Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult? Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult? Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
+    TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
+    TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
+    TResult? Function(GiveOfferError<T> value)? giveOfferError,
+    TResult? Function(AcceptOfferLoading<T> value)? acceptOfferLoading,
+    TResult? Function(AcceptOfferSuccess<T> value)? acceptOfferSuccess,
+    TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
+  }) {
+    return deleteRequestError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(MyRequestsLoading<T> value)? myRequestsLoading,
+    TResult Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
+    TResult Function(MyRequestsError<T> value)? myRequestsError,
+    TResult Function(OffersLoading<T> value)? offersLoading,
+    TResult Function(OffersSuccess<T> value)? offersSuccess,
+    TResult Function(OffersError<T> value)? offersError,
+    TResult Function(OffersRequestLoading<T> value)? offersRequestLoading,
+    TResult Function(OffersRequestSuccess<T> value)? offersRequestSuccess,
+    TResult Function(OffersRequestError<T> value)? offersRequestError,
+    TResult Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
+    TResult Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
+    TResult Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
+    TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
+    TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
+    TResult Function(GiveOfferError<T> value)? giveOfferError,
+    TResult Function(AcceptOfferLoading<T> value)? acceptOfferLoading,
+    TResult Function(AcceptOfferSuccess<T> value)? acceptOfferSuccess,
+    TResult Function(AcceptOfferError<T> value)? acceptOfferError,
+    required TResult orElse(),
+  }) {
+    if (deleteRequestError != null) {
+      return deleteRequestError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteRequestError<T> implements RequestState<T> {
+  const factory DeleteRequestError(final NetworkExceptions networkExceptions) =
+      _$DeleteRequestError<T>;
+
+  NetworkExceptions get networkExceptions;
+  @JsonKey(ignore: true)
+  _$$DeleteRequestErrorCopyWith<T, _$DeleteRequestError<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -6294,6 +9712,15 @@ class _$GiveOfferLoading<T> implements GiveOfferLoading<T> {
     required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
     required TResult Function() giveOfferLoading,
     required TResult Function(UpdateSkill data) giveOfferSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -6331,6 +9758,13 @@ class _$GiveOfferLoading<T> implements GiveOfferLoading<T> {
     TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult? Function()? giveOfferLoading,
     TResult? Function(UpdateSkill data)? giveOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -6365,6 +9799,13 @@ class _$GiveOfferLoading<T> implements GiveOfferLoading<T> {
     TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult Function()? giveOfferLoading,
     TResult Function(UpdateSkill data)? giveOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -6413,6 +9854,17 @@ class _$GiveOfferLoading<T> implements GiveOfferLoading<T> {
         createSpecialRequestSuccess,
     required TResult Function(CreateSpecialRequestError<T> value)
         createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
     required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
     required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
     required TResult Function(GiveOfferError<T> value) giveOfferError,
@@ -6449,6 +9901,13 @@ class _$GiveOfferLoading<T> implements GiveOfferLoading<T> {
         createSpecialRequestSuccess,
     TResult? Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult? Function(GiveOfferError<T> value)? giveOfferError,
@@ -6485,6 +9944,13 @@ class _$GiveOfferLoading<T> implements GiveOfferLoading<T> {
         createSpecialRequestSuccess,
     TResult Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult Function(GiveOfferError<T> value)? giveOfferError,
@@ -6595,6 +10061,15 @@ class _$GiveOfferSuccess<T> implements GiveOfferSuccess<T> {
     required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
     required TResult Function() giveOfferLoading,
     required TResult Function(UpdateSkill data) giveOfferSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -6632,6 +10107,13 @@ class _$GiveOfferSuccess<T> implements GiveOfferSuccess<T> {
     TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult? Function()? giveOfferLoading,
     TResult? Function(UpdateSkill data)? giveOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -6666,6 +10148,13 @@ class _$GiveOfferSuccess<T> implements GiveOfferSuccess<T> {
     TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult Function()? giveOfferLoading,
     TResult Function(UpdateSkill data)? giveOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -6714,6 +10203,17 @@ class _$GiveOfferSuccess<T> implements GiveOfferSuccess<T> {
         createSpecialRequestSuccess,
     required TResult Function(CreateSpecialRequestError<T> value)
         createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
     required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
     required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
     required TResult Function(GiveOfferError<T> value) giveOfferError,
@@ -6750,6 +10250,13 @@ class _$GiveOfferSuccess<T> implements GiveOfferSuccess<T> {
         createSpecialRequestSuccess,
     TResult? Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult? Function(GiveOfferError<T> value)? giveOfferError,
@@ -6786,6 +10293,13 @@ class _$GiveOfferSuccess<T> implements GiveOfferSuccess<T> {
         createSpecialRequestSuccess,
     TResult Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult Function(GiveOfferError<T> value)? giveOfferError,
@@ -6912,6 +10426,15 @@ class _$GiveOfferError<T> implements GiveOfferError<T> {
     required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
     required TResult Function() giveOfferLoading,
     required TResult Function(UpdateSkill data) giveOfferSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -6949,6 +10472,13 @@ class _$GiveOfferError<T> implements GiveOfferError<T> {
     TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult? Function()? giveOfferLoading,
     TResult? Function(UpdateSkill data)? giveOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -6983,6 +10513,13 @@ class _$GiveOfferError<T> implements GiveOfferError<T> {
     TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult Function()? giveOfferLoading,
     TResult Function(UpdateSkill data)? giveOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -7031,6 +10568,17 @@ class _$GiveOfferError<T> implements GiveOfferError<T> {
         createSpecialRequestSuccess,
     required TResult Function(CreateSpecialRequestError<T> value)
         createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
     required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
     required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
     required TResult Function(GiveOfferError<T> value) giveOfferError,
@@ -7067,6 +10615,13 @@ class _$GiveOfferError<T> implements GiveOfferError<T> {
         createSpecialRequestSuccess,
     TResult? Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult? Function(GiveOfferError<T> value)? giveOfferError,
@@ -7103,6 +10658,13 @@ class _$GiveOfferError<T> implements GiveOfferError<T> {
         createSpecialRequestSuccess,
     TResult Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult Function(GiveOfferError<T> value)? giveOfferError,
@@ -7192,6 +10754,15 @@ class _$AcceptOfferLoading<T> implements AcceptOfferLoading<T> {
     required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
     required TResult Function() giveOfferLoading,
     required TResult Function(UpdateSkill data) giveOfferSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -7229,6 +10800,13 @@ class _$AcceptOfferLoading<T> implements AcceptOfferLoading<T> {
     TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult? Function()? giveOfferLoading,
     TResult? Function(UpdateSkill data)? giveOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -7263,6 +10841,13 @@ class _$AcceptOfferLoading<T> implements AcceptOfferLoading<T> {
     TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult Function()? giveOfferLoading,
     TResult Function(UpdateSkill data)? giveOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -7311,6 +10896,17 @@ class _$AcceptOfferLoading<T> implements AcceptOfferLoading<T> {
         createSpecialRequestSuccess,
     required TResult Function(CreateSpecialRequestError<T> value)
         createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
     required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
     required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
     required TResult Function(GiveOfferError<T> value) giveOfferError,
@@ -7347,6 +10943,13 @@ class _$AcceptOfferLoading<T> implements AcceptOfferLoading<T> {
         createSpecialRequestSuccess,
     TResult? Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult? Function(GiveOfferError<T> value)? giveOfferError,
@@ -7383,6 +10986,13 @@ class _$AcceptOfferLoading<T> implements AcceptOfferLoading<T> {
         createSpecialRequestSuccess,
     TResult Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult Function(GiveOfferError<T> value)? giveOfferError,
@@ -7493,6 +11103,15 @@ class _$AcceptOfferSuccess<T> implements AcceptOfferSuccess<T> {
     required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
     required TResult Function() giveOfferLoading,
     required TResult Function(UpdateSkill data) giveOfferSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -7530,6 +11149,13 @@ class _$AcceptOfferSuccess<T> implements AcceptOfferSuccess<T> {
     TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult? Function()? giveOfferLoading,
     TResult? Function(UpdateSkill data)? giveOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -7564,6 +11190,13 @@ class _$AcceptOfferSuccess<T> implements AcceptOfferSuccess<T> {
     TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult Function()? giveOfferLoading,
     TResult Function(UpdateSkill data)? giveOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -7612,6 +11245,17 @@ class _$AcceptOfferSuccess<T> implements AcceptOfferSuccess<T> {
         createSpecialRequestSuccess,
     required TResult Function(CreateSpecialRequestError<T> value)
         createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
     required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
     required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
     required TResult Function(GiveOfferError<T> value) giveOfferError,
@@ -7648,6 +11292,13 @@ class _$AcceptOfferSuccess<T> implements AcceptOfferSuccess<T> {
         createSpecialRequestSuccess,
     TResult? Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult? Function(GiveOfferError<T> value)? giveOfferError,
@@ -7684,6 +11335,13 @@ class _$AcceptOfferSuccess<T> implements AcceptOfferSuccess<T> {
         createSpecialRequestSuccess,
     TResult Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult Function(GiveOfferError<T> value)? giveOfferError,
@@ -7811,6 +11469,15 @@ class _$AcceptOfferError<T> implements AcceptOfferError<T> {
     required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
     required TResult Function() giveOfferLoading,
     required TResult Function(UpdateSkill data) giveOfferSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -7848,6 +11515,13 @@ class _$AcceptOfferError<T> implements AcceptOfferError<T> {
     TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult? Function()? giveOfferLoading,
     TResult? Function(UpdateSkill data)? giveOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -7882,6 +11556,13 @@ class _$AcceptOfferError<T> implements AcceptOfferError<T> {
     TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
     TResult Function()? giveOfferLoading,
     TResult Function(UpdateSkill data)? giveOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
@@ -7930,6 +11611,17 @@ class _$AcceptOfferError<T> implements AcceptOfferError<T> {
         createSpecialRequestSuccess,
     required TResult Function(CreateSpecialRequestError<T> value)
         createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
     required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
     required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
     required TResult Function(GiveOfferError<T> value) giveOfferError,
@@ -7966,6 +11658,13 @@ class _$AcceptOfferError<T> implements AcceptOfferError<T> {
         createSpecialRequestSuccess,
     TResult? Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult? Function(GiveOfferError<T> value)? giveOfferError,
@@ -8002,6 +11701,13 @@ class _$AcceptOfferError<T> implements AcceptOfferError<T> {
         createSpecialRequestSuccess,
     TResult Function(CreateSpecialRequestError<T> value)?
         createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
     TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
     TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
     TResult Function(GiveOfferError<T> value)? giveOfferError,

@@ -20,6 +20,24 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
 
   String verificationId = '';
 
+  void signInAnonymously() async {
+    emit(const AuthResultState.firebaseAnonymousLoginLoading());
+
+    final FirebaseAuth auth = FirebaseAuth.instance;
+
+    try {
+      final UserCredential result = await auth.signInAnonymously();
+      final user = result.user;
+
+      token = user!.uid;
+      emit(AuthResultState.firebaseAnonymousLoginSuccess(user.uid));
+    } catch (e) {
+      emit(AuthResultState.firebaseAnonymousLoginError(
+          NetworkExceptions.getDioException(e)));
+      //  print("Error signing in: ${e.toString()}");
+    }
+  }
+
   void login({
     required String uid,
   }) async {
@@ -130,7 +148,7 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
     emit(const AuthResultState.phoneAuthLoading());
 
     await _auth.verifyPhoneNumber(
-      phoneNumber: '+2$phoneNumber',
+      phoneNumber: '$countryCode$phoneNumber',
       timeout: const Duration(seconds: AppConstants.timeOut),
       verificationCompleted: verificationCompleted,
       verificationFailed: verificationFailed,

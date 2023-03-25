@@ -5,6 +5,7 @@ import 'package:pip/features/chat/business_logic/chat_state.dart';
 
 import '../../../../core/resources/commons.dart';
 import '../../../../core/resources/route_manager.dart';
+import '../../../../core/web_services/network_exceptions.dart';
 import '../../../../core/widgets/default_button.dart';
 import '../../../pip/presentation/widgets/upload_photos.dart';
 import '../../business_logic/chat_cubit.dart';
@@ -175,6 +176,13 @@ class _NewMessageState extends State<NewMessage> {
         state.whenOrNull(
           sendMessageloading: () {
             Commons.showLoadingDialog(context);
+          },
+          sendMessageerror: (networkExceptions) {
+            Navigator.of(context).pop();
+               Commons.showToast(
+              color: ColorManager.error,
+              message: NetworkExceptions.getErrorMessage(networkExceptions),
+            );
           },
           sendMessagesuccess: (data) {
             Navigator.of(context).pop();

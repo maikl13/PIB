@@ -34,8 +34,9 @@ class RequestsCubit extends Cubit<RequestState> {
   }
 
   Future pickImage() async {
+    emit(const RequestState.imageSelectedLoading());
+
     try {
-      emit(const RequestState.imageSelectedLoading());
       final List<XFile> images = await ImagePicker().pickMultiImage();
 
       final imagesList = images.map((e) => File(e.path)).toList();
@@ -93,7 +94,6 @@ class RequestsCubit extends Cubit<RequestState> {
     );
   }
 
-
   void getAllRequestOffers(int id) async {
     emit(const RequestState.offersRequestLoading());
 
@@ -131,6 +131,55 @@ class RequestsCubit extends Cubit<RequestState> {
       },
       failure: (NetworkExceptions networkExceptions) {
         emit(RequestState.giveOfferError(networkExceptions));
+      },
+    );
+  }
+
+  void updateRequest({
+    String? id,
+    String? categoryId,
+    String? price,
+    String? location,
+    String? description,
+  }) async {
+    emit(const RequestState.updateRequestLoading());
+
+    // ignore: prefer_typing_uninitialized_variables
+    var result = await requestRepository.updateRequest(
+        id!, categoryId!, price!, location!, description!);
+
+    result.when(
+      success: (UpdateSkill data) {
+        emit(RequestState.updateRequestSuccess(data));
+        // print(data.toString());
+      },
+      failure: (NetworkExceptions networkExceptions) {
+        emit(RequestState.updateRequestError(networkExceptions));
+      },
+    );
+  }
+
+
+void deleteRequestTapped(){
+  emit(const RequestState.deleteRequestTapped());
+}
+  void deleteRequest({
+  required  String? id,
+
+  }) async {
+    emit(const RequestState.deleteRequestLoading());
+
+    // ignore: prefer_typing_uninitialized_variables
+    var result = await requestRepository.deleteRequest(
+        id!);
+
+    result.when(
+      success: (UpdateSkill data) {
+        emit(RequestState.deleteRequestSuccess(data));
+        // print(data.toString());
+      },
+      failure: (NetworkExceptions networkExceptions) {
+        emit(RequestState.deleteRequestError(networkExceptions));
       },
     );
   }

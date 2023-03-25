@@ -72,6 +72,7 @@ class MessageMediaBubble extends StatelessWidget {
     return InkWell(
         onTap: () {
           BlocProvider.of<ChatCubit>(context).stopStream();
+          Commons.openUrl(chatMessage.attachment!);
           // Navigator.pushNamed(context, VideoScreen.routeName,
           //     arguments: RouteArgument(param: chatMessage.attachment));
         },

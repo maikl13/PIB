@@ -179,6 +179,6 @@ class AppStrings {
   static const String thanksForContacting = 'شكرا لتواصلك معنا';
   static const String willTry = 'سنحاول التواصل معك باسرع وقت ممكن';
   static const String showJob = 'عرض الوظيفة';
-  // static const String theMenue = 'القائمة';
+  static const String editRequest = 'تعديل الطلب';
   // static const String theMenue = 'القائمة';
 }

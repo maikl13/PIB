@@ -143,6 +143,27 @@ abstract class WebServices {
     @Field('location') String? location,
     @Field('description') String? description,
   );
+
+  //-----------------------new-----------------------------------------------------------------
+  @POST("deals/update")
+  Future<UpdateSkill> updateRequest(
+    @Header('Authorization') String token,
+    @Field('id') String? id,
+    @Field('category_id') String? categoryId,
+    @Field('price') String? price,
+    @Field('location') String? location,
+    @Field('description') String? description,
+  );
+
+  //-----------------------new-----------------------------------------------------------------
+  @POST("deals/delete")
+  Future<UpdateSkill> deleteRequest(
+    @Header('Authorization') String token,
+    @Field('id') String? id,
+   
+  );
+
+
   //-----------------------new-----------------------------------------------------------------
   @POST("deals/offers/accept")
   Future<UpdateSkill> acceptOffer(

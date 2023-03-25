@@ -67,6 +67,38 @@ class RequestRepository {
     }
   }
 
+
+   Future<ApiResult<UpdateSkill>> updateRequest(
+    String id,
+    String categoryId,
+    String price,
+    String location,
+    String description,
+ 
+  ) async {
+    try {
+      var response = await webServices.updateRequest('Bearer $token', id, categoryId, price, location, description);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(NetworkExceptions.getDioException(error));
+    }
+  }
+
+   Future<ApiResult<UpdateSkill>> deleteRequest(
+    String id,
+ 
+ 
+  ) async {
+    try {
+      var response = await webServices.deleteRequest('Bearer $token', id);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(NetworkExceptions.getDioException(error));
+    }
+  }
+
+
+
   Future<ApiResult<UpdateSkill>> acceptOffer(String offerId) async {
     try {
       var response = await webServices.acceptOffer('Bearer $token', offerId);

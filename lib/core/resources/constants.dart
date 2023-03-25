@@ -12,7 +12,7 @@ class AppConstants {
   static const int timeOut = 60;
   static const String baseUrl = 'http://pib-platform.com/api/';
 }
-
+String? countryCode = '+966';
 String defaultUId = "68";
 String? userName = ' ';
 String? token = '123';
@@ -40,7 +40,7 @@ List<String> menuViewItemTitles = [
   AppStrings.rateUs,
   AppStrings.contactUs,
   AppStrings.whoAreWe,
-  AppStrings.editPassword,
+  // AppStrings.editPassword,
   AppStrings.logOut,
 ];
 
@@ -49,11 +49,10 @@ List<String> menuViewItemRoutes = [
   Routes.workWithUsViewRoute,
   Routes.walletViewRoute,
   Routes.rateUsViewRoute,
-
   Routes.contactViewRoute,
   Routes.whoWeAreViewRoute,
-  Routes.editPasswordViewRoute,
   Routes.splashRoute,
+
 
   // Routes.splashRoute,
 ];
@@ -67,7 +66,7 @@ List<IconData> menuViewItemIcons = [
   Icons.star,
   Icons.perm_phone_msg,
   Icons.info,
-  Icons.lock_outline_rounded,
+  // Icons.lock_outline_rounded,
   Icons.logout_rounded,
 ];
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../resources/route_manager.dart';
+import 'package:pip/features/auth/business_logic/cubit/auth_cubit.dart';
 import '../resources/strings_manager.dart';
 import '../resources/style_manager.dart';
 
@@ -15,7 +16,8 @@ class SkipText extends StatelessWidget {
       padding: EdgeInsets.only(left: 23.w),
       child: InkWell(
         onTap: () {
-          Navigator.of(context).pushNamed(Routes.mainHomeViewRoute);
+          BlocProvider.of<AuthCubit>(context).signInAnonymously();
+          // Navigator.of(context).pushNamed(Routes.mainHomeViewRoute);
         },
         child: Text(
           AppStrings.skip,

@@ -17,13 +17,12 @@ class PipCubit extends Cubit<PipState> {
   PipCubit(this.pipRepsitory) : super(const PipState.idle());
 
   final PipRepsitory pipRepsitory;
-  
-
 
   List<File> imagesFile = [];
   deleteImage(int index) {
     imagesFile.removeAt(index);
   }
+
   void onReorder(int oldIndex, int newIndex) {
     if (newIndex > oldIndex) {
       newIndex -= 1;
@@ -35,8 +34,9 @@ class PipCubit extends Cubit<PipState> {
   }
 
   Future pickImage() async {
+    emit(const PipState.imageSelectedLoading());
+
     try {
-      emit(const PipState.imageSelectedLoading());
       final List<XFile> images = await ImagePicker().pickMultiImage();
 
       final imagesList = images.map((e) => File(e.path)).toList();
@@ -107,7 +107,6 @@ class PipCubit extends Cubit<PipState> {
     );
   }
 
-
   void toggleFastRequest() async {
     emit(const PipState.toggleLoading());
 
@@ -121,5 +120,4 @@ class PipCubit extends Cubit<PipState> {
       },
     );
   }
-
 }

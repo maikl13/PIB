@@ -63,8 +63,10 @@ class _FastRequestViewState extends State<FastRequestView> {
       listener: (context, state) {
         state.whenOrNull(
           fastRequestCategoryError: (networkExceptions) {
-            Commons.showToast(message: networkExceptions.toString());
-          },
+Commons.showToast(
+              color: ColorManager.error,
+              message: NetworkExceptions.getErrorMessage(networkExceptions),
+            );          },
         );
       },
       buildWhen: (previous, current) => current is FastRequestCategorySuccess,

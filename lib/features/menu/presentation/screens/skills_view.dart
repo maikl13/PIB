@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/resources/color_manager.dart';
+import '../../../../core/resources/commons.dart';
 import '../../../../core/resources/strings_manager.dart';
+import '../../../../core/web_services/network_exceptions.dart';
 import '../../../../core/widgets/custom_appbar.dart';
 import '../../../../core/widgets/custom_title.dart';
 import '../../../../core/widgets/loading_indicator.dart';
@@ -35,7 +37,16 @@ class _SkillsViewState extends State<SkillsView> {
 
   _buildSkills() {
     return BlocConsumer<MenuCubit, MenuState>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        state.whenOrNull(
+          userSkillsError: (networkExceptions) {
+            Commons.showToast(
+              color: ColorManager.error,
+              message: NetworkExceptions.getErrorMessage(networkExceptions),
+            );
+          },
+        );
+      },
       buildWhen: (previous, next) => next is UserSkillsSuccess,
       builder: (context, state) {
         return state.maybeWhen(

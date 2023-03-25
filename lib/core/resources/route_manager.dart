@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pip/features/chat/presentation/screens/share_location.dart';
+import 'package:pip/features/requests/presentation/screens/edit_request.dart';
 import '../../features/auth/business_logic/cubit/auth_cubit.dart';
 import '../../features/auth/presentation/screens/confirm_otb_view.dart';
 import '../../features/chat/presentation/screens/chat_add_offer_view.dart';
@@ -101,6 +102,8 @@ class Routes {
       "/companiesNeedJobsViewRoute";
   static const String partTimeViewRoute = "/partTimeViewRoute";
   static const String fullTimeViewRoute = "/fullTimeViewRoute";
+  static const String editRequestViewRoute = "/editRequestViewRoute";
+
   static const String confirDriverViewRoute = "/confirDriverViewRoute";
   static const String availableDriversViewRoute = "/availableDriversViewRoute";
 }
@@ -129,10 +132,10 @@ class RouteGenerator {
   static List screens = <Widget>[
     const HomeView(),
     const PickRequestTypeView(),
-    BlocProvider.value(
-      value: requestsCubit,
-      child: const MyRequestsMainView(),
-    ),
+    MultiBlocProvider(providers: [
+      BlocProvider.value(value: requestsCubit),
+      BlocProvider.value(value: chatCubit),
+    ], child: const MyRequestsMainView()),
     BlocProvider.value(
       value: chatCubit,
       child: const ConversationsTypeView(),
@@ -267,12 +270,14 @@ class RouteGenerator {
 
         final OfferModel offer = arguments['offer'];
         return MaterialPageRoute(
-          builder: (_) => BlocProvider.value(
-            value: requestsCubit,
-            child: RecievedOfferDetails(
-              offer: offer,
+          builder: (_) => MultiBlocProvider(providers: [
+            BlocProvider.value(
+              value: requestsCubit,
             ),
-          ),
+            BlocProvider.value(
+              value: chatCubit,
+            ),
+          ], child: RecievedOfferDetailsView(offer: offer)),
         );
 
       case Routes.availableJobDetailsViewRoute:
@@ -436,6 +441,19 @@ class RouteGenerator {
       case Routes.availableDriversViewRoute:
         return MaterialPageRoute(
           builder: (_) => const AvailableDriversView(),
+        );
+
+      case Routes.editRequestViewRoute:
+        final arguments = settings.arguments as Map;
+
+        final MyRequestModel request = arguments['request'];
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider.value(
+            value: requestsCubit,
+            child: EditRequestView(
+              request: request,
+            ),
+          ),
         );
 
       case Routes.confirmOtbViewRoute:

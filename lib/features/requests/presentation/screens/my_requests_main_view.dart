@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/features/chat/business_logic/chat_cubit.dart';
+import 'package:pip/features/chat/business_logic/chat_state.dart';
+import '../../../../core/resources/route_manager.dart';
 import '../../business_logic/cubit/requests_cubit.dart';
 import '../../business_logic/cubit/requests_state.dart';
 import '../../../../core/resources/strings_manager.dart';
@@ -33,17 +36,27 @@ class _MyRequestsMainViewState extends State<MyRequestsMainView> {
   }
 
   Widget _buildTabBarBody() {
-    return BlocListener<RequestsCubit, RequestState>(
+    return BlocListener<ChatCubit, ChatState>(
       listener: (context, state) {
+        state.whenOrNull(
+          chatWithUserSuccess: (data) {
+              Navigator.pushNamed(context, Routes.chatViewRoute, arguments: {
+                'chatId': data.chatId,
+              });
+            },
+        );
       },
-      child: Expanded(
-        child: Padding(
-          padding: EdgeInsets.only(left: 20.w, right: 20.w, bottom: 30.w),
-          child: const TabBarView(
-            children: [
-              WantedJobRequestsView(),
-              AvailableJobsView(),
-            ],
+      child: BlocListener<RequestsCubit, RequestState>(
+        listener: (context, state) {},
+        child: Expanded(
+          child: Padding(
+            padding: EdgeInsets.only(left: 20.w, right: 20.w, bottom: 30.w),
+            child: const TabBarView(
+              children: [
+                WantedJobRequestsView(),
+                AvailableJobsView(),
+              ],
+            ),
           ),
         ),
       ),
@@ -53,7 +66,6 @@ class _MyRequestsMainViewState extends State<MyRequestsMainView> {
   @override
   void initState() {
     super.initState();
-
   }
 
   @override

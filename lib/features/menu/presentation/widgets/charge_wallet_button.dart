@@ -24,7 +24,9 @@ class _ChargeWalletButtonState extends State<ChargeWalletButton> {
           context,
           _formKey,
           onTap: () {
-            BlocProvider.of<MenuCubit>(context).addAmountToWallet();
+            if (_formKey.currentState!.validate()) {
+              BlocProvider.of<MenuCubit>(context).addAmountToWallet();
+            }
           },
         );
       },

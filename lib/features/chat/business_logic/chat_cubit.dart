@@ -99,7 +99,7 @@ class ChatCubit extends Cubit<ChatState> {
   }
 
   void startStream(int chatId) async {
-    myStream = Stream.periodic(const Duration(seconds: 20))
+    myStream = Stream.periodic(const Duration(seconds: 1))
         .asyncMap((event) async => await getAllChatMessages(chatId));
     subscription = myStream?.listen((event) {
       allMessages = event;

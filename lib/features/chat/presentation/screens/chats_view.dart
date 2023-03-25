@@ -3,7 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/resources/color_manager.dart';
 import 'package:pip/features/chat/business_logic/chat_state.dart';
+import '../../../../core/resources/commons.dart';
 import '../../../../core/resources/strings_manager.dart';
+import '../../../../core/web_services/network_exceptions.dart';
 import '../../../../core/widgets/custom_appbar.dart';
 import '../../../../core/widgets/custom_title.dart';
 import '../../../../core/widgets/loading_indicator.dart';
@@ -23,7 +25,16 @@ class ChatsView extends StatefulWidget {
 class _ChatsViewState extends State<ChatsView> {
   _buildBody() {
     return BlocConsumer<ChatCubit, ChatState>(
-        listener: (context, state) {},
+        listener: (context, state) {
+          state.whenOrNull(
+            jobChatsError: (error) {
+                 Commons.showToast(
+              color: ColorManager.error,
+              message: NetworkExceptions.getErrorMessage(error),
+            );
+            },
+          );
+        },
         buildWhen: (previous, next) => next is JobChatsSuccess,
         builder: (context, state) {
           return state.maybeWhen(

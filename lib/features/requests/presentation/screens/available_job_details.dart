@@ -43,14 +43,10 @@ class AvailableJobDetailsView extends StatelessWidget {
       child: BlocListener<ChatCubit, ChatState>(
         listener: (context, state) {
           state.whenOrNull(
-            chatWithUserSuccess: (data) {
-              Navigator.pushNamed(context, Routes.chatViewRoute, arguments: {
-                'chatId': data.chatId,
-              });
-            },
-            chatWithUserError: (networkExceptions) {
-              Commons.showToast(message: networkExceptions.toString());
-            },
+            
+            // chatWithUserError: (networkExceptions) {
+            //   Commons.showToast(message: networkExceptions.toString());
+            // },
           );
         },
         child: Padding(

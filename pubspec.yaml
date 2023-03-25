@@ -36,6 +36,7 @@ dependencies:
   cached_network_image:
   carousel_slider:
   chewie: ^1.4.0
+  country_code_picker: ^3.0.0
   cupertino_icons:
   dartz:
   dio: ^4.0.6
@@ -52,7 +53,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_screenutil:
-  flutter_svg: null
+  flutter_svg: ^2.0.4
   fluttertoast:
   font_awesome_flutter:
   freezed:

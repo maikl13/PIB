@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../../../../core/resources/route_manager.dart';
+import 'package:pip/core/widgets/loading_indicator.dart';
+import 'package:pip/features/requests/business_logic/cubit/requests_state.dart';
 import '../../../../core/widgets/custom_clock_date.dart';
+import '../../../chat/business_logic/chat_cubit.dart';
 import '../../data/models/offer_model.dart';
 import '../../../../core/widgets/image_item.dart';
 import '../../../home/presentation/widgets/job_details_image.dart';
@@ -17,8 +19,8 @@ import '../../../../core/widgets/default_button.dart';
 import '../../../home/presentation/widgets/main_info_item.dart';
 import '../../business_logic/cubit/requests_cubit.dart';
 
-class RecievedOfferDetails extends StatelessWidget {
-  const RecievedOfferDetails({super.key, required this.offer});
+class RecievedOfferDetailsView extends StatelessWidget {
+  const RecievedOfferDetailsView({super.key, required this.offer});
 
   final OfferModel offer;
 
@@ -65,6 +67,18 @@ class RecievedOfferDetails extends StatelessWidget {
   }
 
   _buildAcceptButton(BuildContext context) {
+    return BlocConsumer<RequestsCubit, RequestState>(
+      listener: (context, state) {},
+      builder: (context, state) {
+        return state.maybeWhen(
+          acceptOfferLoading: () => const LoadingIndicator(),
+          orElse: () => _buildButton(context),
+        );
+      },
+    );
+  }
+
+  _buildButton(BuildContext context) {
     return Expanded(
       child: DefaultButton(
         text: AppStrings.accept,
@@ -88,7 +102,9 @@ class RecievedOfferDetails extends StatelessWidget {
         textStyle:
             getBoldStyle(fontSize: 16.sp, color: ColorManager.darkSeconadry),
         onTap: () {
-          Navigator.pushNamed(context, Routes.chatViewRoute);
+          BlocProvider.of<ChatCubit>(context).chatWithUser(
+              requestId: offer.id.toString(),
+              targetId: offer.user!.id.toString());
         },
       ),
     );
@@ -168,7 +184,7 @@ class RecievedOfferDetails extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(
         appBarColor: ColorManager.lightBlack,
-        title: AppStrings.userName,
+        title: offer.user!.name ?? '',
         actions: const [],
       ),
       body: _buildBody(context),

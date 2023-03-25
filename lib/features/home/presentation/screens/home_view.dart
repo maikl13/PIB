@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/resources/commons.dart';
+import '../../../../core/web_services/network_exceptions.dart';
 import '../../business_logic/cubit/home_cubit.dart';
 import '../../business_logic/cubit/home_state.dart';
 import '../../../../core/resources/color_manager.dart';
@@ -17,7 +19,16 @@ class HomeView extends StatelessWidget {
 
   _buildBloc() {
     return BlocConsumer<HomeCubit, HomeState>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        state.whenOrNull(
+          homeAdsError: (error) {
+            Commons.showToast(
+              color: ColorManager.error,
+              message: NetworkExceptions.getErrorMessage(error),
+            );
+          },
+        );
+      },
       buildWhen: (previous, next) => next is HomeAdsSuccess,
       builder: (context, state) {
         return state.maybeWhen(

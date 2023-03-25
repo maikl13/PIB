@@ -57,6 +57,15 @@ class MainAuthView extends StatelessWidget {
     return BlocConsumer<AuthCubit, AuthResultState>(
       listener: (context, state) {
         state.whenOrNull(
+          firebaseAnonymousLoginLoading: () {
+            Commons.showLoadingDialog(context);
+          },
+          firebaseAnonymousLoginSuccess: (data) {
+            Navigator.pop(context);
+
+            BlocProvider.of<AuthCubit>(context)
+                .register(uid: data, name: 'مجهول');
+          },
           // phoneAuthLoading: () {
           //   Commons.showLoadingDialog(context);
           // },
@@ -111,8 +120,11 @@ class MainAuthView extends StatelessWidget {
           registerLoading: () {
             Commons.showLoadingDialog(context);
           },
-          registerSuccess: (uid) {
-            showSuccessDialog(context);
+          registerSuccess: (user) {
+            user.user!.name == 'مجهول'
+                ? Navigator.pushNamedAndRemoveUntil(
+                    context, Routes.mainHomeViewRoute, (route) => false)
+                : showSuccessDialog(context);
           },
           registerError: (networkExceptions) {
             Navigator.pop(context);

@@ -31,6 +31,12 @@ class AuthResultState<T> with _$AuthResultState<T> {
   const factory AuthResultState.phoneOTPVerified() = PhoneOTPVerified<T>;
 
 
+   const factory AuthResultState.firebaseAnonymousLoginSuccess(String data) =
+      FirebaseAnonymousLoginSuccess<T>;
+  const factory AuthResultState.firebaseAnonymousLoginLoading() = FirebaseAnonymousLoginLoading<T>;
+  const factory AuthResultState.firebaseAnonymousLoginError(
+      NetworkExceptions networkExceptions) = FirebaseAnonymousLoginError<T>;
+
 
 
 const factory AuthResultState.firebaseGoogleLoginSuccess(String data) =

@@ -136,7 +136,9 @@ class _AvailableDriversViewState extends State<AvailableDriversView> {
         alignment: Alignment.topLeft,
         child: InkWell(
           onTap: () {
-            Navigator.pushNamed(context, Routes.chatViewRoute);
+            Navigator.pushNamed(context, Routes.chatViewRoute,arguments: {
+              'chatId'  : '1',
+            });
           },
           child: Container(
             width: 62.w,

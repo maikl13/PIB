@@ -14,13 +14,19 @@ class ImageAssets {
   static const String emptySearch = "$imagePath/empty_search.png";
   static const String resultBackground = "$imagePath/result_background.png";
   static const String bigBackground = "$imagePath/big_background.png";
-  static const String conversationItemBackground = "$imagePath/conversation_item_background.png";
+  static const String conversationItemBackground =
+      "$imagePath/conversation_item_background.png";
   static const String flibBackground = "$imagePath/flib_back.png";
   static const String star = "$imagePath/star.png";
   static const String file = "$imagePath/file.png";
+  static const String house = "$imagePath/house.png";
+  static const String phone = "$imagePath/phone.png";
+
+  static const String house1 = "$imagePath/house.svg";
+
+  static const String selectedHouse = "$imagePath/selected_house.png";
 
   static const String activeStar = "$imagePath/active_star.png";
-
 
   static const String electrician = "$imagePath/electrician.png";
   static const String gift = "$imagePath/gift-box-wit.png";
@@ -29,18 +35,12 @@ class ImageAssets {
 
   static const String paint = "$imagePath/paintbrush.png";
   static const String sofa = "$imagePath/sofa.png";
+  static const String leading = "$imagePath/leading.png";
+
   static const String wrench = "$imagePath/wrench.png";
   static const String notification = "$imagePath/notification.png";
 
-
   static const String saudiArabia = "$imagePath/saudi-arabia.png";
-
-  
-
-
-
-
-
 }
 
 

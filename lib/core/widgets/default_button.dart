@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../resources/color_manager.dart';
@@ -28,14 +27,10 @@ class DefaultButton extends StatelessWidget {
         width: widht ?? double.infinity,
         height: height ?? 49.h,
         decoration: BoxDecoration(
-            gradient: const RadialGradient(
-              // focal: const Alignment(0.0, 0.0),
-              center: Alignment(0.0, 0.0),
-              radius: 0.395,
-              colors: [Color(0xffffc638), Color(0xfff7b100)],
-
-              stops: [0.0, 1.0],
-              transform: GradientRotation(0),
+            gradient: RadialGradient(
+              colors: const [Color(0xFFFFC638), Color(0xFFF7B100)],
+              radius: 1.r,
+              center: const Alignment(0.0, 0.0),
             ),
             borderRadius: BorderRadius.all(Radius.circular(31.r))),
         child: Center(

@@ -18,17 +18,19 @@ import '../../../../core/widgets/default_button.dart';
 import '../../../pip/presentation/widgets/request_custom_tetfield.dart';
 
 import '../../../pip/presentation/widgets/upload_photos.dart';
+import '../../data/models/my_request_model.dart';
 
-class GiveOfferView extends StatefulWidget {
-  const GiveOfferView({super.key, required this.requestId});
+class EditRequestView extends StatefulWidget {
+  const EditRequestView({super.key, required this.request});
+  final MyRequestModel request;
 
-  final String requestId;
+  // final String requestId;
 
   @override
-  State<GiveOfferView> createState() => _GiveOfferViewState();
+  State<EditRequestView> createState() => _EditRequestViewState();
 }
 
-class _GiveOfferViewState extends State<GiveOfferView> {
+class _EditRequestViewState extends State<EditRequestView> {
   final TextEditingController _priceController = TextEditingController();
   final TextEditingController _timeToCompleteController =
       TextEditingController();
@@ -42,21 +44,20 @@ class _GiveOfferViewState extends State<GiveOfferView> {
     return BlocListener<RequestsCubit, RequestState>(
       listener: (context, state) {
         state.whenOrNull(
-          giveOfferSuccess: (data) {
-            showSuccessOfferDialog(
-              context,
-              onOk: () {
-                screenIndex = 2;
-                Navigator.pushReplacementNamed(
-                    context, Routes.mainHomeViewRoute);
-              },
-            );
+          updateRequestLoading: () {
+            Commons.showLoadingDialog(context);
           },
-          giveOfferError: (error) {
+          updateRequestError: (networkExceptions) {
+            Navigator.pop(context);
             Commons.showToast(
-              color: ColorManager.error,
-              message: NetworkExceptions.getErrorMessage(error),
-            );
+                message: NetworkExceptions.getErrorMessage(networkExceptions));
+          },
+          updateRequestSuccess: (data) {
+            Navigator.pop(context);
+            Commons.showToast(
+                message: 'تم تعديل الطلب بنجاح', color: ColorManager.green);
+            screenIndex = 2;
+            Navigator.pushReplacementNamed(context, Routes.mainHomeViewRoute);
           },
         );
       },
@@ -75,11 +76,11 @@ class _GiveOfferViewState extends State<GiveOfferView> {
               _buildTimeToCompleteTextField(),
               SizedBox(height: 20.h),
               _buildDescriptionTextField(),
-              SizedBox(height: 20.h),
-              _buildUploadPhotoTextField(context),
-              SizedBox(height: 20.h),
-              _buildPhotos(),
-              SizedBox(height: 100.h),
+              // SizedBox(height: 20.h),
+              // _buildUploadPhotoTextField(context),
+              // SizedBox(height: 20.h),
+              // _buildPhotos(),
+              SizedBox(height: 200.h),
               _buildButton(context),
             ],
           ),
@@ -88,36 +89,36 @@ class _GiveOfferViewState extends State<GiveOfferView> {
     );
   }
 
-  _buildPhotos() {
-    return BlocConsumer<RequestsCubit, RequestState>(
-      listener: (context, state) {
-        state.whenOrNull(
-          imageSelectedLoading: () {
-            Commons.showLoadingDialog(context);
-          },
-          imageSelectedSuccess: (data) {
-            Navigator.pop(context);
-          },
-          imageSelectedError: () {
-            Navigator.pop(context);
-          },
-        );
-      },
-      buildWhen: (previous, next) =>
-          next is ImageSelectedSuccess || next is ImageSelectedDeleted,
-      builder: (context, state) {
-        return state.maybeWhen(
-          imageSelectedSuccess: (images) {
-            return _buildListPhotos(images);
-          },
-          imageSelectedDeleted: (images) {
-            return _buildListPhotos(images);
-          },
-          orElse: () => Container(),
-        );
-      },
-    );
-  }
+  // _buildPhotos() {
+  //   return BlocConsumer<RequestsCubit, RequestState>(
+  //     listener: (context, state) {
+  //       state.whenOrNull(
+  //         imageSelectedLoading: () {
+  //           Commons.showLoadingDialog(context);
+  //         },
+  //         imageSelectedSuccess: (data) {
+  //           Navigator.pop(context);
+  //         },
+  //         imageSelectedError: () {
+  //           Navigator.pop(context);
+  //         },
+  //       );
+  //     },
+  //     buildWhen: (previous, next) =>
+  //         next is ImageSelectedSuccess || next is ImageSelectedDeleted,
+  //     builder: (context, state) {
+  //       return state.maybeWhen(
+  //         imageSelectedSuccess: (images) {
+  //           return _buildListPhotos(images);
+  //         },
+  //         imageSelectedDeleted: (images) {
+  //           return _buildListPhotos(images);
+  //         },
+  //         orElse: () => Container(),
+  //       );
+  //     },
+  //   );
+  // }
 
   _buildListPhotos(List<File> images) {
     return BlocListener<RequestsCubit, RequestState>(
@@ -153,13 +154,14 @@ class _GiveOfferViewState extends State<GiveOfferView> {
 
   _buildButton(BuildContext context) {
     return DefaultButton(
-      text: AppStrings.send,
+      text: AppStrings.editRequest,
       onTap: () {
-        BlocProvider.of<RequestsCubit>(context).giveOffer(
+        BlocProvider.of<RequestsCubit>(context).updateRequest(
+          id: widget.request.id.toString(),
+          categoryId: widget.request.categoryId,
           price: _priceController.text,
-          duration: _timeToCompleteController.text,
+          location: _timeToCompleteController.text,
           description: _descriptionController.text,
-          requestId: widget.requestId,
         );
       },
     );
@@ -178,36 +180,22 @@ class _GiveOfferViewState extends State<GiveOfferView> {
       controller: _timeToCompleteController,
       suffix: Padding(
         padding: EdgeInsets.only(left: 5.w, top: 10.h),
-        child: Text(AppStrings.days,
+        child: Text('',
             style: getBoldStyle(fontSize: 15.sp, color: ColorManager.white)),
       ),
-      hint: AppStrings.timeToComplete,
-      icon: FontAwesomeIcons.solidClock,
+      hint: AppStrings.location,
+      // ignore: deprecated_member_use
+      icon: FontAwesomeIcons.mapMarkerAlt,
     );
   }
 
   _buildDescriptionTextField() {
     return RequestCustomTextField(
-      // contentPadding: EdgeInsets.only(top: 15.h, bottom: 60.h),
-      floatingLabelBehavior: FloatingLabelBehavior.never,
       controller: _descriptionController,
-      bottomPadding: 40.h,
-      topPadding: 0.h,
+      bottomPadding: 70.h,
+      topPadding: 30.h,
       maxLines: 3,
-      label: Padding(
-        padding: EdgeInsets.only(bottom: 40.h),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Text(AppStrings.description,
-                style:
-                    getBoldStyle(fontSize: 15.sp, color: ColorManager.grey5)),
-          ],
-        ),
-      ),
-      // hint: AppStrings.description,
+      hint: AppStrings.description,
       icon: FontAwesomeIcons.alignLeft,
     );
   }
@@ -252,11 +240,16 @@ class _GiveOfferViewState extends State<GiveOfferView> {
                           fontSize: 15.sp, color: ColorManager.grey5)),
                 ],
               ),
-              Icon(
-                Icons.add,
-                color: ColorManager.darkSeconadry,
-                size: 20.sp,
-              ),
+              IconButton(
+                  splashColor: ColorManager.transparent,
+                  icon: Icon(
+                    Icons.add,
+                    color: ColorManager.darkSeconadry,
+                    size: 20.sp,
+                  ),
+                  onPressed: () {
+                    // Navigator.pushNamed(Ro.search);
+                  })
             ],
           ),
         ),
@@ -265,11 +258,19 @@ class _GiveOfferViewState extends State<GiveOfferView> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    _priceController.text = widget.request.price ?? '';
+    _timeToCompleteController.text = widget.request.location ?? '';
+    _descriptionController.text = widget.request.description ?? '';
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
         appBarColor: ColorManager.lightBlack,
-        title: AppStrings.giveOffer,
+        title: AppStrings.editRequest,
         actions: const [],
       ),
       body: _buildBody(context),
