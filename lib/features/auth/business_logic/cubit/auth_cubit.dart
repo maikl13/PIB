@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 import '../../../../core/resources/constants.dart';
+import '../../../../core/resources/shared_prefrences.dart';
 import '../../../../core/web_services/network_exceptions.dart';
 import '../../data/models/auth_model.dart';
 import '../../data/repository/auth_repository.dart';
@@ -26,13 +27,20 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
     var result = await authRepoistry.login(uid);
     result.when(
       success: (AuthModel userData) {
-        // print(userData.user!.imageUrl);
+        defaultUId = userData.user!.id!.toString();
         token = userData.token;
         userName = userData.user!.name;
         userPhone = userData.user!.phone;
         userImage = userData.user!.imageUrl;
         userEmail = userData.user!.email;
+        CacheHelper.saveData(key: 'goToHome', value: true);
+        CacheHelper.saveData(key: 'token', value: token);
+        CacheHelper.saveData(key: 'userImage', value: userImage);
+        CacheHelper.saveData(key: 'userName', value: userName);
+        CacheHelper.saveData(key: 'userPhone', value: userPhone);
+        CacheHelper.saveData(key: 'uid', value: defaultUId);
         emit(AuthResultState.loginSuccess(userData));
+        print(defaultUId);
       },
       failure: (NetworkExceptions networkExceptions) {
         emit(AuthResultState.loginError(networkExceptions));
@@ -44,7 +52,7 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
     required String uid,
     required String name,
     String? email,
-    String? phone ,
+    String? phone,
     String? imageUrl,
   }) async {
     emit(const AuthResultState.registerLoading());
@@ -53,10 +61,16 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
     result.when(
       success: (AuthModel userData) {
         token = userData.token!;
-        userName = userData.user!.name!;
-        userPhone = userData.user!.phone!;
-        userImage = userData.user!.imageUrl!;
-        userEmail = userData.user!.email!;
+        userImage = userData.user!.imageUrl;
+        userName = userData.user!.name;
+        userPhone = userData.user!.phone;
+        defaultUId = userData.user!.id.toString();
+        CacheHelper.saveData(key: 'goToHome', value: true);
+        CacheHelper.saveData(key: 'token', value: token);
+        CacheHelper.saveData(key: 'userImage', value: userImage);
+        CacheHelper.saveData(key: 'userName', value: userName);
+        CacheHelper.saveData(key: 'userPhone', value: userPhone);
+        CacheHelper.saveData(key: 'uid', value: defaultUId);
 
         emit(AuthResultState.registerSuccess(userData));
       },
@@ -139,7 +153,7 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
     print('codeSent');
     this.verificationId = verificationId;
 
-    emit(AuthResultState.phoneNumberSubmited(_auth.currentUser!.uid));
+    emit(const AuthResultState.phoneNumberSubmited());
   }
 
   void codeAutoRetrievalTimeout(String verificationId) {
@@ -161,4 +175,11 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
       emit(AuthResultState.phoneAuthErrorOccurred(error.toString()));
     }
   }
+
+  // Future<void> loginWithPhoneNumber(String phoneNumber) async {
+  //   await _auth.signInWithPhoneNumber(
+
+  //     phoneNumber,
+  //   );
+  // }
 }

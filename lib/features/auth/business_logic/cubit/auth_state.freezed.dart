@@ -32,7 +32,7 @@ mixin _$AuthResultState<T> {
         registerError,
     required TResult Function() phoneAuthLoading,
     required TResult Function(String errorMsg) phoneAuthErrorOccurred,
-    required TResult Function(String uid) phoneNumberSubmited,
+    required TResult Function() phoneNumberSubmited,
     required TResult Function() phoneOTPVerified,
     required TResult Function(String data) firebaseGoogleLoginSuccess,
     required TResult Function() firebaseGoogleLoginLoading,
@@ -55,7 +55,7 @@ mixin _$AuthResultState<T> {
     TResult? Function(NetworkExceptions networkExceptions)? registerError,
     TResult? Function()? phoneAuthLoading,
     TResult? Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult? Function(String uid)? phoneNumberSubmited,
+    TResult? Function()? phoneNumberSubmited,
     TResult? Function()? phoneOTPVerified,
     TResult? Function(String data)? firebaseGoogleLoginSuccess,
     TResult? Function()? firebaseGoogleLoginLoading,
@@ -78,7 +78,7 @@ mixin _$AuthResultState<T> {
     TResult Function(NetworkExceptions networkExceptions)? registerError,
     TResult Function()? phoneAuthLoading,
     TResult Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult Function(String uid)? phoneNumberSubmited,
+    TResult Function()? phoneNumberSubmited,
     TResult Function()? phoneOTPVerified,
     TResult Function(String data)? firebaseGoogleLoginSuccess,
     TResult Function()? firebaseGoogleLoginLoading,
@@ -240,7 +240,7 @@ class _$Idle<T> implements Idle<T> {
         registerError,
     required TResult Function() phoneAuthLoading,
     required TResult Function(String errorMsg) phoneAuthErrorOccurred,
-    required TResult Function(String uid) phoneNumberSubmited,
+    required TResult Function() phoneNumberSubmited,
     required TResult Function() phoneOTPVerified,
     required TResult Function(String data) firebaseGoogleLoginSuccess,
     required TResult Function() firebaseGoogleLoginLoading,
@@ -266,7 +266,7 @@ class _$Idle<T> implements Idle<T> {
     TResult? Function(NetworkExceptions networkExceptions)? registerError,
     TResult? Function()? phoneAuthLoading,
     TResult? Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult? Function(String uid)? phoneNumberSubmited,
+    TResult? Function()? phoneNumberSubmited,
     TResult? Function()? phoneOTPVerified,
     TResult? Function(String data)? firebaseGoogleLoginSuccess,
     TResult? Function()? firebaseGoogleLoginLoading,
@@ -292,7 +292,7 @@ class _$Idle<T> implements Idle<T> {
     TResult Function(NetworkExceptions networkExceptions)? registerError,
     TResult Function()? phoneAuthLoading,
     TResult Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult Function(String uid)? phoneNumberSubmited,
+    TResult Function()? phoneNumberSubmited,
     TResult Function()? phoneOTPVerified,
     TResult Function(String data)? firebaseGoogleLoginSuccess,
     TResult Function()? firebaseGoogleLoginLoading,
@@ -458,7 +458,7 @@ class _$LoginLoading<T> implements LoginLoading<T> {
         registerError,
     required TResult Function() phoneAuthLoading,
     required TResult Function(String errorMsg) phoneAuthErrorOccurred,
-    required TResult Function(String uid) phoneNumberSubmited,
+    required TResult Function() phoneNumberSubmited,
     required TResult Function() phoneOTPVerified,
     required TResult Function(String data) firebaseGoogleLoginSuccess,
     required TResult Function() firebaseGoogleLoginLoading,
@@ -484,7 +484,7 @@ class _$LoginLoading<T> implements LoginLoading<T> {
     TResult? Function(NetworkExceptions networkExceptions)? registerError,
     TResult? Function()? phoneAuthLoading,
     TResult? Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult? Function(String uid)? phoneNumberSubmited,
+    TResult? Function()? phoneNumberSubmited,
     TResult? Function()? phoneOTPVerified,
     TResult? Function(String data)? firebaseGoogleLoginSuccess,
     TResult? Function()? firebaseGoogleLoginLoading,
@@ -510,7 +510,7 @@ class _$LoginLoading<T> implements LoginLoading<T> {
     TResult Function(NetworkExceptions networkExceptions)? registerError,
     TResult Function()? phoneAuthLoading,
     TResult Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult Function(String uid)? phoneNumberSubmited,
+    TResult Function()? phoneNumberSubmited,
     TResult Function()? phoneOTPVerified,
     TResult Function(String data)? firebaseGoogleLoginSuccess,
     TResult Function()? firebaseGoogleLoginLoading,
@@ -703,7 +703,7 @@ class _$LoginSuccess<T> implements LoginSuccess<T> {
         registerError,
     required TResult Function() phoneAuthLoading,
     required TResult Function(String errorMsg) phoneAuthErrorOccurred,
-    required TResult Function(String uid) phoneNumberSubmited,
+    required TResult Function() phoneNumberSubmited,
     required TResult Function() phoneOTPVerified,
     required TResult Function(String data) firebaseGoogleLoginSuccess,
     required TResult Function() firebaseGoogleLoginLoading,
@@ -729,7 +729,7 @@ class _$LoginSuccess<T> implements LoginSuccess<T> {
     TResult? Function(NetworkExceptions networkExceptions)? registerError,
     TResult? Function()? phoneAuthLoading,
     TResult? Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult? Function(String uid)? phoneNumberSubmited,
+    TResult? Function()? phoneNumberSubmited,
     TResult? Function()? phoneOTPVerified,
     TResult? Function(String data)? firebaseGoogleLoginSuccess,
     TResult? Function()? firebaseGoogleLoginLoading,
@@ -755,7 +755,7 @@ class _$LoginSuccess<T> implements LoginSuccess<T> {
     TResult Function(NetworkExceptions networkExceptions)? registerError,
     TResult Function()? phoneAuthLoading,
     TResult Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult Function(String uid)? phoneNumberSubmited,
+    TResult Function()? phoneNumberSubmited,
     TResult Function()? phoneOTPVerified,
     TResult Function(String data)? firebaseGoogleLoginSuccess,
     TResult Function()? firebaseGoogleLoginLoading,
@@ -963,7 +963,7 @@ class _$LoginError<T> implements LoginError<T> {
         registerError,
     required TResult Function() phoneAuthLoading,
     required TResult Function(String errorMsg) phoneAuthErrorOccurred,
-    required TResult Function(String uid) phoneNumberSubmited,
+    required TResult Function() phoneNumberSubmited,
     required TResult Function() phoneOTPVerified,
     required TResult Function(String data) firebaseGoogleLoginSuccess,
     required TResult Function() firebaseGoogleLoginLoading,
@@ -989,7 +989,7 @@ class _$LoginError<T> implements LoginError<T> {
     TResult? Function(NetworkExceptions networkExceptions)? registerError,
     TResult? Function()? phoneAuthLoading,
     TResult? Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult? Function(String uid)? phoneNumberSubmited,
+    TResult? Function()? phoneNumberSubmited,
     TResult? Function()? phoneOTPVerified,
     TResult? Function(String data)? firebaseGoogleLoginSuccess,
     TResult? Function()? firebaseGoogleLoginLoading,
@@ -1015,7 +1015,7 @@ class _$LoginError<T> implements LoginError<T> {
     TResult Function(NetworkExceptions networkExceptions)? registerError,
     TResult Function()? phoneAuthLoading,
     TResult Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult Function(String uid)? phoneNumberSubmited,
+    TResult Function()? phoneNumberSubmited,
     TResult Function()? phoneOTPVerified,
     TResult Function(String data)? firebaseGoogleLoginSuccess,
     TResult Function()? firebaseGoogleLoginLoading,
@@ -1218,7 +1218,7 @@ class _$FirebaseFacebookLoginSuccess<T>
         registerError,
     required TResult Function() phoneAuthLoading,
     required TResult Function(String errorMsg) phoneAuthErrorOccurred,
-    required TResult Function(String uid) phoneNumberSubmited,
+    required TResult Function() phoneNumberSubmited,
     required TResult Function() phoneOTPVerified,
     required TResult Function(String data) firebaseGoogleLoginSuccess,
     required TResult Function() firebaseGoogleLoginLoading,
@@ -1244,7 +1244,7 @@ class _$FirebaseFacebookLoginSuccess<T>
     TResult? Function(NetworkExceptions networkExceptions)? registerError,
     TResult? Function()? phoneAuthLoading,
     TResult? Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult? Function(String uid)? phoneNumberSubmited,
+    TResult? Function()? phoneNumberSubmited,
     TResult? Function()? phoneOTPVerified,
     TResult? Function(String data)? firebaseGoogleLoginSuccess,
     TResult? Function()? firebaseGoogleLoginLoading,
@@ -1270,7 +1270,7 @@ class _$FirebaseFacebookLoginSuccess<T>
     TResult Function(NetworkExceptions networkExceptions)? registerError,
     TResult Function()? phoneAuthLoading,
     TResult Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult Function(String uid)? phoneNumberSubmited,
+    TResult Function()? phoneNumberSubmited,
     TResult Function()? phoneOTPVerified,
     TResult Function(String data)? firebaseGoogleLoginSuccess,
     TResult Function()? firebaseGoogleLoginLoading,
@@ -1447,7 +1447,7 @@ class _$FirebaseFacebookLoginLoading<T>
         registerError,
     required TResult Function() phoneAuthLoading,
     required TResult Function(String errorMsg) phoneAuthErrorOccurred,
-    required TResult Function(String uid) phoneNumberSubmited,
+    required TResult Function() phoneNumberSubmited,
     required TResult Function() phoneOTPVerified,
     required TResult Function(String data) firebaseGoogleLoginSuccess,
     required TResult Function() firebaseGoogleLoginLoading,
@@ -1473,7 +1473,7 @@ class _$FirebaseFacebookLoginLoading<T>
     TResult? Function(NetworkExceptions networkExceptions)? registerError,
     TResult? Function()? phoneAuthLoading,
     TResult? Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult? Function(String uid)? phoneNumberSubmited,
+    TResult? Function()? phoneNumberSubmited,
     TResult? Function()? phoneOTPVerified,
     TResult? Function(String data)? firebaseGoogleLoginSuccess,
     TResult? Function()? firebaseGoogleLoginLoading,
@@ -1499,7 +1499,7 @@ class _$FirebaseFacebookLoginLoading<T>
     TResult Function(NetworkExceptions networkExceptions)? registerError,
     TResult Function()? phoneAuthLoading,
     TResult Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult Function(String uid)? phoneNumberSubmited,
+    TResult Function()? phoneNumberSubmited,
     TResult Function()? phoneOTPVerified,
     TResult Function(String data)? firebaseGoogleLoginSuccess,
     TResult Function()? firebaseGoogleLoginLoading,
@@ -1707,7 +1707,7 @@ class _$FirebaseFacebookLoginError<T> implements FirebaseFacebookLoginError<T> {
         registerError,
     required TResult Function() phoneAuthLoading,
     required TResult Function(String errorMsg) phoneAuthErrorOccurred,
-    required TResult Function(String uid) phoneNumberSubmited,
+    required TResult Function() phoneNumberSubmited,
     required TResult Function() phoneOTPVerified,
     required TResult Function(String data) firebaseGoogleLoginSuccess,
     required TResult Function() firebaseGoogleLoginLoading,
@@ -1733,7 +1733,7 @@ class _$FirebaseFacebookLoginError<T> implements FirebaseFacebookLoginError<T> {
     TResult? Function(NetworkExceptions networkExceptions)? registerError,
     TResult? Function()? phoneAuthLoading,
     TResult? Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult? Function(String uid)? phoneNumberSubmited,
+    TResult? Function()? phoneNumberSubmited,
     TResult? Function()? phoneOTPVerified,
     TResult? Function(String data)? firebaseGoogleLoginSuccess,
     TResult? Function()? firebaseGoogleLoginLoading,
@@ -1759,7 +1759,7 @@ class _$FirebaseFacebookLoginError<T> implements FirebaseFacebookLoginError<T> {
     TResult Function(NetworkExceptions networkExceptions)? registerError,
     TResult Function()? phoneAuthLoading,
     TResult Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult Function(String uid)? phoneNumberSubmited,
+    TResult Function()? phoneNumberSubmited,
     TResult Function()? phoneOTPVerified,
     TResult Function(String data)? firebaseGoogleLoginSuccess,
     TResult Function()? firebaseGoogleLoginLoading,
@@ -1932,7 +1932,7 @@ class _$RegisterLoading<T> implements RegisterLoading<T> {
         registerError,
     required TResult Function() phoneAuthLoading,
     required TResult Function(String errorMsg) phoneAuthErrorOccurred,
-    required TResult Function(String uid) phoneNumberSubmited,
+    required TResult Function() phoneNumberSubmited,
     required TResult Function() phoneOTPVerified,
     required TResult Function(String data) firebaseGoogleLoginSuccess,
     required TResult Function() firebaseGoogleLoginLoading,
@@ -1958,7 +1958,7 @@ class _$RegisterLoading<T> implements RegisterLoading<T> {
     TResult? Function(NetworkExceptions networkExceptions)? registerError,
     TResult? Function()? phoneAuthLoading,
     TResult? Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult? Function(String uid)? phoneNumberSubmited,
+    TResult? Function()? phoneNumberSubmited,
     TResult? Function()? phoneOTPVerified,
     TResult? Function(String data)? firebaseGoogleLoginSuccess,
     TResult? Function()? firebaseGoogleLoginLoading,
@@ -1984,7 +1984,7 @@ class _$RegisterLoading<T> implements RegisterLoading<T> {
     TResult Function(NetworkExceptions networkExceptions)? registerError,
     TResult Function()? phoneAuthLoading,
     TResult Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult Function(String uid)? phoneNumberSubmited,
+    TResult Function()? phoneNumberSubmited,
     TResult Function()? phoneOTPVerified,
     TResult Function(String data)? firebaseGoogleLoginSuccess,
     TResult Function()? firebaseGoogleLoginLoading,
@@ -2178,7 +2178,7 @@ class _$RegisterSuccess<T> implements RegisterSuccess<T> {
         registerError,
     required TResult Function() phoneAuthLoading,
     required TResult Function(String errorMsg) phoneAuthErrorOccurred,
-    required TResult Function(String uid) phoneNumberSubmited,
+    required TResult Function() phoneNumberSubmited,
     required TResult Function() phoneOTPVerified,
     required TResult Function(String data) firebaseGoogleLoginSuccess,
     required TResult Function() firebaseGoogleLoginLoading,
@@ -2204,7 +2204,7 @@ class _$RegisterSuccess<T> implements RegisterSuccess<T> {
     TResult? Function(NetworkExceptions networkExceptions)? registerError,
     TResult? Function()? phoneAuthLoading,
     TResult? Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult? Function(String uid)? phoneNumberSubmited,
+    TResult? Function()? phoneNumberSubmited,
     TResult? Function()? phoneOTPVerified,
     TResult? Function(String data)? firebaseGoogleLoginSuccess,
     TResult? Function()? firebaseGoogleLoginLoading,
@@ -2230,7 +2230,7 @@ class _$RegisterSuccess<T> implements RegisterSuccess<T> {
     TResult Function(NetworkExceptions networkExceptions)? registerError,
     TResult Function()? phoneAuthLoading,
     TResult Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult Function(String uid)? phoneNumberSubmited,
+    TResult Function()? phoneNumberSubmited,
     TResult Function()? phoneOTPVerified,
     TResult Function(String data)? firebaseGoogleLoginSuccess,
     TResult Function()? firebaseGoogleLoginLoading,
@@ -2439,7 +2439,7 @@ class _$RegisterError<T> implements RegisterError<T> {
         registerError,
     required TResult Function() phoneAuthLoading,
     required TResult Function(String errorMsg) phoneAuthErrorOccurred,
-    required TResult Function(String uid) phoneNumberSubmited,
+    required TResult Function() phoneNumberSubmited,
     required TResult Function() phoneOTPVerified,
     required TResult Function(String data) firebaseGoogleLoginSuccess,
     required TResult Function() firebaseGoogleLoginLoading,
@@ -2465,7 +2465,7 @@ class _$RegisterError<T> implements RegisterError<T> {
     TResult? Function(NetworkExceptions networkExceptions)? registerError,
     TResult? Function()? phoneAuthLoading,
     TResult? Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult? Function(String uid)? phoneNumberSubmited,
+    TResult? Function()? phoneNumberSubmited,
     TResult? Function()? phoneOTPVerified,
     TResult? Function(String data)? firebaseGoogleLoginSuccess,
     TResult? Function()? firebaseGoogleLoginLoading,
@@ -2491,7 +2491,7 @@ class _$RegisterError<T> implements RegisterError<T> {
     TResult Function(NetworkExceptions networkExceptions)? registerError,
     TResult Function()? phoneAuthLoading,
     TResult Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult Function(String uid)? phoneNumberSubmited,
+    TResult Function()? phoneNumberSubmited,
     TResult Function()? phoneOTPVerified,
     TResult Function(String data)? firebaseGoogleLoginSuccess,
     TResult Function()? firebaseGoogleLoginLoading,
@@ -2663,7 +2663,7 @@ class _$PhoneAuthLoading<T> implements PhoneAuthLoading<T> {
         registerError,
     required TResult Function() phoneAuthLoading,
     required TResult Function(String errorMsg) phoneAuthErrorOccurred,
-    required TResult Function(String uid) phoneNumberSubmited,
+    required TResult Function() phoneNumberSubmited,
     required TResult Function() phoneOTPVerified,
     required TResult Function(String data) firebaseGoogleLoginSuccess,
     required TResult Function() firebaseGoogleLoginLoading,
@@ -2689,7 +2689,7 @@ class _$PhoneAuthLoading<T> implements PhoneAuthLoading<T> {
     TResult? Function(NetworkExceptions networkExceptions)? registerError,
     TResult? Function()? phoneAuthLoading,
     TResult? Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult? Function(String uid)? phoneNumberSubmited,
+    TResult? Function()? phoneNumberSubmited,
     TResult? Function()? phoneOTPVerified,
     TResult? Function(String data)? firebaseGoogleLoginSuccess,
     TResult? Function()? firebaseGoogleLoginLoading,
@@ -2715,7 +2715,7 @@ class _$PhoneAuthLoading<T> implements PhoneAuthLoading<T> {
     TResult Function(NetworkExceptions networkExceptions)? registerError,
     TResult Function()? phoneAuthLoading,
     TResult Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult Function(String uid)? phoneNumberSubmited,
+    TResult Function()? phoneNumberSubmited,
     TResult Function()? phoneOTPVerified,
     TResult Function(String data)? firebaseGoogleLoginSuccess,
     TResult Function()? firebaseGoogleLoginLoading,
@@ -2909,7 +2909,7 @@ class _$PhoneAuthErrorOccurred<T> implements PhoneAuthErrorOccurred<T> {
         registerError,
     required TResult Function() phoneAuthLoading,
     required TResult Function(String errorMsg) phoneAuthErrorOccurred,
-    required TResult Function(String uid) phoneNumberSubmited,
+    required TResult Function() phoneNumberSubmited,
     required TResult Function() phoneOTPVerified,
     required TResult Function(String data) firebaseGoogleLoginSuccess,
     required TResult Function() firebaseGoogleLoginLoading,
@@ -2935,7 +2935,7 @@ class _$PhoneAuthErrorOccurred<T> implements PhoneAuthErrorOccurred<T> {
     TResult? Function(NetworkExceptions networkExceptions)? registerError,
     TResult? Function()? phoneAuthLoading,
     TResult? Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult? Function(String uid)? phoneNumberSubmited,
+    TResult? Function()? phoneNumberSubmited,
     TResult? Function()? phoneOTPVerified,
     TResult? Function(String data)? firebaseGoogleLoginSuccess,
     TResult? Function()? firebaseGoogleLoginLoading,
@@ -2961,7 +2961,7 @@ class _$PhoneAuthErrorOccurred<T> implements PhoneAuthErrorOccurred<T> {
     TResult Function(NetworkExceptions networkExceptions)? registerError,
     TResult Function()? phoneAuthLoading,
     TResult Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult Function(String uid)? phoneNumberSubmited,
+    TResult Function()? phoneNumberSubmited,
     TResult Function()? phoneOTPVerified,
     TResult Function(String data)? firebaseGoogleLoginSuccess,
     TResult Function()? firebaseGoogleLoginLoading,
@@ -3086,8 +3086,6 @@ abstract class _$$PhoneNumberSubmitedCopyWith<T, $Res> {
   factory _$$PhoneNumberSubmitedCopyWith(_$PhoneNumberSubmited<T> value,
           $Res Function(_$PhoneNumberSubmited<T>) then) =
       __$$PhoneNumberSubmitedCopyWithImpl<T, $Res>;
-  @useResult
-  $Res call({String uid});
 }
 
 /// @nodoc
@@ -3097,51 +3095,26 @@ class __$$PhoneNumberSubmitedCopyWithImpl<T, $Res>
   __$$PhoneNumberSubmitedCopyWithImpl(_$PhoneNumberSubmited<T> _value,
       $Res Function(_$PhoneNumberSubmited<T>) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? uid = null,
-  }) {
-    return _then(_$PhoneNumberSubmited<T>(
-      null == uid
-          ? _value.uid
-          : uid // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$PhoneNumberSubmited<T> implements PhoneNumberSubmited<T> {
-  const _$PhoneNumberSubmited(this.uid);
-
-  @override
-  final String uid;
+  const _$PhoneNumberSubmited();
 
   @override
   String toString() {
-    return 'AuthResultState<$T>.phoneNumberSubmited(uid: $uid)';
+    return 'AuthResultState<$T>.phoneNumberSubmited()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$PhoneNumberSubmited<T> &&
-            (identical(other.uid, uid) || other.uid == uid));
+        (other.runtimeType == runtimeType && other is _$PhoneNumberSubmited<T>);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, uid);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$PhoneNumberSubmitedCopyWith<T, _$PhoneNumberSubmited<T>> get copyWith =>
-      __$$PhoneNumberSubmitedCopyWithImpl<T, _$PhoneNumberSubmited<T>>(
-          this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -3160,14 +3133,14 @@ class _$PhoneNumberSubmited<T> implements PhoneNumberSubmited<T> {
         registerError,
     required TResult Function() phoneAuthLoading,
     required TResult Function(String errorMsg) phoneAuthErrorOccurred,
-    required TResult Function(String uid) phoneNumberSubmited,
+    required TResult Function() phoneNumberSubmited,
     required TResult Function() phoneOTPVerified,
     required TResult Function(String data) firebaseGoogleLoginSuccess,
     required TResult Function() firebaseGoogleLoginLoading,
     required TResult Function(NetworkExceptions networkExceptions)
         firebaseGoogleLoginError,
   }) {
-    return phoneNumberSubmited(uid);
+    return phoneNumberSubmited();
   }
 
   @override
@@ -3186,14 +3159,14 @@ class _$PhoneNumberSubmited<T> implements PhoneNumberSubmited<T> {
     TResult? Function(NetworkExceptions networkExceptions)? registerError,
     TResult? Function()? phoneAuthLoading,
     TResult? Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult? Function(String uid)? phoneNumberSubmited,
+    TResult? Function()? phoneNumberSubmited,
     TResult? Function()? phoneOTPVerified,
     TResult? Function(String data)? firebaseGoogleLoginSuccess,
     TResult? Function()? firebaseGoogleLoginLoading,
     TResult? Function(NetworkExceptions networkExceptions)?
         firebaseGoogleLoginError,
   }) {
-    return phoneNumberSubmited?.call(uid);
+    return phoneNumberSubmited?.call();
   }
 
   @override
@@ -3212,7 +3185,7 @@ class _$PhoneNumberSubmited<T> implements PhoneNumberSubmited<T> {
     TResult Function(NetworkExceptions networkExceptions)? registerError,
     TResult Function()? phoneAuthLoading,
     TResult Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult Function(String uid)? phoneNumberSubmited,
+    TResult Function()? phoneNumberSubmited,
     TResult Function()? phoneOTPVerified,
     TResult Function(String data)? firebaseGoogleLoginSuccess,
     TResult Function()? firebaseGoogleLoginLoading,
@@ -3221,7 +3194,7 @@ class _$PhoneNumberSubmited<T> implements PhoneNumberSubmited<T> {
     required TResult orElse(),
   }) {
     if (phoneNumberSubmited != null) {
-      return phoneNumberSubmited(uid);
+      return phoneNumberSubmited();
     }
     return orElse();
   }
@@ -3323,13 +3296,7 @@ class _$PhoneNumberSubmited<T> implements PhoneNumberSubmited<T> {
 }
 
 abstract class PhoneNumberSubmited<T> implements AuthResultState<T> {
-  const factory PhoneNumberSubmited(final String uid) =
-      _$PhoneNumberSubmited<T>;
-
-  String get uid;
-  @JsonKey(ignore: true)
-  _$$PhoneNumberSubmitedCopyWith<T, _$PhoneNumberSubmited<T>> get copyWith =>
-      throw _privateConstructorUsedError;
+  const factory PhoneNumberSubmited() = _$PhoneNumberSubmited<T>;
 }
 
 /// @nodoc
@@ -3384,7 +3351,7 @@ class _$PhoneOTPVerified<T> implements PhoneOTPVerified<T> {
         registerError,
     required TResult Function() phoneAuthLoading,
     required TResult Function(String errorMsg) phoneAuthErrorOccurred,
-    required TResult Function(String uid) phoneNumberSubmited,
+    required TResult Function() phoneNumberSubmited,
     required TResult Function() phoneOTPVerified,
     required TResult Function(String data) firebaseGoogleLoginSuccess,
     required TResult Function() firebaseGoogleLoginLoading,
@@ -3410,7 +3377,7 @@ class _$PhoneOTPVerified<T> implements PhoneOTPVerified<T> {
     TResult? Function(NetworkExceptions networkExceptions)? registerError,
     TResult? Function()? phoneAuthLoading,
     TResult? Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult? Function(String uid)? phoneNumberSubmited,
+    TResult? Function()? phoneNumberSubmited,
     TResult? Function()? phoneOTPVerified,
     TResult? Function(String data)? firebaseGoogleLoginSuccess,
     TResult? Function()? firebaseGoogleLoginLoading,
@@ -3436,7 +3403,7 @@ class _$PhoneOTPVerified<T> implements PhoneOTPVerified<T> {
     TResult Function(NetworkExceptions networkExceptions)? registerError,
     TResult Function()? phoneAuthLoading,
     TResult Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult Function(String uid)? phoneNumberSubmited,
+    TResult Function()? phoneNumberSubmited,
     TResult Function()? phoneOTPVerified,
     TResult Function(String data)? firebaseGoogleLoginSuccess,
     TResult Function()? firebaseGoogleLoginLoading,
@@ -3632,7 +3599,7 @@ class _$FirebaseGoogleLoginSuccess<T> implements FirebaseGoogleLoginSuccess<T> {
         registerError,
     required TResult Function() phoneAuthLoading,
     required TResult Function(String errorMsg) phoneAuthErrorOccurred,
-    required TResult Function(String uid) phoneNumberSubmited,
+    required TResult Function() phoneNumberSubmited,
     required TResult Function() phoneOTPVerified,
     required TResult Function(String data) firebaseGoogleLoginSuccess,
     required TResult Function() firebaseGoogleLoginLoading,
@@ -3658,7 +3625,7 @@ class _$FirebaseGoogleLoginSuccess<T> implements FirebaseGoogleLoginSuccess<T> {
     TResult? Function(NetworkExceptions networkExceptions)? registerError,
     TResult? Function()? phoneAuthLoading,
     TResult? Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult? Function(String uid)? phoneNumberSubmited,
+    TResult? Function()? phoneNumberSubmited,
     TResult? Function()? phoneOTPVerified,
     TResult? Function(String data)? firebaseGoogleLoginSuccess,
     TResult? Function()? firebaseGoogleLoginLoading,
@@ -3684,7 +3651,7 @@ class _$FirebaseGoogleLoginSuccess<T> implements FirebaseGoogleLoginSuccess<T> {
     TResult Function(NetworkExceptions networkExceptions)? registerError,
     TResult Function()? phoneAuthLoading,
     TResult Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult Function(String uid)? phoneNumberSubmited,
+    TResult Function()? phoneNumberSubmited,
     TResult Function()? phoneOTPVerified,
     TResult Function(String data)? firebaseGoogleLoginSuccess,
     TResult Function()? firebaseGoogleLoginLoading,
@@ -3860,7 +3827,7 @@ class _$FirebaseGoogleLoginLoading<T> implements FirebaseGoogleLoginLoading<T> {
         registerError,
     required TResult Function() phoneAuthLoading,
     required TResult Function(String errorMsg) phoneAuthErrorOccurred,
-    required TResult Function(String uid) phoneNumberSubmited,
+    required TResult Function() phoneNumberSubmited,
     required TResult Function() phoneOTPVerified,
     required TResult Function(String data) firebaseGoogleLoginSuccess,
     required TResult Function() firebaseGoogleLoginLoading,
@@ -3886,7 +3853,7 @@ class _$FirebaseGoogleLoginLoading<T> implements FirebaseGoogleLoginLoading<T> {
     TResult? Function(NetworkExceptions networkExceptions)? registerError,
     TResult? Function()? phoneAuthLoading,
     TResult? Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult? Function(String uid)? phoneNumberSubmited,
+    TResult? Function()? phoneNumberSubmited,
     TResult? Function()? phoneOTPVerified,
     TResult? Function(String data)? firebaseGoogleLoginSuccess,
     TResult? Function()? firebaseGoogleLoginLoading,
@@ -3912,7 +3879,7 @@ class _$FirebaseGoogleLoginLoading<T> implements FirebaseGoogleLoginLoading<T> {
     TResult Function(NetworkExceptions networkExceptions)? registerError,
     TResult Function()? phoneAuthLoading,
     TResult Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult Function(String uid)? phoneNumberSubmited,
+    TResult Function()? phoneNumberSubmited,
     TResult Function()? phoneOTPVerified,
     TResult Function(String data)? firebaseGoogleLoginSuccess,
     TResult Function()? firebaseGoogleLoginLoading,
@@ -4118,7 +4085,7 @@ class _$FirebaseGoogleLoginError<T> implements FirebaseGoogleLoginError<T> {
         registerError,
     required TResult Function() phoneAuthLoading,
     required TResult Function(String errorMsg) phoneAuthErrorOccurred,
-    required TResult Function(String uid) phoneNumberSubmited,
+    required TResult Function() phoneNumberSubmited,
     required TResult Function() phoneOTPVerified,
     required TResult Function(String data) firebaseGoogleLoginSuccess,
     required TResult Function() firebaseGoogleLoginLoading,
@@ -4144,7 +4111,7 @@ class _$FirebaseGoogleLoginError<T> implements FirebaseGoogleLoginError<T> {
     TResult? Function(NetworkExceptions networkExceptions)? registerError,
     TResult? Function()? phoneAuthLoading,
     TResult? Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult? Function(String uid)? phoneNumberSubmited,
+    TResult? Function()? phoneNumberSubmited,
     TResult? Function()? phoneOTPVerified,
     TResult? Function(String data)? firebaseGoogleLoginSuccess,
     TResult? Function()? firebaseGoogleLoginLoading,
@@ -4170,7 +4137,7 @@ class _$FirebaseGoogleLoginError<T> implements FirebaseGoogleLoginError<T> {
     TResult Function(NetworkExceptions networkExceptions)? registerError,
     TResult Function()? phoneAuthLoading,
     TResult Function(String errorMsg)? phoneAuthErrorOccurred,
-    TResult Function(String uid)? phoneNumberSubmited,
+    TResult Function()? phoneNumberSubmited,
     TResult Function()? phoneOTPVerified,
     TResult Function(String data)? firebaseGoogleLoginSuccess,
     TResult Function()? firebaseGoogleLoginLoading,

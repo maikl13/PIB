@@ -12,6 +12,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? leadingArrow;
   final List<Widget>? actions;
   final Color? appBarColor;
+  final void Function()? onTap;
 
   const CustomAppBar(
       {super.key,
@@ -19,7 +20,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       this.height,
       this.leadingArrow,
       this.actions,
-      this.appBarColor});
+      this.appBarColor, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +35,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         style: getRegularStyle(fontSize: 18.sp, color: ColorManager.white),
       ),
       leading: LeadingArrow(
+        onTap:  onTap ?? () => Navigator.pop(context),
+
         leadingArrow: leadingArrow,
       ),
     );

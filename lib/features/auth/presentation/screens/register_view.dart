@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/resources/constants.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/commons.dart';
 import '../../../../core/resources/route_manager.dart';
@@ -25,9 +26,10 @@ class RegisterView extends StatefulWidget {
 
 class _RegisterViewState extends State<RegisterView> {
   final GlobalKey<FormState> _phoneFormKey = GlobalKey();
-  final TextEditingController phoneController = TextEditingController();
+  final TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
 
-  late String phoneNumber;
+  String phoneNumber = '';
   Widget _buildBody(BuildContext context) {
     return Form(
       key: _phoneFormKey,
@@ -46,7 +48,7 @@ class _RegisterViewState extends State<RegisterView> {
             onSaved: (value) {
               phoneNumber = value!;
             },
-            controller: phoneController,
+            controller: _phoneController,
             validator: (value) {
               if (value!.isEmpty) {
                 return 'invalid Number';
@@ -81,6 +83,7 @@ class _RegisterViewState extends State<RegisterView> {
 
   _buildNameTextField() {
     return DefaultTextField(
+      controller: _nameController,
       hint: AppStrings.name,
       prefix: Icon(
         Icons.person,
@@ -109,9 +112,9 @@ class _RegisterViewState extends State<RegisterView> {
           phoneAuthLoading: () {
             showProgressIndicator(context);
           },
-          phoneNumberSubmited: (uid) {
+          phoneNumberSubmited: () {
             // ignore: avoid_print
-            print(uid);
+            // print(uid);
             Navigator.pop(context);
             Navigator.of(context).pushNamed(Routes.confirmOtbViewRoute);
           },
@@ -130,7 +133,8 @@ class _RegisterViewState extends State<RegisterView> {
       text: AppStrings.registerNewAcc,
       onTap: () {
         showProgressIndicator(context);
-
+        userName = _nameController.text;
+        userPhone = _phoneController.text;
         // showSuccessDialog(
         //   context,
         //   onOk: () {

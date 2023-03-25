@@ -1,21 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/resources/color_manager.dart';
+import 'package:pip/core/resources/constants.dart';
+
+import '../../../../core/resources/commons.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/widgets/custom_appbar.dart';
 import '../../../../core/widgets/default_button.dart';
-import '../../../../core/widgets/default_textfield.dart';
 import '../../../../core/widgets/headline.dart';
 import '../../../../core/widgets/sub_headline.dart';
 
 import '../../../../core/resources/route_manager.dart';
 import '../../../../core/widgets/default_phone_textfield.dart';
+import '../../business_logic/cubit/auth_cubit.dart';
 import '../widgets/custom_bottom_phrase.dart';
-import '../widgets/custom_hint_text.dart';
 
-class LoginView extends StatelessWidget {
+class LoginView extends StatefulWidget {
   const LoginView({super.key});
 
+  @override
+  State<LoginView> createState() => _LoginViewState();
+}
+
+class _LoginViewState extends State<LoginView> {
+  final TextEditingController _phoneController = TextEditingController();
+  // final TextEditingController _nameController = TextEditingController();
+  final GlobalKey<FormState> _phoneFormKey = GlobalKey();
+  late String phoneNumber;
   _buildBody(BuildContext context) {
     return ListView(
       shrinkWrap: true,
@@ -26,50 +37,86 @@ class LoginView extends StatelessWidget {
         SizedBox(height: 15.h),
         const CustomSubHeadLine(title: AppStrings.loginDescription),
         SizedBox(height: 40.h),
+        // _buildNameTextField(),
+        // SizedBox(height: 20.h),
         _buildPhoneTextField(),
-        SizedBox(height: 20.h),
-        _buildPasswordTextField(),
         SizedBox(height: 150.h),
-        const DefaultButton(text: AppStrings.login),
-        SizedBox(height: 27.h),
-        _buildForgotPassword(context),
-        // const Spacer(),
-        SizedBox(height: 110.h),
+        _buildButton(context),
+
+        SizedBox(height: 127.h),
 
         _buildBottomLoginHint(context),
+        // _buildPhoneNumberSubmitedBloc()
       ],
     );
   }
 
-  _buildForgotPassword(BuildContext context) {
-    return Center(
-      child: CustomHintText(
-        title: AppStrings.forgotPassword,
-        onPressed: () {
-          Navigator.pushNamed(context, Routes.forgotPasswordViewRoute);
+  _buildButton(BuildContext context) {
+    return DefaultButton(
+      text: AppStrings.login,
+      onTap: () {
+        showProgressIndicator(context);
+        _login(context);
+      },
+    );
+  }
+
+  Future<void> _login(BuildContext context) async {
+    if (!_phoneFormKey.currentState!.validate()) {
+      Commons.showToast(message: 'invalid nnumber');
+      Navigator.pop(context);
+      return;
+    } else {
+      Navigator.pop(context);
+      _phoneFormKey.currentState!.save();
+      BlocProvider.of<AuthCubit>(context).submitPhoneNumber(phoneNumber);
+    }
+  }
+
+  // _buildForgotPassword(BuildContext context) {
+  _buildPhoneTextField() {
+    return Form(
+      key: _phoneFormKey,
+      child: DefaultPhoneTextField(
+        controller: _phoneController,
+        onSaved: (value) {
+          phoneNumber = value!;
+          userPhone = value;
         },
+
+        validator: (value) {
+          if (value!.isEmpty) {
+            return 'invalid Number';
+          } else if (value.length < 11) {
+            return 'Too short for a phone number!';
+          }
+          return null;
+        },
+        // hint: AppStrings.zeros,
       ),
     );
   }
 
-  _buildPhoneTextField() {
-    return const DefaultPhoneTextField(
-
-        // hint: AppStrings.zeros,
-        );
-  }
-
-  _buildPasswordTextField() {
-    return DefaultTextField(
-        isPassword: true,
-        // keyboardType: TextInputType,
-        prefix: Icon(
-          Icons.lock,
-          color: ColorManager.lightSeconadary,
-          size: 20.sp,
-        ),
-        hint: AppStrings.password);
-  }
+  // _buildNameTextField() {
+  // _buildNameTextField() {
+  //   return DefaultTextField(
+  //       controller: _nameController,
+  //       onSaved: (value) {
+  //         userName = value!;
+  //       },
+  //       validator: (value) {
+  //         if (value!.isEmpty) {
+  //           return 'enter your name';
+  //         }
+  //         return null;
+  //       },
+  //       prefix: Icon(
+  //         Icons.person,
+  //         color: ColorManager.lightSeconadary,
+  //         size: 20.sp,
+  //       ),
+  //       hint: AppStrings.name);
+  // }
 
   _buildBottomLoginHint(BuildContext context) {
     return CustomBottomPhrase(

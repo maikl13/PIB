@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pip/features/chat/business_logic/chat_state.dart';
+import '../../../../core/resources/commons.dart';
 import '../../../../core/widgets/custom_clock_date.dart';
+import '../../../chat/business_logic/chat_cubit.dart';
 import '../../business_logic/cubit/requests_cubit.dart';
 import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
@@ -77,12 +80,26 @@ class RecievedOfferItem extends StatelessWidget {
   }
 
   _buildButtons(BuildContext context) {
-    return Row(
-      children: [
-        _buildAcceptButton(context),
-        SizedBox(width: 10.w),
-        _buildNegotiateButton(context),
-      ],
+    return BlocListener<ChatCubit, ChatState>(
+      listener: (context, state) {
+        state.whenOrNull(
+          chatWithUserSuccess: (data) {
+            Navigator.pushNamed(context, Routes.chatViewRoute, arguments: {
+              'chatId': data.chatId,
+            });
+          },
+          chatWithUserError: (networkExceptions) {
+            Commons.showToast(message: networkExceptions.toString());
+          },
+        );
+      },
+      child: Row(
+        children: [
+          _buildAcceptButton(context),
+          SizedBox(width: 10.w),
+          _buildNegotiateButton(context),
+        ],
+      ),
     );
   }
 
@@ -93,8 +110,8 @@ class RecievedOfferItem extends StatelessWidget {
       widht: 108.w,
       textStyle: getBoldStyle(fontSize: 12.sp, color: ColorManager.black),
       onTap: () {
-         BlocProvider.of<RequestsCubit>(context).acceptOffer(offerId: offers[index].id.toString());
-       
+        BlocProvider.of<RequestsCubit>(context)
+            .acceptOffer(offerId: offers[index].id.toString());
       },
     );
   }
@@ -108,7 +125,9 @@ class RecievedOfferItem extends StatelessWidget {
       textStyle:
           getBoldStyle(fontSize: 12.sp, color: ColorManager.darkSeconadry),
       onTap: () {
-        Navigator.pushNamed(context, Routes.chatViewRoute);
+        BlocProvider.of<ChatCubit>(context).chatWithUser(
+            requestId: offers[index].id.toString(),
+            targetId: offers[index].user!.id.toString());
       },
     );
   }
@@ -166,9 +185,10 @@ class RecievedOfferItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.pushNamed(context, Routes.recievedOffersDetailsViewRoute,arguments: {
-          'offer': offers[index],
-        });
+        Navigator.pushNamed(context, Routes.recievedOffersDetailsViewRoute,
+            arguments: {
+              'offer': offers[index],
+            });
       },
       child: Container(
         height: 198.h,

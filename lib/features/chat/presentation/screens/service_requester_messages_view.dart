@@ -26,10 +26,10 @@ class _ServiceRequesterMessagesViewState
       buildWhen: (previous, next) => next is RequestsChatsSuccess,
       builder: (context, state) {
         return state.maybeWhen(
-          hiringChatsLoading: () {
+          requestsChatsLoading: () {
             return const LoadingIndicator();
           },
-          hiringChatsSuccess: (requestsChats) {
+          requestsChatsSuccess: (requestsChats) {
             return _buildList(requestsChats);
           },
           orElse: () {
@@ -50,6 +50,7 @@ class _ServiceRequesterMessagesViewState
       },
       itemBuilder: (context, index) {
         return ConversationItem(
+          chatId: requestsChats[index].id!,
           imageUrl: requestsChats[index].images!.isEmpty
               ? null
               : requestsChats[index].images![0].attachmentUrl,
@@ -58,6 +59,12 @@ class _ServiceRequesterMessagesViewState
         );
       },
     );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    BlocProvider.of<ChatCubit>(context).getAllRequestsChats();
   }
 
   @override

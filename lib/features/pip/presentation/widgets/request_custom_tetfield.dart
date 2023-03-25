@@ -15,7 +15,7 @@ class RequestCustomTextField extends StatelessWidget {
       this.controller,
       this.contentPadding,
       this.bottomPadding,
-      this.hintStyle});
+      this.hintStyle, this.validator});
   final String? hint;
   final IconData? icon;
   final Widget? suffix;
@@ -24,9 +24,11 @@ class RequestCustomTextField extends StatelessWidget {
   final EdgeInsets? contentPadding;
   final double? bottomPadding;
   final TextStyle? hintStyle;
+  final String? Function(String?)? validator;
   @override
   Widget build(BuildContext context) {
     return DefaultTextField(
+      validator: validator,
       controller: controller,
       hintStyle:
           hintStyle ?? getBoldStyle(fontSize: 15.sp, color: ColorManager.grey5),

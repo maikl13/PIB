@@ -67,27 +67,32 @@ class OnBoardingView extends StatelessWidget {
   }
 
   _buildButton(BuildContext context) {
-    return Container(
-      width: 190.w,
-      height: 55.h,
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            ColorManager.darkSeconadry,
-            ColorManager.lightSeconadary,
-          ],
-          begin: Alignment.centerRight,
-          end: Alignment.centerLeft,
+    return InkWell(
+      onTap: () {
+        Navigator.pushReplacementNamed(context, Routes.mainAuthViewRoute);
+      },
+      child: Container(
+        width: 190.w,
+        height: 55.h,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              ColorManager.darkSeconadry,
+              ColorManager.lightSeconadary,
+            ],
+            begin: Alignment.centerRight,
+            end: Alignment.centerLeft,
+          ),
+          borderRadius: BorderRadius.circular(31.r),
         ),
-        borderRadius: BorderRadius.circular(31.r),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          _buildTitle(),
-          SizedBox(width: 30.w),
-          _buildIcon(context),
-        ],
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            _buildTitle(),
+            SizedBox(width: 30.w),
+            _buildIcon(context),
+          ],
+        ),
       ),
     );
   }
@@ -108,18 +113,13 @@ class OnBoardingView extends StatelessWidget {
   _buildIcon(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(left: 12.w, top: 5.h, bottom: 5.h),
-      child: InkWell(
-        onTap: () {
-          Navigator.pushReplacementNamed(context, Routes.mainAuthViewRoute);
-        },
-        child: CircleAvatar(
-          backgroundColor: ColorManager.white,
-          radius: 25.r,
-          child: Icon(
-            Icons.arrow_forward,
-            color: ColorManager.lightSeconadary,
-            size: 15.sp,
-          ),
+      child: CircleAvatar(
+        backgroundColor: ColorManager.white,
+        radius: 25.r,
+        child: Icon(
+          Icons.arrow_forward,
+          color: ColorManager.lightSeconadary,
+          size: 15.sp,
         ),
       ),
     );

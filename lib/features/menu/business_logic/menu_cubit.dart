@@ -42,6 +42,22 @@ class MenuCubit extends Cubit<MenuState> {
 
   File? imageFile;
   String? image;
+  Future pickImage() async {
+    try {
+      emit(const MenuState.imageSelectedLoading());
+      final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+      if (image == null) return;
+      final imageTemporry = File(image.path);
+
+      imageFile = imageTemporry;
+      this.image = image.path;
+      emit(const MenuState.imageSelectedSuccess());
+    } on PlatformException catch (e) {
+      emit(const MenuState.imageSelectedError());
+      Commons.showToast(message: e.toString());
+      // print('Failed to pick image $e ');
+    }
+  }
 
   void sendRate() {}
 
@@ -70,23 +86,6 @@ class MenuCubit extends Cubit<MenuState> {
     emit(const MenuState.updateTimeRateSuccess());
   }
 
-  Future pickImage() async {
-    try {
-      emit(const MenuState.imageSelectedLoading());
-      final image = await ImagePicker().pickImage(source: ImageSource.gallery);
-      if (image == null) return;
-      final imageTemporry = File(image.path);
-
-      imageFile = imageTemporry;
-      this.image = image.path;
-      emit(const MenuState.imageSelectedSuccess());
-    } on PlatformException catch (e) {
-      emit(const MenuState.imageSelectedError());
-      Commons.showToast(message: e.toString());
-      // print('Failed to pick image $e ');
-    }
-  }
-
   Future<void> signOut(BuildContext context) async {
     try {
       await FirebaseAuth.instance.signOut();
@@ -98,6 +97,7 @@ class MenuCubit extends Cubit<MenuState> {
       CacheHelper.removeData(key: 'userName');
       CacheHelper.removeData(key: 'userPhone');
       CacheHelper.removeData(key: 'goToHome');
+      screenIndex = 0;
 
       // ignore: use_build_context_synchronously
       Navigator.pushReplacementNamed(context, Routes.onBoardingViewRoute);

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../../core/resources/color_manager.dart';
@@ -9,9 +10,12 @@ import '../../../../core/widgets/custom_appbar.dart';
 import '../../../../core/widgets/custom_title.dart';
 import '../../../../core/widgets/default_button.dart';
 import '../../../pip/presentation/widgets/request_custom_tetfield.dart';
+import '../../business_logic/chat_cubit.dart';
 
 class ChatAddOfferViewRoute extends StatelessWidget {
-  const ChatAddOfferViewRoute({super.key});
+  const ChatAddOfferViewRoute({super.key, required this.chatId});
+
+  final int chatId;
 
   _buildBody(BuildContext context) {
     return ListView(
@@ -75,6 +79,10 @@ class ChatAddOfferViewRoute extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
+        onTap: () {
+          BlocProvider.of<ChatCubit>(context).resumeStream(chatId);
+          Navigator.pop(context);
+        },
         appBarColor: ColorManager.lightBlack,
         title: AppStrings.addOffer,
         actions: const [],

@@ -1,9 +1,11 @@
 import 'dart:io';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:pip/features/pip/data/models/fast_request_category.dart';
 import '../../../menu/data/models/update_skill.dart';
 import '../../data/models/skills_model.dart';
 import '../../../../core/web_services/network_exceptions.dart';
+import '../../data/models/toggle_model.dart';
 part 'pip_state.freezed.dart';
 
 @freezed
@@ -16,6 +18,23 @@ class PipState<T> with _$PipState<T> {
 
   const factory PipState.skillserror(NetworkExceptions networkExceptions) =
      SkillsError<T>;
+
+      const factory PipState.toggleLoading() = ToggleLoading<T>;
+
+  const factory PipState.toggleSuccess(ToggleModel data) = ToggleSuccess<T>;
+
+  const factory PipState.toggleError(NetworkExceptions networkExceptions) =
+     ToggleError<T>;
+
+
+
+          const factory PipState.fastRequestCategoryLoading() = FastRequestCategoryLoading<T>;
+
+  const factory PipState.fastRequestCategorySuccess(List<FastRequestCategory> data) = FastRequestCategorySuccess<T>;
+
+  const factory PipState.fastRequestCategoryError(NetworkExceptions networkExceptions) =
+     FastRequestCategoryError<T>;
+
 
    const factory PipState.imageSelectedSuccess(List<File> images) =
       ImageSelectedSuccess<T>;

@@ -4,8 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../resources/color_manager.dart';
 
 class LeadingArrow extends StatelessWidget {
-  const LeadingArrow({super.key, this.leadingArrow});
+  const LeadingArrow({super.key, this.leadingArrow, this.onTap});
   final Widget? leadingArrow;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class LeadingArrow extends StatelessWidget {
             children: [
               // SizedBox(width: 20.w),
               InkWell(
-                onTap: () => Navigator.pop(context),
+                onTap: onTap ?? () => Navigator.pop(context),
                 child: leadingArrow ??
                     Container(
                       width: 35.h,

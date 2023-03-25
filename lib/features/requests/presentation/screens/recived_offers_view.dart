@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/widgets/empty_screen.dart';
 import '../../../../core/resources/commons.dart';
 import '../../../../core/widgets/loading_indicator.dart';
 import '../../business_logic/cubit/requests_cubit.dart';
@@ -55,18 +56,20 @@ class _RecievedOffersViewState extends State<RecievedOffersView> {
   }
 
   Widget _buildListOfOffers(List<OfferModel> offers) {
-    return ListView.separated(
-        padding: EdgeInsets.only(top: 30.h, left: 20.w, right: 20.w),
-        shrinkWrap: true,
-        itemBuilder: (context, index) {
-          return RecievedOfferItem(offers: offers, index: index);
-        },
-        separatorBuilder: (context, index) {
-          return SizedBox(
-            height: 15.h,
-          );
-        },
-        itemCount: offers.length);
+    return offers.isEmpty
+        ? const EmptyScreen()
+        : ListView.separated(
+            padding: EdgeInsets.only(top: 30.h, left: 20.w, right: 20.w),
+            shrinkWrap: true,
+            itemBuilder: (context, index) {
+              return RecievedOfferItem(offers: offers, index: index);
+            },
+            separatorBuilder: (context, index) {
+              return SizedBox(
+                height: 15.h,
+              );
+            },
+            itemCount: offers.length);
   }
 
   @override

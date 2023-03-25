@@ -8,11 +8,12 @@ import '../../../../core/resources/style_manager.dart';
 import '../../../../core/widgets/custom_network_image.dart';
 
 class ConversationItem extends StatelessWidget {
-  const ConversationItem({super.key, this.name, this.totalMessage,  this.imageUrl});
+  const ConversationItem({super.key, this.name, this.totalMessage,  this.imageUrl, required this.chatId});
 
   final String? name;
   final int ?totalMessage;
   final String ?imageUrl ;
+  final int chatId;
   _buildBackground() {
     return Image.asset(
       ImageAssets.conversationItemBackground,
@@ -61,6 +62,9 @@ class ConversationItem extends StatelessWidget {
       onTap: () {
         Navigator.of(context).pushNamed(
           Routes.chatsViewRoute,
+          arguments: {
+            'chatId' : chatId,
+          }
         );
       },
       child: SizedBox(

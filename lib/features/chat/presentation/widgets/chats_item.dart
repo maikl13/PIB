@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/widgets/custom_network_image.dart';
+import 'package:pip/features/chat/data/models/job_chats_model.dart';
 import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
-import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/resources/style_manager.dart';
-
 import '../../../../core/resources/route_manager.dart';
 
 class ChatsItem extends StatelessWidget {
-  const ChatsItem({super.key});
+  const ChatsItem({super.key, required this.index, required this.jobChats});
+
+  final int index;
+  final JobChatsModel jobChats;
   _buildBackground() {
     return Image.asset(
       ImageAssets.flibBackground,
@@ -17,26 +20,36 @@ class ChatsItem extends StatelessWidget {
   }
 
   Widget _buildAvatar() {
-    return SizedBox(
-        height: 60.w,
-        width: 60.w,
-        child: CircleAvatar(
-          radius: 80.r,
-          backgroundImage: const AssetImage(ImageAssets.banner),
-        ));
+    return Padding(
+      padding: EdgeInsets.only(top: 8.w),
+      child: SizedBox(
+          height: 60.w,
+          width: 60.w,
+          child: CircleAvatar(
+            radius: 80.r,
+            child: ClipOval(
+                child: CustomNetworkCachedImage(
+                    url: jobChats.chats![index].user!.imageUrl)),
+          )),
+    );
   }
 
   _buildTitle() {
     return Text(
-      AppStrings.userName,
+      jobChats.chats![index].user!.name ?? '',
       style: getBoldStyle(fontSize: 18.sp, color: ColorManager.darkSeconadry),
     );
   }
 
   _buildSubtitle() {
-    return Text(
-      'السلام عليكم',
-      style: getRegularStyle(fontSize: 12.sp, color: ColorManager.darkGrey),
+    return SizedBox(
+      width: 120.w,
+      child: Text(
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
+        jobChats.chats![index].lastMessage ?? '',
+        style: getRegularStyle(fontSize: 12.sp, color: ColorManager.darkGrey),
+      ),
     );
   }
 
@@ -44,16 +57,20 @@ class ChatsItem extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(bottom: 10.h),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            "01 : 30",
+            jobChats.chats![index].lastMessageTime!,
             style: getRegularStyle(fontSize: 11.sp, color: ColorManager.grey),
           ),
-          Icon(
-            Icons.arrow_forward,
-            color: ColorManager.darkSeconadry,
-            size: 16.sp,
+          Padding(
+            padding: EdgeInsets.only(left: 10.w),
+            child: Icon(
+              Icons.arrow_forward,
+              color: ColorManager.darkSeconadry,
+              size: 16.sp,
+            ),
           ),
         ],
       ),
@@ -64,7 +81,9 @@ class ChatsItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.pushNamed(context, Routes.chatViewRoute);
+        Navigator.pushNamed(context, Routes.chatViewRoute, arguments: {
+          'chatId': jobChats.chats![index].id,
+        });
       },
       child: SizedBox(
         width: double.infinity,
@@ -76,14 +95,14 @@ class ChatsItem extends StatelessWidget {
             children: [
               _buildBackground(),
               Padding(
-                padding: EdgeInsets.only(top: 20.w, right: 20.w, left: 20.w),
+                padding: EdgeInsets.only(top: 15.w, right: 15.w, left: 12.w),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     _buildAvatar(),
                     SizedBox(width: 20.w),
                     Padding(
-                      padding: EdgeInsets.only(top: 4.w),
+                      padding: EdgeInsets.only(top: 10.w),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [

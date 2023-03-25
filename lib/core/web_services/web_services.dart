@@ -1,9 +1,14 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import '../../features/chat/data/models/chat_with_user_model.dart';
+import '../../features/chat/data/models/chats_messages_model.dart';
+import '../../features/chat/data/models/job_chats_model.dart';
+import '../../features/chat/data/models/show_chat_info_model.dart';
 import '../../features/home/data/models/ad_model.dart';
 import '../../features/menu/data/models/setting_model.dart';
 import '../../features/menu/data/models/update_skill.dart';
+import '../../features/pip/data/models/fast_request_category.dart';
 import '../../features/pip/data/models/skills_model.dart';
 
 import 'package:retrofit/retrofit.dart';
@@ -16,6 +21,7 @@ import '../../features/menu/data/models/rates_model.dart';
 import '../../features/menu/data/models/user_info_model.dart';
 import '../../features/menu/data/models/wallet_info.dart';
 import '../../features/notification/data/models/notification_model.dart';
+import '../../features/pip/data/models/toggle_model.dart';
 import '../../features/requests/data/models/my_request_model.dart';
 import '../../features/requests/data/models/offer_model.dart';
 
@@ -59,10 +65,10 @@ abstract class WebServices {
 
   //-----------------------new-----------------------------------------------------------------
   @GET("deals/{id}/offers")
- Future<List<OfferModel>> getAllRequestOffers(
+  Future<List<OfferModel>> getAllRequestOffers(
     @Header('Authorization') String token,
     @Path('id') int id,
-    );
+  );
 //-----------------------new-----------------------------------------------------------------
   @POST("user/skills/update")
   Future<UpdateSkill> updateSkill(
@@ -191,6 +197,21 @@ abstract class WebServices {
   @GET("user/chats/requests")
   Future<List<HiringChatModel>> getAllRequestsChats(
       @Header('Authorization') String token);
+
+  //-----------------------new-----------------------------------------------------------------
+  @GET("user/chats/requests/{chatId}/show")
+  Future<JobChatsModel> getAllJobChats(
+      @Header('Authorization') String token, @Path('chatId') int chatId);
+
+  //-----------------------new-----------------------------------------------------------------
+  @GET("chat/{chatId}/show")
+  Future<ShowChatInfoModel> getChatInfo(
+      @Header('Authorization') String token, @Path('chatId') int chatId);
+  //-----------------------new-----------------------------------------------------------------
+  @GET("chat/{chatId}/messages")
+  Future<List<ChatMessagesModel>>   getAllChatMessages(
+      @Header('Authorization') String token, @Path('chatId') int chatId);
+
 //-----------------------new-----------------------------------------------------------------
   @POST("support/tickets/create")
   Future<UpdateSkill> sendComplain(
@@ -200,4 +221,56 @@ abstract class WebServices {
     @Field("email") email,
     @Field("notes") notes,
   );
+
+  //-----------------------new-----------------------------------------------------------------
+  @POST("chat/messages/create")
+  Future<UpdateSkill> sendMessage(
+    @Header('Authorization') String token,
+    @Field("chat_id") chatId,
+    @Field("message") message,
+  );
+  
+
+  @POST("chat/messages/create")
+  @MultiPart()
+  Future<UpdateSkill> sendAttachmnet(
+     @Header('Authorization') String token,
+    @Part(name:"chat_id") chatId,
+    @Part(name:"message") message,
+    @Part(name: 'attachment') File img,
+   
+  );
+
+    //-----------------------new-----------------------------------------------------------------
+  @POST("chat/report")
+  Future<UpdateSkill> reportChat(
+    @Header('Authorization') String token,
+    @Field("chat_id") chatId,
+    @Field("comment") comment,
+  );
+    //-----------------------new-----------------------------------------------------------------
+  @POST("chat/start")
+  Future<ChatWithUserModel>chatWithUser(
+    @Header('Authorization') String token,
+    @Field("request_id") requestId,
+    @Field("target_id") targetId,
+  );
+
+
+
+      //-----------------------new-----------------------------------------------------------------
+  @POST("user/fastrequests/toggle")
+  Future<ToggleModel> toggleFastRequest(
+    @Header('Authorization') String token,
+
+  );
+      //-----------------------new-----------------------------------------------------------------
+  @GET("skills/fast")
+  Future<List<FastRequestCategory>> getAllFastRequestCategories(
+    @Header('Authorization') String token,
+
+  );
+
+
+
 }

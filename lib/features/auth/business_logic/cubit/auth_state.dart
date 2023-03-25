@@ -27,7 +27,7 @@ class AuthResultState<T> with _$AuthResultState<T> {
 
   const factory AuthResultState.phoneAuthLoading() = PhoneAuthLoading<T>;
   const factory AuthResultState.phoneAuthErrorOccurred(String errorMsg) = PhoneAuthErrorOccurred<T>;
-  const factory AuthResultState.phoneNumberSubmited(String uid) = PhoneNumberSubmited<T>;
+  const factory AuthResultState.phoneNumberSubmited() = PhoneNumberSubmited<T>;
   const factory AuthResultState.phoneOTPVerified() = PhoneOTPVerified<T>;
 
 

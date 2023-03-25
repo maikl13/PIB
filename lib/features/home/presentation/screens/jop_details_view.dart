@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/resources/commons.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/resources/style_manager.dart';
@@ -59,6 +60,9 @@ class JobDetailsView extends StatelessWidget {
                 DefaultButton(
                   text: AppStrings.applyToJob,
                   widht: 249.w,
+                  onTap: () {
+                    Commons.openUrl('tel://${ad.phone}');
+                  },
                 ),
                 SizedBox(width: 10.w),
                 _buildShareButton(),

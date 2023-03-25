@@ -50,6 +50,7 @@ class _ServiceProviderMessagesViewState
       },
       itemBuilder: (context, index) {
         return ConversationItem(
+          chatId: hiringChats[index].id!,
           imageUrl: hiringChats[index].images!.isEmpty
               ? null
               : hiringChats[index].images![0].attachmentUrl,
@@ -63,7 +64,7 @@ class _ServiceProviderMessagesViewState
   @override
   void initState() {
     super.initState();
-    BlocProvider.of<ChatCubit>(context).getAllRequestsChats();
+    BlocProvider.of<ChatCubit>(context).getAllHiringChats();
   }
 
   @override

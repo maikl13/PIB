@@ -5,20 +5,24 @@ import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/style_manager.dart';
 
 class ActionItem extends StatelessWidget {
-  const ActionItem({super.key, required this.icon, required this.title});
+  const ActionItem({super.key, required this.icon, required this.title,  this.onTap});
 
   final IconData icon;
   final String title;
+  final void Function()? onTap;
   _buildIcon() {
-    return SizedBox(
-      width: 40.w,
-      height: 40.h,
-      child: CircleAvatar(
-        backgroundColor: ColorManager.darkSeconadry,
-        child: Center(
-          child: Icon(
-            icon,
-            color: ColorManager.white,
+    return InkWell(
+      onTap: onTap,
+      child: SizedBox(
+        width: 40.w,
+        height: 40.h,
+        child: CircleAvatar(
+          backgroundColor: ColorManager.darkSeconadry,
+          child: Center(
+            child: Icon(
+              icon,
+              color: ColorManager.white,
+            ),
           ),
         ),
       ),

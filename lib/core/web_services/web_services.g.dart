@@ -941,6 +941,90 @@ class _WebServices implements WebServices {
   }
 
   @override
+  Future<JobChatsModel> getAllJobChats(
+    token,
+    chatId,
+  ) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
+    final _data = <String, dynamic>{};
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<JobChatsModel>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'user/chats/requests/${chatId}/show',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = JobChatsModel.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<ShowChatInfoModel> getChatInfo(
+    token,
+    chatId,
+  ) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
+    final _data = <String, dynamic>{};
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<ShowChatInfoModel>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'chat/${chatId}/show',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = ShowChatInfoModel.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<List<ChatMessagesModel>> getAllChatMessages(
+    token,
+    chatId,
+  ) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
+    final _data = <String, dynamic>{};
+    final _result = await _dio
+        .fetch<List<dynamic>>(_setStreamType<List<ChatMessagesModel>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'chat/${chatId}/messages',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    var value = _result.data!
+        .map((dynamic i) =>
+            ChatMessagesModel.fromJson(i as Map<String, dynamic>))
+        .toList();
+    return value;
+  }
+
+  @override
   Future<UpdateSkill> sendComplain(
     token,
     name,
@@ -972,6 +1056,195 @@ class _WebServices implements WebServices {
             )
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = UpdateSkill.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<UpdateSkill> sendMessage(
+    token,
+    chatId,
+    message,
+  ) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
+    final _data = {
+      'chat_id': chatId,
+      'message': message,
+    };
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<UpdateSkill>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'chat/messages/create',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = UpdateSkill.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<UpdateSkill> sendAttachmnet(
+    token,
+    chatId,
+    message,
+    img,
+  ) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
+    final _data = FormData();
+    _data.fields.add(MapEntry(
+      'chat_id',
+      chatId,
+    ));
+    _data.fields.add(MapEntry(
+      'message',
+      message,
+    ));
+    _data.files.add(MapEntry(
+      'attachment',
+      MultipartFile.fromFileSync(
+        img.path,
+        filename: img.path.split(Platform.pathSeparator).last,
+      ),
+    ));
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<UpdateSkill>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+      contentType: 'multipart/form-data',
+    )
+            .compose(
+              _dio.options,
+              'chat/messages/create',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = UpdateSkill.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<UpdateSkill> reportChat(
+    token,
+    chatId,
+    comment,
+  ) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
+    final _data = {
+      'chat_id': chatId,
+      'comment': comment,
+    };
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<UpdateSkill>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'chat/report',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = UpdateSkill.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<ChatWithUserModel> chatWithUser(
+    token,
+    requestId,
+    targetId,
+  ) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
+    final _data = {
+      'request_id': requestId,
+      'target_id': targetId,
+    };
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<ChatWithUserModel>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'chat/start',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = ChatWithUserModel.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<ToggleModel> toggleFastRequest(token) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
+    final _data = <String, dynamic>{};
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<ToggleModel>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'user/fastrequests/toggle',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = ToggleModel.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<List<FastRequestCategory>> getAllFastRequestCategories(token) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
+    final _data = <String, dynamic>{};
+    final _result = await _dio
+        .fetch<List<dynamic>>(_setStreamType<List<FastRequestCategory>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'skills/fast',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    var value = _result.data!
+        .map((dynamic i) =>
+            FastRequestCategory.fromJson(i as Map<String, dynamic>))
+        .toList();
     return value;
   }
 

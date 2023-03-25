@@ -57,6 +57,12 @@ class MainAuthView extends StatelessWidget {
     return BlocConsumer<AuthCubit, AuthResultState>(
       listener: (context, state) {
         state.whenOrNull(
+          // phoneAuthLoading: () {
+          //   Commons.showLoadingDialog(context);
+          // },
+          // phoneNumberSubmited: () {
+          //   Navigator.pop(context);
+          // },
           firebaseFacebookLoginSuccess: (uid) {
             BlocProvider.of<AuthCubit>(context).login(uid: uid);
           },

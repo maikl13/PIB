@@ -96,7 +96,8 @@ class Commons {
     }
   }
 
-  static Future<void> showChatSettingDialog(BuildContext context) async {
+  static Future<void> showChatSettingDialog(BuildContext context,
+      {void Function()? onReportTap}) async {
     return showDialog(
         context: context,
         builder: (BuildContext context) => AlertDialog(
@@ -143,11 +144,14 @@ class Commons {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10.r),
                             color: ColorManager.grey6),
-                        child: Center(
-                          child: Text(
-                            AppStrings.report,
-                            style: getRegularStyle(
-                                fontSize: 16.sp, color: ColorManager.white),
+                        child: InkWell(
+                          onTap: onReportTap,
+                          child: Center(
+                            child: Text(
+                              AppStrings.report,
+                              style: getRegularStyle(
+                                  fontSize: 16.sp, color: ColorManager.white),
+                            ),
                           ),
                         ),
                       ),
@@ -275,8 +279,8 @@ void showSuccessDialog(BuildContext context) {
                   child: DefaultButton(
                     text: AppStrings.agree,
                     onTap: () {
-                                   Navigator.pushNamedAndRemoveUntil(
-                    context, Routes.mainHomeViewRoute, (route) => false);
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, Routes.mainHomeViewRoute, (route) => false);
                     },
                   ),
                 ),
@@ -492,19 +496,17 @@ _buildDescription(String desc) {
     child: Text(
       textAlign: TextAlign.center,
       desc,
-      style: getRegularStyle(fontSize: 13.sp, color: ColorManager.grey),
+      style: getRegularStyle(fontSize: 13.sp, color: ColorManager.white),
     ),
   );
 }
 
 void showProgressIndicator(BuildContext context) {
   AlertDialog alertDialog = AlertDialog(
-    backgroundColor: ColorManager.primary,
+    backgroundColor: ColorManager.lightBlack,
     elevation: 0,
     content: const Center(
-      child: CircularProgressIndicator(
-        valueColor: AlwaysStoppedAnimation<Color>(Colors.black),
-      ),
+      child: LoadingIndicator(),
     ),
   );
 

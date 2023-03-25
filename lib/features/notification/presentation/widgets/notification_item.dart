@@ -9,7 +9,7 @@ import 'clock_date.dart';
 class NotificationItem extends StatelessWidget {
   const NotificationItem({super.key, this.notificationContent, this.isRead});
 
-    final String? notificationContent;
+  final String? notificationContent;
   final bool? isRead;
 
   _buildLeading(BuildContext context) {
@@ -31,7 +31,9 @@ class NotificationItem extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(bottom: 6.h),
       child: Text(
-       notificationContent!,
+        overflow: TextOverflow.clip,
+        maxLines: 3,
+        notificationContent!,
         style: getRegularStyle(color: ColorManager.darkGrey, fontSize: 12.sp),
       ),
     );
@@ -60,7 +62,7 @@ class NotificationItem extends StatelessWidget {
       height: 117.h,
       width: double.infinity,
       child: ListTile(
-        tileColor:  ColorManager.lightBlack,
+        tileColor: ColorManager.lightBlack,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(10.r)),
         ),

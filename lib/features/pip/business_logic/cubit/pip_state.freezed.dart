@@ -22,6 +22,14 @@ mixin _$PipState<T> {
     required TResult Function() skillsLoading,
     required TResult Function(List<SkillModel> data) skillssuccess,
     required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function() toggleLoading,
+    required TResult Function(ToggleModel data) toggleSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) toggleError,
+    required TResult Function() fastRequestCategoryLoading,
+    required TResult Function(List<FastRequestCategory> data)
+        fastRequestCategorySuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        fastRequestCategoryError,
     required TResult Function(List<File> images) imageSelectedSuccess,
     required TResult Function() imageSelectedLoading,
     required TResult Function() imageSelectedError,
@@ -38,6 +46,14 @@ mixin _$PipState<T> {
     TResult? Function()? skillsLoading,
     TResult? Function(List<SkillModel> data)? skillssuccess,
     TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function()? toggleLoading,
+    TResult? Function(ToggleModel data)? toggleSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult? Function()? fastRequestCategoryLoading,
+    TResult? Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
     TResult? Function(List<File> images)? imageSelectedSuccess,
     TResult? Function()? imageSelectedLoading,
     TResult? Function()? imageSelectedError,
@@ -54,6 +70,14 @@ mixin _$PipState<T> {
     TResult Function()? skillsLoading,
     TResult Function(List<SkillModel> data)? skillssuccess,
     TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function()? toggleLoading,
+    TResult Function(ToggleModel data)? toggleSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult Function()? fastRequestCategoryLoading,
+    TResult Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
     TResult Function(List<File> images)? imageSelectedSuccess,
     TResult Function()? imageSelectedLoading,
     TResult Function()? imageSelectedError,
@@ -71,6 +95,15 @@ mixin _$PipState<T> {
     required TResult Function(SkillsLoading<T> value) skillsLoading,
     required TResult Function(SkillsSuccess<T> value) skillssuccess,
     required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(ToggleLoading<T> value) toggleLoading,
+    required TResult Function(ToggleSuccess<T> value) toggleSuccess,
+    required TResult Function(ToggleError<T> value) toggleError,
+    required TResult Function(FastRequestCategoryLoading<T> value)
+        fastRequestCategoryLoading,
+    required TResult Function(FastRequestCategorySuccess<T> value)
+        fastRequestCategorySuccess,
+    required TResult Function(FastRequestCategoryError<T> value)
+        fastRequestCategoryError,
     required TResult Function(ImageSelectedSuccess<T> value)
         imageSelectedSuccess,
     required TResult Function(ImageSelectedLoading<T> value)
@@ -92,6 +125,15 @@ mixin _$PipState<T> {
     TResult? Function(SkillsLoading<T> value)? skillsLoading,
     TResult? Function(SkillsSuccess<T> value)? skillssuccess,
     TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(ToggleLoading<T> value)? toggleLoading,
+    TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult? Function(ToggleError<T> value)? toggleError,
+    TResult? Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult? Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult? Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
     TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
     TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
     TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
@@ -110,6 +152,15 @@ mixin _$PipState<T> {
     TResult Function(SkillsLoading<T> value)? skillsLoading,
     TResult Function(SkillsSuccess<T> value)? skillssuccess,
     TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(ToggleLoading<T> value)? toggleLoading,
+    TResult Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult Function(ToggleError<T> value)? toggleError,
+    TResult Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
     TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
     TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
     TResult Function(ImageSelectedError<T> value)? imageSelectedError,
@@ -183,6 +234,14 @@ class _$Idle<T> implements Idle<T> {
     required TResult Function() skillsLoading,
     required TResult Function(List<SkillModel> data) skillssuccess,
     required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function() toggleLoading,
+    required TResult Function(ToggleModel data) toggleSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) toggleError,
+    required TResult Function() fastRequestCategoryLoading,
+    required TResult Function(List<FastRequestCategory> data)
+        fastRequestCategorySuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        fastRequestCategoryError,
     required TResult Function(List<File> images) imageSelectedSuccess,
     required TResult Function() imageSelectedLoading,
     required TResult Function() imageSelectedError,
@@ -202,6 +261,14 @@ class _$Idle<T> implements Idle<T> {
     TResult? Function()? skillsLoading,
     TResult? Function(List<SkillModel> data)? skillssuccess,
     TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function()? toggleLoading,
+    TResult? Function(ToggleModel data)? toggleSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult? Function()? fastRequestCategoryLoading,
+    TResult? Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
     TResult? Function(List<File> images)? imageSelectedSuccess,
     TResult? Function()? imageSelectedLoading,
     TResult? Function()? imageSelectedError,
@@ -221,6 +288,14 @@ class _$Idle<T> implements Idle<T> {
     TResult Function()? skillsLoading,
     TResult Function(List<SkillModel> data)? skillssuccess,
     TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function()? toggleLoading,
+    TResult Function(ToggleModel data)? toggleSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult Function()? fastRequestCategoryLoading,
+    TResult Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
     TResult Function(List<File> images)? imageSelectedSuccess,
     TResult Function()? imageSelectedLoading,
     TResult Function()? imageSelectedError,
@@ -244,6 +319,15 @@ class _$Idle<T> implements Idle<T> {
     required TResult Function(SkillsLoading<T> value) skillsLoading,
     required TResult Function(SkillsSuccess<T> value) skillssuccess,
     required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(ToggleLoading<T> value) toggleLoading,
+    required TResult Function(ToggleSuccess<T> value) toggleSuccess,
+    required TResult Function(ToggleError<T> value) toggleError,
+    required TResult Function(FastRequestCategoryLoading<T> value)
+        fastRequestCategoryLoading,
+    required TResult Function(FastRequestCategorySuccess<T> value)
+        fastRequestCategorySuccess,
+    required TResult Function(FastRequestCategoryError<T> value)
+        fastRequestCategoryError,
     required TResult Function(ImageSelectedSuccess<T> value)
         imageSelectedSuccess,
     required TResult Function(ImageSelectedLoading<T> value)
@@ -268,6 +352,15 @@ class _$Idle<T> implements Idle<T> {
     TResult? Function(SkillsLoading<T> value)? skillsLoading,
     TResult? Function(SkillsSuccess<T> value)? skillssuccess,
     TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(ToggleLoading<T> value)? toggleLoading,
+    TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult? Function(ToggleError<T> value)? toggleError,
+    TResult? Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult? Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult? Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
     TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
     TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
     TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
@@ -289,6 +382,15 @@ class _$Idle<T> implements Idle<T> {
     TResult Function(SkillsLoading<T> value)? skillsLoading,
     TResult Function(SkillsSuccess<T> value)? skillssuccess,
     TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(ToggleLoading<T> value)? toggleLoading,
+    TResult Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult Function(ToggleError<T> value)? toggleError,
+    TResult Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
     TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
     TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
     TResult Function(ImageSelectedError<T> value)? imageSelectedError,
@@ -354,6 +456,14 @@ class _$SkillsLoading<T> implements SkillsLoading<T> {
     required TResult Function() skillsLoading,
     required TResult Function(List<SkillModel> data) skillssuccess,
     required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function() toggleLoading,
+    required TResult Function(ToggleModel data) toggleSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) toggleError,
+    required TResult Function() fastRequestCategoryLoading,
+    required TResult Function(List<FastRequestCategory> data)
+        fastRequestCategorySuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        fastRequestCategoryError,
     required TResult Function(List<File> images) imageSelectedSuccess,
     required TResult Function() imageSelectedLoading,
     required TResult Function() imageSelectedError,
@@ -373,6 +483,14 @@ class _$SkillsLoading<T> implements SkillsLoading<T> {
     TResult? Function()? skillsLoading,
     TResult? Function(List<SkillModel> data)? skillssuccess,
     TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function()? toggleLoading,
+    TResult? Function(ToggleModel data)? toggleSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult? Function()? fastRequestCategoryLoading,
+    TResult? Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
     TResult? Function(List<File> images)? imageSelectedSuccess,
     TResult? Function()? imageSelectedLoading,
     TResult? Function()? imageSelectedError,
@@ -392,6 +510,14 @@ class _$SkillsLoading<T> implements SkillsLoading<T> {
     TResult Function()? skillsLoading,
     TResult Function(List<SkillModel> data)? skillssuccess,
     TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function()? toggleLoading,
+    TResult Function(ToggleModel data)? toggleSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult Function()? fastRequestCategoryLoading,
+    TResult Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
     TResult Function(List<File> images)? imageSelectedSuccess,
     TResult Function()? imageSelectedLoading,
     TResult Function()? imageSelectedError,
@@ -415,6 +541,15 @@ class _$SkillsLoading<T> implements SkillsLoading<T> {
     required TResult Function(SkillsLoading<T> value) skillsLoading,
     required TResult Function(SkillsSuccess<T> value) skillssuccess,
     required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(ToggleLoading<T> value) toggleLoading,
+    required TResult Function(ToggleSuccess<T> value) toggleSuccess,
+    required TResult Function(ToggleError<T> value) toggleError,
+    required TResult Function(FastRequestCategoryLoading<T> value)
+        fastRequestCategoryLoading,
+    required TResult Function(FastRequestCategorySuccess<T> value)
+        fastRequestCategorySuccess,
+    required TResult Function(FastRequestCategoryError<T> value)
+        fastRequestCategoryError,
     required TResult Function(ImageSelectedSuccess<T> value)
         imageSelectedSuccess,
     required TResult Function(ImageSelectedLoading<T> value)
@@ -439,6 +574,15 @@ class _$SkillsLoading<T> implements SkillsLoading<T> {
     TResult? Function(SkillsLoading<T> value)? skillsLoading,
     TResult? Function(SkillsSuccess<T> value)? skillssuccess,
     TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(ToggleLoading<T> value)? toggleLoading,
+    TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult? Function(ToggleError<T> value)? toggleError,
+    TResult? Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult? Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult? Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
     TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
     TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
     TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
@@ -460,6 +604,15 @@ class _$SkillsLoading<T> implements SkillsLoading<T> {
     TResult Function(SkillsLoading<T> value)? skillsLoading,
     TResult Function(SkillsSuccess<T> value)? skillssuccess,
     TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(ToggleLoading<T> value)? toggleLoading,
+    TResult Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult Function(ToggleError<T> value)? toggleError,
+    TResult Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
     TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
     TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
     TResult Function(ImageSelectedError<T> value)? imageSelectedError,
@@ -557,6 +710,14 @@ class _$SkillsSuccess<T> implements SkillsSuccess<T> {
     required TResult Function() skillsLoading,
     required TResult Function(List<SkillModel> data) skillssuccess,
     required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function() toggleLoading,
+    required TResult Function(ToggleModel data) toggleSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) toggleError,
+    required TResult Function() fastRequestCategoryLoading,
+    required TResult Function(List<FastRequestCategory> data)
+        fastRequestCategorySuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        fastRequestCategoryError,
     required TResult Function(List<File> images) imageSelectedSuccess,
     required TResult Function() imageSelectedLoading,
     required TResult Function() imageSelectedError,
@@ -576,6 +737,14 @@ class _$SkillsSuccess<T> implements SkillsSuccess<T> {
     TResult? Function()? skillsLoading,
     TResult? Function(List<SkillModel> data)? skillssuccess,
     TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function()? toggleLoading,
+    TResult? Function(ToggleModel data)? toggleSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult? Function()? fastRequestCategoryLoading,
+    TResult? Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
     TResult? Function(List<File> images)? imageSelectedSuccess,
     TResult? Function()? imageSelectedLoading,
     TResult? Function()? imageSelectedError,
@@ -595,6 +764,14 @@ class _$SkillsSuccess<T> implements SkillsSuccess<T> {
     TResult Function()? skillsLoading,
     TResult Function(List<SkillModel> data)? skillssuccess,
     TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function()? toggleLoading,
+    TResult Function(ToggleModel data)? toggleSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult Function()? fastRequestCategoryLoading,
+    TResult Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
     TResult Function(List<File> images)? imageSelectedSuccess,
     TResult Function()? imageSelectedLoading,
     TResult Function()? imageSelectedError,
@@ -618,6 +795,15 @@ class _$SkillsSuccess<T> implements SkillsSuccess<T> {
     required TResult Function(SkillsLoading<T> value) skillsLoading,
     required TResult Function(SkillsSuccess<T> value) skillssuccess,
     required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(ToggleLoading<T> value) toggleLoading,
+    required TResult Function(ToggleSuccess<T> value) toggleSuccess,
+    required TResult Function(ToggleError<T> value) toggleError,
+    required TResult Function(FastRequestCategoryLoading<T> value)
+        fastRequestCategoryLoading,
+    required TResult Function(FastRequestCategorySuccess<T> value)
+        fastRequestCategorySuccess,
+    required TResult Function(FastRequestCategoryError<T> value)
+        fastRequestCategoryError,
     required TResult Function(ImageSelectedSuccess<T> value)
         imageSelectedSuccess,
     required TResult Function(ImageSelectedLoading<T> value)
@@ -642,6 +828,15 @@ class _$SkillsSuccess<T> implements SkillsSuccess<T> {
     TResult? Function(SkillsLoading<T> value)? skillsLoading,
     TResult? Function(SkillsSuccess<T> value)? skillssuccess,
     TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(ToggleLoading<T> value)? toggleLoading,
+    TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult? Function(ToggleError<T> value)? toggleError,
+    TResult? Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult? Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult? Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
     TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
     TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
     TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
@@ -663,6 +858,15 @@ class _$SkillsSuccess<T> implements SkillsSuccess<T> {
     TResult Function(SkillsLoading<T> value)? skillsLoading,
     TResult Function(SkillsSuccess<T> value)? skillssuccess,
     TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(ToggleLoading<T> value)? toggleLoading,
+    TResult Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult Function(ToggleError<T> value)? toggleError,
+    TResult Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
     TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
     TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
     TResult Function(ImageSelectedError<T> value)? imageSelectedError,
@@ -770,6 +974,14 @@ class _$SkillsError<T> implements SkillsError<T> {
     required TResult Function() skillsLoading,
     required TResult Function(List<SkillModel> data) skillssuccess,
     required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function() toggleLoading,
+    required TResult Function(ToggleModel data) toggleSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) toggleError,
+    required TResult Function() fastRequestCategoryLoading,
+    required TResult Function(List<FastRequestCategory> data)
+        fastRequestCategorySuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        fastRequestCategoryError,
     required TResult Function(List<File> images) imageSelectedSuccess,
     required TResult Function() imageSelectedLoading,
     required TResult Function() imageSelectedError,
@@ -789,6 +1001,14 @@ class _$SkillsError<T> implements SkillsError<T> {
     TResult? Function()? skillsLoading,
     TResult? Function(List<SkillModel> data)? skillssuccess,
     TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function()? toggleLoading,
+    TResult? Function(ToggleModel data)? toggleSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult? Function()? fastRequestCategoryLoading,
+    TResult? Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
     TResult? Function(List<File> images)? imageSelectedSuccess,
     TResult? Function()? imageSelectedLoading,
     TResult? Function()? imageSelectedError,
@@ -808,6 +1028,14 @@ class _$SkillsError<T> implements SkillsError<T> {
     TResult Function()? skillsLoading,
     TResult Function(List<SkillModel> data)? skillssuccess,
     TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function()? toggleLoading,
+    TResult Function(ToggleModel data)? toggleSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult Function()? fastRequestCategoryLoading,
+    TResult Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
     TResult Function(List<File> images)? imageSelectedSuccess,
     TResult Function()? imageSelectedLoading,
     TResult Function()? imageSelectedError,
@@ -831,6 +1059,15 @@ class _$SkillsError<T> implements SkillsError<T> {
     required TResult Function(SkillsLoading<T> value) skillsLoading,
     required TResult Function(SkillsSuccess<T> value) skillssuccess,
     required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(ToggleLoading<T> value) toggleLoading,
+    required TResult Function(ToggleSuccess<T> value) toggleSuccess,
+    required TResult Function(ToggleError<T> value) toggleError,
+    required TResult Function(FastRequestCategoryLoading<T> value)
+        fastRequestCategoryLoading,
+    required TResult Function(FastRequestCategorySuccess<T> value)
+        fastRequestCategorySuccess,
+    required TResult Function(FastRequestCategoryError<T> value)
+        fastRequestCategoryError,
     required TResult Function(ImageSelectedSuccess<T> value)
         imageSelectedSuccess,
     required TResult Function(ImageSelectedLoading<T> value)
@@ -855,6 +1092,15 @@ class _$SkillsError<T> implements SkillsError<T> {
     TResult? Function(SkillsLoading<T> value)? skillsLoading,
     TResult? Function(SkillsSuccess<T> value)? skillssuccess,
     TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(ToggleLoading<T> value)? toggleLoading,
+    TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult? Function(ToggleError<T> value)? toggleError,
+    TResult? Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult? Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult? Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
     TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
     TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
     TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
@@ -876,6 +1122,15 @@ class _$SkillsError<T> implements SkillsError<T> {
     TResult Function(SkillsLoading<T> value)? skillsLoading,
     TResult Function(SkillsSuccess<T> value)? skillssuccess,
     TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(ToggleLoading<T> value)? toggleLoading,
+    TResult Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult Function(ToggleError<T> value)? toggleError,
+    TResult Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
     TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
     TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
     TResult Function(ImageSelectedError<T> value)? imageSelectedError,
@@ -903,6 +1158,1503 @@ abstract class SkillsError<T> implements PipState<T> {
   @JsonKey(ignore: true)
   _$$SkillsErrorCopyWith<T, _$SkillsError<T>> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ToggleLoadingCopyWith<T, $Res> {
+  factory _$$ToggleLoadingCopyWith(
+          _$ToggleLoading<T> value, $Res Function(_$ToggleLoading<T>) then) =
+      __$$ToggleLoadingCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$ToggleLoadingCopyWithImpl<T, $Res>
+    extends _$PipStateCopyWithImpl<T, $Res, _$ToggleLoading<T>>
+    implements _$$ToggleLoadingCopyWith<T, $Res> {
+  __$$ToggleLoadingCopyWithImpl(
+      _$ToggleLoading<T> _value, $Res Function(_$ToggleLoading<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ToggleLoading<T> implements ToggleLoading<T> {
+  const _$ToggleLoading();
+
+  @override
+  String toString() {
+    return 'PipState<$T>.toggleLoading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ToggleLoading<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() skillsLoading,
+    required TResult Function(List<SkillModel> data) skillssuccess,
+    required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function() toggleLoading,
+    required TResult Function(ToggleModel data) toggleSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) toggleError,
+    required TResult Function() fastRequestCategoryLoading,
+    required TResult Function(List<FastRequestCategory> data)
+        fastRequestCategorySuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        fastRequestCategoryError,
+    required TResult Function(List<File> images) imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function(List<File> images) imageSelectedDeleted,
+    required TResult Function() createSpecialRequestLoading,
+    required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        createSpecialRequestError,
+  }) {
+    return toggleLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? skillsLoading,
+    TResult? Function(List<SkillModel> data)? skillssuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function()? toggleLoading,
+    TResult? Function(ToggleModel data)? toggleSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult? Function()? fastRequestCategoryLoading,
+    TResult? Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
+    TResult? Function(List<File> images)? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function(List<File> images)? imageSelectedDeleted,
+    TResult? Function()? createSpecialRequestLoading,
+    TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+  }) {
+    return toggleLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? skillsLoading,
+    TResult Function(List<SkillModel> data)? skillssuccess,
+    TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function()? toggleLoading,
+    TResult Function(ToggleModel data)? toggleSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult Function()? fastRequestCategoryLoading,
+    TResult Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
+    TResult Function(List<File> images)? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function(List<File> images)? imageSelectedDeleted,
+    TResult Function()? createSpecialRequestLoading,
+    TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (toggleLoading != null) {
+      return toggleLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(SkillsLoading<T> value) skillsLoading,
+    required TResult Function(SkillsSuccess<T> value) skillssuccess,
+    required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(ToggleLoading<T> value) toggleLoading,
+    required TResult Function(ToggleSuccess<T> value) toggleSuccess,
+    required TResult Function(ToggleError<T> value) toggleError,
+    required TResult Function(FastRequestCategoryLoading<T> value)
+        fastRequestCategoryLoading,
+    required TResult Function(FastRequestCategorySuccess<T> value)
+        fastRequestCategorySuccess,
+    required TResult Function(FastRequestCategoryError<T> value)
+        fastRequestCategoryError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(ImageSelectedDeleted<T> value)
+        imageSelectedDeleted,
+    required TResult Function(CreateSpecialRequestLoading<T> value)
+        createSpecialRequestLoading,
+    required TResult Function(CreateSpecialRequestSuccess<T> value)
+        createSpecialRequestSuccess,
+    required TResult Function(CreateSpecialRequestError<T> value)
+        createSpecialRequestError,
+  }) {
+    return toggleLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(SkillsLoading<T> value)? skillsLoading,
+    TResult? Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(ToggleLoading<T> value)? toggleLoading,
+    TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult? Function(ToggleError<T> value)? toggleError,
+    TResult? Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult? Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult? Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult? Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult? Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult? Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+  }) {
+    return toggleLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(SkillsLoading<T> value)? skillsLoading,
+    TResult Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(ToggleLoading<T> value)? toggleLoading,
+    TResult Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult Function(ToggleError<T> value)? toggleError,
+    TResult Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (toggleLoading != null) {
+      return toggleLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ToggleLoading<T> implements PipState<T> {
+  const factory ToggleLoading() = _$ToggleLoading<T>;
+}
+
+/// @nodoc
+abstract class _$$ToggleSuccessCopyWith<T, $Res> {
+  factory _$$ToggleSuccessCopyWith(
+          _$ToggleSuccess<T> value, $Res Function(_$ToggleSuccess<T>) then) =
+      __$$ToggleSuccessCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({ToggleModel data});
+}
+
+/// @nodoc
+class __$$ToggleSuccessCopyWithImpl<T, $Res>
+    extends _$PipStateCopyWithImpl<T, $Res, _$ToggleSuccess<T>>
+    implements _$$ToggleSuccessCopyWith<T, $Res> {
+  __$$ToggleSuccessCopyWithImpl(
+      _$ToggleSuccess<T> _value, $Res Function(_$ToggleSuccess<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$ToggleSuccess<T>(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as ToggleModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ToggleSuccess<T> implements ToggleSuccess<T> {
+  const _$ToggleSuccess(this.data);
+
+  @override
+  final ToggleModel data;
+
+  @override
+  String toString() {
+    return 'PipState<$T>.toggleSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ToggleSuccess<T> &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ToggleSuccessCopyWith<T, _$ToggleSuccess<T>> get copyWith =>
+      __$$ToggleSuccessCopyWithImpl<T, _$ToggleSuccess<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() skillsLoading,
+    required TResult Function(List<SkillModel> data) skillssuccess,
+    required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function() toggleLoading,
+    required TResult Function(ToggleModel data) toggleSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) toggleError,
+    required TResult Function() fastRequestCategoryLoading,
+    required TResult Function(List<FastRequestCategory> data)
+        fastRequestCategorySuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        fastRequestCategoryError,
+    required TResult Function(List<File> images) imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function(List<File> images) imageSelectedDeleted,
+    required TResult Function() createSpecialRequestLoading,
+    required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        createSpecialRequestError,
+  }) {
+    return toggleSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? skillsLoading,
+    TResult? Function(List<SkillModel> data)? skillssuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function()? toggleLoading,
+    TResult? Function(ToggleModel data)? toggleSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult? Function()? fastRequestCategoryLoading,
+    TResult? Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
+    TResult? Function(List<File> images)? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function(List<File> images)? imageSelectedDeleted,
+    TResult? Function()? createSpecialRequestLoading,
+    TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+  }) {
+    return toggleSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? skillsLoading,
+    TResult Function(List<SkillModel> data)? skillssuccess,
+    TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function()? toggleLoading,
+    TResult Function(ToggleModel data)? toggleSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult Function()? fastRequestCategoryLoading,
+    TResult Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
+    TResult Function(List<File> images)? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function(List<File> images)? imageSelectedDeleted,
+    TResult Function()? createSpecialRequestLoading,
+    TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (toggleSuccess != null) {
+      return toggleSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(SkillsLoading<T> value) skillsLoading,
+    required TResult Function(SkillsSuccess<T> value) skillssuccess,
+    required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(ToggleLoading<T> value) toggleLoading,
+    required TResult Function(ToggleSuccess<T> value) toggleSuccess,
+    required TResult Function(ToggleError<T> value) toggleError,
+    required TResult Function(FastRequestCategoryLoading<T> value)
+        fastRequestCategoryLoading,
+    required TResult Function(FastRequestCategorySuccess<T> value)
+        fastRequestCategorySuccess,
+    required TResult Function(FastRequestCategoryError<T> value)
+        fastRequestCategoryError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(ImageSelectedDeleted<T> value)
+        imageSelectedDeleted,
+    required TResult Function(CreateSpecialRequestLoading<T> value)
+        createSpecialRequestLoading,
+    required TResult Function(CreateSpecialRequestSuccess<T> value)
+        createSpecialRequestSuccess,
+    required TResult Function(CreateSpecialRequestError<T> value)
+        createSpecialRequestError,
+  }) {
+    return toggleSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(SkillsLoading<T> value)? skillsLoading,
+    TResult? Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(ToggleLoading<T> value)? toggleLoading,
+    TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult? Function(ToggleError<T> value)? toggleError,
+    TResult? Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult? Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult? Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult? Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult? Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult? Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+  }) {
+    return toggleSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(SkillsLoading<T> value)? skillsLoading,
+    TResult Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(ToggleLoading<T> value)? toggleLoading,
+    TResult Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult Function(ToggleError<T> value)? toggleError,
+    TResult Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (toggleSuccess != null) {
+      return toggleSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ToggleSuccess<T> implements PipState<T> {
+  const factory ToggleSuccess(final ToggleModel data) = _$ToggleSuccess<T>;
+
+  ToggleModel get data;
+  @JsonKey(ignore: true)
+  _$$ToggleSuccessCopyWith<T, _$ToggleSuccess<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ToggleErrorCopyWith<T, $Res> {
+  factory _$$ToggleErrorCopyWith(
+          _$ToggleError<T> value, $Res Function(_$ToggleError<T>) then) =
+      __$$ToggleErrorCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({NetworkExceptions networkExceptions});
+
+  $NetworkExceptionsCopyWith<$Res> get networkExceptions;
+}
+
+/// @nodoc
+class __$$ToggleErrorCopyWithImpl<T, $Res>
+    extends _$PipStateCopyWithImpl<T, $Res, _$ToggleError<T>>
+    implements _$$ToggleErrorCopyWith<T, $Res> {
+  __$$ToggleErrorCopyWithImpl(
+      _$ToggleError<T> _value, $Res Function(_$ToggleError<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? networkExceptions = null,
+  }) {
+    return _then(_$ToggleError<T>(
+      null == networkExceptions
+          ? _value.networkExceptions
+          : networkExceptions // ignore: cast_nullable_to_non_nullable
+              as NetworkExceptions,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $NetworkExceptionsCopyWith<$Res> get networkExceptions {
+    return $NetworkExceptionsCopyWith<$Res>(_value.networkExceptions, (value) {
+      return _then(_value.copyWith(networkExceptions: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$ToggleError<T> implements ToggleError<T> {
+  const _$ToggleError(this.networkExceptions);
+
+  @override
+  final NetworkExceptions networkExceptions;
+
+  @override
+  String toString() {
+    return 'PipState<$T>.toggleError(networkExceptions: $networkExceptions)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ToggleError<T> &&
+            (identical(other.networkExceptions, networkExceptions) ||
+                other.networkExceptions == networkExceptions));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, networkExceptions);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ToggleErrorCopyWith<T, _$ToggleError<T>> get copyWith =>
+      __$$ToggleErrorCopyWithImpl<T, _$ToggleError<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() skillsLoading,
+    required TResult Function(List<SkillModel> data) skillssuccess,
+    required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function() toggleLoading,
+    required TResult Function(ToggleModel data) toggleSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) toggleError,
+    required TResult Function() fastRequestCategoryLoading,
+    required TResult Function(List<FastRequestCategory> data)
+        fastRequestCategorySuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        fastRequestCategoryError,
+    required TResult Function(List<File> images) imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function(List<File> images) imageSelectedDeleted,
+    required TResult Function() createSpecialRequestLoading,
+    required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        createSpecialRequestError,
+  }) {
+    return toggleError(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? skillsLoading,
+    TResult? Function(List<SkillModel> data)? skillssuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function()? toggleLoading,
+    TResult? Function(ToggleModel data)? toggleSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult? Function()? fastRequestCategoryLoading,
+    TResult? Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
+    TResult? Function(List<File> images)? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function(List<File> images)? imageSelectedDeleted,
+    TResult? Function()? createSpecialRequestLoading,
+    TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+  }) {
+    return toggleError?.call(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? skillsLoading,
+    TResult Function(List<SkillModel> data)? skillssuccess,
+    TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function()? toggleLoading,
+    TResult Function(ToggleModel data)? toggleSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult Function()? fastRequestCategoryLoading,
+    TResult Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
+    TResult Function(List<File> images)? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function(List<File> images)? imageSelectedDeleted,
+    TResult Function()? createSpecialRequestLoading,
+    TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (toggleError != null) {
+      return toggleError(networkExceptions);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(SkillsLoading<T> value) skillsLoading,
+    required TResult Function(SkillsSuccess<T> value) skillssuccess,
+    required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(ToggleLoading<T> value) toggleLoading,
+    required TResult Function(ToggleSuccess<T> value) toggleSuccess,
+    required TResult Function(ToggleError<T> value) toggleError,
+    required TResult Function(FastRequestCategoryLoading<T> value)
+        fastRequestCategoryLoading,
+    required TResult Function(FastRequestCategorySuccess<T> value)
+        fastRequestCategorySuccess,
+    required TResult Function(FastRequestCategoryError<T> value)
+        fastRequestCategoryError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(ImageSelectedDeleted<T> value)
+        imageSelectedDeleted,
+    required TResult Function(CreateSpecialRequestLoading<T> value)
+        createSpecialRequestLoading,
+    required TResult Function(CreateSpecialRequestSuccess<T> value)
+        createSpecialRequestSuccess,
+    required TResult Function(CreateSpecialRequestError<T> value)
+        createSpecialRequestError,
+  }) {
+    return toggleError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(SkillsLoading<T> value)? skillsLoading,
+    TResult? Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(ToggleLoading<T> value)? toggleLoading,
+    TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult? Function(ToggleError<T> value)? toggleError,
+    TResult? Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult? Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult? Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult? Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult? Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult? Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+  }) {
+    return toggleError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(SkillsLoading<T> value)? skillsLoading,
+    TResult Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(ToggleLoading<T> value)? toggleLoading,
+    TResult Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult Function(ToggleError<T> value)? toggleError,
+    TResult Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (toggleError != null) {
+      return toggleError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ToggleError<T> implements PipState<T> {
+  const factory ToggleError(final NetworkExceptions networkExceptions) =
+      _$ToggleError<T>;
+
+  NetworkExceptions get networkExceptions;
+  @JsonKey(ignore: true)
+  _$$ToggleErrorCopyWith<T, _$ToggleError<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$FastRequestCategoryLoadingCopyWith<T, $Res> {
+  factory _$$FastRequestCategoryLoadingCopyWith(
+          _$FastRequestCategoryLoading<T> value,
+          $Res Function(_$FastRequestCategoryLoading<T>) then) =
+      __$$FastRequestCategoryLoadingCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$FastRequestCategoryLoadingCopyWithImpl<T, $Res>
+    extends _$PipStateCopyWithImpl<T, $Res, _$FastRequestCategoryLoading<T>>
+    implements _$$FastRequestCategoryLoadingCopyWith<T, $Res> {
+  __$$FastRequestCategoryLoadingCopyWithImpl(
+      _$FastRequestCategoryLoading<T> _value,
+      $Res Function(_$FastRequestCategoryLoading<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$FastRequestCategoryLoading<T> implements FastRequestCategoryLoading<T> {
+  const _$FastRequestCategoryLoading();
+
+  @override
+  String toString() {
+    return 'PipState<$T>.fastRequestCategoryLoading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FastRequestCategoryLoading<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() skillsLoading,
+    required TResult Function(List<SkillModel> data) skillssuccess,
+    required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function() toggleLoading,
+    required TResult Function(ToggleModel data) toggleSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) toggleError,
+    required TResult Function() fastRequestCategoryLoading,
+    required TResult Function(List<FastRequestCategory> data)
+        fastRequestCategorySuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        fastRequestCategoryError,
+    required TResult Function(List<File> images) imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function(List<File> images) imageSelectedDeleted,
+    required TResult Function() createSpecialRequestLoading,
+    required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        createSpecialRequestError,
+  }) {
+    return fastRequestCategoryLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? skillsLoading,
+    TResult? Function(List<SkillModel> data)? skillssuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function()? toggleLoading,
+    TResult? Function(ToggleModel data)? toggleSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult? Function()? fastRequestCategoryLoading,
+    TResult? Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
+    TResult? Function(List<File> images)? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function(List<File> images)? imageSelectedDeleted,
+    TResult? Function()? createSpecialRequestLoading,
+    TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+  }) {
+    return fastRequestCategoryLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? skillsLoading,
+    TResult Function(List<SkillModel> data)? skillssuccess,
+    TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function()? toggleLoading,
+    TResult Function(ToggleModel data)? toggleSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult Function()? fastRequestCategoryLoading,
+    TResult Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
+    TResult Function(List<File> images)? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function(List<File> images)? imageSelectedDeleted,
+    TResult Function()? createSpecialRequestLoading,
+    TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (fastRequestCategoryLoading != null) {
+      return fastRequestCategoryLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(SkillsLoading<T> value) skillsLoading,
+    required TResult Function(SkillsSuccess<T> value) skillssuccess,
+    required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(ToggleLoading<T> value) toggleLoading,
+    required TResult Function(ToggleSuccess<T> value) toggleSuccess,
+    required TResult Function(ToggleError<T> value) toggleError,
+    required TResult Function(FastRequestCategoryLoading<T> value)
+        fastRequestCategoryLoading,
+    required TResult Function(FastRequestCategorySuccess<T> value)
+        fastRequestCategorySuccess,
+    required TResult Function(FastRequestCategoryError<T> value)
+        fastRequestCategoryError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(ImageSelectedDeleted<T> value)
+        imageSelectedDeleted,
+    required TResult Function(CreateSpecialRequestLoading<T> value)
+        createSpecialRequestLoading,
+    required TResult Function(CreateSpecialRequestSuccess<T> value)
+        createSpecialRequestSuccess,
+    required TResult Function(CreateSpecialRequestError<T> value)
+        createSpecialRequestError,
+  }) {
+    return fastRequestCategoryLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(SkillsLoading<T> value)? skillsLoading,
+    TResult? Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(ToggleLoading<T> value)? toggleLoading,
+    TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult? Function(ToggleError<T> value)? toggleError,
+    TResult? Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult? Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult? Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult? Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult? Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult? Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+  }) {
+    return fastRequestCategoryLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(SkillsLoading<T> value)? skillsLoading,
+    TResult Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(ToggleLoading<T> value)? toggleLoading,
+    TResult Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult Function(ToggleError<T> value)? toggleError,
+    TResult Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (fastRequestCategoryLoading != null) {
+      return fastRequestCategoryLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FastRequestCategoryLoading<T> implements PipState<T> {
+  const factory FastRequestCategoryLoading() = _$FastRequestCategoryLoading<T>;
+}
+
+/// @nodoc
+abstract class _$$FastRequestCategorySuccessCopyWith<T, $Res> {
+  factory _$$FastRequestCategorySuccessCopyWith(
+          _$FastRequestCategorySuccess<T> value,
+          $Res Function(_$FastRequestCategorySuccess<T>) then) =
+      __$$FastRequestCategorySuccessCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({List<FastRequestCategory> data});
+}
+
+/// @nodoc
+class __$$FastRequestCategorySuccessCopyWithImpl<T, $Res>
+    extends _$PipStateCopyWithImpl<T, $Res, _$FastRequestCategorySuccess<T>>
+    implements _$$FastRequestCategorySuccessCopyWith<T, $Res> {
+  __$$FastRequestCategorySuccessCopyWithImpl(
+      _$FastRequestCategorySuccess<T> _value,
+      $Res Function(_$FastRequestCategorySuccess<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$FastRequestCategorySuccess<T>(
+      null == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<FastRequestCategory>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FastRequestCategorySuccess<T> implements FastRequestCategorySuccess<T> {
+  const _$FastRequestCategorySuccess(final List<FastRequestCategory> data)
+      : _data = data;
+
+  final List<FastRequestCategory> _data;
+  @override
+  List<FastRequestCategory> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
+
+  @override
+  String toString() {
+    return 'PipState<$T>.fastRequestCategorySuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FastRequestCategorySuccess<T> &&
+            const DeepCollectionEquality().equals(other._data, _data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FastRequestCategorySuccessCopyWith<T, _$FastRequestCategorySuccess<T>>
+      get copyWith => __$$FastRequestCategorySuccessCopyWithImpl<T,
+          _$FastRequestCategorySuccess<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() skillsLoading,
+    required TResult Function(List<SkillModel> data) skillssuccess,
+    required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function() toggleLoading,
+    required TResult Function(ToggleModel data) toggleSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) toggleError,
+    required TResult Function() fastRequestCategoryLoading,
+    required TResult Function(List<FastRequestCategory> data)
+        fastRequestCategorySuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        fastRequestCategoryError,
+    required TResult Function(List<File> images) imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function(List<File> images) imageSelectedDeleted,
+    required TResult Function() createSpecialRequestLoading,
+    required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        createSpecialRequestError,
+  }) {
+    return fastRequestCategorySuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? skillsLoading,
+    TResult? Function(List<SkillModel> data)? skillssuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function()? toggleLoading,
+    TResult? Function(ToggleModel data)? toggleSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult? Function()? fastRequestCategoryLoading,
+    TResult? Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
+    TResult? Function(List<File> images)? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function(List<File> images)? imageSelectedDeleted,
+    TResult? Function()? createSpecialRequestLoading,
+    TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+  }) {
+    return fastRequestCategorySuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? skillsLoading,
+    TResult Function(List<SkillModel> data)? skillssuccess,
+    TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function()? toggleLoading,
+    TResult Function(ToggleModel data)? toggleSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult Function()? fastRequestCategoryLoading,
+    TResult Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
+    TResult Function(List<File> images)? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function(List<File> images)? imageSelectedDeleted,
+    TResult Function()? createSpecialRequestLoading,
+    TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (fastRequestCategorySuccess != null) {
+      return fastRequestCategorySuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(SkillsLoading<T> value) skillsLoading,
+    required TResult Function(SkillsSuccess<T> value) skillssuccess,
+    required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(ToggleLoading<T> value) toggleLoading,
+    required TResult Function(ToggleSuccess<T> value) toggleSuccess,
+    required TResult Function(ToggleError<T> value) toggleError,
+    required TResult Function(FastRequestCategoryLoading<T> value)
+        fastRequestCategoryLoading,
+    required TResult Function(FastRequestCategorySuccess<T> value)
+        fastRequestCategorySuccess,
+    required TResult Function(FastRequestCategoryError<T> value)
+        fastRequestCategoryError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(ImageSelectedDeleted<T> value)
+        imageSelectedDeleted,
+    required TResult Function(CreateSpecialRequestLoading<T> value)
+        createSpecialRequestLoading,
+    required TResult Function(CreateSpecialRequestSuccess<T> value)
+        createSpecialRequestSuccess,
+    required TResult Function(CreateSpecialRequestError<T> value)
+        createSpecialRequestError,
+  }) {
+    return fastRequestCategorySuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(SkillsLoading<T> value)? skillsLoading,
+    TResult? Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(ToggleLoading<T> value)? toggleLoading,
+    TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult? Function(ToggleError<T> value)? toggleError,
+    TResult? Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult? Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult? Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult? Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult? Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult? Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+  }) {
+    return fastRequestCategorySuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(SkillsLoading<T> value)? skillsLoading,
+    TResult Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(ToggleLoading<T> value)? toggleLoading,
+    TResult Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult Function(ToggleError<T> value)? toggleError,
+    TResult Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (fastRequestCategorySuccess != null) {
+      return fastRequestCategorySuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FastRequestCategorySuccess<T> implements PipState<T> {
+  const factory FastRequestCategorySuccess(
+      final List<FastRequestCategory> data) = _$FastRequestCategorySuccess<T>;
+
+  List<FastRequestCategory> get data;
+  @JsonKey(ignore: true)
+  _$$FastRequestCategorySuccessCopyWith<T, _$FastRequestCategorySuccess<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$FastRequestCategoryErrorCopyWith<T, $Res> {
+  factory _$$FastRequestCategoryErrorCopyWith(
+          _$FastRequestCategoryError<T> value,
+          $Res Function(_$FastRequestCategoryError<T>) then) =
+      __$$FastRequestCategoryErrorCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({NetworkExceptions networkExceptions});
+
+  $NetworkExceptionsCopyWith<$Res> get networkExceptions;
+}
+
+/// @nodoc
+class __$$FastRequestCategoryErrorCopyWithImpl<T, $Res>
+    extends _$PipStateCopyWithImpl<T, $Res, _$FastRequestCategoryError<T>>
+    implements _$$FastRequestCategoryErrorCopyWith<T, $Res> {
+  __$$FastRequestCategoryErrorCopyWithImpl(_$FastRequestCategoryError<T> _value,
+      $Res Function(_$FastRequestCategoryError<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? networkExceptions = null,
+  }) {
+    return _then(_$FastRequestCategoryError<T>(
+      null == networkExceptions
+          ? _value.networkExceptions
+          : networkExceptions // ignore: cast_nullable_to_non_nullable
+              as NetworkExceptions,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $NetworkExceptionsCopyWith<$Res> get networkExceptions {
+    return $NetworkExceptionsCopyWith<$Res>(_value.networkExceptions, (value) {
+      return _then(_value.copyWith(networkExceptions: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$FastRequestCategoryError<T> implements FastRequestCategoryError<T> {
+  const _$FastRequestCategoryError(this.networkExceptions);
+
+  @override
+  final NetworkExceptions networkExceptions;
+
+  @override
+  String toString() {
+    return 'PipState<$T>.fastRequestCategoryError(networkExceptions: $networkExceptions)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FastRequestCategoryError<T> &&
+            (identical(other.networkExceptions, networkExceptions) ||
+                other.networkExceptions == networkExceptions));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, networkExceptions);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FastRequestCategoryErrorCopyWith<T, _$FastRequestCategoryError<T>>
+      get copyWith => __$$FastRequestCategoryErrorCopyWithImpl<T,
+          _$FastRequestCategoryError<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() skillsLoading,
+    required TResult Function(List<SkillModel> data) skillssuccess,
+    required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function() toggleLoading,
+    required TResult Function(ToggleModel data) toggleSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) toggleError,
+    required TResult Function() fastRequestCategoryLoading,
+    required TResult Function(List<FastRequestCategory> data)
+        fastRequestCategorySuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        fastRequestCategoryError,
+    required TResult Function(List<File> images) imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function(List<File> images) imageSelectedDeleted,
+    required TResult Function() createSpecialRequestLoading,
+    required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        createSpecialRequestError,
+  }) {
+    return fastRequestCategoryError(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? skillsLoading,
+    TResult? Function(List<SkillModel> data)? skillssuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function()? toggleLoading,
+    TResult? Function(ToggleModel data)? toggleSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult? Function()? fastRequestCategoryLoading,
+    TResult? Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
+    TResult? Function(List<File> images)? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function(List<File> images)? imageSelectedDeleted,
+    TResult? Function()? createSpecialRequestLoading,
+    TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+  }) {
+    return fastRequestCategoryError?.call(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? skillsLoading,
+    TResult Function(List<SkillModel> data)? skillssuccess,
+    TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function()? toggleLoading,
+    TResult Function(ToggleModel data)? toggleSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult Function()? fastRequestCategoryLoading,
+    TResult Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
+    TResult Function(List<File> images)? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function(List<File> images)? imageSelectedDeleted,
+    TResult Function()? createSpecialRequestLoading,
+    TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (fastRequestCategoryError != null) {
+      return fastRequestCategoryError(networkExceptions);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(SkillsLoading<T> value) skillsLoading,
+    required TResult Function(SkillsSuccess<T> value) skillssuccess,
+    required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(ToggleLoading<T> value) toggleLoading,
+    required TResult Function(ToggleSuccess<T> value) toggleSuccess,
+    required TResult Function(ToggleError<T> value) toggleError,
+    required TResult Function(FastRequestCategoryLoading<T> value)
+        fastRequestCategoryLoading,
+    required TResult Function(FastRequestCategorySuccess<T> value)
+        fastRequestCategorySuccess,
+    required TResult Function(FastRequestCategoryError<T> value)
+        fastRequestCategoryError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(ImageSelectedDeleted<T> value)
+        imageSelectedDeleted,
+    required TResult Function(CreateSpecialRequestLoading<T> value)
+        createSpecialRequestLoading,
+    required TResult Function(CreateSpecialRequestSuccess<T> value)
+        createSpecialRequestSuccess,
+    required TResult Function(CreateSpecialRequestError<T> value)
+        createSpecialRequestError,
+  }) {
+    return fastRequestCategoryError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(SkillsLoading<T> value)? skillsLoading,
+    TResult? Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(ToggleLoading<T> value)? toggleLoading,
+    TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult? Function(ToggleError<T> value)? toggleError,
+    TResult? Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult? Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult? Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult? Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult? Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult? Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+  }) {
+    return fastRequestCategoryError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(SkillsLoading<T> value)? skillsLoading,
+    TResult Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(ToggleLoading<T> value)? toggleLoading,
+    TResult Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult Function(ToggleError<T> value)? toggleError,
+    TResult Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (fastRequestCategoryError != null) {
+      return fastRequestCategoryError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FastRequestCategoryError<T> implements PipState<T> {
+  const factory FastRequestCategoryError(
+          final NetworkExceptions networkExceptions) =
+      _$FastRequestCategoryError<T>;
+
+  NetworkExceptions get networkExceptions;
+  @JsonKey(ignore: true)
+  _$$FastRequestCategoryErrorCopyWith<T, _$FastRequestCategoryError<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -980,6 +2732,14 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
     required TResult Function() skillsLoading,
     required TResult Function(List<SkillModel> data) skillssuccess,
     required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function() toggleLoading,
+    required TResult Function(ToggleModel data) toggleSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) toggleError,
+    required TResult Function() fastRequestCategoryLoading,
+    required TResult Function(List<FastRequestCategory> data)
+        fastRequestCategorySuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        fastRequestCategoryError,
     required TResult Function(List<File> images) imageSelectedSuccess,
     required TResult Function() imageSelectedLoading,
     required TResult Function() imageSelectedError,
@@ -999,6 +2759,14 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
     TResult? Function()? skillsLoading,
     TResult? Function(List<SkillModel> data)? skillssuccess,
     TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function()? toggleLoading,
+    TResult? Function(ToggleModel data)? toggleSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult? Function()? fastRequestCategoryLoading,
+    TResult? Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
     TResult? Function(List<File> images)? imageSelectedSuccess,
     TResult? Function()? imageSelectedLoading,
     TResult? Function()? imageSelectedError,
@@ -1018,6 +2786,14 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
     TResult Function()? skillsLoading,
     TResult Function(List<SkillModel> data)? skillssuccess,
     TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function()? toggleLoading,
+    TResult Function(ToggleModel data)? toggleSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult Function()? fastRequestCategoryLoading,
+    TResult Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
     TResult Function(List<File> images)? imageSelectedSuccess,
     TResult Function()? imageSelectedLoading,
     TResult Function()? imageSelectedError,
@@ -1041,6 +2817,15 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
     required TResult Function(SkillsLoading<T> value) skillsLoading,
     required TResult Function(SkillsSuccess<T> value) skillssuccess,
     required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(ToggleLoading<T> value) toggleLoading,
+    required TResult Function(ToggleSuccess<T> value) toggleSuccess,
+    required TResult Function(ToggleError<T> value) toggleError,
+    required TResult Function(FastRequestCategoryLoading<T> value)
+        fastRequestCategoryLoading,
+    required TResult Function(FastRequestCategorySuccess<T> value)
+        fastRequestCategorySuccess,
+    required TResult Function(FastRequestCategoryError<T> value)
+        fastRequestCategoryError,
     required TResult Function(ImageSelectedSuccess<T> value)
         imageSelectedSuccess,
     required TResult Function(ImageSelectedLoading<T> value)
@@ -1065,6 +2850,15 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
     TResult? Function(SkillsLoading<T> value)? skillsLoading,
     TResult? Function(SkillsSuccess<T> value)? skillssuccess,
     TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(ToggleLoading<T> value)? toggleLoading,
+    TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult? Function(ToggleError<T> value)? toggleError,
+    TResult? Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult? Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult? Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
     TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
     TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
     TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
@@ -1086,6 +2880,15 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
     TResult Function(SkillsLoading<T> value)? skillsLoading,
     TResult Function(SkillsSuccess<T> value)? skillssuccess,
     TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(ToggleLoading<T> value)? toggleLoading,
+    TResult Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult Function(ToggleError<T> value)? toggleError,
+    TResult Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
     TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
     TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
     TResult Function(ImageSelectedError<T> value)? imageSelectedError,
@@ -1158,6 +2961,14 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
     required TResult Function() skillsLoading,
     required TResult Function(List<SkillModel> data) skillssuccess,
     required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function() toggleLoading,
+    required TResult Function(ToggleModel data) toggleSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) toggleError,
+    required TResult Function() fastRequestCategoryLoading,
+    required TResult Function(List<FastRequestCategory> data)
+        fastRequestCategorySuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        fastRequestCategoryError,
     required TResult Function(List<File> images) imageSelectedSuccess,
     required TResult Function() imageSelectedLoading,
     required TResult Function() imageSelectedError,
@@ -1177,6 +2988,14 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
     TResult? Function()? skillsLoading,
     TResult? Function(List<SkillModel> data)? skillssuccess,
     TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function()? toggleLoading,
+    TResult? Function(ToggleModel data)? toggleSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult? Function()? fastRequestCategoryLoading,
+    TResult? Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
     TResult? Function(List<File> images)? imageSelectedSuccess,
     TResult? Function()? imageSelectedLoading,
     TResult? Function()? imageSelectedError,
@@ -1196,6 +3015,14 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
     TResult Function()? skillsLoading,
     TResult Function(List<SkillModel> data)? skillssuccess,
     TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function()? toggleLoading,
+    TResult Function(ToggleModel data)? toggleSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult Function()? fastRequestCategoryLoading,
+    TResult Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
     TResult Function(List<File> images)? imageSelectedSuccess,
     TResult Function()? imageSelectedLoading,
     TResult Function()? imageSelectedError,
@@ -1219,6 +3046,15 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
     required TResult Function(SkillsLoading<T> value) skillsLoading,
     required TResult Function(SkillsSuccess<T> value) skillssuccess,
     required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(ToggleLoading<T> value) toggleLoading,
+    required TResult Function(ToggleSuccess<T> value) toggleSuccess,
+    required TResult Function(ToggleError<T> value) toggleError,
+    required TResult Function(FastRequestCategoryLoading<T> value)
+        fastRequestCategoryLoading,
+    required TResult Function(FastRequestCategorySuccess<T> value)
+        fastRequestCategorySuccess,
+    required TResult Function(FastRequestCategoryError<T> value)
+        fastRequestCategoryError,
     required TResult Function(ImageSelectedSuccess<T> value)
         imageSelectedSuccess,
     required TResult Function(ImageSelectedLoading<T> value)
@@ -1243,6 +3079,15 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
     TResult? Function(SkillsLoading<T> value)? skillsLoading,
     TResult? Function(SkillsSuccess<T> value)? skillssuccess,
     TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(ToggleLoading<T> value)? toggleLoading,
+    TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult? Function(ToggleError<T> value)? toggleError,
+    TResult? Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult? Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult? Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
     TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
     TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
     TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
@@ -1264,6 +3109,15 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
     TResult Function(SkillsLoading<T> value)? skillsLoading,
     TResult Function(SkillsSuccess<T> value)? skillssuccess,
     TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(ToggleLoading<T> value)? toggleLoading,
+    TResult Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult Function(ToggleError<T> value)? toggleError,
+    TResult Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
     TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
     TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
     TResult Function(ImageSelectedError<T> value)? imageSelectedError,
@@ -1329,6 +3183,14 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
     required TResult Function() skillsLoading,
     required TResult Function(List<SkillModel> data) skillssuccess,
     required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function() toggleLoading,
+    required TResult Function(ToggleModel data) toggleSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) toggleError,
+    required TResult Function() fastRequestCategoryLoading,
+    required TResult Function(List<FastRequestCategory> data)
+        fastRequestCategorySuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        fastRequestCategoryError,
     required TResult Function(List<File> images) imageSelectedSuccess,
     required TResult Function() imageSelectedLoading,
     required TResult Function() imageSelectedError,
@@ -1348,6 +3210,14 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
     TResult? Function()? skillsLoading,
     TResult? Function(List<SkillModel> data)? skillssuccess,
     TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function()? toggleLoading,
+    TResult? Function(ToggleModel data)? toggleSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult? Function()? fastRequestCategoryLoading,
+    TResult? Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
     TResult? Function(List<File> images)? imageSelectedSuccess,
     TResult? Function()? imageSelectedLoading,
     TResult? Function()? imageSelectedError,
@@ -1367,6 +3237,14 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
     TResult Function()? skillsLoading,
     TResult Function(List<SkillModel> data)? skillssuccess,
     TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function()? toggleLoading,
+    TResult Function(ToggleModel data)? toggleSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult Function()? fastRequestCategoryLoading,
+    TResult Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
     TResult Function(List<File> images)? imageSelectedSuccess,
     TResult Function()? imageSelectedLoading,
     TResult Function()? imageSelectedError,
@@ -1390,6 +3268,15 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
     required TResult Function(SkillsLoading<T> value) skillsLoading,
     required TResult Function(SkillsSuccess<T> value) skillssuccess,
     required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(ToggleLoading<T> value) toggleLoading,
+    required TResult Function(ToggleSuccess<T> value) toggleSuccess,
+    required TResult Function(ToggleError<T> value) toggleError,
+    required TResult Function(FastRequestCategoryLoading<T> value)
+        fastRequestCategoryLoading,
+    required TResult Function(FastRequestCategorySuccess<T> value)
+        fastRequestCategorySuccess,
+    required TResult Function(FastRequestCategoryError<T> value)
+        fastRequestCategoryError,
     required TResult Function(ImageSelectedSuccess<T> value)
         imageSelectedSuccess,
     required TResult Function(ImageSelectedLoading<T> value)
@@ -1414,6 +3301,15 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
     TResult? Function(SkillsLoading<T> value)? skillsLoading,
     TResult? Function(SkillsSuccess<T> value)? skillssuccess,
     TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(ToggleLoading<T> value)? toggleLoading,
+    TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult? Function(ToggleError<T> value)? toggleError,
+    TResult? Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult? Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult? Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
     TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
     TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
     TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
@@ -1435,6 +3331,15 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
     TResult Function(SkillsLoading<T> value)? skillsLoading,
     TResult Function(SkillsSuccess<T> value)? skillssuccess,
     TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(ToggleLoading<T> value)? toggleLoading,
+    TResult Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult Function(ToggleError<T> value)? toggleError,
+    TResult Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
     TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
     TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
     TResult Function(ImageSelectedError<T> value)? imageSelectedError,
@@ -1533,6 +3438,14 @@ class _$ImageSelectedDeleted<T> implements ImageSelectedDeleted<T> {
     required TResult Function() skillsLoading,
     required TResult Function(List<SkillModel> data) skillssuccess,
     required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function() toggleLoading,
+    required TResult Function(ToggleModel data) toggleSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) toggleError,
+    required TResult Function() fastRequestCategoryLoading,
+    required TResult Function(List<FastRequestCategory> data)
+        fastRequestCategorySuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        fastRequestCategoryError,
     required TResult Function(List<File> images) imageSelectedSuccess,
     required TResult Function() imageSelectedLoading,
     required TResult Function() imageSelectedError,
@@ -1552,6 +3465,14 @@ class _$ImageSelectedDeleted<T> implements ImageSelectedDeleted<T> {
     TResult? Function()? skillsLoading,
     TResult? Function(List<SkillModel> data)? skillssuccess,
     TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function()? toggleLoading,
+    TResult? Function(ToggleModel data)? toggleSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult? Function()? fastRequestCategoryLoading,
+    TResult? Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
     TResult? Function(List<File> images)? imageSelectedSuccess,
     TResult? Function()? imageSelectedLoading,
     TResult? Function()? imageSelectedError,
@@ -1571,6 +3492,14 @@ class _$ImageSelectedDeleted<T> implements ImageSelectedDeleted<T> {
     TResult Function()? skillsLoading,
     TResult Function(List<SkillModel> data)? skillssuccess,
     TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function()? toggleLoading,
+    TResult Function(ToggleModel data)? toggleSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult Function()? fastRequestCategoryLoading,
+    TResult Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
     TResult Function(List<File> images)? imageSelectedSuccess,
     TResult Function()? imageSelectedLoading,
     TResult Function()? imageSelectedError,
@@ -1594,6 +3523,15 @@ class _$ImageSelectedDeleted<T> implements ImageSelectedDeleted<T> {
     required TResult Function(SkillsLoading<T> value) skillsLoading,
     required TResult Function(SkillsSuccess<T> value) skillssuccess,
     required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(ToggleLoading<T> value) toggleLoading,
+    required TResult Function(ToggleSuccess<T> value) toggleSuccess,
+    required TResult Function(ToggleError<T> value) toggleError,
+    required TResult Function(FastRequestCategoryLoading<T> value)
+        fastRequestCategoryLoading,
+    required TResult Function(FastRequestCategorySuccess<T> value)
+        fastRequestCategorySuccess,
+    required TResult Function(FastRequestCategoryError<T> value)
+        fastRequestCategoryError,
     required TResult Function(ImageSelectedSuccess<T> value)
         imageSelectedSuccess,
     required TResult Function(ImageSelectedLoading<T> value)
@@ -1618,6 +3556,15 @@ class _$ImageSelectedDeleted<T> implements ImageSelectedDeleted<T> {
     TResult? Function(SkillsLoading<T> value)? skillsLoading,
     TResult? Function(SkillsSuccess<T> value)? skillssuccess,
     TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(ToggleLoading<T> value)? toggleLoading,
+    TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult? Function(ToggleError<T> value)? toggleError,
+    TResult? Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult? Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult? Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
     TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
     TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
     TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
@@ -1639,6 +3586,15 @@ class _$ImageSelectedDeleted<T> implements ImageSelectedDeleted<T> {
     TResult Function(SkillsLoading<T> value)? skillsLoading,
     TResult Function(SkillsSuccess<T> value)? skillssuccess,
     TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(ToggleLoading<T> value)? toggleLoading,
+    TResult Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult Function(ToggleError<T> value)? toggleError,
+    TResult Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
     TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
     TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
     TResult Function(ImageSelectedError<T> value)? imageSelectedError,
@@ -1714,6 +3670,14 @@ class _$CreateSpecialRequestLoading<T>
     required TResult Function() skillsLoading,
     required TResult Function(List<SkillModel> data) skillssuccess,
     required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function() toggleLoading,
+    required TResult Function(ToggleModel data) toggleSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) toggleError,
+    required TResult Function() fastRequestCategoryLoading,
+    required TResult Function(List<FastRequestCategory> data)
+        fastRequestCategorySuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        fastRequestCategoryError,
     required TResult Function(List<File> images) imageSelectedSuccess,
     required TResult Function() imageSelectedLoading,
     required TResult Function() imageSelectedError,
@@ -1733,6 +3697,14 @@ class _$CreateSpecialRequestLoading<T>
     TResult? Function()? skillsLoading,
     TResult? Function(List<SkillModel> data)? skillssuccess,
     TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function()? toggleLoading,
+    TResult? Function(ToggleModel data)? toggleSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult? Function()? fastRequestCategoryLoading,
+    TResult? Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
     TResult? Function(List<File> images)? imageSelectedSuccess,
     TResult? Function()? imageSelectedLoading,
     TResult? Function()? imageSelectedError,
@@ -1752,6 +3724,14 @@ class _$CreateSpecialRequestLoading<T>
     TResult Function()? skillsLoading,
     TResult Function(List<SkillModel> data)? skillssuccess,
     TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function()? toggleLoading,
+    TResult Function(ToggleModel data)? toggleSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult Function()? fastRequestCategoryLoading,
+    TResult Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
     TResult Function(List<File> images)? imageSelectedSuccess,
     TResult Function()? imageSelectedLoading,
     TResult Function()? imageSelectedError,
@@ -1775,6 +3755,15 @@ class _$CreateSpecialRequestLoading<T>
     required TResult Function(SkillsLoading<T> value) skillsLoading,
     required TResult Function(SkillsSuccess<T> value) skillssuccess,
     required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(ToggleLoading<T> value) toggleLoading,
+    required TResult Function(ToggleSuccess<T> value) toggleSuccess,
+    required TResult Function(ToggleError<T> value) toggleError,
+    required TResult Function(FastRequestCategoryLoading<T> value)
+        fastRequestCategoryLoading,
+    required TResult Function(FastRequestCategorySuccess<T> value)
+        fastRequestCategorySuccess,
+    required TResult Function(FastRequestCategoryError<T> value)
+        fastRequestCategoryError,
     required TResult Function(ImageSelectedSuccess<T> value)
         imageSelectedSuccess,
     required TResult Function(ImageSelectedLoading<T> value)
@@ -1799,6 +3788,15 @@ class _$CreateSpecialRequestLoading<T>
     TResult? Function(SkillsLoading<T> value)? skillsLoading,
     TResult? Function(SkillsSuccess<T> value)? skillssuccess,
     TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(ToggleLoading<T> value)? toggleLoading,
+    TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult? Function(ToggleError<T> value)? toggleError,
+    TResult? Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult? Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult? Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
     TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
     TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
     TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
@@ -1820,6 +3818,15 @@ class _$CreateSpecialRequestLoading<T>
     TResult Function(SkillsLoading<T> value)? skillsLoading,
     TResult Function(SkillsSuccess<T> value)? skillssuccess,
     TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(ToggleLoading<T> value)? toggleLoading,
+    TResult Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult Function(ToggleError<T> value)? toggleError,
+    TResult Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
     TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
     TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
     TResult Function(ImageSelectedError<T> value)? imageSelectedError,
@@ -1916,6 +3923,14 @@ class _$CreateSpecialRequestSuccess<T>
     required TResult Function() skillsLoading,
     required TResult Function(List<SkillModel> data) skillssuccess,
     required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function() toggleLoading,
+    required TResult Function(ToggleModel data) toggleSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) toggleError,
+    required TResult Function() fastRequestCategoryLoading,
+    required TResult Function(List<FastRequestCategory> data)
+        fastRequestCategorySuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        fastRequestCategoryError,
     required TResult Function(List<File> images) imageSelectedSuccess,
     required TResult Function() imageSelectedLoading,
     required TResult Function() imageSelectedError,
@@ -1935,6 +3950,14 @@ class _$CreateSpecialRequestSuccess<T>
     TResult? Function()? skillsLoading,
     TResult? Function(List<SkillModel> data)? skillssuccess,
     TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function()? toggleLoading,
+    TResult? Function(ToggleModel data)? toggleSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult? Function()? fastRequestCategoryLoading,
+    TResult? Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
     TResult? Function(List<File> images)? imageSelectedSuccess,
     TResult? Function()? imageSelectedLoading,
     TResult? Function()? imageSelectedError,
@@ -1954,6 +3977,14 @@ class _$CreateSpecialRequestSuccess<T>
     TResult Function()? skillsLoading,
     TResult Function(List<SkillModel> data)? skillssuccess,
     TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function()? toggleLoading,
+    TResult Function(ToggleModel data)? toggleSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult Function()? fastRequestCategoryLoading,
+    TResult Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
     TResult Function(List<File> images)? imageSelectedSuccess,
     TResult Function()? imageSelectedLoading,
     TResult Function()? imageSelectedError,
@@ -1977,6 +4008,15 @@ class _$CreateSpecialRequestSuccess<T>
     required TResult Function(SkillsLoading<T> value) skillsLoading,
     required TResult Function(SkillsSuccess<T> value) skillssuccess,
     required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(ToggleLoading<T> value) toggleLoading,
+    required TResult Function(ToggleSuccess<T> value) toggleSuccess,
+    required TResult Function(ToggleError<T> value) toggleError,
+    required TResult Function(FastRequestCategoryLoading<T> value)
+        fastRequestCategoryLoading,
+    required TResult Function(FastRequestCategorySuccess<T> value)
+        fastRequestCategorySuccess,
+    required TResult Function(FastRequestCategoryError<T> value)
+        fastRequestCategoryError,
     required TResult Function(ImageSelectedSuccess<T> value)
         imageSelectedSuccess,
     required TResult Function(ImageSelectedLoading<T> value)
@@ -2001,6 +4041,15 @@ class _$CreateSpecialRequestSuccess<T>
     TResult? Function(SkillsLoading<T> value)? skillsLoading,
     TResult? Function(SkillsSuccess<T> value)? skillssuccess,
     TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(ToggleLoading<T> value)? toggleLoading,
+    TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult? Function(ToggleError<T> value)? toggleError,
+    TResult? Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult? Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult? Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
     TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
     TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
     TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
@@ -2022,6 +4071,15 @@ class _$CreateSpecialRequestSuccess<T>
     TResult Function(SkillsLoading<T> value)? skillsLoading,
     TResult Function(SkillsSuccess<T> value)? skillssuccess,
     TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(ToggleLoading<T> value)? toggleLoading,
+    TResult Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult Function(ToggleError<T> value)? toggleError,
+    TResult Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
     TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
     TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
     TResult Function(ImageSelectedError<T> value)? imageSelectedError,
@@ -2133,6 +4191,14 @@ class _$CreateSpecialRequestError<T> implements CreateSpecialRequestError<T> {
     required TResult Function() skillsLoading,
     required TResult Function(List<SkillModel> data) skillssuccess,
     required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function() toggleLoading,
+    required TResult Function(ToggleModel data) toggleSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) toggleError,
+    required TResult Function() fastRequestCategoryLoading,
+    required TResult Function(List<FastRequestCategory> data)
+        fastRequestCategorySuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        fastRequestCategoryError,
     required TResult Function(List<File> images) imageSelectedSuccess,
     required TResult Function() imageSelectedLoading,
     required TResult Function() imageSelectedError,
@@ -2152,6 +4218,14 @@ class _$CreateSpecialRequestError<T> implements CreateSpecialRequestError<T> {
     TResult? Function()? skillsLoading,
     TResult? Function(List<SkillModel> data)? skillssuccess,
     TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function()? toggleLoading,
+    TResult? Function(ToggleModel data)? toggleSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult? Function()? fastRequestCategoryLoading,
+    TResult? Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
     TResult? Function(List<File> images)? imageSelectedSuccess,
     TResult? Function()? imageSelectedLoading,
     TResult? Function()? imageSelectedError,
@@ -2171,6 +4245,14 @@ class _$CreateSpecialRequestError<T> implements CreateSpecialRequestError<T> {
     TResult Function()? skillsLoading,
     TResult Function(List<SkillModel> data)? skillssuccess,
     TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function()? toggleLoading,
+    TResult Function(ToggleModel data)? toggleSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult Function()? fastRequestCategoryLoading,
+    TResult Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
     TResult Function(List<File> images)? imageSelectedSuccess,
     TResult Function()? imageSelectedLoading,
     TResult Function()? imageSelectedError,
@@ -2194,6 +4276,15 @@ class _$CreateSpecialRequestError<T> implements CreateSpecialRequestError<T> {
     required TResult Function(SkillsLoading<T> value) skillsLoading,
     required TResult Function(SkillsSuccess<T> value) skillssuccess,
     required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(ToggleLoading<T> value) toggleLoading,
+    required TResult Function(ToggleSuccess<T> value) toggleSuccess,
+    required TResult Function(ToggleError<T> value) toggleError,
+    required TResult Function(FastRequestCategoryLoading<T> value)
+        fastRequestCategoryLoading,
+    required TResult Function(FastRequestCategorySuccess<T> value)
+        fastRequestCategorySuccess,
+    required TResult Function(FastRequestCategoryError<T> value)
+        fastRequestCategoryError,
     required TResult Function(ImageSelectedSuccess<T> value)
         imageSelectedSuccess,
     required TResult Function(ImageSelectedLoading<T> value)
@@ -2218,6 +4309,15 @@ class _$CreateSpecialRequestError<T> implements CreateSpecialRequestError<T> {
     TResult? Function(SkillsLoading<T> value)? skillsLoading,
     TResult? Function(SkillsSuccess<T> value)? skillssuccess,
     TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(ToggleLoading<T> value)? toggleLoading,
+    TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult? Function(ToggleError<T> value)? toggleError,
+    TResult? Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult? Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult? Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
     TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
     TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
     TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
@@ -2239,6 +4339,15 @@ class _$CreateSpecialRequestError<T> implements CreateSpecialRequestError<T> {
     TResult Function(SkillsLoading<T> value)? skillsLoading,
     TResult Function(SkillsSuccess<T> value)? skillssuccess,
     TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(ToggleLoading<T> value)? toggleLoading,
+    TResult Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult Function(ToggleError<T> value)? toggleError,
+    TResult Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
     TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
     TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
     TResult Function(ImageSelectedError<T> value)? imageSelectedError,

@@ -1,6 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/resources/constants.dart';
 import '../../../../core/widgets/custom_appbar.dart';
 
 import '../../../../core/resources/color_manager.dart';
@@ -22,7 +24,7 @@ class ConfirmPhoneView extends StatefulWidget {
 }
 
 class _ConfirmPhoneViewState extends State<ConfirmPhoneView> {
-  String? enteredOtpCode;
+  String enteredOtpCode = '';
 
   Widget _buildConfirmPhoneViewBody(BuildContext context) {
     return ListView(
@@ -78,7 +80,7 @@ class _ConfirmPhoneViewState extends State<ConfirmPhoneView> {
       text: AppStrings.confirm,
       onTap: () {
         // showProgressIndicator(context);
-        BlocProvider.of<AuthCubit>(context).submitOTP(enteredOtpCode!);
+        BlocProvider.of<AuthCubit>(context).submitOTP(enteredOtpCode);
       },
     );
   }
@@ -87,15 +89,59 @@ class _ConfirmPhoneViewState extends State<ConfirmPhoneView> {
     return BlocListener<AuthCubit, AuthResultState>(
       listener: (context, state) {
         state.whenOrNull(
-          // phoneAuthLoading: () {
-          //   showProgressIndicator(context);
+          // loginLoading: () {
+          //   Commons.showLoadingDialog(context);
           // },
+          // loginSuccess: (uid) {
+          //   // Navigator.pop(context);
+          //   showSuccessDialog(context);
+
+          //   // _goToHomeSuccessfully(context);
+          // },
+          // loginError: (networkExceptions) {
+          //   // Navigator.pop(context);
+          //   if (NetworkExceptions.getErrorMessage(networkExceptions) ==
+          //       "not_found") {
+          //     BlocProvider.of<AuthCubit>(context).register(
+          //       uid: token!,
+          //       name: userName ?? '',
+          //       imageUrl: userImage ?? '',
+          //       email: userEmail ?? '',
+          //       phone: userPhone ?? '',
+          //     );
+          //   } else {
+          //     Commons.showToast(
+          //       color: ColorManager.error,
+          //       message: NetworkExceptions.getErrorMessage(networkExceptions),
+          //     );
+          //   }
+          // },
+          // registerLoading: () {
+          //   Commons.showLoadingDialog(context);
+          // },
+          // registerSuccess: (uid) {
+          //   Navigator.pop(context);
+          //   showSuccessDialog(context);
+          // },
+          // registerError: (networkExceptions) {
+          //   Navigator.pop(context);
+          //   Commons.showToast(
+          //     color: ColorManager.error,
+          //     message: NetworkExceptions.getErrorMessage(networkExceptions),
+          //   );
+          // },
+          // // phoneAuthLoading: () {
+          // //   showProgressIndicator(context);
+          // // },
           phoneOTPVerified: () {
-            Navigator.pop(context);
-            showSuccessDialog(
-              context,
-         
-            );
+            // print(FirebaseAuth.instance.currentUser!.uid);
+            token = FirebaseAuth.instance.currentUser!.uid;
+            BlocProvider.of<AuthCubit>(context)
+                .login(uid: FirebaseAuth.instance.currentUser!.uid);
+            // Navigator.pop(context);
+            // showSuccessDialog(
+            //   context,
+            // );
           },
           phoneAuthErrorOccurred: (errorMsg) {
             Commons.showToast(message: errorMsg);

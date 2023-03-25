@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pip/core/resources/commons.dart';
+import 'package:pip/features/chat/business_logic/chat_cubit.dart';
+import 'package:pip/features/chat/business_logic/chat_state.dart';
 import '../../../../core/widgets/custom_clock_date.dart';
 import '../../../../core/widgets/custom_network_image.dart';
 import '../../../../core/widgets/image_item.dart';
@@ -34,35 +38,52 @@ class AvailableJobDetailsView extends StatelessWidget {
   }
 
   _buildBody(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(right: 20.w, left: 20.w, top: 60.h),
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            _buildImage(),
-            SizedBox(height: 48.h),
-            // _buildCompanyName(),
-            // SizedBox(height: 15.h),
-            _buildJobname(),
-            SizedBox(height: 20.h),
-            _buildRandomText(),
-            SizedBox(height: 15.h),
-            _buildDate(),
-            SizedBox(height: 40.h),
-            _buildMainInfo(),
-            SizedBox(height: 15.h),
-            InfoItem(
-              leading: FontAwesomeIcons.locationDot,
-              title: availableJob.location ?? '',
-              // trailling: FontAwesomeIcons.mapLocationDot,
-            ),
-            SizedBox(height: 15.h),
-            _buildPhotos(),
+    return BlocProvider.value(
+      value: RouteGenerator.chatCubit,
+      child: BlocListener<ChatCubit, ChatState>(
+        listener: (context, state) {
+          state.whenOrNull(
+            chatWithUserSuccess: (data) {
+              Navigator.pushNamed(context, Routes.chatViewRoute, arguments: {
+                'chatId': data.chatId,
+              });
+            },
+            chatWithUserError: (networkExceptions) {
+              Commons.showToast(message: networkExceptions.toString());
+            },
+          );
+        },
+        child: Padding(
+          padding: EdgeInsets.only(right: 20.w, left: 20.w, top: 60.h),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                _buildImage(),
+                SizedBox(height: 48.h),
+                // _buildCompanyName(),
+                // SizedBox(height: 15.h),
+                _buildJobname(),
+                SizedBox(height: 20.h),
+                _buildRandomText(),
+                SizedBox(height: 15.h),
+                _buildDate(),
+                SizedBox(height: 40.h),
+                _buildMainInfo(),
+                SizedBox(height: 15.h),
+                InfoItem(
+                  leading: FontAwesomeIcons.locationDot,
+                  title: availableJob.location ?? '',
+                  // trailling: FontAwesomeIcons.mapLocationDot,
+                ),
+                SizedBox(height: 15.h),
+                _buildPhotos(),
 
-            SizedBox(height: 70.h),
-            _buildButtons(context),
-            SizedBox(height: 30.h),
-          ],
+                SizedBox(height: 70.h),
+                _buildButtons(context),
+                SizedBox(height: 30.h),
+              ],
+            ),
+          ),
         ),
       ),
     );
@@ -103,7 +124,9 @@ class AvailableJobDetailsView extends StatelessWidget {
         textStyle:
             getBoldStyle(fontSize: 16.sp, color: ColorManager.darkSeconadry),
         onTap: () {
-          Navigator.pushNamed(context, Routes.chatViewRoute);
+          BlocProvider.of<ChatCubit>(context).chatWithUser(
+              requestId: availableJob.id.toString(),
+              targetId: availableJob.user!.id.toString());
         },
       ),
     );

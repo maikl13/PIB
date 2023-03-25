@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pip/features/chat/presentation/screens/share_location.dart';
 import '../../features/auth/business_logic/cubit/auth_cubit.dart';
 import '../../features/auth/presentation/screens/confirm_otb_view.dart';
 import '../../features/chat/presentation/screens/chat_add_offer_view.dart';
@@ -31,7 +32,7 @@ import '../../features/auth/presentation/screens/login_view.dart';
 import '../../features/auth/presentation/screens/main_auth_view.dart';
 import '../../features/auth/presentation/screens/register_view.dart';
 import '../../features/chat/business_logic/chat_cubit.dart';
-import '../../features/chat/presentation/screens/contact_us_view.dart';
+import '../../features/chat/presentation/screens/chat_main_view.dart';
 import '../../features/home/presentation/screens/jop_details_view.dart';
 import '../../features/home/presentation/screens/main_home_view.dart';
 import '../../features/map/presentation/screens/order_taxi_view.dart';
@@ -56,7 +57,7 @@ import 'injection.dart';
 import 'strings_manager.dart';
 
 class Routes {
-  static const String splashRoute = "/";
+  static const String splashRoute = "/splashRoute";
   static const String onBoardingViewRoute = "/onBoardingViewRoute";
 
   static const String mainAuthViewRoute = "/mainAuthViewRoute";
@@ -94,6 +95,8 @@ class Routes {
   static const String workWithUsViewRoute = "/workWithUsViewRoute";
   static const String skillsViewRoute = "/skillsViewRoute";
   static const String rateUsViewRoute = "/rateUsViewRoute";
+  static const String shareLocationViewRoute = "/shareLocationViewRoute";
+
   static const String companiesNeedJobsViewRoute =
       "/companiesNeedJobsViewRoute";
   static const String partTimeViewRoute = "/partTimeViewRoute";
@@ -160,7 +163,10 @@ class RouteGenerator {
 
       case Routes.loginViewRoute:
         return MaterialPageRoute(
-          builder: (_) => const LoginView(),
+          builder: (_) => BlocProvider.value(
+            value: authCubit,
+            child: const LoginView(),
+          ),
         );
 
       case Routes.forgotPasswordViewRoute:
@@ -218,7 +224,10 @@ class RouteGenerator {
         );
       case Routes.fastRequestViewRoute:
         return MaterialPageRoute(
-          builder: (_) => const FastRequestView(),
+          builder: (_) => BlocProvider.value(
+            value: pipCubit,
+            child: const FastRequestView(),
+          ),
         );
 
       case Routes.requestDetailsViewRoute:
@@ -239,14 +248,18 @@ class RouteGenerator {
         );
 
       case Routes.recievedOffersViewRoute:
-              final arguments = settings.arguments as Map;
+        final arguments = settings.arguments as Map;
 
         final int id = arguments['requestId'];
         return MaterialPageRoute(
-          builder: (_) => BlocProvider.value(
-            value: requestsCubit,
-            child:  RecievedOffersView(id: id),
-          ),
+          builder: (_) => MultiBlocProvider(providers: [
+            BlocProvider.value(
+              value: requestsCubit,
+            ),
+            BlocProvider.value(
+              value: chatCubit,
+            ),
+          ], child: RecievedOffersView(id: id)),
         );
 
       case Routes.recievedOffersDetailsViewRoute:
@@ -267,8 +280,11 @@ class RouteGenerator {
 
         final MyRequestModel availableJob = arguments['job'];
         return MaterialPageRoute(
-          builder: (_) => AvailableJobDetailsView(
-            availableJob: availableJob,
+          builder: (_) => BlocProvider.value(
+            value: chatCubit,
+            child: AvailableJobDetailsView(
+              availableJob: availableJob,
+            ),
           ),
         );
 
@@ -286,19 +302,40 @@ class RouteGenerator {
         );
 
       case Routes.chatsViewRoute:
+        final arguments = settings.arguments as Map;
+
+        final int chatId = arguments['chatId'];
         return MaterialPageRoute(
           builder: (_) => BlocProvider.value(
             value: chatCubit,
-            child: const ChatsView(),
+            child: ChatsView(
+              jobChatsId: chatId,
+            ),
           ),
         );
       case Routes.chatViewRoute:
+        final arguments = settings.arguments as Map;
+
+        final int chatId = arguments['chatId'];
         return MaterialPageRoute(
-          builder: (_) => const ChatView(),
+          builder: (_) => BlocProvider.value(
+            value: chatCubit,
+            child: ChatView(
+              chatId: chatId,
+            ),
+          ),
         );
       case Routes.chatAddOfferViewRoute:
+        final arguments = settings.arguments as Map;
+
+        final int chatId = arguments['chatId'];
         return MaterialPageRoute(
-          builder: (_) => const ChatAddOfferViewRoute(),
+          builder: (_) => BlocProvider.value(
+            value: chatCubit,
+            child: ChatAddOfferViewRoute(
+              chatId: chatId,
+            ),
+          ),
         );
       case Routes.editProfileViewRoute:
         return MaterialPageRoute(
@@ -406,6 +443,18 @@ class RouteGenerator {
           builder: (_) => BlocProvider.value(
             value: authCubit,
             child: const ConfirmPhoneView(),
+          ),
+        );
+      case Routes.shareLocationViewRoute:
+        final arguments = settings.arguments as Map;
+
+        final int chatId = arguments['chatId'];
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider.value(
+            value: chatCubit,
+            child: ShareLocation(
+              chatId: chatId,
+            ),
           ),
         );
       default:

@@ -2,6 +2,8 @@ import 'dart:io';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/services.dart';
+import 'package:pip/features/pip/data/models/fast_request_category.dart';
+import 'package:pip/features/pip/data/models/toggle_model.dart';
 import '../../../menu/data/models/update_skill.dart';
 import 'pip_state.dart';
 import '../../data/models/skills_model.dart';
@@ -15,10 +17,20 @@ class PipCubit extends Cubit<PipState> {
   PipCubit(this.pipRepsitory) : super(const PipState.idle());
 
   final PipRepsitory pipRepsitory;
+  
+
 
   List<File> imagesFile = [];
   deleteImage(int index) {
     imagesFile.removeAt(index);
+  }
+  void onReorder(int oldIndex, int newIndex) {
+    if (newIndex > oldIndex) {
+      newIndex -= 1;
+    }
+    final item = imagesFile.removeAt(oldIndex);
+    imagesFile.insert(newIndex, item);
+
     emit(PipState.imageSelectedDeleted(imagesFile));
   }
 
@@ -53,6 +65,21 @@ class PipCubit extends Cubit<PipState> {
     );
   }
 
+  void getAllFastRequestCategories() async {
+    emit(const PipState.fastRequestCategoryLoading());
+
+    // ignore: prefer_typing_uninitialized_variables
+    var result = await pipRepsitory.getAllFastRequestCategories();
+    result.when(
+      success: (List<FastRequestCategory> categories) {
+        emit(PipState.fastRequestCategorySuccess(categories));
+      },
+      failure: (NetworkExceptions networkExceptions) {
+        emit(PipState.fastRequestCategoryError(networkExceptions));
+      },
+    );
+  }
+
   void createSpecialRequest({
     String? categoryId,
     String? price,
@@ -79,4 +106,20 @@ class PipCubit extends Cubit<PipState> {
       },
     );
   }
+
+
+  void toggleFastRequest() async {
+    emit(const PipState.toggleLoading());
+
+    var result = await pipRepsitory.toggleFastRequest();
+    result.when(
+      success: (ToggleModel data) {
+        emit(PipState.toggleSuccess(data));
+      },
+      failure: (NetworkExceptions networkExceptions) {
+        emit(PipState.toggleError(networkExceptions));
+      },
+    );
+  }
+
 }

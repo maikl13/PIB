@@ -13,13 +13,13 @@ class AppConstants {
   static const String baseUrl = 'http://pib-platform.com/api/';
 }
 
-String defaultUId = '0';
-String? userName;
-String? token = '1234';
-String? userEmail;
+String defaultUId = "68";
+String? userName = ' ';
+String? token = '123';
+String? userEmail = '';
 
-String? userPhone;
-String? userImage;
+String? userPhone = '';
+String? userImage = '';
 
 int selectedTab = 0;
 int screenIndex = 0;

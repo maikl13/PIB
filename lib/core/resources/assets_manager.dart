@@ -17,12 +17,16 @@ class ImageAssets {
   static const String conversationItemBackground = "$imagePath/conversation_item_background.png";
   static const String flibBackground = "$imagePath/flib_back.png";
   static const String star = "$imagePath/star.png";
+  static const String file = "$imagePath/file.png";
+
   static const String activeStar = "$imagePath/active_star.png";
 
 
   static const String electrician = "$imagePath/electrician.png";
   static const String gift = "$imagePath/gift-box-wit.png";
   static const String hammers = "$imagePath/hammers.png";
+  static const String pin = "$imagePath/pin.png";
+
   static const String paint = "$imagePath/paintbrush.png";
   static const String sofa = "$imagePath/sofa.png";
   static const String wrench = "$imagePath/wrench.png";

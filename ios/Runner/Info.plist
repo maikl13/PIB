@@ -77,7 +77,10 @@
 	<true/>
 
 	
-
+<key>NSLocationAlwaysUsageDescription</key>
+<string>Needed to access location</string>
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>Needed to access location</string>
 <key>NSCameraUsageDescription</key>
 
 <string>to take user  image</string>

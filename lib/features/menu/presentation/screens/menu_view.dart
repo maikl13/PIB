@@ -143,7 +143,8 @@ class _MenuViewState extends State<MenuView> {
 
   _buildList() {
     return ListView.separated(
-        padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 40.h),
+        padding:
+            EdgeInsets.only(left: 20.w, right: 20.w, top: 40.h, bottom: 30.h),
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         itemBuilder: (context, index) {

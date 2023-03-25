@@ -2,7 +2,9 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
+import 'package:path/path.dart' as path;
 
 import '../../../../core/resources/style_manager.dart';
 
@@ -11,26 +13,46 @@ class UploadedPhotos extends StatelessWidget {
 
   final File? imageFile;
   final Function()? onTap;
+  bool isPdfFile(File file) {
+    String extension = path.extension(file.path);
+    return extension.toLowerCase() == '.pdf';
+  }
 
   _buildPhoto(BuildContext context) {
-    return Align(
-      alignment: Alignment.bottomRight,
-      child: Container(
-        width: 136.w,
-        height: 85.h,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.r),
-          image: DecorationImage(
-            colorFilter: ColorFilter.mode(
-                ColorManager.black.withOpacity(.3), BlendMode.darken),
-            image: FileImage(
-              imageFile!,
+    return isPdfFile(imageFile!)
+        ? Align(
+            alignment: Alignment.bottomRight,
+            child: Container(
+              width: 136.w,
+              height: 85.h,
+              decoration: BoxDecoration(
+                // color: ColorManager.error,
+                borderRadius: BorderRadius.circular(10.r),
+              ),
+              child: Image.asset(
+                ImageAssets.file,
+                fit: BoxFit.cover,
+              ),
             ),
-            fit: BoxFit.cover,
-          ),
-        ),
-      ),
-    );
+          )
+        : Align(
+            alignment: Alignment.bottomRight,
+            child: Container(
+              width: 136.w,
+              height: 85.h,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10.r),
+                image: DecorationImage(
+                  colorFilter: ColorFilter.mode(
+                      ColorManager.black.withOpacity(.3), BlendMode.darken),
+                  image: FileImage(
+                    imageFile!,
+                  ),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          );
   }
 
   _buildDeleteImageButton() {

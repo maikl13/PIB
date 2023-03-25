@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pip/core/resources/commons.dart';
+import 'package:pip/core/widgets/loading_indicator.dart';
 import '../../../../core/resources/constants.dart';
 import '../../business_logic/cubit/pip_cubit.dart';
 import '../../business_logic/cubit/pip_state.dart';
@@ -31,33 +33,61 @@ class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
   final TextEditingController _priceController = TextEditingController();
   final TextEditingController _locationController = TextEditingController();
   final TextEditingController _descriptionController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
+  int? selectedId;
+  _clear() {
+    _priceController.clear();
+    _locationController.clear();
+    _descriptionController.clear();
+    BlocProvider.of<PipCubit>(context).imagesFile.clear();
+  }
 
   _buildBody() {
     return BlocListener<PipCubit, PipState>(
-      listener: (context, state) {},
-      child: Padding(
-        padding:
-            EdgeInsets.only(right: 20.w, left: 20.w, top: 35.h, bottom: 35.h),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const CustomTitle(title: AppStrings.chooseType),
-              SizedBox(height: 20.h),
-              _buildAvaialbleTypesOfJobs(),
-              SizedBox(height: 20.h),
-              _buildPriceTextField(),
-              SizedBox(height: 20.h),
-              _buildLocationTextField(),
-              SizedBox(height: 20.h),
-              _buildDescriptionTextField(),
-              SizedBox(height: 20.h),
-              _buildUploadPhotoTextField(),
-              SizedBox(height: 20.h),
-              _buildPhotos(),
-              SizedBox(height: 100.h),
-              _buildButton(),
-            ],
+      listener: (context, state) {
+        state.whenOrNull(
+          createSpecialRequestLoading: () {
+            Commons.showLoadingDialog(context);
+          },
+          createSpecialRequestSuccess: (data) {
+            Navigator.pop(context);
+            Commons.showToast(
+                message: 'offer created', color: ColorManager.green);
+            _clear();
+            Navigator.pop(context);
+          },
+          createSpecialRequestError: (error) {
+            Navigator.pop(context);
+            Commons.showToast(message: error.toString());
+          },
+        );
+      },
+      child: Form(
+        key: _formKey,
+        child: Padding(
+          padding:
+              EdgeInsets.only(right: 20.w, left: 20.w, top: 35.h, bottom: 35.h),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const CustomTitle(title: AppStrings.chooseType),
+                SizedBox(height: 20.h),
+                _buildAvaialbleTypesOfJobs(),
+                SizedBox(height: 20.h),
+                _buildPriceTextField(),
+                SizedBox(height: 20.h),
+                _buildLocationTextField(),
+                SizedBox(height: 20.h),
+                _buildDescriptionTextField(),
+                SizedBox(height: 20.h),
+                _buildUploadPhotoTextField(),
+                SizedBox(height: 20.h),
+                _buildPhotos(),
+                SizedBox(height: 100.h),
+                _buildButton(),
+              ],
+            ),
           ),
         ),
       ),
@@ -71,6 +101,9 @@ class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
           next is ImageSelectedSuccess || next is ImageSelectedDeleted,
       builder: (context, state) {
         return state.maybeWhen(
+          imageSelectedLoading: () {
+            return const LoadingIndicator();
+          },
           imageSelectedSuccess: (images) {
             return _buildListPhotos(images);
           },
@@ -86,18 +119,18 @@ class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
   _buildListPhotos(List<File> images) {
     return SizedBox(
       height: 130.h,
-      child: ListView.separated(
+      child: ReorderableListView.builder(
+          onReorder: BlocProvider.of<PipCubit>(context).onReorder,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
             return UploadedPhotos(
+              key: Key('$index'),
               imageFile: images[index],
               onTap: () {
                 BlocProvider.of<PipCubit>(context).deleteImage(index);
+                setState(() {});
               },
             );
-          },
-          separatorBuilder: (context, index) {
-            return SizedBox(width: 10.w);
           },
           itemCount: images.length),
     );
@@ -107,12 +140,18 @@ class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
     return DefaultButton(
       text: AppStrings.puplish,
       onTap: () {
-        BlocProvider.of<PipCubit>(context).createSpecialRequest(
-          categoryId: '2',
-          price: '500',
-          location: 'Cairo',
-          description: 'WANT TRY THIS',
-        );
+        if (_formKey.currentState!.validate()) {
+          selectedId == null
+              ? Commons.showToast(message: "choose category")
+              : BlocProvider.of<PipCubit>(context).createSpecialRequest(
+                  categoryId: selectedId.toString(),
+                  price: _priceController.text,
+                  location: _locationController.text,
+                  description: _descriptionController.text,
+                );
+        } else {
+          return Commons.showToast(message: 'enter value please');
+        }
       },
     );
   }
@@ -123,6 +162,9 @@ class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
       buildWhen: (previous, next) => next is SkillsSuccess,
       builder: (context, state) {
         return state.maybeWhen(
+          skillsLoading: () {
+            return const LoadingIndicator();
+          },
           skillssuccess: (skills) {
             return _buildSkills(skills);
           },
@@ -152,6 +194,9 @@ class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
             setState(() {
               isSelected = index;
             });
+            index == isSelected
+                ? selectedId = skills[index].id
+                : selectedId = null;
           },
         );
       },
@@ -161,6 +206,13 @@ class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
   _buildPriceTextField() {
     return RequestCustomTextField(
       controller: _priceController,
+      validator: (value) {
+        if (value!.isEmpty) {
+          return 'enter value';
+        }
+
+        return null;
+      },
       suffix: Padding(
         padding: EdgeInsets.only(left: 5.w, top: 10.h),
         child: Text(
@@ -176,6 +228,12 @@ class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
 
   _buildLocationTextField() {
     return RequestCustomTextField(
+      validator: (value) {
+        if (value!.isEmpty) {
+          return 'enter value';
+        }
+        return null;
+      },
       controller: _locationController,
       hint: AppStrings.location,
       // ignore: deprecated_member_use
@@ -185,6 +243,12 @@ class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
 
   _buildDescriptionTextField() {
     return RequestCustomTextField(
+      validator: (value) {
+        if (value!.isEmpty) {
+          return 'enter value';
+        }
+        return null;
+      },
       controller: _descriptionController,
       bottomPadding: 70,
       maxLines: 3,
@@ -267,5 +331,17 @@ class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
       ),
       body: _buildBody(),
     );
+  }
+
+  @override
+  void didChangeDependencies() {
+    BlocProvider.of<PipCubit>(context).imagesFile = [];
+    super.didChangeDependencies();
+  }
+
+  @override
+  void dispose() {
+    isSelected = -1;
+    super.dispose();
   }
 }
