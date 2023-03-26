@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/resources/assets_manager.dart';
 
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
@@ -53,10 +54,11 @@ class _ChargeWalletButtonState extends State<ChargeWalletButton> {
   }
 
   _buildPlusIcon() {
-    return Icon(
-      Icons.add,
+    return Image.asset(
+      ImageAssets.add,
+      width: 14.w,
+      height: 14.h,
       color: ColorManager.darkSeconadry,
-      size: 14.sp,
     );
   }
 

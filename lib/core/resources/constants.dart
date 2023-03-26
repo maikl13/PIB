@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'assets_manager.dart';
 import 'route_manager.dart';
 
@@ -17,6 +16,8 @@ String defaultUId = "68";
 String? userName = ' ';
 String? token = '123';
 String? userEmail = '';
+
+int? currentRequestId ;
 
 String? userPhone = '';
 String? userImage = '';
@@ -59,15 +60,15 @@ List<String> menuViewItemRoutes = [
 bool val = false;
 int isSelected = -1;
 
-List<IconData> menuViewItemIcons = [
-  Icons.manage_accounts,
-  Icons.work,
-  Icons.account_balance_wallet_rounded,
-  Icons.star,
-  Icons.perm_phone_msg,
-  Icons.info,
+List<String> menuViewItemIcons = [
+  ImageAssets.experience,
+  ImageAssets.suitcase,
+  ImageAssets.wallet,
+  ImageAssets.star,
+  ImageAssets.menuPhone,
+  ImageAssets.info,
   // Icons.lock_outline_rounded,
-  Icons.logout_rounded,
+  ImageAssets.logout,
 ];
 
 List<String> typesTitles = [

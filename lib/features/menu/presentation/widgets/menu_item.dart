@@ -14,7 +14,7 @@ class MenuViewItem extends StatelessWidget {
     this.onTap,
   });
 
-  final IconData icon;
+  final String icon;
   final String title;
   final int index;
   final void Function()? onTap;
@@ -22,10 +22,11 @@ class MenuViewItem extends StatelessWidget {
   Widget _buildLeading(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(right: 8.0.w),
-      child: Icon(
+      child: Image.asset(
         icon,
+        width: 16.w,
+        height: 16.h,
         color: ColorManager.darkSeconadry,
-        size: 16.sp,
       ),
     );
   }

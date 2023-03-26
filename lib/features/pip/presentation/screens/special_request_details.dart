@@ -3,9 +3,10 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pip/core/resources/assets_manager.dart';
 import 'package:pip/core/resources/commons.dart';
 import 'package:pip/core/widgets/loading_indicator.dart';
+import '../../../../core/business_logic/global_cubit.dart';
 import '../../../../core/resources/constants.dart';
 import '../../../../core/web_services/network_exceptions.dart';
 import '../../business_logic/cubit/pip_cubit.dart';
@@ -51,9 +52,11 @@ class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
             Commons.showLoadingDialog(context);
           },
           createSpecialRequestSuccess: (data) {
+            BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
+
             Navigator.pop(context);
             Commons.showToast(
-                message: 'offer created', color: ColorManager.green);
+                message: 'تم انشاء الطلب بنجاح', color: ColorManager.green);
             _clear();
             Navigator.pop(context);
           },
@@ -155,7 +158,7 @@ class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
       onTap: () {
         if (_formKey.currentState!.validate()) {
           selectedId == null
-              ? Commons.showToast(message: "choose category")
+              ? Commons.showToast(message: "اختر نوع الطلب")
               : BlocProvider.of<PipCubit>(context).createSpecialRequest(
                   categoryId: selectedId.toString(),
                   price: _priceController.text,
@@ -163,7 +166,7 @@ class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
                   description: _descriptionController.text,
                 );
         } else {
-          return Commons.showToast(message: 'enter value please');
+          return Commons.showToast(message: 'من فضلك ادخل البيانات بشكل صحيح');
         }
       },
     );
@@ -221,7 +224,10 @@ class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
       controller: _priceController,
       validator: (value) {
         if (value!.isEmpty) {
-          return 'enter value';
+          return 'من فضلك ادخل القيمة';
+        }
+        if (int.parse(value) < 50) {
+          return 'السعر يجب ان يكون اكبر من 50';
         }
 
         return null;
@@ -235,7 +241,7 @@ class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
         ),
       ),
       hint: AppStrings.price,
-      icon: FontAwesomeIcons.tags,
+      icon: ImageAssets.priceTag,
     );
   }
 
@@ -243,31 +249,33 @@ class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
     return RequestCustomTextField(
       validator: (value) {
         if (value!.isEmpty) {
-          return 'enter value';
+          return 'من فضلك ادخل القيمة';
         }
         return null;
       },
       controller: _locationController,
       hint: AppStrings.location,
       // ignore: deprecated_member_use
-      icon: FontAwesomeIcons.mapMarkerAlt,
+      icon: ImageAssets.pin1,
     );
   }
 
   _buildDescriptionTextField() {
     return RequestCustomTextField(
+      floatingLabelBehavior: FloatingLabelBehavior.never,
       validator: (value) {
         if (value!.isEmpty) {
-          return 'enter value';
+          return 'من فضلك ادخل القيمة';
         }
         return null;
       },
       // contentPadding: EdgeInsets.only(top: 15.h, bottom: 60.h),
-      floatingLabelBehavior: FloatingLabelBehavior.never,
+      // floatingLabelBehavior: FloatingLabelBehavior.never,
       controller: _descriptionController,
       bottomPadding: 40.h,
       topPadding: 0.h,
       maxLines: 3,
+      hint: AppStrings.description,
       label: Padding(
         padding: EdgeInsets.only(bottom: 40.h),
         child: Column(
@@ -282,59 +290,58 @@ class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
         ),
       ),
       // hint: AppStrings.description,
-      icon: FontAwesomeIcons.alignLeft,
+      icon: ImageAssets.title,
     );
   }
 
   _buildUploadPhotoTextField() {
-    return InkWell(
-      onTap: () {
-        BlocProvider.of<PipCubit>(context).pickImage();
-        // Navigator.pushNamed(context, Routes.searchMainViewRoute);
-      },
-      child: Container(
-        width: double.infinity,
-        height: 52.h,
-        decoration: BoxDecoration(
-          color: ColorManager.lightBlack,
-          borderRadius: BorderRadius.circular(10.r),
-        ),
-        child: Padding(
-          padding: EdgeInsets.only(left: 25.w, right: 15.w),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  SizedBox(
-                    width: 35.w,
-                    height: 35.h,
-                    child: CircleAvatar(
+    return Container(
+      width: double.infinity,
+      height: 52.h,
+      decoration: BoxDecoration(
+        color: ColorManager.lightBlack,
+        borderRadius: BorderRadius.circular(10.r),
+      ),
+      child: Padding(
+        padding: EdgeInsets.only(left: 25.w, right: 15.w),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SizedBox(
+                  width: 35.w,
+                  height: 35.h,
+                  child: CircleAvatar(
                       radius: 25.r,
                       backgroundColor: ColorManager.darkSeconadry,
-                      child: Icon(
-                        Icons.upload,
-                        color: ColorManager.white,
-                        size: 18.sp,
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 30.w),
-                  Text(AppStrings.uploadPhotos,
-                      style: getRegularStyle(
-                          fontSize: 15.sp, color: ColorManager.grey5)),
-                ],
-              ),
+                      child: Image.asset(
+                        ImageAssets.upload,
+                        width: 18.w,
+                        height: 18.h,
+                      )),
+                ),
+                SizedBox(width: 30.w),
+                Text(AppStrings.uploadPhotos,
+                    style: getRegularStyle(
+                        fontSize: 15.sp, color: ColorManager.grey5)),
+              ],
+            ),
 
-              // splashColor: ColorManager.transparent,
-              Icon(
-                Icons.add,
+            // splashColor: ColorManager.transparent,
+            InkWell(
+              onTap: () {
+                BlocProvider.of<PipCubit>(context).pickImage();
+              },
+              child: Image.asset(
+                ImageAssets.add,
+                width: 20.w,
+                height: 20.h,
                 color: ColorManager.darkSeconadry,
-                size: 20.sp,
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

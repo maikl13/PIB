@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pip/core/resources/assets_manager.dart';
 import 'package:pip/core/resources/constants.dart';
 import 'package:pip/features/requests/business_logic/cubit/requests_cubit.dart';
 import 'package:pip/features/requests/business_logic/cubit/requests_state.dart';
@@ -100,7 +100,7 @@ class WantedJobRequestsDetailsView extends StatelessWidget {
           },
           deleteRequestError: (networkExceptions) {
             Navigator.pop(context);
-Commons.showToast(
+            Commons.showToast(
               color: ColorManager.error,
               message: NetworkExceptions.getErrorMessage(networkExceptions),
             );
@@ -143,7 +143,7 @@ Commons.showToast(
               _buildMainInfo(),
               SizedBox(height: 15.h),
               InfoItem(
-                leading: FontAwesomeIcons.locationDot,
+                leading: ImageAssets.pin1,
                 title: request.location ?? '',
                 // trailling: FontAwesomeIcons.mapLocationDot,
               ),
@@ -151,22 +151,33 @@ Commons.showToast(
               _buildPhotos(),
 
               SizedBox(height: 70.h),
-              DefaultButton(
-                text: '${AppStrings.showOffers}  ${request.offersCount}',
-                onTap: () {
-                  Navigator.of(context)
-                      .pushNamed(Routes.recievedOffersViewRoute, arguments: {
-                    'requestId': request.id,
-                  });
-                },
-                // widht: 249.w,
-              ),
+              _buildButton(context),
               SizedBox(height: 30.h),
             ],
           ),
         ),
       ),
     );
+  }
+
+  _buildButton(BuildContext context) {
+    return request.status == 'active'
+        ? DefaultButton(
+            text: '${AppStrings.showOffers}  ${request.offersCount}',
+            onTap: () {
+              Navigator.of(context)
+                  .pushNamed(Routes.recievedOffersViewRoute, arguments: {
+                'requestId': request.id,
+              });
+            },
+            // widht: 249.w,
+          )
+        : DefaultButton(
+            text: request.status!,
+            onTap: () {
+              Commons.showToast(message: ' حالة الطلب  ${request.status}');
+            },
+          );
   }
 
   _buildPhotos() {
@@ -216,12 +227,12 @@ Commons.showToast(
           children: [
             MainInfoItem(
                 title: '${request.offersCount} ${AppStrings.offerd}',
-                icon: Icons.person),
+                icon: ImageAssets.user),
             MainInfoItem(
                 title: '${request.price ?? ''} ${AppStrings.ryal}',
-                icon: FontAwesomeIcons.tags),
+                icon: ImageAssets.tags),
             const MainInfoItem(
-                title: AppStrings.recieveOffers, icon: Icons.layers),
+                title: AppStrings.recieveOffers, icon: ImageAssets.solidLayers),
           ],
         ),
       ),

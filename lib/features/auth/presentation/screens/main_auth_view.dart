@@ -28,6 +28,7 @@ class MainAuthView extends StatelessWidget {
         // crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const MainAuthHeadline(),
+          SizedBox(height: 30.h),
           _buildLogo(),
           SizedBox(height: 50.h),
           DefaultButton(
@@ -57,6 +58,12 @@ class MainAuthView extends StatelessWidget {
     return BlocConsumer<AuthCubit, AuthResultState>(
       listener: (context, state) {
         state.whenOrNull(
+          firebaseAnonymousLoginError: (networkExceptions) {
+            Commons.showToast(
+              color: ColorManager.error,
+              message: NetworkExceptions.getErrorMessage(networkExceptions),
+            );
+          },
           firebaseAnonymousLoginLoading: () {
             Commons.showLoadingDialog(context);
           },
@@ -66,12 +73,19 @@ class MainAuthView extends StatelessWidget {
             BlocProvider.of<AuthCubit>(context)
                 .register(uid: data, name: 'مجهول');
           },
-          // phoneAuthLoading: () {
-          //   Commons.showLoadingDialog(context);
-          // },
-          // phoneNumberSubmited: () {
-          //   Navigator.pop(context);
-          // },
+          phoneAuthLoading: () {
+            Commons.showLoadingDialog(context);
+          },
+          phoneNumberSubmited: () {
+            // ignore: avoid_print
+            // print(uid);
+            Navigator.pop(context);
+            Navigator.of(context).pushNamed(Routes.confirmOtbViewRoute);
+          },
+          phoneAuthErrorOccurred: (errorMsg) {
+            Navigator.pop(context);
+            Commons.showToast(message: errorMsg);
+          },
           firebaseFacebookLoginSuccess: (uid) {
             BlocProvider.of<AuthCubit>(context).login(uid: uid);
           },

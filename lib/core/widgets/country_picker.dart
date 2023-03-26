@@ -1,9 +1,9 @@
 library country_code_picker;
 
+// ignore: depend_on_referenced_packages
 import 'package:collection/collection.dart' show IterableExtension;
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CodePicker extends StatefulWidget {
   final ValueChanged<CountryCode>? onChanged;

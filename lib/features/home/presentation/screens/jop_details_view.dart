@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/resources/assets_manager.dart';
 import 'package:pip/core/resources/commons.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/resources/style_manager.dart';
 import '../../../../core/widgets/custom_appbar.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../../core/widgets/default_button.dart';
 import '../../data/models/ad_model.dart';
 import '../widgets/info_item.dart';
@@ -45,14 +45,15 @@ class JobDetailsView extends StatelessWidget {
             _buildMainInfo(),
             SizedBox(height: 15.h),
             InfoItem(
-              leading: FontAwesomeIcons.globe,
+              leading: ImageAssets.web,
               title: ad.website ?? '',
+              decoration: TextDecoration.underline,
             ),
             SizedBox(height: 15.h),
             InfoItem(
-              leading: FontAwesomeIcons.locationDot,
+              leading: ImageAssets.pin1,
               title: ad.location ?? '',
-              trailling: FontAwesomeIcons.mapLocationDot,
+              trailling: ImageAssets.pinMap,
             ),
             SizedBox(height: 70.h),
             Row(
@@ -119,10 +120,10 @@ class JobDetailsView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             MainInfoItem(
-                title: ad.categoryName ?? '',
-                icon: FontAwesomeIcons.bagShopping),
-            MainInfoItem(title: ad.phone ?? '', icon: Icons.phone),
-            const MainInfoItem(title: AppStrings.adPayed, icon: Icons.layers),
+                title: ad.categoryName ?? '', icon: ImageAssets.suitcase),
+            MainInfoItem(title: ad.phone ?? '', icon: ImageAssets.phone),
+            const MainInfoItem(
+                title: AppStrings.adPayed, icon: ImageAssets.solidLayers),
           ],
         ),
       ),
@@ -133,8 +134,8 @@ class JobDetailsView extends StatelessWidget {
     return InkWell(
       onTap: () async {
         await Share.share(
-          AppStrings.companyName,
-          // subject: AppStrings.jobLink,
+          ad.title ?? '',
+          subject: ad.website ?? '',
         );
       },
       child: Container(
@@ -144,8 +145,8 @@ class JobDetailsView extends StatelessWidget {
           color: ColorManager.darkSeconadry,
           borderRadius: BorderRadius.circular(31.r),
         ),
-        child: Icon(
-          FontAwesomeIcons.share,
+        child: Image.asset(
+          ImageAssets.share,
           color: ColorManager.black,
         ),
       ),
@@ -164,10 +165,13 @@ class JobDetailsView extends StatelessWidget {
             onPressed: () async {
               await Share.share(
                 AppStrings.companyName,
-                // subject: AppStrings.jobLink,
+                subject: AppStrings.jobLink,
               );
             },
-            icon: const Icon(FontAwesomeIcons.share),
+            icon: Image.asset(
+              ImageAssets.share,
+              color: ColorManager.darkSeconadry,
+            ),
           ),
           // Text(AppStrings.share)
         ],

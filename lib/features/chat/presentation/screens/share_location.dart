@@ -253,7 +253,7 @@ class _ShareLocationState extends State<ShareLocation> {
 
   @override
   void dispose() {
-    BlocProvider.of<ChatCubit>(context).resumeStream(widget.chatId);
+    BlocProvider.of<ChatCubit>(context).startStream(widget.chatId);
     super.dispose();
   }
 

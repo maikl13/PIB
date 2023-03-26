@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pip/features/chat/presentation/screens/share_location.dart';
+import 'package:pip/features/menu/presentation/screens/terms_conditions_view.dart';
 import 'package:pip/features/requests/presentation/screens/edit_request.dart';
 import '../../features/auth/business_logic/cubit/auth_cubit.dart';
 import '../../features/auth/presentation/screens/confirm_otb_view.dart';
@@ -54,6 +55,8 @@ import '../../features/splash/presentation/screens/on_boarding_view.dart';
 import '../../features/home/business_logic/cubit/home_cubit.dart';
 import '../../features/home/presentation/screens/home_view.dart';
 import '../../features/splash/presentation/screens/splash_view.dart';
+import '../business_logic/global_cubit.dart';
+import '../widgets/default_screen.dart';
 import 'injection.dart';
 import 'strings_manager.dart';
 
@@ -101,6 +104,9 @@ class Routes {
   static const String companiesNeedJobsViewRoute =
       "/companiesNeedJobsViewRoute";
   static const String partTimeViewRoute = "/partTimeViewRoute";
+  static const String termsAndConditionViewRoute =
+      "/termsAndConditionViewRoute";
+
   static const String fullTimeViewRoute = "/fullTimeViewRoute";
   static const String editRequestViewRoute = "/editRequestViewRoute";
 
@@ -110,6 +116,7 @@ class Routes {
 
 class RouteGenerator {
   static late AuthCubit authCubit;
+  static late GlobalCubit globalCubit;
 
   static late HomeCubit homeCubit;
   static late NotificationCubit notificationCubit;
@@ -128,6 +135,7 @@ class RouteGenerator {
     pipCubit = getIt<PipCubit>();
     requestsCubit = getIt<RequestsCubit>();
     chatCubit = getIt<ChatCubit>();
+    globalCubit = getIt<GlobalCubit>();
   }
   static List screens = <Widget>[
     const HomeView(),
@@ -334,11 +342,13 @@ class RouteGenerator {
         final arguments = settings.arguments as Map;
 
         final int chatId = arguments['chatId'];
+        final int requestId = arguments['requestId'];
         return MaterialPageRoute(
           builder: (_) => BlocProvider.value(
             value: chatCubit,
             child: ChatAddOfferViewRoute(
               chatId: chatId,
+              requestId: requestId,
             ),
           ),
         );
@@ -442,7 +452,10 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (_) => const AvailableDriversView(),
         );
-
+      case Routes.termsAndConditionViewRoute:
+        return MaterialPageRoute(
+          builder: (_) => const TermsAndConditionView(),
+        );
       case Routes.editRequestViewRoute:
         final arguments = settings.arguments as Map;
 
@@ -476,17 +489,11 @@ class RouteGenerator {
           ),
         );
       default:
-        return unDefinedRoute();
+        return null;
     }
   }
 
-  static Route<dynamic> unDefinedRoute() {
-    return MaterialPageRoute(
-        builder: (_) => Scaffold(
-              appBar: AppBar(
-                title: Text(AppStrings.noRouteFound.trim()),
-              ),
-              body: Center(child: Text(AppStrings.noRouteFound.trim())),
-            ));
-  }
+  // static Route<dynamic> unDefinedRoute() {
+  //   return MaterialPageRoute(builder: (_) => DefaultScreen());
+  // }
 }

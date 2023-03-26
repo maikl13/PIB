@@ -4,33 +4,45 @@ import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/style_manager.dart';
 
 class InfoItem extends StatelessWidget {
-  const InfoItem({super.key, this.title, this.leading, this.trailling});
+  const InfoItem(
+      {super.key,
+      this.title,
+      required this.leading,
+      this.trailling,
+      this.decoration});
   final String? title;
-  final IconData? leading;
-  final IconData? trailling;
+  final String leading;
+  final String? trailling;
+  final TextDecoration? decoration;
 
   _buildLeading() {
-    return Icon(
+    return Image.asset(
       leading,
+      width: 17.sp,
+      height: 17.sp,
       color: ColorManager.darkSeconadry,
-      size: 17.sp,
     );
   }
 
   _buildTitle() {
     return Text(
       title ?? "",
-      style: getRegularStyle(fontSize: 13.sp, color: ColorManager.grey),
+      style:
+          getRegularStyle(fontSize: 13.sp, color: ColorManager.grey).copyWith(
+        decoration: decoration ?? TextDecoration.none,
+        decorationColor: ColorManager.grey,
+      ),
     );
   }
 
   _buildTrailling() {
     return trailling == null
         ? Container()
-        : Icon(
-            trailling,
+        : Image.asset(
+            trailling!,
+            width: 17.sp,
+            height: 17.sp,
             color: ColorManager.darkSeconadry,
-            size: 17.sp,
           );
   }
 

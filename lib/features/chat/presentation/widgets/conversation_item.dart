@@ -8,11 +8,16 @@ import '../../../../core/resources/style_manager.dart';
 import '../../../../core/widgets/custom_network_image.dart';
 
 class ConversationItem extends StatelessWidget {
-  const ConversationItem({super.key, this.name, this.totalMessage,  this.imageUrl, required this.chatId});
+  const ConversationItem(
+      {super.key,
+      this.name,
+      this.totalMessage,
+      this.imageUrl,
+      required this.chatId});
 
   final String? name;
-  final int ?totalMessage;
-  final String ?imageUrl ;
+  final int? totalMessage;
+  final String? imageUrl;
   final int chatId;
   _buildBackground() {
     return Image.asset(
@@ -27,32 +32,34 @@ class ConversationItem extends StatelessWidget {
         width: 60.w,
         child: CircleAvatar(
           radius: 80.r,
-          child:imageUrl ==null? Container() :  ClipOval(
-
-            child: CustomNetworkCachedImage(url: imageUrl!),
-          ),
+          child: imageUrl == null
+              ? Container()
+              : ClipOval(
+                  child: CustomNetworkCachedImage(url: imageUrl!),
+                ),
         ));
   }
 
-  _buildTitle(  ) {
+  _buildTitle() {
     return Text(
       name ?? '',
       style: getBoldStyle(fontSize: 18.sp, color: ColorManager.darkSeconadry),
     );
   }
 
-  _buildSubtitle( ) {
+  _buildSubtitle() {
     return Text(
-     "${AppStrings.totalMessage} ${totalMessage ?? 0}",
+      "${AppStrings.totalMessage} ${totalMessage ?? 0}",
       style: getRegularStyle(fontSize: 12.sp, color: ColorManager.darkGrey),
     );
   }
 
   _buildArrow() {
-    return Icon(
-      Icons.arrow_forward,
+    return Image.asset(
+      ImageAssets.rightArrow,
+      width: 16.w,
+      height: 16.h,
       color: ColorManager.darkSeconadry,
-      size: 16.sp,
     );
   }
 
@@ -60,12 +67,9 @@ class ConversationItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.of(context).pushNamed(
-          Routes.chatsViewRoute,
-          arguments: {
-            'chatId' : chatId,
-          }
-        );
+        Navigator.of(context).pushNamed(Routes.chatsViewRoute, arguments: {
+          'chatId': chatId,
+        });
       },
       child: SizedBox(
         width: double.infinity,

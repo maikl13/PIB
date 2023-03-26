@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:pip/core/resources/commons.dart';
+import 'package:pip/core/resources/assets_manager.dart';
 import 'package:pip/features/chat/business_logic/chat_cubit.dart';
 import 'package:pip/features/chat/business_logic/chat_state.dart';
 import '../../../../core/widgets/custom_clock_date.dart';
@@ -43,11 +42,11 @@ class AvailableJobDetailsView extends StatelessWidget {
       child: BlocListener<ChatCubit, ChatState>(
         listener: (context, state) {
           state.whenOrNull(
-            
-            // chatWithUserError: (networkExceptions) {
-            //   Commons.showToast(message: networkExceptions.toString());
-            // },
-          );
+
+              // chatWithUserError: (networkExceptions) {
+              //   Commons.showToast(message: networkExceptions.toString());
+              // },
+              );
         },
         child: Padding(
           padding: EdgeInsets.only(right: 20.w, left: 20.w, top: 60.h),
@@ -67,7 +66,7 @@ class AvailableJobDetailsView extends StatelessWidget {
                 _buildMainInfo(),
                 SizedBox(height: 15.h),
                 InfoItem(
-                  leading: FontAwesomeIcons.locationDot,
+                  leading: ImageAssets.pin1,
                   title: availableJob.location ?? '',
                   // trailling: FontAwesomeIcons.mapLocationDot,
                 ),
@@ -178,12 +177,12 @@ class AvailableJobDetailsView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             MainInfoItem(
-                title: availableJob.user!.name ?? '', icon: Icons.person),
+                title: availableJob.user!.name ?? '', icon: ImageAssets.user),
             MainInfoItem(
                 title: '${availableJob.price} ${AppStrings.ryal}',
-                icon: FontAwesomeIcons.tags),
+                icon: ImageAssets.tags),
             const MainInfoItem(
-                title: AppStrings.recieveOffers, icon: Icons.layers),
+                title: AppStrings.recieveOffers, icon: ImageAssets.solidLayers),
           ],
         ),
       ),

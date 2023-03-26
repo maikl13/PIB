@@ -55,7 +55,7 @@ class _LoginViewState extends State<LoginView> {
     return DefaultButton(
       text: AppStrings.login,
       onTap: () {
-        showProgressIndicator(context);
+        // showProgressIndicator(context);
         _login(context);
       },
     );
@@ -63,11 +63,9 @@ class _LoginViewState extends State<LoginView> {
 
   Future<void> _login(BuildContext context) async {
     if (!_phoneFormKey.currentState!.validate()) {
-      Commons.showToast(message: 'invalid nnumber');
-      Navigator.pop(context);
-      return;
+      Commons.showToast(message: 'الرجاء ادخال رقم الهاتف بشكل صحيح');
+      // Navigator.pop(context);
     } else {
-      Navigator.pop(context);
       _phoneFormKey.currentState!.save();
       BlocProvider.of<AuthCubit>(context).submitPhoneNumber(phoneNumber);
     }
@@ -86,9 +84,7 @@ class _LoginViewState extends State<LoginView> {
 
         validator: (value) {
           if (value!.isEmpty) {
-            return 'invalid Number';
-          } else if (value.length < 11) {
-            return 'Too short for a phone number!';
+            return ' ادخل رقم الهاتف';
           }
           return null;
         },
@@ -123,6 +119,7 @@ class _LoginViewState extends State<LoginView> {
       text1: AppStrings.dontHaveAccount,
       text2: AppStrings.registerNewAcc,
       onPressed: () {
+        
         Navigator.pushNamed(context, Routes.registerViewRoute);
       },
     );

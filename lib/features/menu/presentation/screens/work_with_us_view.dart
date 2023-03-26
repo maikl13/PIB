@@ -45,7 +45,7 @@ class WorkWithUsView extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           _buildTitle(),
-          SizedBox(height: 18.h),
+          SizedBox(height: 12.h),
           _buildDescription(),
           SizedBox(height: 39.h),
           _buildCopy(context),
@@ -105,10 +105,11 @@ class WorkWithUsView extends StatelessWidget {
         Clipboard.setData(const ClipboardData(text: '12323425'));
         Commons.showToast(message: "Copied", color: ColorManager.darkSeconadry);
       },
-      child: Icon(
-        Icons.copy,
+      child: Image.asset(
+        ImageAssets.copy,
+        width: 20.w,
+        height: 20.h,
         color: ColorManager.darkSeconadry,
-        size: 20.sp,
       ),
     );
   }

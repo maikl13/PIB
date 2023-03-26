@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/business_logic/global_cubit.dart';
 import 'package:pip/core/widgets/empty_screen.dart';
 import '../../../../core/resources/commons.dart';
 import '../../../../core/web_services/network_exceptions.dart';
@@ -30,13 +31,19 @@ class _RecievedOffersViewState extends State<RecievedOffersView> {
     return BlocConsumer<RequestsCubit, RequestState>(
       listener: (context, state) {
         state.whenOrNull(
+          acceptOfferLoading: () {
+            Commons.showLoadingDialog(context);
+          },
           acceptOfferSuccess: (data) {
+            BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
+            Navigator.pop(context);
             Commons.showToast(
                 message: 'تم قبول العرض بنجاح', color: ColorManager.green);
             screenIndex = 2;
             Navigator.of(context).pushNamed(Routes.mainHomeViewRoute);
           },
           acceptOfferError: (error) {
+            Navigator.pop(context);
             Commons.showToast(
               // color: ColorManager.error,
               message: NetworkExceptions.getErrorMessage(error),
@@ -47,6 +54,9 @@ class _RecievedOffersViewState extends State<RecievedOffersView> {
       buildWhen: (previous, next) => next is OffersRequestSuccess,
       builder: (context, state) {
         return state.maybeWhen(
+          offersLoading: () {
+            return const LoadingIndicator();
+          },
           offersRequestSuccess: (offers) {
             return _buildListOfOffers(offers);
           },

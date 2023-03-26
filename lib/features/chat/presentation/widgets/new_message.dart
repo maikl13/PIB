@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pip/core/resources/assets_manager.dart';
 import 'package:pip/features/chat/business_logic/chat_state.dart';
 
 import '../../../../core/resources/commons.dart';
@@ -50,12 +51,12 @@ class _NewMessageState extends State<NewMessage> {
       text: AppStrings.addOffer,
       widht: 148.w,
       onTap: () {
-        BlocProvider.of<ChatCubit>(context).stopStream();
+        // BlocProvider.of<ChatCubit>(context).stopStream();
 
-        Navigator.of(context)
-            .pushNamed(Routes.chatAddOfferViewRoute, arguments: {
-          "chatId": widget.chatId,
-        });
+        // Navigator.of(context)
+        //     .restorablePushNamed(Routes.chatAddOfferViewRoute, arguments: {
+        //   "chatId": widget.chatId,
+        // });
         //
       },
     );
@@ -91,10 +92,11 @@ class _NewMessageState extends State<NewMessage> {
               });
               // _sendMessage();
             },
-            child: Icon(
-              showActions ? Icons.close : Icons.add,
+            child: Image.asset(
+              showActions ? ImageAssets.close : ImageAssets.add,
+              width: 20.w,
+              height: 20.h,
               color: ColorManager.darkSeconadry,
-              size: 20.sp,
             ),
           ),
         ],
@@ -103,14 +105,32 @@ class _NewMessageState extends State<NewMessage> {
   }
 
   _buildTextField() {
+    final chatCubit = context.read<ChatCubit>();
     return Row(
       children: [
         Expanded(
           child: TextFormField(
+            onTap: () {
+              if (messageController.selection ==
+                  TextSelection.fromPosition(TextPosition(
+                      offset: messageController.text.length - 1))) {
+                setState(() {
+                  messageController.selection = TextSelection.fromPosition(
+                      TextPosition(offset: messageController.text.length));
+                });
+              }
+            },
             style: getBoldStyle(color: ColorManager.darkGrey, fontSize: 18.sp),
             cursorColor: ColorManager.darkSeconadry,
             controller: messageController,
-            decoration: getdefaultTextFieldStyle(_buildSuffixIcon()),
+            decoration: getdefaultTextFieldStyle(
+              _buildSuffixIcon(),
+              onTap: () async {
+                chatCubit.stopStream();
+                await chatCubit.pickImageFromCamera(widget.chatId);
+                chatCubit.startStream(widget.chatId);
+              },
+            ),
             onChanged: (value) {
               setState(() {
                 _enteredMessage = value;
@@ -123,47 +143,50 @@ class _NewMessageState extends State<NewMessage> {
     );
   }
 
-  Widget _buildActions() {
+  Widget _buildActions(BuildContext context) {
+    final chatCubit = context.read<ChatCubit>();
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         ActionItem(
-          icon: Icons.camera_alt,
+          icon: ImageAssets.camera,
           title: AppStrings.camera,
-          onTap: () {
-            BlocProvider.of<ChatCubit>(context).stopStream();
-            // print("objectobjectobjectobjectobject");
-            BlocProvider.of<ChatCubit>(context).pickImageFromCamera();
+          onTap: () async {
+            chatCubit.stopStream();
+            await chatCubit.pickImageFromCamera(widget.chatId);
+            chatCubit.startStream(widget.chatId);
           },
         ),
         ActionItem(
-          icon: Icons.image,
+          icon: ImageAssets.picture,
           title: AppStrings.picturesAndVidoes,
-          onTap: () {
-            BlocProvider.of<ChatCubit>(context).stopStream();
+          onTap: () async {
+            chatCubit.stopStream();
             // print("objectobjectobjectobjectobject");
-            BlocProvider.of<ChatCubit>(context).getMultiMedia();
+            await chatCubit.getMultiMedia();
+            chatCubit.startStream(widget.chatId);
           },
         ),
         ActionItem(
-          icon: Icons.edit_document,
+          icon: ImageAssets.file,
           title: AppStrings.docs,
-          onTap: () {
-            BlocProvider.of<ChatCubit>(context).stopStream();
-            BlocProvider.of<ChatCubit>(context).getFile();
+          onTap: () async {
+            chatCubit.stopStream();
+            await chatCubit.getFile();
+            chatCubit.startStream(widget.chatId);
           },
         ),
         ActionItem(
-          icon: Icons.location_on,
+          icon: ImageAssets.location,
           title: AppStrings.location,
           onTap: () {
-            BlocProvider.of<ChatCubit>(context).stopStream();
+            chatCubit.stopStream();
             Navigator.pushNamed(context, Routes.shareLocationViewRoute,
                 arguments: {
                   "chatId": widget.chatId,
                 });
             // print("objectobjectobjectobjectobject");
-            // BlocProvider.of<ChatCubit>(context).goToLocation();
+            // chatCubit.goToLocation();
           },
         ),
       ],
@@ -179,7 +202,7 @@ class _NewMessageState extends State<NewMessage> {
           },
           sendMessageerror: (networkExceptions) {
             Navigator.of(context).pop();
-               Commons.showToast(
+            Commons.showToast(
               color: ColorManager.error,
               message: NetworkExceptions.getErrorMessage(networkExceptions),
             );
@@ -265,7 +288,7 @@ class _NewMessageState extends State<NewMessage> {
                 SizedBox(height: 20.h),
                 _buildPhotos(),
                 SizedBox(height: 20.h),
-                Visibility(visible: showActions, child: _buildActions()),
+                Visibility(visible: showActions, child: _buildActions(context)),
               ],
             ),
           ),

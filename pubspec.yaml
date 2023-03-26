@@ -43,6 +43,7 @@ dependencies:
   dio_smart_retry:
   equatable:
   file_picker: ^5.2.6
+  firebase_app_check: ^0.1.1+14
   firebase_auth:
   firebase_core:
   flutter:
@@ -50,6 +51,7 @@ dependencies:
   flutter_bloc:
   flutter_facebook_auth:
   flutter_launcher_icons:
+  flutter_libphonenumber: ^2.0.0
   flutter_localizations:
     sdk: flutter
   flutter_screenutil:

@@ -8,13 +8,16 @@ class MainInfoItem extends StatelessWidget {
       {super.key, required this.title, required this.icon, this.iconSize});
 
   final String title;
-  final IconData icon;
+  final String icon;
   final double? iconSize;
   _buildIcon() {
-    return Icon(
+    return Image.asset(
+      
       icon,
+      width: iconSize ?? 18.5.w,
+      height: iconSize ?? 18.5.h,
       color: ColorManager.darkSeconadry,
-      size: iconSize ?? 18.5.sp,
+       
     );
   }
 

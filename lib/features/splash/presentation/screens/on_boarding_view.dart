@@ -69,7 +69,8 @@ class OnBoardingView extends StatelessWidget {
   _buildButton(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.pushReplacementNamed(context, Routes.mainAuthViewRoute);
+        Navigator.pushNamedAndRemoveUntil(
+            context, Routes.mainAuthViewRoute, (route) => false);
       },
       child: Container(
         width: 190.w,
@@ -116,11 +117,8 @@ class OnBoardingView extends StatelessWidget {
       child: CircleAvatar(
         backgroundColor: ColorManager.white,
         radius: 25.r,
-        child: Icon(
-          Icons.arrow_forward,
-          color: ColorManager.lightSeconadary,
-          size: 15.sp,
-        ),
+        child: Image.asset(ImageAssets.rightArrow,
+            width: 15.w, height: 15.h, color: ColorManager.lightSeconadary),
       ),
     );
   }

@@ -17,7 +17,8 @@ class SearchResultItem extends StatelessWidget {
       this.image,
       this.companyName,
       this.jobTitle,
-      this.typeHeadline, required this.ad});
+      this.typeHeadline,
+      required this.ad});
 
   final String? image;
   final String? companyName;
@@ -68,10 +69,11 @@ class SearchResultItem extends StatelessWidget {
   }
 
   _buildJobtitleIcon() {
-    return Icon(
-      Icons.work,
+    return Image.asset(
+      ImageAssets.suitcase,
+      width: 15.w,
+      height: 15.h,
       color: ColorManager.darkSeconadry,
-      size: 15.sp,
     );
   }
 
@@ -85,10 +87,11 @@ class SearchResultItem extends StatelessWidget {
   }
 
   _buildJobTypeIcon() {
-    return Icon(
-      Icons.work,
+    return Image.asset(
+      ImageAssets.suitcase,
+      width: 15.w,
+      height: 15.h,
       color: ColorManager.darkSeconadry,
-      size: 15.sp,
     );
   }
 
@@ -112,7 +115,7 @@ class SearchResultItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.pushNamed(context, Routes.jobDetailsViewRoute,arguments: {
+        Navigator.pushNamed(context, Routes.jobDetailsViewRoute, arguments: {
           'ad': ad,
         });
       },

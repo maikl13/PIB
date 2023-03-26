@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/widgets/empty_screen.dart';
+import '../../../../core/business_logic/global_cubit.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/web_services/network_exceptions.dart';
@@ -45,20 +47,22 @@ class _NotificationViewState extends State<NotificationView> {
   }
 
   Widget _buildNotificationViewBody(List<NotifiticationModel> notifications) {
-    return Padding(
-      padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 30.h),
-      child: ListView.separated(
-          itemBuilder: (context, index) {
-            return NotificationItem(
-              notificationContent: notifications[index].content!,
-              isRead: notifications[index].isRead == 1,
-            );
-          },
-          separatorBuilder: (context, index) {
-            return SizedBox(height: 15.h);
-          },
-          itemCount: notifications.length),
-    );
+    return notifications.isEmpty
+        ? const EmptyScreen()
+        : Padding(
+            padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 30.h),
+            child: ListView.separated(
+                itemBuilder: (context, index) {
+                  return NotificationItem(
+                    notificationContent: notifications[index].content!,
+                    isRead: notifications[index].isRead == 1,
+                  );
+                },
+                separatorBuilder: (context, index) {
+                  return SizedBox(height: 15.h);
+                },
+                itemCount: notifications.length),
+          );
   }
 
   @override
@@ -69,6 +73,8 @@ class _NotificationViewState extends State<NotificationView> {
 
   @override
   Widget build(BuildContext context) {
+    BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
+
     return Scaffold(
       appBar: CustomAppBar(
         appBarColor: ColorManager.lightBlack,

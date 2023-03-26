@@ -34,7 +34,7 @@ class ImageWithRating extends StatelessWidget {
       height: 70.w,
       child: CircleAvatar(
         radius: 50.r,
-        child: ClipOval(child: CustomNetworkCachedImage(url: image!)),
+        child: ClipOval(child: CustomNetworkCachedImage(url: image)),
       ),
     );
     // return Container(

@@ -29,7 +29,7 @@ class JobDetailsImage extends StatelessWidget {
       height: 150.w,
       child: CircleAvatar(
         radius: 80.r,
-        child: ClipOval(child: CustomNetworkCachedImage(url: imageUrl!)),
+        child: ClipOval(child: CustomNetworkCachedImage(url: imageUrl)),
       ),
     );
     // return SizedBox(

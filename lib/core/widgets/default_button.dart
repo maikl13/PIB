@@ -29,7 +29,7 @@ class DefaultButton extends StatelessWidget {
         decoration: BoxDecoration(
             gradient: RadialGradient(
               colors: const [Color(0xFFFFC638), Color(0xFFF7B100)],
-              radius: 1.r,
+              radius: 1.h,
               center: const Alignment(0.0, 0.0),
             ),
             borderRadius: BorderRadius.all(Radius.circular(31.r))),

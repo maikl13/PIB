@@ -64,7 +64,7 @@ TextStyle getSemiBoldStyle({double fontSize = FontSize.s12, Color? color}) {
   );
 }
 
-getdefaultTextFieldStyle(Widget suffix) {
+getdefaultTextFieldStyle(Widget suffix,{ void Function()? onTap}) {
   return InputDecoration(
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(34.r),
@@ -82,10 +82,13 @@ getdefaultTextFieldStyle(Widget suffix) {
     contentPadding: EdgeInsets.only(right: 25.w, left: 25.w, top: 25.h),
     fillColor: ColorManager.lightBlack,
     filled: true,
-    prefixIcon: Icon(
-      Icons.camera_alt_outlined,
-      color: ColorManager.darkGrey,
-      size: 20.sp,
+    prefixIcon: InkWell(
+      onTap: onTap,
+      child: Icon(
+        Icons.camera_alt_outlined,
+        color: ColorManager.darkGrey,
+        size: 20.sp,
+      ),
     ),
     suffixIcon: suffix,
     hintText: AppStrings.writeYourMessage,

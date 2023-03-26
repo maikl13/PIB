@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/resources/style_manager.dart';
 
 class PickRequestItem extends StatelessWidget {
-  const PickRequestItem({super.key, required this.title, this.description, this.height, this.onTap});
+  const PickRequestItem(
+      {super.key,
+      required this.title,
+      this.description,
+      this.height,
+      this.onTap});
   final String title;
   final String? description;
   final double? height;
-     final void Function()? onTap;
+  final void Function()? onTap;
 
   _buildLeading() {
     return Padding(
@@ -42,7 +48,7 @@ class PickRequestItem extends StatelessWidget {
     return Text(
       maxLines: 3,
       overflow: TextOverflow.ellipsis,
-     description?? AppStrings.requestDescription,
+      description ?? AppStrings.requestDescription,
       style: getRegularStyle(fontSize: 12.sp, color: ColorManager.darkGrey),
     );
   }
@@ -50,10 +56,11 @@ class PickRequestItem extends StatelessWidget {
   _buildTrailing() {
     return Padding(
       padding: EdgeInsets.only(top: 20.h),
-      child: Icon(
-        Icons.arrow_forward,
+      child: Image.asset(
+        ImageAssets.rightArrow,
+        width: 16.w,
+        height: 16.h,
         color: ColorManager.darkSeconadry,
-        size: 16.sp,
       ),
     );
   }
@@ -64,7 +71,7 @@ class PickRequestItem extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: double.infinity,
-        height: height?? 127.h,
+        height: height ?? 127.h,
         decoration: BoxDecoration(
           color: ColorManager.lightBlack,
           borderRadius: BorderRadius.circular(10.r),

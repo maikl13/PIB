@@ -105,7 +105,7 @@ class Commons {
               contentPadding: EdgeInsets.zero,
               insetPadding: EdgeInsets.zero,
               content: Container(
-                height: 248.h,
+                height: 200.h,
                 width: 295.w,
                 decoration: BoxDecoration(
                   color: ColorManager.lightBlack,
@@ -123,21 +123,21 @@ class Commons {
                           child: Icon(Icons.close,
                               color: ColorManager.white, size: 20.sp)),
                       SizedBox(height: 27.h),
-                      Container(
-                        width: double.infinity,
-                        height: 63.h,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10.r),
-                            color: ColorManager.grey6),
-                        child: Center(
-                          child: Text(
-                            AppStrings.deleteChat,
-                            style: getRegularStyle(
-                                fontSize: 16.sp, color: ColorManager.white),
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 12.h),
+                      // Container(
+                      //   width: double.infinity,
+                      //   height: 63.h,
+                      //   decoration: BoxDecoration(
+                      //       borderRadius: BorderRadius.circular(10.r),
+                      //       color: ColorManager.grey6),
+                      //   child: Center(
+                      //     child: Text(
+                      //       AppStrings.deleteChat,
+                      //       style: getRegularStyle(
+                      //           fontSize: 16.sp, color: ColorManager.white),
+                      //     ),
+                      //   ),
+                      // ),
+                      // SizedBox(height: 12.h),
                       Container(
                         width: double.infinity,
                         height: 63.h,
@@ -162,7 +162,8 @@ class Commons {
             ));
   }
 
-  static Future<void> showSettingDialog(BuildContext context,{ void Function()? onEditTab,void Function()? onDeleteTap}) async {
+  static Future<void> showSettingDialog(BuildContext context,
+      {void Function()? onEditTab, void Function()? onDeleteTap}) async {
     return showDialog(
         context: context,
         builder: (BuildContext context) => AlertDialog(

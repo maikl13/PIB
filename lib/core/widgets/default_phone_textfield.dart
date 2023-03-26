@@ -1,4 +1,3 @@
-import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/resources/assets_manager.dart';
@@ -7,10 +6,9 @@ import '../resources/constants.dart';
 import '../resources/strings_manager.dart';
 import '../resources/style_manager.dart';
 
-import '../resources/utils.dart';
 import 'country_picker.dart';
 
-class DefaultPhoneTextField extends StatelessWidget {
+class DefaultPhoneTextField extends StatefulWidget {
   const DefaultPhoneTextField(
       {super.key,
       this.suffix,
@@ -29,52 +27,77 @@ class DefaultPhoneTextField extends StatelessWidget {
   final TextEditingController? controller;
 
   @override
+  State<DefaultPhoneTextField> createState() => _DefaultPhoneTextFieldState();
+}
+
+class _DefaultPhoneTextFieldState extends State<DefaultPhoneTextField> {
+  @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: controller,
+      // autofocus: true,
+      onTap: () {
+        if (widget.controller!.selection ==
+            TextSelection.fromPosition(
+                TextPosition(offset: widget.controller!.text.length - 1))) {
+          setState(() {
+            widget.controller!.selection = TextSelection.fromPosition(
+                TextPosition(offset: widget.controller!.text.length));
+          });
+        }
+      },
+
+      controller: widget.controller,
       cursorColor: ColorManager.lightSeconadary,
-      style: getBoldStyle(fontSize: 20.sp, color: ColorManager.darkGrey),
-      onSaved: onSaved,
+      style: getBoldStyle(fontSize: 16.sp, color: ColorManager.darkGrey),
+      onSaved: widget.onSaved,
       // maxLines: 2,
-      validator: validator,
+      validator: widget.validator,
       decoration: InputDecoration(
         floatingLabelBehavior: FloatingLabelBehavior.never,
-        label: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Text(AppStrings.phoneNumber,
-                style: getBoldStyle(
-                    fontSize: 10.sp, color: ColorManager.darkGrey)),
-            const SizedBox(height: 10),
-            Text(AppStrings.zeros,
-                style:
-                    getRegularStyle(fontSize: 17.sp, color: ColorManager.grey)),
-          ],
+        label: Padding(
+          padding: EdgeInsets.only(
+            top: 4.w,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text(AppStrings.phoneNumber,
+                  style: getBoldStyle(
+                      fontSize: 10.sp, color: ColorManager.darkGrey)),
+              SizedBox(height: 15.h),
+              Text(AppStrings.zeros,
+                  style: getRegularStyle(
+                      fontSize: 17.sp, color: ColorManager.grey)),
+            ],
+          ),
         ),
 
-        isDense: true,
+        // isDense: true,
 
-        contentPadding:
-            EdgeInsets.only(top: 20.h, right: 20.w, left: 20.w, bottom: 20.h),
+        contentPadding: EdgeInsets.only(
+          right: 35.w,
+          left: 20.w,
+        ),
 
         prefixIcon: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Padding(
-              padding: EdgeInsets.only(bottom: 10.h),
+              padding: EdgeInsets.only(bottom: 4.h),
               child: Image.asset(ImageAssets.phone, height: 16.h, width: 16.w),
             ),
           ],
         ),
+
         // contentPadding: contentPadding ??
         //     EdgeInsets.only(top: 28.h, bottom: 18.h, right: 20.w),
-        hintText: hint ?? AppStrings.zeros,
+        hintText: widget.hint ?? AppStrings.zeros,
         // hintStyle: ,
         suffixIcon: Padding(
             padding: EdgeInsets.only(left: 20.w, bottom: 20.h),
-            child: suffix ??
+            child: widget.suffix ??
                 CodePicker(
 
                     // boxDecoration: BoxDecoration(color: ColorManager.error),
@@ -82,14 +105,13 @@ class DefaultPhoneTextField extends StatelessWidget {
                         getBoldStyle(fontSize: 13.sp, color: ColorManager.grey),
                     onChanged: (code) {
                       countryCode = code.dialCode ?? '+966';
-                      // print('countryCode: $countryCode');
+                      print('countryCode: $countryCode');
                     },
                     closeIcon: Icon(
                       Icons.close,
                       color: ColorManager.grey5,
                     ),
                     searchDecoration: InputDecoration(
-                      
                       hintText: AppStrings.search,
                       hintStyle: getRegularStyle(
                           fontSize: 15.sp, color: ColorManager.grey),
@@ -111,7 +133,6 @@ class DefaultPhoneTextField extends StatelessWidget {
                         color: ColorManager.grey,
                       ),
                     ),
-                  
                     searchStyle: getRegularStyle(
                         fontSize: 15.sp, color: ColorManager.grey),
                     initialSelection: 'SA',

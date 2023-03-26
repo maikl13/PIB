@@ -24,6 +24,39 @@ class ChatCubit extends Cubit<ChatState> {
   List<ChatMessagesModel> allMessages = [];
   StreamSubscription<List<ChatMessagesModel>>? subscription;
   Stream<List<ChatMessagesModel>>? myStream;
+  StreamController<List<ChatMessagesModel>> streamController =
+      StreamController<List<ChatMessagesModel>>.broadcast();
+
+  void startStream(int chatId) async {
+    myStream = Stream.periodic(const Duration(seconds: 1))
+        .asyncMap((event) async => await getAllChatMessages(chatId));
+    subscription = myStream?.listen((event) {
+      allMessages = event;
+    });
+    // subscription = myStream.listen((data) {
+    //   // handle stream data here
+    // });
+  }
+
+  void stopStream() {
+    if (subscription != null) {
+      subscription!.pause();
+      subscription = null;
+    }
+    emit(const ChatState.stopChatStreamState());
+  }
+
+  void resumeStream(int chatId) {
+    if (subscription!.isPaused) {
+      startStream(chatId);
+    } else {
+      // ignore: avoid_print
+      print('object');
+    }
+    emit(const ChatState.resumeChatStreamState());
+
+    // }
+  }
 
   List<File> imagesFile = [];
   Future<void> getFile() async {
@@ -67,7 +100,7 @@ class ChatCubit extends Cubit<ChatState> {
     }
   }
 
-  Future pickImageFromCamera() async {
+  Future pickImageFromCamera(int chatId) async {
     try {
       emit(const ChatState.imageSelectedLoading());
 
@@ -77,6 +110,7 @@ class ChatCubit extends Cubit<ChatState> {
       imagesFile.add(File(image!.path));
 
       emit(ChatState.imageSelectedSuccess(imagesFile));
+      // startStream(chatId);
     } on PlatformException catch (e) {
       emit(const ChatState.imageSelectedError());
       Commons.showToast(message: e.toString());
@@ -96,37 +130,6 @@ class ChatCubit extends Cubit<ChatState> {
     imagesFile.insert(newIndex, item);
 
     emit(ChatState.imageSelectedDeleted(imagesFile));
-  }
-
-  void startStream(int chatId) async {
-    myStream = Stream.periodic(const Duration(seconds: 1))
-        .asyncMap((event) async => await getAllChatMessages(chatId));
-    subscription = myStream?.listen((event) {
-      allMessages = event;
-    });
-    // subscription = myStream.listen((data) {
-    //   // handle stream data here
-    // });
-  }
-
-  void stopStream() {
-    if (subscription != null) {
-      subscription!.pause();
-      subscription = null;
-    }
-    emit(const ChatState.stopChatStreamState());
-  }
-
-  void resumeStream(int chatId) {
-    if (subscription!.isPaused) {
-      startStream(chatId);
-    } else {
-      // ignore: avoid_print
-      print('object');
-    }
-    emit(const ChatState.resumeChatStreamState());
-
-    // }
   }
 
   void getAllHiringChats() async {

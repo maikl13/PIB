@@ -15,6 +15,8 @@ class ChatState<T> with _$ChatState<T> {
 const factory ChatState.goToLocation() = GoToLocation<T>;
 const factory ChatState.stopChatStreamState() = StopChatStreamState<T>;
 const factory ChatState.resumeChatStreamState() = ResumeChatStreamState<T>;
+const factory ChatState.startChatStreamState(List<ChatMessagesModel> messages) = StartChatStreamState<T>;
+
 
   const factory ChatState.hiringChatsLoading() = HiringChatsLoading<T>;
 

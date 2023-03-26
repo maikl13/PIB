@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/business_logic/global_cubit.dart';
+import 'package:pip/core/business_logic/global_state.dart';
 import 'assets_manager.dart';
 import 'color_manager.dart';
 import 'route_manager.dart';
@@ -43,11 +46,43 @@ buildMainSearchViewAppBarActions(BuildContext context) {
             onTap: () {
               Navigator.pushNamed(context, Routes.notificationViewRoute);
             },
-            child: Image.asset(
-              ImageAssets.notification,
-              width: 20.h,
-              height: 20.h,
-              fit: BoxFit.contain,
+            child: Padding(
+              padding: EdgeInsets.only(top: 22.h),
+              child: Stack(
+                children: [
+                  Image.asset(
+                    ImageAssets.notification,
+                    width: 20.h,
+                    height: 20.h,
+                    fit: BoxFit.contain,
+                  ),
+                  BlocConsumer<GlobalCubit, GlobalState>(
+                    listener: (context, state) {},
+                    buildWhen: (previous, current) =>
+                        current is GetUnreadNotificationCountSuccess,
+                    builder: (context, state) {
+                      return Visibility(
+                        visible: state.maybeWhen(
+                          getUnreadNotificationCountSuccess: (count) {
+                            return count.unreadNotifications != 0
+                                ? true
+                                : false;
+                          },
+                          orElse: () => false,
+                        ),
+                        child: Container(
+                          width: 7.w,
+                          height: 7.h,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: ColorManager.red,
+                          ),
+                        ),
+                      );
+                    },
+                  )
+                ],
+              ),
             )))
   ];
 }

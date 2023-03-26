@@ -32,25 +32,27 @@ class MessageBubble extends StatelessWidget {
         ? Container()
         : Column(
             crossAxisAlignment:
-                isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+                !isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
               // _buildUserAvatar(),
               // SizedBox(height: 12.h),
               Row(
                 mainAxisAlignment:
-                    isMe ? MainAxisAlignment.end : MainAxisAlignment.start,
+                    !isMe ? MainAxisAlignment.end : MainAxisAlignment.start,
                 children: [
                   Container(
                     width: 243.w,
                     height: 47.h,
                     decoration: BoxDecoration(
-                      color: isMe ? ColorManager.black5 : ColorManager.white,
+                      color: !isMe ? ColorManager.black5 : ColorManager.white,
                       borderRadius: BorderRadius.only(
-                        topLeft:
-                            isMe ? Radius.circular(0.r) : Radius.circular(20.r),
-                        topRight:
-                            isMe ? Radius.circular(20.r) : Radius.circular(0.r),
+                        topLeft: !isMe
+                            ? Radius.circular(0.r)
+                            : Radius.circular(20.r),
+                        topRight: !isMe
+                            ? Radius.circular(20.r)
+                            : Radius.circular(0.r),
                         bottomLeft: Radius.circular(20.r),
                         bottomRight: Radius.circular(20.r),
                       ),
@@ -60,9 +62,9 @@ class MessageBubble extends StatelessWidget {
                         message,
                         style: getRegularStyle(
                             color:
-                                isMe ? ColorManager.white : ColorManager.black,
+                                !isMe ? ColorManager.white : ColorManager.black,
                             fontSize: 14.sp),
-                        textAlign: isMe ? TextAlign.end : TextAlign.start,
+                        textAlign: !isMe ? TextAlign.end : TextAlign.start,
                       ),
                     ),
                   ),

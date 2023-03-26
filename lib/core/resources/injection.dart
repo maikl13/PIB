@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:dio_smart_retry/dio_smart_retry.dart';
 import 'package:get_it/get_it.dart';
+import 'package:pip/core/business_logic/global_cubit.dart';
 import '../../features/chat/business_logic/chat_cubit.dart';
 import '../../features/chat/data/repository/chat_repository.dart';
 import '../../features/notification/business_logic/cubit/notification_cubit.dart';
@@ -30,6 +31,9 @@ void initGetIt() {
       () => NotificationRepository(getIt()));
   getIt.registerLazySingleton<NotificationCubit>(
       () => NotificationCubit(getIt()));
+        getIt.registerLazySingleton<GlobalCubit>(
+      () => GlobalCubit(getIt()));
+
   // getIt.registerLazySingleton<HomeCubit>(() => HomeCubit());
   getIt.registerLazySingleton<HomeRepository>(() => HomeRepository(getIt()));
   getIt.registerLazySingleton<HomeCubit>(() => HomeCubit(getIt()));

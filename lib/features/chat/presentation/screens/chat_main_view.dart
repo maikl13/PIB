@@ -14,7 +14,10 @@ import '../widgets/chat_messages.dart';
 import '../widgets/new_message.dart';
 
 class ChatView extends StatefulWidget {
-  const ChatView({super.key, required this.chatId});
+  const ChatView({
+    super.key,
+    required this.chatId,
+  });
   final int chatId;
 
   @override
@@ -65,53 +68,59 @@ class _ChatViewState extends State<ChatView> {
             return const LoadingIndicator();
           },
           showChatInfoSuccess: (chatInfo) {
-            return Scaffold(
-              key: _scaffoldKey,
-              appBar: AppBar(
-                backgroundColor: ColorManager.lightBlack,
-                leading: LeadingArrow(
-                  onTap: () {
-                    BlocProvider.of<ChatCubit>(context).stopStream();
-                    Navigator.pop(context);
-                  },
-                ),
-                title: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    CircleAvatar(
-                      radius: 20,
-                      child: ClipOval(
-                        child: CustomNetworkCachedImage(
-                            url: chatInfo.user!.imageUrl),
+            return WillPopScope(
+              onWillPop: () {
+                BlocProvider.of<ChatCubit>(context).stopStream();
+                return Future.value(true);
+              },
+              child: Scaffold(
+                key: _scaffoldKey,
+                appBar: AppBar(
+                  backgroundColor: ColorManager.lightBlack,
+                  leading: LeadingArrow(
+                    onTap: () {
+                      BlocProvider.of<ChatCubit>(context).stopStream();
+                      Navigator.pop(context);
+                    },
+                  ),
+                  title: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      CircleAvatar(
+                        radius: 20,
+                        child: ClipOval(
+                          child: CustomNetworkCachedImage(
+                              url: chatInfo.user!.imageUrl),
+                        ),
                       ),
-                    ),
-                    SizedBox(width: 14.w),
-                    Text(
-                      chatInfo.user!.name ?? '',
-                      style: getRegularStyle(
-                          fontSize: 20.sp, color: ColorManager.white),
+                      SizedBox(width: 14.w),
+                      Text(
+                        chatInfo.user!.name ?? '',
+                        style: getRegularStyle(
+                            fontSize: 20.sp, color: ColorManager.white),
+                      ),
+                    ],
+                  ),
+                  actions: [
+                    IconButton(
+                      icon: Icon(
+                        Icons.settings,
+                        size: 18.sp,
+                      ),
+                      onPressed: () {
+                        Commons.showChatSettingDialog(
+                          context,
+                          onReportTap: () {
+                            BlocProvider.of<ChatCubit>(context)
+                                .reportChat(widget.chatId.toString(), '');
+                          },
+                        );
+                      },
                     ),
                   ],
                 ),
-                actions: [
-                  IconButton(
-                    icon: Icon(
-                      Icons.settings,
-                      size: 18.sp,
-                    ),
-                    onPressed: () {
-                      Commons.showChatSettingDialog(
-                        context,
-                        onReportTap: () {
-                          BlocProvider.of<ChatCubit>(context)
-                              .reportChat(widget.chatId.toString(), '');
-                        },
-                      );
-                    },
-                  ),
-                ],
+                body: _buildBody(chatInfo.canSubmitOffer!),
               ),
-              body: _buildBody(chatInfo.canSubmitOffer!),
             );
           },
           orElse: () => Container(),

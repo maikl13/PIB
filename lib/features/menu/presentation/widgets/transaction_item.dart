@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/resources/assets_manager.dart';
 import '../../../notification/presentation/widgets/clock_date.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/style_manager.dart';
@@ -28,10 +29,12 @@ class TransactionItem extends StatelessWidget {
         radius: 40.r,
         backgroundColor: ColorManager.darkSeconadry,
         child: Center(
-          child: Icon(
-            Icons.account_balance_wallet,
+          child: Image.asset(
+            ImageAssets.wallet,
+            width: 20.w,
+            height: 20.h,
             color: ColorManager.white,
-            size: 20.sp,
+            fit: BoxFit.contain,
           ),
         ),
       ),

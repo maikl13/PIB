@@ -4,9 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/resources/commons.dart';
 import '../../../../core/resources/constants.dart';
 import '../../../../core/resources/strings_manager.dart';
+import '../../../../core/web_services/network_exceptions.dart';
 import '../../../../core/widgets/custom_appbar.dart';
 import '../../../../core/widgets/custom_network_image.dart';
 import '../../../../core/widgets/default_button.dart';
+import '../../../../core/widgets/loading_indicator.dart';
 import '../../business_logic/menu_cubit.dart';
 import '../../business_logic/menu_state.dart';
 
@@ -25,21 +27,48 @@ class _EditProfileViewState extends State<EditProfileView> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
+
   _buildBody(BuildContext context) {
-    return BlocListener<MenuCubit, MenuState>(
-      listener: (context, state) {
-        state.whenOrNull(
-          updateUserInfoSuccess: (data) {
-            Commons.showToast(
-                message: data.status.toString(), color: ColorManager.green);
-            BlocProvider.of<MenuCubit>(context).getUserInfo();
-            Navigator.pop(context);
-          },
-          updateUserInfoError: (error) {
-            Commons.showToast(message: error.toString());
-          },
-        );
-      },
+    return BlocConsumer<MenuCubit, MenuState>(
+        listener: (context, state) {
+          state.whenOrNull(
+            updateUserInfoLoading: () {
+              Commons.showLoadingDialog(context);
+            },
+            updateUserInfoSuccess: (data) {
+              Navigator.pop(context);
+              Commons.showToast(
+                  message: 'تم تغير البيانات بنجاح', color: ColorManager.green);
+              BlocProvider.of<MenuCubit>(context).getUserInfo();
+              Navigator.pop(context);
+            },
+            updateUserInfoError: (error) {
+              Commons.showToast(
+                  message: NetworkExceptions.getErrorMessage(error));
+            },
+          );
+        },
+        buildWhen: (previous, current) => current is GetUserInfoSuccess,
+        builder: (context, state) {
+          return state.maybeWhen(
+            getUserInfoLoading: () {
+              return const LoadingIndicator();
+            },
+            getUserInfoSuccess: (userInfo) {
+              _nameController.text = userInfo.name!;
+              _emailController.text = userInfo.email!;
+              _phoneController.text = userInfo.phone!;
+              return _buildForm();
+            },
+            orElse: () => Container(),
+          );
+        });
+  }
+
+  _buildForm() {
+    return Form(
+      key: _formKey,
       child: ListView(
         padding:
             EdgeInsets.only(top: 60.h, right: 20.w, left: 20.w, bottom: 20.h),
@@ -50,6 +79,12 @@ class _EditProfileViewState extends State<EditProfileView> {
           _buildNameTextField(),
           SizedBox(height: 20.h),
           DefaultPhoneTextField(
+            validator: (p0) {
+              if (p0!.isEmpty) {
+                return 'برجاء ادخال البيانات';
+              }
+              return null;
+            },
             controller: _phoneController,
           ),
           SizedBox(height: 20.h),
@@ -65,15 +100,12 @@ class _EditProfileViewState extends State<EditProfileView> {
     return DefaultButton(
       text: AppStrings.editData,
       onTap: () {
-        BlocProvider.of<MenuCubit>(context).updateProfile(
-          _nameController.text.isEmpty ? userName ?? '' : _nameController.text,
-          _emailController.text.isEmpty
-              ? userEmail ?? ''
-              : _emailController.text,
-          _phoneController.text.isEmpty
-              ? userPhone ?? ''
-              : _phoneController.text,
-        );
+        if (_formKey.currentState!.validate()) {
+          BlocProvider.of<MenuCubit>(context).updateProfile(
+              _nameController.text,
+              _emailController.text,
+              _phoneController.text);
+        }
       },
     );
   }
@@ -168,6 +200,12 @@ class _EditProfileViewState extends State<EditProfileView> {
 
   _buildNameTextField() {
     return DefaultTextField(
+      validator: (p0) {
+        if (p0!.isEmpty) {
+          return 'برجاء ادخال البيانات';
+        }
+        return null;
+      },
       controller: _nameController,
       hint: AppStrings.name,
       prefix: Icon(
@@ -180,6 +218,12 @@ class _EditProfileViewState extends State<EditProfileView> {
 
   _buildEmailTextField() {
     return DefaultTextField(
+        validator: (p0) {
+          if (p0!.isEmpty) {
+            return 'برجاء ادخال البيانات';
+          }
+          return null;
+        },
         controller: _emailController,
         prefix: Icon(
           Icons.mail,

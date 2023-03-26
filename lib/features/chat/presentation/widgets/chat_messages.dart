@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/resources/constants.dart';
@@ -24,96 +27,114 @@ class ChatMessages extends StatefulWidget {
 
 class _ChatMessagesState extends State<ChatMessages>
     with WidgetsBindingObserver {
-  Widget _buildStream() {
-    return Column(
-      children: [
-        Expanded(
-          child: ListView.separated(
-            padding: EdgeInsets.only(
-                bottom: 50.h, right: 20.w, left: 20.w, top: 40.h),
-            separatorBuilder: (context, index) {
-              return SizedBox(height: 15.h);
-            },
-            reverse: false,
-            shrinkWrap: true,
-            itemCount: BlocProvider.of<ChatCubit>(context).allMessages.length,
-            itemBuilder: (context, index) {
-              if (BlocProvider.of<ChatCubit>(context)
-                          .allMessages[index]
-                          .attachment ==
-                      null ||
-                  BlocProvider.of<ChatCubit>(context)
-                          .allMessages[index]
-                          .attachment ==
-                      '') {
-                return _buildTextBubble(index);
-              } else if (BlocProvider.of<ChatCubit>(context)
-                          .allMessages[index]
-                          .attachment !=
-                      null &&
-                  (BlocProvider.of<ChatCubit>(context)
-                              .allMessages[index]
-                              .message !=
-                          null ||
-                      BlocProvider.of<ChatCubit>(context)
-                              .allMessages[index]
-                              .message !=
-                          '')) {
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    _buildTextBubble(index),
-                    SizedBox(height: 10.h),
-                    _buildMediaBubble(index),
-                  ],
-                );
-              } else {
-                return _buildMediaBubble(index);
-              }
-            },
-          ),
-        ),
-      ],
+  final ScrollController _scrollController =
+      ScrollController(initialScrollOffset: 22, keepScrollOffset: false);
+
+  @override
+  void initState() {
+    super.initState();
+
+    BlocProvider.of<ChatCubit>(context).getAllChatMessages(widget.chatId);
+    BlocProvider.of<ChatCubit>(context).startStream(widget.chatId);
+
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  // @override
+  // void dispose() {
+  //   WidgetsBinding.instance.removeObserver(this);
+  //   BlocProvider.of<ChatCubit>(context).stopStream();
+  //   super.dispose();
+  // }
+
+  // @override
+  // void didChangeAppLifecycleState(AppLifecycleState state) {
+  //   super.didChangeAppLifecycleState(state);
+  //   if (state == AppLifecycleState.resumed) {
+  //     BlocProvider.of<ChatCubit>(context).resumeChatStream(widget.chatId);
+  //   } else if (state == AppLifecycleState.inactive) {
+  //     BlocProvider.of<ChatCubit>(context).startStream(widget
+  //         .chatId); // this is called when the app is in background
+  //   }
+  // }
+
+  Widget _buildStream(int index) {
+    final chatMessage = BlocProvider.of<ChatCubit>(context).allMessages[index];
+    final isMe = chatMessage.senderId == defaultUId;
+    return Padding(
+      padding: EdgeInsets.only(bottom: 15.h),
+      child: chatMessage.attachment == null || chatMessage.attachment == ''
+          ? MessageBubble(
+              message: chatMessage.message ?? '',
+              date: chatMessage.time ?? '',
+              isMe: isMe,
+            )
+          : Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                MessageBubble(
+                  message: chatMessage.message ?? '',
+                  date: chatMessage.time ?? '',
+                  isMe: isMe,
+                ),
+                SizedBox(height: 10.h),
+                MessageMediaBubble(
+                  chatMessage: chatMessage,
+                  isMe: isMe,
+                ),
+              ],
+            ),
     );
   }
 
-  _buildTextBubble(int index) {
-    return MessageBubble(
-      message:
-          BlocProvider.of<ChatCubit>(context).allMessages[index].message ?? '',
-      date: BlocProvider.of<ChatCubit>(context).allMessages[index].time ?? '',
-      isMe: BlocProvider.of<ChatCubit>(context).allMessages[index].senderId ==
-              defaultUId
-          ? true
-          : false,
-    );
+  void _scrollToBottom() {
+    if (_scrollController.hasClients) {
+      _scrollController.animateTo(_scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.elasticOut);
+    } else {
+      Timer(const Duration(milliseconds: 400), () => _scrollToBottom());
+    }
   }
 
-  _buildMediaBubble(int index) {
-    return MessageMediaBubble(
-        chatMessage: BlocProvider.of<ChatCubit>(context).allMessages[index],
-        isMe: BlocProvider.of<ChatCubit>(context).allMessages[index].senderId ==
-                defaultUId
-            ? true
-            : false);
+  Widget _buildMessageList() {
+    // goToLast();
+    final allMessages = BlocProvider.of<ChatCubit>(context).allMessages;
+    return ListView.builder(
+      controller: _scrollController,
+
+      padding: EdgeInsets.only(
+        bottom: 50.h,
+        right: 20.w,
+        left: 20.w,
+        top: 40.h,
+      ),
+      // reverse: true,
+      shrinkWrap: true,
+      itemCount: allMessages.length,
+      itemBuilder: (context, index) => _buildStream(index),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
+    // goToLast();
+    WidgetsBinding.instance.addPostFrameCallback((_) => _scrollToBottom());
+
     return BlocConsumer<ChatCubit, ChatState>(
       listener: (context, state) {
         state.whenOrNull(
           chatMessagesError: (networkExceptions) {
-                Commons.showToast(
+            Commons.showToast(
               color: ColorManager.error,
               message: NetworkExceptions.getErrorMessage(networkExceptions),
             );
           },
           stopChatStreamState: () {
-            BlocProvider.of<ChatCubit>(context).stopStream();
+            // BlocProvider.of<ChatCubit>(context).stopStream();
           },
           resumeChatStreamState: () {
-            BlocProvider.of<ChatCubit>(context).resumeStream(widget.chatId);
+            // BlocProvider.of<ChatCubit>(context).resumeStream(widget.chatId);
           },
         );
       },
@@ -124,36 +145,12 @@ class _ChatMessagesState extends State<ChatMessages>
             return const LoadingIndicator();
           },
           chatMessagesSuccess: (messages) {
-            return _buildStream();
+            return _buildMessageList();
           },
           orElse: () => Container(),
         );
       },
     );
-  }
-
-  @override
-  void initState() {
-    BlocProvider.of<ChatCubit>(context).getAllChatMessages(widget.chatId);
-    BlocProvider.of<ChatCubit>(context).startStream(widget.chatId);
-    WidgetsBinding.instance.addObserver(this);
-    super.initState();
-  }
-
-  @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
-    if (state == AppLifecycleState.resumed) {
-      BlocProvider.of<ChatCubit>(context).startStream(widget.chatId);
-    } else if (state == AppLifecycleState.inactive) {
-      BlocProvider.of<ChatCubit>(context).stopStream();
-    }
-  }
-
-  @override
-  void dispose() {
-    // BlocProvider.of<ChatCubit>(context).stopStream();
-    WidgetsBinding.instance.removeObserver(this);
-    super.dispose();
   }
 }
 

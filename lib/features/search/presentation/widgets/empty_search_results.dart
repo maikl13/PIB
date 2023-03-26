@@ -12,8 +12,8 @@ class EmptySearchResults extends StatelessWidget {
     return Image.asset(
       ImageAssets.emptySearch,
       width: 176.w,
-      height: 143.h,
-      fit: BoxFit.fill,
+      height: 143.w,
+      fit: BoxFit.contain,
     );
   }
 
@@ -27,6 +27,7 @@ class EmptySearchResults extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         _buildImage(),

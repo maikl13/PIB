@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pip/core/resources/assets_manager.dart';
 import 'package:pip/core/widgets/loading_indicator.dart';
 import 'package:pip/features/requests/business_logic/cubit/requests_state.dart';
 import '../../../../core/widgets/custom_clock_date.dart';
@@ -103,7 +103,7 @@ class RecievedOfferDetailsView extends StatelessWidget {
             getBoldStyle(fontSize: 16.sp, color: ColorManager.darkSeconadry),
         onTap: () {
           BlocProvider.of<ChatCubit>(context).chatWithUser(
-              requestId: offer.id.toString(),
+              requestId: offer.dealId.toString(),
               targetId: offer.user!.id.toString());
         },
       ),
@@ -166,13 +166,13 @@ class RecievedOfferDetailsView extends StatelessWidget {
           children: [
             MainInfoItem(
                 title: offer.request!.category ?? '',
-                icon: Icons.cases_rounded),
+                icon: ImageAssets.suitcase),
             MainInfoItem(
                 title: "${offer.price} ${AppStrings.ryal}",
-                icon: FontAwesomeIcons.tags),
+                icon: ImageAssets.tags),
             MainInfoItem(
                 title: '${offer.duration} ايام',
-                icon: FontAwesomeIcons.solidClock),
+                icon: ImageAssets.clock),
           ],
         ),
       ),

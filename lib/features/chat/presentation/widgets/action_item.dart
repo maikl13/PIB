@@ -7,7 +7,7 @@ import '../../../../core/resources/style_manager.dart';
 class ActionItem extends StatelessWidget {
   const ActionItem({super.key, required this.icon, required this.title,  this.onTap});
 
-  final IconData icon;
+  final String icon;
   final String title;
   final void Function()? onTap;
   _buildIcon() {
@@ -19,7 +19,7 @@ class ActionItem extends StatelessWidget {
         child: CircleAvatar(
           backgroundColor: ColorManager.darkSeconadry,
           child: Center(
-            child: Icon(
+            child: Image.asset(
               icon,
               color: ColorManager.white,
             ),

@@ -168,4 +168,6 @@ ThemeData getAppTheme = ThemeData(
           borderSide:
               BorderSide(color: ColorManager.transparent, width: AppSize.s1_5),
           borderRadius: BorderRadius.all(Radius.circular(15.r)))),
+  colorScheme:
+      ColorScheme.fromSwatch().copyWith(secondary: ColorManager.darkSeconadry),
 );

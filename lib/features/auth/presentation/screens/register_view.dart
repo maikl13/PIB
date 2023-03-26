@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/resources/assets_manager.dart';
 import 'package:pip/core/resources/constants.dart';
-import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/commons.dart';
 import '../../../../core/resources/route_manager.dart';
 import '../../../../core/widgets/custom_appbar.dart';
@@ -63,8 +63,14 @@ class _RegisterViewState extends State<RegisterView> {
           SizedBox(height: 100.h),
           _buildButton(context),
           SizedBox(height: 22.h),
-          const Center(
-              child: CustomHintText(title: AppStrings.termsAndCondition)),
+          Center(
+              child: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(
+                        context, Routes.termsAndConditionViewRoute);
+                  },
+                  child: const CustomHintText(
+                      title: AppStrings.termsAndCondition))),
           // const Spacer(),
           SizedBox(height: 85.h),
 
@@ -85,11 +91,11 @@ class _RegisterViewState extends State<RegisterView> {
     return DefaultTextField(
       controller: _nameController,
       hint: AppStrings.name,
-      prefix: Icon(
-        Icons.person,
-        color: ColorManager.darkSeconadry,
-        size: 20.sp,
-      ),
+      prefix: Image.asset(ImageAssets.user,
+          // color: ColorManager.darkSeconadry,
+          width: 16.w,
+          height: 16.h,
+          fit: BoxFit.scaleDown),
     );
   }
 
@@ -109,19 +115,7 @@ class _RegisterViewState extends State<RegisterView> {
     return BlocListener<AuthCubit, AuthResultState>(
       listener: (context, state) {
         state.whenOrNull(
-          phoneAuthLoading: () {
-            showProgressIndicator(context);
-          },
-          phoneNumberSubmited: () {
-            // ignore: avoid_print
-            // print(uid);
-            Navigator.pop(context);
-            Navigator.of(context).pushNamed(Routes.confirmOtbViewRoute);
-          },
-          phoneAuthErrorOccurred: (errorMsg) {
-            Navigator.pop(context);
-            Commons.showToast(message: errorMsg);
-          },
+       
         );
       },
       child: Container(),

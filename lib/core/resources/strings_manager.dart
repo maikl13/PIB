@@ -32,7 +32,7 @@ class AppStrings {
   static const String logOut = 'تسجيل خروج';
 
   static const String orLoginWith = 'او تسجيل باستخدام';
-  static const String facebook = 'facebook';
+  static const String facebook = 'Facebook';
   static const String google = 'google';
   static const String loginDescription =
       'الرجاء إدخال البيانات التالية للدخول لحسابك';

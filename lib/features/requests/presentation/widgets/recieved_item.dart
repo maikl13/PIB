@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pip/features/chat/business_logic/chat_state.dart';
-import '../../../../core/resources/commons.dart';
 import '../../../../core/widgets/custom_clock_date.dart';
 import '../../../chat/business_logic/chat_cubit.dart';
 import '../../business_logic/cubit/requests_cubit.dart';
@@ -35,7 +34,7 @@ class RecievedOfferItem extends StatelessWidget {
         width: 75.w,
         height: 65.w,
         child: ImageWithRating(
-          image: offers[index].user!.imageUrl!,
+          image: offers[index].user!.imageUrl,
         ));
   }
 
@@ -83,11 +82,10 @@ class RecievedOfferItem extends StatelessWidget {
     return BlocListener<ChatCubit, ChatState>(
       listener: (context, state) {
         state.whenOrNull(
-       
-          chatWithUserError: (networkExceptions) {
-            Commons.showToast(message: networkExceptions.toString());
-          },
-        );
+            // chatWithUserError: (networkExceptions) {
+            //   Commons.showToast(message: networkExceptions.toString());
+            // },
+            );
       },
       child: Row(
         children: [
@@ -122,7 +120,7 @@ class RecievedOfferItem extends StatelessWidget {
           getBoldStyle(fontSize: 12.sp, color: ColorManager.darkSeconadry),
       onTap: () {
         BlocProvider.of<ChatCubit>(context).chatWithUser(
-            requestId: offers[index].id.toString(),
+            requestId: offers[index].dealId.toString(),
             targetId: offers[index].user!.id.toString());
       },
     );

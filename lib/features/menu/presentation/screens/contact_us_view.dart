@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import '../../../../core/business_logic/global_cubit.dart';
+import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/commons.dart';
 import '../../../../core/resources/style_manager.dart';
@@ -28,47 +30,64 @@ class ContactUsView extends StatefulWidget {
 class _ContactUsViewState extends State<ContactUsView> {
   final TextEditingController _phoneController = TextEditingController();
   final TextEditingController _descriptionController = TextEditingController();
-
+  final _formKey = GlobalKey<FormState>();
   _buildBody(BuildContext context) {
     return BlocListener<MenuCubit, MenuState>(
       listener: (context, state) {
         state.whenOrNull(
+          sendComplainLoading: () {
+            Commons.showLoadingDialog(context);
+          },
           sendComplainSuccess: (data) {
+            BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
+
+            Navigator.pop(context);
             showContactSuccessDialog(
               context,
               onOk: () {
                 Navigator.pop(context);
                 _descriptionController.clear();
                 _phoneController.clear();
+                Navigator.pop(context);
               },
             );
           },
           sendComplainError: (error) {
+            Navigator.pop(context);
             Commons.showToast(message: error.toString());
           },
         );
       },
-      child: Padding(
-        padding:
-            EdgeInsets.only(top: 40.h, right: 20.w, left: 20.w, bottom: 40.h),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            // shrinkWrap: true,
-            children: [
-              _buildHowToContactUs(),
-              _builDivider(),
-              SizedBox(height: 46.h),
-              const CustomTitle(title: AppStrings.giveYourComplain),
-              SizedBox(height: 20.h),
-              DefaultPhoneTextField(
-                controller: _phoneController,
-              ),
-              SizedBox(height: 40.h),
-              _buildDescriptionTextField(),
-              SizedBox(height: 150.h),
-              _buildButton(context),
-            ],
+      child: Form(
+        key: _formKey,
+        child: Padding(
+          padding:
+              EdgeInsets.only(top: 40.h, right: 20.w, left: 20.w, bottom: 40.h),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              // shrinkWrap: true,
+              children: [
+                _buildHowToContactUs(),
+                _builDivider(),
+                SizedBox(height: 46.h),
+                const CustomTitle(title: AppStrings.giveYourComplain),
+                SizedBox(height: 20.h),
+                DefaultPhoneTextField(
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'من فضلك ادخل القيمة';
+                    }
+                    return null;
+                  },
+                  controller: _phoneController,
+                ),
+                SizedBox(height: 40.h),
+                _buildDescriptionTextField(),
+                SizedBox(height: 150.h),
+                _buildButton(context),
+              ],
+            ),
           ),
         ),
       ),
@@ -119,8 +138,10 @@ class _ContactUsViewState extends State<ContactUsView> {
     return DefaultButton(
         text: AppStrings.send,
         onTap: () {
-          BlocProvider.of<MenuCubit>(context)
-              .sendComplain(_phoneController.text, _descriptionController.text);
+          if (_formKey.currentState!.validate()) {
+            BlocProvider.of<MenuCubit>(context).sendComplain(
+                _phoneController.text, _descriptionController.text);
+          }
         });
   }
 
@@ -133,6 +154,15 @@ class _ContactUsViewState extends State<ContactUsView> {
 
   _buildDescriptionTextField() {
     return RequestCustomTextField(
+      validator: (value) {
+        if (value!.isEmpty) {
+          return 'من فضلك ادخل القيمة';
+        }
+        return null;
+      },
+      hint: AppStrings.description,
+
+      circleAvatar: true,
       floatingLabelBehavior: FloatingLabelBehavior.never,
       controller: _descriptionController,
       bottomPadding: 40.h,
@@ -152,7 +182,7 @@ class _ContactUsViewState extends State<ContactUsView> {
         ),
       ),
       // hint: AppStrings.description,
-      icon: FontAwesomeIcons.alignLeft,
+      icon: ImageAssets.title,
     );
   }
 
@@ -161,15 +191,21 @@ class _ContactUsViewState extends State<ContactUsView> {
       children: [
         Expanded(
           child: ContactUsInfoItem(
+            onTap: () {
+              Commons.openUrl('mailto://$userEmail');
+            },
             title: userEmail ?? '',
-            icon: Icons.email_outlined,
+            icon: ImageAssets.phone,
           ),
         ),
         const SizedBox(width: 20),
         Expanded(
           child: ContactUsInfoItem(
+            onTap: () {
+              Commons.openUrl('tel://$userPhone');
+            },
             title: userPhone ?? '',
-            icon: Icons.phone_enabled_outlined,
+            icon: ImageAssets.phone,
           ),
         ),
       ],

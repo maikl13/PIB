@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/resources/assets_manager.dart';
 import '../../../../core/resources/constants.dart';
 import '../../../../core/resources/route_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
@@ -43,7 +44,12 @@ class _MenuViewState extends State<MenuView> {
 
   _buildUserInfo() {
     return BlocConsumer<MenuCubit, MenuState>(
-        listener: (context, state) {},
+        listener: (context, state) {
+          // state.whenOrNull(
+          //   getUserInfoSuccess: (userInfo) {
+          //   },
+          // );
+        },
         buildWhen: (previous, current) => current is GetUserInfoSuccess,
         builder: (context, state) {
           return state.maybeWhen(
@@ -81,6 +87,7 @@ class _MenuViewState extends State<MenuView> {
       text: AppStrings.editData,
       borderColor: ColorManager.darkSeconadry,
       onTap: () {
+        // BlocProvider.of<MenuCubit>(context).getUserInfo();
         Navigator.pushNamed(context, Routes.editProfileViewRoute);
       },
     );
@@ -93,9 +100,9 @@ class _MenuViewState extends State<MenuView> {
         Text(phone ?? '',
             style: getLightStyle(fontSize: 13.sp, color: ColorManager.grey)),
         const SizedBox(width: 15),
-        Icon(
-          Icons.phone_enabled_outlined,
-          color: ColorManager.grey,
+        Image.asset(
+          ImageAssets.solidPhone,
+          // color: ColorManager.grey,
         ),
       ],
     );

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pip/core/resources/assets_manager.dart';
 import '../../../../core/widgets/custom_network_image.dart';
 import '../../data/models/my_request_model.dart';
 import '../../../../core/resources/color_manager.dart';
@@ -80,7 +80,7 @@ class RequestItem extends StatelessWidget {
 
   _buildRequestStatus() {
     return Text(
-      AppStrings.requestStatus,
+      requests![index].status ?? '',
       style: getBoldStyle(fontSize: 10.sp, color: ColorManager.darkSeconadry),
     );
   }
@@ -94,6 +94,7 @@ class RequestItem extends StatelessWidget {
         child: requests![index].images!.isEmpty &&
                 requests![index].category == null
             ? Container()
+            //TODO ask about this
             : CustomNetworkCachedImage(
                 url: requests![index].images!.isEmpty
                     ? requests![index].category!.imageUrl!
@@ -103,31 +104,37 @@ class RequestItem extends StatelessWidget {
   }
 
   _buildPriceIcon() {
-    return Icon(
-      FontAwesomeIcons.tags,
+    return Image.asset(
+      ImageAssets.priceTag,
+      fit: BoxFit.scaleDown,
+      width: 12.w,
+      height: 12.h,
       color: ColorManager.darkSeconadry,
-      size: 12.sp,
     );
   }
 
   _buildPrice() {
     return Text(
-      requests![index].price ?? '',
+      '${requests![index].price}  ${AppStrings.ryal}',
       style: getRegularStyle(color: ColorManager.grey, fontSize: 12.sp),
     );
   }
 
   _buildNumberOfRequestsIcon() {
-    return Icon(
-      Icons.person,
+    return Image.asset(
+      ImageAssets.user,
+      fit: BoxFit.scaleDown,
+      width: 12.w,
+      height: 12.h,
       color: ColorManager.darkSeconadry,
-      size: 12.sp,
     );
   }
 
   _buildNumberOfRequests() {
     return Text(
-      '${requests![index].offersCount} عرض',
+      requests![index].offersCount == null
+          ? requests![index].user!.name ?? ''
+          : '${requests![index].offersCount} عرض',
       style: getRegularStyle(color: ColorManager.grey, fontSize: 12.sp),
     );
   }
@@ -136,13 +143,13 @@ class RequestItem extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(top: 20.h, left: 20.w),
       child: Align(
-        alignment: Alignment.topLeft,
-        child: Icon(
-          Icons.arrow_forward,
-          color: ColorManager.darkSeconadry,
-          size: 16.sp,
-        ),
-      ),
+          alignment: Alignment.topLeft,
+          child: Image.asset(
+            ImageAssets.rightArrow,
+            color: ColorManager.darkSeconadry,
+            width: 16.w,
+            height: 16.h,
+          )),
     );
   }
 

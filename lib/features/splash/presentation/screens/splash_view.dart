@@ -21,7 +21,8 @@ class _SplashViewState extends State<SplashView> {
   }
 
   void _goNext() {
-    Navigator.pushReplacementNamed(context, Routes.onBoardingViewRoute);
+    Navigator.pushNamedAndRemoveUntil(
+        context, Routes.onBoardingViewRoute, (route) => false);
   }
 
   @override

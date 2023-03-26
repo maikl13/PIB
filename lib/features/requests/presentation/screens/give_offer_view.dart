@@ -3,7 +3,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import '../../../../core/business_logic/global_cubit.dart';
+import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/constants.dart';
 import '../../../../core/resources/route_manager.dart';
 import '../../../../core/web_services/network_exceptions.dart';
@@ -33,6 +34,7 @@ class _GiveOfferViewState extends State<GiveOfferView> {
   final TextEditingController _timeToCompleteController =
       TextEditingController();
   final TextEditingController _descriptionController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
 
   void refresh() {
     setState(() {});
@@ -42,7 +44,14 @@ class _GiveOfferViewState extends State<GiveOfferView> {
     return BlocListener<RequestsCubit, RequestState>(
       listener: (context, state) {
         state.whenOrNull(
+          giveOfferLoading: () {
+            Commons.showLoadingDialog(context);
+          },
           giveOfferSuccess: (data) {
+            BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
+
+            Navigator.pop(context);
+
             showSuccessOfferDialog(
               context,
               onOk: () {
@@ -53,6 +62,7 @@ class _GiveOfferViewState extends State<GiveOfferView> {
             );
           },
           giveOfferError: (error) {
+            Navigator.pop(context);
             Commons.showToast(
               color: ColorManager.error,
               message: NetworkExceptions.getErrorMessage(error),
@@ -60,28 +70,31 @@ class _GiveOfferViewState extends State<GiveOfferView> {
           },
         );
       },
-      child: Padding(
-        padding:
-            EdgeInsets.only(right: 20.w, left: 20.w, top: 20.h, bottom: 35.h),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              // const CustomTitle(title: AppStrings.chooseType),
-              // SizedBox(height: 20.h),
-              // _buildAvaialbleTypesOfJobs(),
-              SizedBox(height: 20.h),
-              _buildPriceTextField(),
-              SizedBox(height: 20.h),
-              _buildTimeToCompleteTextField(),
-              SizedBox(height: 20.h),
-              _buildDescriptionTextField(),
-              SizedBox(height: 20.h),
-              _buildUploadPhotoTextField(context),
-              SizedBox(height: 20.h),
-              _buildPhotos(),
-              SizedBox(height: 100.h),
-              _buildButton(context),
-            ],
+      child: Form(
+        key: _formKey,
+        child: Padding(
+          padding:
+              EdgeInsets.only(right: 20.w, left: 20.w, top: 20.h, bottom: 35.h),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                // const CustomTitle(title: AppStrings.chooseType),
+                // SizedBox(height: 20.h),
+                // _buildAvaialbleTypesOfJobs(),
+                SizedBox(height: 20.h),
+                _buildPriceTextField(),
+                SizedBox(height: 20.h),
+                _buildTimeToCompleteTextField(),
+                SizedBox(height: 20.h),
+                _buildDescriptionTextField(),
+                SizedBox(height: 20.h),
+                _buildUploadPhotoTextField(context),
+                SizedBox(height: 20.h),
+                _buildPhotos(),
+                SizedBox(height: 100.h),
+                _buildButton(context),
+              ],
+            ),
           ),
         ),
       ),
@@ -155,26 +168,42 @@ class _GiveOfferViewState extends State<GiveOfferView> {
     return DefaultButton(
       text: AppStrings.send,
       onTap: () {
-        BlocProvider.of<RequestsCubit>(context).giveOffer(
-          price: _priceController.text,
-          duration: _timeToCompleteController.text,
-          description: _descriptionController.text,
-          requestId: widget.requestId,
-        );
+        if (_formKey.currentState!.validate()) {
+          BlocProvider.of<RequestsCubit>(context).giveOffer(
+            price: _priceController.text,
+            duration: _timeToCompleteController.text,
+            description: _descriptionController.text,
+            requestId: widget.requestId,
+          );
+        } else {
+          return Commons.showToast(message: 'من فضلك ادخل البيانات بشكل صحيح');
+        }
       },
     );
   }
 
   _buildPriceTextField() {
     return RequestCustomTextField(
+      validator: (value) {
+        if (value!.isEmpty) {
+          return 'من فضلك ادخل القيمة';
+        }
+        return null;
+      },
       controller: _priceController,
       hint: AppStrings.price,
-      icon: FontAwesomeIcons.tags,
+      icon: ImageAssets.tags,
     );
   }
 
   _buildTimeToCompleteTextField() {
     return RequestCustomTextField(
+      validator: (value) {
+        if (value!.isEmpty) {
+          return 'من فضلك ادخل القيمة';
+        }
+        return null;
+      },
       controller: _timeToCompleteController,
       suffix: Padding(
         padding: EdgeInsets.only(left: 5.w, top: 10.h),
@@ -182,16 +211,24 @@ class _GiveOfferViewState extends State<GiveOfferView> {
             style: getBoldStyle(fontSize: 15.sp, color: ColorManager.white)),
       ),
       hint: AppStrings.timeToComplete,
-      icon: FontAwesomeIcons.solidClock,
+      icon: ImageAssets.clock,
     );
   }
 
   _buildDescriptionTextField() {
     return RequestCustomTextField(
+      validator: (value) {
+        if (value!.isEmpty) {
+          return 'من فضلك ادخل القيمة';
+        }
+        return null;
+      },
       // contentPadding: EdgeInsets.only(top: 15.h, bottom: 60.h),
       floatingLabelBehavior: FloatingLabelBehavior.never,
       controller: _descriptionController,
       bottomPadding: 40.h,
+            hint: AppStrings.description,
+
       topPadding: 0.h,
       maxLines: 3,
       label: Padding(
@@ -208,57 +245,58 @@ class _GiveOfferViewState extends State<GiveOfferView> {
         ),
       ),
       // hint: AppStrings.description,
-      icon: FontAwesomeIcons.alignLeft,
+      icon: ImageAssets.title,
     );
   }
 
   _buildUploadPhotoTextField(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        BlocProvider.of<RequestsCubit>(context).pickImage();
-        // Navigator.pushNamed(context, Routes.searchMainViewRoute);
-      },
-      child: Container(
-        width: double.infinity,
-        height: 52.h,
-        decoration: BoxDecoration(
-          color: ColorManager.lightBlack,
-          borderRadius: BorderRadius.circular(10.r),
-        ),
-        child: Padding(
-          padding: EdgeInsets.only(left: 25.w, right: 15.w),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  SizedBox(
-                    width: 35.w,
-                    height: 35.h,
-                    child: CircleAvatar(
-                      radius: 25.r,
-                      backgroundColor: ColorManager.darkSeconadry,
-                      child: Icon(
-                        Icons.upload,
-                        color: ColorManager.white,
-                        size: 18.sp,
-                      ),
+    return Container(
+      width: double.infinity,
+      height: 52.h,
+      decoration: BoxDecoration(
+        color: ColorManager.lightBlack,
+        borderRadius: BorderRadius.circular(10.r),
+      ),
+      child: Padding(
+        padding: EdgeInsets.only(left: 25.w, right: 15.w),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SizedBox(
+                  width: 35.w,
+                  height: 35.h,
+                  child: CircleAvatar(
+                    radius: 25.r,
+                    backgroundColor: ColorManager.darkSeconadry,
+                    child: Image.asset(
+                      ImageAssets.upload,
+                      width: 18.w,
+                      height: 18.h,
+                      color: ColorManager.white,
                     ),
                   ),
-                  SizedBox(width: 30.w),
-                  Text(AppStrings.uploadPhotos,
-                      style: getBoldStyle(
-                          fontSize: 15.sp, color: ColorManager.grey5)),
-                ],
-              ),
-              Icon(
-                Icons.add,
+                ),
+                SizedBox(width: 30.w),
+                Text(AppStrings.uploadPhotos,
+                    style: getBoldStyle(
+                        fontSize: 15.sp, color: ColorManager.grey5)),
+              ],
+            ),
+            InkWell(
+              onTap: () {
+                BlocProvider.of<RequestsCubit>(context).pickImage();
+              },
+              child: Image.asset(
+                ImageAssets.add,
+                width: 20.w,
+                height: 20.h,
                 color: ColorManager.darkSeconadry,
-                size: 20.sp,
               ),
-            ],
-          ),
+            )
+          ],
         ),
       ),
     );

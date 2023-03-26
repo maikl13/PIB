@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/resources/commons.dart';
+import 'package:pip/core/web_services/network_exceptions.dart';
 import 'package:pip/features/chat/business_logic/chat_cubit.dart';
 import 'package:pip/features/chat/business_logic/chat_state.dart';
+import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/route_manager.dart';
 import '../../business_logic/cubit/requests_cubit.dart';
 import '../../business_logic/cubit/requests_state.dart';
@@ -39,11 +42,22 @@ class _MyRequestsMainViewState extends State<MyRequestsMainView> {
     return BlocListener<ChatCubit, ChatState>(
       listener: (context, state) {
         state.whenOrNull(
+          chatMessagesError: (networkExceptions) {
+            Navigator.pop(context);
+            Commons.showToast(
+              message: NetworkExceptions.getErrorMessage(networkExceptions),
+              color: ColorManager.red,
+            );
+          },
+          chatWithUserLoading: () {
+            Commons.showLoadingDialog(context);
+          },
           chatWithUserSuccess: (data) {
-              Navigator.pushNamed(context, Routes.chatViewRoute, arguments: {
-                'chatId': data.chatId,
-              });
-            },
+            Navigator.pop(context);
+            Navigator.pushNamed(context, Routes.chatViewRoute, arguments: {
+              'chatId': data.chatId,
+            });
+          },
         );
       },
       child: BlocListener<RequestsCubit, RequestState>(

@@ -2,10 +2,13 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/business_logic/global_cubit.dart';
 
 import '../core/resources/constants.dart';
+import '../core/resources/injection.dart';
 import '../core/resources/route_manager.dart';
 import '../core/resources/shared_prefrences.dart';
 import '../core/resources/theme_manager.dart';
@@ -60,32 +63,37 @@ class _MyAppState extends State<MyApp> {
 // factory to get single instance
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(375, 812),
-      minTextAdapt: true,
-      splitScreenMode: true,
-      // useInheritedMediaQuery: true,
-      // scaleByHeight: true,
+    return BlocProvider(
+      create: (context) => getIt<GlobalCubit>(),
+      child: ScreenUtilInit(
+        designSize: const Size(375, 812),
+        useInheritedMediaQuery: true,
+        // minTextAdapt: true,
+        splitScreenMode: true,
+        // useInheritedMediaQuery: true,
+        // scaleByHeight: true,
 
-      builder: (context, state) {
-        return MaterialApp(
-          localizationsDelegates: const [
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-          ],
-          supportedLocales: const [Locale('ar'), Locale('en')],
-          locale: const Locale('ar'),
-          debugShowCheckedModeBanner: false,
-          onGenerateRoute: routeGenerator.getRoute,
-          initialRoute: getInitialScreen(),
+        builder: (context, state) {
+          // ScreenUtil().setSp(28);
+          return MaterialApp(
+            localizationsDelegates: const [
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            supportedLocales: const [Locale('ar'), Locale('en')],
+            locale: const Locale('ar'),
+            debugShowCheckedModeBanner: false,
+            onGenerateRoute: routeGenerator.getRoute,
+            initialRoute: getInitialScreen(),
 
-          theme: getAppTheme,
-          // darkTheme: MyThemes.buyerTheme,
+            theme: getAppTheme,
+            // darkTheme: MyThemes.buyerTheme,
 
-          // initialRoute: Routes.splashRoute,
-        );
-      },
+            // initialRoute: Routes.splashRoute,
+          );
+        },
+      ),
     );
   }
 }

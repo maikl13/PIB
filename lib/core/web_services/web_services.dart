@@ -8,6 +8,7 @@ import '../../features/chat/data/models/show_chat_info_model.dart';
 import '../../features/home/data/models/ad_model.dart';
 import '../../features/menu/data/models/setting_model.dart';
 import '../../features/menu/data/models/update_skill.dart';
+import '../../features/notification/data/models/unread_notification.dart';
 import '../../features/pip/data/models/fast_request_category.dart';
 import '../../features/pip/data/models/skills_model.dart';
 
@@ -209,6 +210,10 @@ abstract class WebServices {
 //-----------------------new-----------------------------------------------------------------
   @GET("app/settings")
   Future<List<SettingModel>> getAllSettings(
+      @Header('Authorization') String token);
+      //-----------------------new-----------------------------------------------------------------
+  @GET("user/notifications/unread")
+  Future<UnreadNotificationCount> getUnreadNotificationCount(
       @Header('Authorization') String token);
 //-----------------------new-----------------------------------------------------------------
   @GET("user/chats/hirings")

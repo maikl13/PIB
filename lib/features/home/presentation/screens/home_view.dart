@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/business_logic/global_cubit.dart';
+import 'package:pip/core/resources/assets_manager.dart';
 import '../../../../core/resources/commons.dart';
 import '../../../../core/web_services/network_exceptions.dart';
 import '../../business_logic/cubit/home_cubit.dart';
@@ -88,15 +90,21 @@ class HomeView extends StatelessWidget {
               Text(AppStrings.search,
                   style: getRegularStyle(
                       fontSize: 15.sp, color: ColorManager.grey)),
-              IconButton(
-                  icon: Icon(
-                    Icons.search,
-                    color: ColorManager.darkSeconadry,
-                    size: 20.sp,
-                  ),
-                  onPressed: () {
-                    // Navigator.pushNamed(Ro.search);
-                  })
+              Image.asset(
+                ImageAssets.search,
+                width: 20.w,
+                height: 20.h,
+                fit: BoxFit.contain,
+              ),
+              // IconButton(
+              //     icon: Icon(
+              //       Icons.search,
+              //       color: ColorManager.darkSeconadry,
+              //       size: 20.sp,
+              //     ),
+              //     onPressed: () {
+              //       // Navigator.pushNamed(Ro.search);
+              //     })
             ],
           ),
         ),
@@ -154,6 +162,8 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
+
     BlocProvider.of<HomeCubit>(context).getAllAds();
     return _buildBloc();
   }

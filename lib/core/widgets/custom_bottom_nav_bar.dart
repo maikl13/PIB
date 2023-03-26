@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -35,9 +34,10 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
           icon: Image.asset(
             widget.selectedIndex == 0
                 ? ImageAssets.selectedHouse
-                : ImageAssets.house,
-            color:
-                widget.selectedIndex == 0 ? ColorManager.darkSeconadry : null,
+                : ImageAssets.solidHome,
+            color: widget.selectedIndex == 0
+                ? ColorManager.darkSeconadry
+                : ColorManager.grey,
           ),
           label: AppStrings.main,
         ),
@@ -55,12 +55,22 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
           ),
           label: '',
         ),
-        const BottomNavigationBarItem(
-          icon: Icon(Icons.layers_outlined),
+        BottomNavigationBarItem(
+          icon: Image.asset(
+              widget.selectedIndex == 2
+                  ? ImageAssets.solidLayers
+                  : ImageAssets.layers,
+              color: widget.selectedIndex == 2
+                  ? ColorManager.darkSeconadry
+                  : ColorManager.grey),
           label: AppStrings.myOrders,
         ),
-        const BottomNavigationBarItem(
-          icon: Icon(CupertinoIcons.chat_bubble_2),
+        BottomNavigationBarItem(
+          icon: Image.asset(
+            widget.selectedIndex == 3
+                ? ImageAssets.solidComments
+                : ImageAssets.comments,
+          ),
           label: AppStrings.messages,
         ),
         BottomNavigationBarItem(
