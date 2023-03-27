@@ -18,7 +18,7 @@ class JobDetailsImage extends StatelessWidget {
           // color: Colors.amber,
         ),
         _buildJobImage(),
-        _buildJobRate(),
+        // _buildJobRate(),
       ],
     );
   }
@@ -50,36 +50,36 @@ class JobDetailsImage extends StatelessWidget {
     // );
   }
 
-  _buildJobRate() {
-    return Positioned.fill(
-      child: Align(
-        alignment: Alignment.bottomLeft,
-        child: Container(
-          width: 78.w,
-          height: 25.w,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(25.r), color: Colors.white),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                '04',
-                style: TextStyle(fontSize: 10.sp),
-              ),
-              SizedBox(
-                width: 5.w,
-              ),
-              Icon(
-                Icons.star,
-                color: ColorManager.darkSeconadry,
-                size: 11.sp,
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
+  // _buildJobRate() {
+  //   return Positioned.fill(
+  //     child: Align(
+  //       alignment: Alignment.bottomLeft,
+  //       child: Container(
+  //         width: 78.w,
+  //         height: 25.w,
+  //         decoration: BoxDecoration(
+  //             borderRadius: BorderRadius.circular(25.r), color: Colors.white),
+  //         child: Row(
+  //           mainAxisAlignment: MainAxisAlignment.center,
+  //           children: [
+  //             Text(
+  //               '04',
+  //               style: TextStyle(fontSize: 10.sp),
+  //             ),
+  //             SizedBox(
+  //               width: 5.w,
+  //             ),
+  //             Icon(
+  //               Icons.star,
+  //               color: ColorManager.darkSeconadry,
+  //               size: 11.sp,
+  //             ),
+  //           ],
+  //         ),
+  //       ),
+  //     ),
+  //   );
+  // }
 
   @override
   Widget build(BuildContext context) {

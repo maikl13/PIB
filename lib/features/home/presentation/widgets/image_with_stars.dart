@@ -17,13 +17,13 @@ class ImageWithRating extends StatelessWidget {
           // color: Colors.amber,
         ),
         _buildJobImage(),
-        Positioned.fill(
-          child: Align(
-              alignment: Alignment.bottomLeft,
-              child: JobRateContainer(
-                height: height,
-              )),
-        ),
+        // Positioned.fill(
+        //   child: Align(
+        //       alignment: Alignment.bottomLeft,
+        //       child: JobRateContainer(
+        //         height: height,
+        //       )),
+        // ),
       ],
     );
   }

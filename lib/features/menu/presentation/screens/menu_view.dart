@@ -128,8 +128,8 @@ class _MenuViewState extends State<MenuView> {
           // fit: StackFit.expand,
           children: [
             _buildImage(imageUrl),
-            const Align(
-                alignment: Alignment.bottomLeft, child: JobRateContainer()),
+            // const Align(
+            //     alignment: Alignment.bottomLeft, child: JobRateContainer()),
           ],
         ));
   }
