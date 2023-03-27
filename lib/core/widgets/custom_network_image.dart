@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'loading_indicator.dart';
 
@@ -16,7 +17,7 @@ class CustomNetworkCachedImage extends StatelessWidget {
       // Return a default placeholder widget if url is null
       return Container(
         color: Colors.grey[300],
-        child: const Icon(Icons.image, size: 50),
+        child:  Icon(Icons.image, size: 50.sp),
       );
     }
     return CachedNetworkImage(

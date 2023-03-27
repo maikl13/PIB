@@ -60,6 +60,9 @@ class _MainHomeViewState extends State<MainHomeView> {
     super.initState();
 
     BlocProvider.of<MenuCubit>(context).getUserInfo();
+    BlocProvider.of<MenuCubit>(context).getAllSettings();
+    BlocProvider.of<MenuCubit>(context).getAllRates();
+    BlocProvider.of<MenuCubit>(context).getAllSettings();
 
     // BlocProvider.of<HomeCubit>(context).getInternationalTopDeals();
     // BlocProvider.of<HomeCubit>(context).getLocalTopDeals();

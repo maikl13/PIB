@@ -129,6 +129,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Reachability.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ReachabilitySwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -140,6 +150,16 @@
 			<false/>
 		</dict>
 		<key>Toast.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>connectivity.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>connectivity_plus.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -245,6 +265,11 @@
 			<false/>
 		</dict>
 		<key>wakelock.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>wifi_info_flutter.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

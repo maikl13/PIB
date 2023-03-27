@@ -264,7 +264,7 @@ class _ContactUsViewState extends State<ContactUsView> {
   @override
   void initState() {
     super.initState();
-    BlocProvider.of<MenuCubit>(context).getAllSettings();
+    // BlocProvider.of<MenuCubit>(context).getAllSettings();
   }
 
   @override

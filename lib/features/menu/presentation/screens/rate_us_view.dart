@@ -54,6 +54,7 @@ class _RateUsViewState extends State<RateUsView> {
   _buildRatingList() {
     return BlocConsumer<MenuCubit, MenuState>(
       listener: (context, state) {},
+      buildWhen: (previous, current) => current is UpdateRateSuccess,
       builder: (context, state) {
         return Column(
           children: [
@@ -172,13 +173,19 @@ class _RateUsViewState extends State<RateUsView> {
     return BlocConsumer<MenuCubit, MenuState>(
       listener: (context, state) {
         state.whenOrNull(
+          updateRateLoading: () {
+            Commons.showLoadingDialog(context);
+          },
           updateRateSuccess: (rates) {
+            Navigator.pop(context);
             Commons.showToast(
                 message: 'تم التقييم بنجاح', color: ColorManager.green);
             BlocProvider.of<MenuCubit>(context).getAllRates();
+            Navigator.pop(context);
           },
           updateRateError: (networkExceptions) {
-         Commons.showToast(
+            Navigator.pop(context);
+            Commons.showToast(
               color: ColorManager.error,
               message: NetworkExceptions.getErrorMessage(networkExceptions),
             );
@@ -194,7 +201,8 @@ class _RateUsViewState extends State<RateUsView> {
             getRatesSuccess: (rates) {
               return _buildRates(rates);
             },
-            orElse: () => Container());
+            orElse: () =>
+                _buildRates(BlocProvider.of<MenuCubit>(context).ratesModel));
       },
     );
   }
@@ -313,7 +321,7 @@ class _RateUsViewState extends State<RateUsView> {
   @override
   void initState() {
     super.initState();
-    BlocProvider.of<MenuCubit>(context).getAllRates();
+    // BlocProvider.of<MenuCubit>(context).getAllRates();
   }
 
   @override

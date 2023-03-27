@@ -5,6 +5,12 @@ PODS:
   - AppAuth/Core (1.6.0)
   - AppAuth/ExternalUserAgent (1.6.0):
     - AppAuth/Core
+  - connectivity (0.0.1):
+    - Flutter
+    - Reachability
+  - connectivity_plus (0.0.1):
+    - Flutter
+    - ReachabilitySwift
   - DKImagePickerController/Core (4.3.4):
     - DKImagePickerController/ImageDataManager
     - DKImagePickerController/Resource
@@ -139,6 +145,8 @@ PODS:
     - FlutterMacOS
   - PhoneNumberKit/PhoneNumberKitCore (3.3.4)
   - PromisesObjC (2.2.0)
+  - Reachability (3.2)
+  - ReachabilitySwift (5.0.0)
   - SDWebImage (5.15.5):
     - SDWebImage/Core (= 5.15.5)
   - SDWebImage/Core (5.15.5)
@@ -160,8 +168,12 @@ PODS:
     - Flutter
   - wakelock (0.0.1):
     - Flutter
+  - wifi_info_flutter (0.0.1):
+    - Flutter
 
 DEPENDENCIES:
+  - connectivity (from `.symlinks/plugins/connectivity/ios`)
+  - connectivity_plus (from `.symlinks/plugins/connectivity_plus/ios`)
   - file_picker (from `.symlinks/plugins/file_picker/ios`)
   - firebase_app_check (from `.symlinks/plugins/firebase_app_check/ios`)
   - firebase_auth (from `.symlinks/plugins/firebase_auth/ios`)
@@ -184,6 +196,7 @@ DEPENDENCIES:
   - url_launcher_ios (from `.symlinks/plugins/url_launcher_ios/ios`)
   - video_player_avfoundation (from `.symlinks/plugins/video_player_avfoundation/ios`)
   - wakelock (from `.symlinks/plugins/wakelock/ios`)
+  - wifi_info_flutter (from `.symlinks/plugins/wifi_info_flutter/ios`)
 
 SPEC REPOS:
   trunk:
@@ -207,11 +220,17 @@ SPEC REPOS:
     - GTMSessionFetcher
     - PhoneNumberKit
     - PromisesObjC
+    - Reachability
+    - ReachabilitySwift
     - SDWebImage
     - SwiftyGif
     - Toast
 
 EXTERNAL SOURCES:
+  connectivity:
+    :path: ".symlinks/plugins/connectivity/ios"
+  connectivity_plus:
+    :path: ".symlinks/plugins/connectivity_plus/ios"
   file_picker:
     :path: ".symlinks/plugins/file_picker/ios"
   firebase_app_check:
@@ -256,9 +275,13 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/video_player_avfoundation/ios"
   wakelock:
     :path: ".symlinks/plugins/wakelock/ios"
+  wifi_info_flutter:
+    :path: ".symlinks/plugins/wifi_info_flutter/ios"
 
 SPEC CHECKSUMS:
   AppAuth: 8fca6b5563a5baef2c04bee27538025e4ceb2add
+  connectivity: c4130b2985d4ef6fd26f9702e886bd5260681467
+  connectivity_plus: 413a8857dd5d9f1c399a39130850d02fe0feaf7e
   DKImagePickerController: b512c28220a2b8ac7419f21c491fc8534b7601ac
   DKPhotoGallery: fdfad5125a9fdda9cc57df834d49df790dbb4179
   FBAEMKit: c7f82b5145d446bcbbcd50485c032689032fc6a2
@@ -293,6 +316,8 @@ SPEC CHECKSUMS:
   path_provider_foundation: c68054786f1b4f3343858c1e1d0caaded73f0be9
   PhoneNumberKit: 441e8b26ec88d598e3591de9061eff18f5dd12e8
   PromisesObjC: 09985d6d70fbe7878040aa746d78236e6946d2ef
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   SDWebImage: fd7e1a22f00303e058058278639bf6196ee431fe
   sensors_plus: 5717760720f7e6acd96fdbd75b7428f5ad755ec2
   share_plus: 056a1e8ac890df3e33cb503afffaf1e9b4fbae68
@@ -303,6 +328,7 @@ SPEC CHECKSUMS:
   url_launcher_ios: 08a3dfac5fb39e8759aeb0abbd5d9480f30fc8b4
   video_player_avfoundation: 81e49bb3d9fb63dccf9fa0f6d877dc3ddbeac126
   wakelock: d0fc7c864128eac40eba1617cb5264d9c940b46f
+  wifi_info_flutter: 55d4c2469034f5b5c38063ccefa62f708a503a2b
 
 PODFILE CHECKSUM: ef19549a9bc3046e7bb7d2fab4d021637c0c58a3
 

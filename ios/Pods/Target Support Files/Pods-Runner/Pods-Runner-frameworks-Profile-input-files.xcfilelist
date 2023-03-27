@@ -13,9 +13,13 @@ ${BUILT_PRODUCTS_DIR}/GoogleSignIn/GoogleSignIn.framework
 ${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework
 ${BUILT_PRODUCTS_DIR}/PhoneNumberKit/PhoneNumberKit.framework
 ${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework
+${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework
+${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework
 ${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyGif/SwiftyGif.framework
 ${BUILT_PRODUCTS_DIR}/Toast/Toast.framework
+${BUILT_PRODUCTS_DIR}/connectivity/connectivity.framework
+${BUILT_PRODUCTS_DIR}/connectivity_plus/connectivity_plus.framework
 ${BUILT_PRODUCTS_DIR}/file_picker/file_picker.framework
 ${BUILT_PRODUCTS_DIR}/flutter_facebook_auth/flutter_facebook_auth.framework
 ${BUILT_PRODUCTS_DIR}/flutter_libphonenumber_ios/flutter_libphonenumber_ios.framework
@@ -32,6 +36,7 @@ ${BUILT_PRODUCTS_DIR}/sqflite/sqflite.framework
 ${BUILT_PRODUCTS_DIR}/url_launcher_ios/url_launcher_ios.framework
 ${BUILT_PRODUCTS_DIR}/video_player_avfoundation/video_player_avfoundation.framework
 ${BUILT_PRODUCTS_DIR}/wakelock/wakelock.framework
+${BUILT_PRODUCTS_DIR}/wifi_info_flutter/wifi_info_flutter.framework
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/FBAEMKit/FBAEMKit.framework/FBAEMKit
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework/FBSDKCoreKit
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/FBSDKCoreKit_Basics/FBSDKCoreKit_Basics.framework/FBSDKCoreKit_Basics

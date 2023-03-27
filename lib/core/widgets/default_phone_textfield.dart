@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/resources/assets_manager.dart';
+import 'package:pip/core/resources/shared_prefrences.dart';
 import 'package:pip/core/resources/utils.dart';
 import '../resources/color_manager.dart';
 import '../resources/constants.dart';
@@ -18,14 +19,14 @@ class DefaultPhoneTextField extends StatefulWidget {
       this.contentPadding,
       this.validator,
       this.onSaved,
-      this.controller, this.initialValue});
+      this.controller,
+      this.initialValue});
 
   final Widget? suffix;
   final String? hint;
   final EdgeInsetsGeometry? contentPadding;
   final String? Function(String?)? validator;
   final void Function(String?)? onSaved;
-
   final TextEditingController? controller;
   final String? initialValue;
 
@@ -34,19 +35,36 @@ class DefaultPhoneTextField extends StatefulWidget {
 }
 
 class _DefaultPhoneTextFieldState extends State<DefaultPhoneTextField> {
+  String? _labelText;
+  TextEditingController nameTextEditingController = TextEditingController();
+  @override
+  void initState() {
+    super.initState();
+    nameTextEditingController.addListener(_hasStartedTyping);
+  }
+
+  void _hasStartedTyping() {
+    setState(() {
+      if (nameTextEditingController.text.isNotEmpty) {
+        _labelText = 'Name';
+      } else {
+        _labelText = null;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      // textAlign: TextAlign.justify,
+      textAlignVertical: TextAlignVertical.bottom,
       initialValue: widget.initialValue,
       keyboardType: TextInputType.number,
-      // inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-      //you can used below formater also
       inputFormatters: [
         FilteringTextInputFormatter.allow(
           RegExp("[0-9]"),
         ),
       ],
-      // autofocus: true,
       onTap: () {
         if (widget.controller!.selection ==
             TextSelection.fromPosition(
@@ -63,55 +81,65 @@ class _DefaultPhoneTextFieldState extends State<DefaultPhoneTextField> {
       style: getBoldStyle(fontSize: 16.sp, color: ColorManager.darkGrey),
       onSaved: widget.onSaved,
       // maxLines: 2,
+      onChanged: (value) {
+        // setState(() {
+        //   if (value.isNotEmpty) {
+        //     _labelText = 'Name';
+        //   } else {
+        //     _labelText = 'null';
+        //   }
+        // });
+      },
       validator: widget.validator ??
           (value) {
             return validateMobile(value!);
           },
+
       decoration: InputDecoration(
-        floatingLabelBehavior: FloatingLabelBehavior.never,
+        // alignLabelWithHint: true,
+
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        // labelText: _labelText,
         label: Padding(
           padding: EdgeInsets.only(
-            top: 4.w,
+            top: 65.h,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Text(AppStrings.phoneNumber,
+              Text(
+                  widget.controller!.text == ""
+                      ? AppStrings.phoneNumber
+                      : AppStrings.phoneNumber,
                   style: getBoldStyle(
                       fontSize: 10.sp, color: ColorManager.darkGrey)),
-              SizedBox(height: 15.h),
-              Text(AppStrings.zeros,
-                  style: getRegularStyle(
-                      fontSize: 17.sp, color: ColorManager.grey)),
+              // SizedBox(height: 15.h),
+              // Text(AppStrings.zeros,
+              //     style: getRegularStyle(
+              //         fontSize: 17.sp, color: ColorManager.grey)),
             ],
           ),
         ),
 
-        // isDense: true,
-
-        contentPadding: EdgeInsets.only(
-          right: 35.w,
-          left: 20.w,
-        ),
-
+        isDense: true,
+        // alignLabelWithHint: true,
         prefixIcon: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Padding(
-              padding: EdgeInsets.only(bottom: 4.h),
-              child: Image.asset(ImageAssets.phone, height: 16.h, width: 16.w),
+              padding: EdgeInsets.only(bottom: 11.h),
+              child: Image.asset(ImageAssets.phone, height: 14.h, width: 14.w),
             ),
           ],
         ),
 
-        // contentPadding: contentPadding ??
-        //     EdgeInsets.only(top: 28.h, bottom: 18.h, right: 20.w),
+        contentPadding: EdgeInsets.only(top: 0.h, bottom: 17.h, right: 8.w),
         hintText: widget.hint ?? AppStrings.zeros,
-        // hintStyle: ,
+        hintStyle: getRegularStyle(fontSize: 17.sp, color: ColorManager.grey),
         suffixIcon: Padding(
-            padding: EdgeInsets.only(left: 20.w, bottom: 20.h),
+            padding: EdgeInsets.only(left: 0.w, bottom: 22.h),
             child: widget.suffix ??
                 CodePicker(
 
@@ -119,8 +147,10 @@ class _DefaultPhoneTextFieldState extends State<DefaultPhoneTextField> {
                     textStyle:
                         getBoldStyle(fontSize: 13.sp, color: ColorManager.grey),
                     onChanged: (code) {
-                      countryCode = code.dialCode ?? '+966';
-                      print('countryCode: $countryCode');
+                      print(code.dialCode!);
+                      countryCode = code.dialCode!;
+                      CacheHelper.saveData(
+                          key: 'countryCode', value: code.dialCode);
                     },
                     closeIcon: Icon(
                       Icons.close,
@@ -129,7 +159,9 @@ class _DefaultPhoneTextFieldState extends State<DefaultPhoneTextField> {
                     searchDecoration: InputDecoration(
                       hintText: AppStrings.search,
                       hintStyle: getRegularStyle(
-                          fontSize: 15.sp, color: ColorManager.grey),
+                        fontSize: 15.sp,
+                        color: ColorManager.grey,
+                      ).copyWith(),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10.r),
                         borderSide: BorderSide(

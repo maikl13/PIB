@@ -91,7 +91,7 @@ class _WhoWeAreViewState extends State<WhoWeAreView> {
   @override
   void initState() {
     super.initState();
-    BlocProvider.of<MenuCubit>(context).getAllSettings();
+    // BlocProvider.of<MenuCubit>(context).getAllSettings();
   }
 
   @override

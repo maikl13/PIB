@@ -64,7 +64,7 @@ class _EditProfileViewState extends State<EditProfileView> {
             getUserInfoSuccess: (userInfo) {
               return _buildForm();
             },
-            orElse: () => Container(),
+            orElse: () => _buildForm(),
           );
         });
   }

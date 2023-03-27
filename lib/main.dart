@@ -31,7 +31,7 @@ Future<void> main() async {
   await ScreenUtil.ensureScreenSize();
   // ScreenUtil().setSp(28);
   initGetIt();
-
+  // SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge, overlays: []);
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,

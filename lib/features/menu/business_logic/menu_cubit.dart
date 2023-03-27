@@ -33,6 +33,7 @@ class MenuCubit extends Cubit<MenuState> {
   final TextEditingController _amountController = TextEditingController();
   List<int> skills = [];
   List<String> ratesFromOneToFive = [];
+  RatesModel ratesModel = RatesModel();
 
   double experienceRate = 0.0;
   double professionlRate = 0.0;
@@ -202,6 +203,7 @@ class MenuCubit extends Cubit<MenuState> {
     result.when(
       success: (RatesModel rates) {
         emit(MenuState.getRatesSuccess(rates));
+        ratesModel = rates;
 
         // notifications = notifications;
         ratesFromOneToFive.add(rates.fiveStarsTotal.toString());

@@ -10,7 +10,6 @@ import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/resources/style_manager.dart';
 import '../../../../core/widgets/custom_network_image.dart';
 import '../../../../core/widgets/dark_default_button.dart';
-import '../../../home/presentation/widgets/job_rate_container.dart';
 import '../../business_logic/menu_cubit.dart';
 import '../../business_logic/menu_state.dart';
 
@@ -78,7 +77,7 @@ class _MenuViewState extends State<MenuView> {
               );
             },
             orElse: () {
-              return const SizedBox();
+              return _buildProfileImage(userImage);
             },
           );
         });
