@@ -68,10 +68,10 @@ class _MyAppState extends State<MyApp> {
       child: ScreenUtilInit(
         designSize: const Size(375, 812),
         useInheritedMediaQuery: true,
-        // minTextAdapt: true,
+        minTextAdapt: true,
         splitScreenMode: true,
         // useInheritedMediaQuery: true,
-        // scaleByHeight: true,
+        scaleByHeight: true,
 
         builder: (context, state) {
           // ScreenUtil().setSp(28);
@@ -91,6 +91,12 @@ class _MyAppState extends State<MyApp> {
             // darkTheme: MyThemes.buyerTheme,
 
             // initialRoute: Routes.splashRoute,
+            builder: (context, child) {
+              return MediaQuery(
+                data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+                child: child!,
+              );
+            },
           );
         },
       ),

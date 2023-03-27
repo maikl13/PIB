@@ -56,9 +56,9 @@ class _EditProfileViewState extends State<EditProfileView> {
               return const LoadingIndicator();
             },
             getUserInfoSuccess: (userInfo) {
-              _nameController.text = userInfo.name!;
-              _emailController.text = userInfo.email!;
-              _phoneController.text = userInfo.phone!;
+              _nameController.text = userInfo.name ?? '';
+              _emailController.text = userInfo.email ?? '';
+              _phoneController.text = userInfo.phone ?? '';
               return _buildForm();
             },
             orElse: () => Container(),

@@ -45,15 +45,20 @@ class NotificationItem extends StatelessWidget {
     );
   }
 
-  _buildTrailing() {
+  _buildTrailing(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 55.h),
-      child: Icon(
-        Icons.arrow_forward,
-        color: ColorManager.darkSeconadry,
-        size: 16.sp,
-      ),
-    );
+        padding: EdgeInsets.only(top: 55.h),
+        child: IconButton(
+          icon: Icon(
+            Icons.arrow_forward,
+            color: ColorManager.darkSeconadry,
+            size: 16.sp,
+          ),
+          onPressed: () {
+            print('object');
+            Navigator.pop(context);
+          },
+        ));
   }
 
   @override
@@ -66,12 +71,12 @@ class NotificationItem extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(10.r)),
         ),
-        contentPadding: EdgeInsets.only(top: 10.h, right: 20.w, left: 20.w),
-        dense: true,
+        contentPadding: EdgeInsets.only(top: 10.h, right: 20.w, left: 0.w),
+        // dense: true,
         leading: _buildLeading(context),
         title: _buildTitle(),
         subtitle: _buildSubTitle(),
-        trailing: _buildTrailing(),
+        trailing: _buildTrailing(context),
       ),
     );
   }

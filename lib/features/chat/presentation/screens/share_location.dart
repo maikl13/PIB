@@ -251,12 +251,6 @@ class _ShareLocationState extends State<ShareLocation> {
     return true;
   }
 
-  @override
-  void dispose() {
-    BlocProvider.of<ChatCubit>(context).startStream(widget.chatId);
-    super.dispose();
-  }
-
   Future<void> _share(Uint8List capturedImage) async {
     final tempDir = await getTemporaryDirectory();
     File file = await File('${tempDir.path}/image.png').create();
@@ -270,6 +264,7 @@ class _ShareLocationState extends State<ShareLocation> {
       'location_type_message,${tapLatLng!.latitude},${tapLatLng!.longitude}',
       attachment: file,
     );
-    // BlocProvider.of<ChatCubit>(context).resumeStream(widget.chatId);
+    Navigator.pop(context);
+    BlocProvider.of<ChatCubit>(context).startStream(widget.chatId);
   }
 }

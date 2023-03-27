@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../resources/style_manager.dart';
 import '../resources/color_manager.dart';
@@ -19,7 +20,7 @@ class DefaultTextField extends StatefulWidget {
       this.keyboardType,
       this.isPassword,
       this.floatingLabelBehavior,
-      this.label});
+      this.label, this.inputFormatters});
 
   final Widget? suffix;
   final Widget? prefix;
@@ -35,6 +36,7 @@ class DefaultTextField extends StatefulWidget {
   final bool? isPassword;
   final FloatingLabelBehavior? floatingLabelBehavior;
   final Widget? label;
+  final List<TextInputFormatter>? inputFormatters;
 
   @override
   State<DefaultTextField> createState() => _DefaultTextFieldState();
@@ -44,6 +46,8 @@ class _DefaultTextFieldState extends State<DefaultTextField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      inputFormatters: widget.inputFormatters,
+      
       onTap: () {
         if (widget.controller!.selection ==
             TextSelection.fromPosition(

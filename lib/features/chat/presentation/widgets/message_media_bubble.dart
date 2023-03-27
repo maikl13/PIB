@@ -45,7 +45,10 @@ class MessageMediaBubble extends StatelessWidget {
   }
 
   _buildPdf(BuildContext context) {
+    String label = chatMessage.attachment!.split('/').last;
+
     return Row(
+      mainAxisSize: MainAxisSize.min,
       mainAxisAlignment:
           !isMe ? MainAxisAlignment.end : MainAxisAlignment.start,
       children: [
@@ -70,7 +73,7 @@ class MessageMediaBubble extends StatelessWidget {
                     child: Image.asset(ImageAssets.file)),
                 const SizedBox(width: 10),
                 Text(
-                  'PDF File',
+                  label,
                   style: getRegularStyle(
                       fontSize: 14.sp, color: ColorManager.darkSeconadry),
                 )

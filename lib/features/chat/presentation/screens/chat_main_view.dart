@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/resources/constants.dart';
 import 'package:pip/core/widgets/custom_network_image.dart';
 import 'package:pip/features/chat/business_logic/chat_cubit.dart';
 import 'package:pip/features/chat/business_logic/chat_state.dart';
@@ -68,6 +69,7 @@ class _ChatViewState extends State<ChatView> {
             return const LoadingIndicator();
           },
           showChatInfoSuccess: (chatInfo) {
+            currentRequestId = chatInfo.request!.id.toString();
             return WillPopScope(
               onWillPop: () {
                 BlocProvider.of<ChatCubit>(context).stopStream();

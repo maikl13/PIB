@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/resources/assets_manager.dart';
@@ -221,6 +222,12 @@ class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
 
   _buildPriceTextField() {
     return RequestCustomTextField(
+      keyboardType: TextInputType.number,
+      inputFormatters: [
+        FilteringTextInputFormatter.allow(
+          RegExp("[0-9]"),
+        ),
+      ],
       controller: _priceController,
       validator: (value) {
         if (value!.isEmpty) {

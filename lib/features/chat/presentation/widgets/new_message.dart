@@ -5,6 +5,7 @@ import 'package:pip/core/resources/assets_manager.dart';
 import 'package:pip/features/chat/business_logic/chat_state.dart';
 
 import '../../../../core/resources/commons.dart';
+import '../../../../core/resources/constants.dart';
 import '../../../../core/resources/route_manager.dart';
 import '../../../../core/web_services/network_exceptions.dart';
 import '../../../../core/widgets/default_button.dart';
@@ -22,8 +23,11 @@ import '../../../../core/resources/style_manager.dart';
 // import 'dart:math' as math;
 
 class NewMessage extends StatefulWidget {
-  const NewMessage({Key? key, this.showAddOfferContainer, required this.chatId})
-      : super(key: key);
+  const NewMessage({
+    Key? key,
+    this.showAddOfferContainer,
+    required this.chatId,
+  }) : super(key: key);
   final bool? showAddOfferContainer;
   final int chatId;
 
@@ -51,13 +55,13 @@ class _NewMessageState extends State<NewMessage> {
       text: AppStrings.addOffer,
       widht: 148.w,
       onTap: () {
-        // BlocProvider.of<ChatCubit>(context).stopStream();
+        BlocProvider.of<ChatCubit>(context).stopStream();
 
-        // Navigator.of(context)
-        //     .restorablePushNamed(Routes.chatAddOfferViewRoute, arguments: {
-        //   "chatId": widget.chatId,
-        // });
-        //
+        Navigator.of(context)
+            .restorablePushNamed(Routes.giveOffersViewRoute, arguments: {
+          "chatId": widget.chatId,
+          'requestId': currentRequestId,
+        });
       },
     );
   }
@@ -152,28 +156,28 @@ class _NewMessageState extends State<NewMessage> {
           icon: ImageAssets.camera,
           title: AppStrings.camera,
           onTap: () async {
-            chatCubit.stopStream();
+            // chatCubit.stopStream();
             await chatCubit.pickImageFromCamera(widget.chatId);
-            chatCubit.startStream(widget.chatId);
+            // chatCubit.startStream(widget.chatId);
           },
         ),
         ActionItem(
           icon: ImageAssets.picture,
           title: AppStrings.picturesAndVidoes,
           onTap: () async {
-            chatCubit.stopStream();
+            // chatCubit.stopStream();
             // print("objectobjectobjectobjectobject");
             await chatCubit.getMultiMedia();
-            chatCubit.startStream(widget.chatId);
+            // chatCubit.startStream(widget.chatId);
           },
         ),
         ActionItem(
           icon: ImageAssets.file,
           title: AppStrings.docs,
           onTap: () async {
-            chatCubit.stopStream();
+            // chatCubit.stopStream();
             await chatCubit.getFile();
-            chatCubit.startStream(widget.chatId);
+            // chatCubit.startStream(widget.chatId);
           },
         ),
         ActionItem(

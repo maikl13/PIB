@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/business_logic/global_cubit.dart';
 import '../../../../core/resources/route_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/widgets/custom_title.dart';
@@ -11,6 +13,8 @@ class PickRequestTypeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
+
     return Padding(
       padding: EdgeInsets.only(right: 20.w, left: 20.w, top: 30.h),
       child: Column(

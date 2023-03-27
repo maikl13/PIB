@@ -68,9 +68,11 @@ class UploadedPhotos extends StatelessWidget {
             color: ColorManager.white,
             shape: BoxShape.circle,
           ),
-          child: Icon(
-            Icons.close,
-            size: 12.sp,
+          child: Image.asset(
+            ImageAssets.close,
+            width: 12.w,
+            height: 12.h,
+            fit: BoxFit.scaleDown,
             color: ColorManager.darkSeconadry,
           ),
         ),
@@ -96,7 +98,7 @@ class UploadedPhotos extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(right: 20.w, top: 10.h),
       child: Text(
-        'Image Title .png',
+        imageFile!.path.split('/').last,
         style: getRegularStyle(fontSize: 15.sp, color: ColorManager.grey),
       ),
     );
@@ -106,7 +108,7 @@ class UploadedPhotos extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         _buildStack(context),
         _buildImageTitle(),

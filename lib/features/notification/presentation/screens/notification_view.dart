@@ -26,6 +26,7 @@ class _NotificationViewState extends State<NotificationView> {
   _buildBloc() {
     return BlocConsumer<NotificationCubit, NotificationState>(
       listener: (context, state) {},
+      buildWhen: (previous, next) => next is Success,
       builder: (context, state) {
         return state.when(
           idle: () {
@@ -73,7 +74,7 @@ class _NotificationViewState extends State<NotificationView> {
 
   @override
   Widget build(BuildContext context) {
-    BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
+    // BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
 
     return Scaffold(
       appBar: CustomAppBar(

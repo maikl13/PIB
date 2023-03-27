@@ -13,6 +13,7 @@ import 'firebase_options.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await CacheHelper.init();
 
   await Firebase.initializeApp(
@@ -27,8 +28,8 @@ Future<void> main() async {
     // 3. play integrity provider
     androidProvider: AndroidProvider.debug,
   );
-
   await ScreenUtil.ensureScreenSize();
+  // ScreenUtil().setSp(28);
   initGetIt();
 
   SystemChrome.setPreferredOrientations([

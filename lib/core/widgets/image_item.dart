@@ -27,7 +27,7 @@ class ImageItem extends StatelessWidget {
             ),
           ),
           SizedBox(height: 14.h),
-          Text("identity card .png",
+          Text(imageUrl.split('/').last,
               style: getRegularStyle(fontSize: 14.sp, color: ColorManager.grey))
         ],
       ),

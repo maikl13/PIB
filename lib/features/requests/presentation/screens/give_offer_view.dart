@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/business_logic/global_cubit.dart';
@@ -184,6 +185,12 @@ class _GiveOfferViewState extends State<GiveOfferView> {
 
   _buildPriceTextField() {
     return RequestCustomTextField(
+      keyboardType: TextInputType.number,
+      inputFormatters: [
+        FilteringTextInputFormatter.allow(
+          RegExp("[0-9]"),
+        ),
+      ],
       validator: (value) {
         if (value!.isEmpty) {
           return 'من فضلك ادخل القيمة';
@@ -227,7 +234,7 @@ class _GiveOfferViewState extends State<GiveOfferView> {
       floatingLabelBehavior: FloatingLabelBehavior.never,
       controller: _descriptionController,
       bottomPadding: 40.h,
-            hint: AppStrings.description,
+      hint: AppStrings.description,
 
       topPadding: 0.h,
       maxLines: 3,

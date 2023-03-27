@@ -5,23 +5,32 @@ import '../../../../core/resources/style_manager.dart';
 import 'image_with_stars.dart';
 
 class JobItem extends StatelessWidget {
-  const JobItem({super.key, this.image, this.companyName, this.skillName, this.onTap});
+  const JobItem(
+      {super.key, this.image, this.companyName, this.skillName, this.onTap});
   final String? image;
   final String? companyName;
-  final String? skillName ;
+  final String? skillName;
   final void Function()? onTap;
 
   _buildCompanyName() {
     return Text(
-     companyName ??'',
+         textScaleFactor: 1,
+        maxLines: 1,
+
+      companyName ?? '',
       style: getBoldStyle(fontSize: 12.sp, color: ColorManager.white),
     );
   }
 
   _buildJobtitle() {
-    return Text(
-      skillName??'',
-      style: getBoldStyle(fontSize: 12.sp, color: ColorManager.grey),
+    return Flexible(
+      child: Text(
+        skillName ?? '',
+        maxLines: 1,
+        textScaleFactor: 1,
+        overflow: TextOverflow.clip,
+        style: getBoldStyle(fontSize: 12.sp, color: ColorManager.grey),
+      ),
     );
   }
 
@@ -31,7 +40,7 @@ class JobItem extends StatelessWidget {
       onTap: onTap,
       child: Column(
         children: [
-           ImageWithRating(image: image),
+          ImageWithRating(image: image),
           SizedBox(height: 10.h),
           _buildCompanyName(),
           SizedBox(height: 6.h),

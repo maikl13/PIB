@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pip/core/business_logic/global_cubit.dart';
 
 import '../../../../core/resources/constants.dart';
 import '../../../../core/resources/route_manager.dart';
@@ -36,6 +37,7 @@ class _MainHomeViewState extends State<MainHomeView> {
       bottomNavigationBar: CustomBottomNavBar(
         selectedIndex: selectedTab,
         onTap: (index) {
+          // BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
           BlocProvider.of<HomeCubit>(context).changeSelectedIndex(index);
         },
       ),

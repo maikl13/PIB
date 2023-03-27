@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/resources/assets_manager.dart';
+import '../../../../core/business_logic/global_cubit.dart';
 import '../../../../core/resources/constants.dart';
 import '../../../../core/resources/route_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
@@ -175,11 +176,14 @@ class _MenuViewState extends State<MenuView> {
   @override
   void initState() {
     super.initState();
+
     BlocProvider.of<MenuCubit>(context).getUserInfo();
   }
 
   @override
   Widget build(BuildContext context) {
+        BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
+
     return _buildBody(context);
   }
 }

@@ -5,7 +5,6 @@ import 'package:pip/features/menu/presentation/screens/terms_conditions_view.dar
 import 'package:pip/features/requests/presentation/screens/edit_request.dart';
 import '../../features/auth/business_logic/cubit/auth_cubit.dart';
 import '../../features/auth/presentation/screens/confirm_otb_view.dart';
-import '../../features/chat/presentation/screens/chat_add_offer_view.dart';
 import '../../features/chat/presentation/screens/chats_view.dart';
 import '../../features/chat/presentation/screens/conversation_type_view.dart';
 import '../../features/home/data/models/ad_model.dart';
@@ -56,9 +55,7 @@ import '../../features/home/business_logic/cubit/home_cubit.dart';
 import '../../features/home/presentation/screens/home_view.dart';
 import '../../features/splash/presentation/screens/splash_view.dart';
 import '../business_logic/global_cubit.dart';
-import '../widgets/default_screen.dart';
 import 'injection.dart';
-import 'strings_manager.dart';
 
 class Routes {
   static const String splashRoute = "/splashRoute";
@@ -330,28 +327,18 @@ class RouteGenerator {
         final arguments = settings.arguments as Map;
 
         final int chatId = arguments['chatId'];
+      
         return MaterialPageRoute(
           builder: (_) => BlocProvider.value(
             value: chatCubit,
             child: ChatView(
               chatId: chatId,
-            ),
-          ),
-        );
-      case Routes.chatAddOfferViewRoute:
-        final arguments = settings.arguments as Map;
+     
 
-        final int chatId = arguments['chatId'];
-        final int requestId = arguments['requestId'];
-        return MaterialPageRoute(
-          builder: (_) => BlocProvider.value(
-            value: chatCubit,
-            child: ChatAddOfferViewRoute(
-              chatId: chatId,
-              requestId: requestId,
             ),
           ),
         );
+    
       case Routes.editProfileViewRoute:
         return MaterialPageRoute(
           builder: (_) => BlocProvider.value(

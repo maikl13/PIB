@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/business_logic/global_cubit.dart';
 import '../../business_logic/chat_cubit.dart';
 import '../../business_logic/chat_state.dart';
 import 'service_provider_messages_view.dart';
@@ -49,6 +50,8 @@ class ConversationsTypeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+        BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
+
     return _buildBody();
   }
 }

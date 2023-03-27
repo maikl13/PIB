@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/resources/assets_manager.dart';
 import '../resources/color_manager.dart';
@@ -34,6 +35,14 @@ class _DefaultPhoneTextFieldState extends State<DefaultPhoneTextField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      keyboardType: TextInputType.number,
+      // inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+      //you can used below formater also
+      inputFormatters: [
+        FilteringTextInputFormatter.allow(
+          RegExp("[0-9]"),
+        ),
+      ],
       // autofocus: true,
       onTap: () {
         if (widget.controller!.selection ==
@@ -135,7 +144,7 @@ class _DefaultPhoneTextFieldState extends State<DefaultPhoneTextField> {
                     ),
                     searchStyle: getRegularStyle(
                         fontSize: 15.sp, color: ColorManager.grey),
-                    initialSelection: 'SA',
+                    initialSelection: countryCode,
                     favorite: const ['+966', 'SA'],
                     showCountryOnly: false,
                     showOnlyCountryWhenClosed: false,

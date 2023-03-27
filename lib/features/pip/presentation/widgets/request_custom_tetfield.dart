@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/resources/assets_manager.dart';
 
@@ -21,7 +22,7 @@ class RequestCustomTextField extends StatelessWidget {
       this.topPadding,
       this.floatingLabelBehavior,
       this.label,
-      this.circleAvatar = false});
+      this.circleAvatar = false, this.inputFormatters, this.keyboardType});
   final String? hint;
   final String? icon;
   final Widget? suffix;
@@ -35,9 +36,13 @@ class RequestCustomTextField extends StatelessWidget {
   final FloatingLabelBehavior? floatingLabelBehavior;
   final Widget? label;
   final bool? circleAvatar;
+  final List<TextInputFormatter>? inputFormatters ;
+  final TextInputType? keyboardType ;
   @override
   Widget build(BuildContext context) {
     return DefaultTextField(
+      inputFormatters: inputFormatters,
+      keyboardType:keyboardType ,
       floatingLabelBehavior: floatingLabelBehavior,
       label: label,
       validator: validator,

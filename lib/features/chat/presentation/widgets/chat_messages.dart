@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/resources/constants.dart';
@@ -33,30 +32,35 @@ class _ChatMessagesState extends State<ChatMessages>
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
 
     BlocProvider.of<ChatCubit>(context).getAllChatMessages(widget.chatId);
     BlocProvider.of<ChatCubit>(context).startStream(widget.chatId);
-
-    WidgetsBinding.instance.addObserver(this);
   }
 
-  // @override
-  // void dispose() {
-  //   WidgetsBinding.instance.removeObserver(this);
-  //   BlocProvider.of<ChatCubit>(context).stopStream();
-  //   super.dispose();
-  // }
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    // BlocProvider.of<ChatCubit>(context).stopStream();
+    super.dispose();
+  }
 
-  // @override
-  // void didChangeAppLifecycleState(AppLifecycleState state) {
-  //   super.didChangeAppLifecycleState(state);
-  //   if (state == AppLifecycleState.resumed) {
-  //     BlocProvider.of<ChatCubit>(context).resumeChatStream(widget.chatId);
-  //   } else if (state == AppLifecycleState.inactive) {
-  //     BlocProvider.of<ChatCubit>(context).startStream(widget
-  //         .chatId); // this is called when the app is in background
-  //   }
-  // }
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    super.didChangeAppLifecycleState(state);
+    if (state == AppLifecycleState.resumed) {
+      BlocProvider.of<ChatCubit>(context).startStream(widget.chatId);
+    } else if (state == AppLifecycleState.inactive) {
+      BlocProvider.of<ChatCubit>(context)
+          .stopStream(); // this is called when the app is in background
+    } else if (state == AppLifecycleState.paused) {
+      BlocProvider.of<ChatCubit>(context)
+          .stopStream(); // this is called when the app is in background
+    } else if (state == AppLifecycleState.inactive) {
+      BlocProvider.of<ChatCubit>(context)
+          .stopStream(); // this is called when the app is in background
+    }
+  }
 
   Widget _buildStream(int index) {
     final chatMessage = BlocProvider.of<ChatCubit>(context).allMessages[index];

@@ -17,7 +17,7 @@ String? userName = ' ';
 String? token = '123';
 String? userEmail = '';
 
-int? currentRequestId ;
+String? currentRequestId ;
 
 String? userPhone = '';
 String? userImage = '';

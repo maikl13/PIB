@@ -5,6 +5,7 @@ import 'package:bloc/bloc.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:pip/core/resources/constants.dart';
 import 'package:pip/features/chat/data/models/chat_with_user_model.dart';
 import 'package:pip/features/chat/data/models/chats_messages_model.dart';
 import 'package:pip/features/chat/data/models/job_chats_model.dart';
@@ -28,7 +29,7 @@ class ChatCubit extends Cubit<ChatState> {
       StreamController<List<ChatMessagesModel>>.broadcast();
 
   void startStream(int chatId) async {
-    myStream = Stream.periodic(const Duration(seconds: 1))
+    myStream = Stream.periodic(const Duration(seconds: 5))
         .asyncMap((event) async => await getAllChatMessages(chatId));
     subscription = myStream?.listen((event) {
       allMessages = event;
@@ -266,6 +267,7 @@ class ChatCubit extends Cubit<ChatState> {
     var result = await chatRepository.chatWithUser(requestId, targetId);
     result.when(
       success: (ChatWithUserModel data) {
+        currentRequestId = requestId;
         emit(ChatState.chatWithUserSuccess(data));
       },
       failure: (NetworkExceptions networkExceptions) {
