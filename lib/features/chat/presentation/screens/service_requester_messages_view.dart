@@ -6,6 +6,7 @@ import '../../../../core/resources/commons.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/web_services/network_exceptions.dart';
 import '../../../../core/widgets/custom_title.dart';
+import '../../../../core/widgets/empty_screen.dart';
 import '../widgets/conversation_item.dart';
 
 import '../../../../core/widgets/loading_indicator.dart';
@@ -53,24 +54,26 @@ class _ServiceRequesterMessagesViewState
   }
 
   _buildList(List<HiringChatModel> requestsChats) {
-    return ListView.separated(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      itemCount: requestsChats.length,
-      separatorBuilder: (context, index) {
-        return SizedBox(height: 10.h);
-      },
-      itemBuilder: (context, index) {
-        return ConversationItem(
-          chatId: requestsChats[index].id!,
-          imageUrl: requestsChats[index].images!.isEmpty
-              ? null
-              : requestsChats[index].images![0].attachmentUrl,
-          name: requestsChats[index].name,
-          totalMessage: requestsChats[index].chatCount,
-        );
-      },
-    );
+    return requestsChats.isEmpty
+        ? const EmptyScreen()
+        : ListView.separated(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: requestsChats.length,
+            separatorBuilder: (context, index) {
+              return SizedBox(height: 10.h);
+            },
+            itemBuilder: (context, index) {
+              return ConversationItem(
+                chatId: requestsChats[index].id!,
+                imageUrl: requestsChats[index].images!.isEmpty
+                    ? null
+                    : requestsChats[index].images![0].attachmentUrl,
+                name: requestsChats[index].name,
+                totalMessage: requestsChats[index].chatCount,
+              );
+            },
+          );
   }
 
   @override

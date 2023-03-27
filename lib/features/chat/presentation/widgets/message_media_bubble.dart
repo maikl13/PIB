@@ -75,7 +75,8 @@ class MessageMediaBubble extends StatelessWidget {
                 Text(
                   label,
                   style: getRegularStyle(
-                      fontSize: 14.sp, color: ColorManager.darkSeconadry),
+                          fontSize: 14.sp, color: ColorManager.darkSeconadry)
+                      .copyWith(decoration: TextDecoration.underline),
                 )
               ],
             )),
@@ -83,7 +84,8 @@ class MessageMediaBubble extends StatelessWidget {
     );
   }
 
-  _buildVedioAndMusic(BuildContext context) {
+  _buildVedioAndMusic(BuildContext context, bool video) {
+
     return Row(
       mainAxisAlignment:
           !isMe ? MainAxisAlignment.end : MainAxisAlignment.start,
@@ -96,14 +98,37 @@ class MessageMediaBubble extends StatelessWidget {
               //     arguments: RouteArgument(param: chatMessage.attachment));
             },
             child: Container(
-                height: 50.h,
-                width: 40.w,
-                padding: EdgeInsets.all(8.w),
-                decoration: BoxDecoration(
-                    // color: Theme.of(context).primaryColor,
-                    borderRadius: BorderRadius.circular(8.r)),
-                child: const Icon(Icons.play_arrow_outlined,
-                    color: Colors.white))),
+              // width: 50.w,
+              // height: 40.h,
+              decoration: BoxDecoration(
+                color: !isMe ? ColorManager.black5 : ColorManager.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: !isMe ? Radius.circular(0.r) : Radius.circular(20.r),
+                  topRight:
+                      !isMe ? Radius.circular(20.r) : Radius.circular(0.r),
+                  bottomLeft: Radius.circular(20.r),
+                  bottomRight: Radius.circular(20.r),
+                ),
+              ),
+              child: Padding(
+                padding: EdgeInsets.only(
+                    top: 3.h, bottom: 3.h, right: 10.w, left: 10.w),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.play_arrow_outlined,
+                        color: ColorManager.darkSeconadry),
+                    SizedBox(width: 2.w),
+                    Text(
+                      video ? 'تشغيل الفيديو' : 'تشغيل المقطع الصوتي ',
+                      style: getRegularStyle(
+                          fontSize: 14.sp, color: ColorManager.grey),
+                    )
+                  ],
+                ),
+              ),
+            )),
       ],
     );
   }
@@ -141,7 +166,8 @@ class MessageMediaBubble extends StatelessWidget {
               _buildPdf(context),
             ] else if (chatMessage.attachment.toString().endsWith('.mp3') ||
                 chatMessage.attachment.toString().endsWith('.mp4')) ...[
-              _buildVedioAndMusic(context)
+              _buildVedioAndMusic(
+                  context, chatMessage.attachment.toString().endsWith('.mp4')),
             ] else ...[
               _buildImage(context),
             ]

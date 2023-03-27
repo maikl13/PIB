@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/commons.dart';
 import '../../../../core/web_services/network_exceptions.dart';
+import '../../../../core/widgets/empty_screen.dart';
 import '../../data/models/hiring_chat_model.dart';
 
 import '../../../../core/resources/strings_manager.dart';
@@ -53,24 +54,26 @@ class _ServiceProviderMessagesViewState
   }
 
   _buildList(List<HiringChatModel> hiringChats) {
-    return ListView.separated(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      itemCount: hiringChats.length,
-      separatorBuilder: (context, index) {
-        return SizedBox(height: 10.h);
-      },
-      itemBuilder: (context, index) {
-        return ConversationItem(
-          chatId: hiringChats[index].id!,
-          imageUrl: hiringChats[index].images!.isEmpty
-              ? null
-              : hiringChats[index].images![0].attachmentUrl,
-          name: hiringChats[index].name,
-          totalMessage: hiringChats[index].chatCount,
-        );
-      },
-    );
+    return hiringChats.isEmpty
+        ? const EmptyScreen()
+        : ListView.separated(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: hiringChats.length,
+            separatorBuilder: (context, index) {
+              return SizedBox(height: 10.h);
+            },
+            itemBuilder: (context, index) {
+              return ConversationItem(
+                chatId: hiringChats[index].id!,
+                imageUrl: hiringChats[index].images!.isEmpty
+                    ? null
+                    : hiringChats[index].images![0].attachmentUrl,
+                name: hiringChats[index].name,
+                totalMessage: hiringChats[index].chatCount,
+              );
+            },
+          );
   }
 
   @override

@@ -37,6 +37,7 @@ class NewMessage extends StatefulWidget {
 
 class _NewMessageState extends State<NewMessage> {
   TextEditingController messageController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
   bool showActions = false;
   // ignore: prefer_final_fields
   String _enteredMessage = '';
@@ -46,7 +47,7 @@ class _NewMessageState extends State<NewMessage> {
       widget.chatId.toString(),
       _enteredMessage,
     );
-    FocusScope.of(context).unfocus();
+    // FocusScope.of(context).unfocus();
     messageController.clear();
   }
 
@@ -77,7 +78,7 @@ class _NewMessageState extends State<NewMessage> {
             angle: 45 * math.pi / 180,
             child: GestureDetector(
               onTap: () {
-                _sendMessage();
+                _enteredMessage.isEmpty ? null : _sendMessage();
               },
               child: Icon(
                 Icons.send,
@@ -114,6 +115,12 @@ class _NewMessageState extends State<NewMessage> {
       children: [
         Expanded(
           child: TextFormField(
+            validator: (value) {
+              if (value!.isEmpty) {
+                return null;
+              }
+              return value;
+            },
             onTap: () {
               if (messageController.selection ==
                   TextSelection.fromPosition(TextPosition(
@@ -274,30 +281,34 @@ class _NewMessageState extends State<NewMessage> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Visibility(
-            visible: widget.showAddOfferContainer ?? false,
-            child: _buildAddOfferButton(context)),
-        SizedBox(height: 15.h),
-        Container(
-          // height: 93.h,
-          decoration: BoxDecoration(color: ColorManager.lightBlack),
-          child: Padding(
-            padding: EdgeInsets.only(
-                top: 20.h, left: 20.w, right: 20.w, bottom: 20.h),
-            child: Column(
-              children: [
-                _buildTextField(),
-                SizedBox(height: 20.h),
-                _buildPhotos(),
-                SizedBox(height: 20.h),
-                Visibility(visible: showActions, child: _buildActions(context)),
-              ],
+    return Form(
+      key: _formKey,
+      child: Column(
+        children: [
+          Visibility(
+              visible: widget.showAddOfferContainer ?? false,
+              child: _buildAddOfferButton(context)),
+          SizedBox(height: 15.h),
+          Container(
+            // height: 93.h,
+            decoration: BoxDecoration(color: ColorManager.lightBlack),
+            child: Padding(
+              padding: EdgeInsets.only(
+                  top: 20.h, left: 20.w, right: 20.w, bottom: 20.h),
+              child: Column(
+                children: [
+                  _buildTextField(),
+                  SizedBox(height: 20.h),
+                  _buildPhotos(),
+                  SizedBox(height: 20.h),
+                  Visibility(
+                      visible: showActions, child: _buildActions(context)),
+                ],
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

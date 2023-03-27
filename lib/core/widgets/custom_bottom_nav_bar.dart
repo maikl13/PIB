@@ -78,12 +78,24 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
             value: RouteGenerator.menuCubit,
             child: BlocConsumer<MenuCubit, MenuState>(
               listener: (context, state) {},
+              buildWhen: (previous, current) =>
+                  current is GetUserInfoSuccess ||
+                  current is UpdateUserInfoSuccess,
               builder: (context, state) {
-                return CircleAvatar(
-                    radius: 12.5.h,
-                    child: ClipOval(
-                      child: CustomNetworkCachedImage(url: userImage),
-                    ));
+                return state.maybeWhen(
+                    getUserInfoSuccess: (userInfo) {
+                      return CircleAvatar(
+                          radius: 12.5.h,
+                          child: ClipOval(
+                            child: CustomNetworkCachedImage(
+                                url: userInfo.imageUrl),
+                          ));
+                    },
+                    orElse: () => CircleAvatar(
+                        radius: 12.5.h,
+                        child: ClipOval(
+                          child: CustomNetworkCachedImage(url: userImage),
+                        )));
               },
             ),
           ),

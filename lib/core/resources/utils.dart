@@ -9,6 +9,26 @@ import 'route_manager.dart';
 
 import 'constants.dart';
 
+bool containEnglishLetter(String text) {
+  // String str = "Hello World!Z";
+  RegExp englishLetterPattern = RegExp(r'[a-zA-Z]$');
+  bool endsWithEnglishLetter =
+      englishLetterPattern.hasMatch(text[text.length - 1]);
+  return endsWithEnglishLetter;
+}
+
+String? validateMobile(String value) {
+  if (value.isEmpty) {
+    return 'من فضلك ادخل رقم الهاتف';
+  }
+// Indian Mobile number are of 10 digit only
+  else if (value.length > 15 || value.length < 7) {
+    return 'برجاء ادخال رقم هاتف صحيح';
+  } else {
+    return null;
+  }
+}
+
 String getCountryFlag() {
   String countryCode = 'sa';
   String flag = countryCode.toUpperCase().replaceAllMapped(RegExp(r'[A-Z]'),

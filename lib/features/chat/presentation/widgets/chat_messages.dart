@@ -9,9 +9,6 @@ import 'package:pip/core/widgets/loading_indicator.dart';
 import 'package:pip/features/chat/business_logic/chat_state.dart';
 import 'package:pip/features/chat/presentation/widgets/message_media_bubble.dart';
 
-import '../../../../core/resources/color_manager.dart';
-import '../../../../core/resources/commons.dart';
-import '../../../../core/web_services/network_exceptions.dart';
 import '../../business_logic/chat_cubit.dart';
 import 'message_bubble.dart';
 
@@ -129,10 +126,10 @@ class _ChatMessagesState extends State<ChatMessages>
       listener: (context, state) {
         state.whenOrNull(
           chatMessagesError: (networkExceptions) {
-            Commons.showToast(
-              color: ColorManager.error,
-              message: NetworkExceptions.getErrorMessage(networkExceptions),
-            );
+            // Commons.showToast(
+            //   color: ColorManager.error,
+            //   message: NetworkExceptions.getErrorMessage(networkExceptions),
+            // );
           },
           stopChatStreamState: () {
             // BlocProvider.of<ChatCubit>(context).stopStream();

@@ -57,6 +57,7 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
         CacheHelper.saveData(key: 'userName', value: userName);
         CacheHelper.saveData(key: 'userPhone', value: userPhone);
         CacheHelper.saveData(key: 'uid', value: defaultUId);
+
         emit(AuthResultState.loginSuccess(userData));
         print(defaultUId);
       },
@@ -164,7 +165,10 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
 
   void verificationFailed(FirebaseAuthException error) {
     print('verificationFailed : ${error.toString()}');
-    emit(AuthResultState.phoneAuthErrorOccurred(error.toString()));
+    // if (error) {
+
+    // }
+    emit(AuthResultState.phoneAuthErrorOccurred(error.code.toString()));
   }
 
   void codeSent(String verificationId, int? resendToken) {
@@ -188,6 +192,8 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
   Future<void> signInWithPhoneNumber(PhoneAuthCredential credential) async {
     try {
       await _auth.signInWithCredential(credential);
+      CacheHelper.saveData(key: 'countryCode', value: countryCode);
+
       emit(const AuthResultState.phoneOTPVerified());
     } catch (error) {
       emit(AuthResultState.phoneAuthErrorOccurred(error.toString()));

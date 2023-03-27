@@ -98,6 +98,11 @@ class MenuCubit extends Cubit<MenuState> {
       CacheHelper.removeData(key: 'userName');
       CacheHelper.removeData(key: 'userPhone');
       CacheHelper.removeData(key: 'goToHome');
+      CacheHelper.removeData(key: 'userEmail');
+      CacheHelper.removeData(key: 'countryCode');
+      // CacheHelper.removeData(key: 'userType');
+      // CacheHelper.removeAll();
+
       screenIndex = 0;
 
       // ignore: use_build_context_synchronously
@@ -117,6 +122,7 @@ class MenuCubit extends Cubit<MenuState> {
         await menuRepository.updateProfile(name, email, phone, imageFile);
     result.when(
       success: (UpdateSkill data) {
+        imageFile = null;
         // userImage = userInfoModel.userInfo!.img!;
         emit(MenuState.updateUserInfoSuccess(data));
       },

@@ -181,8 +181,8 @@ class AvailableJobDetailsView extends StatelessWidget {
             MainInfoItem(
                 title: '${availableJob.price} ${AppStrings.ryal}',
                 icon: ImageAssets.tags),
-            const MainInfoItem(
-                title: AppStrings.recieveOffers, icon: ImageAssets.solidLayers),
+             MainInfoItem(
+                title: availableJob.status!, icon: ImageAssets.solidLayers),
           ],
         ),
       ),

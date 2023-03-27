@@ -231,8 +231,8 @@ class WantedJobRequestsDetailsView extends StatelessWidget {
             MainInfoItem(
                 title: '${request.price ?? ''} ${AppStrings.ryal}',
                 icon: ImageAssets.tags),
-            const MainInfoItem(
-                title: AppStrings.recieveOffers, icon: ImageAssets.solidLayers),
+             MainInfoItem(
+                title: request.status!, icon: ImageAssets.solidLayers),
           ],
         ),
       ),

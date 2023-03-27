@@ -1,11 +1,14 @@
 // ignore_for_file: prefer_const_constructors_in_immutables
 
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/business_logic/global_cubit.dart';
+import 'package:pip/core/internet/internet_connection_checker.dart';
+import 'package:pip/core/widgets/empty_screen.dart';
 
 import '../core/resources/constants.dart';
 import '../core/resources/injection.dart';
@@ -36,6 +39,7 @@ class _MyAppState extends State<MyApp> {
   var userGoToHomePage = CacheHelper.getData(key: 'goToHome');
 
   var userIdFromDatabase = CacheHelper.getData(key: 'uid');
+  var countryCodeFromDatabase = CacheHelper.getData(key: 'countryCode');
 
   String getInitialScreen() {
     if (userNameFromDatabase == 'مجهول') {
@@ -49,6 +53,7 @@ class _MyAppState extends State<MyApp> {
         userImage = userPicFromDatabase;
         userName = userNameFromDatabase;
         userPhone = userPhoneFromDatabase;
+        countryCode = countryCodeFromDatabase;
 
         return Routes.mainHomeViewRoute;
       } else {
@@ -64,42 +69,43 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => getIt<GlobalCubit>(),
-      child: ScreenUtilInit(
-        designSize: const Size(375, 812),
-        useInheritedMediaQuery: true,
-        minTextAdapt: true,
-        splitScreenMode: true,
-        // useInheritedMediaQuery: true,
-        scaleByHeight: true,
+        create: (context) => getIt<GlobalCubit>(),
+        child: ScreenUtilInit(
+            designSize: const Size(375, 812),
+            useInheritedMediaQuery: true,
+            minTextAdapt: true,
+            splitScreenMode: true,
+            // useInheritedMediaQuery: true,
+            scaleByHeight: true,
+            builder: (context, state) {
+              // ScreenUtil().setSp(28);
+              return MaterialApp(
+                  localizationsDelegates: const [
+                    GlobalMaterialLocalizations.delegate,
+                    GlobalWidgetsLocalizations.delegate,
+                    GlobalCupertinoLocalizations.delegate,
+                  ],
+                  supportedLocales: const [
+                    Locale('ar'),
+                    Locale('en')
+                  ],
+                  locale: const Locale('ar'),
+                  debugShowCheckedModeBanner: false,
+                  onGenerateRoute: routeGenerator.getRoute,
+                  initialRoute: getInitialScreen(),
+                  theme: getAppTheme,
+                  // darkTheme: MyThemes.buyerTheme,
 
-        builder: (context, state) {
-          // ScreenUtil().setSp(28);
-          return MaterialApp(
-            localizationsDelegates: const [
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
-            ],
-            supportedLocales: const [Locale('ar'), Locale('en')],
-            locale: const Locale('ar'),
-            debugShowCheckedModeBanner: false,
-            onGenerateRoute: routeGenerator.getRoute,
-            initialRoute: getInitialScreen(),
-
-            theme: getAppTheme,
-            // darkTheme: MyThemes.buyerTheme,
-
-            // initialRoute: Routes.splashRoute,
-            builder: (context, child) {
-              return MediaQuery(
-                data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
-                child: child!,
-              );
-            },
-          );
-        },
-      ),
-    );
+                  // initialRoute: Routes.splashRoute,
+                  builder: (context, child) {
+                    return MediaQuery(
+                      data:
+                          MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+                      child: InternetConnectionChecker(
+                        child: child,
+                      ),
+                    );
+                  });
+            }));
   }
 }

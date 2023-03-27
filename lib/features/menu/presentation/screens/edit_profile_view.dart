@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/resources/utils.dart';
+import 'package:pip/features/menu/data/models/user_info_model.dart';
 import '../../../../core/resources/commons.dart';
 import '../../../../core/resources/constants.dart';
 import '../../../../core/resources/strings_manager.dart';
@@ -24,6 +26,7 @@ class EditProfileView extends StatefulWidget {
 }
 
 class _EditProfileViewState extends State<EditProfileView> {
+  // late final UserInfoModel  userinfo;
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
@@ -38,12 +41,15 @@ class _EditProfileViewState extends State<EditProfileView> {
             },
             updateUserInfoSuccess: (data) {
               Navigator.pop(context);
+
               Commons.showToast(
                   message: 'تم تغير البيانات بنجاح', color: ColorManager.green);
               BlocProvider.of<MenuCubit>(context).getUserInfo();
               Navigator.pop(context);
             },
             updateUserInfoError: (error) {
+              Navigator.pop(context);
+
               Commons.showToast(
                   message: NetworkExceptions.getErrorMessage(error));
             },
@@ -56,9 +62,6 @@ class _EditProfileViewState extends State<EditProfileView> {
               return const LoadingIndicator();
             },
             getUserInfoSuccess: (userInfo) {
-              _nameController.text = userInfo.name ?? '';
-              _emailController.text = userInfo.email ?? '';
-              _phoneController.text = userInfo.phone ?? '';
               return _buildForm();
             },
             orElse: () => Container(),
@@ -79,11 +82,8 @@ class _EditProfileViewState extends State<EditProfileView> {
           _buildNameTextField(),
           SizedBox(height: 20.h),
           DefaultPhoneTextField(
-            validator: (p0) {
-              if (p0!.isEmpty) {
-                return 'برجاء ادخال البيانات';
-              }
-              return null;
+            validator: (value) {
+              return validateMobile(value!);
             },
             controller: _phoneController,
           ),
@@ -100,11 +100,18 @@ class _EditProfileViewState extends State<EditProfileView> {
     return DefaultButton(
       text: AppStrings.editData,
       onTap: () {
-        if (_formKey.currentState!.validate()) {
-          BlocProvider.of<MenuCubit>(context).updateProfile(
-              _nameController.text,
-              _emailController.text,
-              _phoneController.text);
+        if (_nameController.text == userName &&
+            _emailController.text == userEmail &&
+            _phoneController.text == userPhone &&
+            BlocProvider.of<MenuCubit>(context).imageFile == null) {
+          Commons.showToast(message: 'لم يتم تغير البيانات بعد ل تحديثها');
+        } else {
+          if (_formKey.currentState!.validate()) {
+            BlocProvider.of<MenuCubit>(context).updateProfile(
+                _nameController.text,
+                _emailController.text,
+                _phoneController.text);
+          }
         }
       },
     );
@@ -126,50 +133,88 @@ class _EditProfileViewState extends State<EditProfileView> {
   _buildImage(BuildContext context) {
     return BlocConsumer<MenuCubit, MenuState>(
       listener: (context, state) {
-        state.whenOrNull(
-          updateUserInfoSuccess: (data) {
-            BlocProvider.of<MenuCubit>(context).imageFile = null;
-          },
-        );
+        state.whenOrNull();
       },
+      buildWhen: (previous, current) =>
+          current is GetUserInfoSuccess || current is ImageSelectedSuccess,
       builder: (context, state) {
-        return Stack(
-          children: [
-            Align(
-              alignment: Alignment.center,
-              child: Container(
-                width: 103.h,
-                height: 103.h,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                      color: ColorManager.darkSeconadry, width: 3.sp),
-                ),
-                child: CircleAvatar(
-                    backgroundColor: ColorManager.black,
-                    child: ClipOval(
-                      child: CustomNetworkCachedImage(
-                        url: userImage,
+        return state.maybeWhen(
+            getUserInfoSuccess: (userInfo) {
+              return Stack(
+                children: [
+                  Align(
+                    alignment: Alignment.center,
+                    child: Container(
+                      width: 103.h,
+                      height: 103.h,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                            color: ColorManager.darkSeconadry, width: 3.sp),
                       ),
-                    )),
-              ),
-            ),
-            if (BlocProvider.of<MenuCubit>(context).imageFile != null)
-              Padding(
-                padding: EdgeInsets.only(top: 70.h, right: 60.w),
-                child: Center(
-                  child: SizedBox(
-                    width: 55.w,
-                    height: 55.h,
-                    child: CircleAvatar(
-                        backgroundImage: FileImage(
-                      BlocProvider.of<MenuCubit>(context).imageFile!,
-                    )),
+                      child: CircleAvatar(
+                          backgroundColor: ColorManager.black,
+                          child: ClipOval(
+                            child: CustomNetworkCachedImage(
+                              url: userInfo.imageUrl,
+                            ),
+                          )),
+                    ),
                   ),
-                ),
-              ),
-          ],
-        );
+                  if (BlocProvider.of<MenuCubit>(context).imageFile != null)
+                    Padding(
+                      padding: EdgeInsets.only(top: 70.h, right: 60.w),
+                      child: Center(
+                        child: SizedBox(
+                          width: 55.w,
+                          height: 55.h,
+                          child: CircleAvatar(
+                              backgroundImage: FileImage(
+                            BlocProvider.of<MenuCubit>(context).imageFile!,
+                          )),
+                        ),
+                      ),
+                    ),
+                ],
+              );
+            },
+            orElse: () => Stack(
+                  children: [
+                    Align(
+                      alignment: Alignment.center,
+                      child: Container(
+                        width: 103.h,
+                        height: 103.h,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                              color: ColorManager.darkSeconadry, width: 3.sp),
+                        ),
+                        child: CircleAvatar(
+                            backgroundColor: ColorManager.black,
+                            child: ClipOval(
+                              child: CustomNetworkCachedImage(
+                                url: userImage,
+                              ),
+                            )),
+                      ),
+                    ),
+                    if (BlocProvider.of<MenuCubit>(context).imageFile != null)
+                      Padding(
+                        padding: EdgeInsets.only(top: 70.h, right: 60.w),
+                        child: Center(
+                          child: SizedBox(
+                            width: 55.w,
+                            height: 55.h,
+                            child: CircleAvatar(
+                                backgroundImage: FileImage(
+                              BlocProvider.of<MenuCubit>(context).imageFile!,
+                            )),
+                          ),
+                        ),
+                      ),
+                  ],
+                ));
       },
     );
   }
@@ -231,6 +276,14 @@ class _EditProfileViewState extends State<EditProfileView> {
           size: 20.sp,
         ),
         hint: 'email');
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _nameController.text = userName ?? '';
+    _emailController.text = userEmail ?? '';
+    _phoneController.text = userPhone ?? '';
   }
 
   @override

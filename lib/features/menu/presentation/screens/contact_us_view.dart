@@ -194,8 +194,13 @@ class _ContactUsViewState extends State<ContactUsView> {
             onTap: () {
               Commons.openUrl('mailto://$userEmail');
             },
-            title: userEmail ?? '',
-            icon: ImageAssets.phone,
+            title: userEmail ?? 'لا يوجد بريد الكتروني',
+            widget: Icon(
+              Icons.email,
+              color: ColorManager.white,
+              size: 18.sp,
+            ),
+            // icon: ImageAssets.envelope,
           ),
         ),
         const SizedBox(width: 20),
@@ -204,7 +209,7 @@ class _ContactUsViewState extends State<ContactUsView> {
             onTap: () {
               Commons.openUrl('tel://$userPhone');
             },
-            title: userPhone ?? '',
+            title: userPhone ?? 'لا يوجد رقم هاتف',
             icon: ImageAssets.phone,
           ),
         ),

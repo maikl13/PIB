@@ -29,4 +29,7 @@ class CacheHelper {
   static Future<bool> removeData({required key}) {
     return sharedPreferences.remove(key);
   }
+  //  static Future<bool> removeAll() {
+  //   return sharedPreferences.clear();
+  // }
 }

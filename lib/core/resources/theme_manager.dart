@@ -14,10 +14,10 @@ ThemeData getAppTheme = ThemeData(
 
   scaffoldBackgroundColor: ColorManager.darkBlack,
   // main colors
-  primaryColor: ColorManager.primary,
+  primaryColor: ColorManager.darkSeconadry,
 
   // primaryColorLight: ColorManager.lightPrimary,
-  // primaryColorDark: ColorManager.darkPrimary,
+  primaryColorDark: ColorManager.darkSeconadry,
   // disabledColor: ColorManager.grey1,
   // splashColor: ColorManager.white,
   // chipTheme: ChipThemeData(pressElevation: 0),

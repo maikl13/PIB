@@ -89,59 +89,15 @@ class _ConfirmPhoneViewState extends State<ConfirmPhoneView> {
     return BlocListener<AuthCubit, AuthResultState>(
       listener: (context, state) {
         state.whenOrNull(
-          // loginLoading: () {
-          //   Commons.showLoadingDialog(context);
-          // },
-          // loginSuccess: (uid) {
-          //   // Navigator.pop(context);
-          //   showSuccessDialog(context);
-
-          //   // _goToHomeSuccessfully(context);
-          // },
-          // loginError: (networkExceptions) {
-          //   // Navigator.pop(context);
-          //   if (NetworkExceptions.getErrorMessage(networkExceptions) ==
-          //       "not_found") {
-          //     BlocProvider.of<AuthCubit>(context).register(
-          //       uid: token!,
-          //       name: userName ?? '',
-          //       imageUrl: userImage ?? '',
-          //       email: userEmail ?? '',
-          //       phone: userPhone ?? '',
-          //     );
-          //   } else {
-          //     Commons.showToast(
-          //       color: ColorManager.error,
-          //       message: NetworkExceptions.getErrorMessage(networkExceptions),
-          //     );
-          //   }
-          // },
-          // registerLoading: () {
-          //   Commons.showLoadingDialog(context);
-          // },
-          // registerSuccess: (uid) {
-          //   Navigator.pop(context);
-          //   showSuccessDialog(context);
-          // },
-          // registerError: (networkExceptions) {
-          //   Navigator.pop(context);
-          //   Commons.showToast(
-          //     color: ColorManager.error,
-          //     message: NetworkExceptions.getErrorMessage(networkExceptions),
-          //   );
-          // },
-          // // phoneAuthLoading: () {
-          // //   showProgressIndicator(context);
-          // // },
           phoneOTPVerified: () {
             // print(FirebaseAuth.instance.currentUser!.uid);
             token = FirebaseAuth.instance.currentUser!.uid;
-            BlocProvider.of<AuthCubit>(context)
-                .login(uid: FirebaseAuth.instance.currentUser!.uid);
-            // Navigator.pop(context);
-            // showSuccessDialog(
-            //   context,
-            // );
+            isLogin
+                ? BlocProvider.of<AuthCubit>(context)
+                    .login(uid: FirebaseAuth.instance.currentUser!.uid)
+                : BlocProvider.of<AuthCubit>(context).register(
+                    uid: FirebaseAuth.instance.currentUser!.uid,
+                    name: userName!);
           },
           phoneAuthErrorOccurred: (errorMsg) {
             Commons.showToast(message: errorMsg);

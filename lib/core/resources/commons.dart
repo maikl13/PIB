@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -22,24 +23,43 @@ class Commons {
         barrierDismissible: false,
         builder: (BuildContext context) {
           return WillPopScope(
-              onWillPop: () async => false,
-              child: SimpleDialog(
-                  // key: key,
-                  backgroundColor: ColorManager.lightBlack,
+            onWillPop: () async => false,
+            child: Dialog(
+              backgroundColor: Colors.transparent,
+              child: Container(
+                padding: const EdgeInsets.all(16.0),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
-                    Center(
-                      child: Column(children: [
-                        const LoadingIndicator(),
-                        const SizedBox(
-                          height: 10,
+                    const LoadingIndicator(),
+                    SizedBox(height: 16.h),
+                    AnimatedTextKit(
+                      animatedTexts: [
+                        FlickerAnimatedText(
+                          "برجاء الانتظار...",
                         ),
-                        Text(
-                          "من فضلك انتظر ...",
-                          style: TextStyle(color: ColorManager.white),
-                        )
-                      ]),
-                    )
-                  ]));
+                      ],
+                      isRepeatingAnimation: true,
+                      onTap: () {
+                        // print("Tap Event");
+                      },
+                    ),
+                    // Text(
+                    //   "برجاء الانتظار...",
+                    //   style: TextStyle(
+                    //     fontSize: 18.0,
+                    //     fontWeight: FontWeight.bold,
+                    //   ),
+                    // ),
+                  ],
+                ),
+              ),
+            ),
+          );
         });
   }
 

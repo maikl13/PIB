@@ -5,6 +5,7 @@ import 'package:pip/core/resources/assets_manager.dart';
 import '../../../../core/business_logic/global_cubit.dart';
 import '../../../../core/resources/constants.dart';
 import '../../../../core/resources/route_manager.dart';
+import '../../../../core/resources/shared_prefrences.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/resources/style_manager.dart';
 import '../../../../core/widgets/custom_network_image.dart';
@@ -62,6 +63,10 @@ class _MenuViewState extends State<MenuView> {
               userName = userInfo.name;
               userPhone = userInfo.phone;
               userEmail = userInfo.email;
+
+              CacheHelper.saveData(key: 'userImage', value: userImage);
+              CacheHelper.saveData(key: 'userName', value: userName);
+              CacheHelper.saveData(key: 'userPhone', value: userPhone);
               return Column(
                 children: [
                   _buildProfileImage(userInfo.imageUrl),
@@ -98,7 +103,7 @@ class _MenuViewState extends State<MenuView> {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Text(phone ?? '',
+        Text(phone ?? 'لا يوجد رقم هاتف',
             style: getLightStyle(fontSize: 13.sp, color: ColorManager.grey)),
         const SizedBox(width: 15),
         Image.asset(
@@ -177,13 +182,11 @@ class _MenuViewState extends State<MenuView> {
   void initState() {
     super.initState();
 
-    BlocProvider.of<MenuCubit>(context).getUserInfo();
+    BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
   }
 
   @override
   Widget build(BuildContext context) {
-        BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
-
     return _buildBody(context);
   }
 }

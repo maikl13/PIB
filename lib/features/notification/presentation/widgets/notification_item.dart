@@ -55,7 +55,7 @@ class NotificationItem extends StatelessWidget {
             size: 16.sp,
           ),
           onPressed: () {
-            print('object');
+            // print('object');
             Navigator.pop(context);
           },
         ));

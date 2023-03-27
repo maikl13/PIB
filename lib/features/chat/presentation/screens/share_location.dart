@@ -264,7 +264,9 @@ class _ShareLocationState extends State<ShareLocation> {
       'location_type_message,${tapLatLng!.latitude},${tapLatLng!.longitude}',
       attachment: file,
     );
+    // ignore: use_build_context_synchronously
     Navigator.pop(context);
+    // ignore: use_build_context_synchronously
     BlocProvider.of<ChatCubit>(context).startStream(widget.chatId);
   }
 }

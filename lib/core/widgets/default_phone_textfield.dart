@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/resources/assets_manager.dart';
+import 'package:pip/core/resources/utils.dart';
 import '../resources/color_manager.dart';
 import '../resources/constants.dart';
 import '../resources/strings_manager.dart';
@@ -17,7 +18,7 @@ class DefaultPhoneTextField extends StatefulWidget {
       this.contentPadding,
       this.validator,
       this.onSaved,
-      this.controller});
+      this.controller, this.initialValue});
 
   final Widget? suffix;
   final String? hint;
@@ -26,6 +27,7 @@ class DefaultPhoneTextField extends StatefulWidget {
   final void Function(String?)? onSaved;
 
   final TextEditingController? controller;
+  final String? initialValue;
 
   @override
   State<DefaultPhoneTextField> createState() => _DefaultPhoneTextFieldState();
@@ -35,6 +37,7 @@ class _DefaultPhoneTextFieldState extends State<DefaultPhoneTextField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      initialValue: widget.initialValue,
       keyboardType: TextInputType.number,
       // inputFormatters: [FilteringTextInputFormatter.digitsOnly],
       //you can used below formater also
@@ -60,7 +63,10 @@ class _DefaultPhoneTextFieldState extends State<DefaultPhoneTextField> {
       style: getBoldStyle(fontSize: 16.sp, color: ColorManager.darkGrey),
       onSaved: widget.onSaved,
       // maxLines: 2,
-      validator: widget.validator,
+      validator: widget.validator ??
+          (value) {
+            return validateMobile(value!);
+          },
       decoration: InputDecoration(
         floatingLabelBehavior: FloatingLabelBehavior.never,
         label: Padding(

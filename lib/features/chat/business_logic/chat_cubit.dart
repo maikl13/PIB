@@ -29,7 +29,7 @@ class ChatCubit extends Cubit<ChatState> {
       StreamController<List<ChatMessagesModel>>.broadcast();
 
   void startStream(int chatId) async {
-    myStream = Stream.periodic(const Duration(seconds: 5))
+    myStream = Stream.periodic(const Duration(seconds: 1))
         .asyncMap((event) async => await getAllChatMessages(chatId));
     subscription = myStream?.listen((event) {
       allMessages = event;

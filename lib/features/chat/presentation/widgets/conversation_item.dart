@@ -19,6 +19,8 @@ class ConversationItem extends StatelessWidget {
   final int? totalMessage;
   final String? imageUrl;
   final int chatId;
+  // final String? title;
+  //TODO fix title 
   _buildBackground() {
     return Image.asset(
       ImageAssets.conversationItemBackground,

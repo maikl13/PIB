@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/style_manager.dart';
 
 class ContactUsInfoItem extends StatelessWidget {
-  const ContactUsInfoItem({super.key, required this.icon, required this.title, this.onTap});
-  final String icon;
+  const ContactUsInfoItem(
+      {super.key, this.icon, required this.title, this.onTap, this.widget});
+  final String? icon;
   final String title;
   final void Function()? onTap;
+  final Widget? widget;
 
   _buildIcon() {
     return SizedBox(
@@ -15,13 +18,14 @@ class ContactUsInfoItem extends StatelessWidget {
       height: 35.h,
       child: CircleAvatar(
         backgroundColor: ColorManager.darkSeconadry,
-        child: Image.asset(
-          icon,
-          width: 15.w,
-          height: 15.h,
-          color: Colors.white,
-       
-        ),
+        child: widget ??
+            Image.asset(
+              icon ?? ImageAssets.phone,
+              fit: BoxFit.scaleDown,
+              width: 15.w,
+              height: 15.h,
+              color: ColorManager.white,
+            ),
       ),
     );
   }

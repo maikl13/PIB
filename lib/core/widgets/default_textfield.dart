@@ -5,7 +5,7 @@ import '../resources/style_manager.dart';
 import '../resources/color_manager.dart';
 
 class DefaultTextField extends StatefulWidget {
-  const   DefaultTextField(
+  const DefaultTextField(
       {super.key,
       this.suffix,
       this.hint,
@@ -20,7 +20,9 @@ class DefaultTextField extends StatefulWidget {
       this.keyboardType,
       this.isPassword,
       this.floatingLabelBehavior,
-      this.label, this.inputFormatters});
+      this.label,
+      this.inputFormatters,
+      this.initialValue});
 
   final Widget? suffix;
   final Widget? prefix;
@@ -37,6 +39,7 @@ class DefaultTextField extends StatefulWidget {
   final FloatingLabelBehavior? floatingLabelBehavior;
   final Widget? label;
   final List<TextInputFormatter>? inputFormatters;
+  final String? initialValue;
 
   @override
   State<DefaultTextField> createState() => _DefaultTextFieldState();
@@ -46,8 +49,10 @@ class _DefaultTextFieldState extends State<DefaultTextField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      // enableInteractiveSelection: false,
+
       inputFormatters: widget.inputFormatters,
-      
+      initialValue: widget.initialValue,
       onTap: () {
         if (widget.controller!.selection ==
             TextSelection.fromPosition(

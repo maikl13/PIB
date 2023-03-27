@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/resources/color_manager.dart';
-import '../../../../core/resources/constants.dart';
 import '../../../../core/resources/style_manager.dart';
 import '../../../../core/widgets/custom_network_image.dart';
 import '../../business_logic/menu_cubit.dart';
@@ -54,7 +53,9 @@ class _SkillItemState extends State<SkillItem> {
       height: 115.h,
       decoration: BoxDecoration(
         border: Border.all(
-            color: val ? ColorManager.darkSeconadry : ColorManager.transparent),
+            color: widget.skills[widget.index].enabled == 0
+                ? ColorManager.transparent
+                : ColorManager.borderColor),
         color: ColorManager.black5,
         borderRadius: BorderRadius.circular(10.r),
       ),

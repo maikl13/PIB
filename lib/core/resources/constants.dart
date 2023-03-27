@@ -11,16 +11,18 @@ class AppConstants {
   static const int timeOut = 60;
   static const String baseUrl = 'http://pib-platform.com/api/';
 }
+
 String? countryCode = '+966';
 String defaultUId = "68";
 String? userName = ' ';
 String? token = '123';
 String? userEmail = '';
+bool isLogin = true;
 
-String? currentRequestId ;
+String? currentRequestId;
 
 String? userPhone = '';
-String? userImage = '';
+String? userImage;
 
 int selectedTab = 0;
 int screenIndex = 0;
@@ -53,7 +55,6 @@ List<String> menuViewItemRoutes = [
   Routes.contactViewRoute,
   Routes.whoWeAreViewRoute,
   Routes.splashRoute,
-
 
   // Routes.splashRoute,
 ];

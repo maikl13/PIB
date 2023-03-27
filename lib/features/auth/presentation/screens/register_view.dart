@@ -49,14 +49,7 @@ class _RegisterViewState extends State<RegisterView> {
               phoneNumber = value!;
             },
             controller: _phoneController,
-            validator: (value) {
-              if (value!.isEmpty) {
-                return 'invalid Number';
-              } else if (value.length < 11) {
-                return 'Too short for a phone number!';
-              }
-              return null;
-            },
+        
           ),
           SizedBox(height: 60.h),
           // _buildPasswordTextField(),
@@ -89,6 +82,12 @@ class _RegisterViewState extends State<RegisterView> {
 
   _buildNameTextField() {
     return DefaultTextField(
+      validator: (value) {
+        if (value!.isEmpty) {
+          return 'ادخل الاسم';
+        }
+        return null;
+      },
       controller: _nameController,
       hint: AppStrings.name,
       prefix: Image.asset(ImageAssets.user,
@@ -101,11 +100,11 @@ class _RegisterViewState extends State<RegisterView> {
 
   Future<void> _register(BuildContext context) async {
     if (!_phoneFormKey.currentState!.validate()) {
-      Commons.showToast(message: 'invalid nnumber');
-      Navigator.pop(context);
+      Commons.showToast(message: 'من فضلك ادخل الـبيانات بشكل صحيح');
+      // Navigator.pop(context);
       return;
     } else {
-      Navigator.pop(context);
+      // Navigator.pop(context);
       _phoneFormKey.currentState!.save();
       BlocProvider.of<AuthCubit>(context).submitPhoneNumber(phoneNumber);
     }
@@ -114,9 +113,7 @@ class _RegisterViewState extends State<RegisterView> {
   Widget _buildPhoneNumberSubmitedBloc() {
     return BlocListener<AuthCubit, AuthResultState>(
       listener: (context, state) {
-        state.whenOrNull(
-       
-        );
+        state.whenOrNull();
       },
       child: Container(),
     );
@@ -126,16 +123,10 @@ class _RegisterViewState extends State<RegisterView> {
     return DefaultButton(
       text: AppStrings.registerNewAcc,
       onTap: () {
-        showProgressIndicator(context);
         userName = _nameController.text;
+        isLogin = false;
         userPhone = _phoneController.text;
-        // showSuccessDialog(
-        //   context,
-        //   onOk: () {
-        //     Navigator.pushNamedAndRemoveUntil(
-        //         context, Routes.mainHomeViewRoute, (route) => false);
-        //   },
-        // );
+
         _register(context);
       },
     );

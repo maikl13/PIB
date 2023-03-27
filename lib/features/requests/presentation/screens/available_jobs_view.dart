@@ -8,6 +8,7 @@ import '../../../../core/resources/route_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/web_services/network_exceptions.dart';
 import '../../../../core/widgets/custom_title.dart';
+import '../../../../core/widgets/empty_screen.dart';
 import '../../../../core/widgets/loading_indicator.dart';
 import '../../business_logic/cubit/requests_cubit.dart';
 import '../../business_logic/cubit/requests_state.dart';
@@ -49,36 +50,38 @@ class _AvailableJobsViewState extends State<AvailableJobsView> {
   }
 
   _buildList(List<MyRequestModel> availableJobs) {
-    return ListView.separated(
-      itemCount: availableJobs.length,
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      separatorBuilder: (context, index) {
-        return SizedBox(height: 12.h);
-      },
-      itemBuilder: (context, index) {
-        return RequestItem(
-          requests: availableJobs,
-          index: index,
-          onTap: () {
-            Navigator.pushNamed(context, Routes.availableJobDetailsViewRoute,
-                arguments: {'job': availableJobs[index]});
-          },
-        );
-      },
-    );
+    return availableJobs.isEmpty
+        ? const EmptyScreen()
+        : ListView.separated(
+            itemCount: availableJobs.length,
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            separatorBuilder: (context, index) {
+              return SizedBox(height: 12.h);
+            },
+            itemBuilder: (context, index) {
+              return RequestItem(
+                requests: availableJobs,
+                index: index,
+                onTap: () {
+                  Navigator.pushNamed(
+                      context, Routes.availableJobDetailsViewRoute,
+                      arguments: {'job': availableJobs[index]});
+                },
+              );
+            },
+          );
   }
 
   @override
   void initState() {
-        BlocProvider.of<RequestsCubit>(context).getAllAvailableJobs();
+    BlocProvider.of<RequestsCubit>(context).getAllAvailableJobs();
 
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-
     return ListView(
       padding: EdgeInsets.only(top: 37.h),
       shrinkWrap: true,

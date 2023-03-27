@@ -23,6 +23,7 @@ class ImageAssets {
   static const String flibBackground = "$imagePath/flib_back.png";
 
   static const String star = "$imagePath/star.png";
+  static const String noData = "$imagePath/no-data.png";
 
   static const String file = "$imagePath/file.png";
   static const String house = "$imagePath/house.png";
@@ -79,7 +80,7 @@ class ImageAssets {
   // static const String copy = "$imagePath/copy.png";
   static const String solidComments = "$imagePath/solid-comments.png";
   // static const String copy = "$imagePath/copy.png";
-  // static const String copy = "$imagePath/copy.png";
+  static const String envelope = "$imagePath/envelope.png";
   // static const String copy = "$imagePath/copy.png";
   // static const String copy = "$imagePath/copy.png";
   // static const String copy = "$imagePath/copy.png";

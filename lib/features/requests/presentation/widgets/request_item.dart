@@ -20,6 +20,7 @@ class RequestItem extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(top: 15.h, right: 15.w),
       child: Row(
+        // mainAxisSize: Maina,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _buildLeadingImage(),
@@ -27,6 +28,7 @@ class RequestItem extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(top: 4.h),
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
@@ -38,6 +40,7 @@ class RequestItem extends StatelessWidget {
                 ),
                 SizedBox(height: 10.h),
                 Row(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     _buildPriceIcon(),
                     SizedBox(width: 10.w),
@@ -94,11 +97,8 @@ class RequestItem extends StatelessWidget {
         child: requests![index].images!.isEmpty &&
                 requests![index].category == null
             ? Container()
-            //TODO ask about this
             : CustomNetworkCachedImage(
-                url: requests![index].images!.isEmpty
-                    ? requests![index].category!.imageUrl!
-                    : requests![index].images!.first.attachmentUrl!),
+                url: requests![index].category!.imageUrl),
       ),
     );
   }
@@ -116,6 +116,8 @@ class RequestItem extends StatelessWidget {
   _buildPrice() {
     return Text(
       '${requests![index].price}  ${AppStrings.ryal}',
+      maxLines: 1,
+      overflow: TextOverflow.ellipsis,
       style: getRegularStyle(color: ColorManager.grey, fontSize: 12.sp),
     );
   }
@@ -132,9 +134,14 @@ class RequestItem extends StatelessWidget {
 
   _buildNumberOfRequests() {
     return Text(
+      maxLines: 1,
+      overflow: TextOverflow.clip,
       requests![index].offersCount == null
-          ? requests![index].user!.name ?? ''
+          ? requests![index].user!.name!.length > 10
+              ? requests![index].user!.name!.replaceRange(8, null, '.')
+              : requests![index].user!.name ?? ''
           : '${requests![index].offersCount} عرض',
+      softWrap: true,
       style: getRegularStyle(color: ColorManager.grey, fontSize: 12.sp),
     );
   }

@@ -103,7 +103,8 @@ class WorkWithUsView extends StatelessWidget {
     return InkWell(
       onTap: () {
         Clipboard.setData(const ClipboardData(text: '12323425'));
-        Commons.showToast(message: "Copied", color: ColorManager.darkSeconadry);
+        Commons.showToast(
+            message: "تم نسخ النص بنجاح", color: ColorManager.darkGrey);
       },
       child: Image.asset(
         ImageAssets.copy,

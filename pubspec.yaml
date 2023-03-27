@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  animated_text_kit: ^4.2.2
   auto_route:
   auto_route_generator:
   auto_size_text: ^3.0.0
@@ -37,6 +38,7 @@ dependencies:
   cached_network_image:
   carousel_slider:
   chewie: ^1.4.0
+  connectivity_plus: ^3.0.3
   country_code_picker: ^3.0.0
   cupertino_icons:
   dartz:
@@ -55,6 +57,7 @@ dependencies:
   flutter_libphonenumber: ^2.0.0
   flutter_localizations:
     sdk: flutter
+  flutter_offline: ^2.0.0
   flutter_screenutil: ^5.7.0
   flutter_svg: ^2.0.4
   fluttertoast:
@@ -69,6 +72,7 @@ dependencies:
   google_sign_in: null
   http:
   image_picker: ^0.8.7
+  internet_connection_checker: ^1.0.0+1
   json_annotation:
   json_serializable:
   pin_code_fields:

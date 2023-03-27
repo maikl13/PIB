@@ -192,11 +192,14 @@ class RouteGenerator {
 
       case Routes.mainHomeViewRoute:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider.value(
-            value: homeCubit,
-            child: const MainHomeView(),
-          ),
-        );
+            builder: (_) => MultiBlocProvider(providers: [
+                  BlocProvider.value(
+                    value: homeCubit,
+                  ),
+                  BlocProvider.value(
+                    value: menuCubit,
+                  ),
+                ], child: const MainHomeView()));
 
       case Routes.notificationViewRoute:
         return MaterialPageRoute(
@@ -327,18 +330,16 @@ class RouteGenerator {
         final arguments = settings.arguments as Map;
 
         final int chatId = arguments['chatId'];
-      
+
         return MaterialPageRoute(
           builder: (_) => BlocProvider.value(
             value: chatCubit,
             child: ChatView(
               chatId: chatId,
-     
-
             ),
           ),
         );
-    
+
       case Routes.editProfileViewRoute:
         return MaterialPageRoute(
           builder: (_) => BlocProvider.value(

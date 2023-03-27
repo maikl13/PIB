@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/widgets/empty_screen.dart';
 import '../../business_logic/cubit/requests_cubit.dart';
 import '../../business_logic/cubit/requests_state.dart';
 import '../../data/models/my_request_model.dart';
@@ -37,24 +38,26 @@ class _WantedJobRequestsViewState extends State<WantedJobRequestsView> {
   }
 
   _buildList(List<MyRequestModel> requests) {
-    return ListView.separated(
-      itemCount: requests.length,
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      separatorBuilder: (context, index) {
-        return SizedBox(height: 12.h);
-      },
-      itemBuilder: (context, index) {
-        return RequestItem(
-          requests: requests,
-          index: index,
-          onTap: () {
-            Navigator.pushNamed(context, Routes.requestDetailsViewRoute,
-                arguments: {'request': requests[index]});
-          },
-        );
-      },
-    );
+    return requests.isEmpty
+        ? const EmptyScreen()
+        : ListView.separated(
+            itemCount: requests.length,
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            separatorBuilder: (context, index) {
+              return SizedBox(height: 12.h);
+            },
+            itemBuilder: (context, index) {
+              return RequestItem(
+                requests: requests,
+                index: index,
+                onTap: () {
+                  Navigator.pushNamed(context, Routes.requestDetailsViewRoute,
+                      arguments: {'request': requests[index]});
+                },
+              );
+            },
+          );
   }
 
   @override

@@ -19,6 +19,11 @@ class UploadedPhotos extends StatelessWidget {
     return extension.toLowerCase() == '.pdf';
   }
 
+  bool isVideo(File file) {
+    String extension = path.extension(file.path);
+    return extension.toLowerCase() == '.mp4 ||.mov ||.mp3';
+  }
+
   _buildPhoto(BuildContext context) {
     return isPdfFile(imageFile!)
         ? Align(
@@ -36,24 +41,38 @@ class UploadedPhotos extends StatelessWidget {
               ),
             ),
           )
-        : Align(
-            alignment: Alignment.bottomRight,
-            child: Container(
-              width: 136.w,
-              height: 85.h,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.r),
-                image: DecorationImage(
-                  colorFilter: ColorFilter.mode(
-                      ColorManager.black.withOpacity(.3), BlendMode.darken),
-                  image: FileImage(
-                    imageFile!,
+        : isVideo(imageFile!)
+            ? Align(
+                alignment: Alignment.bottomRight,
+                child: Container(
+                  width: 136.w,
+                  height: 85.h,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.r),
                   ),
-                  fit: BoxFit.cover,
+                  child: const Icon(
+                    Icons.video_collection_rounded,
+                  ),
                 ),
-              ),
-            ),
-          );
+              )
+            : Align(
+                alignment: Alignment.bottomRight,
+                child: Container(
+                  width: 136.w,
+                  height: 85.h,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.r),
+                    image: DecorationImage(
+                      colorFilter: ColorFilter.mode(
+                          ColorManager.black.withOpacity(.3), BlendMode.darken),
+                      image: FileImage(
+                        imageFile!,
+                      ),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              );
   }
 
   _buildDeleteImageButton() {
@@ -95,10 +114,12 @@ class UploadedPhotos extends StatelessWidget {
   }
 
   _buildImageTitle() {
+    var formatted = imageFile!.path.split('-').last;
+    formatted = formatted.split('/').last;
     return Padding(
-      padding: EdgeInsets.only(right: 20.w, top: 10.h),
+      padding: EdgeInsets.only(top: 10.h),
       child: Text(
-        imageFile!.path.split('/').last,
+        formatted,
         style: getRegularStyle(fontSize: 15.sp, color: ColorManager.grey),
       ),
     );

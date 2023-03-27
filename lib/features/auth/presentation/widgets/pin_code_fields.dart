@@ -15,6 +15,10 @@ class CustomPinCodeFields extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.ltr,
       child: PinCodeTextField(
+        autoFocus: true,
+        enablePinAutofill: true,
+        autoDismissKeyboard: true,
+        autoUnfocus: true,
         backgroundColor: ColorManager.transparent,
         length: 6,
         textStyle: getBoldStyle(color: ColorManager.black, fontSize: 25.sp),

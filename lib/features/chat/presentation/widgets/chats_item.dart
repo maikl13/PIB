@@ -36,7 +36,12 @@ class ChatsItem extends StatelessWidget {
 
   _buildTitle() {
     return Text(
-      jobChats.chats![index].user!.name ?? '',
+      maxLines: 1,
+      overflow: TextOverflow.clip,
+      jobChats.chats![index].user!.name!.length > 15
+          ? jobChats.chats![index].user!.name!.replaceRange(8, null, '...')
+          : jobChats.chats![index].user!.name ?? '',
+      softWrap: true,
       style: getBoldStyle(fontSize: 18.sp, color: ColorManager.darkSeconadry),
     );
   }
@@ -66,10 +71,11 @@ class ChatsItem extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(left: 10.w),
-            child: Icon(
-              Icons.arrow_forward,
+            child: Image.asset(
+              ImageAssets.rightArrow,
+              width: 16.w,
+              height: 16.h,
               color: ColorManager.darkSeconadry,
-              size: 16.sp,
             ),
           ),
         ],

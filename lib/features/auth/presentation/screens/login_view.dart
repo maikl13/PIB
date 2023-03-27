@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/resources/constants.dart';
+import 'package:pip/core/resources/utils.dart';
 
 import '../../../../core/resources/commons.dart';
 import '../../../../core/resources/strings_manager.dart';
@@ -56,6 +57,7 @@ class _LoginViewState extends State<LoginView> {
       text: AppStrings.login,
       onTap: () {
         // showProgressIndicator(context);
+        isLogin = true;
         _login(context);
       },
     );
@@ -78,17 +80,13 @@ class _LoginViewState extends State<LoginView> {
       child: DefaultPhoneTextField(
         controller: _phoneController,
         onSaved: (value) {
-          phoneNumber = value!;
+          phoneNumber = value!.trim();
           userPhone = value;
         },
-
         validator: (value) {
-          if (value!.isEmpty) {
-            return ' ادخل رقم الهاتف';
-          }
-          return null;
+          return validateMobile(value!);
+          // hint: AppStrings.zeros,}
         },
-        // hint: AppStrings.zeros,
       ),
     );
   }
@@ -119,7 +117,6 @@ class _LoginViewState extends State<LoginView> {
       text1: AppStrings.dontHaveAccount,
       text2: AppStrings.registerNewAcc,
       onPressed: () {
-        
         Navigator.pushNamed(context, Routes.registerViewRoute);
       },
     );

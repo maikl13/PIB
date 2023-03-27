@@ -17,6 +17,7 @@ class ChatsView extends StatefulWidget {
   const ChatsView({super.key, required this.jobChatsId});
 
   final int jobChatsId;
+  // final String? title;
 
   @override
   State<ChatsView> createState() => _ChatsViewState();

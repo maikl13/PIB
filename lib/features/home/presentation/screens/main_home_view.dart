@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pip/core/business_logic/global_cubit.dart';
+import 'package:pip/features/menu/business_logic/menu_cubit.dart';
 
 import '../../../../core/resources/constants.dart';
 import '../../../../core/resources/route_manager.dart';
@@ -59,7 +59,8 @@ class _MainHomeViewState extends State<MainHomeView> {
   void initState() {
     super.initState();
 
-    // BlocProvider.of<HomeCubit>(context).getAllSliders();
+    BlocProvider.of<MenuCubit>(context).getUserInfo();
+
     // BlocProvider.of<HomeCubit>(context).getInternationalTopDeals();
     // BlocProvider.of<HomeCubit>(context).getLocalTopDeals();
 

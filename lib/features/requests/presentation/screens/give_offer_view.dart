@@ -205,6 +205,12 @@ class _GiveOfferViewState extends State<GiveOfferView> {
 
   _buildTimeToCompleteTextField() {
     return RequestCustomTextField(
+      keyboardType: TextInputType.number,
+      inputFormatters: [
+        FilteringTextInputFormatter.allow(
+          RegExp("[0-9]"),
+        ),
+      ],
       validator: (value) {
         if (value!.isEmpty) {
           return 'من فضلك ادخل القيمة';
