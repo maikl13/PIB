@@ -288,7 +288,7 @@ void showSuccessDialog(BuildContext context) {
         height: 492.h,
         child: Stack(fit: StackFit.expand, children: [
           _buildBackGround(),
-          _buildCloseButton(context),
+          // _buildCloseButton(context),
           Padding(
             padding: EdgeInsets.only(
               top: 264.h,
@@ -338,7 +338,7 @@ void showContactSuccessDialog(BuildContext context, {void Function()? onOk}) {
         height: 492.h,
         child: Stack(fit: StackFit.expand, children: [
           _buildBackGround(),
-          _buildCloseButton(context),
+          // _buildCloseButton(context),
           Padding(
             padding: EdgeInsets.only(
               top: 264.h,
@@ -385,7 +385,7 @@ void showSuccessOfferDialog(BuildContext context, {void Function()? onOk}) {
         height: 515.h,
         child: Stack(fit: StackFit.expand, children: [
           _buildBackGround(),
-          _buildCloseButton(context),
+          // _buildCloseButton(context),
           Padding(
             padding: EdgeInsets.only(
               top: 264.h,
@@ -435,7 +435,7 @@ void showSuccessAddOfferInChatDialog(BuildContext context,
         height: 515.h,
         child: Stack(fit: StackFit.expand, children: [
           _buildBackGround(),
-          _buildCloseButton(context),
+          // _buildCloseButton(context),
           Padding(
             padding: EdgeInsets.only(
               top: 264.h,
@@ -482,23 +482,23 @@ _buildSubtitle(String title) {
   );
 }
 
-_buildCloseButton(BuildContext context) {
-  return Padding(
-    padding: EdgeInsets.only(top: 20.h, right: 20.w),
-    child: InkWell(
-        onTap: () {
-          Navigator.pop(context);
-        },
-        child: Align(
-          alignment: Alignment.topRight,
-          child: Icon(
-            Icons.close,
-            color: ColorManager.white,
-            size: 20.sp,
-          ),
-        )),
-  );
-}
+// _buildCloseButton(BuildContext context) {
+//   return Padding(
+//     padding: EdgeInsets.only(top: 20.h, right: 20.w),
+//     child: InkWell(
+//         onTap: () {
+//           // Navigator.pop(context);
+//         },
+//         child: Align(
+//           alignment: Alignment.topRight,
+//           child: Icon(
+//             Icons.close,
+//             color: ColorManager.white,
+//             size: 20.sp,
+//           ),
+//         )),
+//   );
+// }
 
 _buildBackGround() {
   return Image.asset(
@@ -539,7 +539,7 @@ void showProgressIndicator(BuildContext context) {
 
   showDialog(
     barrierColor: Colors.white.withOpacity(0),
-    barrierDismissible: true,
+    barrierDismissible: false,
     context: context,
     builder: (context) {
       return alertDialog;

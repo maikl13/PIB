@@ -87,7 +87,7 @@ class _ServiceRequesterMessagesViewState
     return ListView(
       padding: EdgeInsets.only(top: 20.h),
       shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
+      // physics: const NeverScrollableScrollPhysics(),
       children: [
         const CustomTitle(title: AppStrings.serviceRequesterMessagesTitle),
         SizedBox(height: 20.h),

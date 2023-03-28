@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/business_logic/global_cubit.dart';
 import 'package:pip/core/business_logic/global_state.dart';
+import 'package:pip/core/web_services/api_result.dart';
 import 'assets_manager.dart';
 import 'color_manager.dart';
 import 'route_manager.dart';
@@ -79,7 +80,8 @@ buildMainSearchViewAppBarActions(BuildContext context) {
                   BlocConsumer<GlobalCubit, GlobalState>(
                     listener: (context, state) {},
                     buildWhen: (previous, current) =>
-                        current is GetUnreadNotificationCountSuccess,
+                        current is GetUnreadNotificationCountSuccess ||
+                        current is Success,
                     builder: (context, state) {
                       return Visibility(
                         visible: state.maybeWhen(

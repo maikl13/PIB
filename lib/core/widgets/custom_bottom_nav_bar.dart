@@ -48,7 +48,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
               AppStrings.pib,
               style: getBoldStyle(
                   fontSize: 16.sp,
-                  color: selectedTab == 1
+                  color: screenIndex == 1
                       ? ColorManager.darkSeconadry
                       : ColorManager.grey),
             ),

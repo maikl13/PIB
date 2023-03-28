@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../../../../core/resources/constants.dart';
 import 'requests_state.dart';
 import '../../data/models/my_request_model.dart';
 import '../../data/models/offer_model.dart';
@@ -126,6 +127,8 @@ class RequestsCubit extends Cubit<RequestState> {
 
     result.when(
       success: (UpdateSkill data) {
+     
+
         emit(RequestState.giveOfferSuccess(data));
         // print(data.toString());
       },
@@ -159,19 +162,17 @@ class RequestsCubit extends Cubit<RequestState> {
     );
   }
 
+  void deleteRequestTapped() {
+    emit(const RequestState.deleteRequestTapped());
+  }
 
-void deleteRequestTapped(){
-  emit(const RequestState.deleteRequestTapped());
-}
   void deleteRequest({
-  required  String? id,
-
+    required String? id,
   }) async {
     emit(const RequestState.deleteRequestLoading());
 
     // ignore: prefer_typing_uninitialized_variables
-    var result = await requestRepository.deleteRequest(
-        id!);
+    var result = await requestRepository.deleteRequest(id!);
 
     result.when(
       success: (UpdateSkill data) {

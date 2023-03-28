@@ -14,17 +14,17 @@ class AppConstants {
 
 String? countryCode = '+966';
 String defaultUId = "68";
-String? userName = ' ';
-String? token = '123';
+String? userName = 'مجهول';
+String? token = '';
 String? userEmail = '';
 bool isLogin = true;
 
 String? currentRequestId;
 
-String? userPhone = '';
+String? userPhone = '000000000';
 String? userImage;
 
-int selectedTab = 0;
+// int selectedTab = 0;
 int screenIndex = 0;
 double rateNumber = 1.0;
 

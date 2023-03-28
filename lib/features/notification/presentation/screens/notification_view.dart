@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/business_logic/global_cubit.dart';
 import 'package:pip/core/widgets/empty_screen.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
@@ -32,6 +33,7 @@ class _NotificationViewState extends State<NotificationView> {
             return const LoadingIndicator();
           },
           success: (data) {
+            BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
             return _buildNotificationViewBody(data);
           },
           error: (networkExceptions) {
@@ -75,13 +77,23 @@ class _NotificationViewState extends State<NotificationView> {
   Widget build(BuildContext context) {
     // BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
 
-    return Scaffold(
-      appBar: CustomAppBar(
-        appBarColor: ColorManager.lightBlack,
-        actions: const [],
-        title: AppStrings.notification,
+    return WillPopScope(
+      onWillPop: () async {
+        BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
+        return false;
+      },
+      child: Scaffold(
+        appBar: CustomAppBar(
+          onTap: () {
+            BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
+            Navigator.pop(context);
+          },
+          appBarColor: ColorManager.lightBlack,
+          actions: const [],
+          title: AppStrings.notification,
+        ),
+        body: _buildBloc(),
       ),
-      body: _buildBloc(),
     );
   }
 }

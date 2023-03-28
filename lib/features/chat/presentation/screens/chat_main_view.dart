@@ -97,7 +97,12 @@ class _ChatViewState extends State<ChatView> {
                       ),
                       SizedBox(width: 14.w),
                       Text(
-                        chatInfo.user!.name ?? '',
+                        chatInfo.user!.name!.length < 10
+                            ? chatInfo.user!.name!
+                            : "${chatInfo.user!.name!.replaceRange(10, null, '')}...",
+                        // chatInfo.user!.name ?? '',
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
                         style: getRegularStyle(
                             fontSize: 20.sp, color: ColorManager.white),
                       ),

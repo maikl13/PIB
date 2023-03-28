@@ -70,8 +70,13 @@ class MainAuthView extends StatelessWidget {
           firebaseAnonymousLoginSuccess: (data) {
             Navigator.pop(context);
 
-            BlocProvider.of<AuthCubit>(context)
-                .register(uid: data, name: 'مجهول');
+            BlocProvider.of<AuthCubit>(context).register(
+                uid: data,
+                name: 'مجهول',
+                email: '',
+                phone: '000000000',
+                imageUrl:
+                    'https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png');
           },
           phoneAuthLoading: () {
             Commons.showLoadingDialog(context);

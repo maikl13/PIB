@@ -8,7 +8,6 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/business_logic/global_cubit.dart';
 import 'package:pip/core/internet/internet_connection_checker.dart';
-import 'package:pip/core/widgets/empty_screen.dart';
 
 import '../core/resources/constants.dart';
 import '../core/resources/injection.dart';
@@ -29,15 +28,10 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   var tokenFromDatabase = CacheHelper.getData(key: 'token');
-
   var userPicFromDatabase = CacheHelper.getData(key: 'userImage');
-
   var userNameFromDatabase = CacheHelper.getData(key: 'userName');
-
   var userPhoneFromDatabase = CacheHelper.getData(key: 'userPhone');
-
   var userGoToHomePage = CacheHelper.getData(key: 'goToHome');
-
   var userIdFromDatabase = CacheHelper.getData(key: 'uid');
   var countryCodeFromDatabase = CacheHelper.getData(key: 'countryCode');
 
@@ -74,9 +68,6 @@ class _MyAppState extends State<MyApp> {
             designSize: const Size(375, 812),
             useInheritedMediaQuery: true,
             minTextAdapt: true,
-            splitScreenMode: true,
-            // useInheritedMediaQuery: true,
-            scaleByHeight: true,
             builder: (context, state) {
               // ScreenUtil().setSp(28);
               return MaterialApp(
@@ -105,8 +96,7 @@ class _MyAppState extends State<MyApp> {
                         child: child,
                       ),
                     );
-                  }
-                  );
+                  });
             }));
   }
 }

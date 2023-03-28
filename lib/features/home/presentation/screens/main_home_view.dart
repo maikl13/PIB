@@ -22,7 +22,7 @@ class _MainHomeViewState extends State<MainHomeView> {
       listener: (context, state) {
         state.whenOrNull(
           selectedIndexChanged: (index) {
-            selectedTab = index;
+            screenIndex = index;
           },
         );
       },
@@ -35,10 +35,12 @@ class _MainHomeViewState extends State<MainHomeView> {
   _buildScaffold(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: CustomBottomNavBar(
-        selectedIndex: selectedTab,
+        selectedIndex: screenIndex,
         onTap: (index) {
+          setState(() {
+            BlocProvider.of<HomeCubit>(context).changeSelectedIndex(index);
+          });
           // BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
-          BlocProvider.of<HomeCubit>(context).changeSelectedIndex(index);
         },
       ),
       appBar: defaultAppBar(context),

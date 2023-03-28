@@ -32,7 +32,7 @@ class _ChatMessagesState extends State<ChatMessages>
     WidgetsBinding.instance.addObserver(this);
 
     BlocProvider.of<ChatCubit>(context).getAllChatMessages(widget.chatId);
-    BlocProvider.of<ChatCubit>(context).startStream(widget.chatId);
+        BlocProvider.of<ChatCubit>(context).startStream(widget.chatId);
   }
 
   @override
@@ -119,6 +119,8 @@ class _ChatMessagesState extends State<ChatMessages>
 
   @override
   Widget build(BuildContext context) {
+    // BlocProvider.of<ChatCubit>(context).startStream(widget.chatId);
+
     // goToLast();
     WidgetsBinding.instance.addPostFrameCallback((_) => _scrollToBottom());
 

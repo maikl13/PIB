@@ -34,6 +34,7 @@ class MenuCubit extends Cubit<MenuState> {
   List<int> skills = [];
   List<String> ratesFromOneToFive = [];
   RatesModel ratesModel = RatesModel();
+  List<SettingModel> allSettings = [];
 
   double experienceRate = 0.0;
   double professionlRate = 0.0;
@@ -224,8 +225,7 @@ class MenuCubit extends Cubit<MenuState> {
     var result = await menuRepository.getAllSettings();
     result.when(
       success: (List<SettingModel> settings) {
-        // notifications = notifications;
-
+        allSettings = settings;
         emit(MenuState.getSettingSuccess(settings));
       },
       failure: (NetworkExceptions networkExceptions) {
@@ -306,6 +306,12 @@ class MenuCubit extends Cubit<MenuState> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       DefaultTextField(
+                        keyboardType: TextInputType.number,
+                        inputFormatters: [
+                          FilteringTextInputFormatter.allow(
+                            RegExp("[0-9]"),
+                          ),
+                        ],
                         validator: (p0) {
                           if (p0!.isEmpty) {
                             return "من فضلك ادخل المبلغ";

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/resources/assets_manager.dart';
+import 'package:pip/features/menu/data/models/user_info_model.dart';
 import '../../../../core/business_logic/global_cubit.dart';
 import '../../../../core/resources/constants.dart';
 import '../../../../core/resources/route_manager.dart';
@@ -66,21 +67,26 @@ class _MenuViewState extends State<MenuView> {
               CacheHelper.saveData(key: 'userImage', value: userImage);
               CacheHelper.saveData(key: 'userName', value: userName);
               CacheHelper.saveData(key: 'userPhone', value: userPhone);
-              return Column(
-                children: [
-                  _buildProfileImage(userInfo.imageUrl),
-                  SizedBox(height: 27.h),
-                  _buildUserName(userInfo.name),
-                  SizedBox(height: 17.h),
-                  _buildPhoneNumber(userInfo.phone),
-                ],
-              );
+              return _buildUserPar(
+                  userInfo.imageUrl!, userInfo.name!, userInfo.phone!);
             },
             orElse: () {
-              return _buildProfileImage(userImage);
+              return _buildUserPar(userImage!, userName!, userPhone!);
             },
           );
         });
+  }
+
+  _buildUserPar(String image, String name, String phone) {
+    return Column(
+      children: [
+        _buildProfileImage(image),
+        SizedBox(height: 27.h),
+        _buildUserName(name),
+        SizedBox(height: 17.h),
+        _buildPhoneNumber(phone),
+      ],
+    );
   }
 
   _buildEditButton(BuildContext context) {
@@ -181,7 +187,7 @@ class _MenuViewState extends State<MenuView> {
   void initState() {
     super.initState();
 
-    BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
+    // BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
   }
 
   @override

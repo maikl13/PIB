@@ -57,6 +57,8 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
         CacheHelper.saveData(key: 'userName', value: userName);
         CacheHelper.saveData(key: 'userPhone', value: userPhone);
         CacheHelper.saveData(key: 'uid', value: defaultUId);
+        // CacheHelper.saveData(key: 'countryCode', value: countryCode);
+
 
         emit(AuthResultState.loginSuccess(userData));
         print(defaultUId);
@@ -90,6 +92,10 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
         CacheHelper.saveData(key: 'userName', value: userName);
         CacheHelper.saveData(key: 'userPhone', value: userPhone);
         CacheHelper.saveData(key: 'uid', value: defaultUId);
+        CacheHelper.saveData(key: 'userEmail', value: userEmail);
+        // CacheHelper.saveData(key: 'countryCode', value: countryCode);
+
+
 
         emit(AuthResultState.registerSuccess(userData));
       },

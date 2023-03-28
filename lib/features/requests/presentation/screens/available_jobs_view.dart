@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/commons.dart';
 import '../../../../core/resources/route_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
+import '../../../../core/resources/style_manager.dart';
 import '../../../../core/web_services/network_exceptions.dart';
 import '../../../../core/widgets/custom_title.dart';
 import '../../../../core/widgets/empty_screen.dart';
@@ -51,7 +53,26 @@ class _AvailableJobsViewState extends State<AvailableJobsView> {
 
   _buildList(List<MyRequestModel> availableJobs) {
     return availableJobs.isEmpty
-        ? const EmptyScreen()
+        ? Padding(
+            padding: EdgeInsets.only(top: 100.h),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Center(
+                  child: Icon(
+                    Icons.work_outline_sharp,
+                    size: 100.sp,
+                    color: ColorManager.darkSeconadry,
+                  ),
+                ),
+                Text('من فضلك قم بإضافة خبرة لتظهر للمستخدمين',
+                    textAlign: TextAlign.center,
+                    style: getBoldStyle(
+                        fontSize: 20.sp, color: ColorManager.darkGrey)),
+              ],
+            ),
+          )
         : ListView.separated(
             itemCount: availableJobs.length,
             shrinkWrap: true,

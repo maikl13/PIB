@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/features/menu/data/models/setting_model.dart';
 import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
@@ -67,18 +68,22 @@ class _WhoWeAreViewState extends State<WhoWeAreView> {
             return const LoadingIndicator();
           },
           getSettingSuccess: (settings) {
-            return Text(
-              textAlign: TextAlign.center,
-              settings[0].value!,
-              style: getRegularStyle(
-                      fontSize: 13.sp,
-                      color: ColorManager.white.withOpacity(.6))
-                  .copyWith(height: 2),
-            );
+            return _buildBodyDescsc(settings);
           },
-          orElse: () => Container(),
+          orElse: () =>
+              _buildBodyDescsc(BlocProvider.of<MenuCubit>(context).allSettings),
         );
       },
+    );
+  }
+
+  _buildBodyDescsc(List<SettingModel> settings) {
+    return Text(
+      textAlign: TextAlign.center,
+      settings[0].value!,
+      style: getRegularStyle(
+              fontSize: 13.sp, color: ColorManager.white.withOpacity(.6))
+          .copyWith(height: 2),
     );
   }
 

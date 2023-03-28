@@ -60,6 +60,8 @@ dependencies:
   flutter_offline: ^2.0.0
   flutter_screenutil: ^5.7.0
   flutter_svg: ^2.0.4
+  get: ^4.6.5
+
   fluttertoast:
   font_awesome_flutter:
   freezed:

@@ -12,13 +12,12 @@ class SearchBar extends StatelessWidget {
   final void Function(String)? onChanged;
   final TextEditingController? controller;
 
-
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: controller,
-      onChanged: onChanged,
-        style: getBoldStyle(fontSize: 14.sp, color: ColorManager.darkSeconadry),
+        controller: controller,
+        onChanged: onChanged,
+        style: getBoldStyle(fontSize: 15.sp, color: ColorManager.grey),
         cursorColor: ColorManager.darkSeconadry,
         decoration: InputDecoration(
           fillColor: fillColor,

@@ -108,6 +108,8 @@ class Routes {
   static const String editRequestViewRoute = "/editRequestViewRoute";
 
   static const String confirDriverViewRoute = "/confirDriverViewRoute";
+  static const String giveOfferFromChatViewRoute = "/giveOfferFromChatViewRoute";
+
   static const String availableDriversViewRoute = "/availableDriversViewRoute";
 }
 
@@ -306,13 +308,19 @@ class RouteGenerator {
 
         final String requestId = arguments['requestId'];
         return MaterialPageRoute(
-          builder: (_) => BlocProvider.value(
-            value: requestsCubit,
-            child: GiveOfferView(
-              requestId: requestId,
-            ),
-          ),
-        );
+            builder: (_) => MultiBlocProvider(
+                  providers: [
+                    BlocProvider.value(
+                      value: requestsCubit,
+                    ),
+                    BlocProvider.value(
+                      value: chatCubit,
+                    ),
+                  ],
+                  child: GiveOfferView(
+                    requestId: requestId,
+                  ),
+                ));
 
       case Routes.chatsViewRoute:
         final arguments = settings.arguments as Map;
@@ -378,6 +386,27 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (_) => const WorkWithUsView(),
         );
+
+        //  case Routes.giveOfferFromChatViewRoute:
+        // final arguments = settings.arguments as Map;
+
+        // final String chatId = arguments['chatId'];
+        // return MaterialPageRoute(
+        //   builder: (_) => MultiBlocProvider(
+        //           providers: [
+        //             BlocProvider.value(
+        //               value: requestsCubit,
+        //             ),
+        //             BlocProvider.value(
+        //               value: chatCubit,
+        //             ),
+        //           ],
+        //           child: GiveOfferFromChatView(
+        //             chatId: chatId,
+        //           ),
+        //         )
+        // );
+
       case Routes.skillsViewRoute:
         return MaterialPageRoute(
           builder: (_) => BlocProvider.value(

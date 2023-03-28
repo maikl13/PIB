@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pip/features/menu/data/models/setting_model.dart';
 import '../../../../core/business_logic/global_cubit.dart';
 import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
@@ -106,31 +107,37 @@ class _ContactUsViewState extends State<ContactUsView> {
           },
         );
       },
+      buildWhen: (previous, current) => current is GetSettingSuccess,
       builder: (context, state) {
         return state.maybeWhen(
           getSettingLoading: () {
             return const LoadingIndicator();
           },
           getSettingSuccess: (setting) {
-            return Column(
-              children: [
-                _buildInfo(
-                  userPhone: setting[2].value,
-                  userEmail: setting[1].value,
-                ),
-                SizedBox(height: 40.h),
-                _buildSocialMedia(
-                  facebookLink: setting[4].value!,
-                  twitterLink: setting[5].value!,
-                  instagramLink: setting[3].value!,
-                ),
-                SizedBox(height: 40.h),
-              ],
-            );
+            return _buildSettings(setting);
           },
-          orElse: () => Container(),
+          orElse: () =>
+              _buildSettings(BlocProvider.of<MenuCubit>(context).allSettings),
         );
       },
+    );
+  }
+
+  _buildSettings(List<SettingModel> setting) {
+    return Column(
+      children: [
+        _buildInfo(
+          userPhone: setting[2].value,
+          userEmail: setting[1].value,
+        ),
+        SizedBox(height: 40.h),
+        _buildSocialMedia(
+          facebookLink: setting[4].value!,
+          twitterLink: setting[5].value!,
+          instagramLink: setting[3].value!,
+        ),
+        SizedBox(height: 40.h),
+      ],
     );
   }
 

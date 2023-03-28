@@ -16,7 +16,7 @@ class HomeCubit extends Cubit<HomeState> {
   bool showTitle = true;
 
 
-   void getAllSliders() async {
+  void getAllSliders() async {
     emit(const HomeState.homeSlidersLoading());
     var result = await homeRepository.getAllSliders();
     result.when(
@@ -29,12 +29,12 @@ class HomeCubit extends Cubit<HomeState> {
       },
     );
   }
-     void getAllAds() async {
+  void getAllAds() async {
     emit(const HomeState.homeAdsLoading());
     var result = await homeRepository.getAllAds();
     result.when(
       success: (List<AdModel> ads) {
-   
+        
         emit(HomeState.homeAdsSuccess(ads));
       },
       failure: (NetworkExceptions networkExceptions) {
@@ -43,10 +43,9 @@ class HomeCubit extends Cubit<HomeState> {
     );
   }
 
-
   changeSelectedIndex(int index) {
+    // screenIndex = index;
     screenIndex = index;
-    selectedTab = index;
     emit(HomeState.selectedIndexChanged(index));
   }
 

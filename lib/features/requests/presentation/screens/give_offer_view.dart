@@ -56,9 +56,12 @@ class _GiveOfferViewState extends State<GiveOfferView> {
             showSuccessOfferDialog(
               context,
               onOk: () {
-                screenIndex = 2;
-                Navigator.pushReplacementNamed(
-                    context, Routes.mainHomeViewRoute);
+                setState(() {
+                  screenIndex = 2;
+                  // selectedTab = 2;
+                });
+                Navigator.pushNamedAndRemoveUntil(
+                    context, Routes.mainHomeViewRoute, (route) => false);
               },
             );
           },
