@@ -22,6 +22,13 @@ mixin _$PipState<T> {
     required TResult Function() skillsLoading,
     required TResult Function(List<SkillModel> data) skillssuccess,
     required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(DriverModel driver) driverInfoUpdated,
+    required TResult Function() stopGetDriverInfoStrem,
+    required TResult Function() resumeGetDriverInfoStrem,
+    required TResult Function() driverInfoLoading,
+    required TResult Function(DriverModel driver) driverInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        driverInfoError,
     required TResult Function() toggleLoading,
     required TResult Function(ToggleModel data) toggleSuccess,
     required TResult Function(NetworkExceptions networkExceptions) toggleError,
@@ -46,6 +53,12 @@ mixin _$PipState<T> {
     TResult? Function()? skillsLoading,
     TResult? Function(List<SkillModel> data)? skillssuccess,
     TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(DriverModel driver)? driverInfoUpdated,
+    TResult? Function()? stopGetDriverInfoStrem,
+    TResult? Function()? resumeGetDriverInfoStrem,
+    TResult? Function()? driverInfoLoading,
+    TResult? Function(DriverModel driver)? driverInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult? Function()? toggleLoading,
     TResult? Function(ToggleModel data)? toggleSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? toggleError,
@@ -70,6 +83,12 @@ mixin _$PipState<T> {
     TResult Function()? skillsLoading,
     TResult Function(List<SkillModel> data)? skillssuccess,
     TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(DriverModel driver)? driverInfoUpdated,
+    TResult Function()? stopGetDriverInfoStrem,
+    TResult Function()? resumeGetDriverInfoStrem,
+    TResult Function()? driverInfoLoading,
+    TResult Function(DriverModel driver)? driverInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult Function()? toggleLoading,
     TResult Function(ToggleModel data)? toggleSuccess,
     TResult Function(NetworkExceptions networkExceptions)? toggleError,
@@ -95,6 +114,14 @@ mixin _$PipState<T> {
     required TResult Function(SkillsLoading<T> value) skillsLoading,
     required TResult Function(SkillsSuccess<T> value) skillssuccess,
     required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(DriverInfoUpdated<T> value) driverInfoUpdated,
+    required TResult Function(StopGetDriverInfoStrem<T> value)
+        stopGetDriverInfoStrem,
+    required TResult Function(ResumeGetDriverInfoStrem<T> value)
+        resumeGetDriverInfoStrem,
+    required TResult Function(DriverInfoLoading<T> value) driverInfoLoading,
+    required TResult Function(DriverInfoSuccess<T> value) driverInfoSuccess,
+    required TResult Function(DriverInfoError<T> value) driverInfoError,
     required TResult Function(ToggleLoading<T> value) toggleLoading,
     required TResult Function(ToggleSuccess<T> value) toggleSuccess,
     required TResult Function(ToggleError<T> value) toggleError,
@@ -125,6 +152,13 @@ mixin _$PipState<T> {
     TResult? Function(SkillsLoading<T> value)? skillsLoading,
     TResult? Function(SkillsSuccess<T> value)? skillssuccess,
     TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult? Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult? Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult? Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult? Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult? Function(DriverInfoError<T> value)? driverInfoError,
     TResult? Function(ToggleLoading<T> value)? toggleLoading,
     TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult? Function(ToggleError<T> value)? toggleError,
@@ -152,6 +186,13 @@ mixin _$PipState<T> {
     TResult Function(SkillsLoading<T> value)? skillsLoading,
     TResult Function(SkillsSuccess<T> value)? skillssuccess,
     TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult Function(DriverInfoError<T> value)? driverInfoError,
     TResult Function(ToggleLoading<T> value)? toggleLoading,
     TResult Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult Function(ToggleError<T> value)? toggleError,
@@ -234,6 +275,13 @@ class _$Idle<T> implements Idle<T> {
     required TResult Function() skillsLoading,
     required TResult Function(List<SkillModel> data) skillssuccess,
     required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(DriverModel driver) driverInfoUpdated,
+    required TResult Function() stopGetDriverInfoStrem,
+    required TResult Function() resumeGetDriverInfoStrem,
+    required TResult Function() driverInfoLoading,
+    required TResult Function(DriverModel driver) driverInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        driverInfoError,
     required TResult Function() toggleLoading,
     required TResult Function(ToggleModel data) toggleSuccess,
     required TResult Function(NetworkExceptions networkExceptions) toggleError,
@@ -261,6 +309,12 @@ class _$Idle<T> implements Idle<T> {
     TResult? Function()? skillsLoading,
     TResult? Function(List<SkillModel> data)? skillssuccess,
     TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(DriverModel driver)? driverInfoUpdated,
+    TResult? Function()? stopGetDriverInfoStrem,
+    TResult? Function()? resumeGetDriverInfoStrem,
+    TResult? Function()? driverInfoLoading,
+    TResult? Function(DriverModel driver)? driverInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult? Function()? toggleLoading,
     TResult? Function(ToggleModel data)? toggleSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? toggleError,
@@ -288,6 +342,12 @@ class _$Idle<T> implements Idle<T> {
     TResult Function()? skillsLoading,
     TResult Function(List<SkillModel> data)? skillssuccess,
     TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(DriverModel driver)? driverInfoUpdated,
+    TResult Function()? stopGetDriverInfoStrem,
+    TResult Function()? resumeGetDriverInfoStrem,
+    TResult Function()? driverInfoLoading,
+    TResult Function(DriverModel driver)? driverInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult Function()? toggleLoading,
     TResult Function(ToggleModel data)? toggleSuccess,
     TResult Function(NetworkExceptions networkExceptions)? toggleError,
@@ -319,6 +379,14 @@ class _$Idle<T> implements Idle<T> {
     required TResult Function(SkillsLoading<T> value) skillsLoading,
     required TResult Function(SkillsSuccess<T> value) skillssuccess,
     required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(DriverInfoUpdated<T> value) driverInfoUpdated,
+    required TResult Function(StopGetDriverInfoStrem<T> value)
+        stopGetDriverInfoStrem,
+    required TResult Function(ResumeGetDriverInfoStrem<T> value)
+        resumeGetDriverInfoStrem,
+    required TResult Function(DriverInfoLoading<T> value) driverInfoLoading,
+    required TResult Function(DriverInfoSuccess<T> value) driverInfoSuccess,
+    required TResult Function(DriverInfoError<T> value) driverInfoError,
     required TResult Function(ToggleLoading<T> value) toggleLoading,
     required TResult Function(ToggleSuccess<T> value) toggleSuccess,
     required TResult Function(ToggleError<T> value) toggleError,
@@ -352,6 +420,13 @@ class _$Idle<T> implements Idle<T> {
     TResult? Function(SkillsLoading<T> value)? skillsLoading,
     TResult? Function(SkillsSuccess<T> value)? skillssuccess,
     TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult? Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult? Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult? Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult? Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult? Function(DriverInfoError<T> value)? driverInfoError,
     TResult? Function(ToggleLoading<T> value)? toggleLoading,
     TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult? Function(ToggleError<T> value)? toggleError,
@@ -382,6 +457,13 @@ class _$Idle<T> implements Idle<T> {
     TResult Function(SkillsLoading<T> value)? skillsLoading,
     TResult Function(SkillsSuccess<T> value)? skillssuccess,
     TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult Function(DriverInfoError<T> value)? driverInfoError,
     TResult Function(ToggleLoading<T> value)? toggleLoading,
     TResult Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult Function(ToggleError<T> value)? toggleError,
@@ -456,6 +538,13 @@ class _$SkillsLoading<T> implements SkillsLoading<T> {
     required TResult Function() skillsLoading,
     required TResult Function(List<SkillModel> data) skillssuccess,
     required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(DriverModel driver) driverInfoUpdated,
+    required TResult Function() stopGetDriverInfoStrem,
+    required TResult Function() resumeGetDriverInfoStrem,
+    required TResult Function() driverInfoLoading,
+    required TResult Function(DriverModel driver) driverInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        driverInfoError,
     required TResult Function() toggleLoading,
     required TResult Function(ToggleModel data) toggleSuccess,
     required TResult Function(NetworkExceptions networkExceptions) toggleError,
@@ -483,6 +572,12 @@ class _$SkillsLoading<T> implements SkillsLoading<T> {
     TResult? Function()? skillsLoading,
     TResult? Function(List<SkillModel> data)? skillssuccess,
     TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(DriverModel driver)? driverInfoUpdated,
+    TResult? Function()? stopGetDriverInfoStrem,
+    TResult? Function()? resumeGetDriverInfoStrem,
+    TResult? Function()? driverInfoLoading,
+    TResult? Function(DriverModel driver)? driverInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult? Function()? toggleLoading,
     TResult? Function(ToggleModel data)? toggleSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? toggleError,
@@ -510,6 +605,12 @@ class _$SkillsLoading<T> implements SkillsLoading<T> {
     TResult Function()? skillsLoading,
     TResult Function(List<SkillModel> data)? skillssuccess,
     TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(DriverModel driver)? driverInfoUpdated,
+    TResult Function()? stopGetDriverInfoStrem,
+    TResult Function()? resumeGetDriverInfoStrem,
+    TResult Function()? driverInfoLoading,
+    TResult Function(DriverModel driver)? driverInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult Function()? toggleLoading,
     TResult Function(ToggleModel data)? toggleSuccess,
     TResult Function(NetworkExceptions networkExceptions)? toggleError,
@@ -541,6 +642,14 @@ class _$SkillsLoading<T> implements SkillsLoading<T> {
     required TResult Function(SkillsLoading<T> value) skillsLoading,
     required TResult Function(SkillsSuccess<T> value) skillssuccess,
     required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(DriverInfoUpdated<T> value) driverInfoUpdated,
+    required TResult Function(StopGetDriverInfoStrem<T> value)
+        stopGetDriverInfoStrem,
+    required TResult Function(ResumeGetDriverInfoStrem<T> value)
+        resumeGetDriverInfoStrem,
+    required TResult Function(DriverInfoLoading<T> value) driverInfoLoading,
+    required TResult Function(DriverInfoSuccess<T> value) driverInfoSuccess,
+    required TResult Function(DriverInfoError<T> value) driverInfoError,
     required TResult Function(ToggleLoading<T> value) toggleLoading,
     required TResult Function(ToggleSuccess<T> value) toggleSuccess,
     required TResult Function(ToggleError<T> value) toggleError,
@@ -574,6 +683,13 @@ class _$SkillsLoading<T> implements SkillsLoading<T> {
     TResult? Function(SkillsLoading<T> value)? skillsLoading,
     TResult? Function(SkillsSuccess<T> value)? skillssuccess,
     TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult? Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult? Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult? Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult? Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult? Function(DriverInfoError<T> value)? driverInfoError,
     TResult? Function(ToggleLoading<T> value)? toggleLoading,
     TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult? Function(ToggleError<T> value)? toggleError,
@@ -604,6 +720,13 @@ class _$SkillsLoading<T> implements SkillsLoading<T> {
     TResult Function(SkillsLoading<T> value)? skillsLoading,
     TResult Function(SkillsSuccess<T> value)? skillssuccess,
     TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult Function(DriverInfoError<T> value)? driverInfoError,
     TResult Function(ToggleLoading<T> value)? toggleLoading,
     TResult Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult Function(ToggleError<T> value)? toggleError,
@@ -710,6 +833,13 @@ class _$SkillsSuccess<T> implements SkillsSuccess<T> {
     required TResult Function() skillsLoading,
     required TResult Function(List<SkillModel> data) skillssuccess,
     required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(DriverModel driver) driverInfoUpdated,
+    required TResult Function() stopGetDriverInfoStrem,
+    required TResult Function() resumeGetDriverInfoStrem,
+    required TResult Function() driverInfoLoading,
+    required TResult Function(DriverModel driver) driverInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        driverInfoError,
     required TResult Function() toggleLoading,
     required TResult Function(ToggleModel data) toggleSuccess,
     required TResult Function(NetworkExceptions networkExceptions) toggleError,
@@ -737,6 +867,12 @@ class _$SkillsSuccess<T> implements SkillsSuccess<T> {
     TResult? Function()? skillsLoading,
     TResult? Function(List<SkillModel> data)? skillssuccess,
     TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(DriverModel driver)? driverInfoUpdated,
+    TResult? Function()? stopGetDriverInfoStrem,
+    TResult? Function()? resumeGetDriverInfoStrem,
+    TResult? Function()? driverInfoLoading,
+    TResult? Function(DriverModel driver)? driverInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult? Function()? toggleLoading,
     TResult? Function(ToggleModel data)? toggleSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? toggleError,
@@ -764,6 +900,12 @@ class _$SkillsSuccess<T> implements SkillsSuccess<T> {
     TResult Function()? skillsLoading,
     TResult Function(List<SkillModel> data)? skillssuccess,
     TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(DriverModel driver)? driverInfoUpdated,
+    TResult Function()? stopGetDriverInfoStrem,
+    TResult Function()? resumeGetDriverInfoStrem,
+    TResult Function()? driverInfoLoading,
+    TResult Function(DriverModel driver)? driverInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult Function()? toggleLoading,
     TResult Function(ToggleModel data)? toggleSuccess,
     TResult Function(NetworkExceptions networkExceptions)? toggleError,
@@ -795,6 +937,14 @@ class _$SkillsSuccess<T> implements SkillsSuccess<T> {
     required TResult Function(SkillsLoading<T> value) skillsLoading,
     required TResult Function(SkillsSuccess<T> value) skillssuccess,
     required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(DriverInfoUpdated<T> value) driverInfoUpdated,
+    required TResult Function(StopGetDriverInfoStrem<T> value)
+        stopGetDriverInfoStrem,
+    required TResult Function(ResumeGetDriverInfoStrem<T> value)
+        resumeGetDriverInfoStrem,
+    required TResult Function(DriverInfoLoading<T> value) driverInfoLoading,
+    required TResult Function(DriverInfoSuccess<T> value) driverInfoSuccess,
+    required TResult Function(DriverInfoError<T> value) driverInfoError,
     required TResult Function(ToggleLoading<T> value) toggleLoading,
     required TResult Function(ToggleSuccess<T> value) toggleSuccess,
     required TResult Function(ToggleError<T> value) toggleError,
@@ -828,6 +978,13 @@ class _$SkillsSuccess<T> implements SkillsSuccess<T> {
     TResult? Function(SkillsLoading<T> value)? skillsLoading,
     TResult? Function(SkillsSuccess<T> value)? skillssuccess,
     TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult? Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult? Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult? Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult? Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult? Function(DriverInfoError<T> value)? driverInfoError,
     TResult? Function(ToggleLoading<T> value)? toggleLoading,
     TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult? Function(ToggleError<T> value)? toggleError,
@@ -858,6 +1015,13 @@ class _$SkillsSuccess<T> implements SkillsSuccess<T> {
     TResult Function(SkillsLoading<T> value)? skillsLoading,
     TResult Function(SkillsSuccess<T> value)? skillssuccess,
     TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult Function(DriverInfoError<T> value)? driverInfoError,
     TResult Function(ToggleLoading<T> value)? toggleLoading,
     TResult Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult Function(ToggleError<T> value)? toggleError,
@@ -974,6 +1138,13 @@ class _$SkillsError<T> implements SkillsError<T> {
     required TResult Function() skillsLoading,
     required TResult Function(List<SkillModel> data) skillssuccess,
     required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(DriverModel driver) driverInfoUpdated,
+    required TResult Function() stopGetDriverInfoStrem,
+    required TResult Function() resumeGetDriverInfoStrem,
+    required TResult Function() driverInfoLoading,
+    required TResult Function(DriverModel driver) driverInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        driverInfoError,
     required TResult Function() toggleLoading,
     required TResult Function(ToggleModel data) toggleSuccess,
     required TResult Function(NetworkExceptions networkExceptions) toggleError,
@@ -1001,6 +1172,12 @@ class _$SkillsError<T> implements SkillsError<T> {
     TResult? Function()? skillsLoading,
     TResult? Function(List<SkillModel> data)? skillssuccess,
     TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(DriverModel driver)? driverInfoUpdated,
+    TResult? Function()? stopGetDriverInfoStrem,
+    TResult? Function()? resumeGetDriverInfoStrem,
+    TResult? Function()? driverInfoLoading,
+    TResult? Function(DriverModel driver)? driverInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult? Function()? toggleLoading,
     TResult? Function(ToggleModel data)? toggleSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? toggleError,
@@ -1028,6 +1205,12 @@ class _$SkillsError<T> implements SkillsError<T> {
     TResult Function()? skillsLoading,
     TResult Function(List<SkillModel> data)? skillssuccess,
     TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(DriverModel driver)? driverInfoUpdated,
+    TResult Function()? stopGetDriverInfoStrem,
+    TResult Function()? resumeGetDriverInfoStrem,
+    TResult Function()? driverInfoLoading,
+    TResult Function(DriverModel driver)? driverInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult Function()? toggleLoading,
     TResult Function(ToggleModel data)? toggleSuccess,
     TResult Function(NetworkExceptions networkExceptions)? toggleError,
@@ -1059,6 +1242,14 @@ class _$SkillsError<T> implements SkillsError<T> {
     required TResult Function(SkillsLoading<T> value) skillsLoading,
     required TResult Function(SkillsSuccess<T> value) skillssuccess,
     required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(DriverInfoUpdated<T> value) driverInfoUpdated,
+    required TResult Function(StopGetDriverInfoStrem<T> value)
+        stopGetDriverInfoStrem,
+    required TResult Function(ResumeGetDriverInfoStrem<T> value)
+        resumeGetDriverInfoStrem,
+    required TResult Function(DriverInfoLoading<T> value) driverInfoLoading,
+    required TResult Function(DriverInfoSuccess<T> value) driverInfoSuccess,
+    required TResult Function(DriverInfoError<T> value) driverInfoError,
     required TResult Function(ToggleLoading<T> value) toggleLoading,
     required TResult Function(ToggleSuccess<T> value) toggleSuccess,
     required TResult Function(ToggleError<T> value) toggleError,
@@ -1092,6 +1283,13 @@ class _$SkillsError<T> implements SkillsError<T> {
     TResult? Function(SkillsLoading<T> value)? skillsLoading,
     TResult? Function(SkillsSuccess<T> value)? skillssuccess,
     TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult? Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult? Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult? Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult? Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult? Function(DriverInfoError<T> value)? driverInfoError,
     TResult? Function(ToggleLoading<T> value)? toggleLoading,
     TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult? Function(ToggleError<T> value)? toggleError,
@@ -1122,6 +1320,13 @@ class _$SkillsError<T> implements SkillsError<T> {
     TResult Function(SkillsLoading<T> value)? skillsLoading,
     TResult Function(SkillsSuccess<T> value)? skillssuccess,
     TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult Function(DriverInfoError<T> value)? driverInfoError,
     TResult Function(ToggleLoading<T> value)? toggleLoading,
     TResult Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult Function(ToggleError<T> value)? toggleError,
@@ -1157,6 +1362,1697 @@ abstract class SkillsError<T> implements PipState<T> {
   NetworkExceptions get networkExceptions;
   @JsonKey(ignore: true)
   _$$SkillsErrorCopyWith<T, _$SkillsError<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DriverInfoUpdatedCopyWith<T, $Res> {
+  factory _$$DriverInfoUpdatedCopyWith(_$DriverInfoUpdated<T> value,
+          $Res Function(_$DriverInfoUpdated<T>) then) =
+      __$$DriverInfoUpdatedCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({DriverModel driver});
+}
+
+/// @nodoc
+class __$$DriverInfoUpdatedCopyWithImpl<T, $Res>
+    extends _$PipStateCopyWithImpl<T, $Res, _$DriverInfoUpdated<T>>
+    implements _$$DriverInfoUpdatedCopyWith<T, $Res> {
+  __$$DriverInfoUpdatedCopyWithImpl(_$DriverInfoUpdated<T> _value,
+      $Res Function(_$DriverInfoUpdated<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? driver = null,
+  }) {
+    return _then(_$DriverInfoUpdated<T>(
+      null == driver
+          ? _value.driver
+          : driver // ignore: cast_nullable_to_non_nullable
+              as DriverModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DriverInfoUpdated<T> implements DriverInfoUpdated<T> {
+  const _$DriverInfoUpdated(this.driver);
+
+  @override
+  final DriverModel driver;
+
+  @override
+  String toString() {
+    return 'PipState<$T>.driverInfoUpdated(driver: $driver)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DriverInfoUpdated<T> &&
+            (identical(other.driver, driver) || other.driver == driver));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, driver);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DriverInfoUpdatedCopyWith<T, _$DriverInfoUpdated<T>> get copyWith =>
+      __$$DriverInfoUpdatedCopyWithImpl<T, _$DriverInfoUpdated<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() skillsLoading,
+    required TResult Function(List<SkillModel> data) skillssuccess,
+    required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(DriverModel driver) driverInfoUpdated,
+    required TResult Function() stopGetDriverInfoStrem,
+    required TResult Function() resumeGetDriverInfoStrem,
+    required TResult Function() driverInfoLoading,
+    required TResult Function(DriverModel driver) driverInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        driverInfoError,
+    required TResult Function() toggleLoading,
+    required TResult Function(ToggleModel data) toggleSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) toggleError,
+    required TResult Function() fastRequestCategoryLoading,
+    required TResult Function(List<FastRequestCategory> data)
+        fastRequestCategorySuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        fastRequestCategoryError,
+    required TResult Function(List<File> images) imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function(List<File> images) imageSelectedDeleted,
+    required TResult Function() createSpecialRequestLoading,
+    required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        createSpecialRequestError,
+  }) {
+    return driverInfoUpdated(driver);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? skillsLoading,
+    TResult? Function(List<SkillModel> data)? skillssuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(DriverModel driver)? driverInfoUpdated,
+    TResult? Function()? stopGetDriverInfoStrem,
+    TResult? Function()? resumeGetDriverInfoStrem,
+    TResult? Function()? driverInfoLoading,
+    TResult? Function(DriverModel driver)? driverInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? driverInfoError,
+    TResult? Function()? toggleLoading,
+    TResult? Function(ToggleModel data)? toggleSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult? Function()? fastRequestCategoryLoading,
+    TResult? Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
+    TResult? Function(List<File> images)? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function(List<File> images)? imageSelectedDeleted,
+    TResult? Function()? createSpecialRequestLoading,
+    TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+  }) {
+    return driverInfoUpdated?.call(driver);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? skillsLoading,
+    TResult Function(List<SkillModel> data)? skillssuccess,
+    TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(DriverModel driver)? driverInfoUpdated,
+    TResult Function()? stopGetDriverInfoStrem,
+    TResult Function()? resumeGetDriverInfoStrem,
+    TResult Function()? driverInfoLoading,
+    TResult Function(DriverModel driver)? driverInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? driverInfoError,
+    TResult Function()? toggleLoading,
+    TResult Function(ToggleModel data)? toggleSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult Function()? fastRequestCategoryLoading,
+    TResult Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
+    TResult Function(List<File> images)? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function(List<File> images)? imageSelectedDeleted,
+    TResult Function()? createSpecialRequestLoading,
+    TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (driverInfoUpdated != null) {
+      return driverInfoUpdated(driver);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(SkillsLoading<T> value) skillsLoading,
+    required TResult Function(SkillsSuccess<T> value) skillssuccess,
+    required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(DriverInfoUpdated<T> value) driverInfoUpdated,
+    required TResult Function(StopGetDriverInfoStrem<T> value)
+        stopGetDriverInfoStrem,
+    required TResult Function(ResumeGetDriverInfoStrem<T> value)
+        resumeGetDriverInfoStrem,
+    required TResult Function(DriverInfoLoading<T> value) driverInfoLoading,
+    required TResult Function(DriverInfoSuccess<T> value) driverInfoSuccess,
+    required TResult Function(DriverInfoError<T> value) driverInfoError,
+    required TResult Function(ToggleLoading<T> value) toggleLoading,
+    required TResult Function(ToggleSuccess<T> value) toggleSuccess,
+    required TResult Function(ToggleError<T> value) toggleError,
+    required TResult Function(FastRequestCategoryLoading<T> value)
+        fastRequestCategoryLoading,
+    required TResult Function(FastRequestCategorySuccess<T> value)
+        fastRequestCategorySuccess,
+    required TResult Function(FastRequestCategoryError<T> value)
+        fastRequestCategoryError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(ImageSelectedDeleted<T> value)
+        imageSelectedDeleted,
+    required TResult Function(CreateSpecialRequestLoading<T> value)
+        createSpecialRequestLoading,
+    required TResult Function(CreateSpecialRequestSuccess<T> value)
+        createSpecialRequestSuccess,
+    required TResult Function(CreateSpecialRequestError<T> value)
+        createSpecialRequestError,
+  }) {
+    return driverInfoUpdated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(SkillsLoading<T> value)? skillsLoading,
+    TResult? Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult? Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult? Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult? Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult? Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult? Function(DriverInfoError<T> value)? driverInfoError,
+    TResult? Function(ToggleLoading<T> value)? toggleLoading,
+    TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult? Function(ToggleError<T> value)? toggleError,
+    TResult? Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult? Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult? Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult? Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult? Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult? Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+  }) {
+    return driverInfoUpdated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(SkillsLoading<T> value)? skillsLoading,
+    TResult Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult Function(DriverInfoError<T> value)? driverInfoError,
+    TResult Function(ToggleLoading<T> value)? toggleLoading,
+    TResult Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult Function(ToggleError<T> value)? toggleError,
+    TResult Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (driverInfoUpdated != null) {
+      return driverInfoUpdated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DriverInfoUpdated<T> implements PipState<T> {
+  const factory DriverInfoUpdated(final DriverModel driver) =
+      _$DriverInfoUpdated<T>;
+
+  DriverModel get driver;
+  @JsonKey(ignore: true)
+  _$$DriverInfoUpdatedCopyWith<T, _$DriverInfoUpdated<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$StopGetDriverInfoStremCopyWith<T, $Res> {
+  factory _$$StopGetDriverInfoStremCopyWith(_$StopGetDriverInfoStrem<T> value,
+          $Res Function(_$StopGetDriverInfoStrem<T>) then) =
+      __$$StopGetDriverInfoStremCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$StopGetDriverInfoStremCopyWithImpl<T, $Res>
+    extends _$PipStateCopyWithImpl<T, $Res, _$StopGetDriverInfoStrem<T>>
+    implements _$$StopGetDriverInfoStremCopyWith<T, $Res> {
+  __$$StopGetDriverInfoStremCopyWithImpl(_$StopGetDriverInfoStrem<T> _value,
+      $Res Function(_$StopGetDriverInfoStrem<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$StopGetDriverInfoStrem<T> implements StopGetDriverInfoStrem<T> {
+  const _$StopGetDriverInfoStrem();
+
+  @override
+  String toString() {
+    return 'PipState<$T>.stopGetDriverInfoStrem()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$StopGetDriverInfoStrem<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() skillsLoading,
+    required TResult Function(List<SkillModel> data) skillssuccess,
+    required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(DriverModel driver) driverInfoUpdated,
+    required TResult Function() stopGetDriverInfoStrem,
+    required TResult Function() resumeGetDriverInfoStrem,
+    required TResult Function() driverInfoLoading,
+    required TResult Function(DriverModel driver) driverInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        driverInfoError,
+    required TResult Function() toggleLoading,
+    required TResult Function(ToggleModel data) toggleSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) toggleError,
+    required TResult Function() fastRequestCategoryLoading,
+    required TResult Function(List<FastRequestCategory> data)
+        fastRequestCategorySuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        fastRequestCategoryError,
+    required TResult Function(List<File> images) imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function(List<File> images) imageSelectedDeleted,
+    required TResult Function() createSpecialRequestLoading,
+    required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        createSpecialRequestError,
+  }) {
+    return stopGetDriverInfoStrem();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? skillsLoading,
+    TResult? Function(List<SkillModel> data)? skillssuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(DriverModel driver)? driverInfoUpdated,
+    TResult? Function()? stopGetDriverInfoStrem,
+    TResult? Function()? resumeGetDriverInfoStrem,
+    TResult? Function()? driverInfoLoading,
+    TResult? Function(DriverModel driver)? driverInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? driverInfoError,
+    TResult? Function()? toggleLoading,
+    TResult? Function(ToggleModel data)? toggleSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult? Function()? fastRequestCategoryLoading,
+    TResult? Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
+    TResult? Function(List<File> images)? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function(List<File> images)? imageSelectedDeleted,
+    TResult? Function()? createSpecialRequestLoading,
+    TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+  }) {
+    return stopGetDriverInfoStrem?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? skillsLoading,
+    TResult Function(List<SkillModel> data)? skillssuccess,
+    TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(DriverModel driver)? driverInfoUpdated,
+    TResult Function()? stopGetDriverInfoStrem,
+    TResult Function()? resumeGetDriverInfoStrem,
+    TResult Function()? driverInfoLoading,
+    TResult Function(DriverModel driver)? driverInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? driverInfoError,
+    TResult Function()? toggleLoading,
+    TResult Function(ToggleModel data)? toggleSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult Function()? fastRequestCategoryLoading,
+    TResult Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
+    TResult Function(List<File> images)? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function(List<File> images)? imageSelectedDeleted,
+    TResult Function()? createSpecialRequestLoading,
+    TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (stopGetDriverInfoStrem != null) {
+      return stopGetDriverInfoStrem();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(SkillsLoading<T> value) skillsLoading,
+    required TResult Function(SkillsSuccess<T> value) skillssuccess,
+    required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(DriverInfoUpdated<T> value) driverInfoUpdated,
+    required TResult Function(StopGetDriverInfoStrem<T> value)
+        stopGetDriverInfoStrem,
+    required TResult Function(ResumeGetDriverInfoStrem<T> value)
+        resumeGetDriverInfoStrem,
+    required TResult Function(DriverInfoLoading<T> value) driverInfoLoading,
+    required TResult Function(DriverInfoSuccess<T> value) driverInfoSuccess,
+    required TResult Function(DriverInfoError<T> value) driverInfoError,
+    required TResult Function(ToggleLoading<T> value) toggleLoading,
+    required TResult Function(ToggleSuccess<T> value) toggleSuccess,
+    required TResult Function(ToggleError<T> value) toggleError,
+    required TResult Function(FastRequestCategoryLoading<T> value)
+        fastRequestCategoryLoading,
+    required TResult Function(FastRequestCategorySuccess<T> value)
+        fastRequestCategorySuccess,
+    required TResult Function(FastRequestCategoryError<T> value)
+        fastRequestCategoryError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(ImageSelectedDeleted<T> value)
+        imageSelectedDeleted,
+    required TResult Function(CreateSpecialRequestLoading<T> value)
+        createSpecialRequestLoading,
+    required TResult Function(CreateSpecialRequestSuccess<T> value)
+        createSpecialRequestSuccess,
+    required TResult Function(CreateSpecialRequestError<T> value)
+        createSpecialRequestError,
+  }) {
+    return stopGetDriverInfoStrem(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(SkillsLoading<T> value)? skillsLoading,
+    TResult? Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult? Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult? Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult? Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult? Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult? Function(DriverInfoError<T> value)? driverInfoError,
+    TResult? Function(ToggleLoading<T> value)? toggleLoading,
+    TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult? Function(ToggleError<T> value)? toggleError,
+    TResult? Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult? Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult? Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult? Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult? Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult? Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+  }) {
+    return stopGetDriverInfoStrem?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(SkillsLoading<T> value)? skillsLoading,
+    TResult Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult Function(DriverInfoError<T> value)? driverInfoError,
+    TResult Function(ToggleLoading<T> value)? toggleLoading,
+    TResult Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult Function(ToggleError<T> value)? toggleError,
+    TResult Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (stopGetDriverInfoStrem != null) {
+      return stopGetDriverInfoStrem(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class StopGetDriverInfoStrem<T> implements PipState<T> {
+  const factory StopGetDriverInfoStrem() = _$StopGetDriverInfoStrem<T>;
+}
+
+/// @nodoc
+abstract class _$$ResumeGetDriverInfoStremCopyWith<T, $Res> {
+  factory _$$ResumeGetDriverInfoStremCopyWith(
+          _$ResumeGetDriverInfoStrem<T> value,
+          $Res Function(_$ResumeGetDriverInfoStrem<T>) then) =
+      __$$ResumeGetDriverInfoStremCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$ResumeGetDriverInfoStremCopyWithImpl<T, $Res>
+    extends _$PipStateCopyWithImpl<T, $Res, _$ResumeGetDriverInfoStrem<T>>
+    implements _$$ResumeGetDriverInfoStremCopyWith<T, $Res> {
+  __$$ResumeGetDriverInfoStremCopyWithImpl(_$ResumeGetDriverInfoStrem<T> _value,
+      $Res Function(_$ResumeGetDriverInfoStrem<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ResumeGetDriverInfoStrem<T> implements ResumeGetDriverInfoStrem<T> {
+  const _$ResumeGetDriverInfoStrem();
+
+  @override
+  String toString() {
+    return 'PipState<$T>.resumeGetDriverInfoStrem()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ResumeGetDriverInfoStrem<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() skillsLoading,
+    required TResult Function(List<SkillModel> data) skillssuccess,
+    required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(DriverModel driver) driverInfoUpdated,
+    required TResult Function() stopGetDriverInfoStrem,
+    required TResult Function() resumeGetDriverInfoStrem,
+    required TResult Function() driverInfoLoading,
+    required TResult Function(DriverModel driver) driverInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        driverInfoError,
+    required TResult Function() toggleLoading,
+    required TResult Function(ToggleModel data) toggleSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) toggleError,
+    required TResult Function() fastRequestCategoryLoading,
+    required TResult Function(List<FastRequestCategory> data)
+        fastRequestCategorySuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        fastRequestCategoryError,
+    required TResult Function(List<File> images) imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function(List<File> images) imageSelectedDeleted,
+    required TResult Function() createSpecialRequestLoading,
+    required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        createSpecialRequestError,
+  }) {
+    return resumeGetDriverInfoStrem();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? skillsLoading,
+    TResult? Function(List<SkillModel> data)? skillssuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(DriverModel driver)? driverInfoUpdated,
+    TResult? Function()? stopGetDriverInfoStrem,
+    TResult? Function()? resumeGetDriverInfoStrem,
+    TResult? Function()? driverInfoLoading,
+    TResult? Function(DriverModel driver)? driverInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? driverInfoError,
+    TResult? Function()? toggleLoading,
+    TResult? Function(ToggleModel data)? toggleSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult? Function()? fastRequestCategoryLoading,
+    TResult? Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
+    TResult? Function(List<File> images)? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function(List<File> images)? imageSelectedDeleted,
+    TResult? Function()? createSpecialRequestLoading,
+    TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+  }) {
+    return resumeGetDriverInfoStrem?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? skillsLoading,
+    TResult Function(List<SkillModel> data)? skillssuccess,
+    TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(DriverModel driver)? driverInfoUpdated,
+    TResult Function()? stopGetDriverInfoStrem,
+    TResult Function()? resumeGetDriverInfoStrem,
+    TResult Function()? driverInfoLoading,
+    TResult Function(DriverModel driver)? driverInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? driverInfoError,
+    TResult Function()? toggleLoading,
+    TResult Function(ToggleModel data)? toggleSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult Function()? fastRequestCategoryLoading,
+    TResult Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
+    TResult Function(List<File> images)? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function(List<File> images)? imageSelectedDeleted,
+    TResult Function()? createSpecialRequestLoading,
+    TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (resumeGetDriverInfoStrem != null) {
+      return resumeGetDriverInfoStrem();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(SkillsLoading<T> value) skillsLoading,
+    required TResult Function(SkillsSuccess<T> value) skillssuccess,
+    required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(DriverInfoUpdated<T> value) driverInfoUpdated,
+    required TResult Function(StopGetDriverInfoStrem<T> value)
+        stopGetDriverInfoStrem,
+    required TResult Function(ResumeGetDriverInfoStrem<T> value)
+        resumeGetDriverInfoStrem,
+    required TResult Function(DriverInfoLoading<T> value) driverInfoLoading,
+    required TResult Function(DriverInfoSuccess<T> value) driverInfoSuccess,
+    required TResult Function(DriverInfoError<T> value) driverInfoError,
+    required TResult Function(ToggleLoading<T> value) toggleLoading,
+    required TResult Function(ToggleSuccess<T> value) toggleSuccess,
+    required TResult Function(ToggleError<T> value) toggleError,
+    required TResult Function(FastRequestCategoryLoading<T> value)
+        fastRequestCategoryLoading,
+    required TResult Function(FastRequestCategorySuccess<T> value)
+        fastRequestCategorySuccess,
+    required TResult Function(FastRequestCategoryError<T> value)
+        fastRequestCategoryError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(ImageSelectedDeleted<T> value)
+        imageSelectedDeleted,
+    required TResult Function(CreateSpecialRequestLoading<T> value)
+        createSpecialRequestLoading,
+    required TResult Function(CreateSpecialRequestSuccess<T> value)
+        createSpecialRequestSuccess,
+    required TResult Function(CreateSpecialRequestError<T> value)
+        createSpecialRequestError,
+  }) {
+    return resumeGetDriverInfoStrem(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(SkillsLoading<T> value)? skillsLoading,
+    TResult? Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult? Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult? Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult? Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult? Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult? Function(DriverInfoError<T> value)? driverInfoError,
+    TResult? Function(ToggleLoading<T> value)? toggleLoading,
+    TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult? Function(ToggleError<T> value)? toggleError,
+    TResult? Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult? Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult? Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult? Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult? Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult? Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+  }) {
+    return resumeGetDriverInfoStrem?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(SkillsLoading<T> value)? skillsLoading,
+    TResult Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult Function(DriverInfoError<T> value)? driverInfoError,
+    TResult Function(ToggleLoading<T> value)? toggleLoading,
+    TResult Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult Function(ToggleError<T> value)? toggleError,
+    TResult Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (resumeGetDriverInfoStrem != null) {
+      return resumeGetDriverInfoStrem(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ResumeGetDriverInfoStrem<T> implements PipState<T> {
+  const factory ResumeGetDriverInfoStrem() = _$ResumeGetDriverInfoStrem<T>;
+}
+
+/// @nodoc
+abstract class _$$DriverInfoLoadingCopyWith<T, $Res> {
+  factory _$$DriverInfoLoadingCopyWith(_$DriverInfoLoading<T> value,
+          $Res Function(_$DriverInfoLoading<T>) then) =
+      __$$DriverInfoLoadingCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$DriverInfoLoadingCopyWithImpl<T, $Res>
+    extends _$PipStateCopyWithImpl<T, $Res, _$DriverInfoLoading<T>>
+    implements _$$DriverInfoLoadingCopyWith<T, $Res> {
+  __$$DriverInfoLoadingCopyWithImpl(_$DriverInfoLoading<T> _value,
+      $Res Function(_$DriverInfoLoading<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$DriverInfoLoading<T> implements DriverInfoLoading<T> {
+  const _$DriverInfoLoading();
+
+  @override
+  String toString() {
+    return 'PipState<$T>.driverInfoLoading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$DriverInfoLoading<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() skillsLoading,
+    required TResult Function(List<SkillModel> data) skillssuccess,
+    required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(DriverModel driver) driverInfoUpdated,
+    required TResult Function() stopGetDriverInfoStrem,
+    required TResult Function() resumeGetDriverInfoStrem,
+    required TResult Function() driverInfoLoading,
+    required TResult Function(DriverModel driver) driverInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        driverInfoError,
+    required TResult Function() toggleLoading,
+    required TResult Function(ToggleModel data) toggleSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) toggleError,
+    required TResult Function() fastRequestCategoryLoading,
+    required TResult Function(List<FastRequestCategory> data)
+        fastRequestCategorySuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        fastRequestCategoryError,
+    required TResult Function(List<File> images) imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function(List<File> images) imageSelectedDeleted,
+    required TResult Function() createSpecialRequestLoading,
+    required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        createSpecialRequestError,
+  }) {
+    return driverInfoLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? skillsLoading,
+    TResult? Function(List<SkillModel> data)? skillssuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(DriverModel driver)? driverInfoUpdated,
+    TResult? Function()? stopGetDriverInfoStrem,
+    TResult? Function()? resumeGetDriverInfoStrem,
+    TResult? Function()? driverInfoLoading,
+    TResult? Function(DriverModel driver)? driverInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? driverInfoError,
+    TResult? Function()? toggleLoading,
+    TResult? Function(ToggleModel data)? toggleSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult? Function()? fastRequestCategoryLoading,
+    TResult? Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
+    TResult? Function(List<File> images)? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function(List<File> images)? imageSelectedDeleted,
+    TResult? Function()? createSpecialRequestLoading,
+    TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+  }) {
+    return driverInfoLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? skillsLoading,
+    TResult Function(List<SkillModel> data)? skillssuccess,
+    TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(DriverModel driver)? driverInfoUpdated,
+    TResult Function()? stopGetDriverInfoStrem,
+    TResult Function()? resumeGetDriverInfoStrem,
+    TResult Function()? driverInfoLoading,
+    TResult Function(DriverModel driver)? driverInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? driverInfoError,
+    TResult Function()? toggleLoading,
+    TResult Function(ToggleModel data)? toggleSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult Function()? fastRequestCategoryLoading,
+    TResult Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
+    TResult Function(List<File> images)? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function(List<File> images)? imageSelectedDeleted,
+    TResult Function()? createSpecialRequestLoading,
+    TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (driverInfoLoading != null) {
+      return driverInfoLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(SkillsLoading<T> value) skillsLoading,
+    required TResult Function(SkillsSuccess<T> value) skillssuccess,
+    required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(DriverInfoUpdated<T> value) driverInfoUpdated,
+    required TResult Function(StopGetDriverInfoStrem<T> value)
+        stopGetDriverInfoStrem,
+    required TResult Function(ResumeGetDriverInfoStrem<T> value)
+        resumeGetDriverInfoStrem,
+    required TResult Function(DriverInfoLoading<T> value) driverInfoLoading,
+    required TResult Function(DriverInfoSuccess<T> value) driverInfoSuccess,
+    required TResult Function(DriverInfoError<T> value) driverInfoError,
+    required TResult Function(ToggleLoading<T> value) toggleLoading,
+    required TResult Function(ToggleSuccess<T> value) toggleSuccess,
+    required TResult Function(ToggleError<T> value) toggleError,
+    required TResult Function(FastRequestCategoryLoading<T> value)
+        fastRequestCategoryLoading,
+    required TResult Function(FastRequestCategorySuccess<T> value)
+        fastRequestCategorySuccess,
+    required TResult Function(FastRequestCategoryError<T> value)
+        fastRequestCategoryError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(ImageSelectedDeleted<T> value)
+        imageSelectedDeleted,
+    required TResult Function(CreateSpecialRequestLoading<T> value)
+        createSpecialRequestLoading,
+    required TResult Function(CreateSpecialRequestSuccess<T> value)
+        createSpecialRequestSuccess,
+    required TResult Function(CreateSpecialRequestError<T> value)
+        createSpecialRequestError,
+  }) {
+    return driverInfoLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(SkillsLoading<T> value)? skillsLoading,
+    TResult? Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult? Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult? Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult? Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult? Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult? Function(DriverInfoError<T> value)? driverInfoError,
+    TResult? Function(ToggleLoading<T> value)? toggleLoading,
+    TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult? Function(ToggleError<T> value)? toggleError,
+    TResult? Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult? Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult? Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult? Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult? Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult? Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+  }) {
+    return driverInfoLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(SkillsLoading<T> value)? skillsLoading,
+    TResult Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult Function(DriverInfoError<T> value)? driverInfoError,
+    TResult Function(ToggleLoading<T> value)? toggleLoading,
+    TResult Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult Function(ToggleError<T> value)? toggleError,
+    TResult Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (driverInfoLoading != null) {
+      return driverInfoLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DriverInfoLoading<T> implements PipState<T> {
+  const factory DriverInfoLoading() = _$DriverInfoLoading<T>;
+}
+
+/// @nodoc
+abstract class _$$DriverInfoSuccessCopyWith<T, $Res> {
+  factory _$$DriverInfoSuccessCopyWith(_$DriverInfoSuccess<T> value,
+          $Res Function(_$DriverInfoSuccess<T>) then) =
+      __$$DriverInfoSuccessCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({DriverModel driver});
+}
+
+/// @nodoc
+class __$$DriverInfoSuccessCopyWithImpl<T, $Res>
+    extends _$PipStateCopyWithImpl<T, $Res, _$DriverInfoSuccess<T>>
+    implements _$$DriverInfoSuccessCopyWith<T, $Res> {
+  __$$DriverInfoSuccessCopyWithImpl(_$DriverInfoSuccess<T> _value,
+      $Res Function(_$DriverInfoSuccess<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? driver = null,
+  }) {
+    return _then(_$DriverInfoSuccess<T>(
+      null == driver
+          ? _value.driver
+          : driver // ignore: cast_nullable_to_non_nullable
+              as DriverModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DriverInfoSuccess<T> implements DriverInfoSuccess<T> {
+  const _$DriverInfoSuccess(this.driver);
+
+  @override
+  final DriverModel driver;
+
+  @override
+  String toString() {
+    return 'PipState<$T>.driverInfoSuccess(driver: $driver)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DriverInfoSuccess<T> &&
+            (identical(other.driver, driver) || other.driver == driver));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, driver);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DriverInfoSuccessCopyWith<T, _$DriverInfoSuccess<T>> get copyWith =>
+      __$$DriverInfoSuccessCopyWithImpl<T, _$DriverInfoSuccess<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() skillsLoading,
+    required TResult Function(List<SkillModel> data) skillssuccess,
+    required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(DriverModel driver) driverInfoUpdated,
+    required TResult Function() stopGetDriverInfoStrem,
+    required TResult Function() resumeGetDriverInfoStrem,
+    required TResult Function() driverInfoLoading,
+    required TResult Function(DriverModel driver) driverInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        driverInfoError,
+    required TResult Function() toggleLoading,
+    required TResult Function(ToggleModel data) toggleSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) toggleError,
+    required TResult Function() fastRequestCategoryLoading,
+    required TResult Function(List<FastRequestCategory> data)
+        fastRequestCategorySuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        fastRequestCategoryError,
+    required TResult Function(List<File> images) imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function(List<File> images) imageSelectedDeleted,
+    required TResult Function() createSpecialRequestLoading,
+    required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        createSpecialRequestError,
+  }) {
+    return driverInfoSuccess(driver);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? skillsLoading,
+    TResult? Function(List<SkillModel> data)? skillssuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(DriverModel driver)? driverInfoUpdated,
+    TResult? Function()? stopGetDriverInfoStrem,
+    TResult? Function()? resumeGetDriverInfoStrem,
+    TResult? Function()? driverInfoLoading,
+    TResult? Function(DriverModel driver)? driverInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? driverInfoError,
+    TResult? Function()? toggleLoading,
+    TResult? Function(ToggleModel data)? toggleSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult? Function()? fastRequestCategoryLoading,
+    TResult? Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
+    TResult? Function(List<File> images)? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function(List<File> images)? imageSelectedDeleted,
+    TResult? Function()? createSpecialRequestLoading,
+    TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+  }) {
+    return driverInfoSuccess?.call(driver);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? skillsLoading,
+    TResult Function(List<SkillModel> data)? skillssuccess,
+    TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(DriverModel driver)? driverInfoUpdated,
+    TResult Function()? stopGetDriverInfoStrem,
+    TResult Function()? resumeGetDriverInfoStrem,
+    TResult Function()? driverInfoLoading,
+    TResult Function(DriverModel driver)? driverInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? driverInfoError,
+    TResult Function()? toggleLoading,
+    TResult Function(ToggleModel data)? toggleSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult Function()? fastRequestCategoryLoading,
+    TResult Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
+    TResult Function(List<File> images)? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function(List<File> images)? imageSelectedDeleted,
+    TResult Function()? createSpecialRequestLoading,
+    TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (driverInfoSuccess != null) {
+      return driverInfoSuccess(driver);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(SkillsLoading<T> value) skillsLoading,
+    required TResult Function(SkillsSuccess<T> value) skillssuccess,
+    required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(DriverInfoUpdated<T> value) driverInfoUpdated,
+    required TResult Function(StopGetDriverInfoStrem<T> value)
+        stopGetDriverInfoStrem,
+    required TResult Function(ResumeGetDriverInfoStrem<T> value)
+        resumeGetDriverInfoStrem,
+    required TResult Function(DriverInfoLoading<T> value) driverInfoLoading,
+    required TResult Function(DriverInfoSuccess<T> value) driverInfoSuccess,
+    required TResult Function(DriverInfoError<T> value) driverInfoError,
+    required TResult Function(ToggleLoading<T> value) toggleLoading,
+    required TResult Function(ToggleSuccess<T> value) toggleSuccess,
+    required TResult Function(ToggleError<T> value) toggleError,
+    required TResult Function(FastRequestCategoryLoading<T> value)
+        fastRequestCategoryLoading,
+    required TResult Function(FastRequestCategorySuccess<T> value)
+        fastRequestCategorySuccess,
+    required TResult Function(FastRequestCategoryError<T> value)
+        fastRequestCategoryError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(ImageSelectedDeleted<T> value)
+        imageSelectedDeleted,
+    required TResult Function(CreateSpecialRequestLoading<T> value)
+        createSpecialRequestLoading,
+    required TResult Function(CreateSpecialRequestSuccess<T> value)
+        createSpecialRequestSuccess,
+    required TResult Function(CreateSpecialRequestError<T> value)
+        createSpecialRequestError,
+  }) {
+    return driverInfoSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(SkillsLoading<T> value)? skillsLoading,
+    TResult? Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult? Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult? Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult? Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult? Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult? Function(DriverInfoError<T> value)? driverInfoError,
+    TResult? Function(ToggleLoading<T> value)? toggleLoading,
+    TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult? Function(ToggleError<T> value)? toggleError,
+    TResult? Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult? Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult? Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult? Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult? Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult? Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+  }) {
+    return driverInfoSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(SkillsLoading<T> value)? skillsLoading,
+    TResult Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult Function(DriverInfoError<T> value)? driverInfoError,
+    TResult Function(ToggleLoading<T> value)? toggleLoading,
+    TResult Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult Function(ToggleError<T> value)? toggleError,
+    TResult Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (driverInfoSuccess != null) {
+      return driverInfoSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DriverInfoSuccess<T> implements PipState<T> {
+  const factory DriverInfoSuccess(final DriverModel driver) =
+      _$DriverInfoSuccess<T>;
+
+  DriverModel get driver;
+  @JsonKey(ignore: true)
+  _$$DriverInfoSuccessCopyWith<T, _$DriverInfoSuccess<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DriverInfoErrorCopyWith<T, $Res> {
+  factory _$$DriverInfoErrorCopyWith(_$DriverInfoError<T> value,
+          $Res Function(_$DriverInfoError<T>) then) =
+      __$$DriverInfoErrorCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({NetworkExceptions networkExceptions});
+
+  $NetworkExceptionsCopyWith<$Res> get networkExceptions;
+}
+
+/// @nodoc
+class __$$DriverInfoErrorCopyWithImpl<T, $Res>
+    extends _$PipStateCopyWithImpl<T, $Res, _$DriverInfoError<T>>
+    implements _$$DriverInfoErrorCopyWith<T, $Res> {
+  __$$DriverInfoErrorCopyWithImpl(
+      _$DriverInfoError<T> _value, $Res Function(_$DriverInfoError<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? networkExceptions = null,
+  }) {
+    return _then(_$DriverInfoError<T>(
+      null == networkExceptions
+          ? _value.networkExceptions
+          : networkExceptions // ignore: cast_nullable_to_non_nullable
+              as NetworkExceptions,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $NetworkExceptionsCopyWith<$Res> get networkExceptions {
+    return $NetworkExceptionsCopyWith<$Res>(_value.networkExceptions, (value) {
+      return _then(_value.copyWith(networkExceptions: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$DriverInfoError<T> implements DriverInfoError<T> {
+  const _$DriverInfoError(this.networkExceptions);
+
+  @override
+  final NetworkExceptions networkExceptions;
+
+  @override
+  String toString() {
+    return 'PipState<$T>.driverInfoError(networkExceptions: $networkExceptions)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DriverInfoError<T> &&
+            (identical(other.networkExceptions, networkExceptions) ||
+                other.networkExceptions == networkExceptions));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, networkExceptions);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DriverInfoErrorCopyWith<T, _$DriverInfoError<T>> get copyWith =>
+      __$$DriverInfoErrorCopyWithImpl<T, _$DriverInfoError<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() skillsLoading,
+    required TResult Function(List<SkillModel> data) skillssuccess,
+    required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(DriverModel driver) driverInfoUpdated,
+    required TResult Function() stopGetDriverInfoStrem,
+    required TResult Function() resumeGetDriverInfoStrem,
+    required TResult Function() driverInfoLoading,
+    required TResult Function(DriverModel driver) driverInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        driverInfoError,
+    required TResult Function() toggleLoading,
+    required TResult Function(ToggleModel data) toggleSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) toggleError,
+    required TResult Function() fastRequestCategoryLoading,
+    required TResult Function(List<FastRequestCategory> data)
+        fastRequestCategorySuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        fastRequestCategoryError,
+    required TResult Function(List<File> images) imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function(List<File> images) imageSelectedDeleted,
+    required TResult Function() createSpecialRequestLoading,
+    required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        createSpecialRequestError,
+  }) {
+    return driverInfoError(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? skillsLoading,
+    TResult? Function(List<SkillModel> data)? skillssuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(DriverModel driver)? driverInfoUpdated,
+    TResult? Function()? stopGetDriverInfoStrem,
+    TResult? Function()? resumeGetDriverInfoStrem,
+    TResult? Function()? driverInfoLoading,
+    TResult? Function(DriverModel driver)? driverInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? driverInfoError,
+    TResult? Function()? toggleLoading,
+    TResult? Function(ToggleModel data)? toggleSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult? Function()? fastRequestCategoryLoading,
+    TResult? Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
+    TResult? Function(List<File> images)? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function(List<File> images)? imageSelectedDeleted,
+    TResult? Function()? createSpecialRequestLoading,
+    TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+  }) {
+    return driverInfoError?.call(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? skillsLoading,
+    TResult Function(List<SkillModel> data)? skillssuccess,
+    TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(DriverModel driver)? driverInfoUpdated,
+    TResult Function()? stopGetDriverInfoStrem,
+    TResult Function()? resumeGetDriverInfoStrem,
+    TResult Function()? driverInfoLoading,
+    TResult Function(DriverModel driver)? driverInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? driverInfoError,
+    TResult Function()? toggleLoading,
+    TResult Function(ToggleModel data)? toggleSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? toggleError,
+    TResult Function()? fastRequestCategoryLoading,
+    TResult Function(List<FastRequestCategory> data)?
+        fastRequestCategorySuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        fastRequestCategoryError,
+    TResult Function(List<File> images)? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function(List<File> images)? imageSelectedDeleted,
+    TResult Function()? createSpecialRequestLoading,
+    TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (driverInfoError != null) {
+      return driverInfoError(networkExceptions);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(SkillsLoading<T> value) skillsLoading,
+    required TResult Function(SkillsSuccess<T> value) skillssuccess,
+    required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(DriverInfoUpdated<T> value) driverInfoUpdated,
+    required TResult Function(StopGetDriverInfoStrem<T> value)
+        stopGetDriverInfoStrem,
+    required TResult Function(ResumeGetDriverInfoStrem<T> value)
+        resumeGetDriverInfoStrem,
+    required TResult Function(DriverInfoLoading<T> value) driverInfoLoading,
+    required TResult Function(DriverInfoSuccess<T> value) driverInfoSuccess,
+    required TResult Function(DriverInfoError<T> value) driverInfoError,
+    required TResult Function(ToggleLoading<T> value) toggleLoading,
+    required TResult Function(ToggleSuccess<T> value) toggleSuccess,
+    required TResult Function(ToggleError<T> value) toggleError,
+    required TResult Function(FastRequestCategoryLoading<T> value)
+        fastRequestCategoryLoading,
+    required TResult Function(FastRequestCategorySuccess<T> value)
+        fastRequestCategorySuccess,
+    required TResult Function(FastRequestCategoryError<T> value)
+        fastRequestCategoryError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(ImageSelectedDeleted<T> value)
+        imageSelectedDeleted,
+    required TResult Function(CreateSpecialRequestLoading<T> value)
+        createSpecialRequestLoading,
+    required TResult Function(CreateSpecialRequestSuccess<T> value)
+        createSpecialRequestSuccess,
+    required TResult Function(CreateSpecialRequestError<T> value)
+        createSpecialRequestError,
+  }) {
+    return driverInfoError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(SkillsLoading<T> value)? skillsLoading,
+    TResult? Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult? Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult? Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult? Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult? Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult? Function(DriverInfoError<T> value)? driverInfoError,
+    TResult? Function(ToggleLoading<T> value)? toggleLoading,
+    TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult? Function(ToggleError<T> value)? toggleError,
+    TResult? Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult? Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult? Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult? Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult? Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult? Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+  }) {
+    return driverInfoError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(SkillsLoading<T> value)? skillsLoading,
+    TResult Function(SkillsSuccess<T> value)? skillssuccess,
+    TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult Function(DriverInfoError<T> value)? driverInfoError,
+    TResult Function(ToggleLoading<T> value)? toggleLoading,
+    TResult Function(ToggleSuccess<T> value)? toggleSuccess,
+    TResult Function(ToggleError<T> value)? toggleError,
+    TResult Function(FastRequestCategoryLoading<T> value)?
+        fastRequestCategoryLoading,
+    TResult Function(FastRequestCategorySuccess<T> value)?
+        fastRequestCategorySuccess,
+    TResult Function(FastRequestCategoryError<T> value)?
+        fastRequestCategoryError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    required TResult orElse(),
+  }) {
+    if (driverInfoError != null) {
+      return driverInfoError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DriverInfoError<T> implements PipState<T> {
+  const factory DriverInfoError(final NetworkExceptions networkExceptions) =
+      _$DriverInfoError<T>;
+
+  NetworkExceptions get networkExceptions;
+  @JsonKey(ignore: true)
+  _$$DriverInfoErrorCopyWith<T, _$DriverInfoError<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1202,6 +3098,13 @@ class _$ToggleLoading<T> implements ToggleLoading<T> {
     required TResult Function() skillsLoading,
     required TResult Function(List<SkillModel> data) skillssuccess,
     required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(DriverModel driver) driverInfoUpdated,
+    required TResult Function() stopGetDriverInfoStrem,
+    required TResult Function() resumeGetDriverInfoStrem,
+    required TResult Function() driverInfoLoading,
+    required TResult Function(DriverModel driver) driverInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        driverInfoError,
     required TResult Function() toggleLoading,
     required TResult Function(ToggleModel data) toggleSuccess,
     required TResult Function(NetworkExceptions networkExceptions) toggleError,
@@ -1229,6 +3132,12 @@ class _$ToggleLoading<T> implements ToggleLoading<T> {
     TResult? Function()? skillsLoading,
     TResult? Function(List<SkillModel> data)? skillssuccess,
     TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(DriverModel driver)? driverInfoUpdated,
+    TResult? Function()? stopGetDriverInfoStrem,
+    TResult? Function()? resumeGetDriverInfoStrem,
+    TResult? Function()? driverInfoLoading,
+    TResult? Function(DriverModel driver)? driverInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult? Function()? toggleLoading,
     TResult? Function(ToggleModel data)? toggleSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? toggleError,
@@ -1256,6 +3165,12 @@ class _$ToggleLoading<T> implements ToggleLoading<T> {
     TResult Function()? skillsLoading,
     TResult Function(List<SkillModel> data)? skillssuccess,
     TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(DriverModel driver)? driverInfoUpdated,
+    TResult Function()? stopGetDriverInfoStrem,
+    TResult Function()? resumeGetDriverInfoStrem,
+    TResult Function()? driverInfoLoading,
+    TResult Function(DriverModel driver)? driverInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult Function()? toggleLoading,
     TResult Function(ToggleModel data)? toggleSuccess,
     TResult Function(NetworkExceptions networkExceptions)? toggleError,
@@ -1287,6 +3202,14 @@ class _$ToggleLoading<T> implements ToggleLoading<T> {
     required TResult Function(SkillsLoading<T> value) skillsLoading,
     required TResult Function(SkillsSuccess<T> value) skillssuccess,
     required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(DriverInfoUpdated<T> value) driverInfoUpdated,
+    required TResult Function(StopGetDriverInfoStrem<T> value)
+        stopGetDriverInfoStrem,
+    required TResult Function(ResumeGetDriverInfoStrem<T> value)
+        resumeGetDriverInfoStrem,
+    required TResult Function(DriverInfoLoading<T> value) driverInfoLoading,
+    required TResult Function(DriverInfoSuccess<T> value) driverInfoSuccess,
+    required TResult Function(DriverInfoError<T> value) driverInfoError,
     required TResult Function(ToggleLoading<T> value) toggleLoading,
     required TResult Function(ToggleSuccess<T> value) toggleSuccess,
     required TResult Function(ToggleError<T> value) toggleError,
@@ -1320,6 +3243,13 @@ class _$ToggleLoading<T> implements ToggleLoading<T> {
     TResult? Function(SkillsLoading<T> value)? skillsLoading,
     TResult? Function(SkillsSuccess<T> value)? skillssuccess,
     TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult? Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult? Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult? Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult? Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult? Function(DriverInfoError<T> value)? driverInfoError,
     TResult? Function(ToggleLoading<T> value)? toggleLoading,
     TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult? Function(ToggleError<T> value)? toggleError,
@@ -1350,6 +3280,13 @@ class _$ToggleLoading<T> implements ToggleLoading<T> {
     TResult Function(SkillsLoading<T> value)? skillsLoading,
     TResult Function(SkillsSuccess<T> value)? skillssuccess,
     TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult Function(DriverInfoError<T> value)? driverInfoError,
     TResult Function(ToggleLoading<T> value)? toggleLoading,
     TResult Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult Function(ToggleError<T> value)? toggleError,
@@ -1450,6 +3387,13 @@ class _$ToggleSuccess<T> implements ToggleSuccess<T> {
     required TResult Function() skillsLoading,
     required TResult Function(List<SkillModel> data) skillssuccess,
     required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(DriverModel driver) driverInfoUpdated,
+    required TResult Function() stopGetDriverInfoStrem,
+    required TResult Function() resumeGetDriverInfoStrem,
+    required TResult Function() driverInfoLoading,
+    required TResult Function(DriverModel driver) driverInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        driverInfoError,
     required TResult Function() toggleLoading,
     required TResult Function(ToggleModel data) toggleSuccess,
     required TResult Function(NetworkExceptions networkExceptions) toggleError,
@@ -1477,6 +3421,12 @@ class _$ToggleSuccess<T> implements ToggleSuccess<T> {
     TResult? Function()? skillsLoading,
     TResult? Function(List<SkillModel> data)? skillssuccess,
     TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(DriverModel driver)? driverInfoUpdated,
+    TResult? Function()? stopGetDriverInfoStrem,
+    TResult? Function()? resumeGetDriverInfoStrem,
+    TResult? Function()? driverInfoLoading,
+    TResult? Function(DriverModel driver)? driverInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult? Function()? toggleLoading,
     TResult? Function(ToggleModel data)? toggleSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? toggleError,
@@ -1504,6 +3454,12 @@ class _$ToggleSuccess<T> implements ToggleSuccess<T> {
     TResult Function()? skillsLoading,
     TResult Function(List<SkillModel> data)? skillssuccess,
     TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(DriverModel driver)? driverInfoUpdated,
+    TResult Function()? stopGetDriverInfoStrem,
+    TResult Function()? resumeGetDriverInfoStrem,
+    TResult Function()? driverInfoLoading,
+    TResult Function(DriverModel driver)? driverInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult Function()? toggleLoading,
     TResult Function(ToggleModel data)? toggleSuccess,
     TResult Function(NetworkExceptions networkExceptions)? toggleError,
@@ -1535,6 +3491,14 @@ class _$ToggleSuccess<T> implements ToggleSuccess<T> {
     required TResult Function(SkillsLoading<T> value) skillsLoading,
     required TResult Function(SkillsSuccess<T> value) skillssuccess,
     required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(DriverInfoUpdated<T> value) driverInfoUpdated,
+    required TResult Function(StopGetDriverInfoStrem<T> value)
+        stopGetDriverInfoStrem,
+    required TResult Function(ResumeGetDriverInfoStrem<T> value)
+        resumeGetDriverInfoStrem,
+    required TResult Function(DriverInfoLoading<T> value) driverInfoLoading,
+    required TResult Function(DriverInfoSuccess<T> value) driverInfoSuccess,
+    required TResult Function(DriverInfoError<T> value) driverInfoError,
     required TResult Function(ToggleLoading<T> value) toggleLoading,
     required TResult Function(ToggleSuccess<T> value) toggleSuccess,
     required TResult Function(ToggleError<T> value) toggleError,
@@ -1568,6 +3532,13 @@ class _$ToggleSuccess<T> implements ToggleSuccess<T> {
     TResult? Function(SkillsLoading<T> value)? skillsLoading,
     TResult? Function(SkillsSuccess<T> value)? skillssuccess,
     TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult? Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult? Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult? Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult? Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult? Function(DriverInfoError<T> value)? driverInfoError,
     TResult? Function(ToggleLoading<T> value)? toggleLoading,
     TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult? Function(ToggleError<T> value)? toggleError,
@@ -1598,6 +3569,13 @@ class _$ToggleSuccess<T> implements ToggleSuccess<T> {
     TResult Function(SkillsLoading<T> value)? skillsLoading,
     TResult Function(SkillsSuccess<T> value)? skillssuccess,
     TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult Function(DriverInfoError<T> value)? driverInfoError,
     TResult Function(ToggleLoading<T> value)? toggleLoading,
     TResult Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult Function(ToggleError<T> value)? toggleError,
@@ -1714,6 +3692,13 @@ class _$ToggleError<T> implements ToggleError<T> {
     required TResult Function() skillsLoading,
     required TResult Function(List<SkillModel> data) skillssuccess,
     required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(DriverModel driver) driverInfoUpdated,
+    required TResult Function() stopGetDriverInfoStrem,
+    required TResult Function() resumeGetDriverInfoStrem,
+    required TResult Function() driverInfoLoading,
+    required TResult Function(DriverModel driver) driverInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        driverInfoError,
     required TResult Function() toggleLoading,
     required TResult Function(ToggleModel data) toggleSuccess,
     required TResult Function(NetworkExceptions networkExceptions) toggleError,
@@ -1741,6 +3726,12 @@ class _$ToggleError<T> implements ToggleError<T> {
     TResult? Function()? skillsLoading,
     TResult? Function(List<SkillModel> data)? skillssuccess,
     TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(DriverModel driver)? driverInfoUpdated,
+    TResult? Function()? stopGetDriverInfoStrem,
+    TResult? Function()? resumeGetDriverInfoStrem,
+    TResult? Function()? driverInfoLoading,
+    TResult? Function(DriverModel driver)? driverInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult? Function()? toggleLoading,
     TResult? Function(ToggleModel data)? toggleSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? toggleError,
@@ -1768,6 +3759,12 @@ class _$ToggleError<T> implements ToggleError<T> {
     TResult Function()? skillsLoading,
     TResult Function(List<SkillModel> data)? skillssuccess,
     TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(DriverModel driver)? driverInfoUpdated,
+    TResult Function()? stopGetDriverInfoStrem,
+    TResult Function()? resumeGetDriverInfoStrem,
+    TResult Function()? driverInfoLoading,
+    TResult Function(DriverModel driver)? driverInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult Function()? toggleLoading,
     TResult Function(ToggleModel data)? toggleSuccess,
     TResult Function(NetworkExceptions networkExceptions)? toggleError,
@@ -1799,6 +3796,14 @@ class _$ToggleError<T> implements ToggleError<T> {
     required TResult Function(SkillsLoading<T> value) skillsLoading,
     required TResult Function(SkillsSuccess<T> value) skillssuccess,
     required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(DriverInfoUpdated<T> value) driverInfoUpdated,
+    required TResult Function(StopGetDriverInfoStrem<T> value)
+        stopGetDriverInfoStrem,
+    required TResult Function(ResumeGetDriverInfoStrem<T> value)
+        resumeGetDriverInfoStrem,
+    required TResult Function(DriverInfoLoading<T> value) driverInfoLoading,
+    required TResult Function(DriverInfoSuccess<T> value) driverInfoSuccess,
+    required TResult Function(DriverInfoError<T> value) driverInfoError,
     required TResult Function(ToggleLoading<T> value) toggleLoading,
     required TResult Function(ToggleSuccess<T> value) toggleSuccess,
     required TResult Function(ToggleError<T> value) toggleError,
@@ -1832,6 +3837,13 @@ class _$ToggleError<T> implements ToggleError<T> {
     TResult? Function(SkillsLoading<T> value)? skillsLoading,
     TResult? Function(SkillsSuccess<T> value)? skillssuccess,
     TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult? Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult? Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult? Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult? Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult? Function(DriverInfoError<T> value)? driverInfoError,
     TResult? Function(ToggleLoading<T> value)? toggleLoading,
     TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult? Function(ToggleError<T> value)? toggleError,
@@ -1862,6 +3874,13 @@ class _$ToggleError<T> implements ToggleError<T> {
     TResult Function(SkillsLoading<T> value)? skillsLoading,
     TResult Function(SkillsSuccess<T> value)? skillssuccess,
     TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult Function(DriverInfoError<T> value)? driverInfoError,
     TResult Function(ToggleLoading<T> value)? toggleLoading,
     TResult Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult Function(ToggleError<T> value)? toggleError,
@@ -1945,6 +3964,13 @@ class _$FastRequestCategoryLoading<T> implements FastRequestCategoryLoading<T> {
     required TResult Function() skillsLoading,
     required TResult Function(List<SkillModel> data) skillssuccess,
     required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(DriverModel driver) driverInfoUpdated,
+    required TResult Function() stopGetDriverInfoStrem,
+    required TResult Function() resumeGetDriverInfoStrem,
+    required TResult Function() driverInfoLoading,
+    required TResult Function(DriverModel driver) driverInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        driverInfoError,
     required TResult Function() toggleLoading,
     required TResult Function(ToggleModel data) toggleSuccess,
     required TResult Function(NetworkExceptions networkExceptions) toggleError,
@@ -1972,6 +3998,12 @@ class _$FastRequestCategoryLoading<T> implements FastRequestCategoryLoading<T> {
     TResult? Function()? skillsLoading,
     TResult? Function(List<SkillModel> data)? skillssuccess,
     TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(DriverModel driver)? driverInfoUpdated,
+    TResult? Function()? stopGetDriverInfoStrem,
+    TResult? Function()? resumeGetDriverInfoStrem,
+    TResult? Function()? driverInfoLoading,
+    TResult? Function(DriverModel driver)? driverInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult? Function()? toggleLoading,
     TResult? Function(ToggleModel data)? toggleSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? toggleError,
@@ -1999,6 +4031,12 @@ class _$FastRequestCategoryLoading<T> implements FastRequestCategoryLoading<T> {
     TResult Function()? skillsLoading,
     TResult Function(List<SkillModel> data)? skillssuccess,
     TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(DriverModel driver)? driverInfoUpdated,
+    TResult Function()? stopGetDriverInfoStrem,
+    TResult Function()? resumeGetDriverInfoStrem,
+    TResult Function()? driverInfoLoading,
+    TResult Function(DriverModel driver)? driverInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult Function()? toggleLoading,
     TResult Function(ToggleModel data)? toggleSuccess,
     TResult Function(NetworkExceptions networkExceptions)? toggleError,
@@ -2030,6 +4068,14 @@ class _$FastRequestCategoryLoading<T> implements FastRequestCategoryLoading<T> {
     required TResult Function(SkillsLoading<T> value) skillsLoading,
     required TResult Function(SkillsSuccess<T> value) skillssuccess,
     required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(DriverInfoUpdated<T> value) driverInfoUpdated,
+    required TResult Function(StopGetDriverInfoStrem<T> value)
+        stopGetDriverInfoStrem,
+    required TResult Function(ResumeGetDriverInfoStrem<T> value)
+        resumeGetDriverInfoStrem,
+    required TResult Function(DriverInfoLoading<T> value) driverInfoLoading,
+    required TResult Function(DriverInfoSuccess<T> value) driverInfoSuccess,
+    required TResult Function(DriverInfoError<T> value) driverInfoError,
     required TResult Function(ToggleLoading<T> value) toggleLoading,
     required TResult Function(ToggleSuccess<T> value) toggleSuccess,
     required TResult Function(ToggleError<T> value) toggleError,
@@ -2063,6 +4109,13 @@ class _$FastRequestCategoryLoading<T> implements FastRequestCategoryLoading<T> {
     TResult? Function(SkillsLoading<T> value)? skillsLoading,
     TResult? Function(SkillsSuccess<T> value)? skillssuccess,
     TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult? Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult? Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult? Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult? Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult? Function(DriverInfoError<T> value)? driverInfoError,
     TResult? Function(ToggleLoading<T> value)? toggleLoading,
     TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult? Function(ToggleError<T> value)? toggleError,
@@ -2093,6 +4146,13 @@ class _$FastRequestCategoryLoading<T> implements FastRequestCategoryLoading<T> {
     TResult Function(SkillsLoading<T> value)? skillsLoading,
     TResult Function(SkillsSuccess<T> value)? skillssuccess,
     TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult Function(DriverInfoError<T> value)? driverInfoError,
     TResult Function(ToggleLoading<T> value)? toggleLoading,
     TResult Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult Function(ToggleError<T> value)? toggleError,
@@ -2203,6 +4263,13 @@ class _$FastRequestCategorySuccess<T> implements FastRequestCategorySuccess<T> {
     required TResult Function() skillsLoading,
     required TResult Function(List<SkillModel> data) skillssuccess,
     required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(DriverModel driver) driverInfoUpdated,
+    required TResult Function() stopGetDriverInfoStrem,
+    required TResult Function() resumeGetDriverInfoStrem,
+    required TResult Function() driverInfoLoading,
+    required TResult Function(DriverModel driver) driverInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        driverInfoError,
     required TResult Function() toggleLoading,
     required TResult Function(ToggleModel data) toggleSuccess,
     required TResult Function(NetworkExceptions networkExceptions) toggleError,
@@ -2230,6 +4297,12 @@ class _$FastRequestCategorySuccess<T> implements FastRequestCategorySuccess<T> {
     TResult? Function()? skillsLoading,
     TResult? Function(List<SkillModel> data)? skillssuccess,
     TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(DriverModel driver)? driverInfoUpdated,
+    TResult? Function()? stopGetDriverInfoStrem,
+    TResult? Function()? resumeGetDriverInfoStrem,
+    TResult? Function()? driverInfoLoading,
+    TResult? Function(DriverModel driver)? driverInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult? Function()? toggleLoading,
     TResult? Function(ToggleModel data)? toggleSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? toggleError,
@@ -2257,6 +4330,12 @@ class _$FastRequestCategorySuccess<T> implements FastRequestCategorySuccess<T> {
     TResult Function()? skillsLoading,
     TResult Function(List<SkillModel> data)? skillssuccess,
     TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(DriverModel driver)? driverInfoUpdated,
+    TResult Function()? stopGetDriverInfoStrem,
+    TResult Function()? resumeGetDriverInfoStrem,
+    TResult Function()? driverInfoLoading,
+    TResult Function(DriverModel driver)? driverInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult Function()? toggleLoading,
     TResult Function(ToggleModel data)? toggleSuccess,
     TResult Function(NetworkExceptions networkExceptions)? toggleError,
@@ -2288,6 +4367,14 @@ class _$FastRequestCategorySuccess<T> implements FastRequestCategorySuccess<T> {
     required TResult Function(SkillsLoading<T> value) skillsLoading,
     required TResult Function(SkillsSuccess<T> value) skillssuccess,
     required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(DriverInfoUpdated<T> value) driverInfoUpdated,
+    required TResult Function(StopGetDriverInfoStrem<T> value)
+        stopGetDriverInfoStrem,
+    required TResult Function(ResumeGetDriverInfoStrem<T> value)
+        resumeGetDriverInfoStrem,
+    required TResult Function(DriverInfoLoading<T> value) driverInfoLoading,
+    required TResult Function(DriverInfoSuccess<T> value) driverInfoSuccess,
+    required TResult Function(DriverInfoError<T> value) driverInfoError,
     required TResult Function(ToggleLoading<T> value) toggleLoading,
     required TResult Function(ToggleSuccess<T> value) toggleSuccess,
     required TResult Function(ToggleError<T> value) toggleError,
@@ -2321,6 +4408,13 @@ class _$FastRequestCategorySuccess<T> implements FastRequestCategorySuccess<T> {
     TResult? Function(SkillsLoading<T> value)? skillsLoading,
     TResult? Function(SkillsSuccess<T> value)? skillssuccess,
     TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult? Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult? Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult? Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult? Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult? Function(DriverInfoError<T> value)? driverInfoError,
     TResult? Function(ToggleLoading<T> value)? toggleLoading,
     TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult? Function(ToggleError<T> value)? toggleError,
@@ -2351,6 +4445,13 @@ class _$FastRequestCategorySuccess<T> implements FastRequestCategorySuccess<T> {
     TResult Function(SkillsLoading<T> value)? skillsLoading,
     TResult Function(SkillsSuccess<T> value)? skillssuccess,
     TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult Function(DriverInfoError<T> value)? driverInfoError,
     TResult Function(ToggleLoading<T> value)? toggleLoading,
     TResult Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult Function(ToggleError<T> value)? toggleError,
@@ -2470,6 +4571,13 @@ class _$FastRequestCategoryError<T> implements FastRequestCategoryError<T> {
     required TResult Function() skillsLoading,
     required TResult Function(List<SkillModel> data) skillssuccess,
     required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(DriverModel driver) driverInfoUpdated,
+    required TResult Function() stopGetDriverInfoStrem,
+    required TResult Function() resumeGetDriverInfoStrem,
+    required TResult Function() driverInfoLoading,
+    required TResult Function(DriverModel driver) driverInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        driverInfoError,
     required TResult Function() toggleLoading,
     required TResult Function(ToggleModel data) toggleSuccess,
     required TResult Function(NetworkExceptions networkExceptions) toggleError,
@@ -2497,6 +4605,12 @@ class _$FastRequestCategoryError<T> implements FastRequestCategoryError<T> {
     TResult? Function()? skillsLoading,
     TResult? Function(List<SkillModel> data)? skillssuccess,
     TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(DriverModel driver)? driverInfoUpdated,
+    TResult? Function()? stopGetDriverInfoStrem,
+    TResult? Function()? resumeGetDriverInfoStrem,
+    TResult? Function()? driverInfoLoading,
+    TResult? Function(DriverModel driver)? driverInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult? Function()? toggleLoading,
     TResult? Function(ToggleModel data)? toggleSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? toggleError,
@@ -2524,6 +4638,12 @@ class _$FastRequestCategoryError<T> implements FastRequestCategoryError<T> {
     TResult Function()? skillsLoading,
     TResult Function(List<SkillModel> data)? skillssuccess,
     TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(DriverModel driver)? driverInfoUpdated,
+    TResult Function()? stopGetDriverInfoStrem,
+    TResult Function()? resumeGetDriverInfoStrem,
+    TResult Function()? driverInfoLoading,
+    TResult Function(DriverModel driver)? driverInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult Function()? toggleLoading,
     TResult Function(ToggleModel data)? toggleSuccess,
     TResult Function(NetworkExceptions networkExceptions)? toggleError,
@@ -2555,6 +4675,14 @@ class _$FastRequestCategoryError<T> implements FastRequestCategoryError<T> {
     required TResult Function(SkillsLoading<T> value) skillsLoading,
     required TResult Function(SkillsSuccess<T> value) skillssuccess,
     required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(DriverInfoUpdated<T> value) driverInfoUpdated,
+    required TResult Function(StopGetDriverInfoStrem<T> value)
+        stopGetDriverInfoStrem,
+    required TResult Function(ResumeGetDriverInfoStrem<T> value)
+        resumeGetDriverInfoStrem,
+    required TResult Function(DriverInfoLoading<T> value) driverInfoLoading,
+    required TResult Function(DriverInfoSuccess<T> value) driverInfoSuccess,
+    required TResult Function(DriverInfoError<T> value) driverInfoError,
     required TResult Function(ToggleLoading<T> value) toggleLoading,
     required TResult Function(ToggleSuccess<T> value) toggleSuccess,
     required TResult Function(ToggleError<T> value) toggleError,
@@ -2588,6 +4716,13 @@ class _$FastRequestCategoryError<T> implements FastRequestCategoryError<T> {
     TResult? Function(SkillsLoading<T> value)? skillsLoading,
     TResult? Function(SkillsSuccess<T> value)? skillssuccess,
     TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult? Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult? Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult? Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult? Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult? Function(DriverInfoError<T> value)? driverInfoError,
     TResult? Function(ToggleLoading<T> value)? toggleLoading,
     TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult? Function(ToggleError<T> value)? toggleError,
@@ -2618,6 +4753,13 @@ class _$FastRequestCategoryError<T> implements FastRequestCategoryError<T> {
     TResult Function(SkillsLoading<T> value)? skillsLoading,
     TResult Function(SkillsSuccess<T> value)? skillssuccess,
     TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult Function(DriverInfoError<T> value)? driverInfoError,
     TResult Function(ToggleLoading<T> value)? toggleLoading,
     TResult Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult Function(ToggleError<T> value)? toggleError,
@@ -2732,6 +4874,13 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
     required TResult Function() skillsLoading,
     required TResult Function(List<SkillModel> data) skillssuccess,
     required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(DriverModel driver) driverInfoUpdated,
+    required TResult Function() stopGetDriverInfoStrem,
+    required TResult Function() resumeGetDriverInfoStrem,
+    required TResult Function() driverInfoLoading,
+    required TResult Function(DriverModel driver) driverInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        driverInfoError,
     required TResult Function() toggleLoading,
     required TResult Function(ToggleModel data) toggleSuccess,
     required TResult Function(NetworkExceptions networkExceptions) toggleError,
@@ -2759,6 +4908,12 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
     TResult? Function()? skillsLoading,
     TResult? Function(List<SkillModel> data)? skillssuccess,
     TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(DriverModel driver)? driverInfoUpdated,
+    TResult? Function()? stopGetDriverInfoStrem,
+    TResult? Function()? resumeGetDriverInfoStrem,
+    TResult? Function()? driverInfoLoading,
+    TResult? Function(DriverModel driver)? driverInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult? Function()? toggleLoading,
     TResult? Function(ToggleModel data)? toggleSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? toggleError,
@@ -2786,6 +4941,12 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
     TResult Function()? skillsLoading,
     TResult Function(List<SkillModel> data)? skillssuccess,
     TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(DriverModel driver)? driverInfoUpdated,
+    TResult Function()? stopGetDriverInfoStrem,
+    TResult Function()? resumeGetDriverInfoStrem,
+    TResult Function()? driverInfoLoading,
+    TResult Function(DriverModel driver)? driverInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult Function()? toggleLoading,
     TResult Function(ToggleModel data)? toggleSuccess,
     TResult Function(NetworkExceptions networkExceptions)? toggleError,
@@ -2817,6 +4978,14 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
     required TResult Function(SkillsLoading<T> value) skillsLoading,
     required TResult Function(SkillsSuccess<T> value) skillssuccess,
     required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(DriverInfoUpdated<T> value) driverInfoUpdated,
+    required TResult Function(StopGetDriverInfoStrem<T> value)
+        stopGetDriverInfoStrem,
+    required TResult Function(ResumeGetDriverInfoStrem<T> value)
+        resumeGetDriverInfoStrem,
+    required TResult Function(DriverInfoLoading<T> value) driverInfoLoading,
+    required TResult Function(DriverInfoSuccess<T> value) driverInfoSuccess,
+    required TResult Function(DriverInfoError<T> value) driverInfoError,
     required TResult Function(ToggleLoading<T> value) toggleLoading,
     required TResult Function(ToggleSuccess<T> value) toggleSuccess,
     required TResult Function(ToggleError<T> value) toggleError,
@@ -2850,6 +5019,13 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
     TResult? Function(SkillsLoading<T> value)? skillsLoading,
     TResult? Function(SkillsSuccess<T> value)? skillssuccess,
     TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult? Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult? Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult? Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult? Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult? Function(DriverInfoError<T> value)? driverInfoError,
     TResult? Function(ToggleLoading<T> value)? toggleLoading,
     TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult? Function(ToggleError<T> value)? toggleError,
@@ -2880,6 +5056,13 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
     TResult Function(SkillsLoading<T> value)? skillsLoading,
     TResult Function(SkillsSuccess<T> value)? skillssuccess,
     TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult Function(DriverInfoError<T> value)? driverInfoError,
     TResult Function(ToggleLoading<T> value)? toggleLoading,
     TResult Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult Function(ToggleError<T> value)? toggleError,
@@ -2961,6 +5144,13 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
     required TResult Function() skillsLoading,
     required TResult Function(List<SkillModel> data) skillssuccess,
     required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(DriverModel driver) driverInfoUpdated,
+    required TResult Function() stopGetDriverInfoStrem,
+    required TResult Function() resumeGetDriverInfoStrem,
+    required TResult Function() driverInfoLoading,
+    required TResult Function(DriverModel driver) driverInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        driverInfoError,
     required TResult Function() toggleLoading,
     required TResult Function(ToggleModel data) toggleSuccess,
     required TResult Function(NetworkExceptions networkExceptions) toggleError,
@@ -2988,6 +5178,12 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
     TResult? Function()? skillsLoading,
     TResult? Function(List<SkillModel> data)? skillssuccess,
     TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(DriverModel driver)? driverInfoUpdated,
+    TResult? Function()? stopGetDriverInfoStrem,
+    TResult? Function()? resumeGetDriverInfoStrem,
+    TResult? Function()? driverInfoLoading,
+    TResult? Function(DriverModel driver)? driverInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult? Function()? toggleLoading,
     TResult? Function(ToggleModel data)? toggleSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? toggleError,
@@ -3015,6 +5211,12 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
     TResult Function()? skillsLoading,
     TResult Function(List<SkillModel> data)? skillssuccess,
     TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(DriverModel driver)? driverInfoUpdated,
+    TResult Function()? stopGetDriverInfoStrem,
+    TResult Function()? resumeGetDriverInfoStrem,
+    TResult Function()? driverInfoLoading,
+    TResult Function(DriverModel driver)? driverInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult Function()? toggleLoading,
     TResult Function(ToggleModel data)? toggleSuccess,
     TResult Function(NetworkExceptions networkExceptions)? toggleError,
@@ -3046,6 +5248,14 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
     required TResult Function(SkillsLoading<T> value) skillsLoading,
     required TResult Function(SkillsSuccess<T> value) skillssuccess,
     required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(DriverInfoUpdated<T> value) driverInfoUpdated,
+    required TResult Function(StopGetDriverInfoStrem<T> value)
+        stopGetDriverInfoStrem,
+    required TResult Function(ResumeGetDriverInfoStrem<T> value)
+        resumeGetDriverInfoStrem,
+    required TResult Function(DriverInfoLoading<T> value) driverInfoLoading,
+    required TResult Function(DriverInfoSuccess<T> value) driverInfoSuccess,
+    required TResult Function(DriverInfoError<T> value) driverInfoError,
     required TResult Function(ToggleLoading<T> value) toggleLoading,
     required TResult Function(ToggleSuccess<T> value) toggleSuccess,
     required TResult Function(ToggleError<T> value) toggleError,
@@ -3079,6 +5289,13 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
     TResult? Function(SkillsLoading<T> value)? skillsLoading,
     TResult? Function(SkillsSuccess<T> value)? skillssuccess,
     TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult? Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult? Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult? Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult? Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult? Function(DriverInfoError<T> value)? driverInfoError,
     TResult? Function(ToggleLoading<T> value)? toggleLoading,
     TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult? Function(ToggleError<T> value)? toggleError,
@@ -3109,6 +5326,13 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
     TResult Function(SkillsLoading<T> value)? skillsLoading,
     TResult Function(SkillsSuccess<T> value)? skillssuccess,
     TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult Function(DriverInfoError<T> value)? driverInfoError,
     TResult Function(ToggleLoading<T> value)? toggleLoading,
     TResult Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult Function(ToggleError<T> value)? toggleError,
@@ -3183,6 +5407,13 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
     required TResult Function() skillsLoading,
     required TResult Function(List<SkillModel> data) skillssuccess,
     required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(DriverModel driver) driverInfoUpdated,
+    required TResult Function() stopGetDriverInfoStrem,
+    required TResult Function() resumeGetDriverInfoStrem,
+    required TResult Function() driverInfoLoading,
+    required TResult Function(DriverModel driver) driverInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        driverInfoError,
     required TResult Function() toggleLoading,
     required TResult Function(ToggleModel data) toggleSuccess,
     required TResult Function(NetworkExceptions networkExceptions) toggleError,
@@ -3210,6 +5441,12 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
     TResult? Function()? skillsLoading,
     TResult? Function(List<SkillModel> data)? skillssuccess,
     TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(DriverModel driver)? driverInfoUpdated,
+    TResult? Function()? stopGetDriverInfoStrem,
+    TResult? Function()? resumeGetDriverInfoStrem,
+    TResult? Function()? driverInfoLoading,
+    TResult? Function(DriverModel driver)? driverInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult? Function()? toggleLoading,
     TResult? Function(ToggleModel data)? toggleSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? toggleError,
@@ -3237,6 +5474,12 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
     TResult Function()? skillsLoading,
     TResult Function(List<SkillModel> data)? skillssuccess,
     TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(DriverModel driver)? driverInfoUpdated,
+    TResult Function()? stopGetDriverInfoStrem,
+    TResult Function()? resumeGetDriverInfoStrem,
+    TResult Function()? driverInfoLoading,
+    TResult Function(DriverModel driver)? driverInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult Function()? toggleLoading,
     TResult Function(ToggleModel data)? toggleSuccess,
     TResult Function(NetworkExceptions networkExceptions)? toggleError,
@@ -3268,6 +5511,14 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
     required TResult Function(SkillsLoading<T> value) skillsLoading,
     required TResult Function(SkillsSuccess<T> value) skillssuccess,
     required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(DriverInfoUpdated<T> value) driverInfoUpdated,
+    required TResult Function(StopGetDriverInfoStrem<T> value)
+        stopGetDriverInfoStrem,
+    required TResult Function(ResumeGetDriverInfoStrem<T> value)
+        resumeGetDriverInfoStrem,
+    required TResult Function(DriverInfoLoading<T> value) driverInfoLoading,
+    required TResult Function(DriverInfoSuccess<T> value) driverInfoSuccess,
+    required TResult Function(DriverInfoError<T> value) driverInfoError,
     required TResult Function(ToggleLoading<T> value) toggleLoading,
     required TResult Function(ToggleSuccess<T> value) toggleSuccess,
     required TResult Function(ToggleError<T> value) toggleError,
@@ -3301,6 +5552,13 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
     TResult? Function(SkillsLoading<T> value)? skillsLoading,
     TResult? Function(SkillsSuccess<T> value)? skillssuccess,
     TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult? Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult? Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult? Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult? Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult? Function(DriverInfoError<T> value)? driverInfoError,
     TResult? Function(ToggleLoading<T> value)? toggleLoading,
     TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult? Function(ToggleError<T> value)? toggleError,
@@ -3331,6 +5589,13 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
     TResult Function(SkillsLoading<T> value)? skillsLoading,
     TResult Function(SkillsSuccess<T> value)? skillssuccess,
     TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult Function(DriverInfoError<T> value)? driverInfoError,
     TResult Function(ToggleLoading<T> value)? toggleLoading,
     TResult Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult Function(ToggleError<T> value)? toggleError,
@@ -3438,6 +5703,13 @@ class _$ImageSelectedDeleted<T> implements ImageSelectedDeleted<T> {
     required TResult Function() skillsLoading,
     required TResult Function(List<SkillModel> data) skillssuccess,
     required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(DriverModel driver) driverInfoUpdated,
+    required TResult Function() stopGetDriverInfoStrem,
+    required TResult Function() resumeGetDriverInfoStrem,
+    required TResult Function() driverInfoLoading,
+    required TResult Function(DriverModel driver) driverInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        driverInfoError,
     required TResult Function() toggleLoading,
     required TResult Function(ToggleModel data) toggleSuccess,
     required TResult Function(NetworkExceptions networkExceptions) toggleError,
@@ -3465,6 +5737,12 @@ class _$ImageSelectedDeleted<T> implements ImageSelectedDeleted<T> {
     TResult? Function()? skillsLoading,
     TResult? Function(List<SkillModel> data)? skillssuccess,
     TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(DriverModel driver)? driverInfoUpdated,
+    TResult? Function()? stopGetDriverInfoStrem,
+    TResult? Function()? resumeGetDriverInfoStrem,
+    TResult? Function()? driverInfoLoading,
+    TResult? Function(DriverModel driver)? driverInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult? Function()? toggleLoading,
     TResult? Function(ToggleModel data)? toggleSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? toggleError,
@@ -3492,6 +5770,12 @@ class _$ImageSelectedDeleted<T> implements ImageSelectedDeleted<T> {
     TResult Function()? skillsLoading,
     TResult Function(List<SkillModel> data)? skillssuccess,
     TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(DriverModel driver)? driverInfoUpdated,
+    TResult Function()? stopGetDriverInfoStrem,
+    TResult Function()? resumeGetDriverInfoStrem,
+    TResult Function()? driverInfoLoading,
+    TResult Function(DriverModel driver)? driverInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult Function()? toggleLoading,
     TResult Function(ToggleModel data)? toggleSuccess,
     TResult Function(NetworkExceptions networkExceptions)? toggleError,
@@ -3523,6 +5807,14 @@ class _$ImageSelectedDeleted<T> implements ImageSelectedDeleted<T> {
     required TResult Function(SkillsLoading<T> value) skillsLoading,
     required TResult Function(SkillsSuccess<T> value) skillssuccess,
     required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(DriverInfoUpdated<T> value) driverInfoUpdated,
+    required TResult Function(StopGetDriverInfoStrem<T> value)
+        stopGetDriverInfoStrem,
+    required TResult Function(ResumeGetDriverInfoStrem<T> value)
+        resumeGetDriverInfoStrem,
+    required TResult Function(DriverInfoLoading<T> value) driverInfoLoading,
+    required TResult Function(DriverInfoSuccess<T> value) driverInfoSuccess,
+    required TResult Function(DriverInfoError<T> value) driverInfoError,
     required TResult Function(ToggleLoading<T> value) toggleLoading,
     required TResult Function(ToggleSuccess<T> value) toggleSuccess,
     required TResult Function(ToggleError<T> value) toggleError,
@@ -3556,6 +5848,13 @@ class _$ImageSelectedDeleted<T> implements ImageSelectedDeleted<T> {
     TResult? Function(SkillsLoading<T> value)? skillsLoading,
     TResult? Function(SkillsSuccess<T> value)? skillssuccess,
     TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult? Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult? Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult? Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult? Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult? Function(DriverInfoError<T> value)? driverInfoError,
     TResult? Function(ToggleLoading<T> value)? toggleLoading,
     TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult? Function(ToggleError<T> value)? toggleError,
@@ -3586,6 +5885,13 @@ class _$ImageSelectedDeleted<T> implements ImageSelectedDeleted<T> {
     TResult Function(SkillsLoading<T> value)? skillsLoading,
     TResult Function(SkillsSuccess<T> value)? skillssuccess,
     TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult Function(DriverInfoError<T> value)? driverInfoError,
     TResult Function(ToggleLoading<T> value)? toggleLoading,
     TResult Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult Function(ToggleError<T> value)? toggleError,
@@ -3670,6 +5976,13 @@ class _$CreateSpecialRequestLoading<T>
     required TResult Function() skillsLoading,
     required TResult Function(List<SkillModel> data) skillssuccess,
     required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(DriverModel driver) driverInfoUpdated,
+    required TResult Function() stopGetDriverInfoStrem,
+    required TResult Function() resumeGetDriverInfoStrem,
+    required TResult Function() driverInfoLoading,
+    required TResult Function(DriverModel driver) driverInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        driverInfoError,
     required TResult Function() toggleLoading,
     required TResult Function(ToggleModel data) toggleSuccess,
     required TResult Function(NetworkExceptions networkExceptions) toggleError,
@@ -3697,6 +6010,12 @@ class _$CreateSpecialRequestLoading<T>
     TResult? Function()? skillsLoading,
     TResult? Function(List<SkillModel> data)? skillssuccess,
     TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(DriverModel driver)? driverInfoUpdated,
+    TResult? Function()? stopGetDriverInfoStrem,
+    TResult? Function()? resumeGetDriverInfoStrem,
+    TResult? Function()? driverInfoLoading,
+    TResult? Function(DriverModel driver)? driverInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult? Function()? toggleLoading,
     TResult? Function(ToggleModel data)? toggleSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? toggleError,
@@ -3724,6 +6043,12 @@ class _$CreateSpecialRequestLoading<T>
     TResult Function()? skillsLoading,
     TResult Function(List<SkillModel> data)? skillssuccess,
     TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(DriverModel driver)? driverInfoUpdated,
+    TResult Function()? stopGetDriverInfoStrem,
+    TResult Function()? resumeGetDriverInfoStrem,
+    TResult Function()? driverInfoLoading,
+    TResult Function(DriverModel driver)? driverInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult Function()? toggleLoading,
     TResult Function(ToggleModel data)? toggleSuccess,
     TResult Function(NetworkExceptions networkExceptions)? toggleError,
@@ -3755,6 +6080,14 @@ class _$CreateSpecialRequestLoading<T>
     required TResult Function(SkillsLoading<T> value) skillsLoading,
     required TResult Function(SkillsSuccess<T> value) skillssuccess,
     required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(DriverInfoUpdated<T> value) driverInfoUpdated,
+    required TResult Function(StopGetDriverInfoStrem<T> value)
+        stopGetDriverInfoStrem,
+    required TResult Function(ResumeGetDriverInfoStrem<T> value)
+        resumeGetDriverInfoStrem,
+    required TResult Function(DriverInfoLoading<T> value) driverInfoLoading,
+    required TResult Function(DriverInfoSuccess<T> value) driverInfoSuccess,
+    required TResult Function(DriverInfoError<T> value) driverInfoError,
     required TResult Function(ToggleLoading<T> value) toggleLoading,
     required TResult Function(ToggleSuccess<T> value) toggleSuccess,
     required TResult Function(ToggleError<T> value) toggleError,
@@ -3788,6 +6121,13 @@ class _$CreateSpecialRequestLoading<T>
     TResult? Function(SkillsLoading<T> value)? skillsLoading,
     TResult? Function(SkillsSuccess<T> value)? skillssuccess,
     TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult? Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult? Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult? Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult? Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult? Function(DriverInfoError<T> value)? driverInfoError,
     TResult? Function(ToggleLoading<T> value)? toggleLoading,
     TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult? Function(ToggleError<T> value)? toggleError,
@@ -3818,6 +6158,13 @@ class _$CreateSpecialRequestLoading<T>
     TResult Function(SkillsLoading<T> value)? skillsLoading,
     TResult Function(SkillsSuccess<T> value)? skillssuccess,
     TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult Function(DriverInfoError<T> value)? driverInfoError,
     TResult Function(ToggleLoading<T> value)? toggleLoading,
     TResult Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult Function(ToggleError<T> value)? toggleError,
@@ -3923,6 +6270,13 @@ class _$CreateSpecialRequestSuccess<T>
     required TResult Function() skillsLoading,
     required TResult Function(List<SkillModel> data) skillssuccess,
     required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(DriverModel driver) driverInfoUpdated,
+    required TResult Function() stopGetDriverInfoStrem,
+    required TResult Function() resumeGetDriverInfoStrem,
+    required TResult Function() driverInfoLoading,
+    required TResult Function(DriverModel driver) driverInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        driverInfoError,
     required TResult Function() toggleLoading,
     required TResult Function(ToggleModel data) toggleSuccess,
     required TResult Function(NetworkExceptions networkExceptions) toggleError,
@@ -3950,6 +6304,12 @@ class _$CreateSpecialRequestSuccess<T>
     TResult? Function()? skillsLoading,
     TResult? Function(List<SkillModel> data)? skillssuccess,
     TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(DriverModel driver)? driverInfoUpdated,
+    TResult? Function()? stopGetDriverInfoStrem,
+    TResult? Function()? resumeGetDriverInfoStrem,
+    TResult? Function()? driverInfoLoading,
+    TResult? Function(DriverModel driver)? driverInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult? Function()? toggleLoading,
     TResult? Function(ToggleModel data)? toggleSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? toggleError,
@@ -3977,6 +6337,12 @@ class _$CreateSpecialRequestSuccess<T>
     TResult Function()? skillsLoading,
     TResult Function(List<SkillModel> data)? skillssuccess,
     TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(DriverModel driver)? driverInfoUpdated,
+    TResult Function()? stopGetDriverInfoStrem,
+    TResult Function()? resumeGetDriverInfoStrem,
+    TResult Function()? driverInfoLoading,
+    TResult Function(DriverModel driver)? driverInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult Function()? toggleLoading,
     TResult Function(ToggleModel data)? toggleSuccess,
     TResult Function(NetworkExceptions networkExceptions)? toggleError,
@@ -4008,6 +6374,14 @@ class _$CreateSpecialRequestSuccess<T>
     required TResult Function(SkillsLoading<T> value) skillsLoading,
     required TResult Function(SkillsSuccess<T> value) skillssuccess,
     required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(DriverInfoUpdated<T> value) driverInfoUpdated,
+    required TResult Function(StopGetDriverInfoStrem<T> value)
+        stopGetDriverInfoStrem,
+    required TResult Function(ResumeGetDriverInfoStrem<T> value)
+        resumeGetDriverInfoStrem,
+    required TResult Function(DriverInfoLoading<T> value) driverInfoLoading,
+    required TResult Function(DriverInfoSuccess<T> value) driverInfoSuccess,
+    required TResult Function(DriverInfoError<T> value) driverInfoError,
     required TResult Function(ToggleLoading<T> value) toggleLoading,
     required TResult Function(ToggleSuccess<T> value) toggleSuccess,
     required TResult Function(ToggleError<T> value) toggleError,
@@ -4041,6 +6415,13 @@ class _$CreateSpecialRequestSuccess<T>
     TResult? Function(SkillsLoading<T> value)? skillsLoading,
     TResult? Function(SkillsSuccess<T> value)? skillssuccess,
     TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult? Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult? Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult? Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult? Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult? Function(DriverInfoError<T> value)? driverInfoError,
     TResult? Function(ToggleLoading<T> value)? toggleLoading,
     TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult? Function(ToggleError<T> value)? toggleError,
@@ -4071,6 +6452,13 @@ class _$CreateSpecialRequestSuccess<T>
     TResult Function(SkillsLoading<T> value)? skillsLoading,
     TResult Function(SkillsSuccess<T> value)? skillssuccess,
     TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult Function(DriverInfoError<T> value)? driverInfoError,
     TResult Function(ToggleLoading<T> value)? toggleLoading,
     TResult Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult Function(ToggleError<T> value)? toggleError,
@@ -4191,6 +6579,13 @@ class _$CreateSpecialRequestError<T> implements CreateSpecialRequestError<T> {
     required TResult Function() skillsLoading,
     required TResult Function(List<SkillModel> data) skillssuccess,
     required TResult Function(NetworkExceptions networkExceptions) skillserror,
+    required TResult Function(DriverModel driver) driverInfoUpdated,
+    required TResult Function() stopGetDriverInfoStrem,
+    required TResult Function() resumeGetDriverInfoStrem,
+    required TResult Function() driverInfoLoading,
+    required TResult Function(DriverModel driver) driverInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        driverInfoError,
     required TResult Function() toggleLoading,
     required TResult Function(ToggleModel data) toggleSuccess,
     required TResult Function(NetworkExceptions networkExceptions) toggleError,
@@ -4218,6 +6613,12 @@ class _$CreateSpecialRequestError<T> implements CreateSpecialRequestError<T> {
     TResult? Function()? skillsLoading,
     TResult? Function(List<SkillModel> data)? skillssuccess,
     TResult? Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult? Function(DriverModel driver)? driverInfoUpdated,
+    TResult? Function()? stopGetDriverInfoStrem,
+    TResult? Function()? resumeGetDriverInfoStrem,
+    TResult? Function()? driverInfoLoading,
+    TResult? Function(DriverModel driver)? driverInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult? Function()? toggleLoading,
     TResult? Function(ToggleModel data)? toggleSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? toggleError,
@@ -4245,6 +6646,12 @@ class _$CreateSpecialRequestError<T> implements CreateSpecialRequestError<T> {
     TResult Function()? skillsLoading,
     TResult Function(List<SkillModel> data)? skillssuccess,
     TResult Function(NetworkExceptions networkExceptions)? skillserror,
+    TResult Function(DriverModel driver)? driverInfoUpdated,
+    TResult Function()? stopGetDriverInfoStrem,
+    TResult Function()? resumeGetDriverInfoStrem,
+    TResult Function()? driverInfoLoading,
+    TResult Function(DriverModel driver)? driverInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? driverInfoError,
     TResult Function()? toggleLoading,
     TResult Function(ToggleModel data)? toggleSuccess,
     TResult Function(NetworkExceptions networkExceptions)? toggleError,
@@ -4276,6 +6683,14 @@ class _$CreateSpecialRequestError<T> implements CreateSpecialRequestError<T> {
     required TResult Function(SkillsLoading<T> value) skillsLoading,
     required TResult Function(SkillsSuccess<T> value) skillssuccess,
     required TResult Function(SkillsError<T> value) skillserror,
+    required TResult Function(DriverInfoUpdated<T> value) driverInfoUpdated,
+    required TResult Function(StopGetDriverInfoStrem<T> value)
+        stopGetDriverInfoStrem,
+    required TResult Function(ResumeGetDriverInfoStrem<T> value)
+        resumeGetDriverInfoStrem,
+    required TResult Function(DriverInfoLoading<T> value) driverInfoLoading,
+    required TResult Function(DriverInfoSuccess<T> value) driverInfoSuccess,
+    required TResult Function(DriverInfoError<T> value) driverInfoError,
     required TResult Function(ToggleLoading<T> value) toggleLoading,
     required TResult Function(ToggleSuccess<T> value) toggleSuccess,
     required TResult Function(ToggleError<T> value) toggleError,
@@ -4309,6 +6724,13 @@ class _$CreateSpecialRequestError<T> implements CreateSpecialRequestError<T> {
     TResult? Function(SkillsLoading<T> value)? skillsLoading,
     TResult? Function(SkillsSuccess<T> value)? skillssuccess,
     TResult? Function(SkillsError<T> value)? skillserror,
+    TResult? Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult? Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult? Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult? Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult? Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult? Function(DriverInfoError<T> value)? driverInfoError,
     TResult? Function(ToggleLoading<T> value)? toggleLoading,
     TResult? Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult? Function(ToggleError<T> value)? toggleError,
@@ -4339,6 +6761,13 @@ class _$CreateSpecialRequestError<T> implements CreateSpecialRequestError<T> {
     TResult Function(SkillsLoading<T> value)? skillsLoading,
     TResult Function(SkillsSuccess<T> value)? skillssuccess,
     TResult Function(SkillsError<T> value)? skillserror,
+    TResult Function(DriverInfoUpdated<T> value)? driverInfoUpdated,
+    TResult Function(StopGetDriverInfoStrem<T> value)? stopGetDriverInfoStrem,
+    TResult Function(ResumeGetDriverInfoStrem<T> value)?
+        resumeGetDriverInfoStrem,
+    TResult Function(DriverInfoLoading<T> value)? driverInfoLoading,
+    TResult Function(DriverInfoSuccess<T> value)? driverInfoSuccess,
+    TResult Function(DriverInfoError<T> value)? driverInfoError,
     TResult Function(ToggleLoading<T> value)? toggleLoading,
     TResult Function(ToggleSuccess<T> value)? toggleSuccess,
     TResult Function(ToggleError<T> value)? toggleError,

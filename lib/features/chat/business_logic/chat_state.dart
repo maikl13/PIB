@@ -17,8 +17,11 @@ const factory ChatState.stopChatStreamState() = StopChatStreamState<T>;
 const factory ChatState.resumeChatStreamState() = ResumeChatStreamState<T>;
 const factory ChatState.startChatStreamState(List<ChatMessagesModel> messages) = StartChatStreamState<T>;
 
+  const factory ChatState.chatStreamNewData(List<ChatMessagesModel> messages) = ChatStreamNewData<T>;
+
 
   const factory ChatState.hiringChatsLoading() = HiringChatsLoading<T>;
+
 
   const factory ChatState.hiringChatsSuccess(T data) = HiringChatsSuccess<T>;
 

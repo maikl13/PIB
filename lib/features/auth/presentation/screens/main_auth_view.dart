@@ -8,6 +8,7 @@ import '../../../../core/resources/constants.dart';
 import '../../../../core/resources/route_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/web_services/network_exceptions.dart';
+import '../../../../core/widgets/confirmation_dialog.dart';
 import '../../../../core/widgets/dark_default_button.dart';
 import '../../../../core/widgets/default_button.dart';
 import '../../../../core/widgets/skip_text.dart';
@@ -22,34 +23,41 @@ class MainAuthView extends StatelessWidget {
   const MainAuthView({super.key});
 
   _buildBody(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(right: 20.w, left: 20, bottom: 30.h),
-      child: ListView(
-        // crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const MainAuthHeadline(),
-          SizedBox(height: 30.h),
-          _buildLogo(),
-          SizedBox(height: 50.h),
-          DefaultButton(
-            text: AppStrings.registerNewAcc,
-            onTap: () {
-              Navigator.pushNamed(context, Routes.registerViewRoute);
-            },
-          ),
-          SizedBox(height: 25.h),
-          DarkDefaultButton(
-            text: AppStrings.login,
-            onTap: () {
-              Navigator.pushNamed(context, Routes.loginViewRoute);
-            },
-          ),
-          SizedBox(height: 76.h),
-          _buildOrLoginWith(),
-          SizedBox(height: 29.h),
-          _buildSocialButtons(context),
-          _buildBloc(),
-        ],
+
+    return  SingleChildScrollView(
+
+
+      child: Container(
+
+        margin: EdgeInsets.only(right: 20.w, left: 20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const MainAuthHeadline(),
+            SizedBox(height: 30.h),
+            _buildLogo(),
+            SizedBox(height: 50.h),
+            DefaultButton(
+              text: AppStrings.registerNewAcc,
+              onTap: () {
+                Navigator.pushNamed(context, Routes.registerViewRoute);
+              },
+            ),
+            SizedBox(height: 25.h),
+            DarkDefaultButton(
+              text: AppStrings.login,
+              onTap: () {
+                Navigator.pushNamed(context, Routes.loginViewRoute);
+              },
+            ),
+            SizedBox(height: 76.h),
+            _buildOrLoginWith(),
+            SizedBox(height: 29.h),
+            _buildSocialButtons(context),
+            _buildBloc(),
+          ],
+        ),
       ),
     );
   }
@@ -65,10 +73,9 @@ class MainAuthView extends StatelessWidget {
             );
           },
           firebaseAnonymousLoginLoading: () {
-            Commons.showLoadingDialog(context);
+            Commons.showLoadingDialog(context ,  text:  "جار إعداد حسابك");
           },
           firebaseAnonymousLoginSuccess: (data) {
-            Navigator.pop(context);
 
             BlocProvider.of<AuthCubit>(context).register(
                 uid: data,
@@ -76,10 +83,10 @@ class MainAuthView extends StatelessWidget {
                 email: '',
                 phone: '000000000',
                 imageUrl:
-                    'https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png');
+                'https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png');
           },
           phoneAuthLoading: () {
-            Commons.showLoadingDialog(context);
+            Commons.showLoadingDialog(context ,text:  "جار إعداد حسابك");
           },
           phoneNumberSubmited: () {
             // ignore: avoid_print
@@ -110,7 +117,7 @@ class MainAuthView extends StatelessWidget {
             );
           },
           loginLoading: () {
-            Commons.showLoadingDialog(context);
+           // todo Commons.showLoadingDialog(context ,text:  "جار إعداد حسابك");
           },
           loginSuccess: (uid) {
             Navigator.pop(context);
@@ -137,20 +144,39 @@ class MainAuthView extends StatelessWidget {
             }
           },
           registerLoading: () {
-            Commons.showLoadingDialog(context);
+            // todo Commons.showLoadingDialog(context ,text:  "جار إعداد حسابك");
           },
           registerSuccess: (user) {
+            Navigator.pop(context);
             user.user!.name == 'مجهول'
                 ? Navigator.pushNamedAndRemoveUntil(
-                    context, Routes.mainHomeViewRoute, (route) => false)
+                context, Routes.mainHomeViewRoute, (route) => false)
                 : showSuccessDialog(context);
           },
           registerError: (networkExceptions) {
             Navigator.pop(context);
-            Commons.showToast(
-              color: ColorManager.error,
-              message: NetworkExceptions.getErrorMessage(networkExceptions),
-            );
+            if(NetworkExceptions.getErrorMessage(networkExceptions) == "المستخدم موجود سابقا"){
+
+
+              showDialog(
+                  context: context,
+                  builder: (BuildContext dialog) =>
+                      ConfirmationDialog(alertMsg: 'هذا المستخدم موجود مسبقا ، يمكنك الانتقال لصفحة تسجيل الدخول او محاولة استخدام رقم اخر',cancel:   "ادخل الرقم مجددا"  , ok: "صفحة الدخول", onTapConfirm: () {
+
+
+                      //  Navigator.pop(dialog);
+                        Navigator.pop(context);
+                        Navigator.pop(context);
+                      }));
+            }else{
+              Commons.showToast(
+                color: ColorManager.error,
+                message: NetworkExceptions.getErrorMessage(networkExceptions),
+              );
+            }
+
+
+
           },
         );
       },
@@ -209,8 +235,11 @@ class MainAuthView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: ColorManager.transparent,
-        actions: const [
-          SkipText(),
+        actions:  [
+          Container(
+            padding: EdgeInsets.only(top: 23),
+            child:  SkipText(),
+          ),
         ],
       ),
       body: _buildBody(context),

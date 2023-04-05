@@ -38,7 +38,6 @@ dependencies:
   cached_network_image:
   carousel_slider:
   chewie: ^1.4.0
-  connectivity_plus: ^3.0.3
   country_code_picker: ^3.0.0
   cupertino_icons:
   dartz:
@@ -49,6 +48,8 @@ dependencies:
   firebase_app_check: ^0.1.1+14
   firebase_auth:
   firebase_core:
+  firebase_messaging:
+
   flutter:
     sdk: flutter
   flutter_bloc:
@@ -57,11 +58,10 @@ dependencies:
   flutter_libphonenumber: ^2.0.0
   flutter_localizations:
     sdk: flutter
-  flutter_offline: ^2.0.0
+  flutter_offline: ^2.1.0
+  flutter_polyline_points: ^1.0.0
   flutter_screenutil: ^5.7.0
   flutter_svg: ^2.0.4
-  get: ^4.6.5
-
   fluttertoast:
   font_awesome_flutter:
   freezed:
@@ -74,7 +74,7 @@ dependencies:
   google_sign_in: null
   http:
   image_picker: ^0.8.7
-  internet_connection_checker: ^1.0.0+1
+
   json_annotation:
   json_serializable:
   pin_code_fields:

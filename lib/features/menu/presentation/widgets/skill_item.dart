@@ -25,18 +25,21 @@ class SkillItem extends StatefulWidget {
 
 class _SkillItemState extends State<SkillItem> {
   _buildIcon() {
-    return SizedBox(
+
+    return  SizedBox(
       width: 35.w,
       height: 35.h,
       child: CircleAvatar(
           radius: 25.r,
           backgroundColor: ColorManager.darkSeconadry,
-          child: SizedBox(
-              width: 15.w,
-              height: 15.h,
-              child: CustomNetworkCachedImage(
-                  url: widget.skills[widget.index].imageUrl!))),
+          child: ClipOval(
+            child: CustomNetworkCachedImage(
+                url: widget.skills[widget.index].imageUrl!),
+          )),
     );
+
+
+
   }
 
   _buildTitle() {
@@ -67,6 +70,8 @@ class _SkillItemState extends State<SkillItem> {
           children: [
             Column(
               mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
               // crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // SizedBox(height: 20.h),

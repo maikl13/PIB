@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/resources/assets_manager.dart';
+import 'package:pip/core/resources/utils.dart';
 import 'package:pip/features/chat/business_logic/chat_cubit.dart';
 import 'package:pip/features/chat/business_logic/chat_state.dart';
 import '../../../../core/widgets/custom_clock_date.dart';
@@ -71,11 +72,11 @@ class AvailableJobDetailsView extends StatelessWidget {
                   // trailling: FontAwesomeIcons.mapLocationDot,
                 ),
                 SizedBox(height: 15.h),
-                _buildPhotos(),
+             if(availableJob.images!.length != 0)   _buildPhotos(),
 
-                SizedBox(height: 70.h),
-                _buildButtons(context),
                 SizedBox(height: 30.h),
+                _buildButtons(context),
+                SizedBox(height: 70.h),
               ],
             ),
           ),
@@ -103,9 +104,15 @@ class AvailableJobDetailsView extends StatelessWidget {
       child: DefaultButton(
         text: AppStrings.giveOffer,
         onTap: () {
-          Navigator.pushNamed(context, Routes.giveOffersViewRoute, arguments: {
-            'requestId': availableJob.id.toString(),
-          });
+          if (checkUserType(context)) {
+            return;
+          } else {
+            Navigator.pushNamed(context, Routes.giveOffersViewRoute,
+                arguments: {
+                  'requestId': availableJob.id.toString(),
+                  'jobName' : availableJob.category!.name
+                });
+          }
         },
       ),
     );
@@ -119,9 +126,13 @@ class AvailableJobDetailsView extends StatelessWidget {
         textStyle:
             getBoldStyle(fontSize: 16.sp, color: ColorManager.darkSeconadry),
         onTap: () {
-          BlocProvider.of<ChatCubit>(context).chatWithUser(
-              requestId: availableJob.id.toString(),
-              targetId: availableJob.user!.id.toString());
+          if (checkUserType(context)) {
+            return;
+          } else {
+            BlocProvider.of<ChatCubit>(context).chatWithUser(
+                requestId: availableJob.id.toString(),
+                targetId: availableJob.user!.id.toString());
+          }
         },
       ),
     );
@@ -181,8 +192,9 @@ class AvailableJobDetailsView extends StatelessWidget {
             MainInfoItem(
                 title: '${availableJob.price} ${AppStrings.ryal}',
                 icon: ImageAssets.tags),
-             MainInfoItem(
-                title: availableJob.status!, icon: ImageAssets.solidLayers),
+            MainInfoItem(
+                title: getStatusInArabic(availableJob.status!),
+                icon: ImageAssets.solidLayers),
           ],
         ),
       ),

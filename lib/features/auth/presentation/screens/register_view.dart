@@ -29,7 +29,7 @@ class _RegisterViewState extends State<RegisterView> {
   final TextEditingController _phoneController = TextEditingController();
   final TextEditingController _nameController = TextEditingController();
 
-  String phoneNumber = '';
+  // String phoneNumber = '';
   Widget _buildBody(BuildContext context) {
     return Form(
       key: _phoneFormKey,
@@ -46,10 +46,9 @@ class _RegisterViewState extends State<RegisterView> {
           SizedBox(height: 20.h),
           DefaultPhoneTextField(
             onSaved: (value) {
-              phoneNumber = value!;
+              userPhone = value!;
             },
             controller: _phoneController,
-        
           ),
           SizedBox(height: 60.h),
           // _buildPasswordTextField(),
@@ -106,7 +105,7 @@ class _RegisterViewState extends State<RegisterView> {
     } else {
       // Navigator.pop(context);
       _phoneFormKey.currentState!.save();
-      BlocProvider.of<AuthCubit>(context).submitPhoneNumber(phoneNumber);
+      BlocProvider.of<AuthCubit>(context).submitPhoneNumber(userPhone!);
     }
   }
 
@@ -123,11 +122,14 @@ class _RegisterViewState extends State<RegisterView> {
     return DefaultButton(
       text: AppStrings.registerNewAcc,
       onTap: () {
-        userName = _nameController.text;
-        isLogin = false;
-        userPhone = _phoneController.text;
+        setState(() {
+          isLogin = false;
+          userName = _nameController.text;
 
-        _register(context);
+          userPhone = _phoneController.text;
+
+          _register(context);
+        });
       },
     );
   }

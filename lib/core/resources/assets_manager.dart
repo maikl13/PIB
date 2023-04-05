@@ -1,5 +1,5 @@
 const String imagePath = "assets/images";
-const String svgPath = "assets/images/svg";
+
 
 class ImageAssets {
   static const String splashLogo = "$imagePath/Group 26058.png";
@@ -43,6 +43,10 @@ class ImageAssets {
   static const String paint = "$imagePath/paintbrush.png";
   static const String sofa = "$imagePath/sofa.png";
   static const String leading = "$imagePath/leading.png";
+  static const String gps = "$imagePath/gps.png";
+  static const String shadow = "$imagePath/shadow.svg";
+  static const String rounded_shadow = "$imagePath/rounded_shadow.svg";
+
 
   static const String wrench = "$imagePath/wrench.png";
   static const String notification = "$imagePath/bell (1).png";
@@ -81,7 +85,7 @@ class ImageAssets {
   static const String solidComments = "$imagePath/solid-comments.png";
   // static const String copy = "$imagePath/copy.png";
   static const String envelope = "$imagePath/envelope.png";
-  // static const String copy = "$imagePath/copy.png";
+  static const String marker = "$imagePath/marker.png";
   // static const String copy = "$imagePath/copy.png";
   // static const String copy = "$imagePath/copy.png";
 

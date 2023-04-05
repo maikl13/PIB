@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/resources/assets_manager.dart';
+import 'package:pip/core/resources/utils.dart';
 
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
@@ -21,15 +22,19 @@ class _ChargeWalletButtonState extends State<ChargeWalletButton> {
   _buildChargeButton(BuildContext context) {
     return InkWell(
       onTap: () {
-        BlocProvider.of<MenuCubit>(context).showWalletAddAmountDialog(
-          context,
-          _formKey,
-          onTap: () {
-            if (_formKey.currentState!.validate()) {
-              BlocProvider.of<MenuCubit>(context).addAmountToWallet();
-            }
-          },
-        );
+        if (checkUserType(context)) {
+          return;
+        } else {
+          BlocProvider.of<MenuCubit>(context).showWalletAddAmountDialog(
+            context,
+            _formKey,
+            onTap: () {
+              if (_formKey.currentState!.validate()) {
+                BlocProvider.of<MenuCubit>(context).addAmountToWallet();
+              }
+            },
+          );
+        }
       },
       child: Container(
         width: 138.w,

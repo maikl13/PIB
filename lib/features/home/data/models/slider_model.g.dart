@@ -9,6 +9,7 @@ part of 'slider_model.dart';
 SliderModel _$SliderModelFromJson(Map<String, dynamic> json) => SliderModel(
       id: json['id'] as int?,
       name: json['name'] as String?,
+      content: json['content'] as String?,
       image: json['image'] as String?,
       link: json['link'] as String?,
     );
@@ -17,6 +18,7 @@ Map<String, dynamic> _$SliderModelToJson(SliderModel instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
+      'content': instance.content,
       'image': instance.image,
       'link': instance.link,
     };

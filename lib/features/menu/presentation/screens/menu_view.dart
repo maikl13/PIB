@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:pip/core/business_logic/global_cubit.dart';
 import 'package:pip/core/resources/assets_manager.dart';
-import 'package:pip/features/menu/data/models/user_info_model.dart';
-import '../../../../core/business_logic/global_cubit.dart';
+import 'package:pip/features/chat/business_logic/chat_cubit.dart';
+
 import '../../../../core/resources/constants.dart';
+import '../../../../core/resources/location_helper.dart';
 import '../../../../core/resources/route_manager.dart';
 import '../../../../core/resources/shared_prefrences.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/resources/style_manager.dart';
 import '../../../../core/widgets/custom_network_image.dart';
 import '../../../../core/widgets/dark_default_button.dart';
+import '../../../pip/business_logic/cubit/pip_cubit.dart';
 import '../../business_logic/menu_cubit.dart';
 import '../../business_logic/menu_state.dart';
 
@@ -26,6 +30,8 @@ class MenuView extends StatefulWidget {
 }
 
 class _MenuViewState extends State<MenuView> {
+  static Position? position;
+
   _buildBody(BuildContext context) {
     return ListView(
       shrinkWrap: true,
@@ -44,13 +50,30 @@ class _MenuViewState extends State<MenuView> {
     );
   }
 
+  Future<void> getMyCurrentLocation() async {
+    position = await LocationHelper.getCurrentLocation();
+    if (position == null) {
+      // Handle the case where the user cancels the permission request
+
+      // ignore: use_build_context_synchronously
+      BlocProvider.of<PipCubit>(context).toggleFastRequest();
+      print("User cancelled permission to access location services");
+    } else {
+      setState(() {});
+      print("position: $position");
+    }
+  }
+
   _buildUserInfo() {
     return BlocConsumer<MenuCubit, MenuState>(
         listener: (context, state) {
-          // state.whenOrNull(
-          //   getUserInfoSuccess: (userInfo) {
-          //   },
-          // );
+          state.whenOrNull(
+            signOutSuccess: () {
+              BlocProvider.of<GlobalCubit>(context).stopStream();
+              BlocProvider.of<ChatCubit>(context).stopStream();
+
+            },
+          );
         },
         buildWhen: (previous, current) => current is GetUserInfoSuccess,
         builder: (context, state) {
@@ -59,7 +82,8 @@ class _MenuViewState extends State<MenuView> {
               return const LoadingIndicator();
             },
             getUserInfoSuccess: (userInfo) {
-              userImage = userInfo.imageUrl;
+              userImage = userInfo.imageUrl ??
+                  'https://th.bing.com/th/id/OIP.8R95WJtQhwmzvFvd75zrVQHaHa?pid=ImgDet&w=1490&h=1490&rs=1';
               userName = userInfo.name;
               userPhone = userInfo.phone;
               userEmail = userInfo.email;
@@ -67,11 +91,15 @@ class _MenuViewState extends State<MenuView> {
               CacheHelper.saveData(key: 'userImage', value: userImage);
               CacheHelper.saveData(key: 'userName', value: userName);
               CacheHelper.saveData(key: 'userPhone', value: userPhone);
-              return _buildUserPar(
-                  userInfo.imageUrl!, userInfo.name!, userInfo.phone!);
+              return _buildUserPar(userInfo.imageUrl ?? '', userInfo.name ?? '',
+                  userInfo.phone ?? AppStrings.zeros);
             },
             orElse: () {
-              return _buildUserPar(userImage!, userName!, userPhone!);
+              return _buildUserPar(
+                  userImage ??
+                      'https://th.bing.com/th/id/OIP.8R95WJtQhwmzvFvd75zrVQHaHa?pid=ImgDet&w=1490&h=1490&rs=1',
+                  userName ?? '',
+                  userPhone ?? AppStrings.zeros);
             },
           );
         });

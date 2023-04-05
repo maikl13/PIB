@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:bloc/bloc.dart';
@@ -5,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:pip/features/pip/data/models/fast_request_category.dart';
 import 'package:pip/features/pip/data/models/toggle_model.dart';
 import '../../../menu/data/models/update_skill.dart';
+import '../../data/models/driver_model.dart';
 import 'pip_state.dart';
 import '../../data/models/skills_model.dart';
 import '../../data/repository/pip_repository.dart';
@@ -19,6 +21,44 @@ class PipCubit extends Cubit<PipState> {
   final PipRepsitory pipRepsitory;
 
   List<File> imagesFile = [];
+
+  StreamSubscription<DriverModel>? subscription;
+  Stream<DriverModel>? myStream;
+  DriverModel? driverInfo;
+  
+
+ 
+
+  void startGetDriverInfoStream(String requestId) async {
+    myStream = Stream.periodic(const Duration(seconds: 10))
+        .asyncMap((event) async => await getDriverInfo(requestId: requestId));
+    subscription = myStream?.listen((event) {
+      if (event.deliveryMan != null) {
+        emit(PipState.driverInfoUpdated(event));
+      }
+    });
+  }
+
+  void stopStream() {
+    if (subscription != null) {
+      subscription!.pause();
+      subscription = null;
+    }
+    emit(const PipState.stopGetDriverInfoStrem());
+  }
+
+  void resumeStream(String requestId) {
+    if (subscription!.isPaused) {
+      startGetDriverInfoStream(requestId);
+    } else {
+      // ignore: avoid_print
+      print('object');
+    }
+    emit(const PipState.resumeGetDriverInfoStrem());
+
+    // }
+  }
+
   deleteImage(int index) {
     imagesFile.removeAt(index);
   }
@@ -63,6 +103,23 @@ class PipCubit extends Cubit<PipState> {
         emit(PipState.skillserror(networkExceptions));
       },
     );
+  }
+
+  Future<DriverModel> getDriverInfo({required String requestId}) async {
+    emit(const PipState.driverInfoLoading());
+
+    // ignore: prefer_typing_uninitialized_variables
+    var result = await pipRepsitory.getDriverInfo(requestId);
+    result.when(
+      success: (DriverModel driver) {
+        driverInfo = driver;
+        emit(PipState.driverInfoSuccess(driver));
+      },
+      failure: (NetworkExceptions networkExceptions) {
+        emit(PipState.driverInfoError(networkExceptions));
+      },
+    );
+    return driverInfo!;
   }
 
   void getAllFastRequestCategories() async {

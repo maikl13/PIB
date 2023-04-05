@@ -22,14 +22,20 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
 
   void signInAnonymously() async {
     emit(const AuthResultState.firebaseAnonymousLoginLoading());
-
+await  FirebaseAuth.instance.signOut();
     final FirebaseAuth auth = FirebaseAuth.instance;
 
     try {
       final UserCredential result = await auth.signInAnonymously();
       final user = result.user;
-
       token = user!.uid;
+      // CacheHelper.saveData(key: 'token', value: token);
+      isAnonymous = true;
+
+      // fireBaseId = user.uid;
+
+      // CacheHelper.saveData(key: 'fireBaseId', value: fireBaseId);
+
       emit(AuthResultState.firebaseAnonymousLoginSuccess(user.uid));
     } catch (e) {
       emit(AuthResultState.firebaseAnonymousLoginError(
@@ -57,8 +63,6 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
         CacheHelper.saveData(key: 'userName', value: userName);
         CacheHelper.saveData(key: 'userPhone', value: userPhone);
         CacheHelper.saveData(key: 'uid', value: defaultUId);
-        // CacheHelper.saveData(key: 'countryCode', value: countryCode);
-
 
         emit(AuthResultState.loginSuccess(userData));
         print(defaultUId);
@@ -92,10 +96,6 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
         CacheHelper.saveData(key: 'userName', value: userName);
         CacheHelper.saveData(key: 'userPhone', value: userPhone);
         CacheHelper.saveData(key: 'uid', value: defaultUId);
-        CacheHelper.saveData(key: 'userEmail', value: userEmail);
-        // CacheHelper.saveData(key: 'countryCode', value: countryCode);
-
-
 
         emit(AuthResultState.registerSuccess(userData));
       },
@@ -106,6 +106,8 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
   }
 
   signInWithGoogle(BuildContext context) async {
+    userPhone = '';
+    isLogin = true;
     emit(const AuthResultState.firebaseGoogleLoginLoading());
     try {
       final GoogleSignInAccount? googleUser =
@@ -124,6 +126,8 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
   }
 
   signInWithFacebook(BuildContext context) async {
+    userPhone = ' ';
+    isLogin = true;
     emit(const AuthResultState.firebaseFacebookLoginLoading());
 
     try {
@@ -136,9 +140,10 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
       final userData = await FacebookAuth.i.getUserData(
         fields: 'name,picture',
       );
-
-      userName = userData['name'];
       token = userData['id'];
+      userName = userData['name'];
+      userEmail = userData['email'];
+
       userImage = userData['picture']['data']['url'];
 
       emit(AuthResultState.firebaseFacebookLoginSuccess(userData['id']));
@@ -170,7 +175,7 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
   }
 
   void verificationFailed(FirebaseAuthException error) {
-    print('verificationFailed : ${error.toString()}');
+    print('الرجاء التأكد من الكود المدخل');
     // if (error) {
 
     // }
@@ -185,7 +190,8 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
   }
 
   void codeAutoRetrievalTimeout(String verificationId) {
-    print('codeAutoRetrievalTimeout');
+
+  // todo  emit(const AuthResultState.phoneAuthErrorOccurred('المهلة لل كود انتهت'));
   }
 
   Future<void> submitOTP(String otpCode) async {
@@ -198,10 +204,12 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
   Future<void> signInWithPhoneNumber(PhoneAuthCredential credential) async {
     try {
       await _auth.signInWithCredential(credential);
+
       CacheHelper.saveData(key: 'countryCode', value: countryCode);
 
       emit(const AuthResultState.phoneOTPVerified());
     } catch (error) {
+      // print('signInWithPhoneNumber');
       emit(AuthResultState.phoneAuthErrorOccurred(error.toString()));
     }
   }

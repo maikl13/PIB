@@ -1,9 +1,8 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'my_request_model.g.dart';
-@JsonSerializable(explicitToJson: true)
 
+@JsonSerializable(explicitToJson: true)
 class MyRequestModel {
   int? id;
   String? description;
@@ -17,7 +16,7 @@ class MyRequestModel {
   @JsonKey(name: 'accepted_offer_id')
   String? acceptedOfferID;
   String? type;
-  
+
   @JsonKey(name: 'created_at')
   String? createdAt;
   String? time;
@@ -25,7 +24,7 @@ class MyRequestModel {
   Category? user;
   List<Images>? images;
   List<Videos>? videos;
-    @JsonKey(name: 'offers_count')
+  @JsonKey(name: 'offers_count')
   int? offersCount;
   @JsonKey(name: 'belong_to_current_user')
   bool? belongToCurrentUser;
@@ -50,14 +49,12 @@ class MyRequestModel {
       this.belongToCurrentUser,
       this.submittedOffer});
 
-      
   factory MyRequestModel.fromJson(Map<String, dynamic> json) =>
       _$MyRequestModelFromJson(json);
   Map<String, dynamic> toJson() => _$MyRequestModelToJson(this);
-
 }
-@JsonSerializable(explicitToJson: true)
 
+@JsonSerializable(explicitToJson: true)
 class Category {
   int? id;
   String? name;
@@ -66,40 +63,30 @@ class Category {
 
   Category({this.id, this.name, this.imageUrl});
 
-      factory Category.fromJson(Map<String, dynamic> json) =>
+  factory Category.fromJson(Map<String, dynamic> json) =>
       _$CategoryFromJson(json);
   Map<String, dynamic> toJson() => _$CategoryToJson(this);
-
-
 }
 
 @JsonSerializable(explicitToJson: true)
-
-
 class Images {
   int? id;
   @JsonKey(name: 'attachment_url')
   String? attachmentUrl;
 
   Images({this.id, this.attachmentUrl});
-    
-      factory Images.fromJson(Map<String, dynamic> json) =>
-      _$ImagesFromJson(json);
-  Map<String, dynamic> toJson() => _$ImagesToJson(this);
 
-  }
+  factory Images.fromJson(Map<String, dynamic> json) => _$ImagesFromJson(json);
+  Map<String, dynamic> toJson() => _$ImagesToJson(this);
+}
 
 @JsonSerializable(explicitToJson: true)
-
-  class Videos {
+class Videos {
   int? id;
   String? attachmentUrl;
 
   Videos({this.id, this.attachmentUrl});
-      
-        factory Videos.fromJson(Map<String, dynamic> json) =>
-        _$VideosFromJson(json);
-    Map<String, dynamic> toJson() => _$VideosToJson(this);
 
-
+  factory Videos.fromJson(Map<String, dynamic> json) => _$VideosFromJson(json);
+  Map<String, dynamic> toJson() => _$VideosToJson(this);
 }

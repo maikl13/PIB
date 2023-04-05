@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:pip/features/pip/data/models/driver_model.dart';
 import 'package:pip/features/pip/data/models/fast_request_category.dart';
 import '../../../menu/data/models/update_skill.dart';
 import '../../data/models/skills_model.dart';
@@ -18,6 +19,22 @@ class PipState<T> with _$PipState<T> {
 
   const factory PipState.skillserror(NetworkExceptions networkExceptions) =
      SkillsError<T>;
+
+  const factory PipState.driverInfoUpdated(DriverModel driver) = DriverInfoUpdated<T>;
+  const factory PipState.stopGetDriverInfoStrem() = StopGetDriverInfoStrem<T>;
+  const factory PipState.resumeGetDriverInfoStrem() = ResumeGetDriverInfoStrem<T>;
+
+
+
+
+
+
+  const factory PipState.driverInfoLoading() = DriverInfoLoading<T>;
+
+  const factory PipState.driverInfoSuccess(DriverModel driver) = DriverInfoSuccess<T>;
+
+  const factory PipState.driverInfoError(NetworkExceptions networkExceptions) =
+     DriverInfoError<T>;
 
       const factory PipState.toggleLoading() = ToggleLoading<T>;
 

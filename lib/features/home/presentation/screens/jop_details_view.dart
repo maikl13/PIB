@@ -22,58 +22,65 @@ class JobDetailsView extends StatelessWidget {
   final Ads ad;
 
   _buildBody() {
-    return Padding(
-      padding: EdgeInsets.only(right: 20.w, left: 20.w, top: 60.h),
-      child: SingleChildScrollView(
-        child: Column(
-          // crossAxisAlignment: CrossAxisAlignment.center,
-          // mainAxisAlignment: MainAxisAlignment.c,
-          // shrinkWrap: true,
-          children: [
-            JobDetailsImage(
-              imageUrl: ad.image,
-            ),
-            SizedBox(height: 48.h),
-            _buildCompanyName(),
-            SizedBox(height: 15.h),
-            _buildJobname(),
-            SizedBox(height: 20.h),
-            _buildRandomText(),
-            SizedBox(height: 12.h),
-            _buildDate(ad.createdAt.toString()),
-            SizedBox(height: 40.h),
-            _buildMainInfo(),
-            SizedBox(height: 15.h),
-            InfoItem(
-              leading: ImageAssets.web,
-              title: ad.website ?? '',
-              decoration: TextDecoration.underline,
-            ),
-            SizedBox(height: 15.h),
-            InfoItem(
-              leading: ImageAssets.pin1,
-              title: ad.location ?? '',
-              trailling: ImageAssets.pinMap,
-            ),
-            SizedBox(height: 70.h),
-            Row(
-              children: [
-                DefaultButton(
-                  text: AppStrings.applyToJob,
-                  widht: 249.w,
-                  onTap: () {
-                    Commons.openUrl('tel://${ad.phone}');
-                  },
-                ),
-                SizedBox(width: 10.w),
-                _buildShareButton(),
-              ],
-            ),
-            SizedBox(height: 30.h),
-          ],
-        ),
-      ),
-    );
+    return
+      SingleChildScrollView(
+        child:
+
+        Padding(
+          padding: EdgeInsets.only(right: 20.w, left: 20.w, top: 60.h),
+          child:     Column(
+            // crossAxisAlignment: CrossAxisAlignment.center,
+            // mainAxisAlignment: MainAxisAlignment.c,
+            // shrinkWrap: true,
+            children: [
+              JobDetailsImage(
+                imageUrl: ad.image,
+              ),
+              SizedBox(height: 48.h),
+              _buildCompanyName(),
+              SizedBox(height: 15.h),
+              _buildJobname(),
+              SizedBox(height: 20.h),
+              _buildRandomText(),
+              SizedBox(height: 12.h),
+              _buildDate(ad.createdAt.toString()),
+              SizedBox(height: 40.h),
+              _buildMainInfo(),
+              SizedBox(height: 15.h),
+              InfoItem(
+                leading: ImageAssets.web,
+                title: ad.website ?? '',
+                decoration: TextDecoration.underline,
+              ),
+              SizedBox(height: 15.h),
+              InfoItem(
+                leading: ImageAssets.pin1,
+                title: ad.location ?? '',
+                trailling: ImageAssets.pinMap,
+              ),
+              SizedBox(height: 70.h),
+              Row(
+                children: [
+                  DefaultButton(
+                    text: AppStrings.applyToJob,
+                    widht: 249.w,
+                    onTap: () {
+                      Commons.openUrl('tel://${ad.phone}');
+                    },
+                  ),
+                  SizedBox(width: 10.w),
+                  _buildShareButton(),
+                ],
+              ),
+              SizedBox(height: 30.h),
+            ],
+          ),
+        )
+
+
+      )
+
+     ;
   }
 
   _buildDate(String date) {
@@ -164,7 +171,7 @@ class JobDetailsView extends StatelessWidget {
           IconButton(
             onPressed: () async {
               await Share.share(
-                AppStrings.companyName,
+                ad.title!,
                 subject: AppStrings.jobLink,
               );
             },

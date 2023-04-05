@@ -16,6 +16,7 @@ class SkipText extends StatelessWidget {
       padding: EdgeInsets.only(left: 23.w),
       child: InkWell(
         onTap: () {
+          
           BlocProvider.of<AuthCubit>(context).signInAnonymously();
           // Navigator.of(context).pushNamed(Routes.mainHomeViewRoute);
         },

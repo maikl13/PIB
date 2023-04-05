@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/business_logic/global_cubit.dart';
 import 'package:pip/core/widgets/custom_network_image.dart';
 import 'package:pip/features/chat/data/models/job_chats_model.dart';
 import '../../../../core/resources/assets_manager.dart';
@@ -87,6 +89,7 @@ class ChatsItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
+        BlocProvider.of<GlobalCubit>(context).readMessage();
         Navigator.pushNamed(context, Routes.chatViewRoute, arguments: {
           'chatId': jobChats.chats![index].id,
         });

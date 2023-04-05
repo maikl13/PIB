@@ -3,8 +3,11 @@ import 'dart:io';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:pip/features/requests/data/models/fast_request_model.dart';
 
 import '../../../../core/resources/constants.dart';
+import '../../data/models/available_fast_request_model.dart';
+import '../../data/models/create_fast_request_model.dart';
 import 'requests_state.dart';
 import '../../data/models/my_request_model.dart';
 import '../../data/models/offer_model.dart';
@@ -20,6 +23,12 @@ class RequestsCubit extends Cubit<RequestState> {
   final RequestRepository requestRepository;
 
   List<File> imagesFile = [];
+  List<MyRequestModel> myRequests = [];
+  List<MyRequestModel> myAvailableJobs = [];
+
+  List<FastRequestModel> myFastRequests = [];
+
+  List<AvailableFastRequestModel> myAvailableFastRequests = [];
   deleteImage(int index) {
     imagesFile.removeAt(index);
   }
@@ -58,10 +67,50 @@ class RequestsCubit extends Cubit<RequestState> {
     var result = await requestRepository.getAllMyRequests();
     result.when(
       success: (List<MyRequestModel> requests) {
+        myRequests = requests;
         emit(RequestState.myRequestsSuccess(requests));
       },
       failure: (NetworkExceptions networkExceptions) {
         emit(RequestState.myRequestsError(networkExceptions));
+      },
+    );
+  }
+
+  void getAllMyFastRequests() async {
+    emit(const RequestState.myFastRequestsLoading());
+
+    // ignore: prefer_typing_uninitialized_variables
+    var result = await requestRepository.getAllMyFastRequests();
+    result.when(
+      success: (List<FastRequestModel> fastRequests) {
+        // print('fastRequests $fastRequests');
+        myFastRequests = fastRequests;
+        emit(RequestState.myFastRequestsSuccess(fastRequests));
+      },
+      failure: (NetworkExceptions networkExceptions) {
+        // print('networkExceptions $networkExceptions');
+        emit(RequestState.myFastRequestsError(networkExceptions));
+      },
+    );
+  }
+
+  void getAllMyAvailableFastRequests() async {
+    emit(const RequestState.myAvailableFastRequestsLoading());
+
+    // ignore: prefer_typing_uninitialized_variables
+    var result = await requestRepository.getAllAvailableFastRequests();
+    result.when(
+      success: (List<AvailableFastRequestModel> availabelFastRequests) {
+        // print('fastRequests $fastRequests');
+        //  = fastRequests;
+        myAvailableFastRequests = availabelFastRequests;
+        emit(
+            RequestState.myAvailableFastRequestsSuccess(availabelFastRequests));
+
+        // emit(RequestState.myFastRequestsSuccess(fastRequests));
+      },
+      failure: (NetworkExceptions networkExceptions) {
+        emit(RequestState.myAvailableFastRequestsError(networkExceptions));
       },
     );
   }
@@ -73,6 +122,7 @@ class RequestsCubit extends Cubit<RequestState> {
     var result = await requestRepository.getAllAvailableJobs();
     result.when(
       success: (List<MyRequestModel> availableJobs) {
+        myAvailableJobs = availableJobs;
         emit(RequestState.myAvailableJobsSuccess(availableJobs));
       },
       failure: (NetworkExceptions networkExceptions) {
@@ -121,14 +171,12 @@ class RequestsCubit extends Cubit<RequestState> {
     // ignore: prefer_typing_uninitialized_variables
     var result = imagesFile.isEmpty
         ? await requestRepository.giveOfferWithoutImages(
-            price!, duration!, description!, requestId!)
+        price!, duration!, description!, requestId!)
         : await requestRepository.giveOffer(
-            price!, duration!, description!, imagesFile, requestId!);
+        price!, duration!, description!, imagesFile, requestId!);
 
     result.when(
       success: (UpdateSkill data) {
-     
-
         emit(RequestState.giveOfferSuccess(data));
         // print(data.toString());
       },
@@ -185,6 +233,25 @@ class RequestsCubit extends Cubit<RequestState> {
     );
   }
 
+  void completeRequest({
+    required String? id,
+  }) async {
+    emit(const RequestState.completeRequestLoading());
+
+    // ignore: prefer_typing_uninitialized_variables
+    var result = await requestRepository.completeRequest(id!);
+
+    result.when(
+      success: (UpdateSkill data) {
+        emit(RequestState.completeRequestSuccess(data));
+        // print(data.toString());
+      },
+      failure: (NetworkExceptions networkExceptions) {
+        emit(RequestState.completeRequestError(networkExceptions));
+      },
+    );
+  }
+
   void acceptOffer({
     required String offerId,
   }) async {
@@ -199,6 +266,105 @@ class RequestsCubit extends Cubit<RequestState> {
       },
       failure: (NetworkExceptions networkExceptions) {
         emit(RequestState.acceptOfferError(networkExceptions));
+      },
+    );
+  }
+  void rejectFastRequest({
+    required String requestId,
+  }) async {
+    emit(const RequestState.acceptFastRequestLoading());
+
+    var result = await requestRepository.rejectFastRequest(requestId);
+
+    result.when(
+      success: (UpdateSkill data) {
+        emit(RequestState.rejectFastRequestSuccess(data));
+        // print(data.toString());
+      },
+      failure: (NetworkExceptions networkExceptions) {
+        emit(RequestState.acceptFastRequestError(networkExceptions));
+      },
+    );
+  }
+  void acceptFastRequest({
+    required String requestId,
+  }) async {
+    emit(const RequestState.acceptFastRequestLoading());
+
+    var result = await requestRepository.acceptFastRequest(requestId);
+
+    result.when(
+      success: (UpdateSkill data) {
+        emit(RequestState.acceptFastRequestSuccess(data));
+        // print(data.toString());
+      },
+      failure: (NetworkExceptions networkExceptions) {
+        emit(RequestState.acceptFastRequestError(networkExceptions));
+      },
+    );
+  }
+
+  void cancelFastRequest({
+    required String requestId,
+  }) async {
+    emit(const RequestState.cancelFastRequestLoading());
+
+    var result = await requestRepository.cancelFastRequest(requestId);
+
+    result.when(
+      success: (UpdateSkill data) {
+        emit(RequestState.cancelFastRequestSuccess(data));
+        // print(data.toString());
+      },
+      failure: (NetworkExceptions networkExceptions) {
+        emit(RequestState.cancelFastRequestError(networkExceptions));
+      },
+    );
+  }
+
+  void completeFastRequest({
+    required String requestId,
+    required String price,
+  }) async {
+    emit(const RequestState.completeFastRequestLoading());
+
+    var result = await requestRepository.completeFastRequest(requestId, price);
+
+    result.when(
+      success: (UpdateSkill data) {
+        emit(RequestState.completeFastRequestSuccess(data));
+        // print(data.toString());
+      },
+      failure: (NetworkExceptions networkExceptions) {
+        emit(RequestState.completeFastRequestError(networkExceptions));
+      },
+    );
+  }
+
+  void createFastRequest({
+    required String? mettingPointLat,
+    required String? mettingPointLong,
+    required String? destinationLat,
+    required String? destinationLong,
+  }) async {
+    emit(const RequestState.createFastRequestLoading());
+
+    var result = await requestRepository.createFastRequest(
+      categoryId,
+      mettingPointLat,
+      mettingPointLong,
+      destinationLat,
+      destinationLong,
+      description,
+    );
+
+    result.when(
+      success: (CreateFastRequestModel data) {
+        emit(RequestState.createFastRequestSuccess(data));
+        // print(data.toString());
+      },
+      failure: (NetworkExceptions networkExceptions) {
+        emit(RequestState.completeFastRequestError(networkExceptions));
       },
     );
   }

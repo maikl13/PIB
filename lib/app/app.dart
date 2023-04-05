@@ -1,6 +1,5 @@
-// ignore_for_file: prefer_const_constructors_in_immutables
+// ignore_for_file: prefer_const_constructors_in_immutables, avoid_print
 
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -28,14 +27,33 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   var tokenFromDatabase = CacheHelper.getData(key: 'token');
+
   var userPicFromDatabase = CacheHelper.getData(key: 'userImage');
+
   var userNameFromDatabase = CacheHelper.getData(key: 'userName');
+
   var userPhoneFromDatabase = CacheHelper.getData(key: 'userPhone');
+
   var userGoToHomePage = CacheHelper.getData(key: 'goToHome');
+
   var userIdFromDatabase = CacheHelper.getData(key: 'uid');
   var countryCodeFromDatabase = CacheHelper.getData(key: 'countryCode');
+  // var fireBaseIdFromDatabase = CacheHelper.getData(key: 'fireBaseId');
+  void printAllData() {
+    print(tokenFromDatabase);
+    print(userPicFromDatabase);
+    print(userNameFromDatabase);
+    print(userPhoneFromDatabase);
+    print(userGoToHomePage);
+
+    print(userIdFromDatabase);
+    print(countryCodeFromDatabase);
+  }
 
   String getInitialScreen() {
+    isAnonymous = false;
+    printAllData();
+    // print(object);
     if (userNameFromDatabase == 'مجهول') {
       FirebaseAuth.instance.signOut();
 
@@ -49,6 +67,7 @@ class _MyAppState extends State<MyApp> {
         userPhone = userPhoneFromDatabase;
         countryCode = countryCodeFromDatabase;
 
+        // fireBaseId = fireBaseIdFromDatabase;
         return Routes.mainHomeViewRoute;
       } else {
         return Routes.splashRoute;
@@ -68,6 +87,10 @@ class _MyAppState extends State<MyApp> {
             designSize: const Size(375, 812),
             useInheritedMediaQuery: true,
             minTextAdapt: true,
+
+            // splitScreenMode: true,
+            // useInheritedMediaQuery: true,
+            // scaleByHeight: true,
             builder: (context, state) {
               // ScreenUtil().setSp(28);
               return MaterialApp(

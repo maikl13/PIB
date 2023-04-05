@@ -5,6 +5,7 @@ import 'package:pip/core/resources/assets_manager.dart';
 import 'package:pip/core/resources/constants.dart';
 import 'package:pip/features/requests/business_logic/cubit/requests_cubit.dart';
 import 'package:pip/features/requests/business_logic/cubit/requests_state.dart';
+import '../../../../core/resources/utils.dart';
 import '../../../../core/web_services/network_exceptions.dart';
 import '../../../../core/widgets/custom_clock_date.dart';
 import '../../../../core/widgets/custom_network_image.dart';
@@ -46,6 +47,21 @@ class WantedJobRequestsDetailsView extends StatelessWidget {
     return BlocListener<RequestsCubit, RequestState>(
       listener: (context, state) {
         state.whenOrNull(
+          completeRequestLoading: () {
+            Commons.showLoadingDialog(context);
+          },
+          completeRequestError: (networkExceptions) => {
+            Navigator.pop(context),
+            Commons.showToast(message: networkExceptions.toString()),
+          },
+          completeRequestSuccess: (data) {
+            Commons.showToast(
+                message: 'تم اكمال الطلب بنجاح', color: ColorManager.toastSuccess);
+
+            screenIndex = 2;
+            Navigator.pushNamedAndRemoveUntil(
+                context, Routes.mainHomeViewRoute, (route) => false);
+          },
           deleteRequestTapped: () {
             Navigator.pop(context);
             showDialog(
@@ -108,7 +124,7 @@ class WantedJobRequestsDetailsView extends StatelessWidget {
           deleteRequestSuccess: (data) {
             Navigator.pop(context);
             Commons.showToast(
-                message: ' تم حذف الطلب بنجاح', color: ColorManager.green);
+                message: ' تم حذف الطلب بنجاح', color: ColorManager.toastSuccess);
             screenIndex = 2;
             Navigator.pushReplacementNamed(context, Routes.mainHomeViewRoute);
           },
@@ -148,9 +164,9 @@ class WantedJobRequestsDetailsView extends StatelessWidget {
                 // trailling: FontAwesomeIcons.mapLocationDot,
               ),
               SizedBox(height: 15.h),
-              _buildPhotos(),
+              if(request.images!.length != 0)    _buildPhotos(),
 
-              SizedBox(height: 70.h),
+              SizedBox(height: 30.h),
               _buildButton(context),
               SizedBox(height: 30.h),
             ],
@@ -160,25 +176,41 @@ class WantedJobRequestsDetailsView extends StatelessWidget {
     );
   }
 
-  _buildButton(BuildContext context) {
-    return request.status == 'active'
-        ? DefaultButton(
-            text: '${AppStrings.showOffers}  ${request.offersCount}',
-            onTap: () {
-              Navigator.of(context)
-                  .pushNamed(Routes.recievedOffersViewRoute, arguments: {
-                'requestId': request.id,
-              });
-            },
-            // widht: 249.w,
-          )
-        : DefaultButton(
-            text: request.status!,
-            onTap: () {
-              Commons.showToast(message: ' حالة الطلب  ${request.status}');
-            },
-          );
+  Widget _buildButton(BuildContext context) {
+    if (request.status == 'active') {
+      return DefaultButton(
+        text: '${AppStrings.showOffers}  ${request.offersCount}',
+        onTap: () {
+          Navigator.of(context)
+              .pushNamed(Routes.recievedOffersViewRoute, arguments: {
+            'requestId': request.id,
+          });
+        },
+        // widht: 249.w,
+      );
+    } else if (request.status == 'processing') {
+      return DefaultButton(
+        text: 'اكتمال الطلب',
+        onTap: () {
+          BlocProvider.of<RequestsCubit>(context)
+              .completeRequest(id: request.id.toString());
+        },
+        // widht: 249.w,
+      );
+    } else {
+      return DefaultButton(
+        text: getStatusInArabic(request.status!),
+        onTap: () {
+          // Commons.showToast(message: ' حالة الطلب  ${request.status}');
+        },
+      );
+    }
   }
+
+  /* 
+  request.status == 'active'
+        ? 
+        : */
 
   _buildPhotos() {
     return SizedBox(
@@ -231,8 +263,9 @@ class WantedJobRequestsDetailsView extends StatelessWidget {
             MainInfoItem(
                 title: '${request.price ?? ''} ${AppStrings.ryal}',
                 icon: ImageAssets.tags),
-             MainInfoItem(
-                title: request.status!, icon: ImageAssets.solidLayers),
+            MainInfoItem(
+                title: getStatusInArabic(request.status!),
+                icon: ImageAssets.solidLayers),
           ],
         ),
       ),
@@ -249,30 +282,33 @@ class WantedJobRequestsDetailsView extends StatelessWidget {
         appBar: CustomAppBar(
           appBarColor: ColorManager.lightBlack,
           title: AppStrings.requestDetails,
-          actions: [
-            IconButton(
-              icon: Icon(
-                Icons.settings,
-                color: ColorManager.darkSeconadry,
-                size: 18.sp,
-              ),
-              onPressed: () {
-                Commons.showSettingDialog(
-                  context,
-                  onDeleteTap: () {
-                    BlocProvider.of<RequestsCubit>(context)
-                        .deleteRequestTapped();
-                  },
-                  onEditTab: () {
-                    Navigator.of(context)
-                        .pushNamed(Routes.editRequestViewRoute, arguments: {
-                      'request': request,
-                    });
-                  },
-                );
-              },
-            ),
-          ],
+          actions: request.status == 'active'
+              ? [
+                  IconButton(
+                    icon: Icon(
+                      Icons.settings,
+                      color: ColorManager.darkSeconadry,
+                      size: 18.sp,
+                    ),
+                    onPressed: () {
+                      Commons.showSettingDialog(
+                        context,
+                        onDeleteTap: () {
+                          BlocProvider.of<RequestsCubit>(context)
+                              .deleteRequestTapped();
+                        },
+                        onEditTab: () {
+                          Navigator.of(context).pushNamed(
+                              Routes.editRequestViewRoute,
+                              arguments: {
+                                'request': request,
+                              });
+                        },
+                      );
+                    },
+                  ),
+                ]
+              : [],
         ),
         body: _buildBody(context, requestsCubit),
       ),

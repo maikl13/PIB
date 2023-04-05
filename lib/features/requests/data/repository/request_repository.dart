@@ -1,5 +1,8 @@
 import 'dart:io';
 
+import '../models/available_fast_request_model.dart';
+import '../models/create_fast_request_model.dart';
+import '../models/fast_request_model.dart';
 import '../models/offer_model.dart';
 
 import '../../../../core/resources/constants.dart';
@@ -24,6 +27,28 @@ class RequestRepository {
     }
   }
 
+  Future<ApiResult<List<FastRequestModel>>> getAllMyFastRequests() async {
+    try {
+      var response = await webServices.getFastRequests('Bearer $token');
+      return ApiResult.success(response);
+    } catch (error) {
+      // print(error.toString() + 'asdmfasm,fnasm,fns');
+      return ApiResult.failure(NetworkExceptions.getDioException(error));
+    }
+  }
+
+  Future<ApiResult<List<AvailableFastRequestModel>>>
+      getAllAvailableFastRequests() async {
+    try {
+      var response =
+          await webServices.getAvailableFastRequests('Bearer $token');
+      return ApiResult.success(response);
+    } catch (error) {
+      print(error.toString() + 'asdmfasm,fnasm,fns');
+      return ApiResult.failure(NetworkExceptions.getDioException(error));
+    }
+  }
+
   Future<ApiResult<List<MyRequestModel>>> getAllAvailableJobs() async {
     try {
       var response = await webServices.getAllAvailableJobs('Bearer $token');
@@ -42,9 +67,9 @@ class RequestRepository {
     }
   }
 
-   Future<ApiResult<List<OfferModel>>> getAllRequestOffers(int id) async {
+  Future<ApiResult<List<OfferModel>>> getAllRequestOffers(int id) async {
     try {
-      var response = await webServices.getAllRequestOffers('Bearer $token',id);
+      var response = await webServices.getAllRequestOffers('Bearer $token', id);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(NetworkExceptions.getDioException(error));
@@ -67,27 +92,24 @@ class RequestRepository {
     }
   }
 
-
-   Future<ApiResult<UpdateSkill>> updateRequest(
+  Future<ApiResult<UpdateSkill>> updateRequest(
     String id,
     String categoryId,
     String price,
     String location,
     String description,
- 
   ) async {
     try {
-      var response = await webServices.updateRequest('Bearer $token', id, categoryId, price, location, description);
+      var response = await webServices.updateRequest(
+          'Bearer $token', id, categoryId, price, location, description);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(NetworkExceptions.getDioException(error));
     }
   }
 
-   Future<ApiResult<UpdateSkill>> deleteRequest(
+  Future<ApiResult<UpdateSkill>> deleteRequest(
     String id,
- 
- 
   ) async {
     try {
       var response = await webServices.deleteRequest('Bearer $token', id);
@@ -97,11 +119,86 @@ class RequestRepository {
     }
   }
 
-
+  Future<ApiResult<UpdateSkill>> completeRequest(
+    String id,
+  ) async {
+    try {
+      var response = await webServices.completeRequest('Bearer $token', id);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(NetworkExceptions.getDioException(error));
+    }
+  }
 
   Future<ApiResult<UpdateSkill>> acceptOffer(String offerId) async {
     try {
       var response = await webServices.acceptOffer('Bearer $token', offerId);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(NetworkExceptions.getDioException(error));
+    }
+  }
+
+  Future<ApiResult<UpdateSkill>> rejectFastRequest(String requestId) async {
+    try {
+      var response =
+          await webServices.rejectFastRequest('Bearer $token', requestId);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(NetworkExceptions.getDioException(error));
+    }
+  }
+
+  Future<ApiResult<UpdateSkill>> acceptFastRequest(String requestId) async {
+    try {
+      var response =
+      await webServices.acceptFastRequest('Bearer $token', requestId);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(NetworkExceptions.getDioException(error));
+    }
+  }
+
+
+
+
+  Future<ApiResult<UpdateSkill>> cancelFastRequest(String requestId) async {
+    try {
+      var response =
+          await webServices.cancelFastRequest('Bearer $token', requestId);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(NetworkExceptions.getDioException(error));
+    }
+  }
+
+  Future<ApiResult<UpdateSkill>> completeFastRequest(
+      String requestId, String price) async {
+    try {
+      var response = await webServices.completeFastRequest(
+          'Bearer $token', requestId, price);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(NetworkExceptions.getDioException(error));
+    }
+  }
+
+  Future<ApiResult<CreateFastRequestModel>> createFastRequest(
+    String? categoryId,
+    String? mettingPointLat,
+    String? mettingPointLong,
+    String? destinationLat,
+    String? destinationLong,
+    String? description,
+  ) async {
+    try {
+      var response = await webServices.createFastRequest(
+          'Bearer $token',
+          categoryId,
+          mettingPointLat,
+          mettingPointLong,
+          destinationLat,
+          destinationLong,description,);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(NetworkExceptions.getDioException(error));

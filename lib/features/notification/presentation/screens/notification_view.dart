@@ -58,6 +58,7 @@ class _NotificationViewState extends State<NotificationView> {
                   return NotificationItem(
                     notificationContent: notifications[index].content!,
                     isRead: notifications[index].isRead == 1,
+                    date: notifications[index].createdAt!,
                   );
                 },
                 separatorBuilder: (context, index) {
@@ -80,7 +81,7 @@ class _NotificationViewState extends State<NotificationView> {
     return WillPopScope(
       onWillPop: () async {
         BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
-        return false;
+        return true;
       },
       child: Scaffold(
         appBar: CustomAppBar(

@@ -5,10 +5,12 @@ import '../../features/chat/data/models/chat_with_user_model.dart';
 import '../../features/chat/data/models/chats_messages_model.dart';
 import '../../features/chat/data/models/job_chats_model.dart';
 import '../../features/chat/data/models/show_chat_info_model.dart';
+import '../../features/chat/data/models/unread_messages_count.dart';
 import '../../features/home/data/models/ad_model.dart';
 import '../../features/menu/data/models/setting_model.dart';
 import '../../features/menu/data/models/update_skill.dart';
 import '../../features/notification/data/models/unread_notification.dart';
+import '../../features/pip/data/models/driver_model.dart';
 import '../../features/pip/data/models/fast_request_category.dart';
 import '../../features/pip/data/models/skills_model.dart';
 
@@ -23,6 +25,9 @@ import '../../features/menu/data/models/user_info_model.dart';
 import '../../features/menu/data/models/wallet_info.dart';
 import '../../features/notification/data/models/notification_model.dart';
 import '../../features/pip/data/models/toggle_model.dart';
+import '../../features/requests/data/models/available_fast_request_model.dart';
+import '../../features/requests/data/models/create_fast_request_model.dart';
+import '../../features/requests/data/models/fast_request_model.dart';
 import '../../features/requests/data/models/my_request_model.dart';
 import '../../features/requests/data/models/offer_model.dart';
 
@@ -91,6 +96,15 @@ abstract class WebServices {
 //-----------------------new-----------------------------------------------------------------
   @GET("requests/hirings")
   Future<List<MyRequestModel>> getAllAvailableJobs(
+      @Header('Authorization') String token);
+
+      //-----------------------new-----------------------------------------------------------------
+  @GET("user/deals/fast")
+  Future<List<FastRequestModel>> getFastRequests(
+      @Header('Authorization') String token);
+            //-----------------------new-----------------------------------------------------------------
+  @GET("user/deals/fast/hirings")
+  Future<List<AvailableFastRequestModel>> getAvailableFastRequests(
       @Header('Authorization') String token);
 //-----------------------new-----------------------------------------------------------------
   @GET("user/offers")
@@ -165,11 +179,59 @@ abstract class WebServices {
   );
 
 
+//-----------------------new-----------------------------------------------------------------
+  @POST("deals/complete")
+  Future<UpdateSkill> completeRequest(
+    @Header('Authorization') String token,
+    @Field('id') String? id,
+   
+  );
+
+
+
   //-----------------------new-----------------------------------------------------------------
   @POST("deals/offers/accept")
   Future<UpdateSkill> acceptOffer(
     @Header('Authorization') String token,
     @Field('offer_id') String? offerId,
+  );
+  //-----------------------new-----------------------------------------------------------------
+  @POST("deals/fast/create")
+  Future<CreateFastRequestModel> createFastRequest(
+    @Header('Authorization') String token,
+    @Field('category_id') String? categoryId,
+    @Field('destination_from_lat') String? mettingPointLat,
+    @Field('destination_from_long') String? mettingPointLong,
+    @Field('destination_to_lat') String? destinationLat,
+    @Field('destination_to_long') String? destinationLong,
+   @Field('description')  String? description,
+
+
+  );
+  //-----------------------new-----------------------------------------------------------------
+  @POST("user/deals/fast/hirings/accept")
+  Future<UpdateSkill> acceptFastRequest(
+    @Header('Authorization') String token,
+    @Field('request_id') String? requestId,
+  );
+  @POST("user/deals/fast/hirings/decline")
+  Future<UpdateSkill> rejectFastRequest(
+      @Header('Authorization') String token,
+      @Field('request_id') String? requestId,
+      );
+
+  //-----------------------new-----------------------------------------------------------------
+
+   @POST("user/deals/fast/cancel")
+  Future<UpdateSkill> cancelFastRequest(
+    @Header('Authorization') String token,
+    @Field('request_id') String? requestId,
+  );
+   @POST("user/deals/fast/complete")
+  Future<UpdateSkill> completeFastRequest(
+    @Header('Authorization') String token,
+    @Field('request_id') String? requestId,
+      @Field('price') String? price,
   );
 //-----------------------new-----------------------------------------------------------------
   @GET("ratings")
@@ -215,6 +277,10 @@ abstract class WebServices {
   @GET("user/notifications/unread")
   Future<UnreadNotificationCount> getUnreadNotificationCount(
       @Header('Authorization') String token);
+            //-----------------------new-----------------------------------------------------------------
+  @GET("chat/notifications")
+  Future<UnreadMessagesCount > getUnreadMessagesCount(
+      @Header('Authorization') String token);
 //-----------------------new-----------------------------------------------------------------
   @GET("user/chats/hirings")
   Future<List<HiringChatModel>> getAllHiringChats(
@@ -228,6 +294,11 @@ abstract class WebServices {
   @GET("user/chats/requests/{chatId}/show")
   Future<JobChatsModel> getAllJobChats(
       @Header('Authorization') String token, @Path('chatId') int chatId);
+
+        //-----------------------new-----------------------------------------------------------------
+  @GET("deals/fast/{requestId}/show")
+  Future<DriverModel> getDriverInfo(
+      @Header('Authorization') String token, @Path('requestId') String requestId);
 
   //-----------------------new-----------------------------------------------------------------
   @GET("chat/{chatId}/show")
