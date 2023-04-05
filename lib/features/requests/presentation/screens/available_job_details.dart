@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/resources/assets_manager.dart';
-import 'package:pip/core/resources/utils.dart';
-import 'package:pip/features/chat/business_logic/chat_cubit.dart';
-import 'package:pip/features/chat/business_logic/chat_state.dart';
+import '../../../../core/resources/assets_manager.dart';
+import '../../../../core/resources/utils.dart';
+import '../../../chat/business_logic/chat_cubit.dart';
+import '../../../chat/business_logic/chat_state.dart';
 import '../../../../core/widgets/custom_clock_date.dart';
 import '../../../../core/widgets/custom_network_image.dart';
 import '../../../../core/widgets/image_item.dart';
@@ -72,7 +72,7 @@ class AvailableJobDetailsView extends StatelessWidget {
                   // trailling: FontAwesomeIcons.mapLocationDot,
                 ),
                 SizedBox(height: 15.h),
-             if(availableJob.images!.length != 0)   _buildPhotos(),
+                if (availableJob.images!.length != 0) _buildPhotos(),
 
                 SizedBox(height: 30.h),
                 _buildButtons(context),
@@ -92,10 +92,27 @@ class AvailableJobDetailsView extends StatelessWidget {
   _buildButtons(BuildContext context) {
     return Row(
       children: [
-        _buildGiveOffer(context),
+        availableJob.submittedOffer == true
+            ? _buildEditOffer(context)
+            : _buildGiveOffer(context),
         SizedBox(width: 10.w),
         _buildNegotiateButton(context),
       ],
+    );
+  }
+
+  _buildEditOffer(BuildContext context) {
+    return Expanded(
+      child: DefaultButton(
+        text: AppStrings.editOffer,
+        onTap: () {
+          // Navigator.pushNamed(context, Routes.editOfferViewRoute,
+          //     arguments: {
+          //       'requestId': availableJob.id.toString(),
+          //       'jobName' : availableJob.category!.name
+          //     });
+        },
+      ),
     );
   }
 
@@ -110,7 +127,7 @@ class AvailableJobDetailsView extends StatelessWidget {
             Navigator.pushNamed(context, Routes.giveOffersViewRoute,
                 arguments: {
                   'requestId': availableJob.id.toString(),
-                  'jobName' : availableJob.category!.name
+                  'jobName': availableJob.category!.name
                 });
           }
         },

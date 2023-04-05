@@ -3,8 +3,8 @@ import 'dart:io';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/services.dart';
-import 'package:pip/features/pip/data/models/fast_request_category.dart';
-import 'package:pip/features/pip/data/models/toggle_model.dart';
+import '../../data/models/fast_request_category.dart';
+import '../../data/models/toggle_model.dart';
 import '../../../menu/data/models/update_skill.dart';
 import '../../data/models/driver_model.dart';
 import 'pip_state.dart';

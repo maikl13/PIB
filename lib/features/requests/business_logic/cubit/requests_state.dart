@@ -1,6 +1,8 @@
 import 'dart:io';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
+import '../../../pip/data/models/driver_model.dart';
+import '../../data/models/accepted_offers_model.dart';
 import '../../data/models/available_fast_request_model.dart';
 import '../../data/models/create_fast_request_model.dart';
 import '../../data/models/fast_request_model.dart';
@@ -21,6 +23,18 @@ class RequestState<T> with _$RequestState<T> {
 
   const factory RequestState.myRequestsError(
       NetworkExceptions networkExceptions) = MyRequestsError<T>;
+
+
+
+
+ const factory RequestState.myAcceptedFastOffersLoading() = MyAcceptedFastOffersLoading<T>;
+
+  const factory RequestState.myAcceptedFastOffersSuccess(
+      List<AcceptedOffersModel> myAcceptedFastOffers) = MyAcceptedFastOffersSuccess<T>;
+
+  const factory RequestState.myAcceptedFastOffersError(
+      NetworkExceptions networkExceptions) = MyAcceptedFastOffersError<T>;
+
 
 
         const factory RequestState.myFastRequestsLoading() = MyFastRequestsLoading<T>;

@@ -33,6 +33,9 @@ mixin _$GlobalState<T> {
     required TResult Function() stopChatStreamState,
     required TResult Function(String address) myLoacationChange,
     required TResult Function(String address) myDestenationChange,
+    required TResult Function() updateFcmLoading,
+    required TResult Function(UpdateSkill data) updateFcmSuccess,
+    required TResult Function(T data) updateFcmError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,6 +54,9 @@ mixin _$GlobalState<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function(String address)? myLoacationChange,
     TResult? Function(String address)? myDestenationChange,
+    TResult? Function()? updateFcmLoading,
+    TResult? Function(UpdateSkill data)? updateFcmSuccess,
+    TResult? Function(T data)? updateFcmError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,6 +75,9 @@ mixin _$GlobalState<T> {
     TResult Function()? stopChatStreamState,
     TResult Function(String address)? myLoacationChange,
     TResult Function(String address)? myDestenationChange,
+    TResult Function()? updateFcmLoading,
+    TResult Function(UpdateSkill data)? updateFcmSuccess,
+    TResult Function(T data)? updateFcmError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -94,6 +103,9 @@ mixin _$GlobalState<T> {
     required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
     required TResult Function(MyLoacationChange<T> value) myLoacationChange,
     required TResult Function(MyDestenationChange<T> value) myDestenationChange,
+    required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
+    required TResult Function(UpdateFcmSuccess<T> value) updateFcmSuccess,
+    required TResult Function(UpdateFcmError<T> value) updateFcmError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -117,6 +129,9 @@ mixin _$GlobalState<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult? Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult? Function(UpdateFcmError<T> value)? updateFcmError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -140,6 +155,9 @@ mixin _$GlobalState<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult Function(UpdateFcmError<T> value)? updateFcmError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -214,6 +232,9 @@ class _$Idle<T> implements Idle<T> {
     required TResult Function() stopChatStreamState,
     required TResult Function(String address) myLoacationChange,
     required TResult Function(String address) myDestenationChange,
+    required TResult Function() updateFcmLoading,
+    required TResult Function(UpdateSkill data) updateFcmSuccess,
+    required TResult Function(T data) updateFcmError,
   }) {
     return idle();
   }
@@ -235,6 +256,9 @@ class _$Idle<T> implements Idle<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function(String address)? myLoacationChange,
     TResult? Function(String address)? myDestenationChange,
+    TResult? Function()? updateFcmLoading,
+    TResult? Function(UpdateSkill data)? updateFcmSuccess,
+    TResult? Function(T data)? updateFcmError,
   }) {
     return idle?.call();
   }
@@ -256,6 +280,9 @@ class _$Idle<T> implements Idle<T> {
     TResult Function()? stopChatStreamState,
     TResult Function(String address)? myLoacationChange,
     TResult Function(String address)? myDestenationChange,
+    TResult Function()? updateFcmLoading,
+    TResult Function(UpdateSkill data)? updateFcmSuccess,
+    TResult Function(T data)? updateFcmError,
     required TResult orElse(),
   }) {
     if (idle != null) {
@@ -287,6 +314,9 @@ class _$Idle<T> implements Idle<T> {
     required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
     required TResult Function(MyLoacationChange<T> value) myLoacationChange,
     required TResult Function(MyDestenationChange<T> value) myDestenationChange,
+    required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
+    required TResult Function(UpdateFcmSuccess<T> value) updateFcmSuccess,
+    required TResult Function(UpdateFcmError<T> value) updateFcmError,
   }) {
     return idle(this);
   }
@@ -313,6 +343,9 @@ class _$Idle<T> implements Idle<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult? Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult? Function(UpdateFcmError<T> value)? updateFcmError,
   }) {
     return idle?.call(this);
   }
@@ -339,6 +372,9 @@ class _$Idle<T> implements Idle<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult Function(UpdateFcmError<T> value)? updateFcmError,
     required TResult orElse(),
   }) {
     if (idle != null) {
@@ -410,6 +446,9 @@ class _$GetUnreadNotificationCountLoading<T>
     required TResult Function() stopChatStreamState,
     required TResult Function(String address) myLoacationChange,
     required TResult Function(String address) myDestenationChange,
+    required TResult Function() updateFcmLoading,
+    required TResult Function(UpdateSkill data) updateFcmSuccess,
+    required TResult Function(T data) updateFcmError,
   }) {
     return getUnreadNotificationCountLoading();
   }
@@ -431,6 +470,9 @@ class _$GetUnreadNotificationCountLoading<T>
     TResult? Function()? stopChatStreamState,
     TResult? Function(String address)? myLoacationChange,
     TResult? Function(String address)? myDestenationChange,
+    TResult? Function()? updateFcmLoading,
+    TResult? Function(UpdateSkill data)? updateFcmSuccess,
+    TResult? Function(T data)? updateFcmError,
   }) {
     return getUnreadNotificationCountLoading?.call();
   }
@@ -452,6 +494,9 @@ class _$GetUnreadNotificationCountLoading<T>
     TResult Function()? stopChatStreamState,
     TResult Function(String address)? myLoacationChange,
     TResult Function(String address)? myDestenationChange,
+    TResult Function()? updateFcmLoading,
+    TResult Function(UpdateSkill data)? updateFcmSuccess,
+    TResult Function(T data)? updateFcmError,
     required TResult orElse(),
   }) {
     if (getUnreadNotificationCountLoading != null) {
@@ -483,6 +528,9 @@ class _$GetUnreadNotificationCountLoading<T>
     required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
     required TResult Function(MyLoacationChange<T> value) myLoacationChange,
     required TResult Function(MyDestenationChange<T> value) myDestenationChange,
+    required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
+    required TResult Function(UpdateFcmSuccess<T> value) updateFcmSuccess,
+    required TResult Function(UpdateFcmError<T> value) updateFcmError,
   }) {
     return getUnreadNotificationCountLoading(this);
   }
@@ -509,6 +557,9 @@ class _$GetUnreadNotificationCountLoading<T>
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult? Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult? Function(UpdateFcmError<T> value)? updateFcmError,
   }) {
     return getUnreadNotificationCountLoading?.call(this);
   }
@@ -535,6 +586,9 @@ class _$GetUnreadNotificationCountLoading<T>
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult Function(UpdateFcmError<T> value)? updateFcmError,
     required TResult orElse(),
   }) {
     if (getUnreadNotificationCountLoading != null) {
@@ -634,6 +688,9 @@ class _$GetUnreadNotificationCountSuccess<T>
     required TResult Function() stopChatStreamState,
     required TResult Function(String address) myLoacationChange,
     required TResult Function(String address) myDestenationChange,
+    required TResult Function() updateFcmLoading,
+    required TResult Function(UpdateSkill data) updateFcmSuccess,
+    required TResult Function(T data) updateFcmError,
   }) {
     return getUnreadNotificationCountSuccess(count);
   }
@@ -655,6 +712,9 @@ class _$GetUnreadNotificationCountSuccess<T>
     TResult? Function()? stopChatStreamState,
     TResult? Function(String address)? myLoacationChange,
     TResult? Function(String address)? myDestenationChange,
+    TResult? Function()? updateFcmLoading,
+    TResult? Function(UpdateSkill data)? updateFcmSuccess,
+    TResult? Function(T data)? updateFcmError,
   }) {
     return getUnreadNotificationCountSuccess?.call(count);
   }
@@ -676,6 +736,9 @@ class _$GetUnreadNotificationCountSuccess<T>
     TResult Function()? stopChatStreamState,
     TResult Function(String address)? myLoacationChange,
     TResult Function(String address)? myDestenationChange,
+    TResult Function()? updateFcmLoading,
+    TResult Function(UpdateSkill data)? updateFcmSuccess,
+    TResult Function(T data)? updateFcmError,
     required TResult orElse(),
   }) {
     if (getUnreadNotificationCountSuccess != null) {
@@ -707,6 +770,9 @@ class _$GetUnreadNotificationCountSuccess<T>
     required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
     required TResult Function(MyLoacationChange<T> value) myLoacationChange,
     required TResult Function(MyDestenationChange<T> value) myDestenationChange,
+    required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
+    required TResult Function(UpdateFcmSuccess<T> value) updateFcmSuccess,
+    required TResult Function(UpdateFcmError<T> value) updateFcmError,
   }) {
     return getUnreadNotificationCountSuccess(this);
   }
@@ -733,6 +799,9 @@ class _$GetUnreadNotificationCountSuccess<T>
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult? Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult? Function(UpdateFcmError<T> value)? updateFcmError,
   }) {
     return getUnreadNotificationCountSuccess?.call(this);
   }
@@ -759,6 +828,9 @@ class _$GetUnreadNotificationCountSuccess<T>
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult Function(UpdateFcmError<T> value)? updateFcmError,
     required TResult orElse(),
   }) {
     if (getUnreadNotificationCountSuccess != null) {
@@ -866,6 +938,9 @@ class _$GetUnreadNotificationCountError<T>
     required TResult Function() stopChatStreamState,
     required TResult Function(String address) myLoacationChange,
     required TResult Function(String address) myDestenationChange,
+    required TResult Function() updateFcmLoading,
+    required TResult Function(UpdateSkill data) updateFcmSuccess,
+    required TResult Function(T data) updateFcmError,
   }) {
     return getUnreadNotificationCountError(data);
   }
@@ -887,6 +962,9 @@ class _$GetUnreadNotificationCountError<T>
     TResult? Function()? stopChatStreamState,
     TResult? Function(String address)? myLoacationChange,
     TResult? Function(String address)? myDestenationChange,
+    TResult? Function()? updateFcmLoading,
+    TResult? Function(UpdateSkill data)? updateFcmSuccess,
+    TResult? Function(T data)? updateFcmError,
   }) {
     return getUnreadNotificationCountError?.call(data);
   }
@@ -908,6 +986,9 @@ class _$GetUnreadNotificationCountError<T>
     TResult Function()? stopChatStreamState,
     TResult Function(String address)? myLoacationChange,
     TResult Function(String address)? myDestenationChange,
+    TResult Function()? updateFcmLoading,
+    TResult Function(UpdateSkill data)? updateFcmSuccess,
+    TResult Function(T data)? updateFcmError,
     required TResult orElse(),
   }) {
     if (getUnreadNotificationCountError != null) {
@@ -939,6 +1020,9 @@ class _$GetUnreadNotificationCountError<T>
     required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
     required TResult Function(MyLoacationChange<T> value) myLoacationChange,
     required TResult Function(MyDestenationChange<T> value) myDestenationChange,
+    required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
+    required TResult Function(UpdateFcmSuccess<T> value) updateFcmSuccess,
+    required TResult Function(UpdateFcmError<T> value) updateFcmError,
   }) {
     return getUnreadNotificationCountError(this);
   }
@@ -965,6 +1049,9 @@ class _$GetUnreadNotificationCountError<T>
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult? Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult? Function(UpdateFcmError<T> value)? updateFcmError,
   }) {
     return getUnreadNotificationCountError?.call(this);
   }
@@ -991,6 +1078,9 @@ class _$GetUnreadNotificationCountError<T>
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult Function(UpdateFcmError<T> value)? updateFcmError,
     required TResult orElse(),
   }) {
     if (getUnreadNotificationCountError != null) {
@@ -1091,6 +1181,9 @@ class _$SelectedIndexChanged<T> implements SelectedIndexChanged<T> {
     required TResult Function() stopChatStreamState,
     required TResult Function(String address) myLoacationChange,
     required TResult Function(String address) myDestenationChange,
+    required TResult Function() updateFcmLoading,
+    required TResult Function(UpdateSkill data) updateFcmSuccess,
+    required TResult Function(T data) updateFcmError,
   }) {
     return selectedIndexChanged(index);
   }
@@ -1112,6 +1205,9 @@ class _$SelectedIndexChanged<T> implements SelectedIndexChanged<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function(String address)? myLoacationChange,
     TResult? Function(String address)? myDestenationChange,
+    TResult? Function()? updateFcmLoading,
+    TResult? Function(UpdateSkill data)? updateFcmSuccess,
+    TResult? Function(T data)? updateFcmError,
   }) {
     return selectedIndexChanged?.call(index);
   }
@@ -1133,6 +1229,9 @@ class _$SelectedIndexChanged<T> implements SelectedIndexChanged<T> {
     TResult Function()? stopChatStreamState,
     TResult Function(String address)? myLoacationChange,
     TResult Function(String address)? myDestenationChange,
+    TResult Function()? updateFcmLoading,
+    TResult Function(UpdateSkill data)? updateFcmSuccess,
+    TResult Function(T data)? updateFcmError,
     required TResult orElse(),
   }) {
     if (selectedIndexChanged != null) {
@@ -1164,6 +1263,9 @@ class _$SelectedIndexChanged<T> implements SelectedIndexChanged<T> {
     required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
     required TResult Function(MyLoacationChange<T> value) myLoacationChange,
     required TResult Function(MyDestenationChange<T> value) myDestenationChange,
+    required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
+    required TResult Function(UpdateFcmSuccess<T> value) updateFcmSuccess,
+    required TResult Function(UpdateFcmError<T> value) updateFcmError,
   }) {
     return selectedIndexChanged(this);
   }
@@ -1190,6 +1292,9 @@ class _$SelectedIndexChanged<T> implements SelectedIndexChanged<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult? Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult? Function(UpdateFcmError<T> value)? updateFcmError,
   }) {
     return selectedIndexChanged?.call(this);
   }
@@ -1216,6 +1321,9 @@ class _$SelectedIndexChanged<T> implements SelectedIndexChanged<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult Function(UpdateFcmError<T> value)? updateFcmError,
     required TResult orElse(),
   }) {
     if (selectedIndexChanged != null) {
@@ -1293,6 +1401,9 @@ class _$GetUnreadMessagesCountLoading<T>
     required TResult Function() stopChatStreamState,
     required TResult Function(String address) myLoacationChange,
     required TResult Function(String address) myDestenationChange,
+    required TResult Function() updateFcmLoading,
+    required TResult Function(UpdateSkill data) updateFcmSuccess,
+    required TResult Function(T data) updateFcmError,
   }) {
     return getUnreadMessagesCountLoading();
   }
@@ -1314,6 +1425,9 @@ class _$GetUnreadMessagesCountLoading<T>
     TResult? Function()? stopChatStreamState,
     TResult? Function(String address)? myLoacationChange,
     TResult? Function(String address)? myDestenationChange,
+    TResult? Function()? updateFcmLoading,
+    TResult? Function(UpdateSkill data)? updateFcmSuccess,
+    TResult? Function(T data)? updateFcmError,
   }) {
     return getUnreadMessagesCountLoading?.call();
   }
@@ -1335,6 +1449,9 @@ class _$GetUnreadMessagesCountLoading<T>
     TResult Function()? stopChatStreamState,
     TResult Function(String address)? myLoacationChange,
     TResult Function(String address)? myDestenationChange,
+    TResult Function()? updateFcmLoading,
+    TResult Function(UpdateSkill data)? updateFcmSuccess,
+    TResult Function(T data)? updateFcmError,
     required TResult orElse(),
   }) {
     if (getUnreadMessagesCountLoading != null) {
@@ -1366,6 +1483,9 @@ class _$GetUnreadMessagesCountLoading<T>
     required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
     required TResult Function(MyLoacationChange<T> value) myLoacationChange,
     required TResult Function(MyDestenationChange<T> value) myDestenationChange,
+    required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
+    required TResult Function(UpdateFcmSuccess<T> value) updateFcmSuccess,
+    required TResult Function(UpdateFcmError<T> value) updateFcmError,
   }) {
     return getUnreadMessagesCountLoading(this);
   }
@@ -1392,6 +1512,9 @@ class _$GetUnreadMessagesCountLoading<T>
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult? Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult? Function(UpdateFcmError<T> value)? updateFcmError,
   }) {
     return getUnreadMessagesCountLoading?.call(this);
   }
@@ -1418,6 +1541,9 @@ class _$GetUnreadMessagesCountLoading<T>
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult Function(UpdateFcmError<T> value)? updateFcmError,
     required TResult orElse(),
   }) {
     if (getUnreadMessagesCountLoading != null) {
@@ -1517,6 +1643,9 @@ class _$GetUnreadMessagesCountSuccess<T>
     required TResult Function() stopChatStreamState,
     required TResult Function(String address) myLoacationChange,
     required TResult Function(String address) myDestenationChange,
+    required TResult Function() updateFcmLoading,
+    required TResult Function(UpdateSkill data) updateFcmSuccess,
+    required TResult Function(T data) updateFcmError,
   }) {
     return getUnreadMessagesCountSuccess(count);
   }
@@ -1538,6 +1667,9 @@ class _$GetUnreadMessagesCountSuccess<T>
     TResult? Function()? stopChatStreamState,
     TResult? Function(String address)? myLoacationChange,
     TResult? Function(String address)? myDestenationChange,
+    TResult? Function()? updateFcmLoading,
+    TResult? Function(UpdateSkill data)? updateFcmSuccess,
+    TResult? Function(T data)? updateFcmError,
   }) {
     return getUnreadMessagesCountSuccess?.call(count);
   }
@@ -1559,6 +1691,9 @@ class _$GetUnreadMessagesCountSuccess<T>
     TResult Function()? stopChatStreamState,
     TResult Function(String address)? myLoacationChange,
     TResult Function(String address)? myDestenationChange,
+    TResult Function()? updateFcmLoading,
+    TResult Function(UpdateSkill data)? updateFcmSuccess,
+    TResult Function(T data)? updateFcmError,
     required TResult orElse(),
   }) {
     if (getUnreadMessagesCountSuccess != null) {
@@ -1590,6 +1725,9 @@ class _$GetUnreadMessagesCountSuccess<T>
     required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
     required TResult Function(MyLoacationChange<T> value) myLoacationChange,
     required TResult Function(MyDestenationChange<T> value) myDestenationChange,
+    required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
+    required TResult Function(UpdateFcmSuccess<T> value) updateFcmSuccess,
+    required TResult Function(UpdateFcmError<T> value) updateFcmError,
   }) {
     return getUnreadMessagesCountSuccess(this);
   }
@@ -1616,6 +1754,9 @@ class _$GetUnreadMessagesCountSuccess<T>
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult? Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult? Function(UpdateFcmError<T> value)? updateFcmError,
   }) {
     return getUnreadMessagesCountSuccess?.call(this);
   }
@@ -1642,6 +1783,9 @@ class _$GetUnreadMessagesCountSuccess<T>
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult Function(UpdateFcmError<T> value)? updateFcmError,
     required TResult orElse(),
   }) {
     if (getUnreadMessagesCountSuccess != null) {
@@ -1746,6 +1890,9 @@ class _$GetUnreadMessagesCountError<T>
     required TResult Function() stopChatStreamState,
     required TResult Function(String address) myLoacationChange,
     required TResult Function(String address) myDestenationChange,
+    required TResult Function() updateFcmLoading,
+    required TResult Function(UpdateSkill data) updateFcmSuccess,
+    required TResult Function(T data) updateFcmError,
   }) {
     return getUnreadMessagesCountError(data);
   }
@@ -1767,6 +1914,9 @@ class _$GetUnreadMessagesCountError<T>
     TResult? Function()? stopChatStreamState,
     TResult? Function(String address)? myLoacationChange,
     TResult? Function(String address)? myDestenationChange,
+    TResult? Function()? updateFcmLoading,
+    TResult? Function(UpdateSkill data)? updateFcmSuccess,
+    TResult? Function(T data)? updateFcmError,
   }) {
     return getUnreadMessagesCountError?.call(data);
   }
@@ -1788,6 +1938,9 @@ class _$GetUnreadMessagesCountError<T>
     TResult Function()? stopChatStreamState,
     TResult Function(String address)? myLoacationChange,
     TResult Function(String address)? myDestenationChange,
+    TResult Function()? updateFcmLoading,
+    TResult Function(UpdateSkill data)? updateFcmSuccess,
+    TResult Function(T data)? updateFcmError,
     required TResult orElse(),
   }) {
     if (getUnreadMessagesCountError != null) {
@@ -1819,6 +1972,9 @@ class _$GetUnreadMessagesCountError<T>
     required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
     required TResult Function(MyLoacationChange<T> value) myLoacationChange,
     required TResult Function(MyDestenationChange<T> value) myDestenationChange,
+    required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
+    required TResult Function(UpdateFcmSuccess<T> value) updateFcmSuccess,
+    required TResult Function(UpdateFcmError<T> value) updateFcmError,
   }) {
     return getUnreadMessagesCountError(this);
   }
@@ -1845,6 +2001,9 @@ class _$GetUnreadMessagesCountError<T>
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult? Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult? Function(UpdateFcmError<T> value)? updateFcmError,
   }) {
     return getUnreadMessagesCountError?.call(this);
   }
@@ -1871,6 +2030,9 @@ class _$GetUnreadMessagesCountError<T>
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult Function(UpdateFcmError<T> value)? updateFcmError,
     required TResult orElse(),
   }) {
     if (getUnreadMessagesCountError != null) {
@@ -1969,6 +2131,9 @@ class _$NewMessage<T> implements NewMessage<T> {
     required TResult Function() stopChatStreamState,
     required TResult Function(String address) myLoacationChange,
     required TResult Function(String address) myDestenationChange,
+    required TResult Function() updateFcmLoading,
+    required TResult Function(UpdateSkill data) updateFcmSuccess,
+    required TResult Function(T data) updateFcmError,
   }) {
     return newMessage(count);
   }
@@ -1990,6 +2155,9 @@ class _$NewMessage<T> implements NewMessage<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function(String address)? myLoacationChange,
     TResult? Function(String address)? myDestenationChange,
+    TResult? Function()? updateFcmLoading,
+    TResult? Function(UpdateSkill data)? updateFcmSuccess,
+    TResult? Function(T data)? updateFcmError,
   }) {
     return newMessage?.call(count);
   }
@@ -2011,6 +2179,9 @@ class _$NewMessage<T> implements NewMessage<T> {
     TResult Function()? stopChatStreamState,
     TResult Function(String address)? myLoacationChange,
     TResult Function(String address)? myDestenationChange,
+    TResult Function()? updateFcmLoading,
+    TResult Function(UpdateSkill data)? updateFcmSuccess,
+    TResult Function(T data)? updateFcmError,
     required TResult orElse(),
   }) {
     if (newMessage != null) {
@@ -2042,6 +2213,9 @@ class _$NewMessage<T> implements NewMessage<T> {
     required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
     required TResult Function(MyLoacationChange<T> value) myLoacationChange,
     required TResult Function(MyDestenationChange<T> value) myDestenationChange,
+    required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
+    required TResult Function(UpdateFcmSuccess<T> value) updateFcmSuccess,
+    required TResult Function(UpdateFcmError<T> value) updateFcmError,
   }) {
     return newMessage(this);
   }
@@ -2068,6 +2242,9 @@ class _$NewMessage<T> implements NewMessage<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult? Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult? Function(UpdateFcmError<T> value)? updateFcmError,
   }) {
     return newMessage?.call(this);
   }
@@ -2094,6 +2271,9 @@ class _$NewMessage<T> implements NewMessage<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult Function(UpdateFcmError<T> value)? updateFcmError,
     required TResult orElse(),
   }) {
     if (newMessage != null) {
@@ -2191,6 +2371,9 @@ class _$ReadMessage<T> implements ReadMessage<T> {
     required TResult Function() stopChatStreamState,
     required TResult Function(String address) myLoacationChange,
     required TResult Function(String address) myDestenationChange,
+    required TResult Function() updateFcmLoading,
+    required TResult Function(UpdateSkill data) updateFcmSuccess,
+    required TResult Function(T data) updateFcmError,
   }) {
     return readMessage(count);
   }
@@ -2212,6 +2395,9 @@ class _$ReadMessage<T> implements ReadMessage<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function(String address)? myLoacationChange,
     TResult? Function(String address)? myDestenationChange,
+    TResult? Function()? updateFcmLoading,
+    TResult? Function(UpdateSkill data)? updateFcmSuccess,
+    TResult? Function(T data)? updateFcmError,
   }) {
     return readMessage?.call(count);
   }
@@ -2233,6 +2419,9 @@ class _$ReadMessage<T> implements ReadMessage<T> {
     TResult Function()? stopChatStreamState,
     TResult Function(String address)? myLoacationChange,
     TResult Function(String address)? myDestenationChange,
+    TResult Function()? updateFcmLoading,
+    TResult Function(UpdateSkill data)? updateFcmSuccess,
+    TResult Function(T data)? updateFcmError,
     required TResult orElse(),
   }) {
     if (readMessage != null) {
@@ -2264,6 +2453,9 @@ class _$ReadMessage<T> implements ReadMessage<T> {
     required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
     required TResult Function(MyLoacationChange<T> value) myLoacationChange,
     required TResult Function(MyDestenationChange<T> value) myDestenationChange,
+    required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
+    required TResult Function(UpdateFcmSuccess<T> value) updateFcmSuccess,
+    required TResult Function(UpdateFcmError<T> value) updateFcmError,
   }) {
     return readMessage(this);
   }
@@ -2290,6 +2482,9 @@ class _$ReadMessage<T> implements ReadMessage<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult? Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult? Function(UpdateFcmError<T> value)? updateFcmError,
   }) {
     return readMessage?.call(this);
   }
@@ -2316,6 +2511,9 @@ class _$ReadMessage<T> implements ReadMessage<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult Function(UpdateFcmError<T> value)? updateFcmError,
     required TResult orElse(),
   }) {
     if (readMessage != null) {
@@ -2387,6 +2585,9 @@ class _$StopChatStreamState<T> implements StopChatStreamState<T> {
     required TResult Function() stopChatStreamState,
     required TResult Function(String address) myLoacationChange,
     required TResult Function(String address) myDestenationChange,
+    required TResult Function() updateFcmLoading,
+    required TResult Function(UpdateSkill data) updateFcmSuccess,
+    required TResult Function(T data) updateFcmError,
   }) {
     return stopChatStreamState();
   }
@@ -2408,6 +2609,9 @@ class _$StopChatStreamState<T> implements StopChatStreamState<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function(String address)? myLoacationChange,
     TResult? Function(String address)? myDestenationChange,
+    TResult? Function()? updateFcmLoading,
+    TResult? Function(UpdateSkill data)? updateFcmSuccess,
+    TResult? Function(T data)? updateFcmError,
   }) {
     return stopChatStreamState?.call();
   }
@@ -2429,6 +2633,9 @@ class _$StopChatStreamState<T> implements StopChatStreamState<T> {
     TResult Function()? stopChatStreamState,
     TResult Function(String address)? myLoacationChange,
     TResult Function(String address)? myDestenationChange,
+    TResult Function()? updateFcmLoading,
+    TResult Function(UpdateSkill data)? updateFcmSuccess,
+    TResult Function(T data)? updateFcmError,
     required TResult orElse(),
   }) {
     if (stopChatStreamState != null) {
@@ -2460,6 +2667,9 @@ class _$StopChatStreamState<T> implements StopChatStreamState<T> {
     required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
     required TResult Function(MyLoacationChange<T> value) myLoacationChange,
     required TResult Function(MyDestenationChange<T> value) myDestenationChange,
+    required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
+    required TResult Function(UpdateFcmSuccess<T> value) updateFcmSuccess,
+    required TResult Function(UpdateFcmError<T> value) updateFcmError,
   }) {
     return stopChatStreamState(this);
   }
@@ -2486,6 +2696,9 @@ class _$StopChatStreamState<T> implements StopChatStreamState<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult? Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult? Function(UpdateFcmError<T> value)? updateFcmError,
   }) {
     return stopChatStreamState?.call(this);
   }
@@ -2512,6 +2725,9 @@ class _$StopChatStreamState<T> implements StopChatStreamState<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult Function(UpdateFcmError<T> value)? updateFcmError,
     required TResult orElse(),
   }) {
     if (stopChatStreamState != null) {
@@ -2605,6 +2821,9 @@ class _$MyLoacationChange<T> implements MyLoacationChange<T> {
     required TResult Function() stopChatStreamState,
     required TResult Function(String address) myLoacationChange,
     required TResult Function(String address) myDestenationChange,
+    required TResult Function() updateFcmLoading,
+    required TResult Function(UpdateSkill data) updateFcmSuccess,
+    required TResult Function(T data) updateFcmError,
   }) {
     return myLoacationChange(address);
   }
@@ -2626,6 +2845,9 @@ class _$MyLoacationChange<T> implements MyLoacationChange<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function(String address)? myLoacationChange,
     TResult? Function(String address)? myDestenationChange,
+    TResult? Function()? updateFcmLoading,
+    TResult? Function(UpdateSkill data)? updateFcmSuccess,
+    TResult? Function(T data)? updateFcmError,
   }) {
     return myLoacationChange?.call(address);
   }
@@ -2647,6 +2869,9 @@ class _$MyLoacationChange<T> implements MyLoacationChange<T> {
     TResult Function()? stopChatStreamState,
     TResult Function(String address)? myLoacationChange,
     TResult Function(String address)? myDestenationChange,
+    TResult Function()? updateFcmLoading,
+    TResult Function(UpdateSkill data)? updateFcmSuccess,
+    TResult Function(T data)? updateFcmError,
     required TResult orElse(),
   }) {
     if (myLoacationChange != null) {
@@ -2678,6 +2903,9 @@ class _$MyLoacationChange<T> implements MyLoacationChange<T> {
     required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
     required TResult Function(MyLoacationChange<T> value) myLoacationChange,
     required TResult Function(MyDestenationChange<T> value) myDestenationChange,
+    required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
+    required TResult Function(UpdateFcmSuccess<T> value) updateFcmSuccess,
+    required TResult Function(UpdateFcmError<T> value) updateFcmError,
   }) {
     return myLoacationChange(this);
   }
@@ -2704,6 +2932,9 @@ class _$MyLoacationChange<T> implements MyLoacationChange<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult? Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult? Function(UpdateFcmError<T> value)? updateFcmError,
   }) {
     return myLoacationChange?.call(this);
   }
@@ -2730,6 +2961,9 @@ class _$MyLoacationChange<T> implements MyLoacationChange<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult Function(UpdateFcmError<T> value)? updateFcmError,
     required TResult orElse(),
   }) {
     if (myLoacationChange != null) {
@@ -2829,6 +3063,9 @@ class _$MyDestenationChange<T> implements MyDestenationChange<T> {
     required TResult Function() stopChatStreamState,
     required TResult Function(String address) myLoacationChange,
     required TResult Function(String address) myDestenationChange,
+    required TResult Function() updateFcmLoading,
+    required TResult Function(UpdateSkill data) updateFcmSuccess,
+    required TResult Function(T data) updateFcmError,
   }) {
     return myDestenationChange(address);
   }
@@ -2850,6 +3087,9 @@ class _$MyDestenationChange<T> implements MyDestenationChange<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function(String address)? myLoacationChange,
     TResult? Function(String address)? myDestenationChange,
+    TResult? Function()? updateFcmLoading,
+    TResult? Function(UpdateSkill data)? updateFcmSuccess,
+    TResult? Function(T data)? updateFcmError,
   }) {
     return myDestenationChange?.call(address);
   }
@@ -2871,6 +3111,9 @@ class _$MyDestenationChange<T> implements MyDestenationChange<T> {
     TResult Function()? stopChatStreamState,
     TResult Function(String address)? myLoacationChange,
     TResult Function(String address)? myDestenationChange,
+    TResult Function()? updateFcmLoading,
+    TResult Function(UpdateSkill data)? updateFcmSuccess,
+    TResult Function(T data)? updateFcmError,
     required TResult orElse(),
   }) {
     if (myDestenationChange != null) {
@@ -2902,6 +3145,9 @@ class _$MyDestenationChange<T> implements MyDestenationChange<T> {
     required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
     required TResult Function(MyLoacationChange<T> value) myLoacationChange,
     required TResult Function(MyDestenationChange<T> value) myDestenationChange,
+    required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
+    required TResult Function(UpdateFcmSuccess<T> value) updateFcmSuccess,
+    required TResult Function(UpdateFcmError<T> value) updateFcmError,
   }) {
     return myDestenationChange(this);
   }
@@ -2928,6 +3174,9 @@ class _$MyDestenationChange<T> implements MyDestenationChange<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult? Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult? Function(UpdateFcmError<T> value)? updateFcmError,
   }) {
     return myDestenationChange?.call(this);
   }
@@ -2954,6 +3203,9 @@ class _$MyDestenationChange<T> implements MyDestenationChange<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult Function(UpdateFcmError<T> value)? updateFcmError,
     required TResult orElse(),
   }) {
     if (myDestenationChange != null) {
@@ -2970,5 +3222,697 @@ abstract class MyDestenationChange<T> implements GlobalState<T> {
   String get address;
   @JsonKey(ignore: true)
   _$$MyDestenationChangeCopyWith<T, _$MyDestenationChange<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateFcmLoadingCopyWith<T, $Res> {
+  factory _$$UpdateFcmLoadingCopyWith(_$UpdateFcmLoading<T> value,
+          $Res Function(_$UpdateFcmLoading<T>) then) =
+      __$$UpdateFcmLoadingCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$UpdateFcmLoadingCopyWithImpl<T, $Res>
+    extends _$GlobalStateCopyWithImpl<T, $Res, _$UpdateFcmLoading<T>>
+    implements _$$UpdateFcmLoadingCopyWith<T, $Res> {
+  __$$UpdateFcmLoadingCopyWithImpl(
+      _$UpdateFcmLoading<T> _value, $Res Function(_$UpdateFcmLoading<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UpdateFcmLoading<T> implements UpdateFcmLoading<T> {
+  const _$UpdateFcmLoading();
+
+  @override
+  String toString() {
+    return 'GlobalState<$T>.updateFcmLoading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$UpdateFcmLoading<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() getUnreadNotificationCountLoading,
+    required TResult Function(UnreadNotificationCount count)
+        getUnreadNotificationCountSuccess,
+    required TResult Function(T data) getUnreadNotificationCountError,
+    required TResult Function(int index) selectedIndexChanged,
+    required TResult Function() getUnreadMessagesCountLoading,
+    required TResult Function(UnreadMessagesCount count)
+        getUnreadMessagesCountSuccess,
+    required TResult Function(T data) getUnreadMessagesCountError,
+    required TResult Function(int count) newMessage,
+    required TResult Function(int count) readMessage,
+    required TResult Function() stopChatStreamState,
+    required TResult Function(String address) myLoacationChange,
+    required TResult Function(String address) myDestenationChange,
+    required TResult Function() updateFcmLoading,
+    required TResult Function(UpdateSkill data) updateFcmSuccess,
+    required TResult Function(T data) updateFcmError,
+  }) {
+    return updateFcmLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? getUnreadNotificationCountLoading,
+    TResult? Function(UnreadNotificationCount count)?
+        getUnreadNotificationCountSuccess,
+    TResult? Function(T data)? getUnreadNotificationCountError,
+    TResult? Function(int index)? selectedIndexChanged,
+    TResult? Function()? getUnreadMessagesCountLoading,
+    TResult? Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult? Function(T data)? getUnreadMessagesCountError,
+    TResult? Function(int count)? newMessage,
+    TResult? Function(int count)? readMessage,
+    TResult? Function()? stopChatStreamState,
+    TResult? Function(String address)? myLoacationChange,
+    TResult? Function(String address)? myDestenationChange,
+    TResult? Function()? updateFcmLoading,
+    TResult? Function(UpdateSkill data)? updateFcmSuccess,
+    TResult? Function(T data)? updateFcmError,
+  }) {
+    return updateFcmLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? getUnreadNotificationCountLoading,
+    TResult Function(UnreadNotificationCount count)?
+        getUnreadNotificationCountSuccess,
+    TResult Function(T data)? getUnreadNotificationCountError,
+    TResult Function(int index)? selectedIndexChanged,
+    TResult Function()? getUnreadMessagesCountLoading,
+    TResult Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult Function(T data)? getUnreadMessagesCountError,
+    TResult Function(int count)? newMessage,
+    TResult Function(int count)? readMessage,
+    TResult Function()? stopChatStreamState,
+    TResult Function(String address)? myLoacationChange,
+    TResult Function(String address)? myDestenationChange,
+    TResult Function()? updateFcmLoading,
+    TResult Function(UpdateSkill data)? updateFcmSuccess,
+    TResult Function(T data)? updateFcmError,
+    required TResult orElse(),
+  }) {
+    if (updateFcmLoading != null) {
+      return updateFcmLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(GetUnreadNotificationCountLoading<T> value)
+        getUnreadNotificationCountLoading,
+    required TResult Function(GetUnreadNotificationCountSuccess<T> value)
+        getUnreadNotificationCountSuccess,
+    required TResult Function(GetUnreadNotificationCountError<T> value)
+        getUnreadNotificationCountError,
+    required TResult Function(SelectedIndexChanged<T> value)
+        selectedIndexChanged,
+    required TResult Function(GetUnreadMessagesCountLoading<T> value)
+        getUnreadMessagesCountLoading,
+    required TResult Function(GetUnreadMessagesCountSuccess<T> value)
+        getUnreadMessagesCountSuccess,
+    required TResult Function(GetUnreadMessagesCountError<T> value)
+        getUnreadMessagesCountError,
+    required TResult Function(NewMessage<T> value) newMessage,
+    required TResult Function(ReadMessage<T> value) readMessage,
+    required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
+    required TResult Function(MyLoacationChange<T> value) myLoacationChange,
+    required TResult Function(MyDestenationChange<T> value) myDestenationChange,
+    required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
+    required TResult Function(UpdateFcmSuccess<T> value) updateFcmSuccess,
+    required TResult Function(UpdateFcmError<T> value) updateFcmError,
+  }) {
+    return updateFcmLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(GetUnreadNotificationCountLoading<T> value)?
+        getUnreadNotificationCountLoading,
+    TResult? Function(GetUnreadNotificationCountSuccess<T> value)?
+        getUnreadNotificationCountSuccess,
+    TResult? Function(GetUnreadNotificationCountError<T> value)?
+        getUnreadNotificationCountError,
+    TResult? Function(SelectedIndexChanged<T> value)? selectedIndexChanged,
+    TResult? Function(GetUnreadMessagesCountLoading<T> value)?
+        getUnreadMessagesCountLoading,
+    TResult? Function(GetUnreadMessagesCountSuccess<T> value)?
+        getUnreadMessagesCountSuccess,
+    TResult? Function(GetUnreadMessagesCountError<T> value)?
+        getUnreadMessagesCountError,
+    TResult? Function(NewMessage<T> value)? newMessage,
+    TResult? Function(ReadMessage<T> value)? readMessage,
+    TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
+    TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult? Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult? Function(UpdateFcmError<T> value)? updateFcmError,
+  }) {
+    return updateFcmLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(GetUnreadNotificationCountLoading<T> value)?
+        getUnreadNotificationCountLoading,
+    TResult Function(GetUnreadNotificationCountSuccess<T> value)?
+        getUnreadNotificationCountSuccess,
+    TResult Function(GetUnreadNotificationCountError<T> value)?
+        getUnreadNotificationCountError,
+    TResult Function(SelectedIndexChanged<T> value)? selectedIndexChanged,
+    TResult Function(GetUnreadMessagesCountLoading<T> value)?
+        getUnreadMessagesCountLoading,
+    TResult Function(GetUnreadMessagesCountSuccess<T> value)?
+        getUnreadMessagesCountSuccess,
+    TResult Function(GetUnreadMessagesCountError<T> value)?
+        getUnreadMessagesCountError,
+    TResult Function(NewMessage<T> value)? newMessage,
+    TResult Function(ReadMessage<T> value)? readMessage,
+    TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult Function(MyLoacationChange<T> value)? myLoacationChange,
+    TResult Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult Function(UpdateFcmError<T> value)? updateFcmError,
+    required TResult orElse(),
+  }) {
+    if (updateFcmLoading != null) {
+      return updateFcmLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateFcmLoading<T> implements GlobalState<T> {
+  const factory UpdateFcmLoading() = _$UpdateFcmLoading<T>;
+}
+
+/// @nodoc
+abstract class _$$UpdateFcmSuccessCopyWith<T, $Res> {
+  factory _$$UpdateFcmSuccessCopyWith(_$UpdateFcmSuccess<T> value,
+          $Res Function(_$UpdateFcmSuccess<T>) then) =
+      __$$UpdateFcmSuccessCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({UpdateSkill data});
+}
+
+/// @nodoc
+class __$$UpdateFcmSuccessCopyWithImpl<T, $Res>
+    extends _$GlobalStateCopyWithImpl<T, $Res, _$UpdateFcmSuccess<T>>
+    implements _$$UpdateFcmSuccessCopyWith<T, $Res> {
+  __$$UpdateFcmSuccessCopyWithImpl(
+      _$UpdateFcmSuccess<T> _value, $Res Function(_$UpdateFcmSuccess<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UpdateFcmSuccess<T>(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as UpdateSkill,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateFcmSuccess<T> implements UpdateFcmSuccess<T> {
+  const _$UpdateFcmSuccess(this.data);
+
+  @override
+  final UpdateSkill data;
+
+  @override
+  String toString() {
+    return 'GlobalState<$T>.updateFcmSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateFcmSuccess<T> &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateFcmSuccessCopyWith<T, _$UpdateFcmSuccess<T>> get copyWith =>
+      __$$UpdateFcmSuccessCopyWithImpl<T, _$UpdateFcmSuccess<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() getUnreadNotificationCountLoading,
+    required TResult Function(UnreadNotificationCount count)
+        getUnreadNotificationCountSuccess,
+    required TResult Function(T data) getUnreadNotificationCountError,
+    required TResult Function(int index) selectedIndexChanged,
+    required TResult Function() getUnreadMessagesCountLoading,
+    required TResult Function(UnreadMessagesCount count)
+        getUnreadMessagesCountSuccess,
+    required TResult Function(T data) getUnreadMessagesCountError,
+    required TResult Function(int count) newMessage,
+    required TResult Function(int count) readMessage,
+    required TResult Function() stopChatStreamState,
+    required TResult Function(String address) myLoacationChange,
+    required TResult Function(String address) myDestenationChange,
+    required TResult Function() updateFcmLoading,
+    required TResult Function(UpdateSkill data) updateFcmSuccess,
+    required TResult Function(T data) updateFcmError,
+  }) {
+    return updateFcmSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? getUnreadNotificationCountLoading,
+    TResult? Function(UnreadNotificationCount count)?
+        getUnreadNotificationCountSuccess,
+    TResult? Function(T data)? getUnreadNotificationCountError,
+    TResult? Function(int index)? selectedIndexChanged,
+    TResult? Function()? getUnreadMessagesCountLoading,
+    TResult? Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult? Function(T data)? getUnreadMessagesCountError,
+    TResult? Function(int count)? newMessage,
+    TResult? Function(int count)? readMessage,
+    TResult? Function()? stopChatStreamState,
+    TResult? Function(String address)? myLoacationChange,
+    TResult? Function(String address)? myDestenationChange,
+    TResult? Function()? updateFcmLoading,
+    TResult? Function(UpdateSkill data)? updateFcmSuccess,
+    TResult? Function(T data)? updateFcmError,
+  }) {
+    return updateFcmSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? getUnreadNotificationCountLoading,
+    TResult Function(UnreadNotificationCount count)?
+        getUnreadNotificationCountSuccess,
+    TResult Function(T data)? getUnreadNotificationCountError,
+    TResult Function(int index)? selectedIndexChanged,
+    TResult Function()? getUnreadMessagesCountLoading,
+    TResult Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult Function(T data)? getUnreadMessagesCountError,
+    TResult Function(int count)? newMessage,
+    TResult Function(int count)? readMessage,
+    TResult Function()? stopChatStreamState,
+    TResult Function(String address)? myLoacationChange,
+    TResult Function(String address)? myDestenationChange,
+    TResult Function()? updateFcmLoading,
+    TResult Function(UpdateSkill data)? updateFcmSuccess,
+    TResult Function(T data)? updateFcmError,
+    required TResult orElse(),
+  }) {
+    if (updateFcmSuccess != null) {
+      return updateFcmSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(GetUnreadNotificationCountLoading<T> value)
+        getUnreadNotificationCountLoading,
+    required TResult Function(GetUnreadNotificationCountSuccess<T> value)
+        getUnreadNotificationCountSuccess,
+    required TResult Function(GetUnreadNotificationCountError<T> value)
+        getUnreadNotificationCountError,
+    required TResult Function(SelectedIndexChanged<T> value)
+        selectedIndexChanged,
+    required TResult Function(GetUnreadMessagesCountLoading<T> value)
+        getUnreadMessagesCountLoading,
+    required TResult Function(GetUnreadMessagesCountSuccess<T> value)
+        getUnreadMessagesCountSuccess,
+    required TResult Function(GetUnreadMessagesCountError<T> value)
+        getUnreadMessagesCountError,
+    required TResult Function(NewMessage<T> value) newMessage,
+    required TResult Function(ReadMessage<T> value) readMessage,
+    required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
+    required TResult Function(MyLoacationChange<T> value) myLoacationChange,
+    required TResult Function(MyDestenationChange<T> value) myDestenationChange,
+    required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
+    required TResult Function(UpdateFcmSuccess<T> value) updateFcmSuccess,
+    required TResult Function(UpdateFcmError<T> value) updateFcmError,
+  }) {
+    return updateFcmSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(GetUnreadNotificationCountLoading<T> value)?
+        getUnreadNotificationCountLoading,
+    TResult? Function(GetUnreadNotificationCountSuccess<T> value)?
+        getUnreadNotificationCountSuccess,
+    TResult? Function(GetUnreadNotificationCountError<T> value)?
+        getUnreadNotificationCountError,
+    TResult? Function(SelectedIndexChanged<T> value)? selectedIndexChanged,
+    TResult? Function(GetUnreadMessagesCountLoading<T> value)?
+        getUnreadMessagesCountLoading,
+    TResult? Function(GetUnreadMessagesCountSuccess<T> value)?
+        getUnreadMessagesCountSuccess,
+    TResult? Function(GetUnreadMessagesCountError<T> value)?
+        getUnreadMessagesCountError,
+    TResult? Function(NewMessage<T> value)? newMessage,
+    TResult? Function(ReadMessage<T> value)? readMessage,
+    TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
+    TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult? Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult? Function(UpdateFcmError<T> value)? updateFcmError,
+  }) {
+    return updateFcmSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(GetUnreadNotificationCountLoading<T> value)?
+        getUnreadNotificationCountLoading,
+    TResult Function(GetUnreadNotificationCountSuccess<T> value)?
+        getUnreadNotificationCountSuccess,
+    TResult Function(GetUnreadNotificationCountError<T> value)?
+        getUnreadNotificationCountError,
+    TResult Function(SelectedIndexChanged<T> value)? selectedIndexChanged,
+    TResult Function(GetUnreadMessagesCountLoading<T> value)?
+        getUnreadMessagesCountLoading,
+    TResult Function(GetUnreadMessagesCountSuccess<T> value)?
+        getUnreadMessagesCountSuccess,
+    TResult Function(GetUnreadMessagesCountError<T> value)?
+        getUnreadMessagesCountError,
+    TResult Function(NewMessage<T> value)? newMessage,
+    TResult Function(ReadMessage<T> value)? readMessage,
+    TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult Function(MyLoacationChange<T> value)? myLoacationChange,
+    TResult Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult Function(UpdateFcmError<T> value)? updateFcmError,
+    required TResult orElse(),
+  }) {
+    if (updateFcmSuccess != null) {
+      return updateFcmSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateFcmSuccess<T> implements GlobalState<T> {
+  const factory UpdateFcmSuccess(final UpdateSkill data) =
+      _$UpdateFcmSuccess<T>;
+
+  UpdateSkill get data;
+  @JsonKey(ignore: true)
+  _$$UpdateFcmSuccessCopyWith<T, _$UpdateFcmSuccess<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateFcmErrorCopyWith<T, $Res> {
+  factory _$$UpdateFcmErrorCopyWith(
+          _$UpdateFcmError<T> value, $Res Function(_$UpdateFcmError<T>) then) =
+      __$$UpdateFcmErrorCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T data});
+}
+
+/// @nodoc
+class __$$UpdateFcmErrorCopyWithImpl<T, $Res>
+    extends _$GlobalStateCopyWithImpl<T, $Res, _$UpdateFcmError<T>>
+    implements _$$UpdateFcmErrorCopyWith<T, $Res> {
+  __$$UpdateFcmErrorCopyWithImpl(
+      _$UpdateFcmError<T> _value, $Res Function(_$UpdateFcmError<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$UpdateFcmError<T>(
+      freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateFcmError<T> implements UpdateFcmError<T> {
+  const _$UpdateFcmError(this.data);
+
+  @override
+  final T data;
+
+  @override
+  String toString() {
+    return 'GlobalState<$T>.updateFcmError(data: $data)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateFcmError<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateFcmErrorCopyWith<T, _$UpdateFcmError<T>> get copyWith =>
+      __$$UpdateFcmErrorCopyWithImpl<T, _$UpdateFcmError<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() getUnreadNotificationCountLoading,
+    required TResult Function(UnreadNotificationCount count)
+        getUnreadNotificationCountSuccess,
+    required TResult Function(T data) getUnreadNotificationCountError,
+    required TResult Function(int index) selectedIndexChanged,
+    required TResult Function() getUnreadMessagesCountLoading,
+    required TResult Function(UnreadMessagesCount count)
+        getUnreadMessagesCountSuccess,
+    required TResult Function(T data) getUnreadMessagesCountError,
+    required TResult Function(int count) newMessage,
+    required TResult Function(int count) readMessage,
+    required TResult Function() stopChatStreamState,
+    required TResult Function(String address) myLoacationChange,
+    required TResult Function(String address) myDestenationChange,
+    required TResult Function() updateFcmLoading,
+    required TResult Function(UpdateSkill data) updateFcmSuccess,
+    required TResult Function(T data) updateFcmError,
+  }) {
+    return updateFcmError(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? getUnreadNotificationCountLoading,
+    TResult? Function(UnreadNotificationCount count)?
+        getUnreadNotificationCountSuccess,
+    TResult? Function(T data)? getUnreadNotificationCountError,
+    TResult? Function(int index)? selectedIndexChanged,
+    TResult? Function()? getUnreadMessagesCountLoading,
+    TResult? Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult? Function(T data)? getUnreadMessagesCountError,
+    TResult? Function(int count)? newMessage,
+    TResult? Function(int count)? readMessage,
+    TResult? Function()? stopChatStreamState,
+    TResult? Function(String address)? myLoacationChange,
+    TResult? Function(String address)? myDestenationChange,
+    TResult? Function()? updateFcmLoading,
+    TResult? Function(UpdateSkill data)? updateFcmSuccess,
+    TResult? Function(T data)? updateFcmError,
+  }) {
+    return updateFcmError?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? getUnreadNotificationCountLoading,
+    TResult Function(UnreadNotificationCount count)?
+        getUnreadNotificationCountSuccess,
+    TResult Function(T data)? getUnreadNotificationCountError,
+    TResult Function(int index)? selectedIndexChanged,
+    TResult Function()? getUnreadMessagesCountLoading,
+    TResult Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult Function(T data)? getUnreadMessagesCountError,
+    TResult Function(int count)? newMessage,
+    TResult Function(int count)? readMessage,
+    TResult Function()? stopChatStreamState,
+    TResult Function(String address)? myLoacationChange,
+    TResult Function(String address)? myDestenationChange,
+    TResult Function()? updateFcmLoading,
+    TResult Function(UpdateSkill data)? updateFcmSuccess,
+    TResult Function(T data)? updateFcmError,
+    required TResult orElse(),
+  }) {
+    if (updateFcmError != null) {
+      return updateFcmError(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(GetUnreadNotificationCountLoading<T> value)
+        getUnreadNotificationCountLoading,
+    required TResult Function(GetUnreadNotificationCountSuccess<T> value)
+        getUnreadNotificationCountSuccess,
+    required TResult Function(GetUnreadNotificationCountError<T> value)
+        getUnreadNotificationCountError,
+    required TResult Function(SelectedIndexChanged<T> value)
+        selectedIndexChanged,
+    required TResult Function(GetUnreadMessagesCountLoading<T> value)
+        getUnreadMessagesCountLoading,
+    required TResult Function(GetUnreadMessagesCountSuccess<T> value)
+        getUnreadMessagesCountSuccess,
+    required TResult Function(GetUnreadMessagesCountError<T> value)
+        getUnreadMessagesCountError,
+    required TResult Function(NewMessage<T> value) newMessage,
+    required TResult Function(ReadMessage<T> value) readMessage,
+    required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
+    required TResult Function(MyLoacationChange<T> value) myLoacationChange,
+    required TResult Function(MyDestenationChange<T> value) myDestenationChange,
+    required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
+    required TResult Function(UpdateFcmSuccess<T> value) updateFcmSuccess,
+    required TResult Function(UpdateFcmError<T> value) updateFcmError,
+  }) {
+    return updateFcmError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(GetUnreadNotificationCountLoading<T> value)?
+        getUnreadNotificationCountLoading,
+    TResult? Function(GetUnreadNotificationCountSuccess<T> value)?
+        getUnreadNotificationCountSuccess,
+    TResult? Function(GetUnreadNotificationCountError<T> value)?
+        getUnreadNotificationCountError,
+    TResult? Function(SelectedIndexChanged<T> value)? selectedIndexChanged,
+    TResult? Function(GetUnreadMessagesCountLoading<T> value)?
+        getUnreadMessagesCountLoading,
+    TResult? Function(GetUnreadMessagesCountSuccess<T> value)?
+        getUnreadMessagesCountSuccess,
+    TResult? Function(GetUnreadMessagesCountError<T> value)?
+        getUnreadMessagesCountError,
+    TResult? Function(NewMessage<T> value)? newMessage,
+    TResult? Function(ReadMessage<T> value)? readMessage,
+    TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
+    TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult? Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult? Function(UpdateFcmError<T> value)? updateFcmError,
+  }) {
+    return updateFcmError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(GetUnreadNotificationCountLoading<T> value)?
+        getUnreadNotificationCountLoading,
+    TResult Function(GetUnreadNotificationCountSuccess<T> value)?
+        getUnreadNotificationCountSuccess,
+    TResult Function(GetUnreadNotificationCountError<T> value)?
+        getUnreadNotificationCountError,
+    TResult Function(SelectedIndexChanged<T> value)? selectedIndexChanged,
+    TResult Function(GetUnreadMessagesCountLoading<T> value)?
+        getUnreadMessagesCountLoading,
+    TResult Function(GetUnreadMessagesCountSuccess<T> value)?
+        getUnreadMessagesCountSuccess,
+    TResult Function(GetUnreadMessagesCountError<T> value)?
+        getUnreadMessagesCountError,
+    TResult Function(NewMessage<T> value)? newMessage,
+    TResult Function(ReadMessage<T> value)? readMessage,
+    TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult Function(MyLoacationChange<T> value)? myLoacationChange,
+    TResult Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult Function(UpdateFcmError<T> value)? updateFcmError,
+    required TResult orElse(),
+  }) {
+    if (updateFcmError != null) {
+      return updateFcmError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateFcmError<T> implements GlobalState<T> {
+  const factory UpdateFcmError(final T data) = _$UpdateFcmError<T>;
+
+  T get data;
+  @JsonKey(ignore: true)
+  _$$UpdateFcmErrorCopyWith<T, _$UpdateFcmError<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

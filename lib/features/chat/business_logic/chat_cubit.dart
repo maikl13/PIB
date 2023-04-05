@@ -5,12 +5,12 @@ import 'package:bloc/bloc.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:pip/core/resources/constants.dart';
-import 'package:pip/features/chat/data/models/chat_with_user_model.dart';
-import 'package:pip/features/chat/data/models/chats_messages_model.dart';
-import 'package:pip/features/chat/data/models/job_chats_model.dart';
-import 'package:pip/features/chat/data/models/show_chat_info_model.dart';
-import 'package:pip/features/menu/data/models/update_skill.dart';
+import '../../../core/resources/constants.dart';
+import '../data/models/chat_with_user_model.dart';
+import '../data/models/chats_messages_model.dart';
+import '../data/models/job_chats_model.dart';
+import '../data/models/show_chat_info_model.dart';
+import '../../menu/data/models/update_skill.dart';
 import '../../../core/resources/commons.dart';
 import '../data/models/hiring_chat_model.dart';
 

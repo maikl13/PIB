@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/resources/assets_manager.dart';
+import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/constants.dart';
 import '../../../../core/resources/route_manager.dart';
 import '../../../../core/web_services/network_exceptions.dart';

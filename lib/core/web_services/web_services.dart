@@ -25,6 +25,7 @@ import '../../features/menu/data/models/user_info_model.dart';
 import '../../features/menu/data/models/wallet_info.dart';
 import '../../features/notification/data/models/notification_model.dart';
 import '../../features/pip/data/models/toggle_model.dart';
+import '../../features/requests/data/models/accepted_offers_model.dart';
 import '../../features/requests/data/models/available_fast_request_model.dart';
 import '../../features/requests/data/models/create_fast_request_model.dart';
 import '../../features/requests/data/models/fast_request_model.dart';
@@ -367,6 +368,22 @@ abstract class WebServices {
     @Header('Authorization') String token,
 
   );
+       //-----------------------new-----------------------------------------------------------------
+  @POST("user/fcm/update")
+  Future<UpdateSkill> updateFcm(
+    @Header('Authorization') String token,
+    @Field("fcm_token") String? fcmToken,
+
+  );
+
+   //-----------------------new-----------------------------------------------------------------
+  @GET("user/deals/fast/delivery")
+  Future<List<AcceptedOffersModel>>getAllAcceptedOfferForDriver(
+    @Header('Authorization') String token,
+    
+
+  );
+
 
 
 

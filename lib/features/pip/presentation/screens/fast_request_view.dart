@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/resources/commons.dart';
-import 'package:pip/core/resources/constants.dart';
-import 'package:pip/core/widgets/loading_indicator.dart';
-import 'package:pip/features/pip/business_logic/cubit/pip_cubit.dart';
-import 'package:pip/features/pip/business_logic/cubit/pip_state.dart';
+import '../../../../core/resources/commons.dart';
+import '../../../../core/resources/constants.dart';
+import '../../../../core/widgets/loading_indicator.dart';
+import '../../business_logic/cubit/pip_cubit.dart';
+import '../../business_logic/cubit/pip_state.dart';
 import '../../../../core/resources/location_helper.dart';
 import '../../../../core/resources/route_manager.dart';
 import '../../../../core/web_services/network_exceptions.dart';

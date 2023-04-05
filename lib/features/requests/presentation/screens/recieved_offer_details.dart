@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/resources/assets_manager.dart';
-import 'package:pip/core/widgets/loading_indicator.dart';
-import 'package:pip/features/requests/business_logic/cubit/requests_state.dart';
+import '../../../../core/resources/assets_manager.dart';
+import '../../../../core/widgets/loading_indicator.dart';
+import '../../business_logic/cubit/requests_state.dart';
 import '../../../../core/widgets/custom_clock_date.dart';
 import '../../../chat/business_logic/chat_cubit.dart';
 import '../../data/models/offer_model.dart';

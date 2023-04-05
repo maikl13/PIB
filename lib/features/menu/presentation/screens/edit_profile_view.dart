@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/resources/utils.dart';
+import '../../../../core/resources/utils.dart';
 import '../../../../core/resources/commons.dart';
 import '../../../../core/resources/constants.dart';
 import '../../../../core/resources/strings_manager.dart';

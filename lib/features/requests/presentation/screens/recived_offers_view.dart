@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/business_logic/global_cubit.dart';
-import 'package:pip/core/widgets/empty_screen.dart';
+import '../../../../core/business_logic/global_cubit.dart';
+import '../../../../core/widgets/empty_screen.dart';
 import '../../../../core/resources/commons.dart';
 import '../../../../core/web_services/network_exceptions.dart';
 import '../../../../core/widgets/loading_indicator.dart';

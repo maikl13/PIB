@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../features/chat/data/models/unread_messages_count.dart';
+import '../../features/menu/data/models/update_skill.dart';
 import '../../features/notification/data/models/unread_notification.dart';
 part 'global_state.freezed.dart';
 
@@ -11,6 +12,7 @@ class GlobalState<T> with _$GlobalState<T> {
   const factory GlobalState.getUnreadNotificationCountLoading() = GetUnreadNotificationCountLoading<T>;
   const factory GlobalState.getUnreadNotificationCountSuccess(UnreadNotificationCount count) = GetUnreadNotificationCountSuccess<T>;
   const factory GlobalState.getUnreadNotificationCountError(T data) = GetUnreadNotificationCountError<T>;
+
 const factory GlobalState.selectedIndexChanged(int index) = SelectedIndexChanged<T>;
 
 
@@ -27,6 +29,9 @@ const factory GlobalState.selectedIndexChanged(int index) = SelectedIndexChanged
   const factory GlobalState.myDestenationChange(String address) = MyDestenationChange<T>;
 
 
+  const factory GlobalState.updateFcmLoading() = UpdateFcmLoading<T>;
+  const factory GlobalState.updateFcmSuccess(UpdateSkill data) = UpdateFcmSuccess<T>;
+  const factory GlobalState.updateFcmError(T data) = UpdateFcmError<T>;
 
 }
 /* 

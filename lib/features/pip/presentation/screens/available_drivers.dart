@@ -7,11 +7,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:pip/core/resources/constants.dart';
+import '../../../../core/resources/constants.dart';
 
-import 'package:pip/core/widgets/loading_indicator.dart';
-import 'package:pip/features/pip/business_logic/cubit/pip_cubit.dart';
-import 'package:pip/features/pip/business_logic/cubit/pip_state.dart';
+import '../../../../core/widgets/loading_indicator.dart';
+import '../../business_logic/cubit/pip_cubit.dart';
+import '../../business_logic/cubit/pip_state.dart';
 import '../../../../core/resources/color_manager.dart';
 
 import '../../../../core/resources/style_manager.dart';

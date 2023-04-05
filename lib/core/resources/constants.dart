@@ -14,6 +14,8 @@ class AppConstants {
   static const String baseUrl = 'https://pib-platform.com/api/';
 }
 
+String ?fcmTokenFromFirebase ;
+
 String fastRequsetStatus = "0";
 String categoryId = '';
 String description = '';

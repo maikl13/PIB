@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/resources/constants.dart';
 
 import 'app/app.dart';
 import 'core/resources/bloc_observer.dart';
@@ -40,9 +41,12 @@ Future<void> main() async {
 
     final fcmToken = await FirebaseMessaging.instance.getToken();
     print(fcmToken);
+    fcmTokenFromFirebase = fcmToken!;
   } else {
     print('User declined or has not yet granted permission');
   }
+
+  
   await FirebaseAppCheck.instance.activate(
     webRecaptchaSiteKey: 'recaptcha-v3-site-key',
     // Default provider for Android is the Play Integrity provider. You can use the "AndroidProvider" enum to choose

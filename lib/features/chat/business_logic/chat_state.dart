@@ -1,8 +1,8 @@
 import 'dart:io';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:pip/features/chat/data/models/chats_messages_model.dart';
-import 'package:pip/features/chat/data/models/job_chats_model.dart';
+import '../data/models/chats_messages_model.dart';
+import '../data/models/job_chats_model.dart';
 import '../../../../core/web_services/network_exceptions.dart';
 import '../data/models/chat_with_user_model.dart';
 import '../data/models/show_chat_info_model.dart';

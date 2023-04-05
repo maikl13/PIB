@@ -3,11 +3,11 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/resources/constants.dart';
+import '../../../../core/resources/constants.dart';
 
-import 'package:pip/core/widgets/loading_indicator.dart';
-import 'package:pip/features/chat/business_logic/chat_state.dart';
-import 'package:pip/features/chat/presentation/widgets/message_media_bubble.dart';
+import '../../../../core/widgets/loading_indicator.dart';
+import '../../business_logic/chat_state.dart';
+import 'message_media_bubble.dart';
 
 import '../../business_logic/chat_cubit.dart';
 import 'message_bubble.dart';

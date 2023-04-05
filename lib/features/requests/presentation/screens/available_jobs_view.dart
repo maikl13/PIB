@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/features/pip/business_logic/cubit/pip_cubit.dart';
+import 'package:pip/features/requests/presentation/widgets/accepted_requests_item.dart';
+import '../../../pip/business_logic/cubit/pip_cubit.dart';
 
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/commons.dart';
@@ -12,8 +13,10 @@ import '../../../../core/web_services/network_exceptions.dart';
 import '../../../../core/widgets/custom_title.dart';
 import '../../../../core/widgets/dark_default_button.dart';
 import '../../../../core/widgets/loading_indicator.dart';
+import '../../../pip/data/models/driver_model.dart';
 import '../../business_logic/cubit/requests_cubit.dart';
 import '../../business_logic/cubit/requests_state.dart';
+import '../../data/models/accepted_offers_model.dart';
 import '../../data/models/available_fast_request_model.dart';
 import '../../data/models/my_request_model.dart';
 import '../widgets/available_fast_request.dart';
@@ -45,7 +48,7 @@ class _AvailableJobsViewState extends State<AvailableJobsView> {
             myAvailableJobsLoading: () {
               return Padding(
                   padding: EdgeInsets.only(top: 100.h),
-                  child: LoadingIndicator());
+                  child: const LoadingIndicator());
             },
             myAvailableJobsSuccess: (avaliableJobs) {
               return _buildAvailableRequestsView();
@@ -101,7 +104,7 @@ class _AvailableJobsViewState extends State<AvailableJobsView> {
             myAvailableFastRequestsLoading: () {
               return Padding(
                   padding: EdgeInsets.only(top: 100.h),
-                  child: LoadingIndicator());
+                  child: const LoadingIndicator());
             },
             myAvailableFastRequestsSuccess: (myFastRequests) {
               return myFastRequests.isEmpty
@@ -118,11 +121,57 @@ class _AvailableJobsViewState extends State<AvailableJobsView> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          _buildMyAcceptedOffersBloc(),
           _buildAvailableFastRequestsBloc(),
           _buildAvailableJobsBloc(),
           // SizedBox(height: 20.h),
         ],
       ),
+    );
+  }
+
+  _buildMyAcceptedOffersBloc() {
+    return BlocConsumer<RequestsCubit, RequestState>(
+      listener: (context, state) {},
+      buildWhen: (previous, next) => next is MyAcceptedFastOffersSuccess,
+      builder: (context, state) {
+        return state.maybeWhen(
+          myAcceptedFastOffersSuccess: (myAcceptedFastOffers) {
+            return myAcceptedFastOffers.isEmpty
+                ? const SizedBox.shrink()
+                : _buildMyAcceptedOffersView();
+          },
+          orElse: () => const SizedBox.shrink(),
+        );
+      },
+    );
+  }
+
+  _buildMyAcceptedOffersView() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(height: 20.h),
+        const CustomTitle(title: '${AppStrings.myAcceptedOffers} :'),
+        SizedBox(height: 20.h),
+        _buildMyAcceptedOffersList(
+            BlocProvider.of<RequestsCubit>(context).myAcceptedFastOffers),
+      ],
+    );
+  }
+
+  _buildMyAcceptedOffersList(List<AcceptedOffersModel> myAcceptedFastOffers) {
+    return ListView.separated(
+      itemCount: myAcceptedFastOffers.length,
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      separatorBuilder: (context, index) => SizedBox(height: 20.h),
+      itemBuilder: (context, index) {
+        return myAcceptedFastOffers[index].status == 'processing'
+            ? const SizedBox.shrink()
+            : AcceptedRequestItem(
+                requests: myAcceptedFastOffers, onTap: () {}, index: index);
+      },
     );
   }
 
@@ -174,6 +223,7 @@ class _AvailableJobsViewState extends State<AvailableJobsView> {
     return availableJobs.isEmpty
         ? _buildAvailableJobsEmpty()
         : Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 20.h),
               const CustomTitle(title: AppStrings.availbleRecentJobs),
@@ -244,6 +294,7 @@ class _AvailableJobsViewState extends State<AvailableJobsView> {
   void initState() {
     BlocProvider.of<RequestsCubit>(context).getAllMyAvailableFastRequests();
     BlocProvider.of<RequestsCubit>(context).getAllAvailableJobs();
+    BlocProvider.of<RequestsCubit>(context).getAllAcceptedOfferForDriver();
 
     super.initState();
   }

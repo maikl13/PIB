@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/resources/commons.dart';
-import 'package:pip/features/pip/business_logic/cubit/pip_cubit.dart';
-import 'package:pip/features/pip/data/models/driver_model.dart';
+import 'package:pip/features/pip/presentation/widgets/contact_button.dart';
+import '../../../../core/resources/commons.dart';
+import '../../business_logic/cubit/pip_cubit.dart';
+import '../../data/models/driver_model.dart';
 
 import '../../../../core/resources/color_manager.dart';
 
@@ -112,31 +113,10 @@ class FloatingDriversContainer extends StatelessWidget {
 
   _buildButton(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 12.h, left: 15.w),
-      child: Align(
-        alignment: Alignment.topLeft,
-        child: InkWell(
-          onTap: () {
-            Commons.openUrl('tel:${driverInfo.deliveryMan!.phone}');
-            // Navigator.pushNamed(context, Routes.chatViewRoute,arguments: {
-            //   'chatId'  : '1',
-            // });
-          },
-          child: Container(
-            width: 62.w,
-            height: 27.w,
-            decoration: BoxDecoration(
-                color: ColorManager.white.withOpacity(.2),
-                borderRadius: BorderRadius.circular(31.r)),
-            child: Center(
-              child: Text('تواصل',
-                  style: getBoldStyle(
-                      fontSize: 10.sp, color: ColorManager.darkSeconadry)),
-            ),
-          ),
-        ),
-      ),
-    );
+        padding: EdgeInsets.only(top: 12.h, left: 15.w),
+        child: Align(
+            alignment: Alignment.topLeft,
+            child: ContactButton(phoneNumber: driverInfo.deliveryMan!.phone!)));
   }
 
   @override

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:pip/core/business_logic/global_cubit.dart';
-import 'package:pip/core/resources/assets_manager.dart';
-import 'package:pip/features/chat/business_logic/chat_cubit.dart';
+import '../../../../core/business_logic/global_cubit.dart';
+import '../../../../core/resources/assets_manager.dart';
+import '../../../chat/business_logic/chat_cubit.dart';
 
 import '../../../../core/resources/constants.dart';
 import '../../../../core/resources/location_helper.dart';

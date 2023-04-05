@@ -1,8 +1,8 @@
 import 'dart:io';
 
-import 'package:pip/features/chat/data/models/chats_messages_model.dart';
-import 'package:pip/features/chat/data/models/unread_messages_count.dart';
-import 'package:pip/features/menu/data/models/update_skill.dart';
+import '../models/chats_messages_model.dart';
+import '../models/unread_messages_count.dart';
+import '../../../menu/data/models/update_skill.dart';
 
 import '../../../../core/resources/constants.dart';
 import '../../../../core/web_services/api_result.dart';

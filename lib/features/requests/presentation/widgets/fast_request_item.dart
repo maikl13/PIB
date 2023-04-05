@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/resources/utils.dart';
-import 'package:pip/features/requests/business_logic/cubit/requests_cubit.dart';
-import 'package:pip/features/requests/data/models/fast_request_model.dart';
+import '../../../../core/resources/utils.dart';
+import '../../business_logic/cubit/requests_cubit.dart';
+import '../../data/models/fast_request_model.dart';
 import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/widgets/custom_network_image.dart';
 import '../../../../core/widgets/dark_default_button.dart';

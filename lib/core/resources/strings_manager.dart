@@ -3,11 +3,13 @@ class AppStrings {
   static const String locale = 'locale';
   static const String englishCode = 'en';
   static const String arabicCode = 'ar';
+  static const String myAcceptedOffers = 'عروض مقبولة';
 
   static const String notification = 'الاشعارات';
   static const String theSearch = 'البحث';
   static const String search = 'بحث';
   static const String send = 'ارسال';
+  static const String editOffer = 'تعديل العرض المقدم';
 
   static const String main = 'الرئيسية ';
   static const String messages = 'الرسائل ';
@@ -196,5 +198,4 @@ class AppStrings {
   // static const String theMenue = 'القائمة';
   // static const String theMenue = 'القائمة';
   // static const String theMenue = 'القائمة';
-
 }

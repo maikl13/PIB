@@ -22,7 +22,7 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
 
   void signInAnonymously() async {
     emit(const AuthResultState.firebaseAnonymousLoginLoading());
-await  FirebaseAuth.instance.signOut();
+    await FirebaseAuth.instance.signOut();
     final FirebaseAuth auth = FirebaseAuth.instance;
 
     try {
@@ -119,7 +119,7 @@ await  FirebaseAuth.instance.signOut();
       // print('gooooooogle ${googleUser.displayName!}');
       userImage = googleUser.photoUrl!;
     } catch (e) {
-      // print(e.toString());
+      print(e.toString());
       emit(AuthResultState.firebaseGoogleLoginError(
           NetworkExceptions.getDioException(e)));
     }
@@ -190,8 +190,7 @@ await  FirebaseAuth.instance.signOut();
   }
 
   void codeAutoRetrievalTimeout(String verificationId) {
-
-  // todo  emit(const AuthResultState.phoneAuthErrorOccurred('المهلة لل كود انتهت'));
+    // todo  emit(const AuthResultState.phoneAuthErrorOccurred('المهلة لل كود انتهت'));
   }
 
   Future<void> submitOTP(String otpCode) async {

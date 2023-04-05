@@ -1,5 +1,8 @@
 import 'dart:io';
 
+import 'package:pip/features/pip/data/models/driver_model.dart';
+import 'package:pip/features/requests/data/models/accepted_offers_model.dart';
+
 import '../models/available_fast_request_model.dart';
 import '../models/create_fast_request_model.dart';
 import '../models/fast_request_model.dart';
@@ -214,6 +217,18 @@ class RequestRepository {
     try {
       var response = await webServices.giveOfferWithoutImages(
           'Bearer $token', price, duration, description, requestId);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(NetworkExceptions.getDioException(error));
+    }
+  }
+
+  Future<ApiResult<List<AcceptedOffersModel>>> getAllAcceptedOfferForDriver(
+  
+  ) async {
+    try {
+      var response = await webServices.getAllAcceptedOfferForDriver(
+          'Bearer $token');
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(NetworkExceptions.getDioException(error));

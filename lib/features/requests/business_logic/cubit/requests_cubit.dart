@@ -3,7 +3,9 @@ import 'dart:io';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:pip/features/requests/data/models/fast_request_model.dart';
+import '../../../pip/data/models/driver_model.dart';
+import '../../data/models/accepted_offers_model.dart';
+import '../../data/models/fast_request_model.dart';
 
 import '../../../../core/resources/constants.dart';
 import '../../data/models/available_fast_request_model.dart';
@@ -29,6 +31,8 @@ class RequestsCubit extends Cubit<RequestState> {
   List<FastRequestModel> myFastRequests = [];
 
   List<AvailableFastRequestModel> myAvailableFastRequests = [];
+
+  List<AcceptedOffersModel> myAcceptedFastOffers = [];
   deleteImage(int index) {
     imagesFile.removeAt(index);
   }
@@ -144,6 +148,21 @@ class RequestsCubit extends Cubit<RequestState> {
       },
     );
   }
+  void getAllAcceptedOfferForDriver() async {
+    emit(const RequestState.myAcceptedFastOffersLoading());
+
+    var result = await requestRepository.getAllAcceptedOfferForDriver();
+    result.when(
+      success: (List<AcceptedOffersModel> acceptedFastOffers) {
+        myAcceptedFastOffers = acceptedFastOffers;
+        emit(RequestState.myAcceptedFastOffersSuccess(acceptedFastOffers));
+      },
+      failure: (NetworkExceptions networkExceptions) {
+        emit(RequestState.myAvailableFastRequestsError(networkExceptions));
+      },
+    );
+  }
+
 
   void getAllRequestOffers(int id) async {
     emit(const RequestState.offersRequestLoading());

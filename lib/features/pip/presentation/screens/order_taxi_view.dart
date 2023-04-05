@@ -6,9 +6,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:pip/core/business_logic/global_cubit.dart';
-import 'package:pip/core/resources/constants.dart';
-import 'package:pip/core/resources/route_manager.dart';
+import '../../../../core/business_logic/global_cubit.dart';
+import '../../../../core/resources/constants.dart';
+import '../../../../core/resources/route_manager.dart';
 
 import '../../../../core/resources/commons.dart';
 import 'dart:ui' as ui;

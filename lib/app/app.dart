@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors_in_immutables, avoid_print
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -56,6 +57,7 @@ class _MyAppState extends State<MyApp> {
     // print(object);
     if (userNameFromDatabase == 'مجهول') {
       FirebaseAuth.instance.signOut();
+      FirebaseMessaging.instance.deleteToken();
 
       return Routes.splashRoute;
     } else {
@@ -101,7 +103,7 @@ class _MyAppState extends State<MyApp> {
                   ],
                   supportedLocales: const [
                     Locale('ar'),
-                    Locale('en')
+                    // Locale('en')
                   ],
                   locale: const Locale('ar'),
                   debugShowCheckedModeBanner: false,
@@ -112,6 +114,15 @@ class _MyAppState extends State<MyApp> {
 
                   // initialRoute: Routes.splashRoute,
                   builder: (context, child) {
+                    FirebaseMessaging.instance.onTokenRefresh
+                        .listen((String? fcmToken) async {
+                      if (fcmToken != null) {
+                        fcmTokenFromFirebase = fcmToken;
+                        // Call the API to send the FCM token to the backend
+                        await BlocProvider.of<GlobalCubit>(context)
+                            .updateFcmToken(fcmToken);
+                      }
+                    });
                     return MediaQuery(
                       data:
                           MediaQuery.of(context).copyWith(textScaleFactor: 1.0),

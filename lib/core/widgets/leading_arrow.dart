@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/resources/assets_manager.dart';
+import '../resources/assets_manager.dart';
 
 import '../resources/color_manager.dart';
 

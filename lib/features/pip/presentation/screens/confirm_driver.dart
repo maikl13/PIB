@@ -6,14 +6,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:pip/core/business_logic/global_cubit.dart';
-import 'package:pip/core/resources/constants.dart';
-import 'package:pip/core/resources/route_manager.dart';
-import 'package:pip/core/web_services/network_exceptions.dart';
-import 'package:pip/features/pip/business_logic/cubit/pip_cubit.dart';
+import '../../../../core/business_logic/global_cubit.dart';
+import '../../../../core/resources/constants.dart';
+import '../../../../core/resources/route_manager.dart';
+import '../../../../core/web_services/network_exceptions.dart';
+import '../../business_logic/cubit/pip_cubit.dart';
 
-import 'package:pip/features/requests/business_logic/cubit/requests_cubit.dart';
-import 'package:pip/features/requests/business_logic/cubit/requests_state.dart';
+import '../../../requests/business_logic/cubit/requests_cubit.dart';
+import '../../../requests/business_logic/cubit/requests_state.dart';
 import '../../../../core/resources/commons.dart';
 import 'dart:ui' as ui;
 

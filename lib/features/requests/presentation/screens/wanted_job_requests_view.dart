@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/resources/commons.dart';
-import 'package:pip/core/widgets/empty_screen.dart';
-import 'package:pip/features/requests/data/models/fast_request_model.dart';
-import 'package:pip/features/requests/presentation/widgets/fast_request_item.dart';
+import '../../../../core/resources/commons.dart';
+import '../../../../core/widgets/empty_screen.dart';
+import '../../data/models/fast_request_model.dart';
+import '../widgets/fast_request_item.dart';
 import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/constants.dart';
@@ -19,8 +19,8 @@ import '../../../../core/widgets/custom_title.dart';
 import '../../../../core/resources/route_manager.dart';
 import '../../../../core/widgets/loading_indicator.dart';
 import '../widgets/request_item.dart';
-import 'package:pip/core/business_logic/global_cubit.dart';
-import 'package:pip/core/business_logic/global_state.dart';
+import '../../../../core/business_logic/global_cubit.dart';
+import '../../../../core/business_logic/global_state.dart';
 class WantedJobRequestsView extends StatefulWidget {
   const WantedJobRequestsView({super.key});
 

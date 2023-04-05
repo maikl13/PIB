@@ -292,29 +292,31 @@ class _RateUsViewState extends State<RateUsView> {
       builder: (context, state) {
         return state.maybeWhen(
           getRatesSuccess: (rates) {
-            return SizedBox(
-              // height: 120.h,
-              width: 18.w,
-              child: ListView.separated(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemBuilder: (context, index) {
-                    return Text(
-                      BlocProvider.of<MenuCubit>(context)
-                          .ratesFromOneToFive[index],
-                      style: getRegularStyle(
-                          fontSize: 15.sp, color: ColorManager.grey),
-                    );
-                  },
-                  separatorBuilder: (context, index) {
-                    return SizedBox(height: 4.h);
-                  },
-                  itemCount: 5),
-            );
+            return _buildNumberOfEveryRate();
           },
-          orElse: () => Container(),
+          orElse: () => _buildNumberOfEveryRate(),
         );
       },
+    );
+  }
+
+  _buildNumberOfEveryRate() {
+    return SizedBox(
+      // height: 120.h,
+      width: 18.w,
+      child: ListView.separated(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          itemBuilder: (context, index) {
+            return Text(
+              BlocProvider.of<MenuCubit>(context).ratesFromOneToFive[index],
+              style: getRegularStyle(fontSize: 15.sp, color: ColorManager.grey),
+            );
+          },
+          separatorBuilder: (context, index) {
+            return SizedBox(height: 4.h);
+          },
+          itemCount: 5),
     );
   }
 

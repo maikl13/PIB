@@ -1,8 +1,8 @@
 import 'dart:io';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pip/core/resources/assets_manager.dart';
-import 'package:pip/features/chat/business_logic/chat_state.dart';
+import '../../../../core/resources/assets_manager.dart';
+import '../../business_logic/chat_state.dart';
 
 import '../../../../core/resources/commons.dart';
 import '../../../../core/resources/constants.dart';

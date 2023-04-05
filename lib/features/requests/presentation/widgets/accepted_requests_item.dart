@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/features/pip/data/models/driver_model.dart';
+import 'package:pip/features/pip/presentation/widgets/contact_button.dart';
 import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/utils.dart';
 import '../../../../core/widgets/custom_image_view.dart';
 import '../../../../core/widgets/custom_network_image.dart';
+import '../../data/models/accepted_offers_model.dart';
 import '../../data/models/my_request_model.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
@@ -12,12 +15,13 @@ import '../../../notification/presentation/widgets/clock_date.dart';
 import 'package:intl/intl.dart';
 import '../../../../core/resources/style_manager.dart';
 
-class RequestItem extends StatelessWidget {
-  const RequestItem(
+class AcceptedRequestItem extends StatelessWidget {
+  const AcceptedRequestItem(
       {super.key, required this.onTap, this.requests, required this.index});
   final void Function() onTap;
-  final List<MyRequestModel>? requests;
+  final List<AcceptedOffersModel>? requests;
   final int index;
+
   _buildInfo() {
     return Padding(
       padding: EdgeInsets.only(top: 15.h, right: 15.w),
@@ -44,17 +48,19 @@ class RequestItem extends StatelessWidget {
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    _buildPriceIcon(),
+                    // _buildPriceIcon(),
+                    // SizedBox(width: 10.w),
+                    // _buildPrice(),
+                    // SizedBox(width: 10.w),
+                    _buildUserNameIcon(),
                     SizedBox(width: 10.w),
-                    _buildPrice(),
-                    SizedBox(width: 10.w),
-                    _buildNumberOfRequestsIcon(),
-                    SizedBox(width: 10.w),
-                    _buildNumberOfRequests(),
+                    _buildUserNameText(),
+                    // _buildNumberOfRequests(),
                   ],
                 ),
                 SizedBox(height: 10.h),
-                _buildClock(requests![index].createdAt.toString()),
+                _buildTime(),
+                // _buildClock(requests![index].createdAt.toString()),
               ],
             ),
           ),
@@ -63,20 +69,35 @@ class RequestItem extends StatelessWidget {
     );
   }
 
-  _buildClock(String date) {
-    final result = DateTime.parse(date).toLocal();
-
-    String formattedDate = DateFormat('d-M-yyyy').format(result);
-
-    return ClockDate(
-      color: ColorManager.grey,
-      date: formattedDate,
+  _buildTime() {
+    return Text(
+      requests![index].time == null ? '' : requests![index].time ?? '',
+      style: getRegularStyle(color: ColorManager.grey, fontSize: 12.sp),
     );
   }
 
+  _buildUserNameText() {
+    return Text(
+      requests![index].user!.name == null
+          ? ''
+          : requests![index].user!.name ?? '',
+      style: getRegularStyle(color: ColorManager.grey, fontSize: 12.sp),
+    );
+  }
+  // _buildClock(String date) {
+  //   final result = DateTime.parse(date).toLocal();
+
+  //   String formattedDate = DateFormat('d-M-yyyy').format(result);
+
+  //   return ClockDate(
+  //     color: ColorManager.grey,
+  //     date: formattedDate,
+  //   );
+  // }
+
   _buildJobTitle() {
     return Text(
-      requests![index].category == null
+      requests![index].category!.name == null
           ? ''
           : requests![index].category!.name ?? '',
       style: getBoldStyle(color: ColorManager.white, fontSize: 15.sp),
@@ -85,9 +106,7 @@ class RequestItem extends StatelessWidget {
 
   _buildRequestStatus() {
     return Text(
-      requests![index].submittedOffer == true
-          ? 'تم تقديم عرض'
-          : getStatusInArabic(requests![index].status ?? ''),
+      getStatusInArabic(requests![index].status ?? ''),
       style: getBoldStyle(fontSize: 10.sp, color: ColorManager.darkSeconadry),
     );
   }
@@ -102,16 +121,9 @@ class RequestItem extends StatelessWidget {
             height: 80.h,
             child: Stack(
               children: [
-                if (!(requests![index].images!.isEmpty &&
-                    (requests![index].category == null ||
-                        requests![index].category!.imageUrl == '')))
-                  CustomNetworkCachedImage(
-                    url: (requests![index].images!.isNotEmpty &&
-                            requests![index].images![0].attachmentUrl != '')
-                        ? requests![index].images![0].attachmentUrl
-                        : requests![index].category!.imageUrl,
-                    fit: BoxFit.fill,
-                  ),
+                CustomNetworkCachedImage(
+                  url: requests![index].category!.imageUrl ?? '',
+                ),
                 CustomImageView(
                   svgPath: ImageAssets.shadow,
                   width: 120.h,
@@ -126,26 +138,26 @@ class RequestItem extends StatelessWidget {
     );
   }
 
-  _buildPriceIcon() {
-    return Image.asset(
-      ImageAssets.priceTag,
-      fit: BoxFit.scaleDown,
-      width: 12.w,
-      height: 12.h,
-      color: ColorManager.darkSeconadry,
-    );
-  }
+  // _buildPriceIcon() {
+  //   return Image.asset(
+  //     ImageAssets.priceTag,
+  //     fit: BoxFit.scaleDown,
+  //     width: 12.w,
+  //     height: 12.h,
+  //     color: ColorManager.darkSeconadry,
+  //   );
+  // }
 
-  _buildPrice() {
-    return Text(
-      '${requests![index].price}  ${AppStrings.ryal}',
-      maxLines: 1,
-      overflow: TextOverflow.ellipsis,
-      style: getRegularStyle(color: ColorManager.grey, fontSize: 12.sp),
-    );
-  }
+  // _buildPrice() {
+  //   return Text(
+  //     ' ${AppStrings.ryal}',
+  //     maxLines: 1,
+  //     overflow: TextOverflow.ellipsis,
+  //     style: getRegularStyle(color: ColorManager.grey, fontSize: 12.sp),
+  //   );
+  // }
 
-  _buildNumberOfRequestsIcon() {
+  _buildUserNameIcon() {
     return Image.asset(
       ImageAssets.user,
       fit: BoxFit.scaleDown,
@@ -155,19 +167,19 @@ class RequestItem extends StatelessWidget {
     );
   }
 
-  _buildNumberOfRequests() {
-    return Text(
-      maxLines: 1,
-      overflow: TextOverflow.clip,
-      requests![index].offersCount == null
-          ? requests![index].user!.name!.length > 10
-              ? requests![index].user!.name!.replaceRange(8, null, '.')
-              : requests![index].user!.name ?? ''
-          : '${requests![index].offersCount} عرض',
-      softWrap: true,
-      style: getRegularStyle(color: ColorManager.grey, fontSize: 12.sp),
-    );
-  }
+  // _buildNumberOfRequests() {
+  //   return Text(
+  //     maxLines: 1,
+  //     overflow: TextOverflow.clip,
+  //     requests![index].offersCount == null
+  //         ? requests![index].user!.name!.length > 10
+  //             ? requests![index].user!.name!.replaceRange(8, null, '.')
+  //             : requests![index].user!.name ?? ''
+  //         : '${requests![index].offersCount} عرض',
+  //     softWrap: true,
+  //     style: getRegularStyle(color: ColorManager.grey, fontSize: 12.sp),
+  //   );
+  // }
 
   _buildArrow() {
     return Padding(
@@ -180,6 +192,19 @@ class RequestItem extends StatelessWidget {
             width: 16.w,
             height: 16.h,
           )),
+    );
+  }
+
+  _bulildContactButton() {
+    return Padding(
+      padding: EdgeInsets.only(bottom: 15.h, left: 10.w),
+      child: Align(
+          alignment: Alignment.bottomLeft,
+          child: requests![index].status != "processing"
+              ? const SizedBox.shrink()
+              : ContactButton(
+                  phoneNumber: requests![index].user!.phone ?? '',
+                )),
     );
   }
 
@@ -197,6 +222,7 @@ class RequestItem extends StatelessWidget {
           children: [
             _buildInfo(),
             _buildArrow(),
+            _bulildContactButton(),
           ],
         ),
       ),

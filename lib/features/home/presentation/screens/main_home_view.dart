@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:pip/core/business_logic/global_cubit.dart';
-import 'package:pip/core/business_logic/global_state.dart';
-import 'package:pip/core/resources/location_helper.dart';
-import 'package:pip/features/menu/business_logic/menu_cubit.dart';
-import 'package:pip/features/menu/business_logic/menu_state.dart';
-import 'package:pip/features/pip/business_logic/cubit/pip_cubit.dart';
+import '../../../../core/business_logic/global_cubit.dart';
+import '../../../../core/business_logic/global_state.dart';
+import '../../../../core/resources/location_helper.dart';
+import '../../../menu/business_logic/menu_cubit.dart';
+import '../../../menu/business_logic/menu_state.dart';
+import '../../../pip/business_logic/cubit/pip_cubit.dart';
 
 import '../../../../core/resources/constants.dart';
 import '../../../../core/resources/route_manager.dart';
@@ -70,7 +70,6 @@ class _MainHomeViewState extends State<MainHomeView> {
     BlocProvider.of<GlobalCubit>(context).getAllMessagesCount();
     BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
     BlocProvider.of<GlobalCubit>(context).startMessagesCountStream();
-
     BlocProvider.of<MenuCubit>(context).getUserInfo();
     BlocProvider.of<MenuCubit>(context).getAllSettings();
     BlocProvider.of<MenuCubit>(context).getAllRates();

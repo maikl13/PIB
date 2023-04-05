@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/resources/assets_manager.dart';
-import 'package:pip/core/resources/constants.dart';
-import 'package:pip/features/requests/business_logic/cubit/requests_cubit.dart';
-import 'package:pip/features/requests/business_logic/cubit/requests_state.dart';
+import '../../../../core/resources/assets_manager.dart';
+import '../../../../core/resources/constants.dart';
+import '../../business_logic/cubit/requests_cubit.dart';
+import '../../business_logic/cubit/requests_state.dart';
 import '../../../../core/resources/utils.dart';
 import '../../../../core/web_services/network_exceptions.dart';
 import '../../../../core/widgets/custom_clock_date.dart';

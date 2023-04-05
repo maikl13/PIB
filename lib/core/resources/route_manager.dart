@@ -143,6 +143,7 @@ class RouteGenerator {
     globalCubit = getIt<GlobalCubit>();
   }
   static List screens = <Widget>[
+    
     const HomeView(),
     WillPopScope(
         onWillPop: () async {
@@ -249,7 +250,8 @@ class RouteGenerator {
 
       case Routes.mainHomeViewRoute:
         return MaterialPageRoute(
-            builder: (_) => MultiBlocProvider(providers: [
+            builder: (_) => MultiBlocProvider(
+              providers: [
                   BlocProvider.value(
                     value: homeCubit,
                   ),

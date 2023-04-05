@@ -2,13 +2,14 @@ import 'dart:io';
 
 import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:pip/core/business_logic/global_cubit.dart';
-import 'package:pip/core/resources/strings_manager.dart';
+import '../../../core/business_logic/global_cubit.dart';
+import '../../../core/resources/strings_manager.dart';
 import '../../../core/resources/location_helper.dart';
 import '../data/models/rates_model.dart';
 import '../data/models/setting_model.dart';
@@ -97,12 +98,12 @@ class MenuCubit extends Cubit<MenuState> {
       CacheHelper.removeAll();
 
       await FirebaseAuth.instance.signOut();
+      await FirebaseMessaging.instance.deleteToken();
       Commons.showToast(
           message: "تم تسجيل الخروج بنجاح", color: ColorManager.toastSuccess);
 
       screenIndex = 0;
       isAnonymous = false;
-     
 
       // ignore: use_build_context_synchronously
       Navigator.pushNamedAndRemoveUntil(

@@ -10,19 +10,18 @@ import '../../data/models/slider_model.dart';
 import 'banner_item.dart';
 import 'banner_item_loading.dart';
 
-
 class Banners extends StatelessWidget {
   const Banners({super.key});
 
-  _buildBloc(){
+  _buildBloc() {
     return BlocConsumer<HomeCubit, HomeState>(
       listener: (context, state) {},
       buildWhen: (previous, next) => next is HomeSlidersSuccess,
       builder: (context, state) {
         return state.maybeWhen(homeSlidersLoading: () {
-          return _buildView([] , true);
+          return _buildView([], true);
         }, homeSlidersSuccess: (sliders) {
-          return _buildView(sliders , false);
+          return _buildView(sliders, false);
         }, homeSlidersError: (networkExceptions) {
           return Text(networkExceptions.toString());
         }, orElse: () {
@@ -31,24 +30,27 @@ class Banners extends StatelessWidget {
       },
     );
   }
-_buildView(List<SliderModel> sliders , bool loading){
-    ScrollController controller =  ScrollController();
 
-    int _currentIndex = 0;
-    Timer.periodic(Duration(seconds: 6), (timer) {
-      _currentIndex = (_currentIndex + 1) % sliders.length;
+  _buildView(List<SliderModel> sliders, bool loading) {
+    ScrollController controller = ScrollController();
 
+    int currentIndex = 0;
+    Timer.periodic(const Duration(seconds: 6), (timer) {
+      currentIndex = sliders.isEmpty
+          ? (currentIndex + 1) % 1
+          : (currentIndex + 1) % sliders.length;
 
-      double _position =  _currentIndex * (315.w + 2 *  15.w);
-
-      controller.animateTo(_position, duration: Duration(seconds: 1), curve: Curves.ease);
-
+      double position = currentIndex * (315.w + 2 * 15.w);
+      if (controller.hasClients) {
+        controller.animateTo(position,
+            duration: const Duration(seconds: 1), curve: Curves.ease);
+      }
     });
-  return SizedBox(
+    return SizedBox(
       height: 180.h,
-     
       child: ListView.separated(
-        controller:controller ,
+          physics: const BouncingScrollPhysics(),
+          controller: controller,
           scrollDirection: Axis.horizontal,
           shrinkWrap: true,
           // physics: const NeverScrollableScrollPhysics(),
@@ -57,20 +59,23 @@ _buildView(List<SliderModel> sliders , bool loading){
               width: 15.w,
             );
           },
-          itemCount: loading ? 2: sliders.length,
+          itemCount: loading ? 2 : sliders.length,
           itemBuilder: (context, index) {
-            return  loading  ? BannerItemLoading(): BannerItem(
-            imageUrl: sliders[index].image,
-            title: sliders[index].name,
-              content: sliders[index].content,
-            urlLink: sliders[index].link,
-            );
+            return loading
+                ? BannerItemLoading()
+                : BannerItem(
+                    imageUrl: sliders[index].image,
+                    title: sliders[index].name,
+                    content: sliders[index].content,
+                    urlLink: sliders[index].link,
+                  );
           }),
     );
-}
+  }
+
   @override
   Widget build(BuildContext context) {
-        BlocProvider.of<HomeCubit>(context).getAllSliders();
+    BlocProvider.of<HomeCubit>(context).getAllSliders();
 
     return _buildBloc();
   }

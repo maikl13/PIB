@@ -1,8 +1,9 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:pip/features/chat/data/models/unread_messages_count.dart';
-import 'package:pip/features/chat/data/repository/chat_repository.dart';
+import 'package:pip/features/menu/data/models/update_skill.dart';
+import '../../features/chat/data/models/unread_messages_count.dart';
+import '../../features/chat/data/repository/chat_repository.dart';
 
 import '../../features/notification/data/models/unread_notification.dart';
 import '../../features/notification/data/repository/notification_repository.dart';
@@ -67,6 +68,8 @@ class GlobalCubit extends Cubit<GlobalState<dynamic>> {
     );
   }
 
+  
+
   Future<int> getAllMessagesCount() async {
     emit(const GlobalState.getUnreadMessagesCountLoading());
 
@@ -86,6 +89,22 @@ class GlobalCubit extends Cubit<GlobalState<dynamic>> {
 
   void readMessage() {
     emit(GlobalState.readMessage(newMessagesCount));
+  }
+
+
+  Future<void> updateFcmToken(String? fcmToken) async {
+    emit(const GlobalState.updateFcmLoading());
+
+    // ignore: prefer_typing_uninitialized_variables
+    var result = await notificationRepository.updateFcm(fcmToken);
+    result.when(
+      success: (UpdateSkill result) {
+        emit(GlobalState.updateFcmSuccess(result));
+      },
+      failure: (NetworkExceptions networkExceptions) {
+        emit(GlobalState.updateFcmError(networkExceptions));
+      },
+    );
   }
 
   changeSelectedIndex(int index) {

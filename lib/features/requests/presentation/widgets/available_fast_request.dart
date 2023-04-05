@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/resources/assets_manager.dart';
-import 'package:pip/core/resources/utils.dart';
-import 'package:pip/core/widgets/default_button.dart';
+import '../../../../core/resources/assets_manager.dart';
+import '../../../../core/resources/utils.dart';
+import '../../../../core/widgets/default_button.dart';
 import '../../../../core/widgets/custom_image_view.dart';
 import '../../../../core/widgets/custom_network_image.dart';
 import '../../business_logic/cubit/requests_cubit.dart';

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/resources/assets_manager.dart';
-import 'package:pip/core/resources/shared_prefrences.dart';
-import 'package:pip/core/resources/utils.dart';
+import '../resources/assets_manager.dart';
+import '../resources/shared_prefrences.dart';
+import '../resources/utils.dart';
 import '../resources/color_manager.dart';
 import '../resources/constants.dart';
 import '../resources/strings_manager.dart';
