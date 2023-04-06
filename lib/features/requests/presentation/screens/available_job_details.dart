@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/features/requests/business_logic/cubit/requests_cubit.dart';
 import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/utils.dart';
 import '../../../chat/business_logic/chat_cubit.dart';
@@ -106,11 +107,11 @@ class AvailableJobDetailsView extends StatelessWidget {
       child: DefaultButton(
         text: AppStrings.editOffer,
         onTap: () {
-          // Navigator.pushNamed(context, Routes.editOfferViewRoute,
-          //     arguments: {
-          //       'requestId': availableJob.id.toString(),
-          //       'jobName' : availableJob.category!.name
-          //     });
+          // BlocProvider.of<RequestsCubit>(context).showSingleOffer(offerId);
+          Navigator.pushNamed(
+            context,
+            Routes.editOffersViewRoute,
+          );
         },
       ),
     );

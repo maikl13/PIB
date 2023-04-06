@@ -36,6 +36,15 @@ class RequestState<T> with _$RequestState<T> {
       NetworkExceptions networkExceptions) = MyAcceptedFastOffersError<T>;
 
 
+       const factory RequestState.showSingleOfferLoading() = ShowSingleOfferLoading<T>;
+
+  const factory RequestState.showSingleOfferSuccess(
+      OfferModel offer) = ShowSingleOfferSuccess<T>;
+
+  const factory RequestState.showSingleOfferError(
+      NetworkExceptions networkExceptions) = ShowSingleOfferError<T>;
+
+
 
         const factory RequestState.myFastRequestsLoading() = MyFastRequestsLoading<T>;
 

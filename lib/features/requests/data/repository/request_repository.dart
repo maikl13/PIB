@@ -70,6 +70,15 @@ class RequestRepository {
     }
   }
 
+    Future<ApiResult<OfferModel>> showSingleOffer(String offerId) async {
+    try {
+      var response = await webServices.showSingleOffer('Bearer $token',offerId);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(NetworkExceptions.getDioException(error));
+    }
+  }
+
   Future<ApiResult<List<OfferModel>>> getAllRequestOffers(int id) async {
     try {
       var response = await webServices.getAllRequestOffers('Bearer $token', id);

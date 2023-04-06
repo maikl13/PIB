@@ -301,6 +301,11 @@ abstract class WebServices {
   Future<DriverModel> getDriverInfo(
       @Header('Authorization') String token, @Path('requestId') String requestId);
 
+              //-----------------------new-----------------------------------------------------------------
+  @GET("offers/{offerId}/show")
+  Future<OfferModel> showSingleOffer(
+      @Header('Authorization') String token, @Path('offerId') String offerId);
+
   //-----------------------new-----------------------------------------------------------------
   @GET("chat/{chatId}/show")
   Future<ShowChatInfoModel> getChatInfo(
@@ -377,7 +382,7 @@ abstract class WebServices {
   );
 
    //-----------------------new-----------------------------------------------------------------
-  @GET("user/deals/fast/delivery")
+  @GET("deals/ongoing")
   Future<List<AcceptedOffersModel>>getAllAcceptedOfferForDriver(
     @Header('Authorization') String token,
     

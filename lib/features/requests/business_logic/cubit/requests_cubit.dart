@@ -33,6 +33,9 @@ class RequestsCubit extends Cubit<RequestState> {
   List<AvailableFastRequestModel> myAvailableFastRequests = [];
 
   List<AcceptedOffersModel> myAcceptedFastOffers = [];
+  List<AcceptedOffersModel> completedOffers= [];
+
+
   deleteImage(int index) {
     imagesFile.removeAt(index);
   }
@@ -148,13 +151,29 @@ class RequestsCubit extends Cubit<RequestState> {
       },
     );
   }
+
+    void showSingleOffer(String offerId) async {
+    emit(const RequestState.showSingleOfferLoading());
+
+    var result = await requestRepository.showSingleOffer(offerId);
+    result.when(
+      success: (OfferModel offer) {
+        emit(RequestState.showSingleOfferSuccess(offer));
+      },
+      failure: (NetworkExceptions networkExceptions) {
+        emit(RequestState.showSingleOfferError(networkExceptions));
+      },
+    );
+  }
   void getAllAcceptedOfferForDriver() async {
     emit(const RequestState.myAcceptedFastOffersLoading());
 
     var result = await requestRepository.getAllAcceptedOfferForDriver();
     result.when(
       success: (List<AcceptedOffersModel> acceptedFastOffers) {
-        myAcceptedFastOffers = acceptedFastOffers;
+        myAcceptedFastOffers = acceptedFastOffers.where((element) => element.status == 'processing').toList();
+        completedOffers = acceptedFastOffers.where((element) => element.status != 'processing').toList();
+        
         emit(RequestState.myAcceptedFastOffersSuccess(acceptedFastOffers));
       },
       failure: (NetworkExceptions networkExceptions) {

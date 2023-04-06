@@ -3,7 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pip/features/chat/presentation/screens/share_location.dart';
 import 'package:pip/features/menu/presentation/screens/terms_conditions_view.dart';
 import 'package:pip/features/pip/presentation/screens/order_description_view.dart';
+import 'package:pip/features/requests/presentation/screens/edit_offer_view.dart';
 import 'package:pip/features/requests/presentation/screens/edit_request.dart';
+import 'package:pip/features/requests/presentation/screens/info_view.dart';
+import 'package:pip/features/requests/presentation/screens/requests_archieve_view.dart';
 import '../../features/auth/business_logic/cubit/auth_cubit.dart';
 import '../../features/auth/presentation/screens/confirm_otb_view.dart';
 import '../../features/chat/presentation/screens/chats_view.dart';
@@ -73,6 +76,8 @@ class Routes {
   static const String forgotPasswordViewRoute = "/forgotPasswordViewRoute";
 
   static const String mainHomeViewRoute = "/mainHomeViewRoute";
+  static const String infoViewRoute = "/infoViewRoute";
+
   static const String jobDetailsViewRoute = "/jobDetailsViewRoute";
 
   static const String notificationViewRoute = "/notificationViewRoute";
@@ -89,6 +94,8 @@ class Routes {
   static const String availableJobDetailsViewRoute =
       "/availableJobDetailsViewRoute";
   static const String giveOffersViewRoute = "/giveOffersViewRoute";
+  static const String editOffersViewRoute = "/editOffersViewRoute";
+
   static const String chatsViewRoute = "/chatsViewRoute";
   static const String chatViewRoute = "/chatViewRoute";
   static const String chatAddOfferViewRoute = "/chatAddOfferViewRoute";
@@ -113,6 +120,7 @@ class Routes {
   static const String confirDriverViewRoute = "/confirDriverViewRoute";
   static const String giveOfferFromChatViewRoute =
       "/giveOfferFromChatViewRoute";
+  static const String requestsArchieveViewRoute = "/requestsArchieveViewRoute";
 
   static const String orderDescriptionViewRoute = "/orderDescriptionViewRoute";
 
@@ -143,7 +151,6 @@ class RouteGenerator {
     globalCubit = getIt<GlobalCubit>();
   }
   static List screens = <Widget>[
-    
     const HomeView(),
     WillPopScope(
         onWillPop: () async {
@@ -250,8 +257,7 @@ class RouteGenerator {
 
       case Routes.mainHomeViewRoute:
         return MaterialPageRoute(
-            builder: (_) => MultiBlocProvider(
-              providers: [
+            builder: (_) => MultiBlocProvider(providers: [
                   BlocProvider.value(
                     value: homeCubit,
                   ),
@@ -261,7 +267,7 @@ class RouteGenerator {
                   BlocProvider.value(
                     value: pipCubit,
                   ),
-                   BlocProvider.value(
+                  BlocProvider.value(
                     value: requestsCubit,
                   ),
                 ], child: const MainHomeView()));
@@ -388,8 +394,29 @@ class RouteGenerator {
                   ],
                   child: GiveOfferView(
                     requestId: requestId,
-                    jobName:jobName ,
+                    jobName: jobName,
                   ),
+                ));
+
+      case Routes.editOffersViewRoute:
+        // final arguments = settings.arguments as Map;
+
+        // final String requestId = arguments['requestId'];
+        // final String jobName = arguments['jobName'];
+        return MaterialPageRoute(
+            builder: (_) => MultiBlocProvider(
+                  providers: [
+                    BlocProvider.value(
+                      value: requestsCubit,
+                    ),
+                    // BlocProvider.value(
+                    //   value: chatCubit,
+                    // ),
+                  ],
+                  child: const EditOfferView(
+                      // requestId: requestId,
+                      // jobName:jobName ,
+                      ),
                 ));
 
       case Routes.chatsViewRoute:
@@ -457,6 +484,18 @@ class RouteGenerator {
           builder: (_) => const WorkWithUsView(),
         );
 
+      case Routes.infoViewRoute:
+        return MaterialPageRoute(
+          builder: (_) => const InfoView(),
+        );
+
+      case Routes.requestsArchieveViewRoute:
+        return MaterialPageRoute(
+          builder: (_) =>  BlocProvider.value(
+         value: requestsCubit,
+            child:const RequestsArchieveView(),
+          ),
+        );
       //  case Routes.giveOfferFromChatViewRoute:
       // final arguments = settings.arguments as Map;
 
@@ -516,7 +555,6 @@ class RouteGenerator {
           ),
         );
 
-
       case Routes.confirDriverViewRoute:
         final arguments = settings.arguments as Map;
         final String fastRequestAppBarTitle = arguments['title'];
@@ -539,7 +577,6 @@ class RouteGenerator {
         final String fastRequestAppBarTitle = arguments['title'];
         final String requestId = arguments['requestId'];
 
-
         return MaterialPageRoute(
             builder: (_) => MultiBlocProvider(
                     providers: [
@@ -551,9 +588,8 @@ class RouteGenerator {
                       ),
                     ],
                     child: AvailableDriversView(
-                      fastRequestAppBarTitle: fastRequestAppBarTitle,
-                        requestId:requestId
-                    )));
+                        fastRequestAppBarTitle: fastRequestAppBarTitle,
+                        requestId: requestId)));
       case Routes.termsAndConditionViewRoute:
         return MaterialPageRoute(
           builder: (_) => const TermsAndConditionView(),

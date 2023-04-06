@@ -1,7 +1,9 @@
 class AcceptedOffersModel {
   int? id;
+  String? description;
   String? status;
   String? userId;
+  String? type;
   String? destinationFromLat;
   String? destinationFromLong;
   String? destinationToLat;
@@ -12,8 +14,10 @@ class AcceptedOffersModel {
 
   AcceptedOffersModel(
       {this.id,
+      this.description,
       this.status,
       this.userId,
+      this.type,
       this.destinationFromLat,
       this.destinationFromLong,
       this.destinationToLat,
@@ -24,8 +28,10 @@ class AcceptedOffersModel {
 
   AcceptedOffersModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
+    description = json['description'];
     status = json['status'];
     userId = json['user_id'];
+    type = json['type'];
     destinationFromLat = json['destination_from_lat'];
     destinationFromLong = json['destination_from_long'];
     destinationToLat = json['destination_to_lat'];
@@ -40,8 +46,10 @@ class AcceptedOffersModel {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
+    data['description'] = description;
     data['status'] = status;
     data['user_id'] = userId;
+    data['type'] = type;
     data['destination_from_lat'] = destinationFromLat;
     data['destination_from_long'] = destinationFromLong;
     data['destination_to_lat'] = destinationToLat;

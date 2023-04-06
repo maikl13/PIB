@@ -30,6 +30,20 @@ class AvailableJobsView extends StatefulWidget {
 }
 
 class _AvailableJobsViewState extends State<AvailableJobsView> {
+  _buildBodyView() {
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          _buildMyAcceptedOffersBloc(),
+          _buildAvailableFastRequestsBloc(),
+          _buildAvailableJobsBloc(),
+          // SizedBox(height: 20.h),
+        ],
+      ),
+    );
+  }
+
   _buildAvailableJobsBloc() {
     return BlocConsumer<RequestsCubit, RequestState>(
       listener: (context, state) {
@@ -116,20 +130,6 @@ class _AvailableJobsViewState extends State<AvailableJobsView> {
     );
   }
 
-  _buildBodyView() {
-    return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _buildMyAcceptedOffersBloc(),
-          _buildAvailableFastRequestsBloc(),
-          _buildAvailableJobsBloc(),
-          // SizedBox(height: 20.h),
-        ],
-      ),
-    );
-  }
-
   _buildMyAcceptedOffersBloc() {
     return BlocConsumer<RequestsCubit, RequestState>(
       listener: (context, state) {},
@@ -137,8 +137,10 @@ class _AvailableJobsViewState extends State<AvailableJobsView> {
       builder: (context, state) {
         return state.maybeWhen(
           myAcceptedFastOffersSuccess: (myAcceptedFastOffers) {
-            return myAcceptedFastOffers.isEmpty
-                ? const SizedBox.shrink()
+            return BlocProvider.of<RequestsCubit>(context)
+                    .myAcceptedFastOffers
+                    .isEmpty
+                ? _buildEmptyAcceptedOffersView()
                 : _buildMyAcceptedOffersView();
           },
           orElse: () => const SizedBox.shrink(),
@@ -147,12 +149,81 @@ class _AvailableJobsViewState extends State<AvailableJobsView> {
     );
   }
 
+  Widget _buildEmptyAcceptedOffersView() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(height: 20.h),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const CustomTitle(title: '${AppStrings.myAcceptedOffers} :'),
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, Routes.requestsArchieveViewRoute);
+              },
+              child: _buildArchieveButton(),
+            ),
+          ],
+        ),
+        SizedBox(height: 20.h),
+        Center(
+          child: Column(
+            children: [
+              Text(
+                'لا يوجد عروض مقبولة',
+                style: getRegularStyle(
+                  color: ColorManager.darkGrey,
+                  fontSize: 16,
+                ),
+              ),
+              // SizedBox(height: 10.h),
+              TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, Routes.infoViewRoute);
+                },
+                child: Text(
+                  'اضغط هنا  للمعلومات',
+                  style: getRegularStyle(
+                    color: ColorManager.darkSeconadry,
+                    fontSize: 16,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+
+  _buildArchieveButton() {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+      decoration: BoxDecoration(
+        color: ColorManager.grey.withOpacity(.3),
+        borderRadius: BorderRadius.circular(20.r),
+      ),
+      child: Text('ارشيف العروض المقبولة',
+          style: getRegularStyle(
+            color: ColorManager.darkSeconadry,
+            fontSize: 14.sp,
+          )),
+    );
+  }
+
   _buildMyAcceptedOffersView() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(height: 20.h),
-        const CustomTitle(title: '${AppStrings.myAcceptedOffers} :'),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const CustomTitle(title: '${AppStrings.myAcceptedOffers} :'),
+            _buildArchieveButton(),
+          ],
+        ),
         SizedBox(height: 20.h),
         _buildMyAcceptedOffersList(
             BlocProvider.of<RequestsCubit>(context).myAcceptedFastOffers),
@@ -167,7 +238,7 @@ class _AvailableJobsViewState extends State<AvailableJobsView> {
       physics: const NeverScrollableScrollPhysics(),
       separatorBuilder: (context, index) => SizedBox(height: 20.h),
       itemBuilder: (context, index) {
-        return myAcceptedFastOffers[index].status == 'processing'
+        return myAcceptedFastOffers[index].status != 'processing'
             ? const SizedBox.shrink()
             : AcceptedRequestItem(
                 requests: myAcceptedFastOffers, onTap: () {}, index: index);
