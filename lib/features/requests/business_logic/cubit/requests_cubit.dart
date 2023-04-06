@@ -224,6 +224,7 @@ class RequestsCubit extends Cubit<RequestState> {
     );
   }
 
+//TODO add cubit function for updte offer as above
   void updateRequest({
     String? id,
     String? categoryId,

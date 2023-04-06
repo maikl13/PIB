@@ -139,6 +139,8 @@ abstract class WebServices {
     @Part(name: 'images[]') List<File> img,
     @Part(name: 'request_id') String? requestId,
   );
+
+  //TODO  add update offer here its same as create offer but with different url
   //-----------------------new-----------------------------------------------------------------
   @POST("offers/create")
   @MultiPart()

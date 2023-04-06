@@ -20,7 +20,7 @@ import '../../../../core/widgets/default_button.dart';
 import '../../../pip/presentation/widgets/request_custom_tetfield.dart';
 
 import '../../../pip/presentation/widgets/upload_photos.dart';
-
+//TODO edit this screen states and butttn to match api update Offer 
 class EditOfferView extends StatefulWidget {
   const EditOfferView({
     super.key,
@@ -139,6 +139,7 @@ class _EditOfferViewState extends State<EditOfferView> {
       text: AppStrings.send,
       onTap: () {
         if (_formKey.currentState!.validate()) {
+          //TODO replace this with update offer api
           // BlocProvider.of<RequestsCubit>(context).giveOffer(
           //   price: _priceController.text,
           //   duration: _timeToCompleteController.text,

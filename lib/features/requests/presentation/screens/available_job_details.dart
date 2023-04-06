@@ -111,6 +111,7 @@ class AvailableJobDetailsView extends StatelessWidget {
           Navigator.pushNamed(
             context,
             Routes.editOffersViewRoute,
+            //TODO send id offer to edit offer screen from here 
           );
         },
       ),
