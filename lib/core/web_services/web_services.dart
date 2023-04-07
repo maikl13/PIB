@@ -139,8 +139,21 @@ abstract class WebServices {
     @Part(name: 'images[]') List<File> img,
     @Part(name: 'request_id') String? requestId,
   );
+  //-----------------------new-----------------------------------------------------------------
+  @POST("offers/update")
+  @MultiPart()
+  Future<UpdateSkill> updateOffer(
+    @Header('Authorization') String token,
+    @Part(name: 'offer_id') String? offerId,
+    @Part(name: 'price') String? price,
 
-  //TODO  add update offer here its same as create offer but with different url
+    
+    @Part(name: 'duration') String? duration,
+    @Part(name: 'description') String? description,
+    // @Part(name: 'images[]') List<File> img,
+    // @Part(name: 'request_id') String? requestId,
+  );
+
   //-----------------------new-----------------------------------------------------------------
   @POST("offers/create")
   @MultiPart()

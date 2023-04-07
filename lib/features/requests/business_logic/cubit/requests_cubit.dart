@@ -224,7 +224,33 @@ class RequestsCubit extends Cubit<RequestState> {
     );
   }
 
-//TODO add cubit function for updte offer as above
+
+
+  void updateOffer({
+    String? offerId,
+    String? price,
+    String? duration,
+    String? description,
+    File? image,
+    String? requestId,
+  }) async {
+    emit(const RequestState.updateOfferLoading());
+
+    // ignore: prefer_typing_uninitialized_variables
+   var result =  await requestRepository.updateOffer(
+     
+       offerId!, price!, duration!, description!);
+
+    result.when(
+      success: (UpdateSkill data) {
+        emit(RequestState.updateOfferSuccess(data));
+        // print(data.toString());
+      },
+      failure: (NetworkExceptions networkExceptions) {
+        emit(RequestState.updateOfferError(networkExceptions));
+      },
+    );
+  }
   void updateRequest({
     String? id,
     String? categoryId,

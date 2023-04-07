@@ -20,13 +20,13 @@ import '../../../../core/widgets/default_button.dart';
 import '../../../pip/presentation/widgets/request_custom_tetfield.dart';
 
 import '../../../pip/presentation/widgets/upload_photos.dart';
-//TODO edit this screen states and butttn to match api update Offer 
 class EditOfferView extends StatefulWidget {
   const EditOfferView({
-    super.key,
+    super.key, required this.offerId,
   });
 
-  // final String requestId , jobName;
+
+  final String offerId;
 
   @override
   State<EditOfferView> createState() => _EditOfferViewState();
@@ -45,40 +45,7 @@ class _EditOfferViewState extends State<EditOfferView> {
   }
 
   _buildBody(BuildContext context) {
-    return BlocListener<RequestsCubit, RequestState>(
-      listener: (context, state) {
-        state.whenOrNull(
-          giveOfferLoading: () {
-            Commons.showLoadingDialog(context);
-          },
-          giveOfferSuccess: (data) {
-            BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
-
-            Navigator.pop(context);
-
-            showSuccessOfferDialog(
-              context,
-              title: '',
-              onOk: () {
-                setState(() {
-                  screenIndex = 2;
-                  // selectedTab = 2;
-                });
-                Navigator.pushNamedAndRemoveUntil(
-                    context, Routes.mainHomeViewRoute, (route) => false);
-              },
-            );
-          },
-          giveOfferError: (error) {
-            Navigator.pop(context);
-            Commons.showToast(
-              color: ColorManager.error,
-              message: NetworkExceptions.getErrorMessage(error),
-            );
-          },
-        );
-      },
-      child: Form(
+    return Form(
         key: _formKey,
         child: Padding(
           padding:
@@ -94,13 +61,37 @@ class _EditOfferViewState extends State<EditOfferView> {
                 _buildDescriptionTextField(),
                 SizedBox(height: 320.h),
                 _buildButton(context),
+                _buildListner(context),
               ],
             ),
           ),
-        ),
-      ),
-    );
+        ));
+      
   }
+                _buildListner( context){
+                  return BlocListener<RequestsCubit,RequestState>(
+                    listener: (context, state) {
+                     state.whenOrNull(
+                      updateOfferLoading: () {
+                        Commons.showLoadingDialog(context);
+                      },
+                      updateOfferSuccess: (data) {
+                        Navigator.pop(context);
+
+                     setState(() {
+                      screenIndex = 1;
+                           Navigator.pushNamedAndRemoveUntil(
+            context, Routes.mainAuthViewRoute, (route) => false);
+                     });
+                      },
+                      updateOfferError: (error) {
+                        Navigator.pop(context);
+                        Commons.showToast(message: NetworkExceptions.getErrorMessage(error));
+                      },
+                     
+                  );},
+                    );
+                }
 
   // _buildListPhotos(List<File> images) {
   //   return BlocListener<RequestsCubit, RequestState>(
@@ -139,13 +130,14 @@ class _EditOfferViewState extends State<EditOfferView> {
       text: AppStrings.send,
       onTap: () {
         if (_formKey.currentState!.validate()) {
-          //TODO replace this with update offer api
-          // BlocProvider.of<RequestsCubit>(context).giveOffer(
-          //   price: _priceController.text,
-          //   duration: _timeToCompleteController.text,
-          //   description: _descriptionController.text,
-          //   requestId: widget.requestId,
-          // );
+      //TODO update offer test here mr maichael
+          BlocProvider.of<RequestsCubit>(context).updateOffer(
+            offerId: widget.offerId,
+            price: _priceController.text,
+            duration: _timeToCompleteController.text,
+            description: _descriptionController.text,
+       
+          );
         } else {
           return Commons.showToast(message: 'من فضلك ادخل البيانات بشكل صحيح');
         }

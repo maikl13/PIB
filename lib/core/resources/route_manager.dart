@@ -399,9 +399,9 @@ class RouteGenerator {
                 ));
 
       case Routes.editOffersViewRoute:
-        // final arguments = settings.arguments as Map;
+        final arguments = settings.arguments as Map;
 
-        // final String requestId = arguments['requestId'];
+        final String offerId = arguments['offerId'];
         // final String jobName = arguments['jobName'];
         return MaterialPageRoute(
             builder: (_) => MultiBlocProvider(
@@ -413,7 +413,8 @@ class RouteGenerator {
                     //   value: chatCubit,
                     // ),
                   ],
-                  child: const EditOfferView(
+                  child:  EditOfferView(
+                      offerId: offerId,
                       // requestId: requestId,
                       // jobName:jobName ,
                       ),

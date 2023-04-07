@@ -154,7 +154,14 @@ class RequestState<T> with _$RequestState<T> {
   const factory RequestState.giveOfferError(NetworkExceptions networkExceptions) =
      GiveOfferError<T>;
 
-//TODO add states for updating offers 
+      const factory RequestState.updateOfferLoading() = UpdateOfferLoading<T>;
+
+  const factory RequestState.updateOfferSuccess(UpdateSkill data) = UpdateOfferSuccess<T>;
+
+  const factory RequestState.updateOfferError(NetworkExceptions networkExceptions) =
+     UpdateOfferError<T>;
+
+
 
            const factory RequestState.acceptOfferLoading() = AcceptOfferLoading<T>;
 

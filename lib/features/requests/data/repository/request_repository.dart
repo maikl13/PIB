@@ -103,7 +103,8 @@ class RequestRepository {
       return ApiResult.failure(NetworkExceptions.getDioException(error));
     }
   }
-  //TODO add also repo for update offer as above 
+
+  
 
   Future<ApiResult<UpdateSkill>> updateRequest(
     String id,
@@ -120,6 +121,22 @@ class RequestRepository {
       return ApiResult.failure(NetworkExceptions.getDioException(error));
     }
   }
+   Future<ApiResult<UpdateSkill>> updateOffer(
+    String offerId,
+   
+    String price,
+    String location,
+    String description,
+  ) async {
+    try {
+      var response = await webServices.updateOffer(
+          'Bearer $token', offerId, price, location, description);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(NetworkExceptions.getDioException(error));
+    }
+  }
+
 
   Future<ApiResult<UpdateSkill>> deleteRequest(
     String id,

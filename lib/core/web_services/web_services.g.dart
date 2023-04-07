@@ -605,6 +605,62 @@ class _WebServices implements WebServices {
   }
 
   @override
+  Future<UpdateSkill> updateOffer(
+    token,
+    offerId,
+    price,
+    duration,
+    description,
+  ) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
+    final _data = FormData();
+    if (offerId != null) {
+      _data.fields.add(MapEntry(
+        'offer_id',
+        offerId,
+      ));
+    }
+    if (price != null) {
+      _data.fields.add(MapEntry(
+        'price',
+        price,
+      ));
+    }
+    if (duration != null) {
+      _data.fields.add(MapEntry(
+        'duration',
+        duration,
+      ));
+    }
+    if (description != null) {
+      _data.fields.add(MapEntry(
+        'description',
+        description,
+      ));
+    }
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<UpdateSkill>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+      contentType: 'multipart/form-data',
+    )
+            .compose(
+              _dio.options,
+              'offers/update',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = UpdateSkill.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
   Future<UpdateSkill> giveOfferWithoutImages(
     token,
     price,
