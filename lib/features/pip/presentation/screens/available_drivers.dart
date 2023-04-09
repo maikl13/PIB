@@ -21,9 +21,12 @@ import '../../../../core/widgets/loading_wwidget.dart';
 import '../widgets/floating_drivers_container.dart';
 
 class AvailableDriversView extends StatefulWidget {
-  const AvailableDriversView({super.key, required this.fastRequestAppBarTitle , required this.requestId});
+  const AvailableDriversView(
+      {super.key,
+      required this.fastRequestAppBarTitle,
+      required this.requestId});
   final String fastRequestAppBarTitle;
-final String requestId;
+  final String requestId;
   @override
   State<AvailableDriversView> createState() => _AvailableDriversViewState();
 }
@@ -112,7 +115,8 @@ class _AvailableDriversViewState extends State<AvailableDriversView>
             return Padding(
               padding: EdgeInsets.only(right: 30.w, left: 30.w, bottom: 30.h),
               child: const Align(
-                  alignment: Alignment.bottomCenter, child: LoadingWidget()),
+                  alignment: Alignment.bottomCenter,
+                  child: Center(child: LoadingWidget())),
             );
           },
         );
@@ -128,7 +132,6 @@ class _AvailableDriversViewState extends State<AvailableDriversView>
         children: [
           LeadingArrow(
             onTap: () {
-
               BlocProvider.of<PipCubit>(context).stopStream();
               Navigator.pop(context);
             },
@@ -208,7 +211,6 @@ class _AvailableDriversViewState extends State<AvailableDriversView>
     BlocProvider.of<PipCubit>(context)
         .startGetDriverInfoStream(widget.requestId);
 
-
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       await setSourceAndDestinationIcons();
       // showPinsOnMap();
@@ -218,7 +220,6 @@ class _AvailableDriversViewState extends State<AvailableDriversView>
     super.initState();
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -226,12 +227,11 @@ class _AvailableDriversViewState extends State<AvailableDriversView>
         extendBody: true,
         // appBar: AppBar(),
         body: WillPopScope(
-            onWillPop: () async{
-
+            onWillPop: () async {
               BlocProvider.of<PipCubit>(context).stopStream();
 
               Navigator.pop(context);
-              return  false;
+              return false;
             },
             child: buildMap()));
   }

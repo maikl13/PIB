@@ -21,7 +21,7 @@ class _PickRequestTypeViewState extends State<PickRequestTypeView> {
   @override
   void initState() {
     super.initState();
-    BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
+    // BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
   }
 
   @override

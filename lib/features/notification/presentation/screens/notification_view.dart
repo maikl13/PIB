@@ -33,7 +33,7 @@ class _NotificationViewState extends State<NotificationView> {
             return const LoadingIndicator();
           },
           success: (data) {
-            BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
+            // BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
             return _buildNotificationViewBody(data);
           },
           error: (networkExceptions) {

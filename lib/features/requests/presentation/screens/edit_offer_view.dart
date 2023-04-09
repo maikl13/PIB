@@ -19,12 +19,11 @@ import '../../../../core/widgets/custom_appbar.dart';
 import '../../../../core/widgets/default_button.dart';
 import '../../../pip/presentation/widgets/request_custom_tetfield.dart';
 
-import '../../../pip/presentation/widgets/upload_photos.dart';
 class EditOfferView extends StatefulWidget {
   const EditOfferView({
-    super.key, required this.offerId,
+    super.key,
+    required this.offerId,
   });
-
 
   final String offerId;
 
@@ -45,53 +44,53 @@ class _EditOfferViewState extends State<EditOfferView> {
   }
 
   _buildBody(BuildContext context) {
-    return Form(
-        key: _formKey,
-        child: Padding(
-          padding:
-              EdgeInsets.only(right: 20.w, left: 20.w, top: 20.h, bottom: 20.h),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                SizedBox(height: 20.h),
-                _buildPriceTextField(),
-                SizedBox(height: 20.h),
-                _buildTimeToCompleteTextField(),
-                SizedBox(height: 20.h),
-                _buildDescriptionTextField(),
-                SizedBox(height: 320.h),
-                _buildButton(context),
-                _buildListner(context),
-              ],
-            ),
-          ),
-        ));
-      
-  }
-                _buildListner( context){
-                  return BlocListener<RequestsCubit,RequestState>(
-                    listener: (context, state) {
-                     state.whenOrNull(
-                      updateOfferLoading: () {
-                        Commons.showLoadingDialog(context);
-                      },
-                      updateOfferSuccess: (data) {
-                        Navigator.pop(context);
+    return BlocListener<RequestsCubit, RequestState>(
+      listener: (context, state) {
+        state.whenOrNull(
+          updateOfferLoading: () {
+            Commons.showLoadingDialog(context);
+          },
+          updateOfferSuccess: (data) {
+            Navigator.pop(context);
 
-                     setState(() {
-                      screenIndex = 1;
-                           Navigator.pushNamedAndRemoveUntil(
-            context, Routes.mainAuthViewRoute, (route) => false);
-                     });
-                      },
-                      updateOfferError: (error) {
-                        Navigator.pop(context);
-                        Commons.showToast(message: NetworkExceptions.getErrorMessage(error));
-                      },
-                     
-                  );},
-                    );
-                }
+            setState(() {
+              screenIndex = 2;
+              Navigator.pushNamedAndRemoveUntil(
+                  context, Routes.mainHomeViewRoute, (route) => false);
+            });
+            Commons.showToast(
+                message: 'تم تعديل العرض بنجاح',
+                color: ColorManager.toastSuccess);
+          },
+          updateOfferError: (error) {
+            Navigator.pop(context);
+            Commons.showToast(
+                message: NetworkExceptions.getErrorMessage(error));
+          },
+        );
+      },
+      child: Form(
+          key: _formKey,
+          child: Padding(
+            padding: EdgeInsets.only(
+                right: 20.w, left: 20.w, top: 20.h, bottom: 20.h),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  SizedBox(height: 20.h),
+                  _buildPriceTextField(),
+                  SizedBox(height: 20.h),
+                  _buildTimeToCompleteTextField(),
+                  SizedBox(height: 20.h),
+                  _buildDescriptionTextField(),
+                  SizedBox(height: 320.h),
+                  _buildButton(context),
+                ],
+              ),
+            ),
+          )),
+    );
+  }
 
   // _buildListPhotos(List<File> images) {
   //   return BlocListener<RequestsCubit, RequestState>(
@@ -130,13 +129,11 @@ class _EditOfferViewState extends State<EditOfferView> {
       text: AppStrings.send,
       onTap: () {
         if (_formKey.currentState!.validate()) {
-      //TODO update offer test here mr maichael
           BlocProvider.of<RequestsCubit>(context).updateOffer(
             offerId: widget.offerId,
             price: _priceController.text,
             duration: _timeToCompleteController.text,
             description: _descriptionController.text,
-       
           );
         } else {
           return Commons.showToast(message: 'من فضلك ادخل البيانات بشكل صحيح');

@@ -55,7 +55,7 @@ class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
             Commons.showLoadingDialog(context);
           },
           createSpecialRequestSuccess: (data) {
-            BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
+            // BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
 
 
 

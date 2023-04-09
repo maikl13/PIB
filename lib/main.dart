@@ -17,16 +17,15 @@ import 'firebase_options.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    systemNavigationBarColor: ColorManager.lightBlack, // Set navigation bar color
+    systemNavigationBarColor:
+        ColorManager.lightBlack, // Set navigation bar color
     statusBarColor: ColorManager.lightBlack, // Set status bar color
   ));
   await CacheHelper.init();
 
-
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
 
   FirebaseMessaging messaging = FirebaseMessaging.instance;
   NotificationSettings settings = await messaging.requestPermission(
@@ -38,15 +37,17 @@ Future<void> main() async {
   if (settings.authorizationStatus == AuthorizationStatus.authorized) {
     print('User granted permission');
 
-
     final fcmToken = await FirebaseMessaging.instance.getToken();
     print(fcmToken);
     fcmTokenFromFirebase = fcmToken!;
   } else {
     print('User declined or has not yet granted permission');
   }
+  // FirebaseMessaging.onMessage.listen((event) {
+  //   print('onMessage');
+  //   print(event);
+  // });
 
-  
   await FirebaseAppCheck.instance.activate(
     webRecaptchaSiteKey: 'recaptcha-v3-site-key',
     // Default provider for Android is the Play Integrity provider. You can use the "AndroidProvider" enum to choose
@@ -65,8 +66,6 @@ Future<void> main() async {
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]).then((_) {
-
-
     Bloc.observer = AppObserver();
     runApp(
       MyApp(),

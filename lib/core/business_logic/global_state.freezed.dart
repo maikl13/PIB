@@ -20,17 +20,16 @@ mixin _$GlobalState<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() getUnreadNotificationCountLoading,
-    required TResult Function(UnreadNotificationCount count)
-        getUnreadNotificationCountSuccess,
+    required TResult Function(int count) getUnreadNotificationCountSuccess,
     required TResult Function(T data) getUnreadNotificationCountError,
     required TResult Function(int index) selectedIndexChanged,
     required TResult Function() getUnreadMessagesCountLoading,
-    required TResult Function(UnreadMessagesCount count)
-        getUnreadMessagesCountSuccess,
+    required TResult Function(bool unreadMessage) getUnreadMessagesCountSuccess,
     required TResult Function(T data) getUnreadMessagesCountError,
-    required TResult Function(int count) newMessage,
-    required TResult Function(int count) readMessage,
+    required TResult Function(bool newMessage) newMessage,
+    required TResult Function(bool unread) readMessage,
     required TResult Function() stopChatStreamState,
+    required TResult Function() stopNotificationStreamState,
     required TResult Function(String address) myLoacationChange,
     required TResult Function(String address) myDestenationChange,
     required TResult Function() updateFcmLoading,
@@ -42,16 +41,16 @@ mixin _$GlobalState<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? getUnreadNotificationCountLoading,
-    TResult? Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult? Function(int count)? getUnreadNotificationCountSuccess,
     TResult? Function(T data)? getUnreadNotificationCountError,
     TResult? Function(int index)? selectedIndexChanged,
     TResult? Function()? getUnreadMessagesCountLoading,
-    TResult? Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult? Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult? Function(T data)? getUnreadMessagesCountError,
-    TResult? Function(int count)? newMessage,
-    TResult? Function(int count)? readMessage,
+    TResult? Function(bool newMessage)? newMessage,
+    TResult? Function(bool unread)? readMessage,
     TResult? Function()? stopChatStreamState,
+    TResult? Function()? stopNotificationStreamState,
     TResult? Function(String address)? myLoacationChange,
     TResult? Function(String address)? myDestenationChange,
     TResult? Function()? updateFcmLoading,
@@ -63,16 +62,16 @@ mixin _$GlobalState<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? getUnreadNotificationCountLoading,
-    TResult Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult Function(int count)? getUnreadNotificationCountSuccess,
     TResult Function(T data)? getUnreadNotificationCountError,
     TResult Function(int index)? selectedIndexChanged,
     TResult Function()? getUnreadMessagesCountLoading,
-    TResult Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult Function(T data)? getUnreadMessagesCountError,
-    TResult Function(int count)? newMessage,
-    TResult Function(int count)? readMessage,
+    TResult Function(bool newMessage)? newMessage,
+    TResult Function(bool unread)? readMessage,
     TResult Function()? stopChatStreamState,
+    TResult Function()? stopNotificationStreamState,
     TResult Function(String address)? myLoacationChange,
     TResult Function(String address)? myDestenationChange,
     TResult Function()? updateFcmLoading,
@@ -101,6 +100,8 @@ mixin _$GlobalState<T> {
     required TResult Function(NewMessage<T> value) newMessage,
     required TResult Function(ReadMessage<T> value) readMessage,
     required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
+    required TResult Function(StopNotificationStreamState<T> value)
+        stopNotificationStreamState,
     required TResult Function(MyLoacationChange<T> value) myLoacationChange,
     required TResult Function(MyDestenationChange<T> value) myDestenationChange,
     required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
@@ -127,6 +128,8 @@ mixin _$GlobalState<T> {
     TResult? Function(NewMessage<T> value)? newMessage,
     TResult? Function(ReadMessage<T> value)? readMessage,
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult? Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
@@ -153,6 +156,8 @@ mixin _$GlobalState<T> {
     TResult Function(NewMessage<T> value)? newMessage,
     TResult Function(ReadMessage<T> value)? readMessage,
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
@@ -219,17 +224,16 @@ class _$Idle<T> implements Idle<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() getUnreadNotificationCountLoading,
-    required TResult Function(UnreadNotificationCount count)
-        getUnreadNotificationCountSuccess,
+    required TResult Function(int count) getUnreadNotificationCountSuccess,
     required TResult Function(T data) getUnreadNotificationCountError,
     required TResult Function(int index) selectedIndexChanged,
     required TResult Function() getUnreadMessagesCountLoading,
-    required TResult Function(UnreadMessagesCount count)
-        getUnreadMessagesCountSuccess,
+    required TResult Function(bool unreadMessage) getUnreadMessagesCountSuccess,
     required TResult Function(T data) getUnreadMessagesCountError,
-    required TResult Function(int count) newMessage,
-    required TResult Function(int count) readMessage,
+    required TResult Function(bool newMessage) newMessage,
+    required TResult Function(bool unread) readMessage,
     required TResult Function() stopChatStreamState,
+    required TResult Function() stopNotificationStreamState,
     required TResult Function(String address) myLoacationChange,
     required TResult Function(String address) myDestenationChange,
     required TResult Function() updateFcmLoading,
@@ -244,16 +248,16 @@ class _$Idle<T> implements Idle<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? getUnreadNotificationCountLoading,
-    TResult? Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult? Function(int count)? getUnreadNotificationCountSuccess,
     TResult? Function(T data)? getUnreadNotificationCountError,
     TResult? Function(int index)? selectedIndexChanged,
     TResult? Function()? getUnreadMessagesCountLoading,
-    TResult? Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult? Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult? Function(T data)? getUnreadMessagesCountError,
-    TResult? Function(int count)? newMessage,
-    TResult? Function(int count)? readMessage,
+    TResult? Function(bool newMessage)? newMessage,
+    TResult? Function(bool unread)? readMessage,
     TResult? Function()? stopChatStreamState,
+    TResult? Function()? stopNotificationStreamState,
     TResult? Function(String address)? myLoacationChange,
     TResult? Function(String address)? myDestenationChange,
     TResult? Function()? updateFcmLoading,
@@ -268,16 +272,16 @@ class _$Idle<T> implements Idle<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? getUnreadNotificationCountLoading,
-    TResult Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult Function(int count)? getUnreadNotificationCountSuccess,
     TResult Function(T data)? getUnreadNotificationCountError,
     TResult Function(int index)? selectedIndexChanged,
     TResult Function()? getUnreadMessagesCountLoading,
-    TResult Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult Function(T data)? getUnreadMessagesCountError,
-    TResult Function(int count)? newMessage,
-    TResult Function(int count)? readMessage,
+    TResult Function(bool newMessage)? newMessage,
+    TResult Function(bool unread)? readMessage,
     TResult Function()? stopChatStreamState,
+    TResult Function()? stopNotificationStreamState,
     TResult Function(String address)? myLoacationChange,
     TResult Function(String address)? myDestenationChange,
     TResult Function()? updateFcmLoading,
@@ -312,6 +316,8 @@ class _$Idle<T> implements Idle<T> {
     required TResult Function(NewMessage<T> value) newMessage,
     required TResult Function(ReadMessage<T> value) readMessage,
     required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
+    required TResult Function(StopNotificationStreamState<T> value)
+        stopNotificationStreamState,
     required TResult Function(MyLoacationChange<T> value) myLoacationChange,
     required TResult Function(MyDestenationChange<T> value) myDestenationChange,
     required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
@@ -341,6 +347,8 @@ class _$Idle<T> implements Idle<T> {
     TResult? Function(NewMessage<T> value)? newMessage,
     TResult? Function(ReadMessage<T> value)? readMessage,
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult? Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
@@ -370,6 +378,8 @@ class _$Idle<T> implements Idle<T> {
     TResult Function(NewMessage<T> value)? newMessage,
     TResult Function(ReadMessage<T> value)? readMessage,
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
@@ -433,17 +443,16 @@ class _$GetUnreadNotificationCountLoading<T>
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() getUnreadNotificationCountLoading,
-    required TResult Function(UnreadNotificationCount count)
-        getUnreadNotificationCountSuccess,
+    required TResult Function(int count) getUnreadNotificationCountSuccess,
     required TResult Function(T data) getUnreadNotificationCountError,
     required TResult Function(int index) selectedIndexChanged,
     required TResult Function() getUnreadMessagesCountLoading,
-    required TResult Function(UnreadMessagesCount count)
-        getUnreadMessagesCountSuccess,
+    required TResult Function(bool unreadMessage) getUnreadMessagesCountSuccess,
     required TResult Function(T data) getUnreadMessagesCountError,
-    required TResult Function(int count) newMessage,
-    required TResult Function(int count) readMessage,
+    required TResult Function(bool newMessage) newMessage,
+    required TResult Function(bool unread) readMessage,
     required TResult Function() stopChatStreamState,
+    required TResult Function() stopNotificationStreamState,
     required TResult Function(String address) myLoacationChange,
     required TResult Function(String address) myDestenationChange,
     required TResult Function() updateFcmLoading,
@@ -458,16 +467,16 @@ class _$GetUnreadNotificationCountLoading<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? getUnreadNotificationCountLoading,
-    TResult? Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult? Function(int count)? getUnreadNotificationCountSuccess,
     TResult? Function(T data)? getUnreadNotificationCountError,
     TResult? Function(int index)? selectedIndexChanged,
     TResult? Function()? getUnreadMessagesCountLoading,
-    TResult? Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult? Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult? Function(T data)? getUnreadMessagesCountError,
-    TResult? Function(int count)? newMessage,
-    TResult? Function(int count)? readMessage,
+    TResult? Function(bool newMessage)? newMessage,
+    TResult? Function(bool unread)? readMessage,
     TResult? Function()? stopChatStreamState,
+    TResult? Function()? stopNotificationStreamState,
     TResult? Function(String address)? myLoacationChange,
     TResult? Function(String address)? myDestenationChange,
     TResult? Function()? updateFcmLoading,
@@ -482,16 +491,16 @@ class _$GetUnreadNotificationCountLoading<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? getUnreadNotificationCountLoading,
-    TResult Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult Function(int count)? getUnreadNotificationCountSuccess,
     TResult Function(T data)? getUnreadNotificationCountError,
     TResult Function(int index)? selectedIndexChanged,
     TResult Function()? getUnreadMessagesCountLoading,
-    TResult Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult Function(T data)? getUnreadMessagesCountError,
-    TResult Function(int count)? newMessage,
-    TResult Function(int count)? readMessage,
+    TResult Function(bool newMessage)? newMessage,
+    TResult Function(bool unread)? readMessage,
     TResult Function()? stopChatStreamState,
+    TResult Function()? stopNotificationStreamState,
     TResult Function(String address)? myLoacationChange,
     TResult Function(String address)? myDestenationChange,
     TResult Function()? updateFcmLoading,
@@ -526,6 +535,8 @@ class _$GetUnreadNotificationCountLoading<T>
     required TResult Function(NewMessage<T> value) newMessage,
     required TResult Function(ReadMessage<T> value) readMessage,
     required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
+    required TResult Function(StopNotificationStreamState<T> value)
+        stopNotificationStreamState,
     required TResult Function(MyLoacationChange<T> value) myLoacationChange,
     required TResult Function(MyDestenationChange<T> value) myDestenationChange,
     required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
@@ -555,6 +566,8 @@ class _$GetUnreadNotificationCountLoading<T>
     TResult? Function(NewMessage<T> value)? newMessage,
     TResult? Function(ReadMessage<T> value)? readMessage,
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult? Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
@@ -584,6 +597,8 @@ class _$GetUnreadNotificationCountLoading<T>
     TResult Function(NewMessage<T> value)? newMessage,
     TResult Function(ReadMessage<T> value)? readMessage,
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
@@ -610,7 +625,7 @@ abstract class _$$GetUnreadNotificationCountSuccessCopyWith<T, $Res> {
           $Res Function(_$GetUnreadNotificationCountSuccess<T>) then) =
       __$$GetUnreadNotificationCountSuccessCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({UnreadNotificationCount count});
+  $Res call({int count});
 }
 
 /// @nodoc
@@ -632,7 +647,7 @@ class __$$GetUnreadNotificationCountSuccessCopyWithImpl<T, $Res>
       null == count
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
-              as UnreadNotificationCount,
+              as int,
     ));
   }
 }
@@ -644,7 +659,7 @@ class _$GetUnreadNotificationCountSuccess<T>
   const _$GetUnreadNotificationCountSuccess(this.count);
 
   @override
-  final UnreadNotificationCount count;
+  final int count;
 
   @override
   String toString() {
@@ -675,17 +690,16 @@ class _$GetUnreadNotificationCountSuccess<T>
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() getUnreadNotificationCountLoading,
-    required TResult Function(UnreadNotificationCount count)
-        getUnreadNotificationCountSuccess,
+    required TResult Function(int count) getUnreadNotificationCountSuccess,
     required TResult Function(T data) getUnreadNotificationCountError,
     required TResult Function(int index) selectedIndexChanged,
     required TResult Function() getUnreadMessagesCountLoading,
-    required TResult Function(UnreadMessagesCount count)
-        getUnreadMessagesCountSuccess,
+    required TResult Function(bool unreadMessage) getUnreadMessagesCountSuccess,
     required TResult Function(T data) getUnreadMessagesCountError,
-    required TResult Function(int count) newMessage,
-    required TResult Function(int count) readMessage,
+    required TResult Function(bool newMessage) newMessage,
+    required TResult Function(bool unread) readMessage,
     required TResult Function() stopChatStreamState,
+    required TResult Function() stopNotificationStreamState,
     required TResult Function(String address) myLoacationChange,
     required TResult Function(String address) myDestenationChange,
     required TResult Function() updateFcmLoading,
@@ -700,16 +714,16 @@ class _$GetUnreadNotificationCountSuccess<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? getUnreadNotificationCountLoading,
-    TResult? Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult? Function(int count)? getUnreadNotificationCountSuccess,
     TResult? Function(T data)? getUnreadNotificationCountError,
     TResult? Function(int index)? selectedIndexChanged,
     TResult? Function()? getUnreadMessagesCountLoading,
-    TResult? Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult? Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult? Function(T data)? getUnreadMessagesCountError,
-    TResult? Function(int count)? newMessage,
-    TResult? Function(int count)? readMessage,
+    TResult? Function(bool newMessage)? newMessage,
+    TResult? Function(bool unread)? readMessage,
     TResult? Function()? stopChatStreamState,
+    TResult? Function()? stopNotificationStreamState,
     TResult? Function(String address)? myLoacationChange,
     TResult? Function(String address)? myDestenationChange,
     TResult? Function()? updateFcmLoading,
@@ -724,16 +738,16 @@ class _$GetUnreadNotificationCountSuccess<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? getUnreadNotificationCountLoading,
-    TResult Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult Function(int count)? getUnreadNotificationCountSuccess,
     TResult Function(T data)? getUnreadNotificationCountError,
     TResult Function(int index)? selectedIndexChanged,
     TResult Function()? getUnreadMessagesCountLoading,
-    TResult Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult Function(T data)? getUnreadMessagesCountError,
-    TResult Function(int count)? newMessage,
-    TResult Function(int count)? readMessage,
+    TResult Function(bool newMessage)? newMessage,
+    TResult Function(bool unread)? readMessage,
     TResult Function()? stopChatStreamState,
+    TResult Function()? stopNotificationStreamState,
     TResult Function(String address)? myLoacationChange,
     TResult Function(String address)? myDestenationChange,
     TResult Function()? updateFcmLoading,
@@ -768,6 +782,8 @@ class _$GetUnreadNotificationCountSuccess<T>
     required TResult Function(NewMessage<T> value) newMessage,
     required TResult Function(ReadMessage<T> value) readMessage,
     required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
+    required TResult Function(StopNotificationStreamState<T> value)
+        stopNotificationStreamState,
     required TResult Function(MyLoacationChange<T> value) myLoacationChange,
     required TResult Function(MyDestenationChange<T> value) myDestenationChange,
     required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
@@ -797,6 +813,8 @@ class _$GetUnreadNotificationCountSuccess<T>
     TResult? Function(NewMessage<T> value)? newMessage,
     TResult? Function(ReadMessage<T> value)? readMessage,
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult? Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
@@ -826,6 +844,8 @@ class _$GetUnreadNotificationCountSuccess<T>
     TResult Function(NewMessage<T> value)? newMessage,
     TResult Function(ReadMessage<T> value)? readMessage,
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
@@ -841,11 +861,10 @@ class _$GetUnreadNotificationCountSuccess<T>
 }
 
 abstract class GetUnreadNotificationCountSuccess<T> implements GlobalState<T> {
-  const factory GetUnreadNotificationCountSuccess(
-          final UnreadNotificationCount count) =
+  const factory GetUnreadNotificationCountSuccess(final int count) =
       _$GetUnreadNotificationCountSuccess<T>;
 
-  UnreadNotificationCount get count;
+  int get count;
   @JsonKey(ignore: true)
   _$$GetUnreadNotificationCountSuccessCopyWith<T,
           _$GetUnreadNotificationCountSuccess<T>>
@@ -925,17 +944,16 @@ class _$GetUnreadNotificationCountError<T>
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() getUnreadNotificationCountLoading,
-    required TResult Function(UnreadNotificationCount count)
-        getUnreadNotificationCountSuccess,
+    required TResult Function(int count) getUnreadNotificationCountSuccess,
     required TResult Function(T data) getUnreadNotificationCountError,
     required TResult Function(int index) selectedIndexChanged,
     required TResult Function() getUnreadMessagesCountLoading,
-    required TResult Function(UnreadMessagesCount count)
-        getUnreadMessagesCountSuccess,
+    required TResult Function(bool unreadMessage) getUnreadMessagesCountSuccess,
     required TResult Function(T data) getUnreadMessagesCountError,
-    required TResult Function(int count) newMessage,
-    required TResult Function(int count) readMessage,
+    required TResult Function(bool newMessage) newMessage,
+    required TResult Function(bool unread) readMessage,
     required TResult Function() stopChatStreamState,
+    required TResult Function() stopNotificationStreamState,
     required TResult Function(String address) myLoacationChange,
     required TResult Function(String address) myDestenationChange,
     required TResult Function() updateFcmLoading,
@@ -950,16 +968,16 @@ class _$GetUnreadNotificationCountError<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? getUnreadNotificationCountLoading,
-    TResult? Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult? Function(int count)? getUnreadNotificationCountSuccess,
     TResult? Function(T data)? getUnreadNotificationCountError,
     TResult? Function(int index)? selectedIndexChanged,
     TResult? Function()? getUnreadMessagesCountLoading,
-    TResult? Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult? Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult? Function(T data)? getUnreadMessagesCountError,
-    TResult? Function(int count)? newMessage,
-    TResult? Function(int count)? readMessage,
+    TResult? Function(bool newMessage)? newMessage,
+    TResult? Function(bool unread)? readMessage,
     TResult? Function()? stopChatStreamState,
+    TResult? Function()? stopNotificationStreamState,
     TResult? Function(String address)? myLoacationChange,
     TResult? Function(String address)? myDestenationChange,
     TResult? Function()? updateFcmLoading,
@@ -974,16 +992,16 @@ class _$GetUnreadNotificationCountError<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? getUnreadNotificationCountLoading,
-    TResult Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult Function(int count)? getUnreadNotificationCountSuccess,
     TResult Function(T data)? getUnreadNotificationCountError,
     TResult Function(int index)? selectedIndexChanged,
     TResult Function()? getUnreadMessagesCountLoading,
-    TResult Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult Function(T data)? getUnreadMessagesCountError,
-    TResult Function(int count)? newMessage,
-    TResult Function(int count)? readMessage,
+    TResult Function(bool newMessage)? newMessage,
+    TResult Function(bool unread)? readMessage,
     TResult Function()? stopChatStreamState,
+    TResult Function()? stopNotificationStreamState,
     TResult Function(String address)? myLoacationChange,
     TResult Function(String address)? myDestenationChange,
     TResult Function()? updateFcmLoading,
@@ -1018,6 +1036,8 @@ class _$GetUnreadNotificationCountError<T>
     required TResult Function(NewMessage<T> value) newMessage,
     required TResult Function(ReadMessage<T> value) readMessage,
     required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
+    required TResult Function(StopNotificationStreamState<T> value)
+        stopNotificationStreamState,
     required TResult Function(MyLoacationChange<T> value) myLoacationChange,
     required TResult Function(MyDestenationChange<T> value) myDestenationChange,
     required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
@@ -1047,6 +1067,8 @@ class _$GetUnreadNotificationCountError<T>
     TResult? Function(NewMessage<T> value)? newMessage,
     TResult? Function(ReadMessage<T> value)? readMessage,
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult? Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
@@ -1076,6 +1098,8 @@ class _$GetUnreadNotificationCountError<T>
     TResult Function(NewMessage<T> value)? newMessage,
     TResult Function(ReadMessage<T> value)? readMessage,
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
@@ -1168,17 +1192,16 @@ class _$SelectedIndexChanged<T> implements SelectedIndexChanged<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() getUnreadNotificationCountLoading,
-    required TResult Function(UnreadNotificationCount count)
-        getUnreadNotificationCountSuccess,
+    required TResult Function(int count) getUnreadNotificationCountSuccess,
     required TResult Function(T data) getUnreadNotificationCountError,
     required TResult Function(int index) selectedIndexChanged,
     required TResult Function() getUnreadMessagesCountLoading,
-    required TResult Function(UnreadMessagesCount count)
-        getUnreadMessagesCountSuccess,
+    required TResult Function(bool unreadMessage) getUnreadMessagesCountSuccess,
     required TResult Function(T data) getUnreadMessagesCountError,
-    required TResult Function(int count) newMessage,
-    required TResult Function(int count) readMessage,
+    required TResult Function(bool newMessage) newMessage,
+    required TResult Function(bool unread) readMessage,
     required TResult Function() stopChatStreamState,
+    required TResult Function() stopNotificationStreamState,
     required TResult Function(String address) myLoacationChange,
     required TResult Function(String address) myDestenationChange,
     required TResult Function() updateFcmLoading,
@@ -1193,16 +1216,16 @@ class _$SelectedIndexChanged<T> implements SelectedIndexChanged<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? getUnreadNotificationCountLoading,
-    TResult? Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult? Function(int count)? getUnreadNotificationCountSuccess,
     TResult? Function(T data)? getUnreadNotificationCountError,
     TResult? Function(int index)? selectedIndexChanged,
     TResult? Function()? getUnreadMessagesCountLoading,
-    TResult? Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult? Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult? Function(T data)? getUnreadMessagesCountError,
-    TResult? Function(int count)? newMessage,
-    TResult? Function(int count)? readMessage,
+    TResult? Function(bool newMessage)? newMessage,
+    TResult? Function(bool unread)? readMessage,
     TResult? Function()? stopChatStreamState,
+    TResult? Function()? stopNotificationStreamState,
     TResult? Function(String address)? myLoacationChange,
     TResult? Function(String address)? myDestenationChange,
     TResult? Function()? updateFcmLoading,
@@ -1217,16 +1240,16 @@ class _$SelectedIndexChanged<T> implements SelectedIndexChanged<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? getUnreadNotificationCountLoading,
-    TResult Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult Function(int count)? getUnreadNotificationCountSuccess,
     TResult Function(T data)? getUnreadNotificationCountError,
     TResult Function(int index)? selectedIndexChanged,
     TResult Function()? getUnreadMessagesCountLoading,
-    TResult Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult Function(T data)? getUnreadMessagesCountError,
-    TResult Function(int count)? newMessage,
-    TResult Function(int count)? readMessage,
+    TResult Function(bool newMessage)? newMessage,
+    TResult Function(bool unread)? readMessage,
     TResult Function()? stopChatStreamState,
+    TResult Function()? stopNotificationStreamState,
     TResult Function(String address)? myLoacationChange,
     TResult Function(String address)? myDestenationChange,
     TResult Function()? updateFcmLoading,
@@ -1261,6 +1284,8 @@ class _$SelectedIndexChanged<T> implements SelectedIndexChanged<T> {
     required TResult Function(NewMessage<T> value) newMessage,
     required TResult Function(ReadMessage<T> value) readMessage,
     required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
+    required TResult Function(StopNotificationStreamState<T> value)
+        stopNotificationStreamState,
     required TResult Function(MyLoacationChange<T> value) myLoacationChange,
     required TResult Function(MyDestenationChange<T> value) myDestenationChange,
     required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
@@ -1290,6 +1315,8 @@ class _$SelectedIndexChanged<T> implements SelectedIndexChanged<T> {
     TResult? Function(NewMessage<T> value)? newMessage,
     TResult? Function(ReadMessage<T> value)? readMessage,
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult? Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
@@ -1319,6 +1346,8 @@ class _$SelectedIndexChanged<T> implements SelectedIndexChanged<T> {
     TResult Function(NewMessage<T> value)? newMessage,
     TResult Function(ReadMessage<T> value)? readMessage,
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
@@ -1388,17 +1417,16 @@ class _$GetUnreadMessagesCountLoading<T>
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() getUnreadNotificationCountLoading,
-    required TResult Function(UnreadNotificationCount count)
-        getUnreadNotificationCountSuccess,
+    required TResult Function(int count) getUnreadNotificationCountSuccess,
     required TResult Function(T data) getUnreadNotificationCountError,
     required TResult Function(int index) selectedIndexChanged,
     required TResult Function() getUnreadMessagesCountLoading,
-    required TResult Function(UnreadMessagesCount count)
-        getUnreadMessagesCountSuccess,
+    required TResult Function(bool unreadMessage) getUnreadMessagesCountSuccess,
     required TResult Function(T data) getUnreadMessagesCountError,
-    required TResult Function(int count) newMessage,
-    required TResult Function(int count) readMessage,
+    required TResult Function(bool newMessage) newMessage,
+    required TResult Function(bool unread) readMessage,
     required TResult Function() stopChatStreamState,
+    required TResult Function() stopNotificationStreamState,
     required TResult Function(String address) myLoacationChange,
     required TResult Function(String address) myDestenationChange,
     required TResult Function() updateFcmLoading,
@@ -1413,16 +1441,16 @@ class _$GetUnreadMessagesCountLoading<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? getUnreadNotificationCountLoading,
-    TResult? Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult? Function(int count)? getUnreadNotificationCountSuccess,
     TResult? Function(T data)? getUnreadNotificationCountError,
     TResult? Function(int index)? selectedIndexChanged,
     TResult? Function()? getUnreadMessagesCountLoading,
-    TResult? Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult? Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult? Function(T data)? getUnreadMessagesCountError,
-    TResult? Function(int count)? newMessage,
-    TResult? Function(int count)? readMessage,
+    TResult? Function(bool newMessage)? newMessage,
+    TResult? Function(bool unread)? readMessage,
     TResult? Function()? stopChatStreamState,
+    TResult? Function()? stopNotificationStreamState,
     TResult? Function(String address)? myLoacationChange,
     TResult? Function(String address)? myDestenationChange,
     TResult? Function()? updateFcmLoading,
@@ -1437,16 +1465,16 @@ class _$GetUnreadMessagesCountLoading<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? getUnreadNotificationCountLoading,
-    TResult Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult Function(int count)? getUnreadNotificationCountSuccess,
     TResult Function(T data)? getUnreadNotificationCountError,
     TResult Function(int index)? selectedIndexChanged,
     TResult Function()? getUnreadMessagesCountLoading,
-    TResult Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult Function(T data)? getUnreadMessagesCountError,
-    TResult Function(int count)? newMessage,
-    TResult Function(int count)? readMessage,
+    TResult Function(bool newMessage)? newMessage,
+    TResult Function(bool unread)? readMessage,
     TResult Function()? stopChatStreamState,
+    TResult Function()? stopNotificationStreamState,
     TResult Function(String address)? myLoacationChange,
     TResult Function(String address)? myDestenationChange,
     TResult Function()? updateFcmLoading,
@@ -1481,6 +1509,8 @@ class _$GetUnreadMessagesCountLoading<T>
     required TResult Function(NewMessage<T> value) newMessage,
     required TResult Function(ReadMessage<T> value) readMessage,
     required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
+    required TResult Function(StopNotificationStreamState<T> value)
+        stopNotificationStreamState,
     required TResult Function(MyLoacationChange<T> value) myLoacationChange,
     required TResult Function(MyDestenationChange<T> value) myDestenationChange,
     required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
@@ -1510,6 +1540,8 @@ class _$GetUnreadMessagesCountLoading<T>
     TResult? Function(NewMessage<T> value)? newMessage,
     TResult? Function(ReadMessage<T> value)? readMessage,
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult? Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
@@ -1539,6 +1571,8 @@ class _$GetUnreadMessagesCountLoading<T>
     TResult Function(NewMessage<T> value)? newMessage,
     TResult Function(ReadMessage<T> value)? readMessage,
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
@@ -1565,7 +1599,7 @@ abstract class _$$GetUnreadMessagesCountSuccessCopyWith<T, $Res> {
           $Res Function(_$GetUnreadMessagesCountSuccess<T>) then) =
       __$$GetUnreadMessagesCountSuccessCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({UnreadMessagesCount count});
+  $Res call({bool unreadMessage});
 }
 
 /// @nodoc
@@ -1581,13 +1615,13 @@ class __$$GetUnreadMessagesCountSuccessCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? count = null,
+    Object? unreadMessage = null,
   }) {
     return _then(_$GetUnreadMessagesCountSuccess<T>(
-      null == count
-          ? _value.count
-          : count // ignore: cast_nullable_to_non_nullable
-              as UnreadMessagesCount,
+      null == unreadMessage
+          ? _value.unreadMessage
+          : unreadMessage // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -1596,14 +1630,14 @@ class __$$GetUnreadMessagesCountSuccessCopyWithImpl<T, $Res>
 
 class _$GetUnreadMessagesCountSuccess<T>
     implements GetUnreadMessagesCountSuccess<T> {
-  const _$GetUnreadMessagesCountSuccess(this.count);
+  const _$GetUnreadMessagesCountSuccess(this.unreadMessage);
 
   @override
-  final UnreadMessagesCount count;
+  final bool unreadMessage;
 
   @override
   String toString() {
-    return 'GlobalState<$T>.getUnreadMessagesCountSuccess(count: $count)';
+    return 'GlobalState<$T>.getUnreadMessagesCountSuccess(unreadMessage: $unreadMessage)';
   }
 
   @override
@@ -1611,11 +1645,12 @@ class _$GetUnreadMessagesCountSuccess<T>
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetUnreadMessagesCountSuccess<T> &&
-            (identical(other.count, count) || other.count == count));
+            (identical(other.unreadMessage, unreadMessage) ||
+                other.unreadMessage == unreadMessage));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, count);
+  int get hashCode => Object.hash(runtimeType, unreadMessage);
 
   @JsonKey(ignore: true)
   @override
@@ -1630,24 +1665,23 @@ class _$GetUnreadMessagesCountSuccess<T>
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() getUnreadNotificationCountLoading,
-    required TResult Function(UnreadNotificationCount count)
-        getUnreadNotificationCountSuccess,
+    required TResult Function(int count) getUnreadNotificationCountSuccess,
     required TResult Function(T data) getUnreadNotificationCountError,
     required TResult Function(int index) selectedIndexChanged,
     required TResult Function() getUnreadMessagesCountLoading,
-    required TResult Function(UnreadMessagesCount count)
-        getUnreadMessagesCountSuccess,
+    required TResult Function(bool unreadMessage) getUnreadMessagesCountSuccess,
     required TResult Function(T data) getUnreadMessagesCountError,
-    required TResult Function(int count) newMessage,
-    required TResult Function(int count) readMessage,
+    required TResult Function(bool newMessage) newMessage,
+    required TResult Function(bool unread) readMessage,
     required TResult Function() stopChatStreamState,
+    required TResult Function() stopNotificationStreamState,
     required TResult Function(String address) myLoacationChange,
     required TResult Function(String address) myDestenationChange,
     required TResult Function() updateFcmLoading,
     required TResult Function(UpdateSkill data) updateFcmSuccess,
     required TResult Function(T data) updateFcmError,
   }) {
-    return getUnreadMessagesCountSuccess(count);
+    return getUnreadMessagesCountSuccess(unreadMessage);
   }
 
   @override
@@ -1655,23 +1689,23 @@ class _$GetUnreadMessagesCountSuccess<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? getUnreadNotificationCountLoading,
-    TResult? Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult? Function(int count)? getUnreadNotificationCountSuccess,
     TResult? Function(T data)? getUnreadNotificationCountError,
     TResult? Function(int index)? selectedIndexChanged,
     TResult? Function()? getUnreadMessagesCountLoading,
-    TResult? Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult? Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult? Function(T data)? getUnreadMessagesCountError,
-    TResult? Function(int count)? newMessage,
-    TResult? Function(int count)? readMessage,
+    TResult? Function(bool newMessage)? newMessage,
+    TResult? Function(bool unread)? readMessage,
     TResult? Function()? stopChatStreamState,
+    TResult? Function()? stopNotificationStreamState,
     TResult? Function(String address)? myLoacationChange,
     TResult? Function(String address)? myDestenationChange,
     TResult? Function()? updateFcmLoading,
     TResult? Function(UpdateSkill data)? updateFcmSuccess,
     TResult? Function(T data)? updateFcmError,
   }) {
-    return getUnreadMessagesCountSuccess?.call(count);
+    return getUnreadMessagesCountSuccess?.call(unreadMessage);
   }
 
   @override
@@ -1679,16 +1713,16 @@ class _$GetUnreadMessagesCountSuccess<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? getUnreadNotificationCountLoading,
-    TResult Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult Function(int count)? getUnreadNotificationCountSuccess,
     TResult Function(T data)? getUnreadNotificationCountError,
     TResult Function(int index)? selectedIndexChanged,
     TResult Function()? getUnreadMessagesCountLoading,
-    TResult Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult Function(T data)? getUnreadMessagesCountError,
-    TResult Function(int count)? newMessage,
-    TResult Function(int count)? readMessage,
+    TResult Function(bool newMessage)? newMessage,
+    TResult Function(bool unread)? readMessage,
     TResult Function()? stopChatStreamState,
+    TResult Function()? stopNotificationStreamState,
     TResult Function(String address)? myLoacationChange,
     TResult Function(String address)? myDestenationChange,
     TResult Function()? updateFcmLoading,
@@ -1697,7 +1731,7 @@ class _$GetUnreadMessagesCountSuccess<T>
     required TResult orElse(),
   }) {
     if (getUnreadMessagesCountSuccess != null) {
-      return getUnreadMessagesCountSuccess(count);
+      return getUnreadMessagesCountSuccess(unreadMessage);
     }
     return orElse();
   }
@@ -1723,6 +1757,8 @@ class _$GetUnreadMessagesCountSuccess<T>
     required TResult Function(NewMessage<T> value) newMessage,
     required TResult Function(ReadMessage<T> value) readMessage,
     required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
+    required TResult Function(StopNotificationStreamState<T> value)
+        stopNotificationStreamState,
     required TResult Function(MyLoacationChange<T> value) myLoacationChange,
     required TResult Function(MyDestenationChange<T> value) myDestenationChange,
     required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
@@ -1752,6 +1788,8 @@ class _$GetUnreadMessagesCountSuccess<T>
     TResult? Function(NewMessage<T> value)? newMessage,
     TResult? Function(ReadMessage<T> value)? readMessage,
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult? Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
@@ -1781,6 +1819,8 @@ class _$GetUnreadMessagesCountSuccess<T>
     TResult Function(NewMessage<T> value)? newMessage,
     TResult Function(ReadMessage<T> value)? readMessage,
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
@@ -1796,10 +1836,10 @@ class _$GetUnreadMessagesCountSuccess<T>
 }
 
 abstract class GetUnreadMessagesCountSuccess<T> implements GlobalState<T> {
-  const factory GetUnreadMessagesCountSuccess(final UnreadMessagesCount count) =
+  const factory GetUnreadMessagesCountSuccess(final bool unreadMessage) =
       _$GetUnreadMessagesCountSuccess<T>;
 
-  UnreadMessagesCount get count;
+  bool get unreadMessage;
   @JsonKey(ignore: true)
   _$$GetUnreadMessagesCountSuccessCopyWith<T,
           _$GetUnreadMessagesCountSuccess<T>>
@@ -1877,17 +1917,16 @@ class _$GetUnreadMessagesCountError<T>
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() getUnreadNotificationCountLoading,
-    required TResult Function(UnreadNotificationCount count)
-        getUnreadNotificationCountSuccess,
+    required TResult Function(int count) getUnreadNotificationCountSuccess,
     required TResult Function(T data) getUnreadNotificationCountError,
     required TResult Function(int index) selectedIndexChanged,
     required TResult Function() getUnreadMessagesCountLoading,
-    required TResult Function(UnreadMessagesCount count)
-        getUnreadMessagesCountSuccess,
+    required TResult Function(bool unreadMessage) getUnreadMessagesCountSuccess,
     required TResult Function(T data) getUnreadMessagesCountError,
-    required TResult Function(int count) newMessage,
-    required TResult Function(int count) readMessage,
+    required TResult Function(bool newMessage) newMessage,
+    required TResult Function(bool unread) readMessage,
     required TResult Function() stopChatStreamState,
+    required TResult Function() stopNotificationStreamState,
     required TResult Function(String address) myLoacationChange,
     required TResult Function(String address) myDestenationChange,
     required TResult Function() updateFcmLoading,
@@ -1902,16 +1941,16 @@ class _$GetUnreadMessagesCountError<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? getUnreadNotificationCountLoading,
-    TResult? Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult? Function(int count)? getUnreadNotificationCountSuccess,
     TResult? Function(T data)? getUnreadNotificationCountError,
     TResult? Function(int index)? selectedIndexChanged,
     TResult? Function()? getUnreadMessagesCountLoading,
-    TResult? Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult? Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult? Function(T data)? getUnreadMessagesCountError,
-    TResult? Function(int count)? newMessage,
-    TResult? Function(int count)? readMessage,
+    TResult? Function(bool newMessage)? newMessage,
+    TResult? Function(bool unread)? readMessage,
     TResult? Function()? stopChatStreamState,
+    TResult? Function()? stopNotificationStreamState,
     TResult? Function(String address)? myLoacationChange,
     TResult? Function(String address)? myDestenationChange,
     TResult? Function()? updateFcmLoading,
@@ -1926,16 +1965,16 @@ class _$GetUnreadMessagesCountError<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? getUnreadNotificationCountLoading,
-    TResult Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult Function(int count)? getUnreadNotificationCountSuccess,
     TResult Function(T data)? getUnreadNotificationCountError,
     TResult Function(int index)? selectedIndexChanged,
     TResult Function()? getUnreadMessagesCountLoading,
-    TResult Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult Function(T data)? getUnreadMessagesCountError,
-    TResult Function(int count)? newMessage,
-    TResult Function(int count)? readMessage,
+    TResult Function(bool newMessage)? newMessage,
+    TResult Function(bool unread)? readMessage,
     TResult Function()? stopChatStreamState,
+    TResult Function()? stopNotificationStreamState,
     TResult Function(String address)? myLoacationChange,
     TResult Function(String address)? myDestenationChange,
     TResult Function()? updateFcmLoading,
@@ -1970,6 +2009,8 @@ class _$GetUnreadMessagesCountError<T>
     required TResult Function(NewMessage<T> value) newMessage,
     required TResult Function(ReadMessage<T> value) readMessage,
     required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
+    required TResult Function(StopNotificationStreamState<T> value)
+        stopNotificationStreamState,
     required TResult Function(MyLoacationChange<T> value) myLoacationChange,
     required TResult Function(MyDestenationChange<T> value) myDestenationChange,
     required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
@@ -1999,6 +2040,8 @@ class _$GetUnreadMessagesCountError<T>
     TResult? Function(NewMessage<T> value)? newMessage,
     TResult? Function(ReadMessage<T> value)? readMessage,
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult? Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
@@ -2028,6 +2071,8 @@ class _$GetUnreadMessagesCountError<T>
     TResult Function(NewMessage<T> value)? newMessage,
     TResult Function(ReadMessage<T> value)? readMessage,
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
@@ -2058,7 +2103,7 @@ abstract class _$$NewMessageCopyWith<T, $Res> {
           _$NewMessage<T> value, $Res Function(_$NewMessage<T>) then) =
       __$$NewMessageCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({int count});
+  $Res call({bool newMessage});
 }
 
 /// @nodoc
@@ -2072,13 +2117,13 @@ class __$$NewMessageCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? count = null,
+    Object? newMessage = null,
   }) {
     return _then(_$NewMessage<T>(
-      null == count
-          ? _value.count
-          : count // ignore: cast_nullable_to_non_nullable
-              as int,
+      null == newMessage
+          ? _value.newMessage
+          : newMessage // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -2086,14 +2131,14 @@ class __$$NewMessageCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$NewMessage<T> implements NewMessage<T> {
-  const _$NewMessage(this.count);
+  const _$NewMessage(this.newMessage);
 
   @override
-  final int count;
+  final bool newMessage;
 
   @override
   String toString() {
-    return 'GlobalState<$T>.newMessage(count: $count)';
+    return 'GlobalState<$T>.newMessage(newMessage: $newMessage)';
   }
 
   @override
@@ -2101,11 +2146,12 @@ class _$NewMessage<T> implements NewMessage<T> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NewMessage<T> &&
-            (identical(other.count, count) || other.count == count));
+            (identical(other.newMessage, newMessage) ||
+                other.newMessage == newMessage));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, count);
+  int get hashCode => Object.hash(runtimeType, newMessage);
 
   @JsonKey(ignore: true)
   @override
@@ -2118,24 +2164,23 @@ class _$NewMessage<T> implements NewMessage<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() getUnreadNotificationCountLoading,
-    required TResult Function(UnreadNotificationCount count)
-        getUnreadNotificationCountSuccess,
+    required TResult Function(int count) getUnreadNotificationCountSuccess,
     required TResult Function(T data) getUnreadNotificationCountError,
     required TResult Function(int index) selectedIndexChanged,
     required TResult Function() getUnreadMessagesCountLoading,
-    required TResult Function(UnreadMessagesCount count)
-        getUnreadMessagesCountSuccess,
+    required TResult Function(bool unreadMessage) getUnreadMessagesCountSuccess,
     required TResult Function(T data) getUnreadMessagesCountError,
-    required TResult Function(int count) newMessage,
-    required TResult Function(int count) readMessage,
+    required TResult Function(bool newMessage) newMessage,
+    required TResult Function(bool unread) readMessage,
     required TResult Function() stopChatStreamState,
+    required TResult Function() stopNotificationStreamState,
     required TResult Function(String address) myLoacationChange,
     required TResult Function(String address) myDestenationChange,
     required TResult Function() updateFcmLoading,
     required TResult Function(UpdateSkill data) updateFcmSuccess,
     required TResult Function(T data) updateFcmError,
   }) {
-    return newMessage(count);
+    return newMessage(this.newMessage);
   }
 
   @override
@@ -2143,23 +2188,23 @@ class _$NewMessage<T> implements NewMessage<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? getUnreadNotificationCountLoading,
-    TResult? Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult? Function(int count)? getUnreadNotificationCountSuccess,
     TResult? Function(T data)? getUnreadNotificationCountError,
     TResult? Function(int index)? selectedIndexChanged,
     TResult? Function()? getUnreadMessagesCountLoading,
-    TResult? Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult? Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult? Function(T data)? getUnreadMessagesCountError,
-    TResult? Function(int count)? newMessage,
-    TResult? Function(int count)? readMessage,
+    TResult? Function(bool newMessage)? newMessage,
+    TResult? Function(bool unread)? readMessage,
     TResult? Function()? stopChatStreamState,
+    TResult? Function()? stopNotificationStreamState,
     TResult? Function(String address)? myLoacationChange,
     TResult? Function(String address)? myDestenationChange,
     TResult? Function()? updateFcmLoading,
     TResult? Function(UpdateSkill data)? updateFcmSuccess,
     TResult? Function(T data)? updateFcmError,
   }) {
-    return newMessage?.call(count);
+    return newMessage?.call(this.newMessage);
   }
 
   @override
@@ -2167,16 +2212,16 @@ class _$NewMessage<T> implements NewMessage<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? getUnreadNotificationCountLoading,
-    TResult Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult Function(int count)? getUnreadNotificationCountSuccess,
     TResult Function(T data)? getUnreadNotificationCountError,
     TResult Function(int index)? selectedIndexChanged,
     TResult Function()? getUnreadMessagesCountLoading,
-    TResult Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult Function(T data)? getUnreadMessagesCountError,
-    TResult Function(int count)? newMessage,
-    TResult Function(int count)? readMessage,
+    TResult Function(bool newMessage)? newMessage,
+    TResult Function(bool unread)? readMessage,
     TResult Function()? stopChatStreamState,
+    TResult Function()? stopNotificationStreamState,
     TResult Function(String address)? myLoacationChange,
     TResult Function(String address)? myDestenationChange,
     TResult Function()? updateFcmLoading,
@@ -2185,7 +2230,7 @@ class _$NewMessage<T> implements NewMessage<T> {
     required TResult orElse(),
   }) {
     if (newMessage != null) {
-      return newMessage(count);
+      return newMessage(this.newMessage);
     }
     return orElse();
   }
@@ -2211,6 +2256,8 @@ class _$NewMessage<T> implements NewMessage<T> {
     required TResult Function(NewMessage<T> value) newMessage,
     required TResult Function(ReadMessage<T> value) readMessage,
     required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
+    required TResult Function(StopNotificationStreamState<T> value)
+        stopNotificationStreamState,
     required TResult Function(MyLoacationChange<T> value) myLoacationChange,
     required TResult Function(MyDestenationChange<T> value) myDestenationChange,
     required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
@@ -2240,6 +2287,8 @@ class _$NewMessage<T> implements NewMessage<T> {
     TResult? Function(NewMessage<T> value)? newMessage,
     TResult? Function(ReadMessage<T> value)? readMessage,
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult? Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
@@ -2269,6 +2318,8 @@ class _$NewMessage<T> implements NewMessage<T> {
     TResult Function(NewMessage<T> value)? newMessage,
     TResult Function(ReadMessage<T> value)? readMessage,
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
@@ -2284,9 +2335,9 @@ class _$NewMessage<T> implements NewMessage<T> {
 }
 
 abstract class NewMessage<T> implements GlobalState<T> {
-  const factory NewMessage(final int count) = _$NewMessage<T>;
+  const factory NewMessage(final bool newMessage) = _$NewMessage<T>;
 
-  int get count;
+  bool get newMessage;
   @JsonKey(ignore: true)
   _$$NewMessageCopyWith<T, _$NewMessage<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2298,7 +2349,7 @@ abstract class _$$ReadMessageCopyWith<T, $Res> {
           _$ReadMessage<T> value, $Res Function(_$ReadMessage<T>) then) =
       __$$ReadMessageCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({int count});
+  $Res call({bool unread});
 }
 
 /// @nodoc
@@ -2312,13 +2363,13 @@ class __$$ReadMessageCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? count = null,
+    Object? unread = null,
   }) {
     return _then(_$ReadMessage<T>(
-      null == count
-          ? _value.count
-          : count // ignore: cast_nullable_to_non_nullable
-              as int,
+      null == unread
+          ? _value.unread
+          : unread // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -2326,14 +2377,14 @@ class __$$ReadMessageCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$ReadMessage<T> implements ReadMessage<T> {
-  const _$ReadMessage(this.count);
+  const _$ReadMessage(this.unread);
 
   @override
-  final int count;
+  final bool unread;
 
   @override
   String toString() {
-    return 'GlobalState<$T>.readMessage(count: $count)';
+    return 'GlobalState<$T>.readMessage(unread: $unread)';
   }
 
   @override
@@ -2341,11 +2392,11 @@ class _$ReadMessage<T> implements ReadMessage<T> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ReadMessage<T> &&
-            (identical(other.count, count) || other.count == count));
+            (identical(other.unread, unread) || other.unread == unread));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, count);
+  int get hashCode => Object.hash(runtimeType, unread);
 
   @JsonKey(ignore: true)
   @override
@@ -2358,24 +2409,23 @@ class _$ReadMessage<T> implements ReadMessage<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() getUnreadNotificationCountLoading,
-    required TResult Function(UnreadNotificationCount count)
-        getUnreadNotificationCountSuccess,
+    required TResult Function(int count) getUnreadNotificationCountSuccess,
     required TResult Function(T data) getUnreadNotificationCountError,
     required TResult Function(int index) selectedIndexChanged,
     required TResult Function() getUnreadMessagesCountLoading,
-    required TResult Function(UnreadMessagesCount count)
-        getUnreadMessagesCountSuccess,
+    required TResult Function(bool unreadMessage) getUnreadMessagesCountSuccess,
     required TResult Function(T data) getUnreadMessagesCountError,
-    required TResult Function(int count) newMessage,
-    required TResult Function(int count) readMessage,
+    required TResult Function(bool newMessage) newMessage,
+    required TResult Function(bool unread) readMessage,
     required TResult Function() stopChatStreamState,
+    required TResult Function() stopNotificationStreamState,
     required TResult Function(String address) myLoacationChange,
     required TResult Function(String address) myDestenationChange,
     required TResult Function() updateFcmLoading,
     required TResult Function(UpdateSkill data) updateFcmSuccess,
     required TResult Function(T data) updateFcmError,
   }) {
-    return readMessage(count);
+    return readMessage(unread);
   }
 
   @override
@@ -2383,23 +2433,23 @@ class _$ReadMessage<T> implements ReadMessage<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? getUnreadNotificationCountLoading,
-    TResult? Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult? Function(int count)? getUnreadNotificationCountSuccess,
     TResult? Function(T data)? getUnreadNotificationCountError,
     TResult? Function(int index)? selectedIndexChanged,
     TResult? Function()? getUnreadMessagesCountLoading,
-    TResult? Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult? Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult? Function(T data)? getUnreadMessagesCountError,
-    TResult? Function(int count)? newMessage,
-    TResult? Function(int count)? readMessage,
+    TResult? Function(bool newMessage)? newMessage,
+    TResult? Function(bool unread)? readMessage,
     TResult? Function()? stopChatStreamState,
+    TResult? Function()? stopNotificationStreamState,
     TResult? Function(String address)? myLoacationChange,
     TResult? Function(String address)? myDestenationChange,
     TResult? Function()? updateFcmLoading,
     TResult? Function(UpdateSkill data)? updateFcmSuccess,
     TResult? Function(T data)? updateFcmError,
   }) {
-    return readMessage?.call(count);
+    return readMessage?.call(unread);
   }
 
   @override
@@ -2407,16 +2457,16 @@ class _$ReadMessage<T> implements ReadMessage<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? getUnreadNotificationCountLoading,
-    TResult Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult Function(int count)? getUnreadNotificationCountSuccess,
     TResult Function(T data)? getUnreadNotificationCountError,
     TResult Function(int index)? selectedIndexChanged,
     TResult Function()? getUnreadMessagesCountLoading,
-    TResult Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult Function(T data)? getUnreadMessagesCountError,
-    TResult Function(int count)? newMessage,
-    TResult Function(int count)? readMessage,
+    TResult Function(bool newMessage)? newMessage,
+    TResult Function(bool unread)? readMessage,
     TResult Function()? stopChatStreamState,
+    TResult Function()? stopNotificationStreamState,
     TResult Function(String address)? myLoacationChange,
     TResult Function(String address)? myDestenationChange,
     TResult Function()? updateFcmLoading,
@@ -2425,7 +2475,7 @@ class _$ReadMessage<T> implements ReadMessage<T> {
     required TResult orElse(),
   }) {
     if (readMessage != null) {
-      return readMessage(count);
+      return readMessage(unread);
     }
     return orElse();
   }
@@ -2451,6 +2501,8 @@ class _$ReadMessage<T> implements ReadMessage<T> {
     required TResult Function(NewMessage<T> value) newMessage,
     required TResult Function(ReadMessage<T> value) readMessage,
     required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
+    required TResult Function(StopNotificationStreamState<T> value)
+        stopNotificationStreamState,
     required TResult Function(MyLoacationChange<T> value) myLoacationChange,
     required TResult Function(MyDestenationChange<T> value) myDestenationChange,
     required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
@@ -2480,6 +2532,8 @@ class _$ReadMessage<T> implements ReadMessage<T> {
     TResult? Function(NewMessage<T> value)? newMessage,
     TResult? Function(ReadMessage<T> value)? readMessage,
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult? Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
@@ -2509,6 +2563,8 @@ class _$ReadMessage<T> implements ReadMessage<T> {
     TResult Function(NewMessage<T> value)? newMessage,
     TResult Function(ReadMessage<T> value)? readMessage,
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
@@ -2524,9 +2580,9 @@ class _$ReadMessage<T> implements ReadMessage<T> {
 }
 
 abstract class ReadMessage<T> implements GlobalState<T> {
-  const factory ReadMessage(final int count) = _$ReadMessage<T>;
+  const factory ReadMessage(final bool unread) = _$ReadMessage<T>;
 
-  int get count;
+  bool get unread;
   @JsonKey(ignore: true)
   _$$ReadMessageCopyWith<T, _$ReadMessage<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2572,17 +2628,16 @@ class _$StopChatStreamState<T> implements StopChatStreamState<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() getUnreadNotificationCountLoading,
-    required TResult Function(UnreadNotificationCount count)
-        getUnreadNotificationCountSuccess,
+    required TResult Function(int count) getUnreadNotificationCountSuccess,
     required TResult Function(T data) getUnreadNotificationCountError,
     required TResult Function(int index) selectedIndexChanged,
     required TResult Function() getUnreadMessagesCountLoading,
-    required TResult Function(UnreadMessagesCount count)
-        getUnreadMessagesCountSuccess,
+    required TResult Function(bool unreadMessage) getUnreadMessagesCountSuccess,
     required TResult Function(T data) getUnreadMessagesCountError,
-    required TResult Function(int count) newMessage,
-    required TResult Function(int count) readMessage,
+    required TResult Function(bool newMessage) newMessage,
+    required TResult Function(bool unread) readMessage,
     required TResult Function() stopChatStreamState,
+    required TResult Function() stopNotificationStreamState,
     required TResult Function(String address) myLoacationChange,
     required TResult Function(String address) myDestenationChange,
     required TResult Function() updateFcmLoading,
@@ -2597,16 +2652,16 @@ class _$StopChatStreamState<T> implements StopChatStreamState<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? getUnreadNotificationCountLoading,
-    TResult? Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult? Function(int count)? getUnreadNotificationCountSuccess,
     TResult? Function(T data)? getUnreadNotificationCountError,
     TResult? Function(int index)? selectedIndexChanged,
     TResult? Function()? getUnreadMessagesCountLoading,
-    TResult? Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult? Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult? Function(T data)? getUnreadMessagesCountError,
-    TResult? Function(int count)? newMessage,
-    TResult? Function(int count)? readMessage,
+    TResult? Function(bool newMessage)? newMessage,
+    TResult? Function(bool unread)? readMessage,
     TResult? Function()? stopChatStreamState,
+    TResult? Function()? stopNotificationStreamState,
     TResult? Function(String address)? myLoacationChange,
     TResult? Function(String address)? myDestenationChange,
     TResult? Function()? updateFcmLoading,
@@ -2621,16 +2676,16 @@ class _$StopChatStreamState<T> implements StopChatStreamState<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? getUnreadNotificationCountLoading,
-    TResult Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult Function(int count)? getUnreadNotificationCountSuccess,
     TResult Function(T data)? getUnreadNotificationCountError,
     TResult Function(int index)? selectedIndexChanged,
     TResult Function()? getUnreadMessagesCountLoading,
-    TResult Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult Function(T data)? getUnreadMessagesCountError,
-    TResult Function(int count)? newMessage,
-    TResult Function(int count)? readMessage,
+    TResult Function(bool newMessage)? newMessage,
+    TResult Function(bool unread)? readMessage,
     TResult Function()? stopChatStreamState,
+    TResult Function()? stopNotificationStreamState,
     TResult Function(String address)? myLoacationChange,
     TResult Function(String address)? myDestenationChange,
     TResult Function()? updateFcmLoading,
@@ -2665,6 +2720,8 @@ class _$StopChatStreamState<T> implements StopChatStreamState<T> {
     required TResult Function(NewMessage<T> value) newMessage,
     required TResult Function(ReadMessage<T> value) readMessage,
     required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
+    required TResult Function(StopNotificationStreamState<T> value)
+        stopNotificationStreamState,
     required TResult Function(MyLoacationChange<T> value) myLoacationChange,
     required TResult Function(MyDestenationChange<T> value) myDestenationChange,
     required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
@@ -2694,6 +2751,8 @@ class _$StopChatStreamState<T> implements StopChatStreamState<T> {
     TResult? Function(NewMessage<T> value)? newMessage,
     TResult? Function(ReadMessage<T> value)? readMessage,
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult? Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
@@ -2723,6 +2782,8 @@ class _$StopChatStreamState<T> implements StopChatStreamState<T> {
     TResult Function(NewMessage<T> value)? newMessage,
     TResult Function(ReadMessage<T> value)? readMessage,
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
@@ -2739,6 +2800,225 @@ class _$StopChatStreamState<T> implements StopChatStreamState<T> {
 
 abstract class StopChatStreamState<T> implements GlobalState<T> {
   const factory StopChatStreamState() = _$StopChatStreamState<T>;
+}
+
+/// @nodoc
+abstract class _$$StopNotificationStreamStateCopyWith<T, $Res> {
+  factory _$$StopNotificationStreamStateCopyWith(
+          _$StopNotificationStreamState<T> value,
+          $Res Function(_$StopNotificationStreamState<T>) then) =
+      __$$StopNotificationStreamStateCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$StopNotificationStreamStateCopyWithImpl<T, $Res>
+    extends _$GlobalStateCopyWithImpl<T, $Res, _$StopNotificationStreamState<T>>
+    implements _$$StopNotificationStreamStateCopyWith<T, $Res> {
+  __$$StopNotificationStreamStateCopyWithImpl(
+      _$StopNotificationStreamState<T> _value,
+      $Res Function(_$StopNotificationStreamState<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$StopNotificationStreamState<T>
+    implements StopNotificationStreamState<T> {
+  const _$StopNotificationStreamState();
+
+  @override
+  String toString() {
+    return 'GlobalState<$T>.stopNotificationStreamState()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$StopNotificationStreamState<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() getUnreadNotificationCountLoading,
+    required TResult Function(int count) getUnreadNotificationCountSuccess,
+    required TResult Function(T data) getUnreadNotificationCountError,
+    required TResult Function(int index) selectedIndexChanged,
+    required TResult Function() getUnreadMessagesCountLoading,
+    required TResult Function(bool unreadMessage) getUnreadMessagesCountSuccess,
+    required TResult Function(T data) getUnreadMessagesCountError,
+    required TResult Function(bool newMessage) newMessage,
+    required TResult Function(bool unread) readMessage,
+    required TResult Function() stopChatStreamState,
+    required TResult Function() stopNotificationStreamState,
+    required TResult Function(String address) myLoacationChange,
+    required TResult Function(String address) myDestenationChange,
+    required TResult Function() updateFcmLoading,
+    required TResult Function(UpdateSkill data) updateFcmSuccess,
+    required TResult Function(T data) updateFcmError,
+  }) {
+    return stopNotificationStreamState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? getUnreadNotificationCountLoading,
+    TResult? Function(int count)? getUnreadNotificationCountSuccess,
+    TResult? Function(T data)? getUnreadNotificationCountError,
+    TResult? Function(int index)? selectedIndexChanged,
+    TResult? Function()? getUnreadMessagesCountLoading,
+    TResult? Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
+    TResult? Function(T data)? getUnreadMessagesCountError,
+    TResult? Function(bool newMessage)? newMessage,
+    TResult? Function(bool unread)? readMessage,
+    TResult? Function()? stopChatStreamState,
+    TResult? Function()? stopNotificationStreamState,
+    TResult? Function(String address)? myLoacationChange,
+    TResult? Function(String address)? myDestenationChange,
+    TResult? Function()? updateFcmLoading,
+    TResult? Function(UpdateSkill data)? updateFcmSuccess,
+    TResult? Function(T data)? updateFcmError,
+  }) {
+    return stopNotificationStreamState?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? getUnreadNotificationCountLoading,
+    TResult Function(int count)? getUnreadNotificationCountSuccess,
+    TResult Function(T data)? getUnreadNotificationCountError,
+    TResult Function(int index)? selectedIndexChanged,
+    TResult Function()? getUnreadMessagesCountLoading,
+    TResult Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
+    TResult Function(T data)? getUnreadMessagesCountError,
+    TResult Function(bool newMessage)? newMessage,
+    TResult Function(bool unread)? readMessage,
+    TResult Function()? stopChatStreamState,
+    TResult Function()? stopNotificationStreamState,
+    TResult Function(String address)? myLoacationChange,
+    TResult Function(String address)? myDestenationChange,
+    TResult Function()? updateFcmLoading,
+    TResult Function(UpdateSkill data)? updateFcmSuccess,
+    TResult Function(T data)? updateFcmError,
+    required TResult orElse(),
+  }) {
+    if (stopNotificationStreamState != null) {
+      return stopNotificationStreamState();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(GetUnreadNotificationCountLoading<T> value)
+        getUnreadNotificationCountLoading,
+    required TResult Function(GetUnreadNotificationCountSuccess<T> value)
+        getUnreadNotificationCountSuccess,
+    required TResult Function(GetUnreadNotificationCountError<T> value)
+        getUnreadNotificationCountError,
+    required TResult Function(SelectedIndexChanged<T> value)
+        selectedIndexChanged,
+    required TResult Function(GetUnreadMessagesCountLoading<T> value)
+        getUnreadMessagesCountLoading,
+    required TResult Function(GetUnreadMessagesCountSuccess<T> value)
+        getUnreadMessagesCountSuccess,
+    required TResult Function(GetUnreadMessagesCountError<T> value)
+        getUnreadMessagesCountError,
+    required TResult Function(NewMessage<T> value) newMessage,
+    required TResult Function(ReadMessage<T> value) readMessage,
+    required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
+    required TResult Function(StopNotificationStreamState<T> value)
+        stopNotificationStreamState,
+    required TResult Function(MyLoacationChange<T> value) myLoacationChange,
+    required TResult Function(MyDestenationChange<T> value) myDestenationChange,
+    required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
+    required TResult Function(UpdateFcmSuccess<T> value) updateFcmSuccess,
+    required TResult Function(UpdateFcmError<T> value) updateFcmError,
+  }) {
+    return stopNotificationStreamState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(GetUnreadNotificationCountLoading<T> value)?
+        getUnreadNotificationCountLoading,
+    TResult? Function(GetUnreadNotificationCountSuccess<T> value)?
+        getUnreadNotificationCountSuccess,
+    TResult? Function(GetUnreadNotificationCountError<T> value)?
+        getUnreadNotificationCountError,
+    TResult? Function(SelectedIndexChanged<T> value)? selectedIndexChanged,
+    TResult? Function(GetUnreadMessagesCountLoading<T> value)?
+        getUnreadMessagesCountLoading,
+    TResult? Function(GetUnreadMessagesCountSuccess<T> value)?
+        getUnreadMessagesCountSuccess,
+    TResult? Function(GetUnreadMessagesCountError<T> value)?
+        getUnreadMessagesCountError,
+    TResult? Function(NewMessage<T> value)? newMessage,
+    TResult? Function(ReadMessage<T> value)? readMessage,
+    TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult? Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
+    TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
+    TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult? Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult? Function(UpdateFcmError<T> value)? updateFcmError,
+  }) {
+    return stopNotificationStreamState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(GetUnreadNotificationCountLoading<T> value)?
+        getUnreadNotificationCountLoading,
+    TResult Function(GetUnreadNotificationCountSuccess<T> value)?
+        getUnreadNotificationCountSuccess,
+    TResult Function(GetUnreadNotificationCountError<T> value)?
+        getUnreadNotificationCountError,
+    TResult Function(SelectedIndexChanged<T> value)? selectedIndexChanged,
+    TResult Function(GetUnreadMessagesCountLoading<T> value)?
+        getUnreadMessagesCountLoading,
+    TResult Function(GetUnreadMessagesCountSuccess<T> value)?
+        getUnreadMessagesCountSuccess,
+    TResult Function(GetUnreadMessagesCountError<T> value)?
+        getUnreadMessagesCountError,
+    TResult Function(NewMessage<T> value)? newMessage,
+    TResult Function(ReadMessage<T> value)? readMessage,
+    TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
+    TResult Function(MyLoacationChange<T> value)? myLoacationChange,
+    TResult Function(MyDestenationChange<T> value)? myDestenationChange,
+    TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
+    TResult Function(UpdateFcmSuccess<T> value)? updateFcmSuccess,
+    TResult Function(UpdateFcmError<T> value)? updateFcmError,
+    required TResult orElse(),
+  }) {
+    if (stopNotificationStreamState != null) {
+      return stopNotificationStreamState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class StopNotificationStreamState<T> implements GlobalState<T> {
+  const factory StopNotificationStreamState() =
+      _$StopNotificationStreamState<T>;
 }
 
 /// @nodoc
@@ -2808,17 +3088,16 @@ class _$MyLoacationChange<T> implements MyLoacationChange<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() getUnreadNotificationCountLoading,
-    required TResult Function(UnreadNotificationCount count)
-        getUnreadNotificationCountSuccess,
+    required TResult Function(int count) getUnreadNotificationCountSuccess,
     required TResult Function(T data) getUnreadNotificationCountError,
     required TResult Function(int index) selectedIndexChanged,
     required TResult Function() getUnreadMessagesCountLoading,
-    required TResult Function(UnreadMessagesCount count)
-        getUnreadMessagesCountSuccess,
+    required TResult Function(bool unreadMessage) getUnreadMessagesCountSuccess,
     required TResult Function(T data) getUnreadMessagesCountError,
-    required TResult Function(int count) newMessage,
-    required TResult Function(int count) readMessage,
+    required TResult Function(bool newMessage) newMessage,
+    required TResult Function(bool unread) readMessage,
     required TResult Function() stopChatStreamState,
+    required TResult Function() stopNotificationStreamState,
     required TResult Function(String address) myLoacationChange,
     required TResult Function(String address) myDestenationChange,
     required TResult Function() updateFcmLoading,
@@ -2833,16 +3112,16 @@ class _$MyLoacationChange<T> implements MyLoacationChange<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? getUnreadNotificationCountLoading,
-    TResult? Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult? Function(int count)? getUnreadNotificationCountSuccess,
     TResult? Function(T data)? getUnreadNotificationCountError,
     TResult? Function(int index)? selectedIndexChanged,
     TResult? Function()? getUnreadMessagesCountLoading,
-    TResult? Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult? Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult? Function(T data)? getUnreadMessagesCountError,
-    TResult? Function(int count)? newMessage,
-    TResult? Function(int count)? readMessage,
+    TResult? Function(bool newMessage)? newMessage,
+    TResult? Function(bool unread)? readMessage,
     TResult? Function()? stopChatStreamState,
+    TResult? Function()? stopNotificationStreamState,
     TResult? Function(String address)? myLoacationChange,
     TResult? Function(String address)? myDestenationChange,
     TResult? Function()? updateFcmLoading,
@@ -2857,16 +3136,16 @@ class _$MyLoacationChange<T> implements MyLoacationChange<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? getUnreadNotificationCountLoading,
-    TResult Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult Function(int count)? getUnreadNotificationCountSuccess,
     TResult Function(T data)? getUnreadNotificationCountError,
     TResult Function(int index)? selectedIndexChanged,
     TResult Function()? getUnreadMessagesCountLoading,
-    TResult Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult Function(T data)? getUnreadMessagesCountError,
-    TResult Function(int count)? newMessage,
-    TResult Function(int count)? readMessage,
+    TResult Function(bool newMessage)? newMessage,
+    TResult Function(bool unread)? readMessage,
     TResult Function()? stopChatStreamState,
+    TResult Function()? stopNotificationStreamState,
     TResult Function(String address)? myLoacationChange,
     TResult Function(String address)? myDestenationChange,
     TResult Function()? updateFcmLoading,
@@ -2901,6 +3180,8 @@ class _$MyLoacationChange<T> implements MyLoacationChange<T> {
     required TResult Function(NewMessage<T> value) newMessage,
     required TResult Function(ReadMessage<T> value) readMessage,
     required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
+    required TResult Function(StopNotificationStreamState<T> value)
+        stopNotificationStreamState,
     required TResult Function(MyLoacationChange<T> value) myLoacationChange,
     required TResult Function(MyDestenationChange<T> value) myDestenationChange,
     required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
@@ -2930,6 +3211,8 @@ class _$MyLoacationChange<T> implements MyLoacationChange<T> {
     TResult? Function(NewMessage<T> value)? newMessage,
     TResult? Function(ReadMessage<T> value)? readMessage,
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult? Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
@@ -2959,6 +3242,8 @@ class _$MyLoacationChange<T> implements MyLoacationChange<T> {
     TResult Function(NewMessage<T> value)? newMessage,
     TResult Function(ReadMessage<T> value)? readMessage,
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
@@ -3050,17 +3335,16 @@ class _$MyDestenationChange<T> implements MyDestenationChange<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() getUnreadNotificationCountLoading,
-    required TResult Function(UnreadNotificationCount count)
-        getUnreadNotificationCountSuccess,
+    required TResult Function(int count) getUnreadNotificationCountSuccess,
     required TResult Function(T data) getUnreadNotificationCountError,
     required TResult Function(int index) selectedIndexChanged,
     required TResult Function() getUnreadMessagesCountLoading,
-    required TResult Function(UnreadMessagesCount count)
-        getUnreadMessagesCountSuccess,
+    required TResult Function(bool unreadMessage) getUnreadMessagesCountSuccess,
     required TResult Function(T data) getUnreadMessagesCountError,
-    required TResult Function(int count) newMessage,
-    required TResult Function(int count) readMessage,
+    required TResult Function(bool newMessage) newMessage,
+    required TResult Function(bool unread) readMessage,
     required TResult Function() stopChatStreamState,
+    required TResult Function() stopNotificationStreamState,
     required TResult Function(String address) myLoacationChange,
     required TResult Function(String address) myDestenationChange,
     required TResult Function() updateFcmLoading,
@@ -3075,16 +3359,16 @@ class _$MyDestenationChange<T> implements MyDestenationChange<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? getUnreadNotificationCountLoading,
-    TResult? Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult? Function(int count)? getUnreadNotificationCountSuccess,
     TResult? Function(T data)? getUnreadNotificationCountError,
     TResult? Function(int index)? selectedIndexChanged,
     TResult? Function()? getUnreadMessagesCountLoading,
-    TResult? Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult? Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult? Function(T data)? getUnreadMessagesCountError,
-    TResult? Function(int count)? newMessage,
-    TResult? Function(int count)? readMessage,
+    TResult? Function(bool newMessage)? newMessage,
+    TResult? Function(bool unread)? readMessage,
     TResult? Function()? stopChatStreamState,
+    TResult? Function()? stopNotificationStreamState,
     TResult? Function(String address)? myLoacationChange,
     TResult? Function(String address)? myDestenationChange,
     TResult? Function()? updateFcmLoading,
@@ -3099,16 +3383,16 @@ class _$MyDestenationChange<T> implements MyDestenationChange<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? getUnreadNotificationCountLoading,
-    TResult Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult Function(int count)? getUnreadNotificationCountSuccess,
     TResult Function(T data)? getUnreadNotificationCountError,
     TResult Function(int index)? selectedIndexChanged,
     TResult Function()? getUnreadMessagesCountLoading,
-    TResult Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult Function(T data)? getUnreadMessagesCountError,
-    TResult Function(int count)? newMessage,
-    TResult Function(int count)? readMessage,
+    TResult Function(bool newMessage)? newMessage,
+    TResult Function(bool unread)? readMessage,
     TResult Function()? stopChatStreamState,
+    TResult Function()? stopNotificationStreamState,
     TResult Function(String address)? myLoacationChange,
     TResult Function(String address)? myDestenationChange,
     TResult Function()? updateFcmLoading,
@@ -3143,6 +3427,8 @@ class _$MyDestenationChange<T> implements MyDestenationChange<T> {
     required TResult Function(NewMessage<T> value) newMessage,
     required TResult Function(ReadMessage<T> value) readMessage,
     required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
+    required TResult Function(StopNotificationStreamState<T> value)
+        stopNotificationStreamState,
     required TResult Function(MyLoacationChange<T> value) myLoacationChange,
     required TResult Function(MyDestenationChange<T> value) myDestenationChange,
     required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
@@ -3172,6 +3458,8 @@ class _$MyDestenationChange<T> implements MyDestenationChange<T> {
     TResult? Function(NewMessage<T> value)? newMessage,
     TResult? Function(ReadMessage<T> value)? readMessage,
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult? Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
@@ -3201,6 +3489,8 @@ class _$MyDestenationChange<T> implements MyDestenationChange<T> {
     TResult Function(NewMessage<T> value)? newMessage,
     TResult Function(ReadMessage<T> value)? readMessage,
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
@@ -3265,17 +3555,16 @@ class _$UpdateFcmLoading<T> implements UpdateFcmLoading<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() getUnreadNotificationCountLoading,
-    required TResult Function(UnreadNotificationCount count)
-        getUnreadNotificationCountSuccess,
+    required TResult Function(int count) getUnreadNotificationCountSuccess,
     required TResult Function(T data) getUnreadNotificationCountError,
     required TResult Function(int index) selectedIndexChanged,
     required TResult Function() getUnreadMessagesCountLoading,
-    required TResult Function(UnreadMessagesCount count)
-        getUnreadMessagesCountSuccess,
+    required TResult Function(bool unreadMessage) getUnreadMessagesCountSuccess,
     required TResult Function(T data) getUnreadMessagesCountError,
-    required TResult Function(int count) newMessage,
-    required TResult Function(int count) readMessage,
+    required TResult Function(bool newMessage) newMessage,
+    required TResult Function(bool unread) readMessage,
     required TResult Function() stopChatStreamState,
+    required TResult Function() stopNotificationStreamState,
     required TResult Function(String address) myLoacationChange,
     required TResult Function(String address) myDestenationChange,
     required TResult Function() updateFcmLoading,
@@ -3290,16 +3579,16 @@ class _$UpdateFcmLoading<T> implements UpdateFcmLoading<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? getUnreadNotificationCountLoading,
-    TResult? Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult? Function(int count)? getUnreadNotificationCountSuccess,
     TResult? Function(T data)? getUnreadNotificationCountError,
     TResult? Function(int index)? selectedIndexChanged,
     TResult? Function()? getUnreadMessagesCountLoading,
-    TResult? Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult? Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult? Function(T data)? getUnreadMessagesCountError,
-    TResult? Function(int count)? newMessage,
-    TResult? Function(int count)? readMessage,
+    TResult? Function(bool newMessage)? newMessage,
+    TResult? Function(bool unread)? readMessage,
     TResult? Function()? stopChatStreamState,
+    TResult? Function()? stopNotificationStreamState,
     TResult? Function(String address)? myLoacationChange,
     TResult? Function(String address)? myDestenationChange,
     TResult? Function()? updateFcmLoading,
@@ -3314,16 +3603,16 @@ class _$UpdateFcmLoading<T> implements UpdateFcmLoading<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? getUnreadNotificationCountLoading,
-    TResult Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult Function(int count)? getUnreadNotificationCountSuccess,
     TResult Function(T data)? getUnreadNotificationCountError,
     TResult Function(int index)? selectedIndexChanged,
     TResult Function()? getUnreadMessagesCountLoading,
-    TResult Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult Function(T data)? getUnreadMessagesCountError,
-    TResult Function(int count)? newMessage,
-    TResult Function(int count)? readMessage,
+    TResult Function(bool newMessage)? newMessage,
+    TResult Function(bool unread)? readMessage,
     TResult Function()? stopChatStreamState,
+    TResult Function()? stopNotificationStreamState,
     TResult Function(String address)? myLoacationChange,
     TResult Function(String address)? myDestenationChange,
     TResult Function()? updateFcmLoading,
@@ -3358,6 +3647,8 @@ class _$UpdateFcmLoading<T> implements UpdateFcmLoading<T> {
     required TResult Function(NewMessage<T> value) newMessage,
     required TResult Function(ReadMessage<T> value) readMessage,
     required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
+    required TResult Function(StopNotificationStreamState<T> value)
+        stopNotificationStreamState,
     required TResult Function(MyLoacationChange<T> value) myLoacationChange,
     required TResult Function(MyDestenationChange<T> value) myDestenationChange,
     required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
@@ -3387,6 +3678,8 @@ class _$UpdateFcmLoading<T> implements UpdateFcmLoading<T> {
     TResult? Function(NewMessage<T> value)? newMessage,
     TResult? Function(ReadMessage<T> value)? readMessage,
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult? Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
@@ -3416,6 +3709,8 @@ class _$UpdateFcmLoading<T> implements UpdateFcmLoading<T> {
     TResult Function(NewMessage<T> value)? newMessage,
     TResult Function(ReadMessage<T> value)? readMessage,
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
@@ -3501,17 +3796,16 @@ class _$UpdateFcmSuccess<T> implements UpdateFcmSuccess<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() getUnreadNotificationCountLoading,
-    required TResult Function(UnreadNotificationCount count)
-        getUnreadNotificationCountSuccess,
+    required TResult Function(int count) getUnreadNotificationCountSuccess,
     required TResult Function(T data) getUnreadNotificationCountError,
     required TResult Function(int index) selectedIndexChanged,
     required TResult Function() getUnreadMessagesCountLoading,
-    required TResult Function(UnreadMessagesCount count)
-        getUnreadMessagesCountSuccess,
+    required TResult Function(bool unreadMessage) getUnreadMessagesCountSuccess,
     required TResult Function(T data) getUnreadMessagesCountError,
-    required TResult Function(int count) newMessage,
-    required TResult Function(int count) readMessage,
+    required TResult Function(bool newMessage) newMessage,
+    required TResult Function(bool unread) readMessage,
     required TResult Function() stopChatStreamState,
+    required TResult Function() stopNotificationStreamState,
     required TResult Function(String address) myLoacationChange,
     required TResult Function(String address) myDestenationChange,
     required TResult Function() updateFcmLoading,
@@ -3526,16 +3820,16 @@ class _$UpdateFcmSuccess<T> implements UpdateFcmSuccess<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? getUnreadNotificationCountLoading,
-    TResult? Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult? Function(int count)? getUnreadNotificationCountSuccess,
     TResult? Function(T data)? getUnreadNotificationCountError,
     TResult? Function(int index)? selectedIndexChanged,
     TResult? Function()? getUnreadMessagesCountLoading,
-    TResult? Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult? Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult? Function(T data)? getUnreadMessagesCountError,
-    TResult? Function(int count)? newMessage,
-    TResult? Function(int count)? readMessage,
+    TResult? Function(bool newMessage)? newMessage,
+    TResult? Function(bool unread)? readMessage,
     TResult? Function()? stopChatStreamState,
+    TResult? Function()? stopNotificationStreamState,
     TResult? Function(String address)? myLoacationChange,
     TResult? Function(String address)? myDestenationChange,
     TResult? Function()? updateFcmLoading,
@@ -3550,16 +3844,16 @@ class _$UpdateFcmSuccess<T> implements UpdateFcmSuccess<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? getUnreadNotificationCountLoading,
-    TResult Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult Function(int count)? getUnreadNotificationCountSuccess,
     TResult Function(T data)? getUnreadNotificationCountError,
     TResult Function(int index)? selectedIndexChanged,
     TResult Function()? getUnreadMessagesCountLoading,
-    TResult Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult Function(T data)? getUnreadMessagesCountError,
-    TResult Function(int count)? newMessage,
-    TResult Function(int count)? readMessage,
+    TResult Function(bool newMessage)? newMessage,
+    TResult Function(bool unread)? readMessage,
     TResult Function()? stopChatStreamState,
+    TResult Function()? stopNotificationStreamState,
     TResult Function(String address)? myLoacationChange,
     TResult Function(String address)? myDestenationChange,
     TResult Function()? updateFcmLoading,
@@ -3594,6 +3888,8 @@ class _$UpdateFcmSuccess<T> implements UpdateFcmSuccess<T> {
     required TResult Function(NewMessage<T> value) newMessage,
     required TResult Function(ReadMessage<T> value) readMessage,
     required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
+    required TResult Function(StopNotificationStreamState<T> value)
+        stopNotificationStreamState,
     required TResult Function(MyLoacationChange<T> value) myLoacationChange,
     required TResult Function(MyDestenationChange<T> value) myDestenationChange,
     required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
@@ -3623,6 +3919,8 @@ class _$UpdateFcmSuccess<T> implements UpdateFcmSuccess<T> {
     TResult? Function(NewMessage<T> value)? newMessage,
     TResult? Function(ReadMessage<T> value)? readMessage,
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult? Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
@@ -3652,6 +3950,8 @@ class _$UpdateFcmSuccess<T> implements UpdateFcmSuccess<T> {
     TResult Function(NewMessage<T> value)? newMessage,
     TResult Function(ReadMessage<T> value)? readMessage,
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,
@@ -3743,17 +4043,16 @@ class _$UpdateFcmError<T> implements UpdateFcmError<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function() getUnreadNotificationCountLoading,
-    required TResult Function(UnreadNotificationCount count)
-        getUnreadNotificationCountSuccess,
+    required TResult Function(int count) getUnreadNotificationCountSuccess,
     required TResult Function(T data) getUnreadNotificationCountError,
     required TResult Function(int index) selectedIndexChanged,
     required TResult Function() getUnreadMessagesCountLoading,
-    required TResult Function(UnreadMessagesCount count)
-        getUnreadMessagesCountSuccess,
+    required TResult Function(bool unreadMessage) getUnreadMessagesCountSuccess,
     required TResult Function(T data) getUnreadMessagesCountError,
-    required TResult Function(int count) newMessage,
-    required TResult Function(int count) readMessage,
+    required TResult Function(bool newMessage) newMessage,
+    required TResult Function(bool unread) readMessage,
     required TResult Function() stopChatStreamState,
+    required TResult Function() stopNotificationStreamState,
     required TResult Function(String address) myLoacationChange,
     required TResult Function(String address) myDestenationChange,
     required TResult Function() updateFcmLoading,
@@ -3768,16 +4067,16 @@ class _$UpdateFcmError<T> implements UpdateFcmError<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function()? getUnreadNotificationCountLoading,
-    TResult? Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult? Function(int count)? getUnreadNotificationCountSuccess,
     TResult? Function(T data)? getUnreadNotificationCountError,
     TResult? Function(int index)? selectedIndexChanged,
     TResult? Function()? getUnreadMessagesCountLoading,
-    TResult? Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult? Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult? Function(T data)? getUnreadMessagesCountError,
-    TResult? Function(int count)? newMessage,
-    TResult? Function(int count)? readMessage,
+    TResult? Function(bool newMessage)? newMessage,
+    TResult? Function(bool unread)? readMessage,
     TResult? Function()? stopChatStreamState,
+    TResult? Function()? stopNotificationStreamState,
     TResult? Function(String address)? myLoacationChange,
     TResult? Function(String address)? myDestenationChange,
     TResult? Function()? updateFcmLoading,
@@ -3792,16 +4091,16 @@ class _$UpdateFcmError<T> implements UpdateFcmError<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function()? getUnreadNotificationCountLoading,
-    TResult Function(UnreadNotificationCount count)?
-        getUnreadNotificationCountSuccess,
+    TResult Function(int count)? getUnreadNotificationCountSuccess,
     TResult Function(T data)? getUnreadNotificationCountError,
     TResult Function(int index)? selectedIndexChanged,
     TResult Function()? getUnreadMessagesCountLoading,
-    TResult Function(UnreadMessagesCount count)? getUnreadMessagesCountSuccess,
+    TResult Function(bool unreadMessage)? getUnreadMessagesCountSuccess,
     TResult Function(T data)? getUnreadMessagesCountError,
-    TResult Function(int count)? newMessage,
-    TResult Function(int count)? readMessage,
+    TResult Function(bool newMessage)? newMessage,
+    TResult Function(bool unread)? readMessage,
     TResult Function()? stopChatStreamState,
+    TResult Function()? stopNotificationStreamState,
     TResult Function(String address)? myLoacationChange,
     TResult Function(String address)? myDestenationChange,
     TResult Function()? updateFcmLoading,
@@ -3836,6 +4135,8 @@ class _$UpdateFcmError<T> implements UpdateFcmError<T> {
     required TResult Function(NewMessage<T> value) newMessage,
     required TResult Function(ReadMessage<T> value) readMessage,
     required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
+    required TResult Function(StopNotificationStreamState<T> value)
+        stopNotificationStreamState,
     required TResult Function(MyLoacationChange<T> value) myLoacationChange,
     required TResult Function(MyDestenationChange<T> value) myDestenationChange,
     required TResult Function(UpdateFcmLoading<T> value) updateFcmLoading,
@@ -3865,6 +4166,8 @@ class _$UpdateFcmError<T> implements UpdateFcmError<T> {
     TResult? Function(NewMessage<T> value)? newMessage,
     TResult? Function(ReadMessage<T> value)? readMessage,
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult? Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult? Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult? Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult? Function(UpdateFcmLoading<T> value)? updateFcmLoading,
@@ -3894,6 +4197,8 @@ class _$UpdateFcmError<T> implements UpdateFcmError<T> {
     TResult Function(NewMessage<T> value)? newMessage,
     TResult Function(ReadMessage<T> value)? readMessage,
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult Function(StopNotificationStreamState<T> value)?
+        stopNotificationStreamState,
     TResult Function(MyLoacationChange<T> value)? myLoacationChange,
     TResult Function(MyDestenationChange<T> value)? myDestenationChange,
     TResult Function(UpdateFcmLoading<T> value)? updateFcmLoading,

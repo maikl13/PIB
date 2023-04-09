@@ -18,10 +18,15 @@ class GlobalCubit extends Cubit<GlobalState<dynamic>> {
   final NotificationRepository notificationRepository;
   final ChatRepository chatRepository;
 
-  Stream<int>? myStream;
-  int messagesCount = 0;
-  int newMessagesCount = 0;
-  StreamSubscription<int>? subscription;
+  Stream<bool>? myStream;
+  bool unreadMessage = false;
+ 
+  StreamSubscription<bool>? subscription;
+
+  Stream<int>? notificationStream;
+  int notificationCount = 0;
+
+  StreamSubscription<int>? notificationSubscription;
 
   void onMapLocationTapped(String address) {
     emit(GlobalState.myLoacationChange(address));
@@ -36,12 +41,22 @@ class GlobalCubit extends Cubit<GlobalState<dynamic>> {
         .asyncMap((event) async => await getAllMessagesCount())
         .distinct();
     subscription = myStream?.listen((event) {
-      if (newMessagesCount == 0 || newMessagesCount != event) {
-        newMessagesCount = event;
-      } else {
+      if (event) {
         emit(GlobalState.newMessage(event));
-        newMessagesCount = event;
-      }
+      } 
+    });
+  }
+
+  void startNotificationStream() async {
+    notificationStream = Stream.periodic(const Duration(seconds: 10))
+        .asyncMap((event) async => await getAllNotificationsCount())
+        .distinct();
+    notificationSubscription = notificationStream?.listen((event) {
+      if (event != 0) {
+        emit(GlobalState.getUnreadNotificationCountSuccess(event));
+
+      
+      } 
     });
   }
 
@@ -52,45 +67,52 @@ class GlobalCubit extends Cubit<GlobalState<dynamic>> {
     }
     emit(const GlobalState.stopChatStreamState());
   }
+  void stopNotificationStream() {
+    if (notificationSubscription != null) {
+      notificationSubscription!.pause();
+      notificationSubscription = null;
+    }
+    emit(const GlobalState.stopNotificationStreamState());
+  }
 
-  void getAllNotificationsCount() async {
+  Future<int> getAllNotificationsCount() async {
     emit(const GlobalState.getUnreadNotificationCountLoading());
 
     // ignore: prefer_typing_uninitialized_variables
     var result = await notificationRepository.getUnreadNotificationCount();
     result.when(
       success: (UnreadNotificationCount count) {
-        emit(GlobalState.getUnreadNotificationCountSuccess(count));
+        notificationCount = count.unreadNotifications!;
+
+        emit(GlobalState.getUnreadNotificationCountSuccess(count.unreadNotifications!));
       },
       failure: (NetworkExceptions networkExceptions) {
         emit(GlobalState.getUnreadNotificationCountError(networkExceptions));
       },
     );
+    return notificationCount;
   }
 
-  
-
-  Future<int> getAllMessagesCount() async {
+  Future<bool> getAllMessagesCount() async {
     emit(const GlobalState.getUnreadMessagesCountLoading());
 
     // ignore: prefer_typing_uninitialized_variables
     var result = await chatRepository.getUnreadMessagesCount();
     result.when(
       success: (UnreadMessagesCount count) {
-        messagesCount = count.unreadCount!;
-        emit(GlobalState.getUnreadMessagesCountSuccess(count));
+        unreadMessage = count.unreadCount!;
+        emit(GlobalState.getUnreadMessagesCountSuccess(unreadMessage));
       },
       failure: (NetworkExceptions networkExceptions) {
         emit(GlobalState.getUnreadMessagesCountError(networkExceptions));
       },
     );
-    return messagesCount;
+    return unreadMessage;
   }
 
-  void readMessage() {
-    emit(GlobalState.readMessage(newMessagesCount));
-  }
-
+  // void readMessage() {
+  //   emit(GlobalState.readMessage(unreadMessage));
+  // }
 
   Future<void> updateFcmToken(String? fcmToken) async {
     emit(const GlobalState.updateFcmLoading());

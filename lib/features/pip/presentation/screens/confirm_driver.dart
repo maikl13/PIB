@@ -92,7 +92,7 @@ class _ConfirmDriverViewState extends State<ConfirmDriverView> {
           },
           createFastRequestSuccess: (data) {
 
-            BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
+            // BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
 
 
 

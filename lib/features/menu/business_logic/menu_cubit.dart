@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +9,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
 import '../../../core/business_logic/global_cubit.dart';
 import '../../../core/resources/strings_manager.dart';
-import '../../../core/resources/location_helper.dart';
 import '../data/models/rates_model.dart';
 import '../data/models/setting_model.dart';
 import '../data/models/update_skill.dart';
@@ -95,6 +93,9 @@ class MenuCubit extends Cubit<MenuState> {
 
   Future<void> signOut(BuildContext context) async {
     try {
+      BlocProvider.of<GlobalCubit>(context).stopNotificationStream();
+      BlocProvider.of<GlobalCubit>(context).stopStream();
+
       CacheHelper.removeAll();
 
       await FirebaseAuth.instance.signOut();
@@ -116,6 +117,7 @@ class MenuCubit extends Cubit<MenuState> {
       );
     }
   }
+
 
   void updateProfile(String name, String email, String phone) async {
     emit(const MenuState.updateUserInfoLoading());

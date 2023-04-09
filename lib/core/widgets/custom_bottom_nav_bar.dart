@@ -53,19 +53,19 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar>
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
-      padding: EdgeInsets.only(top: 5 , bottom: 5),
+    return Container(
+      padding: EdgeInsets.only(top: 5.h, bottom: 5.h),
       color: ColorManager.lightBlack,
       child: BottomNavigationBar(
         // selectedItemColor: Theme.of(contex,
         type: BottomNavigationBarType.fixed, // This is all you need!
-        selectedLabelStyle: TextStyle(fontSize: 10),
+        selectedLabelStyle: TextStyle(fontSize: 10.sp),
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Container(
-              height: 20,
-              width: 20,
-              margin: EdgeInsets.only(bottom: 5),
+              height: 20.h,
+              width: 20.w,
+              margin: EdgeInsets.only(bottom: 5.h),
               child: Image.asset(
                 widget.selectedIndex == 0
                     ? ImageAssets.selectedHouse
@@ -73,7 +73,6 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar>
                 color: widget.selectedIndex == 0
                     ? ColorManager.darkSeconadry
                     : ColorManager.grey,
-
                 height: 20,
                 width: 20,
               ),
@@ -82,7 +81,6 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar>
           ),
           BottomNavigationBarItem(
             icon: Container(
-
               padding: EdgeInsets.only(top: 8.h),
               child: Text(
                 AppStrings.pib,
@@ -99,7 +97,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar>
             icon: Container(
               height: 20,
               width: 20,
-              margin: EdgeInsets.only(bottom: 5),
+              margin: const EdgeInsets.only(bottom: 5),
               child: Image.asset(
                   height: 20,
                   width: 20,
@@ -109,16 +107,15 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar>
                   color: widget.selectedIndex == 2
                       ? ColorManager.darkSeconadry
                       : ColorManager.grey),
-
             ),
             label: AppStrings.myOrders,
           ),
           BottomNavigationBarItem(
-            icon:Container(
+            icon: Container(
               height: 20,
               width: 20,
-              margin: EdgeInsets.only(bottom: 5),
-              child:  Stack(
+              margin: const EdgeInsets.only(bottom: 5),
+              child: Stack(
                 children: [
                   Image.asset(
                     widget.selectedIndex == 3
@@ -129,10 +126,18 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar>
                   ),
                   BlocBuilder<GlobalCubit, GlobalState>(
                     buildWhen: (previous, current) =>
-                    current is NewMessage || current is ReadMessage,
+                        current is NewMessage  || current is GetUnreadMessagesCountSuccess,
                     builder: (context, state) {
                       return Visibility(
-                        visible: state is NewMessage ? true : false,
+                       visible: state.maybeWhen(
+                          getUnreadMessagesCountSuccess: (count) {
+                            return count;
+                          },
+                          newMessage: (newMessage) {
+                            return newMessage ;
+                          },
+                          orElse: () => false,
+                        ),
                         child: Positioned(
                           left: 13.w,
                           // padding: EdgeInsets.only(left: 16.w),
@@ -147,27 +152,22 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar>
             label: AppStrings.messages,
           ),
           BottomNavigationBarItem(
-
-
             icon: Container(
               height: 20,
               width: 20,
-              margin: EdgeInsets.only(bottom: 5),
+              margin: const EdgeInsets.only(bottom: 5),
               child: BlocProvider.value(
                 value: RouteGenerator.menuCubit,
                 child: BlocConsumer<MenuCubit, MenuState>(
                   listener: (context, state) {},
-
                   buildWhen: (previous, current) =>
-                  current is GetUserInfoSuccess ||
+                      current is GetUserInfoSuccess ||
                       current is UpdateUserInfoSuccess,
                   builder: (context, state) {
                     return state.maybeWhen(
-
                         getUserInfoSuccess: (userInfo) {
                           return CircleAvatar(
                               radius: 12.5.h,
-
                               child: ClipOval(
                                 child: CustomNetworkCachedImage(
                                     url: userInfo.imageUrl ??
@@ -183,7 +183,6 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar>
                 ),
               ),
             ),
-
             label: AppStrings.personalInfo,
           ),
         ],

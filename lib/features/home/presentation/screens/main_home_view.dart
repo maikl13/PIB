@@ -68,8 +68,10 @@ class _MainHomeViewState extends State<MainHomeView> {
   void initState() {
     super.initState();
     BlocProvider.of<GlobalCubit>(context).getAllMessagesCount();
-    BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
+    // BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
     BlocProvider.of<GlobalCubit>(context).startMessagesCountStream();
+    BlocProvider.of<GlobalCubit>(context).startNotificationStream();
+
     BlocProvider.of<MenuCubit>(context).getUserInfo();
     BlocProvider.of<MenuCubit>(context).getAllSettings();
     BlocProvider.of<MenuCubit>(context).getAllRates();

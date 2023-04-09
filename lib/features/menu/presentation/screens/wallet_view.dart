@@ -38,7 +38,7 @@ class _WalletViewState extends State<WalletView> {
             );
           },
           walletBalanceAddedSuccedded: (AddBalance addBalance) {
-                BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
+                // BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
 
             Navigator.pop(context);
             Commons.showToast(

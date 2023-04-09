@@ -35,7 +35,7 @@ class _RecievedOffersViewState extends State<RecievedOffersView> {
             Commons.showLoadingDialog(context);
           },
           acceptOfferSuccess: (data) {
-            BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
+            // BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
 
             Navigator.pop(context);
             Commons.showToast(

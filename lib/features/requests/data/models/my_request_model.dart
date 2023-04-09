@@ -30,6 +30,8 @@ class MyRequestModel {
   bool? belongToCurrentUser;
   @JsonKey(name: 'submitted_offer')
   bool? submittedOffer;
+  @JsonKey(name: 'submitted_offer_id')
+  int? submittedOfferId;
 
   MyRequestModel(
       {this.id,

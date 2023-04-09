@@ -21,6 +21,7 @@ import '../../../../core/widgets/loading_indicator.dart';
 import '../widgets/request_item.dart';
 import '../../../../core/business_logic/global_cubit.dart';
 import '../../../../core/business_logic/global_state.dart';
+
 class WantedJobRequestsView extends StatefulWidget {
   const WantedJobRequestsView({super.key});
 
@@ -42,26 +43,21 @@ class _WantedJobRequestsViewState extends State<WantedJobRequestsView> {
       buildWhen: (previous, next) => next is MyRequestsSuccess,
       builder: (context, state) {
         return state.maybeWhen(
-
             myRequestsLoading: () {
               return Padding(
                   padding: EdgeInsets.only(top: 100.h),
-                  child: LoadingIndicator());
+                  child: const LoadingIndicator());
             },
             // myFastRequestsSuccess: (myFastRequests) {
             //   return _buildBodyView();
             // },
             myRequestsSuccess: (requests) {
-
-
-              return(requests.isEmpty &&
-                  BlocProvider.of<RequestsCubit>(context)
-                      .myFastRequests
-                      .isEmpty)
-                  ?   _buildEmpty()
-
-
-              : _buildRequestView();
+              return (requests.isEmpty &&
+                      BlocProvider.of<RequestsCubit>(context)
+                          .myFastRequests
+                          .isEmpty)
+                  ? _buildEmpty()
+                  : _buildRequestView();
             },
             orElse: () => Container());
       },
@@ -155,23 +151,21 @@ class _WantedJobRequestsViewState extends State<WantedJobRequestsView> {
             },
             itemBuilder: (context, index) {
               return FastRequestItem(
-                fastRequest: fastRequequests[index],
+                  fastRequest: fastRequequests[index],
+                  onTap: () {
+                    // var request = fastRequequests[index];
 
-                onTap:(){
-                  var request = fastRequequests[index];
+                    // myLocationLat = request.destinationFromLat!;
+                    // myLocationLng = request.destinationFromLong!;
+                    //  myDestinationLat = request.destinationToLat!;
+                    //  myDestinationLng = request.destinationToLong!;
 
-                  myLocationLat = request.destinationFromLat!;
-                  myLocationLng = request.destinationFromLong!;
-                   myDestinationLat = request.destinationToLat!;
-                   myDestinationLng = request.destinationToLong!;
-
-                  Navigator.pushNamed(
-                      context, Routes.availableDriversViewRoute,arguments: {
-                    'title' : request.category!.name,
-                    'requestId' : request.id.toString()
+                    // Navigator.pushNamed(
+                    //     context, Routes.availableDriversViewRoute,arguments: {
+                    //   'title' : request.category!.name,
+                    //   'requestId' : request.id.toString()
+                    // });
                   });
-                }
-              );
             },
           );
   }
@@ -185,16 +179,12 @@ class _WantedJobRequestsViewState extends State<WantedJobRequestsView> {
           const CustomTitle(title: AppStrings.jobsDownlodedPreviously),
           _buildFastRequstsBloc(),
           _buildRequstsBloc(),
-
-
-
-
         ],
       ),
     );
   }
-  _buildEmpty() {
 
+  _buildEmpty() {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -208,23 +198,24 @@ class _WantedJobRequestsViewState extends State<WantedJobRequestsView> {
         Text('لم تقم بعمل اي طلبات حتي الان ، يمكنك الطلب من صفحة PIB',
             textAlign: TextAlign.center,
             style: getBoldStyle(fontSize: 20.sp, color: ColorManager.darkGrey)),
-        SizedBox(height: 25.h,),
+        SizedBox(
+          height: 25.h,
+        ),
         DarkDefaultButton(
           widht: 195.w,
           height: 39.h,
-          textStyle:
-          getRegularStyle(fontSize: 15.sp, color: ColorManager.darkSeconadry),
+          textStyle: getRegularStyle(
+              fontSize: 15.sp, color: ColorManager.darkSeconadry),
           text: AppStrings.newRequest,
           borderColor: ColorManager.darkSeconadry,
           onTap: () {
-
             RouteGenerator.globalCubit.changeSelectedIndex(1);
           },
         )
       ],
     );
-
   }
+
   _buildFastRequestView() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -260,6 +251,6 @@ class _WantedJobRequestsViewState extends State<WantedJobRequestsView> {
 
   @override
   Widget build(BuildContext context) {
-    return     _buildBodyView();
+    return _buildBodyView();
   }
 }

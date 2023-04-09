@@ -135,7 +135,7 @@ buildMainSearchViewAppBarActions(BuildContext context) {
                       return Visibility(
                         visible: state.maybeWhen(
                           getUnreadNotificationCountSuccess: (count) {
-                            return count.unreadNotifications != 0
+                            return count != 0
                                 ? true
                                 : false;
                           },

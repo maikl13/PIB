@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/features/pip/data/models/driver_model.dart';
 import 'package:pip/features/pip/presentation/widgets/contact_button.dart';
 import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/utils.dart';
 import '../../../../core/widgets/custom_image_view.dart';
 import '../../../../core/widgets/custom_network_image.dart';
 import '../../data/models/accepted_offers_model.dart';
-import '../../data/models/my_request_model.dart';
 import '../../../../core/resources/color_manager.dart';
-import '../../../../core/resources/strings_manager.dart';
-import '../../../notification/presentation/widgets/clock_date.dart';
-// ignore: depend_on_referenced_packages
+
+
 import 'package:intl/intl.dart';
 import '../../../../core/resources/style_manager.dart';
 

@@ -89,7 +89,7 @@ class ChatsItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        BlocProvider.of<GlobalCubit>(context).readMessage();
+        // BlocProvider.of<GlobalCubit>(context).readMessage();
         Navigator.pushNamed(context, Routes.chatViewRoute, arguments: {
           'chatId': jobChats.chats![index].id,
         });

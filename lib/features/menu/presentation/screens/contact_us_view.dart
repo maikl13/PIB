@@ -40,7 +40,7 @@ class _ContactUsViewState extends State<ContactUsView> {
             Commons.showLoadingDialog(context);
           },
           sendComplainSuccess: (data) {
-            BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
+            // BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
 
             Navigator.pop(context);
             showContactSuccessDialog(

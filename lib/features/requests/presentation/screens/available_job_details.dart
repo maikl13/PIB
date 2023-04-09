@@ -107,14 +107,12 @@ class AvailableJobDetailsView extends StatelessWidget {
       child: DefaultButton(
         text: AppStrings.editOffer,
         onTap: () {
+          
           // BlocProvider.of<RequestsCubit>(context).showSingleOffer(offerId);
-          Navigator.pushNamed(
-            context,
-            Routes.editOffersViewRoute,
-           arguments: {
-            'offerId':availableJob.acceptedOfferID.toString(),
-           }
-          );
+          Navigator.pushNamed(context, Routes.editOffersViewRoute, arguments: {
+            'offerId': availableJob.submittedOfferId.toString(),
+
+          });
         },
       ),
     );

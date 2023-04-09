@@ -1,5 +1,5 @@
 class UnreadMessagesCount {
-  int? unreadCount;
+  bool? unreadCount;
 
   UnreadMessagesCount({this.unreadCount});
 

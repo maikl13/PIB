@@ -86,7 +86,7 @@ class _MyRequestsMainViewState extends State<MyRequestsMainView> {
 
   @override
   Widget build(BuildContext context) {
-        BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
+        // BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
 
     return _buildBody();
   }

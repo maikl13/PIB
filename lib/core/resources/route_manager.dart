@@ -404,20 +404,13 @@ class RouteGenerator {
         final String offerId = arguments['offerId'];
         // final String jobName = arguments['jobName'];
         return MaterialPageRoute(
-            builder: (_) => MultiBlocProvider(
-                  providers: [
-                    BlocProvider.value(
-                      value: requestsCubit,
-                    ),
-                    // BlocProvider.value(
-                    //   value: chatCubit,
-                    // ),
-                  ],
-                  child:  EditOfferView(
-                      offerId: offerId,
-                      // requestId: requestId,
-                      // jobName:jobName ,
-                      ),
+            builder: (_) => BlocProvider.value(
+                  value: requestsCubit,
+                  child: EditOfferView(
+                    offerId: offerId,
+                    // requestId: requestId,
+                    // jobName:jobName ,
+                  ),
                 ));
 
       case Routes.chatsViewRoute:
@@ -492,9 +485,9 @@ class RouteGenerator {
 
       case Routes.requestsArchieveViewRoute:
         return MaterialPageRoute(
-          builder: (_) =>  BlocProvider.value(
-         value: requestsCubit,
-            child:const RequestsArchieveView(),
+          builder: (_) => BlocProvider.value(
+            value: requestsCubit,
+            child: const RequestsArchieveView(),
           ),
         );
       //  case Routes.giveOfferFromChatViewRoute:

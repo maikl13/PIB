@@ -49,7 +49,7 @@ class _GiveOfferViewState extends State<GiveOfferView> {
             Commons.showLoadingDialog(context);
           },
           giveOfferSuccess: (data) {
-            BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
+            // BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
 
             Navigator.pop(context);
 

@@ -11,24 +11,28 @@ class LoadingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(16.0),
-      decoration: BoxDecoration(
-        color: ColorManager.black5,
-        borderRadius: BorderRadius.circular(8.0),
-      ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          const LoadingIndicator(),
-          SizedBox(height: 16.h),
-          Text("تم نشر طلبك بنجاح ويتم البحث عن سائق للتوصيل",
-              style: getRegularStyle(fontSize: 19.sp, color: ColorManager.white),
-              textAlign: TextAlign.center),
-
-
-        ],
+    return Align(
+      alignment: Alignment.bottomCenter,
+      child: Container(
+        width: double.infinity,
+        padding: const EdgeInsets.all(16.0),
+        decoration: BoxDecoration(
+          color: ColorManager.black5,
+          borderRadius: BorderRadius.circular(8.0),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            const LoadingIndicator(),
+            SizedBox(height: 16.h),
+            Text("تم نشر طلبك بنجاح ويتم البحث عن سائق للتوصيل",
+                style:
+                    getRegularStyle(fontSize: 19.sp, color: ColorManager.white),
+                textAlign: TextAlign.center),
+          ],
+        ),
       ),
     );
   }
