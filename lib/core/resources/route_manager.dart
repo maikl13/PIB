@@ -43,7 +43,7 @@ import '../../features/auth/presentation/screens/register_view.dart';
 import '../../features/chat/business_logic/chat_cubit.dart';
 import '../../features/chat/presentation/screens/chat_main_view.dart';
 import '../../features/home/presentation/screens/jop_details_view.dart';
-import '../../features/home/presentation/screens/main_home_view.dart';
+import '../../features/home/presentation/screens/navigation.dart';
 import '../../features/notification/presentation/screens/notification_view.dart';
 import '../../features/pip/presentation/screens/fast_request_view.dart';
 import '../../features/pip/presentation/screens/pick_request_type.dart';

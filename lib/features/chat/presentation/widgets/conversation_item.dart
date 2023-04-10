@@ -50,7 +50,7 @@ class ConversationItem extends StatelessWidget {
 
   _buildSubtitle() {
     return Text(
-      "${AppStrings.totalMessage} ${totalMessage ?? 0}",
+      "${AppStrings.totalUsers} ${totalMessage ?? 0}",
       style: getRegularStyle(fontSize: 12.sp, color: ColorManager.darkGrey),
     );
   }
