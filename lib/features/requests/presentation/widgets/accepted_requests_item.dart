@@ -218,7 +218,7 @@ class AcceptedRequestItem extends StatelessWidget {
         child: Stack(
           children: [
             _buildInfo(),
-            _buildArrow(),
+            if( requests![index].status != "processing")_buildArrow(),
             _bulildContactButton(),
           ],
         ),

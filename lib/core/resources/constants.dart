@@ -11,7 +11,8 @@ class AppConstants {
   static const double appBarHeight = 55;
   static const int sliderAnimationTime = 300;
   static const int timeOut = 60;
-  static const String baseUrl = 'https://pib-platform.com/api/';
+  static const String baseDomain = 'https://pib-platform.com';
+  static const String baseUrl = '${baseDomain}/api/';
 }
 
 String ?fcmTokenFromFirebase ;
@@ -36,7 +37,7 @@ Position? position;
 // bool isRead;
 
 String? currentRequestId;
-bool isAnonymous = false;
+
 String? userPhone = '';
 String? userImage =
     'https://th.bing.com/th/id/OIP.8R95WJtQhwmzvFvd75zrVQHaHa?pid=ImgDet&w=1490&h=1490&rs=1';

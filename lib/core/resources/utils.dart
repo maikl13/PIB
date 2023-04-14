@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -88,7 +89,14 @@ defaultAppBar(BuildContext context) {
 }
 
 bool checkUserType(BuildContext context) {
-  if (isAnonymous == true) {
+
+
+  final FirebaseAuth auth = FirebaseAuth.instance;
+  final User? user = auth.currentUser;
+
+
+
+  if (user == null || user.isAnonymous) {
     Commons.showErrorDialog(
         context, 'يجب تسجيل الدخول اولا للوصول الى هذه الخدمة');
     return true;

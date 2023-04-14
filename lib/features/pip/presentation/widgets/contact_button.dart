@@ -21,15 +21,14 @@ class ContactButton extends StatelessWidget {
         // });
       },
       child: Container(
-        width: 62.w,
-        height: 27.w,
+
+        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 7),
         decoration: BoxDecoration(
             color: ColorManager.white.withOpacity(.2),
             borderRadius: BorderRadius.circular(31.r)),
-        child: Center(
-          child: Text('تواصل',
-              style: getBoldStyle(
-                  fontSize: 10.sp, color: ColorManager.darkSeconadry)),
+        child: Text('تواصل',
+          style: getBoldStyle(
+              fontSize: 10.sp, color: ColorManager.darkSeconadry),
         ),
       ),
     );

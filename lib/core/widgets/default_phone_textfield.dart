@@ -36,7 +36,7 @@ class DefaultPhoneTextField extends StatefulWidget {
 }
 
 class _DefaultPhoneTextFieldState extends State<DefaultPhoneTextField> {
-  String? _labelText;
+
   TextEditingController nameTextEditingController = TextEditingController();
   @override
   void initState() {
@@ -46,11 +46,7 @@ class _DefaultPhoneTextFieldState extends State<DefaultPhoneTextField> {
 
   void _hasStartedTyping() {
     setState(() {
-      if (nameTextEditingController.text.isNotEmpty) {
-        _labelText = 'Name';
-      } else {
-        _labelText = null;
-      }
+
     });
   }
 

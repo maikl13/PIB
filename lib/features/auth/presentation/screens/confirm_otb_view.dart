@@ -97,7 +97,8 @@ class _ConfirmPhoneViewState extends State<ConfirmPhoneView> {
                 : BlocProvider.of<AuthCubit>(context).register(
                     uid: FirebaseAuth.instance.currentUser!.uid,
                     name: userName!,
-                    phone: userPhone!);
+                    phone: userPhone!,
+            imageUrl: '${AppConstants.baseDomain}/profile.png');
           },
         );
       },

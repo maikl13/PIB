@@ -79,8 +79,7 @@ class MainAuthView extends StatelessWidget {
                 name: 'مجهول',
                 email: '',
                 phone: '000000000',
-                imageUrl:
-                    'https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png');
+                imageUrl: '${AppConstants.baseDomain}/profile.png');
           },
           phoneAuthLoading: () {
             Commons.showLoadingDialog(context, text: "جار إعداد حسابك");
@@ -118,7 +117,6 @@ class MainAuthView extends StatelessWidget {
           },
           loginSuccess: (uid) {
             Navigator.pop(context);
-            final fcmToken = FirebaseMessaging.instance.getToken();
 
             // Call the API to send the FCM token to the backend
             BlocProvider.of<GlobalCubit>(context)

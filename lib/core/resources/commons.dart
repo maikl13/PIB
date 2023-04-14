@@ -134,7 +134,7 @@ class Commons {
                     await FirebaseAuth.instance.signOut();
 
                     screenIndex = 0;
-                    isAnonymous = false;
+
 
 
                     Navigator.pushNamedAndRemoveUntil(
@@ -181,7 +181,7 @@ class Commons {
                           fontFamily: FontConstants.defaultFontFamily,
                           fontSize: 14)),
                   onPressed: () {
-                    isAnonymous = false;
+
                     screenIndex = 0;
                     Navigator.pushNamedAndRemoveUntil(
                         context, Routes.mainAuthViewRoute, (route) => false);

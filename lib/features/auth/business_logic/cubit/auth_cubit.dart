@@ -1,9 +1,11 @@
 // ignore_for_file: avoid_print
 
 import 'package:bloc/bloc.dart';
+import 'package:country_code_picker/country_code_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 import '../../../../core/resources/constants.dart';
 import '../../../../core/resources/shared_prefrences.dart';
@@ -13,6 +15,7 @@ import '../../data/repository/auth_repository.dart';
 import 'auth_state.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 
+import 'package:intl_phone_number_input/src/utils/phone_number/phone_number_util.dart';
 class AuthCubit extends Cubit<AuthResultState<dynamic>> {
   AuthCubit(this.authRepoistry) : super(const Idle());
   final _auth = FirebaseAuth.instance;
@@ -29,12 +32,6 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
       final UserCredential result = await auth.signInAnonymously();
       final user = result.user;
       token = user!.uid;
-      // CacheHelper.saveData(key: 'token', value: token);
-      isAnonymous = true;
-
-      // fireBaseId = user.uid;
-
-      // CacheHelper.saveData(key: 'fireBaseId', value: fireBaseId);
 
       emit(AuthResultState.firebaseAnonymousLoginSuccess(user.uid));
     } catch (e) {
@@ -159,8 +156,30 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
   Future<void> submitPhoneNumber(String phoneNumber) async {
     emit(const AuthResultState.phoneAuthLoading());
 
+
+
+
+
+    String  countryISO = CountryCode.fromDialCode(countryCode! ).code!;
+
+
+    bool? isValidPhoneNumber =
+    await PhoneNumberUtil.isValidNumber(
+        phoneNumber: phoneNumber,
+        isoCode: countryISO);
+
+    if (!isValidPhoneNumber!) {
+      verificationFailed(FirebaseAuthException(code: '1'));
+      return;
+    }
+
+    String? number = await PhoneNumberUtil.normalizePhoneNumber(
+        phoneNumber:phoneNumber, isoCode: countryISO);
+
+
+
     await _auth.verifyPhoneNumber(
-      phoneNumber: '$countryCode$phoneNumber',
+      phoneNumber: number,
       timeout: const Duration(seconds: AppConstants.timeOut),
       verificationCompleted: verificationCompleted,
       verificationFailed: verificationFailed,

@@ -43,10 +43,7 @@ Future<void> main() async {
   } else {
     print('User declined or has not yet granted permission');
   }
-  // FirebaseMessaging.onMessage.listen((event) {
-  //   print('onMessage');
-  //   print(event);
-  // });
+
 
   await FirebaseAppCheck.instance.activate(
     webRecaptchaSiteKey: 'recaptcha-v3-site-key',

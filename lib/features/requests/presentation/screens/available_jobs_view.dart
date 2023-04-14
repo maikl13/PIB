@@ -158,12 +158,9 @@ class _AvailableJobsViewState extends State<AvailableJobsView> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const CustomTitle(title: '${AppStrings.myAcceptedOffers} :'),
-            InkWell(
-              onTap: () {
-                Navigator.pushNamed(context, Routes.requestsArchieveViewRoute);
-              },
-              child: _buildArchieveButton(),
-            ),
+
+
+            _buildArchieveButton()
           ],
         ),
         SizedBox(height: 20.h),
@@ -198,8 +195,15 @@ class _AvailableJobsViewState extends State<AvailableJobsView> {
   }
 
   _buildArchieveButton() {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+    return
+
+      InkWell(
+        onTap: () {
+          Navigator.pushNamed(context, Routes.requestsArchieveViewRoute);
+        },
+        child:
+      Container(
+      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 7.h),
       decoration: BoxDecoration(
         color: ColorManager.grey.withOpacity(.3),
         borderRadius: BorderRadius.circular(20.r),
@@ -207,9 +211,9 @@ class _AvailableJobsViewState extends State<AvailableJobsView> {
       child: Text('ارشيف العروض المقبولة',
           style: getRegularStyle(
             color: ColorManager.darkSeconadry,
-            fontSize: 14.sp,
+            fontSize: 12.sp,
           )),
-    );
+    ));
   }
 
   _buildMyAcceptedOffersView() {

@@ -104,7 +104,7 @@ class MenuCubit extends Cubit<MenuState> {
           message: "تم تسجيل الخروج بنجاح", color: ColorManager.toastSuccess);
 
       screenIndex = 0;
-      isAnonymous = false;
+
 
       // ignore: use_build_context_synchronously
       Navigator.pushNamedAndRemoveUntil(
