@@ -3,7 +3,9 @@ import 'dart:io';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:pip/features/requests/data/models/fast_request_model.dart';
+import '../../../pip/data/models/driver_model.dart';
+import '../../data/models/accepted_offers_model.dart';
+import '../../data/models/fast_request_model.dart';
 
 import '../../../../core/resources/constants.dart';
 import '../../data/models/available_fast_request_model.dart';
@@ -29,6 +31,11 @@ class RequestsCubit extends Cubit<RequestState> {
   List<FastRequestModel> myFastRequests = [];
 
   List<AvailableFastRequestModel> myAvailableFastRequests = [];
+
+  List<AcceptedOffersModel> myAcceptedFastOffers = [];
+  List<AcceptedOffersModel> completedOffers= [];
+
+
   deleteImage(int index) {
     imagesFile.removeAt(index);
   }
@@ -145,6 +152,37 @@ class RequestsCubit extends Cubit<RequestState> {
     );
   }
 
+    void showSingleOffer(String offerId) async {
+    emit(const RequestState.showSingleOfferLoading());
+
+    var result = await requestRepository.showSingleOffer(offerId);
+    result.when(
+      success: (OfferModel offer) {
+        emit(RequestState.showSingleOfferSuccess(offer));
+      },
+      failure: (NetworkExceptions networkExceptions) {
+        emit(RequestState.showSingleOfferError(networkExceptions));
+      },
+    );
+  }
+  void getAllAcceptedOfferForDriver() async {
+    emit(const RequestState.myAcceptedFastOffersLoading());
+
+    var result = await requestRepository.getAllAcceptedOfferForDriver();
+    result.when(
+      success: (List<AcceptedOffersModel> acceptedFastOffers) {
+        myAcceptedFastOffers = acceptedFastOffers.where((element) => element.status == 'processing').toList();
+        completedOffers = acceptedFastOffers.where((element) => element.status != 'processing').toList();
+        
+        emit(RequestState.myAcceptedFastOffersSuccess(acceptedFastOffers));
+      },
+      failure: (NetworkExceptions networkExceptions) {
+        emit(RequestState.myAvailableFastRequestsError(networkExceptions));
+      },
+    );
+  }
+
+
   void getAllRequestOffers(int id) async {
     emit(const RequestState.offersRequestLoading());
 
@@ -171,9 +209,9 @@ class RequestsCubit extends Cubit<RequestState> {
     // ignore: prefer_typing_uninitialized_variables
     var result = imagesFile.isEmpty
         ? await requestRepository.giveOfferWithoutImages(
-            price!, duration!, description!, requestId!)
+        price!, duration!, description!, requestId!)
         : await requestRepository.giveOffer(
-            price!, duration!, description!, imagesFile, requestId!);
+        price!, duration!, description!, imagesFile, requestId!);
 
     result.when(
       success: (UpdateSkill data) {
@@ -186,6 +224,33 @@ class RequestsCubit extends Cubit<RequestState> {
     );
   }
 
+
+
+  void updateOffer({
+    String? offerId,
+    String? price,
+    String? duration,
+    String? description,
+    File? image,
+    String? requestId,
+  }) async {
+    emit(const RequestState.updateOfferLoading());
+
+    // ignore: prefer_typing_uninitialized_variables
+   var result =  await requestRepository.updateOffer(
+     
+       offerId!, price!, duration!, description!);
+
+    result.when(
+      success: (UpdateSkill data) {
+        emit(RequestState.updateOfferSuccess(data));
+        // print(data.toString());
+      },
+      failure: (NetworkExceptions networkExceptions) {
+        emit(RequestState.updateOfferError(networkExceptions));
+      },
+    );
+  }
   void updateRequest({
     String? id,
     String? categoryId,
