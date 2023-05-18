@@ -43,6 +43,7 @@ class ImageAssets {
   static const String paint = "$imagePath/paintbrush.png";
   static const String sofa = "$imagePath/sofa.png";
   static const String leading = "$imagePath/leading.png";
+  static const String gps = "$imagePath/gps.png";
 
   static const String wrench = "$imagePath/wrench.png";
   static const String notification = "$imagePath/bell (1).png";
@@ -81,7 +82,7 @@ class ImageAssets {
   static const String solidComments = "$imagePath/solid-comments.png";
   // static const String copy = "$imagePath/copy.png";
   static const String envelope = "$imagePath/envelope.png";
-  // static const String copy = "$imagePath/copy.png";
+  static const String marker = "$imagePath/marker.png";
   // static const String copy = "$imagePath/copy.png";
   // static const String copy = "$imagePath/copy.png";
 

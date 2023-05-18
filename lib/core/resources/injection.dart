@@ -31,25 +31,26 @@ void initGetIt() {
       () => NotificationRepository(getIt()));
   getIt.registerLazySingleton<NotificationCubit>(
       () => NotificationCubit(getIt()));
-        getIt.registerLazySingleton<GlobalCubit>(
-      () => GlobalCubit(getIt()));
+  getIt.registerLazySingleton<GlobalCubit>(() => GlobalCubit(getIt(), getIt()));
 
   // getIt.registerLazySingleton<HomeCubit>(() => HomeCubit());
   getIt.registerLazySingleton<HomeRepository>(() => HomeRepository(getIt()));
   getIt.registerLazySingleton<HomeCubit>(() => HomeCubit(getIt()));
 
-      getIt.registerLazySingleton<MenuRepository>(() => MenuRepository(getIt()));
+  getIt.registerLazySingleton<MenuRepository>(() => MenuRepository(getIt()));
   getIt.registerLazySingleton<MenuCubit>(() => MenuCubit(getIt()));
-        getIt.registerLazySingleton<PipRepsitory>(() => PipRepsitory(getIt()));
+  getIt.registerLazySingleton<PipRepsitory>(() => PipRepsitory(getIt()));
   getIt.registerLazySingleton<PipCubit>(() => PipCubit(getIt()));
 
-        getIt.registerLazySingleton<SearchRepository>(() => SearchRepository(getIt()));
+  getIt
+      .registerLazySingleton<SearchRepository>(() => SearchRepository(getIt()));
   getIt.registerLazySingleton<SearchBloc>(() => SearchBloc(getIt()));
 
-          getIt.registerLazySingleton<RequestRepository>(() => RequestRepository(getIt()));
+  getIt.registerLazySingleton<RequestRepository>(
+      () => RequestRepository(getIt()));
   getIt.registerLazySingleton<RequestsCubit>(() => RequestsCubit(getIt()));
 
-    getIt.registerLazySingleton<ChatRepository>(() => ChatRepository(getIt()));
+  getIt.registerLazySingleton<ChatRepository>(() => ChatRepository(getIt()));
   getIt.registerLazySingleton<ChatCubit>(() => ChatCubit(getIt()));
 
   getIt.registerLazySingleton<WebServices>(
@@ -80,7 +81,7 @@ Dio createAndSetupDio() {
     LogInterceptor(
       requestBody: true,
       error: true,
-      requestHeader: false,
+      requestHeader: true,
       responseHeader: false,
       responseBody: true,
       request: true,

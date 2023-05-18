@@ -3,12 +3,40 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/business_logic/global_cubit.dart';
 import 'package:pip/core/business_logic/global_state.dart';
+import 'package:pip/core/resources/commons.dart';
 import 'package:pip/core/web_services/api_result.dart';
+import '../widgets/notification_warning.dart';
 import 'assets_manager.dart';
 import 'color_manager.dart';
 import 'route_manager.dart';
 
 import 'constants.dart';
+
+String getStatusInArabic(String status) {
+  if (status == 'active') {
+    return 'متاح ل تلقي العروض';
+  } else if (status == 'pending') {
+    return 'في انتظار الموافقة';
+  } else if (status == 'complete') {
+    return 'تم انهاء الطلب';
+  } else if (status == 'canceled') {
+    return 'ملغي';
+  } else if (status == 'rejected') {
+    return 'مرفوض';
+  } else if (status == 'accepted') {
+    return 'مقبول';
+  } else if (status == 'processing') {
+    return 'قيد التنفيذ';
+  } else if (status == 'processing') {
+    return 'قيد التنفيذ';
+  } else if (status == 'closed') {
+    return 'تم الغاء الطلب';
+  } 
+  
+  else {
+    return status;
+  }
+}
 
 bool containEnglishLetter(String text) {
   // String str = "Hello World!Z";
@@ -16,6 +44,14 @@ bool containEnglishLetter(String text) {
   bool endsWithEnglishLetter =
       englishLetterPattern.hasMatch(text[text.length - 1]);
   return endsWithEnglishLetter;
+}
+
+String formatDate(String dateString) {
+  DateTime date = DateTime.parse(dateString);
+  int day = date.day;
+  int month = date.month;
+  int year = date.year;
+  return '$day-$month-$year';
 }
 
 String? validateMobile(String value) {
@@ -47,6 +83,16 @@ defaultAppBar(BuildContext context) {
     title: buildMainSearchViewAppBarTitle(context),
     actions: buildMainSearchViewAppBarActions(context),
   );
+}
+
+bool checkUserType(BuildContext context) {
+  if (isAnonymous == true) {
+    Commons.showErrorDialog(
+        context, 'يجب تسجيل الدخول اولا للوصول الى هذه الخدمة');
+    return true;
+  } else {
+    return false;
+  }
 }
 
 buildMainSearchViewAppBarTitle(BuildContext context) {
@@ -92,14 +138,7 @@ buildMainSearchViewAppBarActions(BuildContext context) {
                           },
                           orElse: () => false,
                         ),
-                        child: Container(
-                          width: 7.w,
-                          height: 7.h,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: ColorManager.red,
-                          ),
-                        ),
+                        child: const NotificationWarning(),
                       );
                     },
                   )

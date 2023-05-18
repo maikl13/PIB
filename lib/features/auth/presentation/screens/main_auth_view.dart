@@ -57,77 +57,101 @@ class MainAuthView extends StatelessWidget {
   _buildBloc() {
     return BlocConsumer<AuthCubit, AuthResultState>(
       listener: (context, state) {
-        state.whenOrNull(
-          firebaseAnonymousLoginError: (networkExceptions) {
-            Commons.showToast(
-              color: ColorManager.error,
-              message: NetworkExceptions.getErrorMessage(networkExceptions),
-            );
-          },
-          firebaseAnonymousLoginLoading: () {
-            Commons.showLoadingDialog(context);
-          },
-          firebaseAnonymousLoginSuccess: (data) {
-            Navigator.pop(context);
+        state.whenOrNull(firebaseAnonymousLoginError: (networkExceptions) {
+          Commons.showToast(
+            color: ColorManager.error,
+            message: NetworkExceptions.getErrorMessage(networkExceptions),
+          );
+        }, firebaseAnonymousLoginLoading: () {
+          Commons.showLoadingDialog(context);
+        }, firebaseAnonymousLoginSuccess: (data) {
+          Navigator.pop(context);
 
+          BlocProvider.of<AuthCubit>(context).register(
+              uid: data,
+              name: 'مجهول',
+              email: '',
+              phone: '000000000',
+              imageUrl:
+                  'https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png');
+        }, phoneAuthLoading: () {
+          Commons.showLoadingDialog(context);
+        }, phoneNumberSubmited: () {
+          // ignore: avoid_print
+          // print(uid);
+          Navigator.pop(context);
+          Navigator.of(context).pushNamed(Routes.confirmOtbViewRoute);
+        }, phoneAuthErrorOccurred: (errorMsg) {
+          if (errorMsg.contains('invalid-verification-code')) {
+            Commons.showToast(message: 'كود التحقق غير صحيح');
+          } else if (errorMsg.contains('Timed out waiting for SMS')) {
+            Navigator.pop(context);
+            Commons.showToast(message: 'انتهت مدة الانتظار');
+          } else if (errorMsg.contains('invalid-phone-number')) {
+            Navigator.pop(context);
+            Commons.showToast(message: 'رقم الهاتف غير صحيح');
+          } else if (errorMsg.contains('too-many-requests')) {
+            Navigator.pop(context);
+            Commons.showToast(message: 'الرجاء المحاولة لاحقا');
+          } else if (errorMsg.contains('network-request-failed')) {
+            Navigator.pop(context);
+            Commons.showToast(message: 'الرجاء التحقق من الاتصال بالانترنت');
+          }
+
+          if (errorMsg.contains('invalid-verification-code')) {
+            Commons.showToast(message: 'كود التحقق غير صحيح');
+          } else if (errorMsg.contains('invalid-phone-number')) {
+            Navigator.pop(context);
+            Commons.showToast(message: 'رقم الهاتف غير صحيح');
+          } else if (errorMsg.contains('too-many-requests')) {
+            Navigator.pop(context);
+            Commons.showToast(message: 'الرجاء المحاولة لاحقا');
+          } else if (errorMsg.contains('network-request-failed')) {
+            Navigator.pop(context);
+            Commons.showToast(message: 'الرجاء التحقق من الاتصال بالانترنت');
+          }
+        }, firebaseFacebookLoginSuccess: (uid) {
+          BlocProvider.of<AuthCubit>(context).login(uid: uid);
+        }, firebaseFacebookLoginError: (networkExceptions) {
+          Commons.showToast(
+            color: ColorManager.error,
+            message: NetworkExceptions.getErrorMessage(networkExceptions),
+          );
+        }, firebaseGoogleLoginSuccess: (uid) {
+          BlocProvider.of<AuthCubit>(context).login(uid: uid);
+        }, firebaseGoogleLoginError: (networkExceptions) {
+          Commons.showToast(
+            color: ColorManager.error,
+            message: NetworkExceptions.getErrorMessage(networkExceptions),
+          );
+        }, loginLoading: () {
+          Commons.showLoadingDialog(context);
+        }, loginSuccess: (uid) {
+          Navigator.pop(context);
+          showSuccessDialog(context);
+
+          // _goToHomeSuccessfully(context);
+        }, loginError: (networkExceptions) {
+          Navigator.pop(context);
+          if (NetworkExceptions.getErrorMessage(networkExceptions) ==
+                  "المستخدم غير موجود" &&
+              isLogin) {
+            Commons.showRegisterErrorDialog(
+                context, "هذا الحساب غير موجود هل  تريد تسجيل حساب جديد ؟");
+          } else if (NetworkExceptions.getErrorMessage(networkExceptions) ==
+              "المستخدم غير موجود") {
             BlocProvider.of<AuthCubit>(context).register(
-                uid: data,
-                name: 'مجهول',
-                email: '',
-                phone: '000000000',
-                imageUrl:
-                    'https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png');
-          },
-          phoneAuthLoading: () {
-            Commons.showLoadingDialog(context);
-          },
-          phoneNumberSubmited: () {
-            // ignore: avoid_print
-            // print(uid);
-            Navigator.pop(context);
-            Navigator.of(context).pushNamed(Routes.confirmOtbViewRoute);
-          },
-          phoneAuthErrorOccurred: (errorMsg) {
-            Navigator.pop(context);
-            Commons.showToast(message: errorMsg);
-          },
-          firebaseFacebookLoginSuccess: (uid) {
-            BlocProvider.of<AuthCubit>(context).login(uid: uid);
-          },
-          firebaseFacebookLoginError: (networkExceptions) {
-            Commons.showToast(
-              color: ColorManager.error,
-              message: NetworkExceptions.getErrorMessage(networkExceptions),
+              uid: token!,
+              name: userName ?? 'مجهول',
+              imageUrl: userImage,
+              email: userEmail ?? '',
+              phone: userPhone ?? AppStrings.zeros,
             );
-          },
-          firebaseGoogleLoginSuccess: (uid) {
-            BlocProvider.of<AuthCubit>(context).login(uid: uid);
-          },
-          firebaseGoogleLoginError: (networkExceptions) {
-            Commons.showToast(
-              color: ColorManager.error,
-              message: NetworkExceptions.getErrorMessage(networkExceptions),
-            );
-          },
-          loginLoading: () {
-            Commons.showLoadingDialog(context);
-          },
-          loginSuccess: (uid) {
-            Navigator.pop(context);
-            showSuccessDialog(context);
-
-            // _goToHomeSuccessfully(context);
-          },
-          loginError: (networkExceptions) {
-            Navigator.pop(context);
-            if (NetworkExceptions.getErrorMessage(networkExceptions) ==
-                "not_found") {
-              BlocProvider.of<AuthCubit>(context).register(
-                uid: token!,
-                name: userName ?? '',
-                imageUrl: userImage ?? '',
-                email: userEmail ?? '',
-                phone: userPhone ?? '',
+          } else {
+            if (networkExceptions.toString().contains("المستخدم موجود سابقا")) {
+              Commons.showErrorDialog(
+                context,
+                "هذا الحساب موجود سابقا برجاء تسجيل الدخول",
               );
             } else {
               Commons.showToast(
@@ -135,24 +159,28 @@ class MainAuthView extends StatelessWidget {
                 message: NetworkExceptions.getErrorMessage(networkExceptions),
               );
             }
-          },
-          registerLoading: () {
-            Commons.showLoadingDialog(context);
-          },
-          registerSuccess: (user) {
-            user.user!.name == 'مجهول'
-                ? Navigator.pushNamedAndRemoveUntil(
-                    context, Routes.mainHomeViewRoute, (route) => false)
-                : showSuccessDialog(context);
-          },
-          registerError: (networkExceptions) {
-            Navigator.pop(context);
+          }
+        }, registerLoading: () {
+          Commons.showLoadingDialog(context);
+        }, registerSuccess: (user) {
+          user.user!.name == 'مجهول'
+              ? Navigator.pushNamedAndRemoveUntil(
+                  context, Routes.mainHomeViewRoute, (route) => false)
+              : showSuccessDialog(context);
+        }, registerError: (networkExceptions) {
+          Navigator.pop(context);
+          if (networkExceptions.toString().contains("المستخدم موجود سابقا")) {
+            Commons.showErrorDialog(
+              context,
+              "هذا الحساب موجود سابقا برجاء تسجيل الدخول",
+            );
+          } else {
             Commons.showToast(
               color: ColorManager.error,
               message: NetworkExceptions.getErrorMessage(networkExceptions),
             );
-          },
-        );
+          }
+        });
       },
       builder: (context, state) {
         return Container();

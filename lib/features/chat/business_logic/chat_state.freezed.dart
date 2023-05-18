@@ -24,6 +24,8 @@ mixin _$ChatState<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -77,6 +79,7 @@ mixin _$ChatState<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -121,6 +124,7 @@ mixin _$ChatState<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -168,6 +172,7 @@ mixin _$ChatState<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -217,6 +222,7 @@ mixin _$ChatState<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -261,6 +267,7 @@ mixin _$ChatState<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -361,6 +368,8 @@ class _$Idle<T> implements Idle<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -417,6 +426,7 @@ class _$Idle<T> implements Idle<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -464,6 +474,7 @@ class _$Idle<T> implements Idle<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -517,6 +528,7 @@ class _$Idle<T> implements Idle<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -569,6 +581,7 @@ class _$Idle<T> implements Idle<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -616,6 +629,7 @@ class _$Idle<T> implements Idle<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -708,6 +722,8 @@ class _$GoToLocation<T> implements GoToLocation<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -764,6 +780,7 @@ class _$GoToLocation<T> implements GoToLocation<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -811,6 +828,7 @@ class _$GoToLocation<T> implements GoToLocation<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -864,6 +882,7 @@ class _$GoToLocation<T> implements GoToLocation<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -916,6 +935,7 @@ class _$GoToLocation<T> implements GoToLocation<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -963,6 +983,7 @@ class _$GoToLocation<T> implements GoToLocation<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -1055,6 +1076,8 @@ class _$StopChatStreamState<T> implements StopChatStreamState<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -1111,6 +1134,7 @@ class _$StopChatStreamState<T> implements StopChatStreamState<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -1158,6 +1182,7 @@ class _$StopChatStreamState<T> implements StopChatStreamState<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -1211,6 +1236,7 @@ class _$StopChatStreamState<T> implements StopChatStreamState<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -1263,6 +1289,7 @@ class _$StopChatStreamState<T> implements StopChatStreamState<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -1310,6 +1337,7 @@ class _$StopChatStreamState<T> implements StopChatStreamState<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -1403,6 +1431,8 @@ class _$ResumeChatStreamState<T> implements ResumeChatStreamState<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -1459,6 +1489,7 @@ class _$ResumeChatStreamState<T> implements ResumeChatStreamState<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -1506,6 +1537,7 @@ class _$ResumeChatStreamState<T> implements ResumeChatStreamState<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -1559,6 +1591,7 @@ class _$ResumeChatStreamState<T> implements ResumeChatStreamState<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -1611,6 +1644,7 @@ class _$ResumeChatStreamState<T> implements ResumeChatStreamState<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -1658,6 +1692,7 @@ class _$ResumeChatStreamState<T> implements ResumeChatStreamState<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -1784,6 +1819,8 @@ class _$StartChatStreamState<T> implements StartChatStreamState<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -1840,6 +1877,7 @@ class _$StartChatStreamState<T> implements StartChatStreamState<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -1887,6 +1925,7 @@ class _$StartChatStreamState<T> implements StartChatStreamState<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -1940,6 +1979,7 @@ class _$StartChatStreamState<T> implements StartChatStreamState<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -1992,6 +2032,7 @@ class _$StartChatStreamState<T> implements StartChatStreamState<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -2039,6 +2080,7 @@ class _$StartChatStreamState<T> implements StartChatStreamState<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -2094,6 +2136,400 @@ abstract class StartChatStreamState<T> implements ChatState<T> {
 }
 
 /// @nodoc
+abstract class _$$ChatStreamNewDataCopyWith<T, $Res> {
+  factory _$$ChatStreamNewDataCopyWith(_$ChatStreamNewData<T> value,
+          $Res Function(_$ChatStreamNewData<T>) then) =
+      __$$ChatStreamNewDataCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({List<ChatMessagesModel> messages});
+}
+
+/// @nodoc
+class __$$ChatStreamNewDataCopyWithImpl<T, $Res>
+    extends _$ChatStateCopyWithImpl<T, $Res, _$ChatStreamNewData<T>>
+    implements _$$ChatStreamNewDataCopyWith<T, $Res> {
+  __$$ChatStreamNewDataCopyWithImpl(_$ChatStreamNewData<T> _value,
+      $Res Function(_$ChatStreamNewData<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? messages = null,
+  }) {
+    return _then(_$ChatStreamNewData<T>(
+      null == messages
+          ? _value._messages
+          : messages // ignore: cast_nullable_to_non_nullable
+              as List<ChatMessagesModel>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChatStreamNewData<T> implements ChatStreamNewData<T> {
+  const _$ChatStreamNewData(final List<ChatMessagesModel> messages)
+      : _messages = messages;
+
+  final List<ChatMessagesModel> _messages;
+  @override
+  List<ChatMessagesModel> get messages {
+    if (_messages is EqualUnmodifiableListView) return _messages;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_messages);
+  }
+
+  @override
+  String toString() {
+    return 'ChatState<$T>.chatStreamNewData(messages: $messages)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChatStreamNewData<T> &&
+            const DeepCollectionEquality().equals(other._messages, _messages));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_messages));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChatStreamNewDataCopyWith<T, _$ChatStreamNewData<T>> get copyWith =>
+      __$$ChatStreamNewDataCopyWithImpl<T, _$ChatStreamNewData<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() goToLocation,
+    required TResult Function() stopChatStreamState,
+    required TResult Function() resumeChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
+    required TResult Function() hiringChatsLoading,
+    required TResult Function(T data) hiringChatsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        hiringChatsError,
+    required TResult Function() chatWithUserLoading,
+    required TResult Function(ChatWithUserModel data) chatWithUserSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        chatWithUserError,
+    required TResult Function() reportChatLoading,
+    required TResult Function(T data) reportChatSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        reportChatError,
+    required TResult Function() requestsChatsLoading,
+    required TResult Function(T data) requestsChatsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        requestsChatsError,
+    required TResult Function() jobChatsLoading,
+    required TResult Function(JobChatsModel jobChats) jobChatsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        jobChatsError,
+    required TResult Function() showChatInfoLoading,
+    required TResult Function(ShowChatInfoModel chatInfo) showChatInfoSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        showChatInfoError,
+    required TResult Function() chatMessagesLoading,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatMessagesSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        chatMessagesError,
+    required TResult Function(List<File> images) imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function(List<File> images) imageSelectedDeleted,
+    required TResult Function(List<File> files) fileSelectedSuccess,
+    required TResult Function() fileSelectedLoading,
+    required TResult Function() fileSelectedError,
+    required TResult Function(List<File> files) fileSelectedDeleted,
+    required TResult Function() sendMessageloading,
+    required TResult Function(T data) sendMessagesuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        sendMessageerror,
+    required TResult Function() messageloading,
+    required TResult Function(T data) messagesuccess,
+    required TResult Function(NetworkExceptions networkExceptions) messageerror,
+  }) {
+    return chatStreamNewData(messages);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? goToLocation,
+    TResult? Function()? stopChatStreamState,
+    TResult? Function()? resumeChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
+    TResult? Function()? hiringChatsLoading,
+    TResult? Function(T data)? hiringChatsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
+    TResult? Function()? chatWithUserLoading,
+    TResult? Function(ChatWithUserModel data)? chatWithUserSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? chatWithUserError,
+    TResult? Function()? reportChatLoading,
+    TResult? Function(T data)? reportChatSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? reportChatError,
+    TResult? Function()? requestsChatsLoading,
+    TResult? Function(T data)? requestsChatsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? requestsChatsError,
+    TResult? Function()? jobChatsLoading,
+    TResult? Function(JobChatsModel jobChats)? jobChatsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? jobChatsError,
+    TResult? Function()? showChatInfoLoading,
+    TResult? Function(ShowChatInfoModel chatInfo)? showChatInfoSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? showChatInfoError,
+    TResult? Function()? chatMessagesLoading,
+    TResult? Function(List<ChatMessagesModel> messages)? chatMessagesSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? chatMessagesError,
+    TResult? Function(List<File> images)? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function(List<File> images)? imageSelectedDeleted,
+    TResult? Function(List<File> files)? fileSelectedSuccess,
+    TResult? Function()? fileSelectedLoading,
+    TResult? Function()? fileSelectedError,
+    TResult? Function(List<File> files)? fileSelectedDeleted,
+    TResult? Function()? sendMessageloading,
+    TResult? Function(T data)? sendMessagesuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? sendMessageerror,
+    TResult? Function()? messageloading,
+    TResult? Function(T data)? messagesuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? messageerror,
+  }) {
+    return chatStreamNewData?.call(messages);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? goToLocation,
+    TResult Function()? stopChatStreamState,
+    TResult Function()? resumeChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
+    TResult Function()? hiringChatsLoading,
+    TResult Function(T data)? hiringChatsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
+    TResult Function()? chatWithUserLoading,
+    TResult Function(ChatWithUserModel data)? chatWithUserSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? chatWithUserError,
+    TResult Function()? reportChatLoading,
+    TResult Function(T data)? reportChatSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? reportChatError,
+    TResult Function()? requestsChatsLoading,
+    TResult Function(T data)? requestsChatsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? requestsChatsError,
+    TResult Function()? jobChatsLoading,
+    TResult Function(JobChatsModel jobChats)? jobChatsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? jobChatsError,
+    TResult Function()? showChatInfoLoading,
+    TResult Function(ShowChatInfoModel chatInfo)? showChatInfoSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? showChatInfoError,
+    TResult Function()? chatMessagesLoading,
+    TResult Function(List<ChatMessagesModel> messages)? chatMessagesSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? chatMessagesError,
+    TResult Function(List<File> images)? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function(List<File> images)? imageSelectedDeleted,
+    TResult Function(List<File> files)? fileSelectedSuccess,
+    TResult Function()? fileSelectedLoading,
+    TResult Function()? fileSelectedError,
+    TResult Function(List<File> files)? fileSelectedDeleted,
+    TResult Function()? sendMessageloading,
+    TResult Function(T data)? sendMessagesuccess,
+    TResult Function(NetworkExceptions networkExceptions)? sendMessageerror,
+    TResult Function()? messageloading,
+    TResult Function(T data)? messagesuccess,
+    TResult Function(NetworkExceptions networkExceptions)? messageerror,
+    required TResult orElse(),
+  }) {
+    if (chatStreamNewData != null) {
+      return chatStreamNewData(messages);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(GoToLocation<T> value) goToLocation,
+    required TResult Function(StopChatStreamState<T> value) stopChatStreamState,
+    required TResult Function(ResumeChatStreamState<T> value)
+        resumeChatStreamState,
+    required TResult Function(StartChatStreamState<T> value)
+        startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
+    required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
+    required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
+    required TResult Function(HiringChatsError<T> value) hiringChatsError,
+    required TResult Function(ChatWithUserLoading<T> value) chatWithUserLoading,
+    required TResult Function(ChatWithUserSuccess<T> value) chatWithUserSuccess,
+    required TResult Function(ChatWithUserError<T> value) chatWithUserError,
+    required TResult Function(ReportChatLoading<T> value) reportChatLoading,
+    required TResult Function(ReportChatSuccess<T> value) reportChatSuccess,
+    required TResult Function(ReportChatError<T> value) reportChatError,
+    required TResult Function(RequestsChatsLoading<T> value)
+        requestsChatsLoading,
+    required TResult Function(RequestsChatsSuccess<T> value)
+        requestsChatsSuccess,
+    required TResult Function(RequestsChatsError<T> value) requestsChatsError,
+    required TResult Function(JobChatsLoading<T> value) jobChatsLoading,
+    required TResult Function(JobChatsSuccess<T> value) jobChatsSuccess,
+    required TResult Function(JobChatsError<T> value) jobChatsError,
+    required TResult Function(ShowChatInfoLoading<T> value) showChatInfoLoading,
+    required TResult Function(ShowChatInfoSuccess<T> value) showChatInfoSuccess,
+    required TResult Function(ShowChatInfoError<T> value) showChatInfoError,
+    required TResult Function(ChatMessagesLoading<T> value) chatMessagesLoading,
+    required TResult Function(ChatMessagesSuccess<T> value) chatMessagesSuccess,
+    required TResult Function(ChatMessagesError<T> value) chatMessagesError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(ImageSelectedDeleted<T> value)
+        imageSelectedDeleted,
+    required TResult Function(FileSelectedSuccess<T> value) fileSelectedSuccess,
+    required TResult Function(FileSelectedLoading<T> value) fileSelectedLoading,
+    required TResult Function(FileSelectedError<T> value) fileSelectedError,
+    required TResult Function(FileSelectedDeleted<T> value) fileSelectedDeleted,
+    required TResult Function(SendMessageLoading<T> value) sendMessageloading,
+    required TResult Function(SendMessageSuccess<T> value) sendMessagesuccess,
+    required TResult Function(SendMessageError<T> value) sendMessageerror,
+    required TResult Function(MessageLoading<T> value) messageloading,
+    required TResult Function(MessageSuccess<T> value) messagesuccess,
+    required TResult Function(MessageError<T> value) messageerror,
+  }) {
+    return chatStreamNewData(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(GoToLocation<T> value)? goToLocation,
+    TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
+    TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
+    TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
+    TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
+    TResult? Function(HiringChatsError<T> value)? hiringChatsError,
+    TResult? Function(ChatWithUserLoading<T> value)? chatWithUserLoading,
+    TResult? Function(ChatWithUserSuccess<T> value)? chatWithUserSuccess,
+    TResult? Function(ChatWithUserError<T> value)? chatWithUserError,
+    TResult? Function(ReportChatLoading<T> value)? reportChatLoading,
+    TResult? Function(ReportChatSuccess<T> value)? reportChatSuccess,
+    TResult? Function(ReportChatError<T> value)? reportChatError,
+    TResult? Function(RequestsChatsLoading<T> value)? requestsChatsLoading,
+    TResult? Function(RequestsChatsSuccess<T> value)? requestsChatsSuccess,
+    TResult? Function(RequestsChatsError<T> value)? requestsChatsError,
+    TResult? Function(JobChatsLoading<T> value)? jobChatsLoading,
+    TResult? Function(JobChatsSuccess<T> value)? jobChatsSuccess,
+    TResult? Function(JobChatsError<T> value)? jobChatsError,
+    TResult? Function(ShowChatInfoLoading<T> value)? showChatInfoLoading,
+    TResult? Function(ShowChatInfoSuccess<T> value)? showChatInfoSuccess,
+    TResult? Function(ShowChatInfoError<T> value)? showChatInfoError,
+    TResult? Function(ChatMessagesLoading<T> value)? chatMessagesLoading,
+    TResult? Function(ChatMessagesSuccess<T> value)? chatMessagesSuccess,
+    TResult? Function(ChatMessagesError<T> value)? chatMessagesError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult? Function(FileSelectedSuccess<T> value)? fileSelectedSuccess,
+    TResult? Function(FileSelectedLoading<T> value)? fileSelectedLoading,
+    TResult? Function(FileSelectedError<T> value)? fileSelectedError,
+    TResult? Function(FileSelectedDeleted<T> value)? fileSelectedDeleted,
+    TResult? Function(SendMessageLoading<T> value)? sendMessageloading,
+    TResult? Function(SendMessageSuccess<T> value)? sendMessagesuccess,
+    TResult? Function(SendMessageError<T> value)? sendMessageerror,
+    TResult? Function(MessageLoading<T> value)? messageloading,
+    TResult? Function(MessageSuccess<T> value)? messagesuccess,
+    TResult? Function(MessageError<T> value)? messageerror,
+  }) {
+    return chatStreamNewData?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(GoToLocation<T> value)? goToLocation,
+    TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
+    TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
+    TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
+    TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
+    TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
+    TResult Function(HiringChatsError<T> value)? hiringChatsError,
+    TResult Function(ChatWithUserLoading<T> value)? chatWithUserLoading,
+    TResult Function(ChatWithUserSuccess<T> value)? chatWithUserSuccess,
+    TResult Function(ChatWithUserError<T> value)? chatWithUserError,
+    TResult Function(ReportChatLoading<T> value)? reportChatLoading,
+    TResult Function(ReportChatSuccess<T> value)? reportChatSuccess,
+    TResult Function(ReportChatError<T> value)? reportChatError,
+    TResult Function(RequestsChatsLoading<T> value)? requestsChatsLoading,
+    TResult Function(RequestsChatsSuccess<T> value)? requestsChatsSuccess,
+    TResult Function(RequestsChatsError<T> value)? requestsChatsError,
+    TResult Function(JobChatsLoading<T> value)? jobChatsLoading,
+    TResult Function(JobChatsSuccess<T> value)? jobChatsSuccess,
+    TResult Function(JobChatsError<T> value)? jobChatsError,
+    TResult Function(ShowChatInfoLoading<T> value)? showChatInfoLoading,
+    TResult Function(ShowChatInfoSuccess<T> value)? showChatInfoSuccess,
+    TResult Function(ShowChatInfoError<T> value)? showChatInfoError,
+    TResult Function(ChatMessagesLoading<T> value)? chatMessagesLoading,
+    TResult Function(ChatMessagesSuccess<T> value)? chatMessagesSuccess,
+    TResult Function(ChatMessagesError<T> value)? chatMessagesError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult Function(FileSelectedSuccess<T> value)? fileSelectedSuccess,
+    TResult Function(FileSelectedLoading<T> value)? fileSelectedLoading,
+    TResult Function(FileSelectedError<T> value)? fileSelectedError,
+    TResult Function(FileSelectedDeleted<T> value)? fileSelectedDeleted,
+    TResult Function(SendMessageLoading<T> value)? sendMessageloading,
+    TResult Function(SendMessageSuccess<T> value)? sendMessagesuccess,
+    TResult Function(SendMessageError<T> value)? sendMessageerror,
+    TResult Function(MessageLoading<T> value)? messageloading,
+    TResult Function(MessageSuccess<T> value)? messagesuccess,
+    TResult Function(MessageError<T> value)? messageerror,
+    required TResult orElse(),
+  }) {
+    if (chatStreamNewData != null) {
+      return chatStreamNewData(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChatStreamNewData<T> implements ChatState<T> {
+  const factory ChatStreamNewData(final List<ChatMessagesModel> messages) =
+      _$ChatStreamNewData<T>;
+
+  List<ChatMessagesModel> get messages;
+  @JsonKey(ignore: true)
+  _$$ChatStreamNewDataCopyWith<T, _$ChatStreamNewData<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 abstract class _$$HiringChatsLoadingCopyWith<T, $Res> {
   factory _$$HiringChatsLoadingCopyWith(_$HiringChatsLoading<T> value,
           $Res Function(_$HiringChatsLoading<T>) then) =
@@ -2137,6 +2573,8 @@ class _$HiringChatsLoading<T> implements HiringChatsLoading<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -2193,6 +2631,7 @@ class _$HiringChatsLoading<T> implements HiringChatsLoading<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -2240,6 +2679,7 @@ class _$HiringChatsLoading<T> implements HiringChatsLoading<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -2293,6 +2733,7 @@ class _$HiringChatsLoading<T> implements HiringChatsLoading<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -2345,6 +2786,7 @@ class _$HiringChatsLoading<T> implements HiringChatsLoading<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -2392,6 +2834,7 @@ class _$HiringChatsLoading<T> implements HiringChatsLoading<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -2512,6 +2955,8 @@ class _$HiringChatsSuccess<T> implements HiringChatsSuccess<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -2568,6 +3013,7 @@ class _$HiringChatsSuccess<T> implements HiringChatsSuccess<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -2615,6 +3061,7 @@ class _$HiringChatsSuccess<T> implements HiringChatsSuccess<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -2668,6 +3115,7 @@ class _$HiringChatsSuccess<T> implements HiringChatsSuccess<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -2720,6 +3168,7 @@ class _$HiringChatsSuccess<T> implements HiringChatsSuccess<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -2767,6 +3216,7 @@ class _$HiringChatsSuccess<T> implements HiringChatsSuccess<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -2902,6 +3352,8 @@ class _$HiringChatsError<T> implements HiringChatsError<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -2958,6 +3410,7 @@ class _$HiringChatsError<T> implements HiringChatsError<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -3005,6 +3458,7 @@ class _$HiringChatsError<T> implements HiringChatsError<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -3058,6 +3512,7 @@ class _$HiringChatsError<T> implements HiringChatsError<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -3110,6 +3565,7 @@ class _$HiringChatsError<T> implements HiringChatsError<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -3157,6 +3613,7 @@ class _$HiringChatsError<T> implements HiringChatsError<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -3255,6 +3712,8 @@ class _$ChatWithUserLoading<T> implements ChatWithUserLoading<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -3311,6 +3770,7 @@ class _$ChatWithUserLoading<T> implements ChatWithUserLoading<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -3358,6 +3818,7 @@ class _$ChatWithUserLoading<T> implements ChatWithUserLoading<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -3411,6 +3872,7 @@ class _$ChatWithUserLoading<T> implements ChatWithUserLoading<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -3463,6 +3925,7 @@ class _$ChatWithUserLoading<T> implements ChatWithUserLoading<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -3510,6 +3973,7 @@ class _$ChatWithUserLoading<T> implements ChatWithUserLoading<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -3629,6 +4093,8 @@ class _$ChatWithUserSuccess<T> implements ChatWithUserSuccess<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -3685,6 +4151,7 @@ class _$ChatWithUserSuccess<T> implements ChatWithUserSuccess<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -3732,6 +4199,7 @@ class _$ChatWithUserSuccess<T> implements ChatWithUserSuccess<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -3785,6 +4253,7 @@ class _$ChatWithUserSuccess<T> implements ChatWithUserSuccess<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -3837,6 +4306,7 @@ class _$ChatWithUserSuccess<T> implements ChatWithUserSuccess<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -3884,6 +4354,7 @@ class _$ChatWithUserSuccess<T> implements ChatWithUserSuccess<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -4020,6 +4491,8 @@ class _$ChatWithUserError<T> implements ChatWithUserError<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -4076,6 +4549,7 @@ class _$ChatWithUserError<T> implements ChatWithUserError<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -4123,6 +4597,7 @@ class _$ChatWithUserError<T> implements ChatWithUserError<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -4176,6 +4651,7 @@ class _$ChatWithUserError<T> implements ChatWithUserError<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -4228,6 +4704,7 @@ class _$ChatWithUserError<T> implements ChatWithUserError<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -4275,6 +4752,7 @@ class _$ChatWithUserError<T> implements ChatWithUserError<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -4373,6 +4851,8 @@ class _$ReportChatLoading<T> implements ReportChatLoading<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -4429,6 +4909,7 @@ class _$ReportChatLoading<T> implements ReportChatLoading<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -4476,6 +4957,7 @@ class _$ReportChatLoading<T> implements ReportChatLoading<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -4529,6 +5011,7 @@ class _$ReportChatLoading<T> implements ReportChatLoading<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -4581,6 +5064,7 @@ class _$ReportChatLoading<T> implements ReportChatLoading<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -4628,6 +5112,7 @@ class _$ReportChatLoading<T> implements ReportChatLoading<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -4748,6 +5233,8 @@ class _$ReportChatSuccess<T> implements ReportChatSuccess<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -4804,6 +5291,7 @@ class _$ReportChatSuccess<T> implements ReportChatSuccess<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -4851,6 +5339,7 @@ class _$ReportChatSuccess<T> implements ReportChatSuccess<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -4904,6 +5393,7 @@ class _$ReportChatSuccess<T> implements ReportChatSuccess<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -4956,6 +5446,7 @@ class _$ReportChatSuccess<T> implements ReportChatSuccess<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -5003,6 +5494,7 @@ class _$ReportChatSuccess<T> implements ReportChatSuccess<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -5138,6 +5630,8 @@ class _$ReportChatError<T> implements ReportChatError<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -5194,6 +5688,7 @@ class _$ReportChatError<T> implements ReportChatError<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -5241,6 +5736,7 @@ class _$ReportChatError<T> implements ReportChatError<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -5294,6 +5790,7 @@ class _$ReportChatError<T> implements ReportChatError<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -5346,6 +5843,7 @@ class _$ReportChatError<T> implements ReportChatError<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -5393,6 +5891,7 @@ class _$ReportChatError<T> implements ReportChatError<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -5492,6 +5991,8 @@ class _$RequestsChatsLoading<T> implements RequestsChatsLoading<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -5548,6 +6049,7 @@ class _$RequestsChatsLoading<T> implements RequestsChatsLoading<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -5595,6 +6097,7 @@ class _$RequestsChatsLoading<T> implements RequestsChatsLoading<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -5648,6 +6151,7 @@ class _$RequestsChatsLoading<T> implements RequestsChatsLoading<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -5700,6 +6204,7 @@ class _$RequestsChatsLoading<T> implements RequestsChatsLoading<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -5747,6 +6252,7 @@ class _$RequestsChatsLoading<T> implements RequestsChatsLoading<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -5867,6 +6373,8 @@ class _$RequestsChatsSuccess<T> implements RequestsChatsSuccess<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -5923,6 +6431,7 @@ class _$RequestsChatsSuccess<T> implements RequestsChatsSuccess<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -5970,6 +6479,7 @@ class _$RequestsChatsSuccess<T> implements RequestsChatsSuccess<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -6023,6 +6533,7 @@ class _$RequestsChatsSuccess<T> implements RequestsChatsSuccess<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -6075,6 +6586,7 @@ class _$RequestsChatsSuccess<T> implements RequestsChatsSuccess<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -6122,6 +6634,7 @@ class _$RequestsChatsSuccess<T> implements RequestsChatsSuccess<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -6257,6 +6770,8 @@ class _$RequestsChatsError<T> implements RequestsChatsError<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -6313,6 +6828,7 @@ class _$RequestsChatsError<T> implements RequestsChatsError<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -6360,6 +6876,7 @@ class _$RequestsChatsError<T> implements RequestsChatsError<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -6413,6 +6930,7 @@ class _$RequestsChatsError<T> implements RequestsChatsError<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -6465,6 +6983,7 @@ class _$RequestsChatsError<T> implements RequestsChatsError<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -6512,6 +7031,7 @@ class _$RequestsChatsError<T> implements RequestsChatsError<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -6610,6 +7130,8 @@ class _$JobChatsLoading<T> implements JobChatsLoading<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -6666,6 +7188,7 @@ class _$JobChatsLoading<T> implements JobChatsLoading<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -6713,6 +7236,7 @@ class _$JobChatsLoading<T> implements JobChatsLoading<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -6766,6 +7290,7 @@ class _$JobChatsLoading<T> implements JobChatsLoading<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -6818,6 +7343,7 @@ class _$JobChatsLoading<T> implements JobChatsLoading<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -6865,6 +7391,7 @@ class _$JobChatsLoading<T> implements JobChatsLoading<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -6985,6 +7512,8 @@ class _$JobChatsSuccess<T> implements JobChatsSuccess<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -7041,6 +7570,7 @@ class _$JobChatsSuccess<T> implements JobChatsSuccess<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -7088,6 +7618,7 @@ class _$JobChatsSuccess<T> implements JobChatsSuccess<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -7141,6 +7672,7 @@ class _$JobChatsSuccess<T> implements JobChatsSuccess<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -7193,6 +7725,7 @@ class _$JobChatsSuccess<T> implements JobChatsSuccess<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -7240,6 +7773,7 @@ class _$JobChatsSuccess<T> implements JobChatsSuccess<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -7375,6 +7909,8 @@ class _$JobChatsError<T> implements JobChatsError<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -7431,6 +7967,7 @@ class _$JobChatsError<T> implements JobChatsError<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -7478,6 +8015,7 @@ class _$JobChatsError<T> implements JobChatsError<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -7531,6 +8069,7 @@ class _$JobChatsError<T> implements JobChatsError<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -7583,6 +8122,7 @@ class _$JobChatsError<T> implements JobChatsError<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -7630,6 +8170,7 @@ class _$JobChatsError<T> implements JobChatsError<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -7728,6 +8269,8 @@ class _$ShowChatInfoLoading<T> implements ShowChatInfoLoading<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -7784,6 +8327,7 @@ class _$ShowChatInfoLoading<T> implements ShowChatInfoLoading<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -7831,6 +8375,7 @@ class _$ShowChatInfoLoading<T> implements ShowChatInfoLoading<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -7884,6 +8429,7 @@ class _$ShowChatInfoLoading<T> implements ShowChatInfoLoading<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -7936,6 +8482,7 @@ class _$ShowChatInfoLoading<T> implements ShowChatInfoLoading<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -7983,6 +8530,7 @@ class _$ShowChatInfoLoading<T> implements ShowChatInfoLoading<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -8103,6 +8651,8 @@ class _$ShowChatInfoSuccess<T> implements ShowChatInfoSuccess<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -8159,6 +8709,7 @@ class _$ShowChatInfoSuccess<T> implements ShowChatInfoSuccess<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -8206,6 +8757,7 @@ class _$ShowChatInfoSuccess<T> implements ShowChatInfoSuccess<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -8259,6 +8811,7 @@ class _$ShowChatInfoSuccess<T> implements ShowChatInfoSuccess<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -8311,6 +8864,7 @@ class _$ShowChatInfoSuccess<T> implements ShowChatInfoSuccess<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -8358,6 +8912,7 @@ class _$ShowChatInfoSuccess<T> implements ShowChatInfoSuccess<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -8494,6 +9049,8 @@ class _$ShowChatInfoError<T> implements ShowChatInfoError<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -8550,6 +9107,7 @@ class _$ShowChatInfoError<T> implements ShowChatInfoError<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -8597,6 +9155,7 @@ class _$ShowChatInfoError<T> implements ShowChatInfoError<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -8650,6 +9209,7 @@ class _$ShowChatInfoError<T> implements ShowChatInfoError<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -8702,6 +9262,7 @@ class _$ShowChatInfoError<T> implements ShowChatInfoError<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -8749,6 +9310,7 @@ class _$ShowChatInfoError<T> implements ShowChatInfoError<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -8847,6 +9409,8 @@ class _$ChatMessagesLoading<T> implements ChatMessagesLoading<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -8903,6 +9467,7 @@ class _$ChatMessagesLoading<T> implements ChatMessagesLoading<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -8950,6 +9515,7 @@ class _$ChatMessagesLoading<T> implements ChatMessagesLoading<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -9003,6 +9569,7 @@ class _$ChatMessagesLoading<T> implements ChatMessagesLoading<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -9055,6 +9622,7 @@ class _$ChatMessagesLoading<T> implements ChatMessagesLoading<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -9102,6 +9670,7 @@ class _$ChatMessagesLoading<T> implements ChatMessagesLoading<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -9228,6 +9797,8 @@ class _$ChatMessagesSuccess<T> implements ChatMessagesSuccess<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -9284,6 +9855,7 @@ class _$ChatMessagesSuccess<T> implements ChatMessagesSuccess<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -9331,6 +9903,7 @@ class _$ChatMessagesSuccess<T> implements ChatMessagesSuccess<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -9384,6 +9957,7 @@ class _$ChatMessagesSuccess<T> implements ChatMessagesSuccess<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -9436,6 +10010,7 @@ class _$ChatMessagesSuccess<T> implements ChatMessagesSuccess<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -9483,6 +10058,7 @@ class _$ChatMessagesSuccess<T> implements ChatMessagesSuccess<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -9619,6 +10195,8 @@ class _$ChatMessagesError<T> implements ChatMessagesError<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -9675,6 +10253,7 @@ class _$ChatMessagesError<T> implements ChatMessagesError<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -9722,6 +10301,7 @@ class _$ChatMessagesError<T> implements ChatMessagesError<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -9775,6 +10355,7 @@ class _$ChatMessagesError<T> implements ChatMessagesError<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -9827,6 +10408,7 @@ class _$ChatMessagesError<T> implements ChatMessagesError<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -9874,6 +10456,7 @@ class _$ChatMessagesError<T> implements ChatMessagesError<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -10005,6 +10588,8 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -10061,6 +10646,7 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -10108,6 +10694,7 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -10161,6 +10748,7 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -10213,6 +10801,7 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -10260,6 +10849,7 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -10359,6 +10949,8 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -10415,6 +11007,7 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -10462,6 +11055,7 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -10515,6 +11109,7 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -10567,6 +11162,7 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -10614,6 +11210,7 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -10706,6 +11303,8 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -10762,6 +11361,7 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -10809,6 +11409,7 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -10862,6 +11463,7 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -10914,6 +11516,7 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -10961,6 +11564,7 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -11086,6 +11690,8 @@ class _$ImageSelectedDeleted<T> implements ImageSelectedDeleted<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -11142,6 +11748,7 @@ class _$ImageSelectedDeleted<T> implements ImageSelectedDeleted<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -11189,6 +11796,7 @@ class _$ImageSelectedDeleted<T> implements ImageSelectedDeleted<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -11242,6 +11850,7 @@ class _$ImageSelectedDeleted<T> implements ImageSelectedDeleted<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -11294,6 +11903,7 @@ class _$ImageSelectedDeleted<T> implements ImageSelectedDeleted<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -11341,6 +11951,7 @@ class _$ImageSelectedDeleted<T> implements ImageSelectedDeleted<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -11472,6 +12083,8 @@ class _$FileSelectedSuccess<T> implements FileSelectedSuccess<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -11528,6 +12141,7 @@ class _$FileSelectedSuccess<T> implements FileSelectedSuccess<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -11575,6 +12189,7 @@ class _$FileSelectedSuccess<T> implements FileSelectedSuccess<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -11628,6 +12243,7 @@ class _$FileSelectedSuccess<T> implements FileSelectedSuccess<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -11680,6 +12296,7 @@ class _$FileSelectedSuccess<T> implements FileSelectedSuccess<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -11727,6 +12344,7 @@ class _$FileSelectedSuccess<T> implements FileSelectedSuccess<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -11825,6 +12443,8 @@ class _$FileSelectedLoading<T> implements FileSelectedLoading<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -11881,6 +12501,7 @@ class _$FileSelectedLoading<T> implements FileSelectedLoading<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -11928,6 +12549,7 @@ class _$FileSelectedLoading<T> implements FileSelectedLoading<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -11981,6 +12603,7 @@ class _$FileSelectedLoading<T> implements FileSelectedLoading<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -12033,6 +12656,7 @@ class _$FileSelectedLoading<T> implements FileSelectedLoading<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -12080,6 +12704,7 @@ class _$FileSelectedLoading<T> implements FileSelectedLoading<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -12172,6 +12797,8 @@ class _$FileSelectedError<T> implements FileSelectedError<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -12228,6 +12855,7 @@ class _$FileSelectedError<T> implements FileSelectedError<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -12275,6 +12903,7 @@ class _$FileSelectedError<T> implements FileSelectedError<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -12328,6 +12957,7 @@ class _$FileSelectedError<T> implements FileSelectedError<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -12380,6 +13010,7 @@ class _$FileSelectedError<T> implements FileSelectedError<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -12427,6 +13058,7 @@ class _$FileSelectedError<T> implements FileSelectedError<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -12552,6 +13184,8 @@ class _$FileSelectedDeleted<T> implements FileSelectedDeleted<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -12608,6 +13242,7 @@ class _$FileSelectedDeleted<T> implements FileSelectedDeleted<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -12655,6 +13290,7 @@ class _$FileSelectedDeleted<T> implements FileSelectedDeleted<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -12708,6 +13344,7 @@ class _$FileSelectedDeleted<T> implements FileSelectedDeleted<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -12760,6 +13397,7 @@ class _$FileSelectedDeleted<T> implements FileSelectedDeleted<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -12807,6 +13445,7 @@ class _$FileSelectedDeleted<T> implements FileSelectedDeleted<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -12905,6 +13544,8 @@ class _$SendMessageLoading<T> implements SendMessageLoading<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -12961,6 +13602,7 @@ class _$SendMessageLoading<T> implements SendMessageLoading<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -13008,6 +13650,7 @@ class _$SendMessageLoading<T> implements SendMessageLoading<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -13061,6 +13704,7 @@ class _$SendMessageLoading<T> implements SendMessageLoading<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -13113,6 +13757,7 @@ class _$SendMessageLoading<T> implements SendMessageLoading<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -13160,6 +13805,7 @@ class _$SendMessageLoading<T> implements SendMessageLoading<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -13280,6 +13926,8 @@ class _$SendMessageSuccess<T> implements SendMessageSuccess<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -13336,6 +13984,7 @@ class _$SendMessageSuccess<T> implements SendMessageSuccess<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -13383,6 +14032,7 @@ class _$SendMessageSuccess<T> implements SendMessageSuccess<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -13436,6 +14086,7 @@ class _$SendMessageSuccess<T> implements SendMessageSuccess<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -13488,6 +14139,7 @@ class _$SendMessageSuccess<T> implements SendMessageSuccess<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -13535,6 +14187,7 @@ class _$SendMessageSuccess<T> implements SendMessageSuccess<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -13670,6 +14323,8 @@ class _$SendMessageError<T> implements SendMessageError<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -13726,6 +14381,7 @@ class _$SendMessageError<T> implements SendMessageError<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -13773,6 +14429,7 @@ class _$SendMessageError<T> implements SendMessageError<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -13826,6 +14483,7 @@ class _$SendMessageError<T> implements SendMessageError<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -13878,6 +14536,7 @@ class _$SendMessageError<T> implements SendMessageError<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -13925,6 +14584,7 @@ class _$SendMessageError<T> implements SendMessageError<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -14023,6 +14683,8 @@ class _$MessageLoading<T> implements MessageLoading<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -14079,6 +14741,7 @@ class _$MessageLoading<T> implements MessageLoading<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -14126,6 +14789,7 @@ class _$MessageLoading<T> implements MessageLoading<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -14179,6 +14843,7 @@ class _$MessageLoading<T> implements MessageLoading<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -14231,6 +14896,7 @@ class _$MessageLoading<T> implements MessageLoading<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -14278,6 +14944,7 @@ class _$MessageLoading<T> implements MessageLoading<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -14397,6 +15064,8 @@ class _$MessageSuccess<T> implements MessageSuccess<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -14453,6 +15122,7 @@ class _$MessageSuccess<T> implements MessageSuccess<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -14500,6 +15170,7 @@ class _$MessageSuccess<T> implements MessageSuccess<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -14553,6 +15224,7 @@ class _$MessageSuccess<T> implements MessageSuccess<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -14605,6 +15277,7 @@ class _$MessageSuccess<T> implements MessageSuccess<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -14652,6 +15325,7 @@ class _$MessageSuccess<T> implements MessageSuccess<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,
@@ -14786,6 +15460,8 @@ class _$MessageError<T> implements MessageError<T> {
     required TResult Function() resumeChatStreamState,
     required TResult Function(List<ChatMessagesModel> messages)
         startChatStreamState,
+    required TResult Function(List<ChatMessagesModel> messages)
+        chatStreamNewData,
     required TResult Function() hiringChatsLoading,
     required TResult Function(T data) hiringChatsSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -14842,6 +15518,7 @@ class _$MessageError<T> implements MessageError<T> {
     TResult? Function()? stopChatStreamState,
     TResult? Function()? resumeChatStreamState,
     TResult? Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult? Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult? Function()? hiringChatsLoading,
     TResult? Function(T data)? hiringChatsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -14889,6 +15566,7 @@ class _$MessageError<T> implements MessageError<T> {
     TResult Function()? stopChatStreamState,
     TResult Function()? resumeChatStreamState,
     TResult Function(List<ChatMessagesModel> messages)? startChatStreamState,
+    TResult Function(List<ChatMessagesModel> messages)? chatStreamNewData,
     TResult Function()? hiringChatsLoading,
     TResult Function(T data)? hiringChatsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? hiringChatsError,
@@ -14942,6 +15620,7 @@ class _$MessageError<T> implements MessageError<T> {
         resumeChatStreamState,
     required TResult Function(StartChatStreamState<T> value)
         startChatStreamState,
+    required TResult Function(ChatStreamNewData<T> value) chatStreamNewData,
     required TResult Function(HiringChatsLoading<T> value) hiringChatsLoading,
     required TResult Function(HiringChatsSuccess<T> value) hiringChatsSuccess,
     required TResult Function(HiringChatsError<T> value) hiringChatsError,
@@ -14994,6 +15673,7 @@ class _$MessageError<T> implements MessageError<T> {
     TResult? Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult? Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult? Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult? Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult? Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult? Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult? Function(HiringChatsError<T> value)? hiringChatsError,
@@ -15041,6 +15721,7 @@ class _$MessageError<T> implements MessageError<T> {
     TResult Function(StopChatStreamState<T> value)? stopChatStreamState,
     TResult Function(ResumeChatStreamState<T> value)? resumeChatStreamState,
     TResult Function(StartChatStreamState<T> value)? startChatStreamState,
+    TResult Function(ChatStreamNewData<T> value)? chatStreamNewData,
     TResult Function(HiringChatsLoading<T> value)? hiringChatsLoading,
     TResult Function(HiringChatsSuccess<T> value)? hiringChatsSuccess,
     TResult Function(HiringChatsError<T> value)? hiringChatsError,

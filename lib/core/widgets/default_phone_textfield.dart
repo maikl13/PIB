@@ -35,23 +35,23 @@ class DefaultPhoneTextField extends StatefulWidget {
 }
 
 class _DefaultPhoneTextFieldState extends State<DefaultPhoneTextField> {
-  String? _labelText;
+  // String? _labelText;
   TextEditingController nameTextEditingController = TextEditingController();
   @override
   void initState() {
     super.initState();
-    nameTextEditingController.addListener(_hasStartedTyping);
+    // nameTextEditingController.addListener(_hasStartedTyping);
   }
 
-  void _hasStartedTyping() {
-    setState(() {
-      if (nameTextEditingController.text.isNotEmpty) {
-        _labelText = 'Name';
-      } else {
-        _labelText = null;
-      }
-    });
-  }
+  // void _hasStartedTyping() {
+  //   setState(() {
+  //     if (nameTextEditingController.text.isNotEmpty) {
+  //       _labelText = 'Name';
+  //     } else {
+  //       _labelText = null;
+  //     }
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -143,11 +143,14 @@ class _DefaultPhoneTextFieldState extends State<DefaultPhoneTextField> {
             child: widget.suffix ??
                 CodePicker(
 
+                    // padding: EdgeInsets.all(20),
+                    textOverflow: TextOverflow.ellipsis,
+
                     // boxDecoration: BoxDecoration(color: ColorManager.error),
                     textStyle:
                         getBoldStyle(fontSize: 13.sp, color: ColorManager.grey),
                     onChanged: (code) {
-                      print(code.dialCode!);
+                      // print(code.dialCode!);
                       countryCode = code.dialCode!;
                       CacheHelper.saveData(
                           key: 'countryCode', value: code.dialCode);
@@ -157,6 +160,12 @@ class _DefaultPhoneTextFieldState extends State<DefaultPhoneTextField> {
                       color: ColorManager.grey5,
                     ),
                     searchDecoration: InputDecoration(
+                      
+                      focusColor: ColorManager.darkSeconadry,
+                      prefixIconColor: ColorManager.darkSeconadry,
+                      
+
+                      // iconColor: ColorManager.darkSeconadry,
                       hintText: AppStrings.search,
                       hintStyle: getRegularStyle(
                         fontSize: 15.sp,
@@ -171,7 +180,7 @@ class _DefaultPhoneTextFieldState extends State<DefaultPhoneTextField> {
                     ),
                     flagWidth: 22.w,
                     dialogTextStyle: getBoldStyle(
-                        fontSize: 20.sp, color: ColorManager.grey5),
+                        fontSize: 14.sp, color: ColorManager.grey5),
                     showFlagMain: true,
                     boxDecoration: BoxDecoration(
                       color: ColorManager.white,
@@ -182,10 +191,12 @@ class _DefaultPhoneTextFieldState extends State<DefaultPhoneTextField> {
                     ),
                     searchStyle: getRegularStyle(
                         fontSize: 15.sp, color: ColorManager.grey),
-                    initialSelection: countryCode,
-                    favorite: const ['+966', 'SA'],
+                    initialSelection: countryCode ?? '+966',
+                    favorite: const ['+966', 'SA', 'EG', '+20'],
                     showCountryOnly: false,
                     showOnlyCountryWhenClosed: false,
+
+                    // countryFilter: ['SA', 'EG'],
                     // countryFilter: const ['SA', 'EG'],
                     // padding: EdgeInsets.symmetric(horizontal: 16.w),
                     alignLeft: false)

@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:pip/features/chat/data/models/chats_messages_model.dart';
+import 'package:pip/features/chat/data/models/unread_messages_count.dart';
 import 'package:pip/features/menu/data/models/update_skill.dart';
 
 import '../../../../core/resources/constants.dart';
@@ -101,6 +102,16 @@ class ChatRepository {
       var response =
           await webServices.chatWithUser('Bearer $token', requestId, targetId);
 
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(NetworkExceptions.getDioException(error));
+    }
+  }
+
+     Future<ApiResult<UnreadMessagesCount>> getUnreadMessagesCount() async {
+    try {
+      var response = await webServices.getUnreadMessagesCount(
+          'Bearer $token');
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(NetworkExceptions.getDioException(error));

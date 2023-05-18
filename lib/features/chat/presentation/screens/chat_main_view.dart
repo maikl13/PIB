@@ -73,6 +73,7 @@ class _ChatViewState extends State<ChatView> {
             return WillPopScope(
               onWillPop: () {
                 BlocProvider.of<ChatCubit>(context).stopStream();
+                BlocProvider.of<ChatCubit>(context).imagesFile.clear();
                 return Future.value(true);
               },
               child: Scaffold(
@@ -82,6 +83,8 @@ class _ChatViewState extends State<ChatView> {
                   leading: LeadingArrow(
                     onTap: () {
                       BlocProvider.of<ChatCubit>(context).stopStream();
+                      BlocProvider.of<ChatCubit>(context).imagesFile.clear();
+
                       Navigator.pop(context);
                     },
                   ),

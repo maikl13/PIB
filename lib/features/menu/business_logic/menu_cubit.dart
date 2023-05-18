@@ -4,9 +4,12 @@ import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:pip/core/business_logic/global_cubit.dart';
 import 'package:pip/core/resources/strings_manager.dart';
+import '../../../core/resources/location_helper.dart';
 import '../data/models/rates_model.dart';
 import '../data/models/setting_model.dart';
 import '../data/models/update_skill.dart';
@@ -91,9 +94,6 @@ class MenuCubit extends Cubit<MenuState> {
 
   Future<void> signOut(BuildContext context) async {
     try {
-      await FirebaseAuth.instance.signOut();
-      Commons.showToast(
-          message: "User signed out successfully.", color: ColorManager.green);
       CacheHelper.removeData(key: 'uid');
       CacheHelper.removeData(key: 'token');
       CacheHelper.removeData(key: 'userImage');
@@ -102,15 +102,20 @@ class MenuCubit extends Cubit<MenuState> {
       CacheHelper.removeData(key: 'goToHome');
       CacheHelper.removeData(key: 'userEmail');
       CacheHelper.removeData(key: 'countryCode');
-      // CacheHelper.removeData(key: 'userType');
-      // CacheHelper.removeAll();
+
+      await FirebaseAuth.instance.signOut();
+      Commons.showToast(
+          message: "تم تسجيل الخروج بنجاح", color: ColorManager.green);
 
       screenIndex = 0;
+      isAnonymous = false;
+     
 
       // ignore: use_build_context_synchronously
-      Navigator.pushReplacementNamed(context, Routes.onBoardingViewRoute);
+      Navigator.pushNamedAndRemoveUntil(
+          context, Routes.mainAuthViewRoute, (route) => false);
 
-      // emit(const AuthResultState.firebaseSignOutSuccess());
+      emit(const MenuState.signOutSuccess());
     } catch (e) {
       Commons.showToast(
         message: e.toString(),
@@ -148,12 +153,26 @@ class MenuCubit extends Cubit<MenuState> {
     );
   }
 
+  // Future<void> getMyCurrentLocation() async {
+  //   position = await LocationHelper.getCurrentLocation().then((value) {
+  //     debugPrint(value.toString());
+  //     return value;
+  //   }).catchError((onError) {
+  //     emit(const MenuState.locationError());
+  //     print(onError);
+  //   });
+  // }
+
   void getUserInfo() async {
     emit(const MenuState.getUserInfoLoading());
     var result = await menuRepository.getUserInfo();
     result.when(
       success: (UserInfoModel userInfo) {
+        debugPrint(fastRequsetStatus.toString());
+        fastRequsetStatus = userInfo.fastRequests!;
+
         emit(MenuState.getUserInfoSuccess(userInfo));
+        // userInfo.fastRequests == '1' ? getMyCurrentLocation() : null;
       },
       failure: (NetworkExceptions networkExceptions) {
         emit(MenuState.getUserInfoError(networkExceptions));

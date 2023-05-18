@@ -78,7 +78,11 @@ class _NewMessageState extends State<NewMessage> {
             angle: 45 * math.pi / 180,
             child: GestureDetector(
               onTap: () {
-                _enteredMessage.isEmpty ? null : _sendMessage();
+                if (BlocProvider.of<ChatCubit>(context).imagesFile.isNotEmpty) {
+                  _sendMessage();
+                } else {
+                  _enteredMessage.isEmpty ? null : _sendMessage();
+                }
               },
               child: Icon(
                 Icons.send,

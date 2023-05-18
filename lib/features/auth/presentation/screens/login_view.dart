@@ -57,7 +57,9 @@ class _LoginViewState extends State<LoginView> {
       text: AppStrings.login,
       onTap: () {
         // showProgressIndicator(context);
-        isLogin = true;
+       setState(() {
+          isLogin = true;
+       });
         _login(context);
       },
     );

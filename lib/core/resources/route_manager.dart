@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pip/features/chat/presentation/screens/share_location.dart';
 import 'package:pip/features/menu/presentation/screens/terms_conditions_view.dart';
+import 'package:pip/features/pip/presentation/screens/order_description_view.dart';
 import 'package:pip/features/requests/presentation/screens/edit_request.dart';
 import '../../features/auth/business_logic/cubit/auth_cubit.dart';
 import '../../features/auth/presentation/screens/confirm_otb_view.dart';
@@ -11,8 +12,8 @@ import '../../features/home/data/models/ad_model.dart';
 import '../../features/home/presentation/screens/companeis_need_jobs.view.dart';
 import '../../features/home/presentation/screens/full_time_jobs_view.dart';
 import '../../features/home/presentation/screens/part_time_jobs_view.dart';
-import '../../features/map/presentation/screens/available_drivers.dart';
-import '../../features/map/presentation/screens/confirm_driver.dart';
+// import '../../features/map/presentation/screens/available_drivers.dart';
+// import '../../features/map/presentation/screens/confirm_driver.dart';
 import '../../features/menu/business_logic/menu_cubit.dart';
 import '../../features/menu/presentation/screens/contact_us_view.dart';
 import '../../features/menu/presentation/screens/edit_password_view.dart';
@@ -25,6 +26,9 @@ import '../../features/menu/presentation/screens/who_we_are_view.dart';
 import '../../features/menu/presentation/screens/work_with_us_view.dart';
 import '../../features/notification/business_logic/cubit/notification_cubit.dart';
 import '../../features/pip/business_logic/cubit/pip_cubit.dart';
+import '../../features/pip/presentation/screens/available_drivers.dart';
+import '../../features/pip/presentation/screens/confirm_driver.dart';
+import '../../features/pip/presentation/screens/order_taxi_view.dart';
 import '../../features/requests/data/models/my_request_model.dart';
 import '../../features/requests/data/models/offer_model.dart';
 import '../../features/search/business_logic/bloc/search_bloc.dart';
@@ -36,7 +40,6 @@ import '../../features/chat/business_logic/chat_cubit.dart';
 import '../../features/chat/presentation/screens/chat_main_view.dart';
 import '../../features/home/presentation/screens/jop_details_view.dart';
 import '../../features/home/presentation/screens/main_home_view.dart';
-import '../../features/map/presentation/screens/order_taxi_view.dart';
 import '../../features/notification/presentation/screens/notification_view.dart';
 import '../../features/pip/presentation/screens/fast_request_view.dart';
 import '../../features/pip/presentation/screens/pick_request_type.dart';
@@ -108,7 +111,10 @@ class Routes {
   static const String editRequestViewRoute = "/editRequestViewRoute";
 
   static const String confirDriverViewRoute = "/confirDriverViewRoute";
-  static const String giveOfferFromChatViewRoute = "/giveOfferFromChatViewRoute";
+  static const String giveOfferFromChatViewRoute =
+      "/giveOfferFromChatViewRoute";
+
+  static const String orderDescriptionViewRoute = "/orderDescriptionViewRoute";
 
   static const String availableDriversViewRoute = "/availableDriversViewRoute";
 }
@@ -138,18 +144,54 @@ class RouteGenerator {
   }
   static List screens = <Widget>[
     const HomeView(),
-    const PickRequestTypeView(),
-    MultiBlocProvider(providers: [
-      BlocProvider.value(value: requestsCubit),
-      BlocProvider.value(value: chatCubit),
-    ], child: const MyRequestsMainView()),
+    WillPopScope(
+        onWillPop: () async {
+          globalCubit.changeSelectedIndex(0);
+          return false;
+        },
+        child: BlocProvider.value(
+          value: pipCubit,
+          child: const PickRequestTypeView(),
+        )),
+    MultiBlocProvider(
+        providers: [
+          BlocProvider.value(value: requestsCubit),
+          BlocProvider.value(value: chatCubit),
+          BlocProvider.value(value: pipCubit),
+        ],
+        child: WillPopScope(
+            onWillPop: () async {
+              globalCubit.changeSelectedIndex(0);
+              return false;
+            },
+            child: const MyRequestsMainView())),
     BlocProvider.value(
       value: chatCubit,
-      child: const ConversationsTypeView(),
+      child: WillPopScope(
+          onWillPop: () async {
+            globalCubit.changeSelectedIndex(0);
+            return false;
+          },
+          child: const ConversationsTypeView()),
     ),
-    BlocProvider.value(
-      value: menuCubit,
-      child: const MenuView(),
+    MultiBlocProvider(
+      providers: [
+        BlocProvider.value(
+          value: menuCubit,
+        ),
+        BlocProvider.value(
+          value: requestsCubit,
+        ),
+        BlocProvider.value(
+          value: chatCubit,
+        ),
+      ],
+      child: WillPopScope(
+          onWillPop: () async {
+            globalCubit.changeSelectedIndex(0);
+            return false;
+          },
+          child: const MenuView()),
     ),
   ];
 
@@ -163,6 +205,19 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (_) => const OnBoardingView(),
         );
+
+      case Routes.orderDescriptionViewRoute:
+        final arguments = settings.arguments as Map;
+        final String title = arguments['title'];
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider.value(
+            value: pipCubit,
+            child: OrderDescriptionView(
+              title: title,
+            ),
+          ),
+        );
+
       case Routes.mainAuthViewRoute:
         return MaterialPageRoute(
           builder: (_) => BlocProvider.value(
@@ -200,6 +255,12 @@ class RouteGenerator {
                   ),
                   BlocProvider.value(
                     value: menuCubit,
+                  ),
+                  BlocProvider.value(
+                    value: pipCubit,
+                  ),
+                   BlocProvider.value(
+                    value: requestsCubit,
                   ),
                 ], child: const MainHomeView()));
 
@@ -256,8 +317,13 @@ class RouteGenerator {
           ),
         );
       case Routes.chooseTaxiViewRoute:
+        final arguments = settings.arguments as Map;
+
+        final String title = arguments['title'];
         return MaterialPageRoute(
-          builder: (_) => const SelectLocation(),
+          builder: (_) => SelectLocation(
+            fastRequestAppBarTitle: title,
+          ),
         );
 
       case Routes.recievedOffersViewRoute:
@@ -387,25 +453,25 @@ class RouteGenerator {
           builder: (_) => const WorkWithUsView(),
         );
 
-        //  case Routes.giveOfferFromChatViewRoute:
-        // final arguments = settings.arguments as Map;
+      //  case Routes.giveOfferFromChatViewRoute:
+      // final arguments = settings.arguments as Map;
 
-        // final String chatId = arguments['chatId'];
-        // return MaterialPageRoute(
-        //   builder: (_) => MultiBlocProvider(
-        //           providers: [
-        //             BlocProvider.value(
-        //               value: requestsCubit,
-        //             ),
-        //             BlocProvider.value(
-        //               value: chatCubit,
-        //             ),
-        //           ],
-        //           child: GiveOfferFromChatView(
-        //             chatId: chatId,
-        //           ),
-        //         )
-        // );
+      // final String chatId = arguments['chatId'];
+      // return MaterialPageRoute(
+      //   builder: (_) => MultiBlocProvider(
+      //           providers: [
+      //             BlocProvider.value(
+      //               value: requestsCubit,
+      //             ),
+      //             BlocProvider.value(
+      //               value: chatCubit,
+      //             ),
+      //           ],
+      //           child: GiveOfferFromChatView(
+      //             chatId: chatId,
+      //           ),
+      //         )
+      // );
 
       case Routes.skillsViewRoute:
         return MaterialPageRoute(
@@ -458,17 +524,38 @@ class RouteGenerator {
         );
 
       case Routes.confirDriverViewRoute:
+        final arguments = settings.arguments as Map;
+        final String fastRequestAppBarTitle = arguments['title'];
         return MaterialPageRoute(
-          builder: (_) => BlocProvider.value(
-            value: authCubit,
-            child: const ConfirmDriverView(),
-          ),
-        );
+            builder: (_) => MultiBlocProvider(
+                    providers: [
+                      BlocProvider.value(
+                        value: requestsCubit,
+                      ),
+                      BlocProvider.value(
+                        value: pipCubit,
+                      ),
+                    ],
+                    child: ConfirmDriverView(
+                      fastRequestAppBarTitle: fastRequestAppBarTitle,
+                    )));
 
       case Routes.availableDriversViewRoute:
+        final arguments = settings.arguments as Map;
+        final String fastRequestAppBarTitle = arguments['title'];
         return MaterialPageRoute(
-          builder: (_) => const AvailableDriversView(),
-        );
+            builder: (_) => MultiBlocProvider(
+                    providers: [
+                      BlocProvider.value(
+                        value: requestsCubit,
+                      ),
+                      BlocProvider.value(
+                        value: pipCubit,
+                      ),
+                    ],
+                    child: AvailableDriversView(
+                      fastRequestAppBarTitle: fastRequestAppBarTitle,
+                    )));
       case Routes.termsAndConditionViewRoute:
         return MaterialPageRoute(
           builder: (_) => const TermsAndConditionView(),

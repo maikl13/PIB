@@ -4,7 +4,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/business_logic/global_cubit.dart';
 import 'package:pip/core/resources/assets_manager.dart';
 import '../../../../core/resources/commons.dart';
+import '../../../../core/resources/constants.dart';
+import '../../../../core/resources/location_helper.dart';
 import '../../../../core/web_services/network_exceptions.dart';
+import '../../../menu/business_logic/menu_cubit.dart';
+import '../../../menu/business_logic/menu_state.dart';
+import '../../../pip/business_logic/cubit/pip_cubit.dart';
 import '../../business_logic/cubit/home_cubit.dart';
 import '../../business_logic/cubit/home_state.dart';
 import '../../../../core/resources/color_manager.dart';
@@ -18,6 +23,16 @@ import '../widgets/jobs_part.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
+  _buildMenuCubit() {
+    return BlocListener<MenuCubit, MenuState>(
+      listener: (context, state) {
+        state.whenOrNull(
+          locationError: () => BlocProvider.of<PipCubit>(context).toggleFastRequest(),
+        );
+      },
+      child: Container(),
+    );
+  }
 
   _buildBloc() {
     return BlocConsumer<HomeCubit, HomeState>(
@@ -53,6 +68,7 @@ class HomeView extends StatelessWidget {
       padding: EdgeInsets.only(top: 25.h, left: 20.w, right: 20.w),
       shrinkWrap: true,
       children: [
+        _buildMenuCubit(),
         _buildSearchBar(context),
         SizedBox(height: 30.h),
         _buildBanners(),
@@ -165,6 +181,7 @@ class HomeView extends StatelessWidget {
     BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
 
     BlocProvider.of<HomeCubit>(context).getAllAds();
+
     return _buildBloc();
   }
 }

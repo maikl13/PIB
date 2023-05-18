@@ -21,6 +21,7 @@ class _CustomSwitchState extends State<CustomSwitch> {
         scale: .7,
         transformHitTests: false,
         child: CupertinoSwitch(
+          
           activeColor:
               widget.enabled! ? ColorManager.green : ColorManager.white,
           trackColor:

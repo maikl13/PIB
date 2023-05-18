@@ -4,17 +4,28 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/business_logic/global_cubit.dart';
 import '../../../../core/resources/route_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
+import '../../../../core/resources/utils.dart';
 import '../../../../core/widgets/custom_title.dart';
 
+import '../../business_logic/cubit/pip_cubit.dart';
 import '../widgets/pick_request_item.dart';
 
-class PickRequestTypeView extends StatelessWidget {
+class PickRequestTypeView extends StatefulWidget {
   const PickRequestTypeView({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
+  State<PickRequestTypeView> createState() => _PickRequestTypeViewState();
+}
 
+class _PickRequestTypeViewState extends State<PickRequestTypeView> {
+  @override
+  void initState() {
+    super.initState();
+    BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(right: 20.w, left: 20.w, top: 30.h),
       child: Column(
@@ -25,7 +36,11 @@ class PickRequestTypeView extends StatelessWidget {
           PickRequestItem(
             title: AppStrings.fastRequest,
             onTap: () {
-              Navigator.pushNamed(context, Routes.fastRequestViewRoute);
+              if (checkUserType(context)) {
+                return;
+              } else {
+                Navigator.pushNamed(context, Routes.fastRequestViewRoute);
+              }
             },
           ),
           SizedBox(height: 20.h),

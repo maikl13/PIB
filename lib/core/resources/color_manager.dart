@@ -4,6 +4,7 @@ class ColorManager {
   static Color lightSeconadary = const Color(0xffFFC638);
   static Color darkSeconadry = const Color(0xffF7B100);
   static Color borderColor = const Color(0xffedb33e);
+  
 
   static Color primary = const Color(0xff1D1C23);
   //7F090B

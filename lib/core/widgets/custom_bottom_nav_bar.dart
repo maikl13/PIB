@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pip/core/business_logic/global_cubit.dart';
+import 'package:pip/core/business_logic/global_state.dart';
 import 'package:pip/core/resources/assets_manager.dart';
+import 'package:pip/core/widgets/notification_warning.dart';
 import '../resources/route_manager.dart';
 import 'custom_network_image.dart';
 import '../../features/menu/business_logic/menu_cubit.dart';
@@ -22,7 +25,32 @@ class CustomBottomNavBar extends StatefulWidget {
   State<CustomBottomNavBar> createState() => _CustomBottomNavBarState();
 }
 
-class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
+class _CustomBottomNavBarState extends State<CustomBottomNavBar>
+    with WidgetsBindingObserver {
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    // BlocProvider.of<ChatCubit>(context).stopStream();
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    super.didChangeAppLifecycleState(state);
+    if (state == AppLifecycleState.resumed) {
+      BlocProvider.of<GlobalCubit>(context).startMessagesCountStream();
+    } else if (state == AppLifecycleState.inactive) {
+      BlocProvider.of<GlobalCubit>(context)
+          .stopStream(); // this is called when the app is in background
+    } else if (state == AppLifecycleState.paused) {
+      BlocProvider.of<GlobalCubit>(context)
+          .stopStream(); // this is called when the app is in background
+    } else if (state == AppLifecycleState.inactive) {
+      BlocProvider.of<GlobalCubit>(context)
+          .stopStream(); // this is called when the app is in background
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
@@ -66,10 +94,30 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
           label: AppStrings.myOrders,
         ),
         BottomNavigationBarItem(
-          icon: Image.asset(
-            widget.selectedIndex == 3
-                ? ImageAssets.solidComments
-                : ImageAssets.comments,
+          icon: Stack(
+            children: [
+              Image.asset(
+                widget.selectedIndex == 3
+                    ? ImageAssets.solidComments
+                    : ImageAssets.comments,
+                width: 20.w,
+                height: 16.h,
+              ),
+              BlocBuilder<GlobalCubit, GlobalState>(
+                buildWhen: (previous, current) =>
+                    current is NewMessage || current is ReadMessage,
+                builder: (context, state) {
+                  return Visibility(
+                    visible: state is NewMessage ? true : false,
+                    child: Positioned(
+                      left: 13.w,
+                      // padding: EdgeInsets.only(left: 16.w),
+                      child: const NotificationWarning(),
+                    ),
+                  );
+                },
+              ),
+            ],
           ),
           label: AppStrings.messages,
         ),
@@ -88,7 +136,8 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
                           radius: 12.5.h,
                           child: ClipOval(
                             child: CustomNetworkCachedImage(
-                                url: userInfo.imageUrl),
+                                url: userInfo.imageUrl ??
+                                    'https://th.bing.com/th/id/OIP.8R95WJtQhwmzvFvd75zrVQHaHa?pid=ImgDet&w=1490&h=1490&rs=1'),
                           ));
                     },
                     orElse: () => CircleAvatar(

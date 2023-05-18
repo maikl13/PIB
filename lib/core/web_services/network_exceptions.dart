@@ -54,18 +54,18 @@ class NetworkExceptions with _$NetworkExceptions {
 
     switch (statusCode) {
       case 400:
-        return NetworkExceptions.badRequest(" ${errorModel.msg}");
+        return NetworkExceptions.badRequest("${errorModel.msg}");
       case 401:
       case 403:
-        return NetworkExceptions.unauthorizedRequest(" ${errorModel.msg}");
+        return NetworkExceptions.unauthorizedRequest("${errorModel.msg}");
       case 404:
         return NetworkExceptions.notFound("${errorModel.msg}");
       case 409:
-        return NetworkExceptions.conflict(" ${errorModel.msg}");
+        return NetworkExceptions.conflict("${errorModel.msg}");
       case 408:
         return const NetworkExceptions.requestTimeout();
       case 422:
-        return NetworkExceptions.unprocessableEntity(" ${errorModel.msg}");
+        return NetworkExceptions.unprocessableEntity("${errorModel.msg}");
       case 500:
         return const NetworkExceptions.internalServerError();
       case 503:
@@ -73,7 +73,7 @@ class NetworkExceptions with _$NetworkExceptions {
       default:
         var responseCode = statusCode;
         return NetworkExceptions.defaultError(
-          "Received invalid status code: $responseCode",
+          "$responseCode",
         );
     }
   }

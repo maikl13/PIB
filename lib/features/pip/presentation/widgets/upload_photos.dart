@@ -21,7 +21,18 @@ class UploadedPhotos extends StatelessWidget {
 
   bool isVideo(File file) {
     String extension = path.extension(file.path);
-    return extension.toLowerCase() == '.mp4 ||.mov ||.mp3';
+    if (extension.toLowerCase() == '.mp4' ||
+        extension.toLowerCase() == '.mov' ||
+        extension.toLowerCase() == '.avi' ||
+        extension.toLowerCase() == '.flv' ||
+        extension.toLowerCase() == '.wmv' ||
+        extension.toLowerCase() == '.3gp' ||
+        extension.toLowerCase() == '.mkv' ||
+        extension.toLowerCase() == '.webm') {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   _buildPhoto(BuildContext context) {
@@ -50,8 +61,9 @@ class UploadedPhotos extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.r),
                   ),
-                  child: const Icon(
+                  child: Icon(
                     Icons.video_collection_rounded,
+                    color: ColorManager.darkSeconadry,
                   ),
                 ),
               )

@@ -105,6 +105,8 @@ class AppStrings {
   static const String specialSendedRequests = 'طلباتي الخاصة المرسلة';
   static const String recievedRequests = 'طلبات التوظيف المستلمة';
   static const String jobsDownlodedPreviously = 'وظائف قمت بتنزيلها مسبقا :';
+  static const String fastRequests = 'طلبات الخدمة السريعة';
+
   static const String requestDetails = 'تفاصيل الطلب';
   static const String requestStatus = 'تلقي العروض';
   static const String showOffers = 'عرض العروض المقدمة';
@@ -180,5 +182,19 @@ class AppStrings {
   static const String willTry = 'سنحاول التواصل معك باسرع وقت ممكن';
   static const String showJob = 'عرض الوظيفة';
   static const String editRequest = 'تعديل الطلب';
+  static const String complete = 'اكمال';
+  static const String cancel = 'الغاء';
   // static const String theMenue = 'القائمة';
+  // static const String theMenue = 'القائمة';
+  // static const String theMenue = 'القائمة';
+  // static const String theMenue = 'القائمة';
+  // static const String theMenue = 'القائمة';
+  // static const String theMenue = 'القائمة';
+  // static const String theMenue = 'القائمة';
+  // static const String theMenue = 'القائمة';
+  // static const String theMenue = 'القائمة';
+  // static const String theMenue = 'القائمة';
+  // static const String theMenue = 'القائمة';
+  // static const String theMenue = 'القائمة';
+
 }

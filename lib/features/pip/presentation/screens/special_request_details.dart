@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/resources/assets_manager.dart';
 import 'package:pip/core/resources/commons.dart';
+import 'package:pip/core/resources/utils.dart';
 import 'package:pip/core/widgets/loading_indicator.dart';
 import '../../../../core/business_logic/global_cubit.dart';
 import '../../../../core/resources/constants.dart';
@@ -157,17 +158,22 @@ class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
     return DefaultButton(
       text: AppStrings.puplish,
       onTap: () {
-        if (_formKey.currentState!.validate()) {
-          selectedId == null
-              ? Commons.showToast(message: "اختر نوع الطلب")
-              : BlocProvider.of<PipCubit>(context).createSpecialRequest(
-                  categoryId: selectedId.toString(),
-                  price: _priceController.text,
-                  location: _locationController.text,
-                  description: _descriptionController.text,
-                );
+        if (checkUserType(context)) {
+          return;
         } else {
-          return Commons.showToast(message: 'من فضلك ادخل البيانات بشكل صحيح');
+          if (_formKey.currentState!.validate()) {
+            selectedId == null
+                ? Commons.showToast(message: "اختر نوع الطلب")
+                : BlocProvider.of<PipCubit>(context).createSpecialRequest(
+                    categoryId: selectedId.toString(),
+                    price: _priceController.text,
+                    location: _locationController.text,
+                    description: _descriptionController.text,
+                  );
+          } else {
+            return Commons.showToast(
+                message: 'من فضلك ادخل البيانات بشكل صحيح');
+          }
         }
       },
     );

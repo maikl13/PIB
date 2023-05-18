@@ -28,7 +28,6 @@ mixin _$HomeState<T> {
     required TResult Function() homeAdsLoading,
     required TResult Function(List<AdModel> ads) homeAdsSuccess,
     required TResult Function(NetworkExceptions networkExceptions) homeAdsError,
-    required TResult Function(int index) selectedIndexChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -42,7 +41,6 @@ mixin _$HomeState<T> {
     TResult? Function()? homeAdsLoading,
     TResult? Function(List<AdModel> ads)? homeAdsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? homeAdsError,
-    TResult? Function(int index)? selectedIndexChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,7 +54,6 @@ mixin _$HomeState<T> {
     TResult Function()? homeAdsLoading,
     TResult Function(List<AdModel> ads)? homeAdsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? homeAdsError,
-    TResult Function(int index)? selectedIndexChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -71,8 +68,6 @@ mixin _$HomeState<T> {
     required TResult Function(HomeAdsLoading<T> value) homeAdsLoading,
     required TResult Function(HomeAdsSuccess<T> value) homeAdsSuccess,
     required TResult Function(HomeAdsError<T> value) homeAdsError,
-    required TResult Function(SelectedIndexChanged<T> value)
-        selectedIndexChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -86,7 +81,6 @@ mixin _$HomeState<T> {
     TResult? Function(HomeAdsLoading<T> value)? homeAdsLoading,
     TResult? Function(HomeAdsSuccess<T> value)? homeAdsSuccess,
     TResult? Function(HomeAdsError<T> value)? homeAdsError,
-    TResult? Function(SelectedIndexChanged<T> value)? selectedIndexChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -100,7 +94,6 @@ mixin _$HomeState<T> {
     TResult Function(HomeAdsLoading<T> value)? homeAdsLoading,
     TResult Function(HomeAdsSuccess<T> value)? homeAdsSuccess,
     TResult Function(HomeAdsError<T> value)? homeAdsError,
-    TResult Function(SelectedIndexChanged<T> value)? selectedIndexChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -170,7 +163,6 @@ class _$Idle<T> implements Idle<T> {
     required TResult Function() homeAdsLoading,
     required TResult Function(List<AdModel> ads) homeAdsSuccess,
     required TResult Function(NetworkExceptions networkExceptions) homeAdsError,
-    required TResult Function(int index) selectedIndexChanged,
   }) {
     return idle();
   }
@@ -187,7 +179,6 @@ class _$Idle<T> implements Idle<T> {
     TResult? Function()? homeAdsLoading,
     TResult? Function(List<AdModel> ads)? homeAdsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? homeAdsError,
-    TResult? Function(int index)? selectedIndexChanged,
   }) {
     return idle?.call();
   }
@@ -204,7 +195,6 @@ class _$Idle<T> implements Idle<T> {
     TResult Function()? homeAdsLoading,
     TResult Function(List<AdModel> ads)? homeAdsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? homeAdsError,
-    TResult Function(int index)? selectedIndexChanged,
     required TResult orElse(),
   }) {
     if (idle != null) {
@@ -225,8 +215,6 @@ class _$Idle<T> implements Idle<T> {
     required TResult Function(HomeAdsLoading<T> value) homeAdsLoading,
     required TResult Function(HomeAdsSuccess<T> value) homeAdsSuccess,
     required TResult Function(HomeAdsError<T> value) homeAdsError,
-    required TResult Function(SelectedIndexChanged<T> value)
-        selectedIndexChanged,
   }) {
     return idle(this);
   }
@@ -243,7 +231,6 @@ class _$Idle<T> implements Idle<T> {
     TResult? Function(HomeAdsLoading<T> value)? homeAdsLoading,
     TResult? Function(HomeAdsSuccess<T> value)? homeAdsSuccess,
     TResult? Function(HomeAdsError<T> value)? homeAdsError,
-    TResult? Function(SelectedIndexChanged<T> value)? selectedIndexChanged,
   }) {
     return idle?.call(this);
   }
@@ -260,7 +247,6 @@ class _$Idle<T> implements Idle<T> {
     TResult Function(HomeAdsLoading<T> value)? homeAdsLoading,
     TResult Function(HomeAdsSuccess<T> value)? homeAdsSuccess,
     TResult Function(HomeAdsError<T> value)? homeAdsError,
-    TResult Function(SelectedIndexChanged<T> value)? selectedIndexChanged,
     required TResult orElse(),
   }) {
     if (idle != null) {
@@ -322,7 +308,6 @@ class _$Loading<T> implements Loading<T> {
     required TResult Function() homeAdsLoading,
     required TResult Function(List<AdModel> ads) homeAdsSuccess,
     required TResult Function(NetworkExceptions networkExceptions) homeAdsError,
-    required TResult Function(int index) selectedIndexChanged,
   }) {
     return loading();
   }
@@ -339,7 +324,6 @@ class _$Loading<T> implements Loading<T> {
     TResult? Function()? homeAdsLoading,
     TResult? Function(List<AdModel> ads)? homeAdsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? homeAdsError,
-    TResult? Function(int index)? selectedIndexChanged,
   }) {
     return loading?.call();
   }
@@ -356,7 +340,6 @@ class _$Loading<T> implements Loading<T> {
     TResult Function()? homeAdsLoading,
     TResult Function(List<AdModel> ads)? homeAdsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? homeAdsError,
-    TResult Function(int index)? selectedIndexChanged,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -377,8 +360,6 @@ class _$Loading<T> implements Loading<T> {
     required TResult Function(HomeAdsLoading<T> value) homeAdsLoading,
     required TResult Function(HomeAdsSuccess<T> value) homeAdsSuccess,
     required TResult Function(HomeAdsError<T> value) homeAdsError,
-    required TResult Function(SelectedIndexChanged<T> value)
-        selectedIndexChanged,
   }) {
     return loading(this);
   }
@@ -395,7 +376,6 @@ class _$Loading<T> implements Loading<T> {
     TResult? Function(HomeAdsLoading<T> value)? homeAdsLoading,
     TResult? Function(HomeAdsSuccess<T> value)? homeAdsSuccess,
     TResult? Function(HomeAdsError<T> value)? homeAdsError,
-    TResult? Function(SelectedIndexChanged<T> value)? selectedIndexChanged,
   }) {
     return loading?.call(this);
   }
@@ -412,7 +392,6 @@ class _$Loading<T> implements Loading<T> {
     TResult Function(HomeAdsLoading<T> value)? homeAdsLoading,
     TResult Function(HomeAdsSuccess<T> value)? homeAdsSuccess,
     TResult Function(HomeAdsError<T> value)? homeAdsError,
-    TResult Function(SelectedIndexChanged<T> value)? selectedIndexChanged,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -472,7 +451,6 @@ class _$Error<T> implements Error<T> {
     required TResult Function() homeAdsLoading,
     required TResult Function(List<AdModel> ads) homeAdsSuccess,
     required TResult Function(NetworkExceptions networkExceptions) homeAdsError,
-    required TResult Function(int index) selectedIndexChanged,
   }) {
     return error();
   }
@@ -489,7 +467,6 @@ class _$Error<T> implements Error<T> {
     TResult? Function()? homeAdsLoading,
     TResult? Function(List<AdModel> ads)? homeAdsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? homeAdsError,
-    TResult? Function(int index)? selectedIndexChanged,
   }) {
     return error?.call();
   }
@@ -506,7 +483,6 @@ class _$Error<T> implements Error<T> {
     TResult Function()? homeAdsLoading,
     TResult Function(List<AdModel> ads)? homeAdsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? homeAdsError,
-    TResult Function(int index)? selectedIndexChanged,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -527,8 +503,6 @@ class _$Error<T> implements Error<T> {
     required TResult Function(HomeAdsLoading<T> value) homeAdsLoading,
     required TResult Function(HomeAdsSuccess<T> value) homeAdsSuccess,
     required TResult Function(HomeAdsError<T> value) homeAdsError,
-    required TResult Function(SelectedIndexChanged<T> value)
-        selectedIndexChanged,
   }) {
     return error(this);
   }
@@ -545,7 +519,6 @@ class _$Error<T> implements Error<T> {
     TResult? Function(HomeAdsLoading<T> value)? homeAdsLoading,
     TResult? Function(HomeAdsSuccess<T> value)? homeAdsSuccess,
     TResult? Function(HomeAdsError<T> value)? homeAdsError,
-    TResult? Function(SelectedIndexChanged<T> value)? selectedIndexChanged,
   }) {
     return error?.call(this);
   }
@@ -562,7 +535,6 @@ class _$Error<T> implements Error<T> {
     TResult Function(HomeAdsLoading<T> value)? homeAdsLoading,
     TResult Function(HomeAdsSuccess<T> value)? homeAdsSuccess,
     TResult Function(HomeAdsError<T> value)? homeAdsError,
-    TResult Function(SelectedIndexChanged<T> value)? selectedIndexChanged,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -624,7 +596,6 @@ class _$HomeSlidersLoading<T> implements HomeSlidersLoading<T> {
     required TResult Function() homeAdsLoading,
     required TResult Function(List<AdModel> ads) homeAdsSuccess,
     required TResult Function(NetworkExceptions networkExceptions) homeAdsError,
-    required TResult Function(int index) selectedIndexChanged,
   }) {
     return homeSlidersLoading();
   }
@@ -641,7 +612,6 @@ class _$HomeSlidersLoading<T> implements HomeSlidersLoading<T> {
     TResult? Function()? homeAdsLoading,
     TResult? Function(List<AdModel> ads)? homeAdsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? homeAdsError,
-    TResult? Function(int index)? selectedIndexChanged,
   }) {
     return homeSlidersLoading?.call();
   }
@@ -658,7 +628,6 @@ class _$HomeSlidersLoading<T> implements HomeSlidersLoading<T> {
     TResult Function()? homeAdsLoading,
     TResult Function(List<AdModel> ads)? homeAdsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? homeAdsError,
-    TResult Function(int index)? selectedIndexChanged,
     required TResult orElse(),
   }) {
     if (homeSlidersLoading != null) {
@@ -679,8 +648,6 @@ class _$HomeSlidersLoading<T> implements HomeSlidersLoading<T> {
     required TResult Function(HomeAdsLoading<T> value) homeAdsLoading,
     required TResult Function(HomeAdsSuccess<T> value) homeAdsSuccess,
     required TResult Function(HomeAdsError<T> value) homeAdsError,
-    required TResult Function(SelectedIndexChanged<T> value)
-        selectedIndexChanged,
   }) {
     return homeSlidersLoading(this);
   }
@@ -697,7 +664,6 @@ class _$HomeSlidersLoading<T> implements HomeSlidersLoading<T> {
     TResult? Function(HomeAdsLoading<T> value)? homeAdsLoading,
     TResult? Function(HomeAdsSuccess<T> value)? homeAdsSuccess,
     TResult? Function(HomeAdsError<T> value)? homeAdsError,
-    TResult? Function(SelectedIndexChanged<T> value)? selectedIndexChanged,
   }) {
     return homeSlidersLoading?.call(this);
   }
@@ -714,7 +680,6 @@ class _$HomeSlidersLoading<T> implements HomeSlidersLoading<T> {
     TResult Function(HomeAdsLoading<T> value)? homeAdsLoading,
     TResult Function(HomeAdsSuccess<T> value)? homeAdsSuccess,
     TResult Function(HomeAdsError<T> value)? homeAdsError,
-    TResult Function(SelectedIndexChanged<T> value)? selectedIndexChanged,
     required TResult orElse(),
   }) {
     if (homeSlidersLoading != null) {
@@ -810,7 +775,6 @@ class _$HomeSlidersSuccess<T> implements HomeSlidersSuccess<T> {
     required TResult Function() homeAdsLoading,
     required TResult Function(List<AdModel> ads) homeAdsSuccess,
     required TResult Function(NetworkExceptions networkExceptions) homeAdsError,
-    required TResult Function(int index) selectedIndexChanged,
   }) {
     return homeSlidersSuccess(sliders);
   }
@@ -827,7 +791,6 @@ class _$HomeSlidersSuccess<T> implements HomeSlidersSuccess<T> {
     TResult? Function()? homeAdsLoading,
     TResult? Function(List<AdModel> ads)? homeAdsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? homeAdsError,
-    TResult? Function(int index)? selectedIndexChanged,
   }) {
     return homeSlidersSuccess?.call(sliders);
   }
@@ -844,7 +807,6 @@ class _$HomeSlidersSuccess<T> implements HomeSlidersSuccess<T> {
     TResult Function()? homeAdsLoading,
     TResult Function(List<AdModel> ads)? homeAdsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? homeAdsError,
-    TResult Function(int index)? selectedIndexChanged,
     required TResult orElse(),
   }) {
     if (homeSlidersSuccess != null) {
@@ -865,8 +827,6 @@ class _$HomeSlidersSuccess<T> implements HomeSlidersSuccess<T> {
     required TResult Function(HomeAdsLoading<T> value) homeAdsLoading,
     required TResult Function(HomeAdsSuccess<T> value) homeAdsSuccess,
     required TResult Function(HomeAdsError<T> value) homeAdsError,
-    required TResult Function(SelectedIndexChanged<T> value)
-        selectedIndexChanged,
   }) {
     return homeSlidersSuccess(this);
   }
@@ -883,7 +843,6 @@ class _$HomeSlidersSuccess<T> implements HomeSlidersSuccess<T> {
     TResult? Function(HomeAdsLoading<T> value)? homeAdsLoading,
     TResult? Function(HomeAdsSuccess<T> value)? homeAdsSuccess,
     TResult? Function(HomeAdsError<T> value)? homeAdsError,
-    TResult? Function(SelectedIndexChanged<T> value)? selectedIndexChanged,
   }) {
     return homeSlidersSuccess?.call(this);
   }
@@ -900,7 +859,6 @@ class _$HomeSlidersSuccess<T> implements HomeSlidersSuccess<T> {
     TResult Function(HomeAdsLoading<T> value)? homeAdsLoading,
     TResult Function(HomeAdsSuccess<T> value)? homeAdsSuccess,
     TResult Function(HomeAdsError<T> value)? homeAdsError,
-    TResult Function(SelectedIndexChanged<T> value)? selectedIndexChanged,
     required TResult orElse(),
   }) {
     if (homeSlidersSuccess != null) {
@@ -1006,7 +964,6 @@ class _$HomeSlidersError<T> implements HomeSlidersError<T> {
     required TResult Function() homeAdsLoading,
     required TResult Function(List<AdModel> ads) homeAdsSuccess,
     required TResult Function(NetworkExceptions networkExceptions) homeAdsError,
-    required TResult Function(int index) selectedIndexChanged,
   }) {
     return homeSlidersError(networkExceptions);
   }
@@ -1023,7 +980,6 @@ class _$HomeSlidersError<T> implements HomeSlidersError<T> {
     TResult? Function()? homeAdsLoading,
     TResult? Function(List<AdModel> ads)? homeAdsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? homeAdsError,
-    TResult? Function(int index)? selectedIndexChanged,
   }) {
     return homeSlidersError?.call(networkExceptions);
   }
@@ -1040,7 +996,6 @@ class _$HomeSlidersError<T> implements HomeSlidersError<T> {
     TResult Function()? homeAdsLoading,
     TResult Function(List<AdModel> ads)? homeAdsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? homeAdsError,
-    TResult Function(int index)? selectedIndexChanged,
     required TResult orElse(),
   }) {
     if (homeSlidersError != null) {
@@ -1061,8 +1016,6 @@ class _$HomeSlidersError<T> implements HomeSlidersError<T> {
     required TResult Function(HomeAdsLoading<T> value) homeAdsLoading,
     required TResult Function(HomeAdsSuccess<T> value) homeAdsSuccess,
     required TResult Function(HomeAdsError<T> value) homeAdsError,
-    required TResult Function(SelectedIndexChanged<T> value)
-        selectedIndexChanged,
   }) {
     return homeSlidersError(this);
   }
@@ -1079,7 +1032,6 @@ class _$HomeSlidersError<T> implements HomeSlidersError<T> {
     TResult? Function(HomeAdsLoading<T> value)? homeAdsLoading,
     TResult? Function(HomeAdsSuccess<T> value)? homeAdsSuccess,
     TResult? Function(HomeAdsError<T> value)? homeAdsError,
-    TResult? Function(SelectedIndexChanged<T> value)? selectedIndexChanged,
   }) {
     return homeSlidersError?.call(this);
   }
@@ -1096,7 +1048,6 @@ class _$HomeSlidersError<T> implements HomeSlidersError<T> {
     TResult Function(HomeAdsLoading<T> value)? homeAdsLoading,
     TResult Function(HomeAdsSuccess<T> value)? homeAdsSuccess,
     TResult Function(HomeAdsError<T> value)? homeAdsError,
-    TResult Function(SelectedIndexChanged<T> value)? selectedIndexChanged,
     required TResult orElse(),
   }) {
     if (homeSlidersError != null) {
@@ -1164,7 +1115,6 @@ class _$HomeAdsLoading<T> implements HomeAdsLoading<T> {
     required TResult Function() homeAdsLoading,
     required TResult Function(List<AdModel> ads) homeAdsSuccess,
     required TResult Function(NetworkExceptions networkExceptions) homeAdsError,
-    required TResult Function(int index) selectedIndexChanged,
   }) {
     return homeAdsLoading();
   }
@@ -1181,7 +1131,6 @@ class _$HomeAdsLoading<T> implements HomeAdsLoading<T> {
     TResult? Function()? homeAdsLoading,
     TResult? Function(List<AdModel> ads)? homeAdsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? homeAdsError,
-    TResult? Function(int index)? selectedIndexChanged,
   }) {
     return homeAdsLoading?.call();
   }
@@ -1198,7 +1147,6 @@ class _$HomeAdsLoading<T> implements HomeAdsLoading<T> {
     TResult Function()? homeAdsLoading,
     TResult Function(List<AdModel> ads)? homeAdsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? homeAdsError,
-    TResult Function(int index)? selectedIndexChanged,
     required TResult orElse(),
   }) {
     if (homeAdsLoading != null) {
@@ -1219,8 +1167,6 @@ class _$HomeAdsLoading<T> implements HomeAdsLoading<T> {
     required TResult Function(HomeAdsLoading<T> value) homeAdsLoading,
     required TResult Function(HomeAdsSuccess<T> value) homeAdsSuccess,
     required TResult Function(HomeAdsError<T> value) homeAdsError,
-    required TResult Function(SelectedIndexChanged<T> value)
-        selectedIndexChanged,
   }) {
     return homeAdsLoading(this);
   }
@@ -1237,7 +1183,6 @@ class _$HomeAdsLoading<T> implements HomeAdsLoading<T> {
     TResult? Function(HomeAdsLoading<T> value)? homeAdsLoading,
     TResult? Function(HomeAdsSuccess<T> value)? homeAdsSuccess,
     TResult? Function(HomeAdsError<T> value)? homeAdsError,
-    TResult? Function(SelectedIndexChanged<T> value)? selectedIndexChanged,
   }) {
     return homeAdsLoading?.call(this);
   }
@@ -1254,7 +1199,6 @@ class _$HomeAdsLoading<T> implements HomeAdsLoading<T> {
     TResult Function(HomeAdsLoading<T> value)? homeAdsLoading,
     TResult Function(HomeAdsSuccess<T> value)? homeAdsSuccess,
     TResult Function(HomeAdsError<T> value)? homeAdsError,
-    TResult Function(SelectedIndexChanged<T> value)? selectedIndexChanged,
     required TResult orElse(),
   }) {
     if (homeAdsLoading != null) {
@@ -1348,7 +1292,6 @@ class _$HomeAdsSuccess<T> implements HomeAdsSuccess<T> {
     required TResult Function() homeAdsLoading,
     required TResult Function(List<AdModel> ads) homeAdsSuccess,
     required TResult Function(NetworkExceptions networkExceptions) homeAdsError,
-    required TResult Function(int index) selectedIndexChanged,
   }) {
     return homeAdsSuccess(ads);
   }
@@ -1365,7 +1308,6 @@ class _$HomeAdsSuccess<T> implements HomeAdsSuccess<T> {
     TResult? Function()? homeAdsLoading,
     TResult? Function(List<AdModel> ads)? homeAdsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? homeAdsError,
-    TResult? Function(int index)? selectedIndexChanged,
   }) {
     return homeAdsSuccess?.call(ads);
   }
@@ -1382,7 +1324,6 @@ class _$HomeAdsSuccess<T> implements HomeAdsSuccess<T> {
     TResult Function()? homeAdsLoading,
     TResult Function(List<AdModel> ads)? homeAdsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? homeAdsError,
-    TResult Function(int index)? selectedIndexChanged,
     required TResult orElse(),
   }) {
     if (homeAdsSuccess != null) {
@@ -1403,8 +1344,6 @@ class _$HomeAdsSuccess<T> implements HomeAdsSuccess<T> {
     required TResult Function(HomeAdsLoading<T> value) homeAdsLoading,
     required TResult Function(HomeAdsSuccess<T> value) homeAdsSuccess,
     required TResult Function(HomeAdsError<T> value) homeAdsError,
-    required TResult Function(SelectedIndexChanged<T> value)
-        selectedIndexChanged,
   }) {
     return homeAdsSuccess(this);
   }
@@ -1421,7 +1360,6 @@ class _$HomeAdsSuccess<T> implements HomeAdsSuccess<T> {
     TResult? Function(HomeAdsLoading<T> value)? homeAdsLoading,
     TResult? Function(HomeAdsSuccess<T> value)? homeAdsSuccess,
     TResult? Function(HomeAdsError<T> value)? homeAdsError,
-    TResult? Function(SelectedIndexChanged<T> value)? selectedIndexChanged,
   }) {
     return homeAdsSuccess?.call(this);
   }
@@ -1438,7 +1376,6 @@ class _$HomeAdsSuccess<T> implements HomeAdsSuccess<T> {
     TResult Function(HomeAdsLoading<T> value)? homeAdsLoading,
     TResult Function(HomeAdsSuccess<T> value)? homeAdsSuccess,
     TResult Function(HomeAdsError<T> value)? homeAdsError,
-    TResult Function(SelectedIndexChanged<T> value)? selectedIndexChanged,
     required TResult orElse(),
   }) {
     if (homeAdsSuccess != null) {
@@ -1542,7 +1479,6 @@ class _$HomeAdsError<T> implements HomeAdsError<T> {
     required TResult Function() homeAdsLoading,
     required TResult Function(List<AdModel> ads) homeAdsSuccess,
     required TResult Function(NetworkExceptions networkExceptions) homeAdsError,
-    required TResult Function(int index) selectedIndexChanged,
   }) {
     return homeAdsError(networkExceptions);
   }
@@ -1559,7 +1495,6 @@ class _$HomeAdsError<T> implements HomeAdsError<T> {
     TResult? Function()? homeAdsLoading,
     TResult? Function(List<AdModel> ads)? homeAdsSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? homeAdsError,
-    TResult? Function(int index)? selectedIndexChanged,
   }) {
     return homeAdsError?.call(networkExceptions);
   }
@@ -1576,7 +1511,6 @@ class _$HomeAdsError<T> implements HomeAdsError<T> {
     TResult Function()? homeAdsLoading,
     TResult Function(List<AdModel> ads)? homeAdsSuccess,
     TResult Function(NetworkExceptions networkExceptions)? homeAdsError,
-    TResult Function(int index)? selectedIndexChanged,
     required TResult orElse(),
   }) {
     if (homeAdsError != null) {
@@ -1597,8 +1531,6 @@ class _$HomeAdsError<T> implements HomeAdsError<T> {
     required TResult Function(HomeAdsLoading<T> value) homeAdsLoading,
     required TResult Function(HomeAdsSuccess<T> value) homeAdsSuccess,
     required TResult Function(HomeAdsError<T> value) homeAdsError,
-    required TResult Function(SelectedIndexChanged<T> value)
-        selectedIndexChanged,
   }) {
     return homeAdsError(this);
   }
@@ -1615,7 +1547,6 @@ class _$HomeAdsError<T> implements HomeAdsError<T> {
     TResult? Function(HomeAdsLoading<T> value)? homeAdsLoading,
     TResult? Function(HomeAdsSuccess<T> value)? homeAdsSuccess,
     TResult? Function(HomeAdsError<T> value)? homeAdsError,
-    TResult? Function(SelectedIndexChanged<T> value)? selectedIndexChanged,
   }) {
     return homeAdsError?.call(this);
   }
@@ -1632,7 +1563,6 @@ class _$HomeAdsError<T> implements HomeAdsError<T> {
     TResult Function(HomeAdsLoading<T> value)? homeAdsLoading,
     TResult Function(HomeAdsSuccess<T> value)? homeAdsSuccess,
     TResult Function(HomeAdsError<T> value)? homeAdsError,
-    TResult Function(SelectedIndexChanged<T> value)? selectedIndexChanged,
     required TResult orElse(),
   }) {
     if (homeAdsError != null) {
@@ -1649,190 +1579,5 @@ abstract class HomeAdsError<T> implements HomeState<T> {
   NetworkExceptions get networkExceptions;
   @JsonKey(ignore: true)
   _$$HomeAdsErrorCopyWith<T, _$HomeAdsError<T>> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$SelectedIndexChangedCopyWith<T, $Res> {
-  factory _$$SelectedIndexChangedCopyWith(_$SelectedIndexChanged<T> value,
-          $Res Function(_$SelectedIndexChanged<T>) then) =
-      __$$SelectedIndexChangedCopyWithImpl<T, $Res>;
-  @useResult
-  $Res call({int index});
-}
-
-/// @nodoc
-class __$$SelectedIndexChangedCopyWithImpl<T, $Res>
-    extends _$HomeStateCopyWithImpl<T, $Res, _$SelectedIndexChanged<T>>
-    implements _$$SelectedIndexChangedCopyWith<T, $Res> {
-  __$$SelectedIndexChangedCopyWithImpl(_$SelectedIndexChanged<T> _value,
-      $Res Function(_$SelectedIndexChanged<T>) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? index = null,
-  }) {
-    return _then(_$SelectedIndexChanged<T>(
-      null == index
-          ? _value.index
-          : index // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$SelectedIndexChanged<T> implements SelectedIndexChanged<T> {
-  const _$SelectedIndexChanged(this.index);
-
-  @override
-  final int index;
-
-  @override
-  String toString() {
-    return 'HomeState<$T>.selectedIndexChanged(index: $index)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SelectedIndexChanged<T> &&
-            (identical(other.index, index) || other.index == index));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, index);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SelectedIndexChangedCopyWith<T, _$SelectedIndexChanged<T>> get copyWith =>
-      __$$SelectedIndexChangedCopyWithImpl<T, _$SelectedIndexChanged<T>>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() idle,
-    required TResult Function() loading,
-    required TResult Function() error,
-    required TResult Function() homeSlidersLoading,
-    required TResult Function(List<SliderModel> sliders) homeSlidersSuccess,
-    required TResult Function(NetworkExceptions networkExceptions)
-        homeSlidersError,
-    required TResult Function() homeAdsLoading,
-    required TResult Function(List<AdModel> ads) homeAdsSuccess,
-    required TResult Function(NetworkExceptions networkExceptions) homeAdsError,
-    required TResult Function(int index) selectedIndexChanged,
-  }) {
-    return selectedIndexChanged(index);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? idle,
-    TResult? Function()? loading,
-    TResult? Function()? error,
-    TResult? Function()? homeSlidersLoading,
-    TResult? Function(List<SliderModel> sliders)? homeSlidersSuccess,
-    TResult? Function(NetworkExceptions networkExceptions)? homeSlidersError,
-    TResult? Function()? homeAdsLoading,
-    TResult? Function(List<AdModel> ads)? homeAdsSuccess,
-    TResult? Function(NetworkExceptions networkExceptions)? homeAdsError,
-    TResult? Function(int index)? selectedIndexChanged,
-  }) {
-    return selectedIndexChanged?.call(index);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? idle,
-    TResult Function()? loading,
-    TResult Function()? error,
-    TResult Function()? homeSlidersLoading,
-    TResult Function(List<SliderModel> sliders)? homeSlidersSuccess,
-    TResult Function(NetworkExceptions networkExceptions)? homeSlidersError,
-    TResult Function()? homeAdsLoading,
-    TResult Function(List<AdModel> ads)? homeAdsSuccess,
-    TResult Function(NetworkExceptions networkExceptions)? homeAdsError,
-    TResult Function(int index)? selectedIndexChanged,
-    required TResult orElse(),
-  }) {
-    if (selectedIndexChanged != null) {
-      return selectedIndexChanged(index);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(Idle<T> value) idle,
-    required TResult Function(Loading<T> value) loading,
-    required TResult Function(Error<T> value) error,
-    required TResult Function(HomeSlidersLoading<T> value) homeSlidersLoading,
-    required TResult Function(HomeSlidersSuccess<T> value) homeSlidersSuccess,
-    required TResult Function(HomeSlidersError<T> value) homeSlidersError,
-    required TResult Function(HomeAdsLoading<T> value) homeAdsLoading,
-    required TResult Function(HomeAdsSuccess<T> value) homeAdsSuccess,
-    required TResult Function(HomeAdsError<T> value) homeAdsError,
-    required TResult Function(SelectedIndexChanged<T> value)
-        selectedIndexChanged,
-  }) {
-    return selectedIndexChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Idle<T> value)? idle,
-    TResult? Function(Loading<T> value)? loading,
-    TResult? Function(Error<T> value)? error,
-    TResult? Function(HomeSlidersLoading<T> value)? homeSlidersLoading,
-    TResult? Function(HomeSlidersSuccess<T> value)? homeSlidersSuccess,
-    TResult? Function(HomeSlidersError<T> value)? homeSlidersError,
-    TResult? Function(HomeAdsLoading<T> value)? homeAdsLoading,
-    TResult? Function(HomeAdsSuccess<T> value)? homeAdsSuccess,
-    TResult? Function(HomeAdsError<T> value)? homeAdsError,
-    TResult? Function(SelectedIndexChanged<T> value)? selectedIndexChanged,
-  }) {
-    return selectedIndexChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(Idle<T> value)? idle,
-    TResult Function(Loading<T> value)? loading,
-    TResult Function(Error<T> value)? error,
-    TResult Function(HomeSlidersLoading<T> value)? homeSlidersLoading,
-    TResult Function(HomeSlidersSuccess<T> value)? homeSlidersSuccess,
-    TResult Function(HomeSlidersError<T> value)? homeSlidersError,
-    TResult Function(HomeAdsLoading<T> value)? homeAdsLoading,
-    TResult Function(HomeAdsSuccess<T> value)? homeAdsSuccess,
-    TResult Function(HomeAdsError<T> value)? homeAdsError,
-    TResult Function(SelectedIndexChanged<T> value)? selectedIndexChanged,
-    required TResult orElse(),
-  }) {
-    if (selectedIndexChanged != null) {
-      return selectedIndexChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SelectedIndexChanged<T> implements HomeState<T> {
-  const factory SelectedIndexChanged(final int index) =
-      _$SelectedIndexChanged<T>;
-
-  int get index;
-  @JsonKey(ignore: true)
-  _$$SelectedIndexChangedCopyWith<T, _$SelectedIndexChanged<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

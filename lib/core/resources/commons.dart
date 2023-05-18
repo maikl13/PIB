@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:pip/core/resources/constants.dart';
+import 'package:pip/core/resources/shared_prefrences.dart';
 import 'route_manager.dart';
 import 'assets_manager.dart';
 import 'strings_manager.dart';
@@ -37,11 +39,51 @@ class Commons {
                   children: <Widget>[
                     const LoadingIndicator(),
                     SizedBox(height: 16.h),
+
+                    const Text(
+                      "برجاء الانتظار...",
+                    ),
+
+                    // Text(
+                    //   "برجاء الانتظار...",
+                    //   style: TextStyle(
+                    //     fontSize: 18.0,
+                    //     fontWeight: FontWeight.bold,
+                    //   ),
+                    // ),
+                  ],
+                ),
+              ),
+            ),
+          );
+        });
+  }
+
+  static Future<void> showLoadingDriverDialog(BuildContext context) async {
+    return showDialog<void>(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          return WillPopScope(
+            onWillPop: () async => false,
+            child: Dialog(
+              backgroundColor: Colors.transparent,
+              child: Container(
+                padding: const EdgeInsets.all(16.0),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    const LoadingIndicator(),
+                    SizedBox(height: 16.h),
                     AnimatedTextKit(
                       animatedTexts: [
                         FlickerAnimatedText(
-                          "برجاء الانتظار...",
-                        ),
+                            "تم نشر طلبك بنجاح ويتم البحث عن سائق للتوصيل",
+                            textAlign: TextAlign.center),
                       ],
                       isRepeatingAnimation: true,
                       onTap: () {
@@ -66,7 +108,8 @@ class Commons {
   static void showErrorDialog(BuildContext context, String message) {
     showDialog(
         context: context,
-        builder: (BuildContext context) => CupertinoAlertDialog(
+        builder: (BuildContext context) => AlertDialog(
+              // backgroundColor: Colors.white,
               title: Text(
                 message,
                 style: const TextStyle(
@@ -83,7 +126,73 @@ class Commons {
                           fontFamily: FontConstants.defaultFontFamily,
                           fontSize: 14)),
                   onPressed: () => Navigator.of(context).pop(),
-                  child: const Text('ok'),
+                  child: const Text(
+                    'إلغاء',
+                  ),
+                ),
+                TextButton(
+                  style: TextButton.styleFrom(
+                      foregroundColor: Colors.black,
+                      textStyle: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontFamily: FontConstants.defaultFontFamily,
+                          fontSize: 14)),
+                  onPressed: () {
+                    isAnonymous = false;
+                    screenIndex = 0;
+                    Navigator.pushNamedAndRemoveUntil(
+                        context, Routes.mainAuthViewRoute, (route) => false);
+                    CacheHelper.removeAll();
+                  },
+                  child: const Text(
+                    AppStrings.login,
+                  ),
+                ),
+              ],
+            ));
+  }
+  static void showRegisterErrorDialog(BuildContext context, String message) {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) => AlertDialog(
+              // backgroundColor: Colors.white,
+              title: Text(
+                message,
+                style: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontFamily: FontConstants.defaultFontFamily),
+              ),
+              actions: <Widget>[
+                TextButton(
+                  style: TextButton.styleFrom(
+                      foregroundColor: Colors.black,
+                      textStyle: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontFamily: FontConstants.defaultFontFamily,
+                          fontSize: 14)),
+                  onPressed: () => Navigator.of(context).pop(),
+                  child: const Text(
+                    'إلغاء',
+                  ),
+                ),
+                TextButton(
+                  style: TextButton.styleFrom(
+                      foregroundColor: Colors.black,
+                      textStyle: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontFamily: FontConstants.defaultFontFamily,
+                          fontSize: 14)),
+                  onPressed: () {
+                    isAnonymous = false;
+                    screenIndex = 0;
+                    Navigator.pushNamedAndRemoveUntil(
+                        context, Routes.mainAuthViewRoute, (route) => false);
+                    CacheHelper.removeAll();
+                  },
+                  child: const Text(
+                    AppStrings.registerNewAcc,
+                  ),
                 ),
               ],
             ));
@@ -487,7 +596,7 @@ _buildSubtitle(String title) {
 //     padding: EdgeInsets.only(top: 20.h, right: 20.w),
 //     child: InkWell(
 //         onTap: () {
-//           // Navigator.pop(context);
+//           Navigator.pop(context);
 //         },
 //         child: Align(
 //           alignment: Alignment.topRight,

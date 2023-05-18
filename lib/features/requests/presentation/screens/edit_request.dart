@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/resources/assets_manager.dart';
@@ -33,7 +33,7 @@ class _EditRequestViewState extends State<EditRequestView> {
   final TextEditingController _timeToCompleteController =
       TextEditingController();
   final TextEditingController _descriptionController = TextEditingController();
-
+  final _formKey = GlobalKey<FormState>();
   void refresh() {
     setState(() {});
   }
@@ -59,28 +59,31 @@ class _EditRequestViewState extends State<EditRequestView> {
           },
         );
       },
-      child: Padding(
-        padding:
-            EdgeInsets.only(right: 20.w, left: 20.w, top: 20.h, bottom: 35.h),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              // const CustomTitle(title: AppStrings.chooseType),
-              // SizedBox(height: 20.h),
-              // _buildAvaialbleTypesOfJobs(),
-              SizedBox(height: 20.h),
-              _buildPriceTextField(),
-              SizedBox(height: 20.h),
-              _buildTimeToCompleteTextField(),
-              SizedBox(height: 20.h),
-              _buildDescriptionTextField(),
-              // SizedBox(height: 20.h),
-              // _buildUploadPhotoTextField(context),
-              // SizedBox(height: 20.h),
-              // _buildPhotos(),
-              SizedBox(height: 200.h),
-              _buildButton(context),
-            ],
+      child: Form(
+        key: _formKey,
+        child: Padding(
+          padding:
+              EdgeInsets.only(right: 20.w, left: 20.w, top: 20.h, bottom: 35.h),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                // const CustomTitle(title: AppStrings.chooseType),
+                // SizedBox(height: 20.h),
+                // _buildAvaialbleTypesOfJobs(),
+                SizedBox(height: 20.h),
+                _buildPriceTextField(),
+                SizedBox(height: 20.h),
+                _buildTimeToCompleteTextField(),
+                SizedBox(height: 20.h),
+                _buildDescriptionTextField(),
+                // SizedBox(height: 20.h),
+                // _buildUploadPhotoTextField(context),
+                // SizedBox(height: 20.h),
+                // _buildPhotos(),
+                SizedBox(height: 200.h),
+                _buildButton(context),
+              ],
+            ),
           ),
         ),
       ),
@@ -154,19 +157,41 @@ class _EditRequestViewState extends State<EditRequestView> {
     return DefaultButton(
       text: AppStrings.editRequest,
       onTap: () {
-        BlocProvider.of<RequestsCubit>(context).updateRequest(
-          id: widget.request.id.toString(),
-          categoryId: widget.request.categoryId,
-          price: _priceController.text,
-          location: _timeToCompleteController.text,
-          description: _descriptionController.text,
-        );
+        if (_priceController.text == widget.request.price &&
+            _timeToCompleteController.text == widget.request.location &&
+            _descriptionController.text == widget.request.description) {
+          Commons.showToast(message: 'لم تقم بتعديل اي شيء');
+        } else {
+          if (_formKey.currentState!.validate()) {
+            BlocProvider.of<RequestsCubit>(context).updateRequest(
+              id: widget.request.id.toString(),
+              categoryId: widget.request.categoryId,
+              price: _priceController.text,
+              location: _timeToCompleteController.text,
+              description: _descriptionController.text,
+            );
+          } else {
+            Commons.showToast(message: 'من فضلك ادخل البيانات بشكل صحيح');
+          }
+        }
       },
     );
   }
 
   _buildPriceTextField() {
     return RequestCustomTextField(
+      keyboardType: TextInputType.number,
+      inputFormatters: [
+        FilteringTextInputFormatter.allow(
+          RegExp("[0-9]"),
+        ),
+      ],
+      validator: (value) {
+        if (value!.isEmpty) {
+          return 'من فضلك ادخل القيمة';
+        }
+        return null;
+      },
       controller: _priceController,
       hint: AppStrings.price,
       icon: ImageAssets.tags,
@@ -175,6 +200,18 @@ class _EditRequestViewState extends State<EditRequestView> {
 
   _buildTimeToCompleteTextField() {
     return RequestCustomTextField(
+      // keyboardType: TextInputType.number,
+      // inputFormatters: [
+      //   FilteringTextInputFormatter.allow(
+      //     RegExp("[0-9]"),
+      //   ),
+      // ],
+      validator: (value) {
+        if (value!.isEmpty) {
+          return 'من فضلك ادخل القيمة';
+        }
+        return null;
+      },
       controller: _timeToCompleteController,
       suffix: Padding(
         padding: EdgeInsets.only(left: 5.w, top: 10.h),
@@ -189,6 +226,14 @@ class _EditRequestViewState extends State<EditRequestView> {
 
   _buildDescriptionTextField() {
     return RequestCustomTextField(
+      validator: (value) {
+        if (value!.isEmpty) {
+          return 'من فضلك ادخل القيمة';
+        }
+        return null;
+      },
+      // contentPadding: EdgeInsets.only(top: 15.h, bottom: 60.h),
+      floatingLabelBehavior: FloatingLabelBehavior.never,
       controller: _descriptionController,
       bottomPadding: 70.h,
       topPadding: 30.h,

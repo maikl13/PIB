@@ -1,3 +1,5 @@
+import 'package:geolocator/geolocator.dart';
+
 import 'assets_manager.dart';
 import 'route_manager.dart';
 
@@ -12,17 +14,30 @@ class AppConstants {
   static const String baseUrl = 'http://pib-platform.com/api/';
 }
 
+String fastRequsetStatus = "0";
+String categoryId = '';
+String description = '';
+String myLocationLat = '';
+String myLocationLng = '';
+String myDestinationLat = '';
+String myDestinationLng = '';
+String apiKey = 'AIzaSyAcvWQdfMH2eKHvaTvM3g5c3N8lLXpKxLg';
 String? countryCode = '+966';
 String defaultUId = "68";
 String? userName = 'مجهول';
 String? token = '';
 String? userEmail = '';
 bool isLogin = true;
+String? fireBaseId = '';
+Position? position;
+
+// bool isRead;
 
 String? currentRequestId;
-
-String? userPhone = '000000000';
-String? userImage;
+bool isAnonymous = false;
+String? userPhone = '';
+String? userImage =
+    'https://th.bing.com/th/id/OIP.8R95WJtQhwmzvFvd75zrVQHaHa?pid=ImgDet&w=1490&h=1490&rs=1';
 
 // int selectedTab = 0;
 int screenIndex = 0;

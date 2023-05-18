@@ -19,6 +19,7 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
   await FirebaseAppCheck.instance.activate(
     webRecaptchaSiteKey: 'recaptcha-v3-site-key',
     // Default provider for Android is the Play Integrity provider. You can use the "AndroidProvider" enum to choose
@@ -26,7 +27,8 @@ Future<void> main() async {
     // 1. debug provider
     // 2. safety net provider
     // 3. play integrity provider
-    androidProvider: AndroidProvider.debug,
+
+    androidProvider: AndroidProvider.playIntegrity,
   );
   await ScreenUtil.ensureScreenSize();
   // ScreenUtil().setSp(28);

@@ -1,6 +1,9 @@
 import 'dart:io';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
+import '../../data/models/available_fast_request_model.dart';
+import '../../data/models/create_fast_request_model.dart';
+import '../../data/models/fast_request_model.dart';
 import '../../data/models/offer_model.dart';
 import '../../../../core/web_services/network_exceptions.dart';
 import '../../../menu/data/models/update_skill.dart';
@@ -18,6 +21,24 @@ class RequestState<T> with _$RequestState<T> {
 
   const factory RequestState.myRequestsError(
       NetworkExceptions networkExceptions) = MyRequestsError<T>;
+
+
+        const factory RequestState.myFastRequestsLoading() = MyFastRequestsLoading<T>;
+
+  const factory RequestState.myFastRequestsSuccess(
+      List<FastRequestModel> myFastRequests) = MyFastRequestsSuccess<T>;
+
+  const factory RequestState.myFastRequestsError(
+      NetworkExceptions networkExceptions) = MyFastRequestsError<T>;
+        const factory RequestState.myAvailableFastRequestsLoading() = MyAvailableFastRequestsLoading<T>;
+
+  const factory RequestState.myAvailableFastRequestsSuccess(
+      List<AvailableFastRequestModel> myAvailableFastRequests) = MyAvailableFastRequestsSuccess<T>;
+
+  const factory RequestState.myAvailableFastRequestsError(
+      NetworkExceptions networkExceptions) = MyAvailableFastRequestsError<T>;
+
+      
 
   const factory RequestState.offersLoading() = OffersLoading<T>;
 
@@ -89,6 +110,20 @@ class RequestState<T> with _$RequestState<T> {
       NetworkExceptions networkExceptions) = DeleteRequestError<T>;
 
 
+
+
+   const factory RequestState.completeRequestLoading() =
+      CompleteRequestLoading<T>;
+
+  const factory RequestState.completeRequestSuccess(UpdateSkill data) =
+      CompleteRequestSuccess<T>;
+
+  const factory RequestState.completeRequestError(
+      NetworkExceptions networkExceptions) = CompleteRequestError<T>;
+
+
+
+
       const factory RequestState.giveOfferLoading() = GiveOfferLoading<T>;
 
   const factory RequestState.giveOfferSuccess(UpdateSkill data) = GiveOfferSuccess<T>;
@@ -104,4 +139,37 @@ class RequestState<T> with _$RequestState<T> {
 
   const factory RequestState.acceptOfferError(NetworkExceptions networkExceptions) =
      AcceptOfferError<T>;
+
+     const factory RequestState.acceptFastRequestLoading() =  AcceptFastRequestLoading<T>;
+
+  const factory RequestState.acceptFastRequestSuccess(UpdateSkill data) =   AcceptFastRequestSuccess<T>;
+
+  const factory RequestState.acceptFastRequestError(NetworkExceptions networkExceptions) =
+     AcceptFastRequestError<T>;
+
+
+
+
+     const factory RequestState.cancelFastRequestLoading() =  CancelFastRequestLoading<T>;
+
+  const factory RequestState.cancelFastRequestSuccess(UpdateSkill data) =   CancelFastRequestSuccess<T>;
+
+  const factory RequestState.cancelFastRequestError(NetworkExceptions networkExceptions) =
+     CancelFastRequestError<T>;
+
+
+        const factory RequestState.completeFastRequestLoading() =  CompleteFastRequestLoading<T>;
+
+  const factory RequestState.completeFastRequestSuccess(UpdateSkill data) =   CompleteFastRequestSuccess<T>;
+
+  const factory RequestState.completeFastRequestError(NetworkExceptions networkExceptions) =
+     CompleteFastRequestError<T>;
+
+
+        const factory RequestState.createFastRequestLoading() =  CreateFastRequestLoading<T>;
+
+  const factory RequestState.createFastRequestSuccess(CreateFastRequestModel data) =   CreateFastRequestSuccess<T>;
+
+  const factory RequestState.createFastRequestError(NetworkExceptions networkExceptions) =
+     CreateFastRequestError<T>;
 }
