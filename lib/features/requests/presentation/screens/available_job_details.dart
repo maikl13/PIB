@@ -72,11 +72,11 @@ class AvailableJobDetailsView extends StatelessWidget {
                   // trailling: FontAwesomeIcons.mapLocationDot,
                 ),
                 SizedBox(height: 15.h),
-                _buildPhotos(),
+             if(availableJob.images!.length != 0)   _buildPhotos(),
 
-                SizedBox(height: 70.h),
-                _buildButtons(context),
                 SizedBox(height: 30.h),
+                _buildButtons(context),
+                SizedBox(height: 70.h),
               ],
             ),
           ),
@@ -110,6 +110,7 @@ class AvailableJobDetailsView extends StatelessWidget {
             Navigator.pushNamed(context, Routes.giveOffersViewRoute,
                 arguments: {
                   'requestId': availableJob.id.toString(),
+                  'jobName' : availableJob.category!.name
                 });
           }
         },

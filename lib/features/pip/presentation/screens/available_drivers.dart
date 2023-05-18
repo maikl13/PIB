@@ -21,9 +21,9 @@ import '../../../../core/widgets/loading_wwidget.dart';
 import '../widgets/floating_drivers_container.dart';
 
 class AvailableDriversView extends StatefulWidget {
-  const AvailableDriversView({super.key, required this.fastRequestAppBarTitle});
+  const AvailableDriversView({super.key, required this.fastRequestAppBarTitle , required this.requestId});
   final String fastRequestAppBarTitle;
-
+final String requestId;
   @override
   State<AvailableDriversView> createState() => _AvailableDriversViewState();
 }
@@ -128,8 +128,9 @@ class _AvailableDriversViewState extends State<AvailableDriversView>
         children: [
           LeadingArrow(
             onTap: () {
-              Navigator.pop(context);
+
               BlocProvider.of<PipCubit>(context).stopStream();
+              Navigator.pop(context);
             },
           ),
           SizedBox(width: 84.w),
@@ -204,6 +205,10 @@ class _AvailableDriversViewState extends State<AvailableDriversView>
   void initState() {
     WidgetsBinding.instance.addObserver(this);
 
+    BlocProvider.of<PipCubit>(context)
+        .startGetDriverInfoStream(widget.requestId);
+
+
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       await setSourceAndDestinationIcons();
       // showPinsOnMap();
@@ -221,10 +226,12 @@ class _AvailableDriversViewState extends State<AvailableDriversView>
         extendBody: true,
         // appBar: AppBar(),
         body: WillPopScope(
-            onWillPop: () {
-              Navigator.pop(context);
+            onWillPop: () async{
+
               BlocProvider.of<PipCubit>(context).stopStream();
-              return Future.value(false);
+
+              Navigator.pop(context);
+              return  false;
             },
             child: buildMap()));
   }

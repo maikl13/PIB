@@ -20,6 +20,7 @@ import '../../../../core/widgets/loading_indicator.dart';
 import '../../data/models/ad_model.dart';
 import '../widgets/banners.dart';
 import '../widgets/jobs_part.dart';
+import '../widgets/jobs_part_loading.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -52,10 +53,10 @@ class HomeView extends StatelessWidget {
       builder: (context, state) {
         return state.maybeWhen(
           homeAdsSuccess: (ads) {
-            return _buildHome(context, ads);
+            return _buildHome(context, ads , false);
           },
           homeAdsLoading: () {
-            return const LoadingIndicator();
+            return _buildHome(context, [] , true);
           },
           orElse: () {
             return Container();
@@ -65,7 +66,7 @@ class HomeView extends StatelessWidget {
     );
   }
 
-  _buildHome(BuildContext context, List<AdModel> ads) {
+  _buildHome(BuildContext context, List<AdModel> ads , bool loading) {
     return ListView(
       padding: EdgeInsets.only(top: 25.h, left: 20.w, right: 20.w),
       shrinkWrap: true,
@@ -75,7 +76,7 @@ class HomeView extends StatelessWidget {
         SizedBox(height: 30.h),
         _buildBanners(),
         SizedBox(height: 41.h),
-        _buildJobsSections(context, ads),
+        _buildJobsSections(context, ads,loading),
       ],
     );
   }
@@ -127,7 +128,7 @@ class HomeView extends StatelessWidget {
     return const Banners();
   }
 
-  _buildJobsSections(BuildContext context, List<AdModel> ads) {
+  _buildJobsSections(BuildContext context, List<AdModel> ads , bool loading) {
     return ListView.builder(
         shrinkWrap: true,
         physics: NeverScrollableScrollPhysics(),
@@ -135,14 +136,14 @@ class HomeView extends StatelessWidget {
           return Column(
 
             children: [
-              _buildJobsSection(context, ads[i]),
+             loading?  JobsPartLoading() : _buildJobsSection(context, ads[i]),
               SizedBox(height: 30.h),
               if(i+1 < ads.length) Divider(height: 1.h, color: ColorManager.grey),
               if(i+1 < ads.length)  SizedBox(height: 35.h),
             ],
           );
         },
-        itemCount:ads.length);
+        itemCount: loading ? 2 : ads.length);
   }
 
   _buildJobsSection(BuildContext context, AdModel ad) {

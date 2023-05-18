@@ -36,9 +36,10 @@ class _RecievedOffersViewState extends State<RecievedOffersView> {
           },
           acceptOfferSuccess: (data) {
             BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
+
             Navigator.pop(context);
             Commons.showToast(
-                message: 'تم قبول العرض بنجاح', color: ColorManager.green);
+                message: 'تم قبول العرض بنجاح', color: ColorManager.toastSuccess);
             screenIndex = 2;
             Navigator.of(context).pushNamed(Routes.mainHomeViewRoute);
           },

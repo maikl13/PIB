@@ -57,7 +57,7 @@ class _ChatViewState extends State<ChatView> {
             Navigator.pop(context);
             Commons.showToast(
               message: "reportedSuccessfully",
-              color: ColorManager.green,
+              color: ColorManager.toastSuccess,
             );
           },
         );

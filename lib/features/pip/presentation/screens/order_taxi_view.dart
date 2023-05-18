@@ -77,7 +77,7 @@ class _SelectLocationState extends State<SelectLocation> {
         ),
         FloatingOrderPart(
           headerTitle: 'حدد نقطة الالتقاء',
-          buttonTitle: 'أكد موعد اللقاء مع السائق',
+          buttonTitle: 'أكد مكان اللقاء مع السائق',
           onTap: () {
             myLocationLat = tapLatLng!.latitude.toString();
             myLocationLng = tapLatLng!.longitude.toString();
@@ -224,12 +224,17 @@ class _SelectLocationState extends State<SelectLocation> {
   }
 
   Future<void> getAddressFromPos(var position) async {
-    await placemarkFromCoordinates(position.latitude, position.longitude)
+    await placemarkFromCoordinates(position.latitude, position.longitude , localeIdentifier: "ar")
         .then((List<Placemark> placeMarks) {
       Placemark place = placeMarks[0];
       setState(() {
-        address =
-            "${place.administrativeArea} - ${place.subAdministrativeArea}";
+        String name = place.name!;
+        String subLocality = place.subLocality!;
+        String locality = place.locality!;
+        String administrativeArea = place.administrativeArea!;
+         address = "${name}, ${subLocality}, ${locality}, ${administrativeArea}";
+
+
         BlocProvider.of<GlobalCubit>(context).onMapLocationTapped(address!);
       });
       // print(address) ;

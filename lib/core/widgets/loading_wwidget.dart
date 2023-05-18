@@ -24,18 +24,10 @@ class LoadingWidget extends StatelessWidget {
           const LoadingIndicator(),
           SizedBox(height: 16.h),
           Text("تم نشر طلبك بنجاح ويتم البحث عن سائق للتوصيل",
-              style: getBoldStyle(fontSize: 22.sp, color: ColorManager.white),
+              style: getRegularStyle(fontSize: 19.sp, color: ColorManager.white),
               textAlign: TextAlign.center),
 
-          // print("Tap Event");
 
-          // Text(
-          //   "برجاء الانتظار...",
-          //   style: TextStyle(
-          //     fontSize: 18.0,
-          //     fontWeight: FontWeight.bold,
-          //   ),
-          // ),
         ],
       ),
     );

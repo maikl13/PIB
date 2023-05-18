@@ -373,6 +373,7 @@ class RouteGenerator {
         final arguments = settings.arguments as Map;
 
         final String requestId = arguments['requestId'];
+        final String jobName = arguments['jobName'];
         return MaterialPageRoute(
             builder: (_) => MultiBlocProvider(
                   providers: [
@@ -385,6 +386,7 @@ class RouteGenerator {
                   ],
                   child: GiveOfferView(
                     requestId: requestId,
+                    jobName:jobName ,
                   ),
                 ));
 
@@ -533,6 +535,9 @@ class RouteGenerator {
       case Routes.availableDriversViewRoute:
         final arguments = settings.arguments as Map;
         final String fastRequestAppBarTitle = arguments['title'];
+        final String requestId = arguments['requestId'];
+
+
         return MaterialPageRoute(
             builder: (_) => MultiBlocProvider(
                     providers: [
@@ -545,6 +550,7 @@ class RouteGenerator {
                     ],
                     child: AvailableDriversView(
                       fastRequestAppBarTitle: fastRequestAppBarTitle,
+                        requestId:requestId
                     )));
       case Routes.termsAndConditionViewRoute:
         return MaterialPageRoute(

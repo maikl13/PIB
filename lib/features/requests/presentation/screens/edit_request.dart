@@ -53,7 +53,7 @@ class _EditRequestViewState extends State<EditRequestView> {
           updateRequestSuccess: (data) {
             Navigator.pop(context);
             Commons.showToast(
-                message: 'تم تعديل الطلب بنجاح', color: ColorManager.green);
+                message: 'تم تعديل الطلب بنجاح', color: ColorManager.toastSuccess);
             screenIndex = 2;
             Navigator.pushReplacementNamed(context, Routes.mainHomeViewRoute);
           },

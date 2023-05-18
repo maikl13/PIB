@@ -213,12 +213,16 @@ class _ShareLocationState extends State<ShareLocation> {
   }
 
   Future<void> getAddressFromPos(var position) async {
-    await placemarkFromCoordinates(position.latitude, position.longitude)
+    await placemarkFromCoordinates(position.latitude, position.longitude, localeIdentifier: "ar")
         .then((List<Placemark> placeMarks) {
       Placemark place = placeMarks[0];
       setState(() {
-        address =
-            "${place.administrativeArea} - ${place.subAdministrativeArea}";
+        String name = place.name!;
+        String subLocality = place.subLocality!;
+        String locality = place.locality!;
+        String administrativeArea = place.administrativeArea!;
+        address = "${name}, ${subLocality}, ${locality}, ${administrativeArea}";
+
       });
     }).catchError((e) {
       debugPrint(e.toString());

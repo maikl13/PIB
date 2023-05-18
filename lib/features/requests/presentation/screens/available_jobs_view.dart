@@ -10,6 +10,7 @@ import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/resources/style_manager.dart';
 import '../../../../core/web_services/network_exceptions.dart';
 import '../../../../core/widgets/custom_title.dart';
+import '../../../../core/widgets/dark_default_button.dart';
 import '../../../../core/widgets/loading_indicator.dart';
 import '../../business_logic/cubit/requests_cubit.dart';
 import '../../business_logic/cubit/requests_state.dart';
@@ -42,7 +43,9 @@ class _AvailableJobsViewState extends State<AvailableJobsView> {
       builder: (context, state) {
         return state.maybeWhen(
             myAvailableJobsLoading: () {
-              return const LoadingIndicator();
+              return Padding(
+                  padding: EdgeInsets.only(top: 100.h),
+                  child: LoadingIndicator());
             },
             myAvailableJobsSuccess: (avaliableJobs) {
               return _buildAvailableRequestsView();
@@ -70,8 +73,18 @@ class _AvailableJobsViewState extends State<AvailableJobsView> {
             BlocProvider.of<PipCubit>(context).stopStream();
             Navigator.pop(context);
             Commons.showToast(
-              color: ColorManager.green,
+              color: ColorManager.toastSuccess,
               message: 'تم قبول الطلب بنجاح',
+            );
+            BlocProvider.of<RequestsCubit>(context)
+                .getAllMyAvailableFastRequests();
+          },
+          rejectFastRequestSuccess: (data) {
+            BlocProvider.of<PipCubit>(context).stopStream();
+            Navigator.pop(context);
+            Commons.showToast(
+              color: ColorManager.toastSuccess,
+              message: 'تم رفض الطلب بنجاح',
             );
             BlocProvider.of<RequestsCubit>(context)
                 .getAllMyAvailableFastRequests();
@@ -86,7 +99,9 @@ class _AvailableJobsViewState extends State<AvailableJobsView> {
       builder: (context, state) {
         return state.maybeWhen(
             myAvailableFastRequestsLoading: () {
-              return const LoadingIndicator();
+              return Padding(
+                  padding: EdgeInsets.only(top: 100.h),
+                  child: LoadingIndicator());
             },
             myAvailableFastRequestsSuccess: (myFastRequests) {
               return myFastRequests.isEmpty
@@ -128,9 +143,6 @@ class _AvailableJobsViewState extends State<AvailableJobsView> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(height: 20.h),
-        const CustomTitle(title: AppStrings.availbleRecentJobs),
-        SizedBox(height: 20.h),
         _buildAvailableJobsList(
             BlocProvider.of<RequestsCubit>(context).myAvailableJobs),
       ],
@@ -161,24 +173,31 @@ class _AvailableJobsViewState extends State<AvailableJobsView> {
   _buildAvailableJobsList(List<MyRequestModel> availableJobs) {
     return availableJobs.isEmpty
         ? _buildAvailableJobsEmpty()
-        : ListView.separated(
-            itemCount: availableJobs.length,
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            separatorBuilder: (context, index) {
-              return SizedBox(height: 12.h);
-            },
-            itemBuilder: (context, index) {
-              return RequestItem(
-                requests: availableJobs,
-                index: index,
-                onTap: () {
-                  Navigator.pushNamed(
-                      context, Routes.availableJobDetailsViewRoute,
-                      arguments: {'job': availableJobs[index]});
+        : Column(
+            children: [
+              SizedBox(height: 20.h),
+              const CustomTitle(title: AppStrings.availbleRecentJobs),
+              SizedBox(height: 20.h),
+              ListView.separated(
+                itemCount: availableJobs.length,
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                separatorBuilder: (context, index) {
+                  return SizedBox(height: 12.h);
                 },
-              );
-            },
+                itemBuilder: (context, index) {
+                  return RequestItem(
+                    requests: availableJobs,
+                    index: index,
+                    onTap: () {
+                      Navigator.pushNamed(
+                          context, Routes.availableJobDetailsViewRoute,
+                          arguments: {'job': availableJobs[index]});
+                    },
+                  );
+                },
+              )
+            ],
           );
   }
 
@@ -196,10 +215,26 @@ class _AvailableJobsViewState extends State<AvailableJobsView> {
               color: ColorManager.darkSeconadry,
             ),
           ),
-          Text('من فضلك قم بإضافة خبرة لتظهر للمستخدمين',
+          Text(
+              'لا توجد وظائف لنفس المهارات التي حددتها ، سيصلك اشعار بمجرد وجود طلبات جديدة ، يمكنك ايضا تعديل مهاراتك من الزر ادناه',
               textAlign: TextAlign.center,
-              style:
-                  getBoldStyle(fontSize: 20.sp, color: ColorManager.darkGrey)),
+              style: getRegularStyle(
+                  fontSize: 18.sp, color: ColorManager.darkGrey)),
+          SizedBox(
+            height: 25.h,
+          ),
+          DarkDefaultButton(
+            widht: 195.w,
+            height: 39.h,
+            textStyle: getRegularStyle(
+                fontSize: 15.sp, color: ColorManager.darkSeconadry),
+            text: AppStrings.editSkills,
+            borderColor: ColorManager.darkSeconadry,
+            onTap: () {
+              // BlocProvider.of<MenuCubit>(context).getUserInfo();
+              Navigator.pushNamed(context, Routes.skillsViewRoute);
+            },
+          )
         ],
       ),
     );

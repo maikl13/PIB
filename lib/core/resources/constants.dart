@@ -17,8 +17,8 @@ class AppConstants {
 String fastRequsetStatus = "0";
 String categoryId = '';
 String description = '';
-String myLocationLat = '';
-String myLocationLng = '';
+String myLocationLat = '0.0';
+String myLocationLng = '0.0';
 String myDestinationLat = '';
 String myDestinationLng = '';
 String apiKey = 'AIzaSyAcvWQdfMH2eKHvaTvM3g5c3N8lLXpKxLg';
@@ -53,7 +53,7 @@ final List<String> viewsTitles = [
 
 List<String> menuViewItemTitles = [
   AppStrings.skills,
-  AppStrings.workAs,
+ // AppStrings.workAs,
   AppStrings.myWallet,
   AppStrings.rateUs,
   AppStrings.contactUs,
@@ -64,7 +64,7 @@ List<String> menuViewItemTitles = [
 
 List<String> menuViewItemRoutes = [
   Routes.skillsViewRoute,
-  Routes.workWithUsViewRoute,
+ // Routes.workWithUsViewRoute,
   Routes.walletViewRoute,
   Routes.rateUsViewRoute,
   Routes.contactViewRoute,
@@ -78,7 +78,7 @@ int isSelected = -1;
 
 List<String> menuViewItemIcons = [
   ImageAssets.experience,
-  ImageAssets.suitcase,
+ // ImageAssets.suitcase,
   ImageAssets.wallet,
   ImageAssets.star,
   ImageAssets.menuPhone,
@@ -87,21 +87,12 @@ List<String> menuViewItemIcons = [
   ImageAssets.logout,
 ];
 
-List<String> typesTitles = [
-  AppStrings.deliverPresents,
-  AppStrings.moveFurnititure,
-  AppStrings.wall,
-  AppStrings.wireMan,
-  AppStrings.plumber,
-  AppStrings.carpenter,
 
-  // Routes.splashRoute,
-];
 List<String> typeIcons = [
   ImageAssets.gift,
   ImageAssets.sofa,
   ImageAssets.paint,
   ImageAssets.electrician,
-  ImageAssets.wrench,
+
   ImageAssets.hammers,
 ];

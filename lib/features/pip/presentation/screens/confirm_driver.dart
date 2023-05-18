@@ -91,12 +91,16 @@ class _ConfirmDriverViewState extends State<ConfirmDriverView> {
                 message: NetworkExceptions.getErrorMessage(networkExceptions));
           },
           createFastRequestSuccess: (data) {
-            BlocProvider.of<PipCubit>(context)
-                .startGetDriverInfoStream(data.requestId.toString());
+
+            BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
+
+
+
             Navigator.pop(context);
             Navigator.pushReplacementNamed(
                 context, Routes.availableDriversViewRoute,arguments: {
                   'title' : widget.fastRequestAppBarTitle,
+              'requestId' : data.requestId.toString()
                 });
           },
         );
@@ -264,12 +268,16 @@ class _ConfirmDriverViewState extends State<ConfirmDriverView> {
   }
 
   Future<void> getAddressFromPos(var position) async {
-    await placemarkFromCoordinates(position.latitude, position.longitude)
+    await placemarkFromCoordinates(position.latitude, position.longitude, localeIdentifier: "ar")
         .then((List<Placemark> placeMarks) {
       Placemark place = placeMarks[0];
       setState(() {
-        address =
-            "${place.administrativeArea} - ${place.subAdministrativeArea}";
+        String name = place.name!;
+        String subLocality = place.subLocality!;
+        String locality = place.locality!;
+        String administrativeArea = place.administrativeArea!;
+        address = "${name}, ${subLocality}, ${locality}, ${administrativeArea}";
+
         BlocProvider.of<GlobalCubit>(context).onMapDestinationTapped(address!);
       });
       // print(address);

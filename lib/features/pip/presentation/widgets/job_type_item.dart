@@ -20,15 +20,15 @@ class JobTypeItem extends StatelessWidget {
 
   _buildIcon() {
     return SizedBox(
-      width: 35.w,
-      height: 35.h,
+      width: 40.w,
+      height: 40.h,
       child: CircleAvatar(
           radius: 25.r,
           backgroundColor: ColorManager.darkSeconadry,
-          child: SizedBox(
-              width: 18.w,
-              height: 18.h,
-              child: CustomNetworkCachedImage(url: image))),
+          child: ClipOval(
+            child: CustomNetworkCachedImage(
+                url: image),
+          )),
     );
   }
 
@@ -59,7 +59,7 @@ class JobTypeItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             _buildIcon(),
-            SizedBox(height: 18.h),
+            SizedBox(height: 10.h),
             _buildTitle(),
           ],
         ),

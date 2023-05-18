@@ -1,4 +1,5 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,7 +20,7 @@ import 'color_manager.dart';
 import 'font_manager.dart';
 
 class Commons {
-  static Future<void> showLoadingDialog(BuildContext context) async {
+  static Future<void> showLoadingDialog(BuildContext context ,{String? text}) async {
     return showDialog<void>(
         context: context,
         barrierDismissible: false,
@@ -31,7 +32,7 @@ class Commons {
               child: Container(
                 padding: const EdgeInsets.all(16.0),
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: ColorManager.darkBlack,
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 child: Column(
@@ -40,17 +41,12 @@ class Commons {
                     const LoadingIndicator(),
                     SizedBox(height: 16.h),
 
-                    const Text(
-                      "برجاء الانتظار...",
+                     Text(
+                       text?? "برجاء الانتظار...",
+                      style: TextStyle(color:ColorManager.white5 ),
                     ),
 
-                    // Text(
-                    //   "برجاء الانتظار...",
-                    //   style: TextStyle(
-                    //     fontSize: 18.0,
-                    //     fontWeight: FontWeight.bold,
-                    //   ),
-                    // ),
+
                   ],
                 ),
               ),
@@ -90,13 +86,7 @@ class Commons {
                         // print("Tap Event");
                       },
                     ),
-                    // Text(
-                    //   "برجاء الانتظار...",
-                    //   style: TextStyle(
-                    //     fontSize: 18.0,
-                    //     fontWeight: FontWeight.bold,
-                    //   ),
-                    // ),
+
                   ],
                 ),
               ),
@@ -137,12 +127,19 @@ class Commons {
                           fontWeight: FontWeight.bold,
                           fontFamily: FontConstants.defaultFontFamily,
                           fontSize: 14)),
-                  onPressed: () {
-                    isAnonymous = false;
+                  onPressed: () async{
+
+
+                    CacheHelper.removeAll();
+                    await FirebaseAuth.instance.signOut();
+
                     screenIndex = 0;
+                    isAnonymous = false;
+
+
                     Navigator.pushNamedAndRemoveUntil(
                         context, Routes.mainAuthViewRoute, (route) => false);
-                    CacheHelper.removeAll();
+
                   },
                   child: const Text(
                     AppStrings.login,
@@ -211,12 +208,7 @@ class Commons {
     );
   }
 
-  static Future<void> showLogoutDialog(BuildContext context) async {
-    return showDialog(
-        context: context,
-        builder: (BuildContext context) =>
-            ConfirmationDialog(alertMsg: 'alert', onTapConfirm: () {}));
-  }
+
 
   static Future<void> openUrl(String urlLink) async {
     final Uri url = Uri.parse(urlLink);
@@ -484,7 +476,7 @@ void showContactSuccessDialog(BuildContext context, {void Function()? onOk}) {
   );
 }
 
-void showSuccessOfferDialog(BuildContext context, {void Function()? onOk}) {
+void showSuccessOfferDialog(BuildContext context ,  {required String title , void Function()? onOk}) {
   AlertDialog alertDialog = AlertDialog(
     backgroundColor: ColorManager.transparent,
     contentPadding: EdgeInsets.zero,
@@ -507,7 +499,7 @@ void showSuccessOfferDialog(BuildContext context, {void Function()? onOk}) {
                 SizedBox(height: 22.h),
                 _buildDescription(AppStrings.succsesAdd),
                 SizedBox(height: 22.h),
-                _buildSubtitle(AppStrings.plumber),
+                _buildSubtitle(title),
                 SizedBox(height: 62.h),
                 Padding(
                   padding: EdgeInsets.only(right: 65.h, left: 65.h),

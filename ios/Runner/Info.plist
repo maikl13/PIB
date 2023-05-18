@@ -2,34 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-<key>CFBundleURLTypes</key>
-<array>
-	<dict>
-		<key>CFBundleTypeRole</key>
-		<string>Editor</string>
-		<key>CFBundleURLSchemes</key>
-		<array>
-			<!-- Copied from GoogleService-Info.plist key REVERSED_CLIENT_ID -->
-		<string>com.googleusercontent.apps.727664776199-sj4pvud6p5s38nbn5l8sghp5ppej849c</string>
-		<string>fb733704814905092</string>
-		<string>ebsar</string>
-		</array>
-	</dict>
-</array>
-
-	<key>FacebookAppID</key>
-	<string>733704814905092</string>
-	<key>FacebookClientToken</key>
-	<string>16a39485fd130fb624e0d033a7afeb60</string>
-	<key>FacebookDisplayName</key>
-	<string>PIB</string>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-  	<string>fbapi</string>
-  	<string>fb-messenger-share-api</string>
-
-</array>
-
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>To show you near offers</string>
+	<key>CADisableMinimumFrameDurationOnPhone</key>
+	<true/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -48,10 +24,56 @@
 	<string>$(FLUTTER_BUILD_NAME)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.727664776199-gvb693sdssea7qnd7ivhtq2l9lg7hab5</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>app-1-727664776199-ios-5643f08b710d52d661c6a2</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
+	<key>FacebookAppID</key>
+	<string>733704814905092</string>
+	<key>FacebookClientToken</key>
+	<string>16a39485fd130fb624e0d033a7afeb60</string>
+	<key>FacebookDisplayName</key>
+	<string>PIB</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>to take user  image</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>To show you near offers</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>To show you near offers</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Used to capture audio for image picker plugin</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>To Attach images to your offers and requests</string>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -71,25 +93,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>CADisableMinimumFrameDurationOnPhone</key>
-	<true/>
-	<key>UIApplicationSupportsIndirectInputEvents</key>
-	<true/>
-
-	
-<key>NSLocationAlwaysUsageDescription</key>
-<string>Needed to access location</string>
-<key>NSLocationWhenInUseUsageDescription</key>
-<string>Needed to access location</string>
-<key>NSCameraUsageDescription</key>
-
-<string>to take user  image</string>
-<key>NSPhotoLibraryUsageDescription</key>
-
-<string>To choose user  image</string>
-<key>NSMicrophoneUsageDescription</key>
-
-<string>Used to capture audio for image picker plugin</string>
-
 </dict>
 </plist>

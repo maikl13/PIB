@@ -15,10 +15,10 @@ import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/resources/style_manager.dart';
 
 class FastRequestItem extends StatelessWidget {
-  const FastRequestItem({super.key, this.fastRequests, required this.index});
+  const FastRequestItem({super.key,required this.fastRequest,required this.onTap});
+  final void Function() onTap;
+  final FastRequestModel fastRequest;
 
-  final List<FastRequestModel>? fastRequests;
-  final int index;
 
   _buildInfo(BuildContext context) {
     return Padding(
@@ -40,7 +40,7 @@ class FastRequestItem extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 8.h),
-              fastRequests![index].deliveryMan == null
+              fastRequest.deliveryMan == null
                   ? const SizedBox.shrink()
                   : Row(
                       mainAxisSize: MainAxisSize.min,
@@ -97,9 +97,9 @@ class FastRequestItem extends StatelessWidget {
 
   _buildUserName() {
     return Text(
-      fastRequests![index].deliveryMan == null
+      fastRequest.deliveryMan == null
           ? ''
-          : fastRequests![index].deliveryMan!.name ?? '',
+          : fastRequest.deliveryMan!.name ?? '',
       maxLines: 1,
       overflow: TextOverflow.clip,
       softWrap: true,
@@ -110,11 +110,11 @@ class FastRequestItem extends StatelessWidget {
   _buildButtons(BuildContext context) {
     return Row(
       children: [
-        fastRequests![index].status == "closed" ||
-                fastRequests![index].status == "canceled" ||
-                fastRequests![index].status == "complete"
+        fastRequest.status == "closed" ||
+                fastRequest.status == "canceled" ||
+                fastRequest.status == "complete"
             ? Container()
-            : fastRequests![index].status == "active"
+            : fastRequest.status == "active"
                 ? _buildCancelButton(context)
                 : _buildCompleteButton(context),
         // _buildCancelButton(context),
@@ -131,7 +131,7 @@ class FastRequestItem extends StatelessWidget {
       onTap: () {
         //TODO ask price
         BlocProvider.of<RequestsCubit>(context).completeFastRequest(
-            requestId: fastRequests![index].id.toString(), price: '290');
+            requestId: fastRequest.id.toString(), price: '290');
       },
     );
   }
@@ -146,23 +146,23 @@ class FastRequestItem extends StatelessWidget {
           getBoldStyle(fontSize: 12.sp, color: ColorManager.darkSeconadry),
       onTap: () {
         BlocProvider.of<RequestsCubit>(context)
-            .cancelFastRequest(requestId: fastRequests![index].id.toString());
+            .cancelFastRequest(requestId: fastRequest.id.toString());
       },
     );
   }
 
   _buildJobTitle() {
     return Text(
-      fastRequests![index].category == null
+      fastRequest.category == null
           ? ''
-          : fastRequests![index].category!.name ?? '',
+          : fastRequest.category!.name ?? '',
       style: getBoldStyle(color: ColorManager.white, fontSize: 15.sp),
     );
   }
 
   _buildRequestStatus() {
     return Text(
-      getStatusInArabic(fastRequests![index].status ?? ''),
+      getStatusInArabic(fastRequest.status ?? ''),
       style: getBoldStyle(fontSize: 10.sp, color: ColorManager.darkSeconadry),
     );
   }
@@ -173,25 +173,27 @@ class FastRequestItem extends StatelessWidget {
       child: SizedBox(
         width: 120.h,
         height: 80.h,
-        child: fastRequests![index].category!.imageUrl!.isEmpty &&
-                (fastRequests![index].category == null ||
-                    fastRequests![index].category!.imageUrl == '')
+        child: fastRequest.category!.imageUrl!.isEmpty &&
+                (fastRequest.category == null ||
+                    fastRequest.category!.imageUrl == '')
             ? Container()
             : CustomNetworkCachedImage(
-                url: (fastRequests![index].category!.imageUrl)),
+                url: (fastRequest.category!.imageUrl)),
       ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return  InkWell(
+        onTap: onTap,
+        child:Container(
       height: 110.h,
       decoration: BoxDecoration(
         color: ColorManager.black5,
         borderRadius: BorderRadius.circular(10.r),
       ),
       child: _buildInfo(context),
-    );
+    ));
   }
 }

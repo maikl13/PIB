@@ -62,6 +62,7 @@ class _NewMessageState extends State<NewMessage> {
             .restorablePushNamed(Routes.giveOffersViewRoute, arguments: {
           "chatId": widget.chatId,
           'requestId': currentRequestId,
+          'jobName' : currentRequestId.toString()
         });
       },
     );

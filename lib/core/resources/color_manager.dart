@@ -16,7 +16,8 @@ class ColorManager {
   static Color transparent = Colors.transparent;
   static Color white = const Color(0xffFFFFFF);
   static Color amber = const Color(0xffFFDF00);
-  static Color green = const Color(0xff08D100);
+  //static Color toastSuccess = const Color(0xff08D100);
+  static Color toastSuccess = const Color(0xffF7B100);
   static Color gold = const Color(0xffAF7900);
   static Color black5 = const Color(0xff282730);
   static Color grey5 = const Color(0xff6d6c71);

@@ -94,18 +94,11 @@ class MenuCubit extends Cubit<MenuState> {
 
   Future<void> signOut(BuildContext context) async {
     try {
-      CacheHelper.removeData(key: 'uid');
-      CacheHelper.removeData(key: 'token');
-      CacheHelper.removeData(key: 'userImage');
-      CacheHelper.removeData(key: 'userName');
-      CacheHelper.removeData(key: 'userPhone');
-      CacheHelper.removeData(key: 'goToHome');
-      CacheHelper.removeData(key: 'userEmail');
-      CacheHelper.removeData(key: 'countryCode');
+      CacheHelper.removeAll();
 
       await FirebaseAuth.instance.signOut();
       Commons.showToast(
-          message: "تم تسجيل الخروج بنجاح", color: ColorManager.green);
+          message: "تم تسجيل الخروج بنجاح", color: ColorManager.toastSuccess);
 
       screenIndex = 0;
       isAnonymous = false;

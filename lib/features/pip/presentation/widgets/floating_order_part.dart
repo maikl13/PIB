@@ -31,7 +31,7 @@ class _FloatingOrderPartState extends State<FloatingOrderPart> {
       child: Padding(
         padding: EdgeInsets.only(bottom: 30.h, left: 20.w, right: 20.w),
         child: Container(
-          height: 219.h,
+
           width: double.infinity,
           decoration: BoxDecoration(
               color: ColorManager.black5,
@@ -39,6 +39,7 @@ class _FloatingOrderPartState extends State<FloatingOrderPart> {
           child: Padding(
             padding: EdgeInsets.only(top: 20.h, right: 20.w, left: 20.w),
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               children: [
                 _buildFloatingContainerHeader(),
                 SizedBox(height: 17.h),
@@ -51,6 +52,7 @@ class _FloatingOrderPartState extends State<FloatingOrderPart> {
                   text: widget.buttonTitle,
                   onTap: widget.onTap,
                 ),
+                SizedBox(height: 20.h),
               ],
             ),
           ),
@@ -79,8 +81,7 @@ class _FloatingOrderPartState extends State<FloatingOrderPart> {
                       return address;
                     },
                     orElse: () => ''),
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
+
                 style: getBoldStyle(
                     fontSize: 13.sp, color: ColorManager.darkSeconadry),
               ),

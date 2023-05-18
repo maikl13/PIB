@@ -11,6 +11,7 @@ import 'package:pip/core/widgets/loading_indicator.dart';
 import '../../../../core/business_logic/global_cubit.dart';
 import '../../../../core/resources/constants.dart';
 import '../../../../core/web_services/network_exceptions.dart';
+import '../../../requests/business_logic/cubit/requests_cubit.dart';
 import '../../business_logic/cubit/pip_cubit.dart';
 import '../../business_logic/cubit/pip_state.dart';
 import '../../../../core/resources/color_manager.dart';
@@ -56,9 +57,11 @@ class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
           createSpecialRequestSuccess: (data) {
             BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
 
+
+
             Navigator.pop(context);
             Commons.showToast(
-                message: 'تم انشاء الطلب بنجاح', color: ColorManager.green);
+                message: 'تم انشاء الطلب بنجاح', color: ColorManager.toastSuccess);
             _clear();
             Navigator.pop(context);
           },
@@ -93,7 +96,7 @@ class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
                 _buildUploadPhotoTextField(),
                 SizedBox(height: 20.h),
                 _buildPhotos(),
-                SizedBox(height: 100.h),
+                SizedBox(height: 20.h),
                 _buildButton(),
               ],
             ),
@@ -162,6 +165,8 @@ class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
           return;
         } else {
           if (_formKey.currentState!.validate()) {
+
+
             selectedId == null
                 ? Commons.showToast(message: "اختر نوع الطلب")
                 : BlocProvider.of<PipCubit>(context).createSpecialRequest(
@@ -170,6 +175,8 @@ class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
                     location: _locationController.text,
                     description: _descriptionController.text,
                   );
+
+
           } else {
             return Commons.showToast(
                 message: 'من فضلك ادخل البيانات بشكل صحيح');
@@ -308,14 +315,19 @@ class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
   }
 
   _buildUploadPhotoTextField() {
-    return Container(
+    return  InkWell(
+      onTap: () {
+        BlocProvider.of<PipCubit>(context).pickImage();
+      },
+      child: Container(
       width: double.infinity,
       height: 52.h,
       decoration: BoxDecoration(
         color: ColorManager.lightBlack,
         borderRadius: BorderRadius.circular(10.r),
       ),
-      child: Padding(
+      child:
+      Padding(
         padding: EdgeInsets.only(left: 25.w, right: 15.w),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -341,23 +353,18 @@ class _SpecialRequestDetailsViewState extends State<SpecialRequestDetailsView> {
                         fontSize: 15.sp, color: ColorManager.grey5)),
               ],
             ),
-
+            Image.asset(
+              ImageAssets.add,
+              width: 20.w,
+              height: 20.h,
+              color: ColorManager.darkSeconadry,
+            )
             // splashColor: ColorManager.transparent,
-            InkWell(
-              onTap: () {
-                BlocProvider.of<PipCubit>(context).pickImage();
-              },
-              child: Image.asset(
-                ImageAssets.add,
-                width: 20.w,
-                height: 20.h,
-                color: ColorManager.darkSeconadry,
-              ),
-            ),
+           ,
           ],
         ),
       ),
-    );
+    ));
   }
 
   @override

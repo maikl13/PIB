@@ -56,7 +56,7 @@ class WantedJobRequestsDetailsView extends StatelessWidget {
           },
           completeRequestSuccess: (data) {
             Commons.showToast(
-                message: 'تم اكمال الطلب بنجاح', color: ColorManager.green);
+                message: 'تم اكمال الطلب بنجاح', color: ColorManager.toastSuccess);
 
             screenIndex = 2;
             Navigator.pushNamedAndRemoveUntil(
@@ -124,7 +124,7 @@ class WantedJobRequestsDetailsView extends StatelessWidget {
           deleteRequestSuccess: (data) {
             Navigator.pop(context);
             Commons.showToast(
-                message: ' تم حذف الطلب بنجاح', color: ColorManager.green);
+                message: ' تم حذف الطلب بنجاح', color: ColorManager.toastSuccess);
             screenIndex = 2;
             Navigator.pushReplacementNamed(context, Routes.mainHomeViewRoute);
           },
@@ -164,9 +164,9 @@ class WantedJobRequestsDetailsView extends StatelessWidget {
                 // trailling: FontAwesomeIcons.mapLocationDot,
               ),
               SizedBox(height: 15.h),
-              _buildPhotos(),
+              if(request.images!.length != 0)    _buildPhotos(),
 
-              SizedBox(height: 70.h),
+              SizedBox(height: 30.h),
               _buildButton(context),
               SizedBox(height: 30.h),
             ],

@@ -139,15 +139,28 @@ class RequestRepository {
     }
   }
 
-  Future<ApiResult<UpdateSkill>> acceptFastRequest(String requestId) async {
+  Future<ApiResult<UpdateSkill>> rejectFastRequest(String requestId) async {
     try {
       var response =
-          await webServices.acceptFastRequest('Bearer $token', requestId);
+          await webServices.rejectFastRequest('Bearer $token', requestId);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(NetworkExceptions.getDioException(error));
     }
   }
+
+  Future<ApiResult<UpdateSkill>> acceptFastRequest(String requestId) async {
+    try {
+      var response =
+      await webServices.acceptFastRequest('Bearer $token', requestId);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(NetworkExceptions.getDioException(error));
+    }
+  }
+
+
+
 
   Future<ApiResult<UpdateSkill>> cancelFastRequest(String requestId) async {
     try {

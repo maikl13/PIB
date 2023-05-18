@@ -7,72 +7,30 @@ import '../../../../core/resources/strings_manager.dart';
 import '../../../search/presentation/widgets/search_result_item.dart';
 import '../../data/models/ad_model.dart';
 
-class JobsListView extends StatefulWidget {
-  @override
-  _JobsListView createState() => _JobsListView();
+class JobsListView extends StatelessWidget {
+  const JobsListView({super.key, required this.ads, this.typeHeadline});
 
   final List<Ads> ads;
   final String? typeHeadline;
-  JobsListView({super.key, required this.ads, this.typeHeadline});
-
-}
-
-
-class _JobsListView extends State<JobsListView>{
-
-
- late ScrollController _controller;
-  bool _shouldClampScrollPhysics = true;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = ScrollController();
-    _controller.addListener(_onScroll);
-  }
-
-  @override
-  void dispose() {
-    _controller.removeListener(_onScroll);
-    _controller.dispose();
-    super.dispose();
-  }
- void _onScroll() {
-   setState(() {
-     _shouldClampScrollPhysics = _controller.offset <= 0;
-   });
- }
-
-
   _buildBody() {
-
-    return NotificationListener<ScrollNotification>(
-        onNotification: (notification) {
-          return true;
+    return ListView.separated(
+      physics: BouncingScrollPhysics(),
+        padding: EdgeInsets.only(top: 23.h, left: 20.w, right: 20.w),
+        // physics: const NeverScrollableScrollPhysics(),
+        shrinkWrap: true,
+        itemBuilder: (context, index) {
+          return SearchResultItem(
+            companyName: ads[index].title,
+            image: ads[index].image,
+            jobTitle: ads[index].skillName,
+            typeHeadline: typeHeadline,
+            ad: ads[index],
+          );
         },
-        child: ListView.separated(
-            controller: _controller,
-            physics: _shouldClampScrollPhysics ? ClampingScrollPhysics() : BouncingScrollPhysics(),
-
-            padding: EdgeInsets.only(top: 23.h, left: 20.w, right: 20.w),
-            // physics: const NeverScrollableScrollPhysics(),
-            shrinkWrap: true,
-            itemBuilder: (context, index) {
-              return SearchResultItem(
-                companyName: widget.ads[index].title,
-                image: widget.ads[index].image,
-                jobTitle: widget.ads[index].skillName,
-                typeHeadline: widget.typeHeadline,
-                ad: widget.ads[index],
-              );
-            },
-            separatorBuilder: (context, index) {
-              return SizedBox(height: 12.h);
-            },
-            itemCount: widget.ads.length),
-
-    );
-
+        separatorBuilder: (context, index) {
+          return SizedBox(height: 12.h);
+        },
+        itemCount: ads.length);
   }
 
   @override
@@ -81,7 +39,7 @@ class _JobsListView extends State<JobsListView>{
       appBar: CustomAppBar(
         appBarColor: ColorManager.lightBlack,
         actions: const [],
-        title: widget.typeHeadline,
+        title: typeHeadline,
       ),
       body: _buildBody(),
     );

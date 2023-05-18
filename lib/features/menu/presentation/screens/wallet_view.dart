@@ -43,7 +43,7 @@ class _WalletViewState extends State<WalletView> {
             Navigator.pop(context);
             Commons.showToast(
               message: 'تم اضافة رصيد بنجاح',
-              color: ColorManager.green,
+              color: ColorManager.toastSuccess,
             );
             BlocProvider.of<MenuCubit>(context).getWalletInfo();
           },

@@ -5,7 +5,12 @@ import 'package:pip/core/resources/commons.dart';
 import 'package:pip/core/widgets/empty_screen.dart';
 import 'package:pip/features/requests/data/models/fast_request_model.dart';
 import 'package:pip/features/requests/presentation/widgets/fast_request_item.dart';
+import '../../../../core/resources/assets_manager.dart';
+import '../../../../core/resources/color_manager.dart';
+import '../../../../core/resources/constants.dart';
+import '../../../../core/resources/style_manager.dart';
 import '../../../../core/web_services/network_exceptions.dart';
+import '../../../../core/widgets/dark_default_button.dart';
 import '../../business_logic/cubit/requests_cubit.dart';
 import '../../business_logic/cubit/requests_state.dart';
 import '../../data/models/my_request_model.dart';
@@ -14,7 +19,8 @@ import '../../../../core/widgets/custom_title.dart';
 import '../../../../core/resources/route_manager.dart';
 import '../../../../core/widgets/loading_indicator.dart';
 import '../widgets/request_item.dart';
-
+import 'package:pip/core/business_logic/global_cubit.dart';
+import 'package:pip/core/business_logic/global_state.dart';
 class WantedJobRequestsView extends StatefulWidget {
   const WantedJobRequestsView({super.key});
 
@@ -36,17 +42,26 @@ class _WantedJobRequestsViewState extends State<WantedJobRequestsView> {
       buildWhen: (previous, next) => next is MyRequestsSuccess,
       builder: (context, state) {
         return state.maybeWhen(
-            // myFastRequestsLoading: () {
-            //   return const LoadingIndicator();
-            // },
+
             myRequestsLoading: () {
-              return const LoadingIndicator();
+              return Padding(
+                  padding: EdgeInsets.only(top: 100.h),
+                  child: LoadingIndicator());
             },
             // myFastRequestsSuccess: (myFastRequests) {
             //   return _buildBodyView();
             // },
             myRequestsSuccess: (requests) {
-              return _buildRequestView();
+
+
+              return(requests.isEmpty &&
+                  BlocProvider.of<RequestsCubit>(context)
+                      .myFastRequests
+                      .isEmpty)
+                  ?   _buildEmpty()
+
+
+              : _buildRequestView();
             },
             orElse: () => Container());
       },
@@ -93,7 +108,9 @@ class _WantedJobRequestsViewState extends State<WantedJobRequestsView> {
       builder: (context, state) {
         return state.maybeWhen(
             myFastRequestsLoading: () {
-              return const LoadingIndicator();
+              return Padding(
+                  padding: EdgeInsets.only(top: 100.h),
+                  child: LoadingIndicator());
             },
             myFastRequestsSuccess: (myFastRequests) {
               return myFastRequests.isEmpty
@@ -138,8 +155,22 @@ class _WantedJobRequestsViewState extends State<WantedJobRequestsView> {
             },
             itemBuilder: (context, index) {
               return FastRequestItem(
-                fastRequests: fastRequequests,
-                index: index,
+                fastRequest: fastRequequests[index],
+
+                onTap:(){
+                  var request = fastRequequests[index];
+
+                  myLocationLat = request.destinationFromLat!;
+                  myLocationLng = request.destinationFromLong!;
+                   myDestinationLat = request.destinationToLat!;
+                   myDestinationLng = request.destinationToLong!;
+
+                  Navigator.pushNamed(
+                      context, Routes.availableDriversViewRoute,arguments: {
+                    'title' : request.category!.name,
+                    'requestId' : request.id.toString()
+                  });
+                }
               );
             },
           );
@@ -152,22 +183,48 @@ class _WantedJobRequestsViewState extends State<WantedJobRequestsView> {
         children: [
           SizedBox(height: 20.h),
           const CustomTitle(title: AppStrings.jobsDownlodedPreviously),
-          (BlocProvider.of<RequestsCubit>(context).myRequests.isEmpty &&
-                  BlocProvider.of<RequestsCubit>(context)
-                      .myFastRequests
-                      .isEmpty)
-              ? const EmptyScreen()
-              : Column(
-                  children: [
-                    _buildFastRequstsBloc(),
-                    _buildRequstsBloc(),
-                  ],
-                ),
+          _buildFastRequstsBloc(),
+          _buildRequstsBloc(),
+
+
+
+
         ],
       ),
     );
   }
+  _buildEmpty() {
 
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Center(
+          child: Image.asset(
+            ImageAssets.noData,
+            height: 250,
+          ),
+        ),
+        Text('لم تقم بعمل اي طلبات حتي الان ، يمكنك الطلب من صفحة PIB',
+            textAlign: TextAlign.center,
+            style: getBoldStyle(fontSize: 20.sp, color: ColorManager.darkGrey)),
+        SizedBox(height: 25.h,),
+        DarkDefaultButton(
+          widht: 195.w,
+          height: 39.h,
+          textStyle:
+          getRegularStyle(fontSize: 15.sp, color: ColorManager.darkSeconadry),
+          text: AppStrings.newRequest,
+          borderColor: ColorManager.darkSeconadry,
+          onTap: () {
+
+            RouteGenerator.globalCubit.changeSelectedIndex(1);
+          },
+        )
+      ],
+    );
+
+  }
   _buildFastRequestView() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -203,12 +260,6 @@ class _WantedJobRequestsViewState extends State<WantedJobRequestsView> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      // padding: EdgeInsets.only(top: 37.h),
-      shrinkWrap: true,
-      children: [
-        _buildBodyView(),
-      ],
-    );
+    return     _buildBodyView();
   }
 }

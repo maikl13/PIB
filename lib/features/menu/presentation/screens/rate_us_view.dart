@@ -179,7 +179,7 @@ class _RateUsViewState extends State<RateUsView> {
           updateRateSuccess: (rates) {
             Navigator.pop(context);
             Commons.showToast(
-                message: 'تم التقييم بنجاح', color: ColorManager.green);
+                message: 'تم التقييم بنجاح', color: ColorManager.toastSuccess);
             BlocProvider.of<MenuCubit>(context).getAllRates();
             Navigator.pop(context);
           },

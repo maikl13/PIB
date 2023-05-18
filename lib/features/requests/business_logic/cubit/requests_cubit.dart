@@ -269,7 +269,23 @@ class RequestsCubit extends Cubit<RequestState> {
       },
     );
   }
+  void rejectFastRequest({
+    required String requestId,
+  }) async {
+    emit(const RequestState.acceptFastRequestLoading());
 
+    var result = await requestRepository.rejectFastRequest(requestId);
+
+    result.when(
+      success: (UpdateSkill data) {
+        emit(RequestState.rejectFastRequestSuccess(data));
+        // print(data.toString());
+      },
+      failure: (NetworkExceptions networkExceptions) {
+        emit(RequestState.acceptFastRequestError(networkExceptions));
+      },
+    );
+  }
   void acceptFastRequest({
     required String requestId,
   }) async {

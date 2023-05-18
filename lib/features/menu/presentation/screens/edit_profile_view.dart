@@ -42,7 +42,7 @@ class _EditProfileViewState extends State<EditProfileView> {
               Navigator.pop(context);
 
               Commons.showToast(
-                  message: 'تم تغير البيانات بنجاح', color: ColorManager.green);
+                  message: 'تم تغير البيانات بنجاح', color: ColorManager.toastSuccess);
               BlocProvider.of<MenuCubit>(context).getUserInfo();
               Navigator.pop(context);
             },

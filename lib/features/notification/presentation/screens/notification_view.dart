@@ -81,7 +81,7 @@ class _NotificationViewState extends State<NotificationView> {
     return WillPopScope(
       onWillPop: () async {
         BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
-        return false;
+        return true;
       },
       child: Scaffold(
         appBar: CustomAppBar(

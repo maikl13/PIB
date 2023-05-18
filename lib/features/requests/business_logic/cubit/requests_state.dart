@@ -137,12 +137,18 @@ class RequestState<T> with _$RequestState<T> {
 
   const factory RequestState.acceptOfferSuccess(UpdateSkill data) = AcceptOfferSuccess<T>;
 
+
   const factory RequestState.acceptOfferError(NetworkExceptions networkExceptions) =
      AcceptOfferError<T>;
 
      const factory RequestState.acceptFastRequestLoading() =  AcceptFastRequestLoading<T>;
+  const factory RequestState.rejectFastRequestSuccess(UpdateSkill data) =   RejectFastRequestSuccess<T>;
 
   const factory RequestState.acceptFastRequestSuccess(UpdateSkill data) =   AcceptFastRequestSuccess<T>;
+
+
+
+
 
   const factory RequestState.acceptFastRequestError(NetworkExceptions networkExceptions) =
      AcceptFastRequestError<T>;

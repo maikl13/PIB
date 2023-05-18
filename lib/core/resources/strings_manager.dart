@@ -28,8 +28,8 @@ class AppStrings {
   static const String hello = 'مرحبا';
   static const String you = 'بك';
   static const String registerNewAcc = 'تسجيل حساب جديد';
-  static const String login = 'تسجيل دخول';
-  static const String logOut = 'تسجيل خروج';
+  static const String login = 'تسجيل الدخول';
+  static const String logOut = 'تسجيل الخروج';
 
   static const String orLoginWith = 'او تسجيل باستخدام';
   static const String facebook = 'Facebook';
@@ -78,7 +78,7 @@ class AppStrings {
   static const String emptySearch = 'لا توجد اي نتائج بحث';
   static const String searchResults = 'نتائج البحث :';
   static const String chooseRequestType = 'قم باختيار الطلب المناسب لك :';
-
+  static const String newRequest = 'عمل طلب جديد';
   static const String fastRequest = 'طلب سريع';
   static const String specialRequest = 'طلب خاص';
   static const String requestDescription =
@@ -119,7 +119,8 @@ class AppStrings {
       'السلا عليكم اخي :\n انا سباك ماهر منذ زمن طويل مشكلةك ليست معقدة استطيع حلها بسهولة وبتكلفة قليلة ببدائل موجودة';
   static const String negotiate = 'تفاوض';
   static const String accept = 'قبول';
-  static const String plumber = 'سباك';
+  static const String reject = 'رفض';
+
   static const String giveOffer = 'تقديم طلب';
   static const String timeToComplete = 'مدة التنفيذ';
   static const String days = 'ايام';
@@ -144,6 +145,7 @@ class AppStrings {
   static const String jobName = 'اسم الوظيفة';
   static const String editProfile = 'تعديل الملف الشخصي';
   static const String editData = 'تعديل البيانات';
+  static const String editSkills = 'تعديل المهارات';
   static const String theMenue = 'القائمة';
   static const String contactUs = 'تواصل معنا';
   static const String userEmail = 'marawanmoubark@gmail.com';

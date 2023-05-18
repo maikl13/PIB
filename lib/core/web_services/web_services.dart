@@ -214,7 +214,11 @@ abstract class WebServices {
     @Header('Authorization') String token,
     @Field('request_id') String? requestId,
   );
-
+  @POST("user/deals/fast/hirings/decline")
+  Future<UpdateSkill> rejectFastRequest(
+      @Header('Authorization') String token,
+      @Field('request_id') String? requestId,
+      );
 
   //-----------------------new-----------------------------------------------------------------
 

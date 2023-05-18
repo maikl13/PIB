@@ -8,6 +8,7 @@ import '../../../../core/resources/constants.dart';
 import '../../../../core/resources/route_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/web_services/network_exceptions.dart';
+import '../../../../core/widgets/confirmation_dialog.dart';
 import '../../../../core/widgets/dark_default_button.dart';
 import '../../../../core/widgets/default_button.dart';
 import '../../../../core/widgets/skip_text.dart';
@@ -22,6 +23,7 @@ class MainAuthView extends StatelessWidget {
   const MainAuthView({super.key});
 
   _buildBody(BuildContext context) {
+
     return  SingleChildScrollView(
 
 
@@ -71,10 +73,9 @@ class MainAuthView extends StatelessWidget {
             );
           },
           firebaseAnonymousLoginLoading: () {
-            Commons.showLoadingDialog(context);
+            Commons.showLoadingDialog(context ,  text:  "جار إعداد حسابك");
           },
           firebaseAnonymousLoginSuccess: (data) {
-            Navigator.pop(context);
 
             BlocProvider.of<AuthCubit>(context).register(
                 uid: data,
@@ -85,7 +86,7 @@ class MainAuthView extends StatelessWidget {
                 'https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png');
           },
           phoneAuthLoading: () {
-            Commons.showLoadingDialog(context);
+            Commons.showLoadingDialog(context ,text:  "جار إعداد حسابك");
           },
           phoneNumberSubmited: () {
             // ignore: avoid_print
@@ -116,7 +117,7 @@ class MainAuthView extends StatelessWidget {
             );
           },
           loginLoading: () {
-            Commons.showLoadingDialog(context);
+           // todo Commons.showLoadingDialog(context ,text:  "جار إعداد حسابك");
           },
           loginSuccess: (uid) {
             Navigator.pop(context);
@@ -143,9 +144,10 @@ class MainAuthView extends StatelessWidget {
             }
           },
           registerLoading: () {
-            Commons.showLoadingDialog(context);
+            // todo Commons.showLoadingDialog(context ,text:  "جار إعداد حسابك");
           },
           registerSuccess: (user) {
+            Navigator.pop(context);
             user.user!.name == 'مجهول'
                 ? Navigator.pushNamedAndRemoveUntil(
                 context, Routes.mainHomeViewRoute, (route) => false)
@@ -153,10 +155,28 @@ class MainAuthView extends StatelessWidget {
           },
           registerError: (networkExceptions) {
             Navigator.pop(context);
-            Commons.showToast(
-              color: ColorManager.error,
-              message: NetworkExceptions.getErrorMessage(networkExceptions),
-            );
+            if(NetworkExceptions.getErrorMessage(networkExceptions) == "المستخدم موجود سابقا"){
+
+
+              showDialog(
+                  context: context,
+                  builder: (BuildContext dialog) =>
+                      ConfirmationDialog(alertMsg: 'هذا المستخدم موجود مسبقا ، يمكنك الانتقال لصفحة تسجيل الدخول او محاولة استخدام رقم اخر',cancel:   "ادخل الرقم مجددا"  , ok: "صفحة الدخول", onTapConfirm: () {
+
+
+                      //  Navigator.pop(dialog);
+                        Navigator.pop(context);
+                        Navigator.pop(context);
+                      }));
+            }else{
+              Commons.showToast(
+                color: ColorManager.error,
+                message: NetworkExceptions.getErrorMessage(networkExceptions),
+              );
+            }
+
+
+
           },
         );
       },

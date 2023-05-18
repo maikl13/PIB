@@ -77,6 +77,7 @@ mixin _$RequestState<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -146,6 +147,7 @@ mixin _$RequestState<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -212,6 +214,7 @@ mixin _$RequestState<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -299,6 +302,8 @@ mixin _$RequestState<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -375,6 +380,8 @@ mixin _$RequestState<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -448,6 +455,8 @@ mixin _$RequestState<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -585,6 +594,7 @@ class _$Idle<T> implements Idle<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -657,6 +667,7 @@ class _$Idle<T> implements Idle<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -726,6 +737,7 @@ class _$Idle<T> implements Idle<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -819,6 +831,8 @@ class _$Idle<T> implements Idle<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -898,6 +912,8 @@ class _$Idle<T> implements Idle<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -974,6 +990,8 @@ class _$Idle<T> implements Idle<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -1103,6 +1121,7 @@ class _$MyRequestsLoading<T> implements MyRequestsLoading<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -1175,6 +1194,7 @@ class _$MyRequestsLoading<T> implements MyRequestsLoading<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -1244,6 +1264,7 @@ class _$MyRequestsLoading<T> implements MyRequestsLoading<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -1337,6 +1358,8 @@ class _$MyRequestsLoading<T> implements MyRequestsLoading<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -1416,6 +1439,8 @@ class _$MyRequestsLoading<T> implements MyRequestsLoading<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -1492,6 +1517,8 @@ class _$MyRequestsLoading<T> implements MyRequestsLoading<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -1656,6 +1683,7 @@ class _$MyRequestsSuccess<T> implements MyRequestsSuccess<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -1728,6 +1756,7 @@ class _$MyRequestsSuccess<T> implements MyRequestsSuccess<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -1797,6 +1826,7 @@ class _$MyRequestsSuccess<T> implements MyRequestsSuccess<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -1890,6 +1920,8 @@ class _$MyRequestsSuccess<T> implements MyRequestsSuccess<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -1969,6 +2001,8 @@ class _$MyRequestsSuccess<T> implements MyRequestsSuccess<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -2045,6 +2079,8 @@ class _$MyRequestsSuccess<T> implements MyRequestsSuccess<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -2218,6 +2254,7 @@ class _$MyRequestsError<T> implements MyRequestsError<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -2290,6 +2327,7 @@ class _$MyRequestsError<T> implements MyRequestsError<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -2359,6 +2397,7 @@ class _$MyRequestsError<T> implements MyRequestsError<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -2452,6 +2491,8 @@ class _$MyRequestsError<T> implements MyRequestsError<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -2531,6 +2572,8 @@ class _$MyRequestsError<T> implements MyRequestsError<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -2607,6 +2650,8 @@ class _$MyRequestsError<T> implements MyRequestsError<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -2743,6 +2788,7 @@ class _$MyFastRequestsLoading<T> implements MyFastRequestsLoading<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -2815,6 +2861,7 @@ class _$MyFastRequestsLoading<T> implements MyFastRequestsLoading<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -2884,6 +2931,7 @@ class _$MyFastRequestsLoading<T> implements MyFastRequestsLoading<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -2977,6 +3025,8 @@ class _$MyFastRequestsLoading<T> implements MyFastRequestsLoading<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -3056,6 +3106,8 @@ class _$MyFastRequestsLoading<T> implements MyFastRequestsLoading<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -3132,6 +3184,8 @@ class _$MyFastRequestsLoading<T> implements MyFastRequestsLoading<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -3297,6 +3351,7 @@ class _$MyFastRequestsSuccess<T> implements MyFastRequestsSuccess<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -3369,6 +3424,7 @@ class _$MyFastRequestsSuccess<T> implements MyFastRequestsSuccess<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -3438,6 +3494,7 @@ class _$MyFastRequestsSuccess<T> implements MyFastRequestsSuccess<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -3531,6 +3588,8 @@ class _$MyFastRequestsSuccess<T> implements MyFastRequestsSuccess<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -3610,6 +3669,8 @@ class _$MyFastRequestsSuccess<T> implements MyFastRequestsSuccess<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -3686,6 +3747,8 @@ class _$MyFastRequestsSuccess<T> implements MyFastRequestsSuccess<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -3859,6 +3922,7 @@ class _$MyFastRequestsError<T> implements MyFastRequestsError<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -3931,6 +3995,7 @@ class _$MyFastRequestsError<T> implements MyFastRequestsError<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -4000,6 +4065,7 @@ class _$MyFastRequestsError<T> implements MyFastRequestsError<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -4093,6 +4159,8 @@ class _$MyFastRequestsError<T> implements MyFastRequestsError<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -4172,6 +4240,8 @@ class _$MyFastRequestsError<T> implements MyFastRequestsError<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -4248,6 +4318,8 @@ class _$MyFastRequestsError<T> implements MyFastRequestsError<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -4388,6 +4460,7 @@ class _$MyAvailableFastRequestsLoading<T>
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -4460,6 +4533,7 @@ class _$MyAvailableFastRequestsLoading<T>
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -4529,6 +4603,7 @@ class _$MyAvailableFastRequestsLoading<T>
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -4622,6 +4697,8 @@ class _$MyAvailableFastRequestsLoading<T>
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -4701,6 +4778,8 @@ class _$MyAvailableFastRequestsLoading<T>
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -4777,6 +4856,8 @@ class _$MyAvailableFastRequestsLoading<T>
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -4949,6 +5030,7 @@ class _$MyAvailableFastRequestsSuccess<T>
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -5021,6 +5103,7 @@ class _$MyAvailableFastRequestsSuccess<T>
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -5090,6 +5173,7 @@ class _$MyAvailableFastRequestsSuccess<T>
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -5183,6 +5267,8 @@ class _$MyAvailableFastRequestsSuccess<T>
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -5262,6 +5348,8 @@ class _$MyAvailableFastRequestsSuccess<T>
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -5338,6 +5426,8 @@ class _$MyAvailableFastRequestsSuccess<T>
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -5517,6 +5607,7 @@ class _$MyAvailableFastRequestsError<T>
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -5589,6 +5680,7 @@ class _$MyAvailableFastRequestsError<T>
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -5658,6 +5750,7 @@ class _$MyAvailableFastRequestsError<T>
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -5751,6 +5844,8 @@ class _$MyAvailableFastRequestsError<T>
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -5830,6 +5925,8 @@ class _$MyAvailableFastRequestsError<T>
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -5906,6 +6003,8 @@ class _$MyAvailableFastRequestsError<T>
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -6042,6 +6141,7 @@ class _$OffersLoading<T> implements OffersLoading<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -6114,6 +6214,7 @@ class _$OffersLoading<T> implements OffersLoading<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -6183,6 +6284,7 @@ class _$OffersLoading<T> implements OffersLoading<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -6276,6 +6378,8 @@ class _$OffersLoading<T> implements OffersLoading<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -6355,6 +6459,8 @@ class _$OffersLoading<T> implements OffersLoading<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -6431,6 +6537,8 @@ class _$OffersLoading<T> implements OffersLoading<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -6592,6 +6700,7 @@ class _$OffersSuccess<T> implements OffersSuccess<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -6664,6 +6773,7 @@ class _$OffersSuccess<T> implements OffersSuccess<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -6733,6 +6843,7 @@ class _$OffersSuccess<T> implements OffersSuccess<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -6826,6 +6937,8 @@ class _$OffersSuccess<T> implements OffersSuccess<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -6905,6 +7018,8 @@ class _$OffersSuccess<T> implements OffersSuccess<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -6981,6 +7096,8 @@ class _$OffersSuccess<T> implements OffersSuccess<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -7153,6 +7270,7 @@ class _$OffersError<T> implements OffersError<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -7225,6 +7343,7 @@ class _$OffersError<T> implements OffersError<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -7294,6 +7413,7 @@ class _$OffersError<T> implements OffersError<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -7387,6 +7507,8 @@ class _$OffersError<T> implements OffersError<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -7466,6 +7588,8 @@ class _$OffersError<T> implements OffersError<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -7542,6 +7666,8 @@ class _$OffersError<T> implements OffersError<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -7678,6 +7804,7 @@ class _$OffersRequestLoading<T> implements OffersRequestLoading<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -7750,6 +7877,7 @@ class _$OffersRequestLoading<T> implements OffersRequestLoading<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -7819,6 +7947,7 @@ class _$OffersRequestLoading<T> implements OffersRequestLoading<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -7912,6 +8041,8 @@ class _$OffersRequestLoading<T> implements OffersRequestLoading<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -7991,6 +8122,8 @@ class _$OffersRequestLoading<T> implements OffersRequestLoading<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -8067,6 +8200,8 @@ class _$OffersRequestLoading<T> implements OffersRequestLoading<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -8230,6 +8365,7 @@ class _$OffersRequestSuccess<T> implements OffersRequestSuccess<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -8302,6 +8438,7 @@ class _$OffersRequestSuccess<T> implements OffersRequestSuccess<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -8371,6 +8508,7 @@ class _$OffersRequestSuccess<T> implements OffersRequestSuccess<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -8464,6 +8602,8 @@ class _$OffersRequestSuccess<T> implements OffersRequestSuccess<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -8543,6 +8683,8 @@ class _$OffersRequestSuccess<T> implements OffersRequestSuccess<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -8619,6 +8761,8 @@ class _$OffersRequestSuccess<T> implements OffersRequestSuccess<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -8792,6 +8936,7 @@ class _$OffersRequestError<T> implements OffersRequestError<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -8864,6 +9009,7 @@ class _$OffersRequestError<T> implements OffersRequestError<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -8933,6 +9079,7 @@ class _$OffersRequestError<T> implements OffersRequestError<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -9026,6 +9173,8 @@ class _$OffersRequestError<T> implements OffersRequestError<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -9105,6 +9254,8 @@ class _$OffersRequestError<T> implements OffersRequestError<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -9181,6 +9332,8 @@ class _$OffersRequestError<T> implements OffersRequestError<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -9317,6 +9470,7 @@ class _$MyAvailableJobsLoading<T> implements MyAvailableJobsLoading<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -9389,6 +9543,7 @@ class _$MyAvailableJobsLoading<T> implements MyAvailableJobsLoading<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -9458,6 +9613,7 @@ class _$MyAvailableJobsLoading<T> implements MyAvailableJobsLoading<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -9551,6 +9707,8 @@ class _$MyAvailableJobsLoading<T> implements MyAvailableJobsLoading<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -9630,6 +9788,8 @@ class _$MyAvailableJobsLoading<T> implements MyAvailableJobsLoading<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -9706,6 +9866,8 @@ class _$MyAvailableJobsLoading<T> implements MyAvailableJobsLoading<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -9870,6 +10032,7 @@ class _$MyAvailableJobsSuccess<T> implements MyAvailableJobsSuccess<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -9942,6 +10105,7 @@ class _$MyAvailableJobsSuccess<T> implements MyAvailableJobsSuccess<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -10011,6 +10175,7 @@ class _$MyAvailableJobsSuccess<T> implements MyAvailableJobsSuccess<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -10104,6 +10269,8 @@ class _$MyAvailableJobsSuccess<T> implements MyAvailableJobsSuccess<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -10183,6 +10350,8 @@ class _$MyAvailableJobsSuccess<T> implements MyAvailableJobsSuccess<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -10259,6 +10428,8 @@ class _$MyAvailableJobsSuccess<T> implements MyAvailableJobsSuccess<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -10432,6 +10603,7 @@ class _$MyAvailableJobsError<T> implements MyAvailableJobsError<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -10504,6 +10676,7 @@ class _$MyAvailableJobsError<T> implements MyAvailableJobsError<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -10573,6 +10746,7 @@ class _$MyAvailableJobsError<T> implements MyAvailableJobsError<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -10666,6 +10840,8 @@ class _$MyAvailableJobsError<T> implements MyAvailableJobsError<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -10745,6 +10921,8 @@ class _$MyAvailableJobsError<T> implements MyAvailableJobsError<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -10821,6 +10999,8 @@ class _$MyAvailableJobsError<T> implements MyAvailableJobsError<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -10989,6 +11169,7 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -11061,6 +11242,7 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -11130,6 +11312,7 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -11223,6 +11406,8 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -11302,6 +11487,8 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -11378,6 +11565,8 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -11514,6 +11703,7 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -11586,6 +11776,7 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -11655,6 +11846,7 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -11748,6 +11940,8 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -11827,6 +12021,8 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -11903,6 +12099,8 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -12032,6 +12230,7 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -12104,6 +12303,7 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -12173,6 +12373,7 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -12266,6 +12467,8 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -12345,6 +12548,8 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -12421,6 +12626,8 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -12583,6 +12790,7 @@ class _$ImageSelectedDeleted<T> implements ImageSelectedDeleted<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -12655,6 +12863,7 @@ class _$ImageSelectedDeleted<T> implements ImageSelectedDeleted<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -12724,6 +12933,7 @@ class _$ImageSelectedDeleted<T> implements ImageSelectedDeleted<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -12817,6 +13027,8 @@ class _$ImageSelectedDeleted<T> implements ImageSelectedDeleted<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -12896,6 +13108,8 @@ class _$ImageSelectedDeleted<T> implements ImageSelectedDeleted<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -12972,6 +13186,8 @@ class _$ImageSelectedDeleted<T> implements ImageSelectedDeleted<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -13112,6 +13328,7 @@ class _$CreateSpecialRequestLoading<T>
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -13184,6 +13401,7 @@ class _$CreateSpecialRequestLoading<T>
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -13253,6 +13471,7 @@ class _$CreateSpecialRequestLoading<T>
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -13346,6 +13565,8 @@ class _$CreateSpecialRequestLoading<T>
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -13425,6 +13646,8 @@ class _$CreateSpecialRequestLoading<T>
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -13501,6 +13724,8 @@ class _$CreateSpecialRequestLoading<T>
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -13662,6 +13887,7 @@ class _$CreateSpecialRequestSuccess<T>
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -13734,6 +13960,7 @@ class _$CreateSpecialRequestSuccess<T>
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -13803,6 +14030,7 @@ class _$CreateSpecialRequestSuccess<T>
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -13896,6 +14124,8 @@ class _$CreateSpecialRequestSuccess<T>
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -13975,6 +14205,8 @@ class _$CreateSpecialRequestSuccess<T>
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -14051,6 +14283,8 @@ class _$CreateSpecialRequestSuccess<T>
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -14226,6 +14460,7 @@ class _$CreateSpecialRequestError<T> implements CreateSpecialRequestError<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -14298,6 +14533,7 @@ class _$CreateSpecialRequestError<T> implements CreateSpecialRequestError<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -14367,6 +14603,7 @@ class _$CreateSpecialRequestError<T> implements CreateSpecialRequestError<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -14460,6 +14697,8 @@ class _$CreateSpecialRequestError<T> implements CreateSpecialRequestError<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -14539,6 +14778,8 @@ class _$CreateSpecialRequestError<T> implements CreateSpecialRequestError<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -14615,6 +14856,8 @@ class _$CreateSpecialRequestError<T> implements CreateSpecialRequestError<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -14752,6 +14995,7 @@ class _$UpdateRequestLoading<T> implements UpdateRequestLoading<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -14824,6 +15068,7 @@ class _$UpdateRequestLoading<T> implements UpdateRequestLoading<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -14893,6 +15138,7 @@ class _$UpdateRequestLoading<T> implements UpdateRequestLoading<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -14986,6 +15232,8 @@ class _$UpdateRequestLoading<T> implements UpdateRequestLoading<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -15065,6 +15313,8 @@ class _$UpdateRequestLoading<T> implements UpdateRequestLoading<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -15141,6 +15391,8 @@ class _$UpdateRequestLoading<T> implements UpdateRequestLoading<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -15297,6 +15549,7 @@ class _$UpdateRequestSuccess<T> implements UpdateRequestSuccess<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -15369,6 +15622,7 @@ class _$UpdateRequestSuccess<T> implements UpdateRequestSuccess<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -15438,6 +15692,7 @@ class _$UpdateRequestSuccess<T> implements UpdateRequestSuccess<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -15531,6 +15786,8 @@ class _$UpdateRequestSuccess<T> implements UpdateRequestSuccess<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -15610,6 +15867,8 @@ class _$UpdateRequestSuccess<T> implements UpdateRequestSuccess<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -15686,6 +15945,8 @@ class _$UpdateRequestSuccess<T> implements UpdateRequestSuccess<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -15859,6 +16120,7 @@ class _$UpdateRequestError<T> implements UpdateRequestError<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -15931,6 +16193,7 @@ class _$UpdateRequestError<T> implements UpdateRequestError<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -16000,6 +16263,7 @@ class _$UpdateRequestError<T> implements UpdateRequestError<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -16093,6 +16357,8 @@ class _$UpdateRequestError<T> implements UpdateRequestError<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -16172,6 +16438,8 @@ class _$UpdateRequestError<T> implements UpdateRequestError<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -16248,6 +16516,8 @@ class _$UpdateRequestError<T> implements UpdateRequestError<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -16383,6 +16653,7 @@ class _$DeleteRequestTapped<T> implements DeleteRequestTapped<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -16455,6 +16726,7 @@ class _$DeleteRequestTapped<T> implements DeleteRequestTapped<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -16524,6 +16796,7 @@ class _$DeleteRequestTapped<T> implements DeleteRequestTapped<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -16617,6 +16890,8 @@ class _$DeleteRequestTapped<T> implements DeleteRequestTapped<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -16696,6 +16971,8 @@ class _$DeleteRequestTapped<T> implements DeleteRequestTapped<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -16772,6 +17049,8 @@ class _$DeleteRequestTapped<T> implements DeleteRequestTapped<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -16902,6 +17181,7 @@ class _$DeleteRequestLoading<T> implements DeleteRequestLoading<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -16974,6 +17254,7 @@ class _$DeleteRequestLoading<T> implements DeleteRequestLoading<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -17043,6 +17324,7 @@ class _$DeleteRequestLoading<T> implements DeleteRequestLoading<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -17136,6 +17418,8 @@ class _$DeleteRequestLoading<T> implements DeleteRequestLoading<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -17215,6 +17499,8 @@ class _$DeleteRequestLoading<T> implements DeleteRequestLoading<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -17291,6 +17577,8 @@ class _$DeleteRequestLoading<T> implements DeleteRequestLoading<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -17447,6 +17735,7 @@ class _$DeleteRequestSuccess<T> implements DeleteRequestSuccess<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -17519,6 +17808,7 @@ class _$DeleteRequestSuccess<T> implements DeleteRequestSuccess<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -17588,6 +17878,7 @@ class _$DeleteRequestSuccess<T> implements DeleteRequestSuccess<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -17681,6 +17972,8 @@ class _$DeleteRequestSuccess<T> implements DeleteRequestSuccess<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -17760,6 +18053,8 @@ class _$DeleteRequestSuccess<T> implements DeleteRequestSuccess<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -17836,6 +18131,8 @@ class _$DeleteRequestSuccess<T> implements DeleteRequestSuccess<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -18009,6 +18306,7 @@ class _$DeleteRequestError<T> implements DeleteRequestError<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -18081,6 +18379,7 @@ class _$DeleteRequestError<T> implements DeleteRequestError<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -18150,6 +18449,7 @@ class _$DeleteRequestError<T> implements DeleteRequestError<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -18243,6 +18543,8 @@ class _$DeleteRequestError<T> implements DeleteRequestError<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -18322,6 +18624,8 @@ class _$DeleteRequestError<T> implements DeleteRequestError<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -18398,6 +18702,8 @@ class _$DeleteRequestError<T> implements DeleteRequestError<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -18534,6 +18840,7 @@ class _$CompleteRequestLoading<T> implements CompleteRequestLoading<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -18606,6 +18913,7 @@ class _$CompleteRequestLoading<T> implements CompleteRequestLoading<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -18675,6 +18983,7 @@ class _$CompleteRequestLoading<T> implements CompleteRequestLoading<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -18768,6 +19077,8 @@ class _$CompleteRequestLoading<T> implements CompleteRequestLoading<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -18847,6 +19158,8 @@ class _$CompleteRequestLoading<T> implements CompleteRequestLoading<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -18923,6 +19236,8 @@ class _$CompleteRequestLoading<T> implements CompleteRequestLoading<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -19079,6 +19394,7 @@ class _$CompleteRequestSuccess<T> implements CompleteRequestSuccess<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -19151,6 +19467,7 @@ class _$CompleteRequestSuccess<T> implements CompleteRequestSuccess<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -19220,6 +19537,7 @@ class _$CompleteRequestSuccess<T> implements CompleteRequestSuccess<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -19313,6 +19631,8 @@ class _$CompleteRequestSuccess<T> implements CompleteRequestSuccess<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -19392,6 +19712,8 @@ class _$CompleteRequestSuccess<T> implements CompleteRequestSuccess<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -19468,6 +19790,8 @@ class _$CompleteRequestSuccess<T> implements CompleteRequestSuccess<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -19641,6 +19965,7 @@ class _$CompleteRequestError<T> implements CompleteRequestError<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -19713,6 +20038,7 @@ class _$CompleteRequestError<T> implements CompleteRequestError<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -19782,6 +20108,7 @@ class _$CompleteRequestError<T> implements CompleteRequestError<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -19875,6 +20202,8 @@ class _$CompleteRequestError<T> implements CompleteRequestError<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -19954,6 +20283,8 @@ class _$CompleteRequestError<T> implements CompleteRequestError<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -20030,6 +20361,8 @@ class _$CompleteRequestError<T> implements CompleteRequestError<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -20165,6 +20498,7 @@ class _$GiveOfferLoading<T> implements GiveOfferLoading<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -20237,6 +20571,7 @@ class _$GiveOfferLoading<T> implements GiveOfferLoading<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -20306,6 +20641,7 @@ class _$GiveOfferLoading<T> implements GiveOfferLoading<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -20399,6 +20735,8 @@ class _$GiveOfferLoading<T> implements GiveOfferLoading<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -20478,6 +20816,8 @@ class _$GiveOfferLoading<T> implements GiveOfferLoading<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -20554,6 +20894,8 @@ class _$GiveOfferLoading<T> implements GiveOfferLoading<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -20710,6 +21052,7 @@ class _$GiveOfferSuccess<T> implements GiveOfferSuccess<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -20782,6 +21125,7 @@ class _$GiveOfferSuccess<T> implements GiveOfferSuccess<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -20851,6 +21195,7 @@ class _$GiveOfferSuccess<T> implements GiveOfferSuccess<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -20944,6 +21289,8 @@ class _$GiveOfferSuccess<T> implements GiveOfferSuccess<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -21023,6 +21370,8 @@ class _$GiveOfferSuccess<T> implements GiveOfferSuccess<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -21099,6 +21448,8 @@ class _$GiveOfferSuccess<T> implements GiveOfferSuccess<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -21271,6 +21622,7 @@ class _$GiveOfferError<T> implements GiveOfferError<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -21343,6 +21695,7 @@ class _$GiveOfferError<T> implements GiveOfferError<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -21412,6 +21765,7 @@ class _$GiveOfferError<T> implements GiveOfferError<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -21505,6 +21859,8 @@ class _$GiveOfferError<T> implements GiveOfferError<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -21584,6 +21940,8 @@ class _$GiveOfferError<T> implements GiveOfferError<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -21660,6 +22018,8 @@ class _$GiveOfferError<T> implements GiveOfferError<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -21795,6 +22155,7 @@ class _$AcceptOfferLoading<T> implements AcceptOfferLoading<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -21867,6 +22228,7 @@ class _$AcceptOfferLoading<T> implements AcceptOfferLoading<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -21936,6 +22298,7 @@ class _$AcceptOfferLoading<T> implements AcceptOfferLoading<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -22029,6 +22392,8 @@ class _$AcceptOfferLoading<T> implements AcceptOfferLoading<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -22108,6 +22473,8 @@ class _$AcceptOfferLoading<T> implements AcceptOfferLoading<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -22184,6 +22551,8 @@ class _$AcceptOfferLoading<T> implements AcceptOfferLoading<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -22340,6 +22709,7 @@ class _$AcceptOfferSuccess<T> implements AcceptOfferSuccess<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -22412,6 +22782,7 @@ class _$AcceptOfferSuccess<T> implements AcceptOfferSuccess<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -22481,6 +22852,7 @@ class _$AcceptOfferSuccess<T> implements AcceptOfferSuccess<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -22574,6 +22946,8 @@ class _$AcceptOfferSuccess<T> implements AcceptOfferSuccess<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -22653,6 +23027,8 @@ class _$AcceptOfferSuccess<T> implements AcceptOfferSuccess<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -22729,6 +23105,8 @@ class _$AcceptOfferSuccess<T> implements AcceptOfferSuccess<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -22902,6 +23280,7 @@ class _$AcceptOfferError<T> implements AcceptOfferError<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -22974,6 +23353,7 @@ class _$AcceptOfferError<T> implements AcceptOfferError<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -23043,6 +23423,7 @@ class _$AcceptOfferError<T> implements AcceptOfferError<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -23136,6 +23517,8 @@ class _$AcceptOfferError<T> implements AcceptOfferError<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -23215,6 +23598,8 @@ class _$AcceptOfferError<T> implements AcceptOfferError<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -23291,6 +23676,8 @@ class _$AcceptOfferError<T> implements AcceptOfferError<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -23428,6 +23815,7 @@ class _$AcceptFastRequestLoading<T> implements AcceptFastRequestLoading<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -23500,6 +23888,7 @@ class _$AcceptFastRequestLoading<T> implements AcceptFastRequestLoading<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -23569,6 +23958,7 @@ class _$AcceptFastRequestLoading<T> implements AcceptFastRequestLoading<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -23662,6 +24052,8 @@ class _$AcceptFastRequestLoading<T> implements AcceptFastRequestLoading<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -23741,6 +24133,8 @@ class _$AcceptFastRequestLoading<T> implements AcceptFastRequestLoading<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -23817,6 +24211,8 @@ class _$AcceptFastRequestLoading<T> implements AcceptFastRequestLoading<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -23847,6 +24243,567 @@ class _$AcceptFastRequestLoading<T> implements AcceptFastRequestLoading<T> {
 
 abstract class AcceptFastRequestLoading<T> implements RequestState<T> {
   const factory AcceptFastRequestLoading() = _$AcceptFastRequestLoading<T>;
+}
+
+/// @nodoc
+abstract class _$$RejectFastRequestSuccessCopyWith<T, $Res> {
+  factory _$$RejectFastRequestSuccessCopyWith(
+          _$RejectFastRequestSuccess<T> value,
+          $Res Function(_$RejectFastRequestSuccess<T>) then) =
+      __$$RejectFastRequestSuccessCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({UpdateSkill data});
+}
+
+/// @nodoc
+class __$$RejectFastRequestSuccessCopyWithImpl<T, $Res>
+    extends _$RequestStateCopyWithImpl<T, $Res, _$RejectFastRequestSuccess<T>>
+    implements _$$RejectFastRequestSuccessCopyWith<T, $Res> {
+  __$$RejectFastRequestSuccessCopyWithImpl(_$RejectFastRequestSuccess<T> _value,
+      $Res Function(_$RejectFastRequestSuccess<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$RejectFastRequestSuccess<T>(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as UpdateSkill,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RejectFastRequestSuccess<T> implements RejectFastRequestSuccess<T> {
+  const _$RejectFastRequestSuccess(this.data);
+
+  @override
+  final UpdateSkill data;
+
+  @override
+  String toString() {
+    return 'RequestState<$T>.rejectFastRequestSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RejectFastRequestSuccess<T> &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RejectFastRequestSuccessCopyWith<T, _$RejectFastRequestSuccess<T>>
+      get copyWith => __$$RejectFastRequestSuccessCopyWithImpl<T,
+          _$RejectFastRequestSuccess<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() myRequestsLoading,
+    required TResult Function(List<MyRequestModel> myRequests)
+        myRequestsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        myRequestsError,
+    required TResult Function() myFastRequestsLoading,
+    required TResult Function(List<FastRequestModel> myFastRequests)
+        myFastRequestsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        myFastRequestsError,
+    required TResult Function() myAvailableFastRequestsLoading,
+    required TResult Function(
+            List<AvailableFastRequestModel> myAvailableFastRequests)
+        myAvailableFastRequestsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        myAvailableFastRequestsError,
+    required TResult Function() offersLoading,
+    required TResult Function(List<OfferModel> offers) offersSuccess,
+    required TResult Function(NetworkExceptions networkExceptions) offersError,
+    required TResult Function() offersRequestLoading,
+    required TResult Function(List<OfferModel> offers) offersRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        offersRequestError,
+    required TResult Function() myAvailableJobsLoading,
+    required TResult Function(List<MyRequestModel> myRequests)
+        myAvailableJobsSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        myAvailableJobsError,
+    required TResult Function(List<File> images) imageSelectedSuccess,
+    required TResult Function() imageSelectedLoading,
+    required TResult Function() imageSelectedError,
+    required TResult Function(List<File> images) imageSelectedDeleted,
+    required TResult Function() createSpecialRequestLoading,
+    required TResult Function(UpdateSkill data) createSpecialRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        createSpecialRequestError,
+    required TResult Function() updateRequestLoading,
+    required TResult Function(UpdateSkill data) updateRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        updateRequestError,
+    required TResult Function() deleteRequestTapped,
+    required TResult Function() deleteRequestLoading,
+    required TResult Function(UpdateSkill data) deleteRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        deleteRequestError,
+    required TResult Function() completeRequestLoading,
+    required TResult Function(UpdateSkill data) completeRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        completeRequestError,
+    required TResult Function() giveOfferLoading,
+    required TResult Function(UpdateSkill data) giveOfferSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        giveOfferError,
+    required TResult Function() acceptOfferLoading,
+    required TResult Function(UpdateSkill data) acceptOfferSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        acceptOfferError,
+    required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
+    required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        acceptFastRequestError,
+    required TResult Function() cancelFastRequestLoading,
+    required TResult Function(UpdateSkill data) cancelFastRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        cancelFastRequestError,
+    required TResult Function() completeFastRequestLoading,
+    required TResult Function(UpdateSkill data) completeFastRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        completeFastRequestError,
+    required TResult Function() createFastRequestLoading,
+    required TResult Function(CreateFastRequestModel data)
+        createFastRequestSuccess,
+    required TResult Function(NetworkExceptions networkExceptions)
+        createFastRequestError,
+  }) {
+    return rejectFastRequestSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? myRequestsLoading,
+    TResult? Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult? Function()? myFastRequestsLoading,
+    TResult? Function(List<FastRequestModel> myFastRequests)?
+        myFastRequestsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? myFastRequestsError,
+    TResult? Function()? myAvailableFastRequestsLoading,
+    TResult? Function(List<AvailableFastRequestModel> myAvailableFastRequests)?
+        myAvailableFastRequestsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        myAvailableFastRequestsError,
+    TResult? Function()? offersLoading,
+    TResult? Function(List<OfferModel> offers)? offersSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? offersError,
+    TResult? Function()? offersRequestLoading,
+    TResult? Function(List<OfferModel> offers)? offersRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? offersRequestError,
+    TResult? Function()? myAvailableJobsLoading,
+    TResult? Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        myAvailableJobsError,
+    TResult? Function(List<File> images)? imageSelectedSuccess,
+    TResult? Function()? imageSelectedLoading,
+    TResult? Function()? imageSelectedError,
+    TResult? Function(List<File> images)? imageSelectedDeleted,
+    TResult? Function()? createSpecialRequestLoading,
+    TResult? Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    TResult? Function()? updateRequestLoading,
+    TResult? Function(UpdateSkill data)? updateRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult? Function()? deleteRequestTapped,
+    TResult? Function()? deleteRequestLoading,
+    TResult? Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? deleteRequestError,
+    TResult? Function()? completeRequestLoading,
+    TResult? Function(UpdateSkill data)? completeRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        completeRequestError,
+    TResult? Function()? giveOfferLoading,
+    TResult? Function(UpdateSkill data)? giveOfferSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? giveOfferError,
+    TResult? Function()? acceptOfferLoading,
+    TResult? Function(UpdateSkill data)? acceptOfferSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
+    TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
+    TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        acceptFastRequestError,
+    TResult? Function()? cancelFastRequestLoading,
+    TResult? Function(UpdateSkill data)? cancelFastRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        cancelFastRequestError,
+    TResult? Function()? completeFastRequestLoading,
+    TResult? Function(UpdateSkill data)? completeFastRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        completeFastRequestError,
+    TResult? Function()? createFastRequestLoading,
+    TResult? Function(CreateFastRequestModel data)? createFastRequestSuccess,
+    TResult? Function(NetworkExceptions networkExceptions)?
+        createFastRequestError,
+  }) {
+    return rejectFastRequestSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? myRequestsLoading,
+    TResult Function(List<MyRequestModel> myRequests)? myRequestsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? myRequestsError,
+    TResult Function()? myFastRequestsLoading,
+    TResult Function(List<FastRequestModel> myFastRequests)?
+        myFastRequestsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? myFastRequestsError,
+    TResult Function()? myAvailableFastRequestsLoading,
+    TResult Function(List<AvailableFastRequestModel> myAvailableFastRequests)?
+        myAvailableFastRequestsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        myAvailableFastRequestsError,
+    TResult Function()? offersLoading,
+    TResult Function(List<OfferModel> offers)? offersSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? offersError,
+    TResult Function()? offersRequestLoading,
+    TResult Function(List<OfferModel> offers)? offersRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? offersRequestError,
+    TResult Function()? myAvailableJobsLoading,
+    TResult Function(List<MyRequestModel> myRequests)? myAvailableJobsSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? myAvailableJobsError,
+    TResult Function(List<File> images)? imageSelectedSuccess,
+    TResult Function()? imageSelectedLoading,
+    TResult Function()? imageSelectedError,
+    TResult Function(List<File> images)? imageSelectedDeleted,
+    TResult Function()? createSpecialRequestLoading,
+    TResult Function(UpdateSkill data)? createSpecialRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        createSpecialRequestError,
+    TResult Function()? updateRequestLoading,
+    TResult Function(UpdateSkill data)? updateRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? updateRequestError,
+    TResult Function()? deleteRequestTapped,
+    TResult Function()? deleteRequestLoading,
+    TResult Function(UpdateSkill data)? deleteRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? deleteRequestError,
+    TResult Function()? completeRequestLoading,
+    TResult Function(UpdateSkill data)? completeRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? completeRequestError,
+    TResult Function()? giveOfferLoading,
+    TResult Function(UpdateSkill data)? giveOfferSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? giveOfferError,
+    TResult Function()? acceptOfferLoading,
+    TResult Function(UpdateSkill data)? acceptOfferSuccess,
+    TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
+    TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
+    TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        acceptFastRequestError,
+    TResult Function()? cancelFastRequestLoading,
+    TResult Function(UpdateSkill data)? cancelFastRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        cancelFastRequestError,
+    TResult Function()? completeFastRequestLoading,
+    TResult Function(UpdateSkill data)? completeFastRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        completeFastRequestError,
+    TResult Function()? createFastRequestLoading,
+    TResult Function(CreateFastRequestModel data)? createFastRequestSuccess,
+    TResult Function(NetworkExceptions networkExceptions)?
+        createFastRequestError,
+    required TResult orElse(),
+  }) {
+    if (rejectFastRequestSuccess != null) {
+      return rejectFastRequestSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(MyRequestsLoading<T> value) myRequestsLoading,
+    required TResult Function(MyRequestsSuccess<T> value) myRequestsSuccess,
+    required TResult Function(MyRequestsError<T> value) myRequestsError,
+    required TResult Function(MyFastRequestsLoading<T> value)
+        myFastRequestsLoading,
+    required TResult Function(MyFastRequestsSuccess<T> value)
+        myFastRequestsSuccess,
+    required TResult Function(MyFastRequestsError<T> value) myFastRequestsError,
+    required TResult Function(MyAvailableFastRequestsLoading<T> value)
+        myAvailableFastRequestsLoading,
+    required TResult Function(MyAvailableFastRequestsSuccess<T> value)
+        myAvailableFastRequestsSuccess,
+    required TResult Function(MyAvailableFastRequestsError<T> value)
+        myAvailableFastRequestsError,
+    required TResult Function(OffersLoading<T> value) offersLoading,
+    required TResult Function(OffersSuccess<T> value) offersSuccess,
+    required TResult Function(OffersError<T> value) offersError,
+    required TResult Function(OffersRequestLoading<T> value)
+        offersRequestLoading,
+    required TResult Function(OffersRequestSuccess<T> value)
+        offersRequestSuccess,
+    required TResult Function(OffersRequestError<T> value) offersRequestError,
+    required TResult Function(MyAvailableJobsLoading<T> value)
+        myAvailableJobsLoading,
+    required TResult Function(MyAvailableJobsSuccess<T> value)
+        myAvailableJobsSuccess,
+    required TResult Function(MyAvailableJobsError<T> value)
+        myAvailableJobsError,
+    required TResult Function(ImageSelectedSuccess<T> value)
+        imageSelectedSuccess,
+    required TResult Function(ImageSelectedLoading<T> value)
+        imageSelectedLoading,
+    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
+    required TResult Function(ImageSelectedDeleted<T> value)
+        imageSelectedDeleted,
+    required TResult Function(CreateSpecialRequestLoading<T> value)
+        createSpecialRequestLoading,
+    required TResult Function(CreateSpecialRequestSuccess<T> value)
+        createSpecialRequestSuccess,
+    required TResult Function(CreateSpecialRequestError<T> value)
+        createSpecialRequestError,
+    required TResult Function(UpdateRequestLoading<T> value)
+        updateRequestLoading,
+    required TResult Function(UpdateRequestSuccess<T> value)
+        updateRequestSuccess,
+    required TResult Function(UpdateRequestError<T> value) updateRequestError,
+    required TResult Function(DeleteRequestTapped<T> value) deleteRequestTapped,
+    required TResult Function(DeleteRequestLoading<T> value)
+        deleteRequestLoading,
+    required TResult Function(DeleteRequestSuccess<T> value)
+        deleteRequestSuccess,
+    required TResult Function(DeleteRequestError<T> value) deleteRequestError,
+    required TResult Function(CompleteRequestLoading<T> value)
+        completeRequestLoading,
+    required TResult Function(CompleteRequestSuccess<T> value)
+        completeRequestSuccess,
+    required TResult Function(CompleteRequestError<T> value)
+        completeRequestError,
+    required TResult Function(GiveOfferLoading<T> value) giveOfferLoading,
+    required TResult Function(GiveOfferSuccess<T> value) giveOfferSuccess,
+    required TResult Function(GiveOfferError<T> value) giveOfferError,
+    required TResult Function(AcceptOfferLoading<T> value) acceptOfferLoading,
+    required TResult Function(AcceptOfferSuccess<T> value) acceptOfferSuccess,
+    required TResult Function(AcceptOfferError<T> value) acceptOfferError,
+    required TResult Function(AcceptFastRequestLoading<T> value)
+        acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
+    required TResult Function(AcceptFastRequestSuccess<T> value)
+        acceptFastRequestSuccess,
+    required TResult Function(AcceptFastRequestError<T> value)
+        acceptFastRequestError,
+    required TResult Function(CancelFastRequestLoading<T> value)
+        cancelFastRequestLoading,
+    required TResult Function(CancelFastRequestSuccess<T> value)
+        cancelFastRequestSuccess,
+    required TResult Function(CancelFastRequestError<T> value)
+        cancelFastRequestError,
+    required TResult Function(CompleteFastRequestLoading<T> value)
+        completeFastRequestLoading,
+    required TResult Function(CompleteFastRequestSuccess<T> value)
+        completeFastRequestSuccess,
+    required TResult Function(CompleteFastRequestError<T> value)
+        completeFastRequestError,
+    required TResult Function(CreateFastRequestLoading<T> value)
+        createFastRequestLoading,
+    required TResult Function(CreateFastRequestSuccess<T> value)
+        createFastRequestSuccess,
+    required TResult Function(CreateFastRequestError<T> value)
+        createFastRequestError,
+  }) {
+    return rejectFastRequestSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(MyRequestsLoading<T> value)? myRequestsLoading,
+    TResult? Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
+    TResult? Function(MyRequestsError<T> value)? myRequestsError,
+    TResult? Function(MyFastRequestsLoading<T> value)? myFastRequestsLoading,
+    TResult? Function(MyFastRequestsSuccess<T> value)? myFastRequestsSuccess,
+    TResult? Function(MyFastRequestsError<T> value)? myFastRequestsError,
+    TResult? Function(MyAvailableFastRequestsLoading<T> value)?
+        myAvailableFastRequestsLoading,
+    TResult? Function(MyAvailableFastRequestsSuccess<T> value)?
+        myAvailableFastRequestsSuccess,
+    TResult? Function(MyAvailableFastRequestsError<T> value)?
+        myAvailableFastRequestsError,
+    TResult? Function(OffersLoading<T> value)? offersLoading,
+    TResult? Function(OffersSuccess<T> value)? offersSuccess,
+    TResult? Function(OffersError<T> value)? offersError,
+    TResult? Function(OffersRequestLoading<T> value)? offersRequestLoading,
+    TResult? Function(OffersRequestSuccess<T> value)? offersRequestSuccess,
+    TResult? Function(OffersRequestError<T> value)? offersRequestError,
+    TResult? Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
+    TResult? Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
+    TResult? Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
+    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult? Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult? Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult? Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult? Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    TResult? Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult? Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult? Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult? Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult? Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult? Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult? Function(DeleteRequestError<T> value)? deleteRequestError,
+    TResult? Function(CompleteRequestLoading<T> value)? completeRequestLoading,
+    TResult? Function(CompleteRequestSuccess<T> value)? completeRequestSuccess,
+    TResult? Function(CompleteRequestError<T> value)? completeRequestError,
+    TResult? Function(GiveOfferLoading<T> value)? giveOfferLoading,
+    TResult? Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
+    TResult? Function(GiveOfferError<T> value)? giveOfferError,
+    TResult? Function(AcceptOfferLoading<T> value)? acceptOfferLoading,
+    TResult? Function(AcceptOfferSuccess<T> value)? acceptOfferSuccess,
+    TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
+    TResult? Function(AcceptFastRequestLoading<T> value)?
+        acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
+    TResult? Function(AcceptFastRequestSuccess<T> value)?
+        acceptFastRequestSuccess,
+    TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
+    TResult? Function(CancelFastRequestLoading<T> value)?
+        cancelFastRequestLoading,
+    TResult? Function(CancelFastRequestSuccess<T> value)?
+        cancelFastRequestSuccess,
+    TResult? Function(CancelFastRequestError<T> value)? cancelFastRequestError,
+    TResult? Function(CompleteFastRequestLoading<T> value)?
+        completeFastRequestLoading,
+    TResult? Function(CompleteFastRequestSuccess<T> value)?
+        completeFastRequestSuccess,
+    TResult? Function(CompleteFastRequestError<T> value)?
+        completeFastRequestError,
+    TResult? Function(CreateFastRequestLoading<T> value)?
+        createFastRequestLoading,
+    TResult? Function(CreateFastRequestSuccess<T> value)?
+        createFastRequestSuccess,
+    TResult? Function(CreateFastRequestError<T> value)? createFastRequestError,
+  }) {
+    return rejectFastRequestSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(MyRequestsLoading<T> value)? myRequestsLoading,
+    TResult Function(MyRequestsSuccess<T> value)? myRequestsSuccess,
+    TResult Function(MyRequestsError<T> value)? myRequestsError,
+    TResult Function(MyFastRequestsLoading<T> value)? myFastRequestsLoading,
+    TResult Function(MyFastRequestsSuccess<T> value)? myFastRequestsSuccess,
+    TResult Function(MyFastRequestsError<T> value)? myFastRequestsError,
+    TResult Function(MyAvailableFastRequestsLoading<T> value)?
+        myAvailableFastRequestsLoading,
+    TResult Function(MyAvailableFastRequestsSuccess<T> value)?
+        myAvailableFastRequestsSuccess,
+    TResult Function(MyAvailableFastRequestsError<T> value)?
+        myAvailableFastRequestsError,
+    TResult Function(OffersLoading<T> value)? offersLoading,
+    TResult Function(OffersSuccess<T> value)? offersSuccess,
+    TResult Function(OffersError<T> value)? offersError,
+    TResult Function(OffersRequestLoading<T> value)? offersRequestLoading,
+    TResult Function(OffersRequestSuccess<T> value)? offersRequestSuccess,
+    TResult Function(OffersRequestError<T> value)? offersRequestError,
+    TResult Function(MyAvailableJobsLoading<T> value)? myAvailableJobsLoading,
+    TResult Function(MyAvailableJobsSuccess<T> value)? myAvailableJobsSuccess,
+    TResult Function(MyAvailableJobsError<T> value)? myAvailableJobsError,
+    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
+    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
+    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
+    TResult Function(ImageSelectedDeleted<T> value)? imageSelectedDeleted,
+    TResult Function(CreateSpecialRequestLoading<T> value)?
+        createSpecialRequestLoading,
+    TResult Function(CreateSpecialRequestSuccess<T> value)?
+        createSpecialRequestSuccess,
+    TResult Function(CreateSpecialRequestError<T> value)?
+        createSpecialRequestError,
+    TResult Function(UpdateRequestLoading<T> value)? updateRequestLoading,
+    TResult Function(UpdateRequestSuccess<T> value)? updateRequestSuccess,
+    TResult Function(UpdateRequestError<T> value)? updateRequestError,
+    TResult Function(DeleteRequestTapped<T> value)? deleteRequestTapped,
+    TResult Function(DeleteRequestLoading<T> value)? deleteRequestLoading,
+    TResult Function(DeleteRequestSuccess<T> value)? deleteRequestSuccess,
+    TResult Function(DeleteRequestError<T> value)? deleteRequestError,
+    TResult Function(CompleteRequestLoading<T> value)? completeRequestLoading,
+    TResult Function(CompleteRequestSuccess<T> value)? completeRequestSuccess,
+    TResult Function(CompleteRequestError<T> value)? completeRequestError,
+    TResult Function(GiveOfferLoading<T> value)? giveOfferLoading,
+    TResult Function(GiveOfferSuccess<T> value)? giveOfferSuccess,
+    TResult Function(GiveOfferError<T> value)? giveOfferError,
+    TResult Function(AcceptOfferLoading<T> value)? acceptOfferLoading,
+    TResult Function(AcceptOfferSuccess<T> value)? acceptOfferSuccess,
+    TResult Function(AcceptOfferError<T> value)? acceptOfferError,
+    TResult Function(AcceptFastRequestLoading<T> value)?
+        acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
+    TResult Function(AcceptFastRequestSuccess<T> value)?
+        acceptFastRequestSuccess,
+    TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
+    TResult Function(CancelFastRequestLoading<T> value)?
+        cancelFastRequestLoading,
+    TResult Function(CancelFastRequestSuccess<T> value)?
+        cancelFastRequestSuccess,
+    TResult Function(CancelFastRequestError<T> value)? cancelFastRequestError,
+    TResult Function(CompleteFastRequestLoading<T> value)?
+        completeFastRequestLoading,
+    TResult Function(CompleteFastRequestSuccess<T> value)?
+        completeFastRequestSuccess,
+    TResult Function(CompleteFastRequestError<T> value)?
+        completeFastRequestError,
+    TResult Function(CreateFastRequestLoading<T> value)?
+        createFastRequestLoading,
+    TResult Function(CreateFastRequestSuccess<T> value)?
+        createFastRequestSuccess,
+    TResult Function(CreateFastRequestError<T> value)? createFastRequestError,
+    required TResult orElse(),
+  }) {
+    if (rejectFastRequestSuccess != null) {
+      return rejectFastRequestSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RejectFastRequestSuccess<T> implements RequestState<T> {
+  const factory RejectFastRequestSuccess(final UpdateSkill data) =
+      _$RejectFastRequestSuccess<T>;
+
+  UpdateSkill get data;
+  @JsonKey(ignore: true)
+  _$$RejectFastRequestSuccessCopyWith<T, _$RejectFastRequestSuccess<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -23974,6 +24931,7 @@ class _$AcceptFastRequestSuccess<T> implements AcceptFastRequestSuccess<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -24046,6 +25004,7 @@ class _$AcceptFastRequestSuccess<T> implements AcceptFastRequestSuccess<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -24115,6 +25074,7 @@ class _$AcceptFastRequestSuccess<T> implements AcceptFastRequestSuccess<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -24208,6 +25168,8 @@ class _$AcceptFastRequestSuccess<T> implements AcceptFastRequestSuccess<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -24287,6 +25249,8 @@ class _$AcceptFastRequestSuccess<T> implements AcceptFastRequestSuccess<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -24363,6 +25327,8 @@ class _$AcceptFastRequestSuccess<T> implements AcceptFastRequestSuccess<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -24536,6 +25502,7 @@ class _$AcceptFastRequestError<T> implements AcceptFastRequestError<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -24608,6 +25575,7 @@ class _$AcceptFastRequestError<T> implements AcceptFastRequestError<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -24677,6 +25645,7 @@ class _$AcceptFastRequestError<T> implements AcceptFastRequestError<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -24770,6 +25739,8 @@ class _$AcceptFastRequestError<T> implements AcceptFastRequestError<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -24849,6 +25820,8 @@ class _$AcceptFastRequestError<T> implements AcceptFastRequestError<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -24925,6 +25898,8 @@ class _$AcceptFastRequestError<T> implements AcceptFastRequestError<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -25062,6 +26037,7 @@ class _$CancelFastRequestLoading<T> implements CancelFastRequestLoading<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -25134,6 +26110,7 @@ class _$CancelFastRequestLoading<T> implements CancelFastRequestLoading<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -25203,6 +26180,7 @@ class _$CancelFastRequestLoading<T> implements CancelFastRequestLoading<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -25296,6 +26274,8 @@ class _$CancelFastRequestLoading<T> implements CancelFastRequestLoading<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -25375,6 +26355,8 @@ class _$CancelFastRequestLoading<T> implements CancelFastRequestLoading<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -25451,6 +26433,8 @@ class _$CancelFastRequestLoading<T> implements CancelFastRequestLoading<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -25608,6 +26592,7 @@ class _$CancelFastRequestSuccess<T> implements CancelFastRequestSuccess<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -25680,6 +26665,7 @@ class _$CancelFastRequestSuccess<T> implements CancelFastRequestSuccess<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -25749,6 +26735,7 @@ class _$CancelFastRequestSuccess<T> implements CancelFastRequestSuccess<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -25842,6 +26829,8 @@ class _$CancelFastRequestSuccess<T> implements CancelFastRequestSuccess<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -25921,6 +26910,8 @@ class _$CancelFastRequestSuccess<T> implements CancelFastRequestSuccess<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -25997,6 +26988,8 @@ class _$CancelFastRequestSuccess<T> implements CancelFastRequestSuccess<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -26170,6 +27163,7 @@ class _$CancelFastRequestError<T> implements CancelFastRequestError<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -26242,6 +27236,7 @@ class _$CancelFastRequestError<T> implements CancelFastRequestError<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -26311,6 +27306,7 @@ class _$CancelFastRequestError<T> implements CancelFastRequestError<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -26404,6 +27400,8 @@ class _$CancelFastRequestError<T> implements CancelFastRequestError<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -26483,6 +27481,8 @@ class _$CancelFastRequestError<T> implements CancelFastRequestError<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -26559,6 +27559,8 @@ class _$CancelFastRequestError<T> implements CancelFastRequestError<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -26697,6 +27699,7 @@ class _$CompleteFastRequestLoading<T> implements CompleteFastRequestLoading<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -26769,6 +27772,7 @@ class _$CompleteFastRequestLoading<T> implements CompleteFastRequestLoading<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -26838,6 +27842,7 @@ class _$CompleteFastRequestLoading<T> implements CompleteFastRequestLoading<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -26931,6 +27936,8 @@ class _$CompleteFastRequestLoading<T> implements CompleteFastRequestLoading<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -27010,6 +28017,8 @@ class _$CompleteFastRequestLoading<T> implements CompleteFastRequestLoading<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -27086,6 +28095,8 @@ class _$CompleteFastRequestLoading<T> implements CompleteFastRequestLoading<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -27244,6 +28255,7 @@ class _$CompleteFastRequestSuccess<T> implements CompleteFastRequestSuccess<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -27316,6 +28328,7 @@ class _$CompleteFastRequestSuccess<T> implements CompleteFastRequestSuccess<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -27385,6 +28398,7 @@ class _$CompleteFastRequestSuccess<T> implements CompleteFastRequestSuccess<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -27478,6 +28492,8 @@ class _$CompleteFastRequestSuccess<T> implements CompleteFastRequestSuccess<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -27557,6 +28573,8 @@ class _$CompleteFastRequestSuccess<T> implements CompleteFastRequestSuccess<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -27633,6 +28651,8 @@ class _$CompleteFastRequestSuccess<T> implements CompleteFastRequestSuccess<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -27807,6 +28827,7 @@ class _$CompleteFastRequestError<T> implements CompleteFastRequestError<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -27879,6 +28900,7 @@ class _$CompleteFastRequestError<T> implements CompleteFastRequestError<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -27948,6 +28970,7 @@ class _$CompleteFastRequestError<T> implements CompleteFastRequestError<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -28041,6 +29064,8 @@ class _$CompleteFastRequestError<T> implements CompleteFastRequestError<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -28120,6 +29145,8 @@ class _$CompleteFastRequestError<T> implements CompleteFastRequestError<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -28196,6 +29223,8 @@ class _$CompleteFastRequestError<T> implements CompleteFastRequestError<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -28334,6 +29363,7 @@ class _$CreateFastRequestLoading<T> implements CreateFastRequestLoading<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -28406,6 +29436,7 @@ class _$CreateFastRequestLoading<T> implements CreateFastRequestLoading<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -28475,6 +29506,7 @@ class _$CreateFastRequestLoading<T> implements CreateFastRequestLoading<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -28568,6 +29600,8 @@ class _$CreateFastRequestLoading<T> implements CreateFastRequestLoading<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -28647,6 +29681,8 @@ class _$CreateFastRequestLoading<T> implements CreateFastRequestLoading<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -28723,6 +29759,8 @@ class _$CreateFastRequestLoading<T> implements CreateFastRequestLoading<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -28880,6 +29918,7 @@ class _$CreateFastRequestSuccess<T> implements CreateFastRequestSuccess<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -28952,6 +29991,7 @@ class _$CreateFastRequestSuccess<T> implements CreateFastRequestSuccess<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -29021,6 +30061,7 @@ class _$CreateFastRequestSuccess<T> implements CreateFastRequestSuccess<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -29114,6 +30155,8 @@ class _$CreateFastRequestSuccess<T> implements CreateFastRequestSuccess<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -29193,6 +30236,8 @@ class _$CreateFastRequestSuccess<T> implements CreateFastRequestSuccess<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -29269,6 +30314,8 @@ class _$CreateFastRequestSuccess<T> implements CreateFastRequestSuccess<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -29442,6 +30489,7 @@ class _$CreateFastRequestError<T> implements CreateFastRequestError<T> {
     required TResult Function(NetworkExceptions networkExceptions)
         acceptOfferError,
     required TResult Function() acceptFastRequestLoading,
+    required TResult Function(UpdateSkill data) rejectFastRequestSuccess,
     required TResult Function(UpdateSkill data) acceptFastRequestSuccess,
     required TResult Function(NetworkExceptions networkExceptions)
         acceptFastRequestError,
@@ -29514,6 +30562,7 @@ class _$CreateFastRequestError<T> implements CreateFastRequestError<T> {
     TResult? Function(UpdateSkill data)? acceptOfferSuccess,
     TResult? Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult? Function()? acceptFastRequestLoading,
+    TResult? Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult? Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult? Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -29583,6 +30632,7 @@ class _$CreateFastRequestError<T> implements CreateFastRequestError<T> {
     TResult Function(UpdateSkill data)? acceptOfferSuccess,
     TResult Function(NetworkExceptions networkExceptions)? acceptOfferError,
     TResult Function()? acceptFastRequestLoading,
+    TResult Function(UpdateSkill data)? rejectFastRequestSuccess,
     TResult Function(UpdateSkill data)? acceptFastRequestSuccess,
     TResult Function(NetworkExceptions networkExceptions)?
         acceptFastRequestError,
@@ -29676,6 +30726,8 @@ class _$CreateFastRequestError<T> implements CreateFastRequestError<T> {
     required TResult Function(AcceptOfferError<T> value) acceptOfferError,
     required TResult Function(AcceptFastRequestLoading<T> value)
         acceptFastRequestLoading,
+    required TResult Function(RejectFastRequestSuccess<T> value)
+        rejectFastRequestSuccess,
     required TResult Function(AcceptFastRequestSuccess<T> value)
         acceptFastRequestSuccess,
     required TResult Function(AcceptFastRequestError<T> value)
@@ -29755,6 +30807,8 @@ class _$CreateFastRequestError<T> implements CreateFastRequestError<T> {
     TResult? Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult? Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult? Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult? Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult? Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
@@ -29831,6 +30885,8 @@ class _$CreateFastRequestError<T> implements CreateFastRequestError<T> {
     TResult Function(AcceptOfferError<T> value)? acceptOfferError,
     TResult Function(AcceptFastRequestLoading<T> value)?
         acceptFastRequestLoading,
+    TResult Function(RejectFastRequestSuccess<T> value)?
+        rejectFastRequestSuccess,
     TResult Function(AcceptFastRequestSuccess<T> value)?
         acceptFastRequestSuccess,
     TResult Function(AcceptFastRequestError<T> value)? acceptFastRequestError,
