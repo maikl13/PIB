@@ -20,7 +20,7 @@
 // class _VideoScreenState extends State<VideoScreen> {
 //   ChewieController? _chewieController;
 //   late VideoPlayerController _videoPlayerController;
-//   String url = 'http://pib-platform.com/uploads/1679503874_attachment.mp4';
+//   String url = 'https://pib-platform.com/uploads/1679503874_attachment.mp4';
 
 //   // "https://www.fluttercampus.com/video.mp4";
 

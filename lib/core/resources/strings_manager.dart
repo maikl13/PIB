@@ -64,9 +64,7 @@ class AppStrings {
   static const String companiesRequireJobs = 'شركات قاموا بطلب وظائف :';
 
   static const String jobTitle = 'سباك';
-  static const String companyName = 'شركة امواج للنظافة';
-  static const String partTimeJobs = 'وظائف بارت تايم :';
-  static const String fullTimeJobs = 'وظائف دوام كامل :';
+
   static const String notificationSubtitle =
       'هناك حقيقة مثبتة منذ زمن طويل وهي المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الصفحة التي يقرأها.';
   static const String jobDetailsAppBarTitle = 'تفاصيل الاعلان';

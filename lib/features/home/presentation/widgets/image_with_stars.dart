@@ -16,13 +16,8 @@ class ImageWithRating extends StatelessWidget {
           // color: Colors.amber,
         ),
         _buildJobImage(),
-        // Positioned.fill(
-        //   child: Align(
-        //       alignment: Alignment.bottomLeft,
-        //       child: JobRateContainer(
-        //         height: height,
-        //       )),
-        // ),
+
+
       ],
     );
   }
@@ -36,20 +31,7 @@ class ImageWithRating extends StatelessWidget {
         child: ClipOval(child: CustomNetworkCachedImage(url: image)),
       ),
     );
-    // return Container(
-    //   width: 70.w,
-    //   height: 70.h,
-    //   decoration: BoxDecoration(
-    //     shape: BoxShape.circle,
-    //   ),
-    //   // color: Colors.red,
-    //   child: Image.asset(
-    //     ImageAssets.banner,
-    //     height: 70.h,
-    //     width: 70.w,
-    //     fit: BoxFit.fill,
-    //   ),
-    // );
+
   }
 
   @override

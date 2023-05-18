@@ -46,6 +46,7 @@ _buildView(List<SliderModel> sliders){
             return  BannerItem(
             imageUrl: sliders[index].image,
             title: sliders[index].name,
+              content: sliders[index].content,
             urlLink: sliders[index].link,
             );
           }),

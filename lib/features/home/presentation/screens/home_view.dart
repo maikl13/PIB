@@ -23,11 +23,13 @@ import '../widgets/jobs_part.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
+
   _buildMenuCubit() {
     return BlocListener<MenuCubit, MenuState>(
       listener: (context, state) {
         state.whenOrNull(
-          locationError: () => BlocProvider.of<PipCubit>(context).toggleFastRequest(),
+          locationError: () =>
+              BlocProvider.of<PipCubit>(context).toggleFastRequest(),
         );
       },
       child: Container(),
@@ -73,15 +75,7 @@ class HomeView extends StatelessWidget {
         SizedBox(height: 30.h),
         _buildBanners(),
         SizedBox(height: 41.h),
-        _buildJobsRequestByCompanies(context, ads[0]),
-        SizedBox(height: 30.h),
-        Divider(height: 1.h, color: ColorManager.grey),
-        SizedBox(height: 35.h),
-        _buildPartTimeJops(context, ads[1]),
-        SizedBox(height: 30.h),
-        Divider(height: 1.h, color: ColorManager.grey),
-        SizedBox(height: 35.h),
-        _buildFullTimeJops(context, ads[2]),
+        _buildJobsSections(context, ads),
       ],
     );
   }
@@ -133,42 +127,31 @@ class HomeView extends StatelessWidget {
     return const Banners();
   }
 
-  _buildJobsRequestByCompanies(BuildContext context, AdModel ad) {
-    return JobsPart(
-      ads: ad.ads!,
-      headline: ad.name ?? '',
-      onShowAllTap: () {
-        // print('adasd');
-        Navigator.pushNamed(context, Routes.companiesNeedJobsViewRoute,
-            arguments: {
-              'ads': ad.ads,
-              'headline': ad.name,
-            });
-      },
-    );
+  _buildJobsSections(BuildContext context, List<AdModel> ads) {
+    return ListView.builder(
+        shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
+        itemBuilder: (context, i) {
+          return Column(
+
+            children: [
+              _buildJobsSection(context, ads[i]),
+              SizedBox(height: 30.h),
+              if(i+1 < ads.length) Divider(height: 1.h, color: ColorManager.grey),
+              if(i+1 < ads.length)  SizedBox(height: 35.h),
+            ],
+          );
+        },
+        itemCount:ads.length);
   }
 
-  _buildPartTimeJops(BuildContext context, AdModel ad) {
+  _buildJobsSection(BuildContext context, AdModel ad) {
     return JobsPart(
       ads: ad.ads!,
       headline: ad.name ?? '',
       onShowAllTap: () {
         // print('adasd');
-        Navigator.pushNamed(context, Routes.partTimeViewRoute, arguments: {
-          'ads': ad.ads,
-          'headline': ad.name,
-        });
-      },
-    );
-  }
-
-  _buildFullTimeJops(BuildContext context, AdModel ad) {
-    return JobsPart(
-      ads: ad.ads!,
-      headline: ad.name ?? '',
-      onShowAllTap: () {
-        // print('adasd');
-        Navigator.pushNamed(context, Routes.fullTimeViewRoute, arguments: {
+        Navigator.pushNamed(context, Routes.jobsListView, arguments: {
           'ads': ad.ads,
           'headline': ad.name,
         });

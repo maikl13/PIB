@@ -10,8 +10,9 @@ import '../../features/chat/presentation/screens/chats_view.dart';
 import '../../features/chat/presentation/screens/conversation_type_view.dart';
 import '../../features/home/data/models/ad_model.dart';
 import '../../features/home/presentation/screens/companeis_need_jobs.view.dart';
-import '../../features/home/presentation/screens/full_time_jobs_view.dart';
-import '../../features/home/presentation/screens/part_time_jobs_view.dart';
+
+import '../../features/home/presentation/screens/jobs_list_view.dart';
+
 // import '../../features/map/presentation/screens/available_drivers.dart';
 // import '../../features/map/presentation/screens/confirm_driver.dart';
 import '../../features/menu/business_logic/menu_cubit.dart';
@@ -103,11 +104,10 @@ class Routes {
 
   static const String companiesNeedJobsViewRoute =
       "/companiesNeedJobsViewRoute";
-  static const String partTimeViewRoute = "/partTimeViewRoute";
+  static const String jobsListView = "/jobsListView";
   static const String termsAndConditionViewRoute =
       "/termsAndConditionViewRoute";
 
-  static const String fullTimeViewRoute = "/fullTimeViewRoute";
   static const String editRequestViewRoute = "/editRequestViewRoute";
 
   static const String confirDriverViewRoute = "/confirDriverViewRoute";
@@ -500,28 +500,18 @@ class RouteGenerator {
             typeHeadline: typeHeadline,
           ),
         );
-      case Routes.partTimeViewRoute:
+      case Routes.jobsListView:
         final arguments = settings.arguments as Map;
 
         final List<Ads> ads = arguments['ads'];
         final String typeHeadline = arguments['headline'];
         return MaterialPageRoute(
-          builder: (_) => PartTimeJobs(
+          builder: (_) => JobsListView(
             ads: ads,
             typeHeadline: typeHeadline,
           ),
         );
-      case Routes.fullTimeViewRoute:
-        final arguments = settings.arguments as Map;
 
-        final List<Ads> ads = arguments['ads'];
-        final String typeHeadline = arguments['headline'];
-        return MaterialPageRoute(
-          builder: (_) => FullTimeJobsView(
-            ads: ads,
-            typeHeadline: typeHeadline,
-          ),
-        );
 
       case Routes.confirDriverViewRoute:
         final arguments = settings.arguments as Map;

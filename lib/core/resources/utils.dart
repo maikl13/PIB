@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pip/core/business_logic/global_cubit.dart';
 import 'package:pip/core/business_logic/global_state.dart';
 import 'package:pip/core/resources/commons.dart';
+import 'package:pip/core/resources/style_manager.dart';
 import 'package:pip/core/web_services/api_result.dart';
 import '../widgets/notification_warning.dart';
 import 'assets_manager.dart';
@@ -79,6 +80,7 @@ defaultAppBar(BuildContext context) {
     automaticallyImplyLeading: false,
     backgroundColor: ColorManager.lightBlack,
     titleSpacing: 0,
+
     centerTitle: false,
     title: buildMainSearchViewAppBarTitle(context),
     actions: buildMainSearchViewAppBarActions(context),
@@ -100,10 +102,11 @@ buildMainSearchViewAppBarTitle(BuildContext context) {
     padding: EdgeInsets.only(right: 20.w),
     child: Text(
       viewsTitles[screenIndex],
-      style: Theme.of(context).textTheme.headlineLarge,
+      style:  getBoldStyle(fontSize: 22.sp, color: ColorManager.white) ,
     ),
   );
 }
+
 
 buildMainSearchViewAppBarActions(BuildContext context) {
   return [

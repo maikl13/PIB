@@ -11,7 +11,7 @@ class AppConstants {
   static const double appBarHeight = 55;
   static const int sliderAnimationTime = 300;
   static const int timeOut = 60;
-  static const String baseUrl = 'http://pib-platform.com/api/';
+  static const String baseUrl = 'https://pib-platform.com/api/';
 }
 
 String fastRequsetStatus = "0";

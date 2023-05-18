@@ -9,18 +9,19 @@ import '../resources/constants.dart';
 import '../resources/strings_manager.dart';
 import '../resources/style_manager.dart';
 
+import 'codes.dart';
 import 'country_picker.dart';
 
 class DefaultPhoneTextField extends StatefulWidget {
   const DefaultPhoneTextField(
       {super.key,
-      this.suffix,
-      this.hint,
-      this.contentPadding,
-      this.validator,
-      this.onSaved,
-      this.controller,
-      this.initialValue});
+        this.suffix,
+        this.hint,
+        this.contentPadding,
+        this.validator,
+        this.onSaved,
+        this.controller,
+        this.initialValue});
 
   final Widget? suffix;
   final String? hint;
@@ -35,23 +36,23 @@ class DefaultPhoneTextField extends StatefulWidget {
 }
 
 class _DefaultPhoneTextFieldState extends State<DefaultPhoneTextField> {
-  // String? _labelText;
+  String? _labelText;
   TextEditingController nameTextEditingController = TextEditingController();
   @override
   void initState() {
     super.initState();
-    // nameTextEditingController.addListener(_hasStartedTyping);
+    nameTextEditingController.addListener(_hasStartedTyping);
   }
 
-  // void _hasStartedTyping() {
-  //   setState(() {
-  //     if (nameTextEditingController.text.isNotEmpty) {
-  //       _labelText = 'Name';
-  //     } else {
-  //       _labelText = null;
-  //     }
-  //   });
-  // }
+  void _hasStartedTyping() {
+    setState(() {
+      if (nameTextEditingController.text.isNotEmpty) {
+        _labelText = 'Name';
+      } else {
+        _labelText = null;
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -91,7 +92,7 @@ class _DefaultPhoneTextFieldState extends State<DefaultPhoneTextField> {
         // });
       },
       validator: widget.validator ??
-          (value) {
+              (value) {
             return validateMobile(value!);
           },
 
@@ -142,15 +143,12 @@ class _DefaultPhoneTextFieldState extends State<DefaultPhoneTextField> {
             padding: EdgeInsets.only(left: 0.w, bottom: 22.h),
             child: widget.suffix ??
                 CodePicker(
-
-                    // padding: EdgeInsets.all(20),
-                    textOverflow: TextOverflow.ellipsis,
-
+                    countryList:supported_codes,
                     // boxDecoration: BoxDecoration(color: ColorManager.error),
                     textStyle:
-                        getBoldStyle(fontSize: 13.sp, color: ColorManager.grey),
+                    getBoldStyle(fontSize: 13.sp, color: ColorManager.white),
                     onChanged: (code) {
-                      // print(code.dialCode!);
+                      print(code.dialCode!);
                       countryCode = code.dialCode!;
                       CacheHelper.saveData(
                           key: 'countryCode', value: code.dialCode);
@@ -160,13 +158,9 @@ class _DefaultPhoneTextFieldState extends State<DefaultPhoneTextField> {
                       color: ColorManager.grey5,
                     ),
                     searchDecoration: InputDecoration(
-                      
-                      focusColor: ColorManager.darkSeconadry,
-                      prefixIconColor: ColorManager.darkSeconadry,
-                      
-
-                      // iconColor: ColorManager.darkSeconadry,
                       hintText: AppStrings.search,
+
+                      prefixIcon:  Icon(Icons.search , color: ColorManager.darkSeconadry,),
                       hintStyle: getRegularStyle(
                         fontSize: 15.sp,
                         color: ColorManager.grey,
@@ -180,31 +174,27 @@ class _DefaultPhoneTextFieldState extends State<DefaultPhoneTextField> {
                     ),
                     flagWidth: 22.w,
                     dialogTextStyle: getBoldStyle(
-                        fontSize: 14.sp, color: ColorManager.grey5),
+                        fontSize: 16.sp, color: ColorManager.grey),
                     showFlagMain: true,
+
                     boxDecoration: BoxDecoration(
-                      color: ColorManager.white,
-                      borderRadius: BorderRadius.circular(10.r),
-                      border: Border.all(
-                        color: ColorManager.grey,
-                      ),
+                      color:  ColorManager.primary,
+                      borderRadius: BorderRadius.circular(4.r),
+
                     ),
                     searchStyle: getRegularStyle(
-                        fontSize: 15.sp, color: ColorManager.grey),
-                    initialSelection: countryCode ?? '+966',
-                    favorite: const ['+966', 'SA', 'EG', '+20'],
+                        fontSize: 15.sp, color: ColorManager.white),
+                    initialSelection: countryCode,
+                    favorite: const ['+966', 'SA'],
                     showCountryOnly: false,
                     showOnlyCountryWhenClosed: false,
 
-                    // countryFilter: ['SA', 'EG'],
-                    // countryFilter: const ['SA', 'EG'],
-                    // padding: EdgeInsets.symmetric(horizontal: 16.w),
                     alignLeft: false)
-            // Text(
-            //   '${getCountryFlag()}    ${AppStrings.countryCode}',
-            //   style: getBoldStyle(color: ColorManager.grey, fontSize: 13.sp),
-            // ),
-            ),
+          // Text(
+          //   '${getCountryFlag()}    ${AppStrings.countryCode}',
+          //   style: getBoldStyle(color: ColorManager.grey, fontSize: 13.sp),
+          // ),
+        ),
       ),
     );
   }
