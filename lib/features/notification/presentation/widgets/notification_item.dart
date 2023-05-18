@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/resources/utils.dart';
 
 import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
@@ -8,12 +7,10 @@ import '../../../../core/resources/style_manager.dart';
 import 'clock_date.dart';
 
 class NotificationItem extends StatelessWidget {
-  const NotificationItem(
-      {super.key, this.notificationContent, this.isRead, required this.date});
+  const NotificationItem({super.key, this.notificationContent, this.isRead});
 
   final String? notificationContent;
   final bool? isRead;
-  final String date;
 
   _buildLeading(BuildContext context) {
     return Container(
@@ -32,7 +29,7 @@ class NotificationItem extends StatelessWidget {
 
   _buildTitle() {
     return Padding(
-      padding: EdgeInsets.only(bottom: 6.h, left: 40.w),
+      padding: EdgeInsets.only(bottom: 6.h),
       child: Text(
         overflow: TextOverflow.clip,
         maxLines: 3,
@@ -45,25 +42,24 @@ class NotificationItem extends StatelessWidget {
   _buildSubTitle() {
     return ClockDate(
       color: ColorManager.grey,
-      date: formatDate(date.toString()),
     );
   }
 
-  // _buildTrailing(BuildContext context) {
-  //   return Padding(
-  //       padding: EdgeInsets.only(top: 55.h),
-  //       child: IconButton(
-  //         icon: Icon(
-  //           Icons.arrow_forward,
-  //           color: ColorManager.darkSeconadry,
-  //           size: 16.sp,
-  //         ),
-  //         onPressed: () {
-  //           // print('object');
-  //           Navigator.pop(context);
-  //         },
-  //       ));
-  // }
+  _buildTrailing(BuildContext context) {
+    return Padding(
+        padding: EdgeInsets.only(top: 55.h),
+        child: IconButton(
+          icon: Icon(
+            Icons.arrow_forward,
+            color: ColorManager.darkSeconadry,
+            size: 16.sp,
+          ),
+          onPressed: () {
+            // print('object');
+            Navigator.pop(context);
+          },
+        ));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +76,7 @@ class NotificationItem extends StatelessWidget {
         leading: _buildLeading(context),
         title: _buildTitle(),
         subtitle: _buildSubTitle(),
-        // trailing: _buildTrailing(context),
+        trailing: _buildTrailing(context),
       ),
     );
   }

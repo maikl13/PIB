@@ -8,10 +8,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import '../../../../core/resources/assets_manager.dart';
-import '../../../../core/resources/commons.dart';
-import '../../../../core/widgets/default_button.dart';
-import '../../business_logic/chat_cubit.dart';
+import 'package:pip/core/resources/assets_manager.dart';
+import 'package:pip/core/resources/commons.dart';
+import 'package:pip/core/widgets/default_button.dart';
+import 'package:pip/features/chat/business_logic/chat_cubit.dart';
 import 'package:screenshot/screenshot.dart';
 // ignore: depend_on_referenced_packages
 import 'package:path_provider/path_provider.dart';
@@ -213,16 +213,12 @@ class _ShareLocationState extends State<ShareLocation> {
   }
 
   Future<void> getAddressFromPos(var position) async {
-    await placemarkFromCoordinates(position.latitude, position.longitude, localeIdentifier: "ar")
+    await placemarkFromCoordinates(position.latitude, position.longitude)
         .then((List<Placemark> placeMarks) {
       Placemark place = placeMarks[0];
       setState(() {
-        String name = place.name!;
-        String subLocality = place.subLocality!;
-        String locality = place.locality!;
-        String administrativeArea = place.administrativeArea!;
-        address = "${name}, ${subLocality}, ${locality}, ${administrativeArea}";
-
+        address =
+            "${place.administrativeArea} - ${place.subAdministrativeArea}";
       });
     }).catchError((e) {
       debugPrint(e.toString());

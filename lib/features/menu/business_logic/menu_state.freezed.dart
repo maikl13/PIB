@@ -19,8 +19,6 @@ mixin _$MenuState<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -74,8 +72,6 @@ mixin _$MenuState<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -120,8 +116,6 @@ mixin _$MenuState<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -167,8 +161,6 @@ mixin _$MenuState<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -223,8 +215,6 @@ mixin _$MenuState<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -274,8 +264,6 @@ mixin _$MenuState<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -380,8 +368,6 @@ class _$Idle<T> implements Idle<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -438,8 +424,6 @@ class _$Idle<T> implements Idle<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -487,8 +471,6 @@ class _$Idle<T> implements Idle<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -540,8 +522,6 @@ class _$Idle<T> implements Idle<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -599,8 +579,6 @@ class _$Idle<T> implements Idle<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -653,8 +631,6 @@ class _$Idle<T> implements Idle<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -713,748 +689,6 @@ abstract class Idle<T> implements MenuState<T> {
 }
 
 /// @nodoc
-abstract class _$$LocationErrorCopyWith<T, $Res> {
-  factory _$$LocationErrorCopyWith(
-          _$LocationError<T> value, $Res Function(_$LocationError<T>) then) =
-      __$$LocationErrorCopyWithImpl<T, $Res>;
-}
-
-/// @nodoc
-class __$$LocationErrorCopyWithImpl<T, $Res>
-    extends _$MenuStateCopyWithImpl<T, $Res, _$LocationError<T>>
-    implements _$$LocationErrorCopyWith<T, $Res> {
-  __$$LocationErrorCopyWithImpl(
-      _$LocationError<T> _value, $Res Function(_$LocationError<T>) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$LocationError<T> implements LocationError<T> {
-  const _$LocationError();
-
-  @override
-  String toString() {
-    return 'MenuState<$T>.locationError()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LocationError<T>);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
-    required TResult Function() walletInfoLoading,
-    required TResult Function(WalletInfo data) walletInfoSuccedded,
-    required TResult Function(NetworkExceptions networkExceptions)
-        walletInfoError,
-    required TResult Function() sendComplainLoading,
-    required TResult Function(UpdateSkill data) sendComplainSuccess,
-    required TResult Function(NetworkExceptions networkExceptions)
-        sendComplainError,
-    required TResult Function() updateUserInfoLoading,
-    required TResult Function(UpdateSkill data) updateUserInfoSuccess,
-    required TResult Function(NetworkExceptions networkExceptions)
-        updateUserInfoError,
-    required TResult Function() userSkillsLoading,
-    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
-    required TResult Function(NetworkExceptions networkExceptions)
-        userSkillsError,
-    required TResult Function() updateSkillLoading,
-    required TResult Function(UpdateSkill data) updateSkillSuccess,
-    required TResult Function(NetworkExceptions networkExceptions)
-        updateSkillError,
-    required TResult Function() walletBlanceAddedLoading,
-    required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
-    required TResult Function(NetworkExceptions networkExceptions)
-        walletBalanceAdddedError,
-    required TResult Function() getRatesLoading,
-    required TResult Function(RatesModel rates) getRatesSuccess,
-    required TResult Function(NetworkExceptions networkExceptions)
-        getRatesError,
-    required TResult Function() getSettingLoading,
-    required TResult Function(List<SettingModel> settings) getSettingSuccess,
-    required TResult Function(NetworkExceptions networkExceptions)
-        getSettingError,
-    required TResult Function() updateRateLoading,
-    required TResult Function(UpdateSkill data) updateRateSuccess,
-    required TResult Function(NetworkExceptions networkExceptions)
-        updateRateError,
-    required TResult Function() imageSelectedSuccess,
-    required TResult Function() imageSelectedLoading,
-    required TResult Function() imageSelectedError,
-    required TResult Function() getUserInfoLoading,
-    required TResult Function() updateExperienceRateSuccess,
-    required TResult Function() updateQualityRate,
-    required TResult Function() updateCommunicationRateSuccess,
-    required TResult Function() updateTimeRateSuccess,
-    required TResult Function() updateProfessionlRateSuccess,
-    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
-    required TResult Function(NetworkExceptions networkExceptions)
-        getUserInfoError,
-  }) {
-    return locationError();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
-    TResult? Function()? walletInfoLoading,
-    TResult? Function(WalletInfo data)? walletInfoSuccedded,
-    TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
-    TResult? Function()? sendComplainLoading,
-    TResult? Function(UpdateSkill data)? sendComplainSuccess,
-    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
-    TResult? Function()? updateUserInfoLoading,
-    TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
-    TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
-    TResult? Function()? userSkillsLoading,
-    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
-    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
-    TResult? Function()? updateSkillLoading,
-    TResult? Function(UpdateSkill data)? updateSkillSuccess,
-    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
-    TResult? Function()? walletBlanceAddedLoading,
-    TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
-    TResult? Function(NetworkExceptions networkExceptions)?
-        walletBalanceAdddedError,
-    TResult? Function()? getRatesLoading,
-    TResult? Function(RatesModel rates)? getRatesSuccess,
-    TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
-    TResult? Function()? getSettingLoading,
-    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
-    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
-    TResult? Function()? updateRateLoading,
-    TResult? Function(UpdateSkill data)? updateRateSuccess,
-    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
-    TResult? Function()? imageSelectedSuccess,
-    TResult? Function()? imageSelectedLoading,
-    TResult? Function()? imageSelectedError,
-    TResult? Function()? getUserInfoLoading,
-    TResult? Function()? updateExperienceRateSuccess,
-    TResult? Function()? updateQualityRate,
-    TResult? Function()? updateCommunicationRateSuccess,
-    TResult? Function()? updateTimeRateSuccess,
-    TResult? Function()? updateProfessionlRateSuccess,
-    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
-    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
-  }) {
-    return locationError?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
-    TResult Function()? walletInfoLoading,
-    TResult Function(WalletInfo data)? walletInfoSuccedded,
-    TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
-    TResult Function()? sendComplainLoading,
-    TResult Function(UpdateSkill data)? sendComplainSuccess,
-    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
-    TResult Function()? updateUserInfoLoading,
-    TResult Function(UpdateSkill data)? updateUserInfoSuccess,
-    TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
-    TResult Function()? userSkillsLoading,
-    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
-    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
-    TResult Function()? updateSkillLoading,
-    TResult Function(UpdateSkill data)? updateSkillSuccess,
-    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
-    TResult Function()? walletBlanceAddedLoading,
-    TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
-    TResult Function(NetworkExceptions networkExceptions)?
-        walletBalanceAdddedError,
-    TResult Function()? getRatesLoading,
-    TResult Function(RatesModel rates)? getRatesSuccess,
-    TResult Function(NetworkExceptions networkExceptions)? getRatesError,
-    TResult Function()? getSettingLoading,
-    TResult Function(List<SettingModel> settings)? getSettingSuccess,
-    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
-    TResult Function()? updateRateLoading,
-    TResult Function(UpdateSkill data)? updateRateSuccess,
-    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
-    TResult Function()? imageSelectedSuccess,
-    TResult Function()? imageSelectedLoading,
-    TResult Function()? imageSelectedError,
-    TResult Function()? getUserInfoLoading,
-    TResult Function()? updateExperienceRateSuccess,
-    TResult Function()? updateQualityRate,
-    TResult Function()? updateCommunicationRateSuccess,
-    TResult Function()? updateTimeRateSuccess,
-    TResult Function()? updateProfessionlRateSuccess,
-    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
-    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
-    required TResult orElse(),
-  }) {
-    if (locationError != null) {
-      return locationError();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
-    required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
-    required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
-    required TResult Function(WalletInfoError<T> value) walletInfoError,
-    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
-    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
-    required TResult Function(SendComplainError<T> value) sendComplainError,
-    required TResult Function(UpdateUserInfoLoading<T> value)
-        updateUserInfoLoading,
-    required TResult Function(UpdateUserInfoSuccess<T> value)
-        updateUserInfoSuccess,
-    required TResult Function(UpdateUserInfoError<T> value) updateUserInfoError,
-    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
-    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
-    required TResult Function(UserSkillsError<T> value) userSkillsError,
-    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
-    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
-    required TResult Function(UpdateSkillError<T> value) updateSkillError,
-    required TResult Function(WalletBlanceAddedLoading<T> value)
-        walletBlanceAddedLoading,
-    required TResult Function(WalletBalanceAddedSuccedded<T> value)
-        walletBalanceAddedSuccedded,
-    required TResult Function(WalletBalanceAdddedError<T> value)
-        walletBalanceAdddedError,
-    required TResult Function(GetRatesLoading<T> value) getRatesLoading,
-    required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
-    required TResult Function(GetRatesError<T> value) getRatesError,
-    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
-    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
-    required TResult Function(GetSettingError<T> value) getSettingError,
-    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
-    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
-    required TResult Function(UpdateRateError<T> value) updateRateError,
-    required TResult Function(ImageSelectedSuccess<T> value)
-        imageSelectedSuccess,
-    required TResult Function(ImageSelectedLoading<T> value)
-        imageSelectedLoading,
-    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
-    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
-    required TResult Function(UpdateExperienceRateSuccess<T> value)
-        updateExperienceRateSuccess,
-    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
-    required TResult Function(UpdateCommunicationRateSuccess<T> value)
-        updateCommunicationRateSuccess,
-    required TResult Function(UpdateTimeRateSuccess<T> value)
-        updateTimeRateSuccess,
-    required TResult Function(UpdateProfessionlRateSuccess<T> value)
-        updateProfessionlRateSuccess,
-    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
-    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
-  }) {
-    return locationError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
-    TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
-    TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
-    TResult? Function(WalletInfoError<T> value)? walletInfoError,
-    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
-    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
-    TResult? Function(SendComplainError<T> value)? sendComplainError,
-    TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
-    TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
-    TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
-    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
-    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
-    TResult? Function(UserSkillsError<T> value)? userSkillsError,
-    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
-    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
-    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
-    TResult? Function(WalletBlanceAddedLoading<T> value)?
-        walletBlanceAddedLoading,
-    TResult? Function(WalletBalanceAddedSuccedded<T> value)?
-        walletBalanceAddedSuccedded,
-    TResult? Function(WalletBalanceAdddedError<T> value)?
-        walletBalanceAdddedError,
-    TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
-    TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
-    TResult? Function(GetRatesError<T> value)? getRatesError,
-    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
-    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
-    TResult? Function(GetSettingError<T> value)? getSettingError,
-    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
-    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
-    TResult? Function(UpdateRateError<T> value)? updateRateError,
-    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
-    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
-    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
-    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
-    TResult? Function(UpdateExperienceRateSuccess<T> value)?
-        updateExperienceRateSuccess,
-    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
-    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
-        updateCommunicationRateSuccess,
-    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
-    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
-        updateProfessionlRateSuccess,
-    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
-    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
-  }) {
-    return locationError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
-    TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
-    TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
-    TResult Function(WalletInfoError<T> value)? walletInfoError,
-    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
-    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
-    TResult Function(SendComplainError<T> value)? sendComplainError,
-    TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
-    TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
-    TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
-    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
-    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
-    TResult Function(UserSkillsError<T> value)? userSkillsError,
-    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
-    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
-    TResult Function(UpdateSkillError<T> value)? updateSkillError,
-    TResult Function(WalletBlanceAddedLoading<T> value)?
-        walletBlanceAddedLoading,
-    TResult Function(WalletBalanceAddedSuccedded<T> value)?
-        walletBalanceAddedSuccedded,
-    TResult Function(WalletBalanceAdddedError<T> value)?
-        walletBalanceAdddedError,
-    TResult Function(GetRatesLoading<T> value)? getRatesLoading,
-    TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
-    TResult Function(GetRatesError<T> value)? getRatesError,
-    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
-    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
-    TResult Function(GetSettingError<T> value)? getSettingError,
-    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
-    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
-    TResult Function(UpdateRateError<T> value)? updateRateError,
-    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
-    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
-    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
-    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
-    TResult Function(UpdateExperienceRateSuccess<T> value)?
-        updateExperienceRateSuccess,
-    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
-    TResult Function(UpdateCommunicationRateSuccess<T> value)?
-        updateCommunicationRateSuccess,
-    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
-    TResult Function(UpdateProfessionlRateSuccess<T> value)?
-        updateProfessionlRateSuccess,
-    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
-    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
-    required TResult orElse(),
-  }) {
-    if (locationError != null) {
-      return locationError(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class LocationError<T> implements MenuState<T> {
-  const factory LocationError() = _$LocationError<T>;
-}
-
-/// @nodoc
-abstract class _$$SignOutSuccessCopyWith<T, $Res> {
-  factory _$$SignOutSuccessCopyWith(
-          _$SignOutSuccess<T> value, $Res Function(_$SignOutSuccess<T>) then) =
-      __$$SignOutSuccessCopyWithImpl<T, $Res>;
-}
-
-/// @nodoc
-class __$$SignOutSuccessCopyWithImpl<T, $Res>
-    extends _$MenuStateCopyWithImpl<T, $Res, _$SignOutSuccess<T>>
-    implements _$$SignOutSuccessCopyWith<T, $Res> {
-  __$$SignOutSuccessCopyWithImpl(
-      _$SignOutSuccess<T> _value, $Res Function(_$SignOutSuccess<T>) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$SignOutSuccess<T> implements SignOutSuccess<T> {
-  const _$SignOutSuccess();
-
-  @override
-  String toString() {
-    return 'MenuState<$T>.signOutSuccess()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SignOutSuccess<T>);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
-    required TResult Function() walletInfoLoading,
-    required TResult Function(WalletInfo data) walletInfoSuccedded,
-    required TResult Function(NetworkExceptions networkExceptions)
-        walletInfoError,
-    required TResult Function() sendComplainLoading,
-    required TResult Function(UpdateSkill data) sendComplainSuccess,
-    required TResult Function(NetworkExceptions networkExceptions)
-        sendComplainError,
-    required TResult Function() updateUserInfoLoading,
-    required TResult Function(UpdateSkill data) updateUserInfoSuccess,
-    required TResult Function(NetworkExceptions networkExceptions)
-        updateUserInfoError,
-    required TResult Function() userSkillsLoading,
-    required TResult Function(List<SkillModel> skills) userSkillsSuccess,
-    required TResult Function(NetworkExceptions networkExceptions)
-        userSkillsError,
-    required TResult Function() updateSkillLoading,
-    required TResult Function(UpdateSkill data) updateSkillSuccess,
-    required TResult Function(NetworkExceptions networkExceptions)
-        updateSkillError,
-    required TResult Function() walletBlanceAddedLoading,
-    required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
-    required TResult Function(NetworkExceptions networkExceptions)
-        walletBalanceAdddedError,
-    required TResult Function() getRatesLoading,
-    required TResult Function(RatesModel rates) getRatesSuccess,
-    required TResult Function(NetworkExceptions networkExceptions)
-        getRatesError,
-    required TResult Function() getSettingLoading,
-    required TResult Function(List<SettingModel> settings) getSettingSuccess,
-    required TResult Function(NetworkExceptions networkExceptions)
-        getSettingError,
-    required TResult Function() updateRateLoading,
-    required TResult Function(UpdateSkill data) updateRateSuccess,
-    required TResult Function(NetworkExceptions networkExceptions)
-        updateRateError,
-    required TResult Function() imageSelectedSuccess,
-    required TResult Function() imageSelectedLoading,
-    required TResult Function() imageSelectedError,
-    required TResult Function() getUserInfoLoading,
-    required TResult Function() updateExperienceRateSuccess,
-    required TResult Function() updateQualityRate,
-    required TResult Function() updateCommunicationRateSuccess,
-    required TResult Function() updateTimeRateSuccess,
-    required TResult Function() updateProfessionlRateSuccess,
-    required TResult Function(UserInfoModel userInfo) getUserInfoSuccess,
-    required TResult Function(NetworkExceptions networkExceptions)
-        getUserInfoError,
-  }) {
-    return signOutSuccess();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
-    TResult? Function()? walletInfoLoading,
-    TResult? Function(WalletInfo data)? walletInfoSuccedded,
-    TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
-    TResult? Function()? sendComplainLoading,
-    TResult? Function(UpdateSkill data)? sendComplainSuccess,
-    TResult? Function(NetworkExceptions networkExceptions)? sendComplainError,
-    TResult? Function()? updateUserInfoLoading,
-    TResult? Function(UpdateSkill data)? updateUserInfoSuccess,
-    TResult? Function(NetworkExceptions networkExceptions)? updateUserInfoError,
-    TResult? Function()? userSkillsLoading,
-    TResult? Function(List<SkillModel> skills)? userSkillsSuccess,
-    TResult? Function(NetworkExceptions networkExceptions)? userSkillsError,
-    TResult? Function()? updateSkillLoading,
-    TResult? Function(UpdateSkill data)? updateSkillSuccess,
-    TResult? Function(NetworkExceptions networkExceptions)? updateSkillError,
-    TResult? Function()? walletBlanceAddedLoading,
-    TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
-    TResult? Function(NetworkExceptions networkExceptions)?
-        walletBalanceAdddedError,
-    TResult? Function()? getRatesLoading,
-    TResult? Function(RatesModel rates)? getRatesSuccess,
-    TResult? Function(NetworkExceptions networkExceptions)? getRatesError,
-    TResult? Function()? getSettingLoading,
-    TResult? Function(List<SettingModel> settings)? getSettingSuccess,
-    TResult? Function(NetworkExceptions networkExceptions)? getSettingError,
-    TResult? Function()? updateRateLoading,
-    TResult? Function(UpdateSkill data)? updateRateSuccess,
-    TResult? Function(NetworkExceptions networkExceptions)? updateRateError,
-    TResult? Function()? imageSelectedSuccess,
-    TResult? Function()? imageSelectedLoading,
-    TResult? Function()? imageSelectedError,
-    TResult? Function()? getUserInfoLoading,
-    TResult? Function()? updateExperienceRateSuccess,
-    TResult? Function()? updateQualityRate,
-    TResult? Function()? updateCommunicationRateSuccess,
-    TResult? Function()? updateTimeRateSuccess,
-    TResult? Function()? updateProfessionlRateSuccess,
-    TResult? Function(UserInfoModel userInfo)? getUserInfoSuccess,
-    TResult? Function(NetworkExceptions networkExceptions)? getUserInfoError,
-  }) {
-    return signOutSuccess?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
-    TResult Function()? walletInfoLoading,
-    TResult Function(WalletInfo data)? walletInfoSuccedded,
-    TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
-    TResult Function()? sendComplainLoading,
-    TResult Function(UpdateSkill data)? sendComplainSuccess,
-    TResult Function(NetworkExceptions networkExceptions)? sendComplainError,
-    TResult Function()? updateUserInfoLoading,
-    TResult Function(UpdateSkill data)? updateUserInfoSuccess,
-    TResult Function(NetworkExceptions networkExceptions)? updateUserInfoError,
-    TResult Function()? userSkillsLoading,
-    TResult Function(List<SkillModel> skills)? userSkillsSuccess,
-    TResult Function(NetworkExceptions networkExceptions)? userSkillsError,
-    TResult Function()? updateSkillLoading,
-    TResult Function(UpdateSkill data)? updateSkillSuccess,
-    TResult Function(NetworkExceptions networkExceptions)? updateSkillError,
-    TResult Function()? walletBlanceAddedLoading,
-    TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
-    TResult Function(NetworkExceptions networkExceptions)?
-        walletBalanceAdddedError,
-    TResult Function()? getRatesLoading,
-    TResult Function(RatesModel rates)? getRatesSuccess,
-    TResult Function(NetworkExceptions networkExceptions)? getRatesError,
-    TResult Function()? getSettingLoading,
-    TResult Function(List<SettingModel> settings)? getSettingSuccess,
-    TResult Function(NetworkExceptions networkExceptions)? getSettingError,
-    TResult Function()? updateRateLoading,
-    TResult Function(UpdateSkill data)? updateRateSuccess,
-    TResult Function(NetworkExceptions networkExceptions)? updateRateError,
-    TResult Function()? imageSelectedSuccess,
-    TResult Function()? imageSelectedLoading,
-    TResult Function()? imageSelectedError,
-    TResult Function()? getUserInfoLoading,
-    TResult Function()? updateExperienceRateSuccess,
-    TResult Function()? updateQualityRate,
-    TResult Function()? updateCommunicationRateSuccess,
-    TResult Function()? updateTimeRateSuccess,
-    TResult Function()? updateProfessionlRateSuccess,
-    TResult Function(UserInfoModel userInfo)? getUserInfoSuccess,
-    TResult Function(NetworkExceptions networkExceptions)? getUserInfoError,
-    required TResult orElse(),
-  }) {
-    if (signOutSuccess != null) {
-      return signOutSuccess();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
-    required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
-    required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
-    required TResult Function(WalletInfoError<T> value) walletInfoError,
-    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
-    required TResult Function(SendComplainSuccess<T> value) sendComplainSuccess,
-    required TResult Function(SendComplainError<T> value) sendComplainError,
-    required TResult Function(UpdateUserInfoLoading<T> value)
-        updateUserInfoLoading,
-    required TResult Function(UpdateUserInfoSuccess<T> value)
-        updateUserInfoSuccess,
-    required TResult Function(UpdateUserInfoError<T> value) updateUserInfoError,
-    required TResult Function(UserSkillsLoading<T> value) userSkillsLoading,
-    required TResult Function(UserSkillsSuccess<T> value) userSkillsSuccess,
-    required TResult Function(UserSkillsError<T> value) userSkillsError,
-    required TResult Function(UpdateSkillLoading<T> value) updateSkillLoading,
-    required TResult Function(UpdateSkillSuccess<T> value) updateSkillSuccess,
-    required TResult Function(UpdateSkillError<T> value) updateSkillError,
-    required TResult Function(WalletBlanceAddedLoading<T> value)
-        walletBlanceAddedLoading,
-    required TResult Function(WalletBalanceAddedSuccedded<T> value)
-        walletBalanceAddedSuccedded,
-    required TResult Function(WalletBalanceAdddedError<T> value)
-        walletBalanceAdddedError,
-    required TResult Function(GetRatesLoading<T> value) getRatesLoading,
-    required TResult Function(GetRatesSuccess<T> value) getRatesSuccess,
-    required TResult Function(GetRatesError<T> value) getRatesError,
-    required TResult Function(GetSettingLoading<T> value) getSettingLoading,
-    required TResult Function(GetSettingSuccess<T> value) getSettingSuccess,
-    required TResult Function(GetSettingError<T> value) getSettingError,
-    required TResult Function(UpdateRateLoading<T> value) updateRateLoading,
-    required TResult Function(UpdateRateSuccess<T> value) updateRateSuccess,
-    required TResult Function(UpdateRateError<T> value) updateRateError,
-    required TResult Function(ImageSelectedSuccess<T> value)
-        imageSelectedSuccess,
-    required TResult Function(ImageSelectedLoading<T> value)
-        imageSelectedLoading,
-    required TResult Function(ImageSelectedError<T> value) imageSelectedError,
-    required TResult Function(GetUserInfoLoading<T> value) getUserInfoLoading,
-    required TResult Function(UpdateExperienceRateSuccess<T> value)
-        updateExperienceRateSuccess,
-    required TResult Function(UpdateQualityRate<T> value) updateQualityRate,
-    required TResult Function(UpdateCommunicationRateSuccess<T> value)
-        updateCommunicationRateSuccess,
-    required TResult Function(UpdateTimeRateSuccess<T> value)
-        updateTimeRateSuccess,
-    required TResult Function(UpdateProfessionlRateSuccess<T> value)
-        updateProfessionlRateSuccess,
-    required TResult Function(GetUserInfoSuccess<T> value) getUserInfoSuccess,
-    required TResult Function(GetUserInfoError<T> value) getUserInfoError,
-  }) {
-    return signOutSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
-    TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
-    TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
-    TResult? Function(WalletInfoError<T> value)? walletInfoError,
-    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
-    TResult? Function(SendComplainSuccess<T> value)? sendComplainSuccess,
-    TResult? Function(SendComplainError<T> value)? sendComplainError,
-    TResult? Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
-    TResult? Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
-    TResult? Function(UpdateUserInfoError<T> value)? updateUserInfoError,
-    TResult? Function(UserSkillsLoading<T> value)? userSkillsLoading,
-    TResult? Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
-    TResult? Function(UserSkillsError<T> value)? userSkillsError,
-    TResult? Function(UpdateSkillLoading<T> value)? updateSkillLoading,
-    TResult? Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
-    TResult? Function(UpdateSkillError<T> value)? updateSkillError,
-    TResult? Function(WalletBlanceAddedLoading<T> value)?
-        walletBlanceAddedLoading,
-    TResult? Function(WalletBalanceAddedSuccedded<T> value)?
-        walletBalanceAddedSuccedded,
-    TResult? Function(WalletBalanceAdddedError<T> value)?
-        walletBalanceAdddedError,
-    TResult? Function(GetRatesLoading<T> value)? getRatesLoading,
-    TResult? Function(GetRatesSuccess<T> value)? getRatesSuccess,
-    TResult? Function(GetRatesError<T> value)? getRatesError,
-    TResult? Function(GetSettingLoading<T> value)? getSettingLoading,
-    TResult? Function(GetSettingSuccess<T> value)? getSettingSuccess,
-    TResult? Function(GetSettingError<T> value)? getSettingError,
-    TResult? Function(UpdateRateLoading<T> value)? updateRateLoading,
-    TResult? Function(UpdateRateSuccess<T> value)? updateRateSuccess,
-    TResult? Function(UpdateRateError<T> value)? updateRateError,
-    TResult? Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
-    TResult? Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
-    TResult? Function(ImageSelectedError<T> value)? imageSelectedError,
-    TResult? Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
-    TResult? Function(UpdateExperienceRateSuccess<T> value)?
-        updateExperienceRateSuccess,
-    TResult? Function(UpdateQualityRate<T> value)? updateQualityRate,
-    TResult? Function(UpdateCommunicationRateSuccess<T> value)?
-        updateCommunicationRateSuccess,
-    TResult? Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
-    TResult? Function(UpdateProfessionlRateSuccess<T> value)?
-        updateProfessionlRateSuccess,
-    TResult? Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
-    TResult? Function(GetUserInfoError<T> value)? getUserInfoError,
-  }) {
-    return signOutSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
-    TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
-    TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
-    TResult Function(WalletInfoError<T> value)? walletInfoError,
-    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
-    TResult Function(SendComplainSuccess<T> value)? sendComplainSuccess,
-    TResult Function(SendComplainError<T> value)? sendComplainError,
-    TResult Function(UpdateUserInfoLoading<T> value)? updateUserInfoLoading,
-    TResult Function(UpdateUserInfoSuccess<T> value)? updateUserInfoSuccess,
-    TResult Function(UpdateUserInfoError<T> value)? updateUserInfoError,
-    TResult Function(UserSkillsLoading<T> value)? userSkillsLoading,
-    TResult Function(UserSkillsSuccess<T> value)? userSkillsSuccess,
-    TResult Function(UserSkillsError<T> value)? userSkillsError,
-    TResult Function(UpdateSkillLoading<T> value)? updateSkillLoading,
-    TResult Function(UpdateSkillSuccess<T> value)? updateSkillSuccess,
-    TResult Function(UpdateSkillError<T> value)? updateSkillError,
-    TResult Function(WalletBlanceAddedLoading<T> value)?
-        walletBlanceAddedLoading,
-    TResult Function(WalletBalanceAddedSuccedded<T> value)?
-        walletBalanceAddedSuccedded,
-    TResult Function(WalletBalanceAdddedError<T> value)?
-        walletBalanceAdddedError,
-    TResult Function(GetRatesLoading<T> value)? getRatesLoading,
-    TResult Function(GetRatesSuccess<T> value)? getRatesSuccess,
-    TResult Function(GetRatesError<T> value)? getRatesError,
-    TResult Function(GetSettingLoading<T> value)? getSettingLoading,
-    TResult Function(GetSettingSuccess<T> value)? getSettingSuccess,
-    TResult Function(GetSettingError<T> value)? getSettingError,
-    TResult Function(UpdateRateLoading<T> value)? updateRateLoading,
-    TResult Function(UpdateRateSuccess<T> value)? updateRateSuccess,
-    TResult Function(UpdateRateError<T> value)? updateRateError,
-    TResult Function(ImageSelectedSuccess<T> value)? imageSelectedSuccess,
-    TResult Function(ImageSelectedLoading<T> value)? imageSelectedLoading,
-    TResult Function(ImageSelectedError<T> value)? imageSelectedError,
-    TResult Function(GetUserInfoLoading<T> value)? getUserInfoLoading,
-    TResult Function(UpdateExperienceRateSuccess<T> value)?
-        updateExperienceRateSuccess,
-    TResult Function(UpdateQualityRate<T> value)? updateQualityRate,
-    TResult Function(UpdateCommunicationRateSuccess<T> value)?
-        updateCommunicationRateSuccess,
-    TResult Function(UpdateTimeRateSuccess<T> value)? updateTimeRateSuccess,
-    TResult Function(UpdateProfessionlRateSuccess<T> value)?
-        updateProfessionlRateSuccess,
-    TResult Function(GetUserInfoSuccess<T> value)? getUserInfoSuccess,
-    TResult Function(GetUserInfoError<T> value)? getUserInfoError,
-    required TResult orElse(),
-  }) {
-    if (signOutSuccess != null) {
-      return signOutSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SignOutSuccess<T> implements MenuState<T> {
-  const factory SignOutSuccess() = _$SignOutSuccess<T>;
-}
-
-/// @nodoc
 abstract class _$$WalletInfoLoadingCopyWith<T, $Res> {
   factory _$$WalletInfoLoadingCopyWith(_$WalletInfoLoading<T> value,
           $Res Function(_$WalletInfoLoading<T>) then) =
@@ -1493,8 +727,6 @@ class _$WalletInfoLoading<T> implements WalletInfoLoading<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -1551,8 +783,6 @@ class _$WalletInfoLoading<T> implements WalletInfoLoading<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -1600,8 +830,6 @@ class _$WalletInfoLoading<T> implements WalletInfoLoading<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -1653,8 +881,6 @@ class _$WalletInfoLoading<T> implements WalletInfoLoading<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -1712,8 +938,6 @@ class _$WalletInfoLoading<T> implements WalletInfoLoading<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -1766,8 +990,6 @@ class _$WalletInfoLoading<T> implements WalletInfoLoading<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -1891,8 +1113,6 @@ class _$WalletInfoSuccedded<T> implements WalletInfoSuccedded<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -1949,8 +1169,6 @@ class _$WalletInfoSuccedded<T> implements WalletInfoSuccedded<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -1998,8 +1216,6 @@ class _$WalletInfoSuccedded<T> implements WalletInfoSuccedded<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -2051,8 +1267,6 @@ class _$WalletInfoSuccedded<T> implements WalletInfoSuccedded<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -2110,8 +1324,6 @@ class _$WalletInfoSuccedded<T> implements WalletInfoSuccedded<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -2164,8 +1376,6 @@ class _$WalletInfoSuccedded<T> implements WalletInfoSuccedded<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -2306,8 +1516,6 @@ class _$WalletInfoError<T> implements WalletInfoError<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -2364,8 +1572,6 @@ class _$WalletInfoError<T> implements WalletInfoError<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -2413,8 +1619,6 @@ class _$WalletInfoError<T> implements WalletInfoError<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -2466,8 +1670,6 @@ class _$WalletInfoError<T> implements WalletInfoError<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -2525,8 +1727,6 @@ class _$WalletInfoError<T> implements WalletInfoError<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -2579,8 +1779,6 @@ class _$WalletInfoError<T> implements WalletInfoError<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -2683,8 +1881,6 @@ class _$SendComplainLoading<T> implements SendComplainLoading<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -2741,8 +1937,6 @@ class _$SendComplainLoading<T> implements SendComplainLoading<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -2790,8 +1984,6 @@ class _$SendComplainLoading<T> implements SendComplainLoading<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -2843,8 +2035,6 @@ class _$SendComplainLoading<T> implements SendComplainLoading<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -2902,8 +2092,6 @@ class _$SendComplainLoading<T> implements SendComplainLoading<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -2956,8 +2144,6 @@ class _$SendComplainLoading<T> implements SendComplainLoading<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -3081,8 +2267,6 @@ class _$SendComplainSuccess<T> implements SendComplainSuccess<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -3139,8 +2323,6 @@ class _$SendComplainSuccess<T> implements SendComplainSuccess<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -3188,8 +2370,6 @@ class _$SendComplainSuccess<T> implements SendComplainSuccess<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -3241,8 +2421,6 @@ class _$SendComplainSuccess<T> implements SendComplainSuccess<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -3300,8 +2478,6 @@ class _$SendComplainSuccess<T> implements SendComplainSuccess<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -3354,8 +2530,6 @@ class _$SendComplainSuccess<T> implements SendComplainSuccess<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -3496,8 +2670,6 @@ class _$SendComplainError<T> implements SendComplainError<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -3554,8 +2726,6 @@ class _$SendComplainError<T> implements SendComplainError<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -3603,8 +2773,6 @@ class _$SendComplainError<T> implements SendComplainError<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -3656,8 +2824,6 @@ class _$SendComplainError<T> implements SendComplainError<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -3715,8 +2881,6 @@ class _$SendComplainError<T> implements SendComplainError<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -3769,8 +2933,6 @@ class _$SendComplainError<T> implements SendComplainError<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -3874,8 +3036,6 @@ class _$UpdateUserInfoLoading<T> implements UpdateUserInfoLoading<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -3932,8 +3092,6 @@ class _$UpdateUserInfoLoading<T> implements UpdateUserInfoLoading<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -3981,8 +3139,6 @@ class _$UpdateUserInfoLoading<T> implements UpdateUserInfoLoading<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -4034,8 +3190,6 @@ class _$UpdateUserInfoLoading<T> implements UpdateUserInfoLoading<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -4093,8 +3247,6 @@ class _$UpdateUserInfoLoading<T> implements UpdateUserInfoLoading<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -4147,8 +3299,6 @@ class _$UpdateUserInfoLoading<T> implements UpdateUserInfoLoading<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -4273,8 +3423,6 @@ class _$UpdateUserInfoSuccess<T> implements UpdateUserInfoSuccess<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -4331,8 +3479,6 @@ class _$UpdateUserInfoSuccess<T> implements UpdateUserInfoSuccess<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -4380,8 +3526,6 @@ class _$UpdateUserInfoSuccess<T> implements UpdateUserInfoSuccess<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -4433,8 +3577,6 @@ class _$UpdateUserInfoSuccess<T> implements UpdateUserInfoSuccess<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -4492,8 +3634,6 @@ class _$UpdateUserInfoSuccess<T> implements UpdateUserInfoSuccess<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -4546,8 +3686,6 @@ class _$UpdateUserInfoSuccess<T> implements UpdateUserInfoSuccess<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -4688,8 +3826,6 @@ class _$UpdateUserInfoError<T> implements UpdateUserInfoError<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -4746,8 +3882,6 @@ class _$UpdateUserInfoError<T> implements UpdateUserInfoError<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -4795,8 +3929,6 @@ class _$UpdateUserInfoError<T> implements UpdateUserInfoError<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -4848,8 +3980,6 @@ class _$UpdateUserInfoError<T> implements UpdateUserInfoError<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -4907,8 +4037,6 @@ class _$UpdateUserInfoError<T> implements UpdateUserInfoError<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -4961,8 +4089,6 @@ class _$UpdateUserInfoError<T> implements UpdateUserInfoError<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -5065,8 +4191,6 @@ class _$UserSkillsLoading<T> implements UserSkillsLoading<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -5123,8 +4247,6 @@ class _$UserSkillsLoading<T> implements UserSkillsLoading<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -5172,8 +4294,6 @@ class _$UserSkillsLoading<T> implements UserSkillsLoading<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -5225,8 +4345,6 @@ class _$UserSkillsLoading<T> implements UserSkillsLoading<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -5284,8 +4402,6 @@ class _$UserSkillsLoading<T> implements UserSkillsLoading<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -5338,8 +4454,6 @@ class _$UserSkillsLoading<T> implements UserSkillsLoading<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -5469,8 +4583,6 @@ class _$UserSkillsSuccess<T> implements UserSkillsSuccess<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -5527,8 +4639,6 @@ class _$UserSkillsSuccess<T> implements UserSkillsSuccess<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -5576,8 +4686,6 @@ class _$UserSkillsSuccess<T> implements UserSkillsSuccess<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -5629,8 +4737,6 @@ class _$UserSkillsSuccess<T> implements UserSkillsSuccess<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -5688,8 +4794,6 @@ class _$UserSkillsSuccess<T> implements UserSkillsSuccess<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -5742,8 +4846,6 @@ class _$UserSkillsSuccess<T> implements UserSkillsSuccess<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -5884,8 +4986,6 @@ class _$UserSkillsError<T> implements UserSkillsError<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -5942,8 +5042,6 @@ class _$UserSkillsError<T> implements UserSkillsError<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -5991,8 +5089,6 @@ class _$UserSkillsError<T> implements UserSkillsError<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -6044,8 +5140,6 @@ class _$UserSkillsError<T> implements UserSkillsError<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -6103,8 +5197,6 @@ class _$UserSkillsError<T> implements UserSkillsError<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -6157,8 +5249,6 @@ class _$UserSkillsError<T> implements UserSkillsError<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -6261,8 +5351,6 @@ class _$UpdateSkillLoading<T> implements UpdateSkillLoading<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -6319,8 +5407,6 @@ class _$UpdateSkillLoading<T> implements UpdateSkillLoading<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -6368,8 +5454,6 @@ class _$UpdateSkillLoading<T> implements UpdateSkillLoading<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -6421,8 +5505,6 @@ class _$UpdateSkillLoading<T> implements UpdateSkillLoading<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -6480,8 +5562,6 @@ class _$UpdateSkillLoading<T> implements UpdateSkillLoading<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -6534,8 +5614,6 @@ class _$UpdateSkillLoading<T> implements UpdateSkillLoading<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -6659,8 +5737,6 @@ class _$UpdateSkillSuccess<T> implements UpdateSkillSuccess<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -6717,8 +5793,6 @@ class _$UpdateSkillSuccess<T> implements UpdateSkillSuccess<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -6766,8 +5840,6 @@ class _$UpdateSkillSuccess<T> implements UpdateSkillSuccess<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -6819,8 +5891,6 @@ class _$UpdateSkillSuccess<T> implements UpdateSkillSuccess<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -6878,8 +5948,6 @@ class _$UpdateSkillSuccess<T> implements UpdateSkillSuccess<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -6932,8 +6000,6 @@ class _$UpdateSkillSuccess<T> implements UpdateSkillSuccess<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -7074,8 +6140,6 @@ class _$UpdateSkillError<T> implements UpdateSkillError<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -7132,8 +6196,6 @@ class _$UpdateSkillError<T> implements UpdateSkillError<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -7181,8 +6243,6 @@ class _$UpdateSkillError<T> implements UpdateSkillError<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -7234,8 +6294,6 @@ class _$UpdateSkillError<T> implements UpdateSkillError<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -7293,8 +6351,6 @@ class _$UpdateSkillError<T> implements UpdateSkillError<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -7347,8 +6403,6 @@ class _$UpdateSkillError<T> implements UpdateSkillError<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -7453,8 +6507,6 @@ class _$WalletBlanceAddedLoading<T> implements WalletBlanceAddedLoading<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -7511,8 +6563,6 @@ class _$WalletBlanceAddedLoading<T> implements WalletBlanceAddedLoading<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -7560,8 +6610,6 @@ class _$WalletBlanceAddedLoading<T> implements WalletBlanceAddedLoading<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -7613,8 +6661,6 @@ class _$WalletBlanceAddedLoading<T> implements WalletBlanceAddedLoading<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -7672,8 +6718,6 @@ class _$WalletBlanceAddedLoading<T> implements WalletBlanceAddedLoading<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -7726,8 +6770,6 @@ class _$WalletBlanceAddedLoading<T> implements WalletBlanceAddedLoading<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -7854,8 +6896,6 @@ class _$WalletBalanceAddedSuccedded<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -7912,8 +6952,6 @@ class _$WalletBalanceAddedSuccedded<T>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -7961,8 +6999,6 @@ class _$WalletBalanceAddedSuccedded<T>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -8014,8 +7050,6 @@ class _$WalletBalanceAddedSuccedded<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -8073,8 +7107,6 @@ class _$WalletBalanceAddedSuccedded<T>
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -8127,8 +7159,6 @@ class _$WalletBalanceAddedSuccedded<T>
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -8270,8 +7300,6 @@ class _$WalletBalanceAdddedError<T> implements WalletBalanceAdddedError<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -8328,8 +7356,6 @@ class _$WalletBalanceAdddedError<T> implements WalletBalanceAdddedError<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -8377,8 +7403,6 @@ class _$WalletBalanceAdddedError<T> implements WalletBalanceAdddedError<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -8430,8 +7454,6 @@ class _$WalletBalanceAdddedError<T> implements WalletBalanceAdddedError<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -8489,8 +7511,6 @@ class _$WalletBalanceAdddedError<T> implements WalletBalanceAdddedError<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -8543,8 +7563,6 @@ class _$WalletBalanceAdddedError<T> implements WalletBalanceAdddedError<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -8648,8 +7666,6 @@ class _$GetRatesLoading<T> implements GetRatesLoading<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -8706,8 +7722,6 @@ class _$GetRatesLoading<T> implements GetRatesLoading<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -8755,8 +7769,6 @@ class _$GetRatesLoading<T> implements GetRatesLoading<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -8808,8 +7820,6 @@ class _$GetRatesLoading<T> implements GetRatesLoading<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -8867,8 +7877,6 @@ class _$GetRatesLoading<T> implements GetRatesLoading<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -8921,8 +7929,6 @@ class _$GetRatesLoading<T> implements GetRatesLoading<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -9046,8 +8052,6 @@ class _$GetRatesSuccess<T> implements GetRatesSuccess<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -9104,8 +8108,6 @@ class _$GetRatesSuccess<T> implements GetRatesSuccess<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -9153,8 +8155,6 @@ class _$GetRatesSuccess<T> implements GetRatesSuccess<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -9206,8 +8206,6 @@ class _$GetRatesSuccess<T> implements GetRatesSuccess<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -9265,8 +8263,6 @@ class _$GetRatesSuccess<T> implements GetRatesSuccess<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -9319,8 +8315,6 @@ class _$GetRatesSuccess<T> implements GetRatesSuccess<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -9459,8 +8453,6 @@ class _$GetRatesError<T> implements GetRatesError<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -9517,8 +8509,6 @@ class _$GetRatesError<T> implements GetRatesError<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -9566,8 +8556,6 @@ class _$GetRatesError<T> implements GetRatesError<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -9619,8 +8607,6 @@ class _$GetRatesError<T> implements GetRatesError<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -9678,8 +8664,6 @@ class _$GetRatesError<T> implements GetRatesError<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -9732,8 +8716,6 @@ class _$GetRatesError<T> implements GetRatesError<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -9836,8 +8818,6 @@ class _$GetSettingLoading<T> implements GetSettingLoading<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -9894,8 +8874,6 @@ class _$GetSettingLoading<T> implements GetSettingLoading<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -9943,8 +8921,6 @@ class _$GetSettingLoading<T> implements GetSettingLoading<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -9996,8 +8972,6 @@ class _$GetSettingLoading<T> implements GetSettingLoading<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -10055,8 +9029,6 @@ class _$GetSettingLoading<T> implements GetSettingLoading<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -10109,8 +9081,6 @@ class _$GetSettingLoading<T> implements GetSettingLoading<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -10241,8 +9211,6 @@ class _$GetSettingSuccess<T> implements GetSettingSuccess<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -10299,8 +9267,6 @@ class _$GetSettingSuccess<T> implements GetSettingSuccess<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -10348,8 +9314,6 @@ class _$GetSettingSuccess<T> implements GetSettingSuccess<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -10401,8 +9365,6 @@ class _$GetSettingSuccess<T> implements GetSettingSuccess<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -10460,8 +9422,6 @@ class _$GetSettingSuccess<T> implements GetSettingSuccess<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -10514,8 +9474,6 @@ class _$GetSettingSuccess<T> implements GetSettingSuccess<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -10656,8 +9614,6 @@ class _$GetSettingError<T> implements GetSettingError<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -10714,8 +9670,6 @@ class _$GetSettingError<T> implements GetSettingError<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -10763,8 +9717,6 @@ class _$GetSettingError<T> implements GetSettingError<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -10816,8 +9768,6 @@ class _$GetSettingError<T> implements GetSettingError<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -10875,8 +9825,6 @@ class _$GetSettingError<T> implements GetSettingError<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -10929,8 +9877,6 @@ class _$GetSettingError<T> implements GetSettingError<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -11033,8 +9979,6 @@ class _$UpdateRateLoading<T> implements UpdateRateLoading<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -11091,8 +10035,6 @@ class _$UpdateRateLoading<T> implements UpdateRateLoading<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -11140,8 +10082,6 @@ class _$UpdateRateLoading<T> implements UpdateRateLoading<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -11193,8 +10133,6 @@ class _$UpdateRateLoading<T> implements UpdateRateLoading<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -11252,8 +10190,6 @@ class _$UpdateRateLoading<T> implements UpdateRateLoading<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -11306,8 +10242,6 @@ class _$UpdateRateLoading<T> implements UpdateRateLoading<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -11431,8 +10365,6 @@ class _$UpdateRateSuccess<T> implements UpdateRateSuccess<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -11489,8 +10421,6 @@ class _$UpdateRateSuccess<T> implements UpdateRateSuccess<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -11538,8 +10468,6 @@ class _$UpdateRateSuccess<T> implements UpdateRateSuccess<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -11591,8 +10519,6 @@ class _$UpdateRateSuccess<T> implements UpdateRateSuccess<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -11650,8 +10576,6 @@ class _$UpdateRateSuccess<T> implements UpdateRateSuccess<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -11704,8 +10628,6 @@ class _$UpdateRateSuccess<T> implements UpdateRateSuccess<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -11846,8 +10768,6 @@ class _$UpdateRateError<T> implements UpdateRateError<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -11904,8 +10824,6 @@ class _$UpdateRateError<T> implements UpdateRateError<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -11953,8 +10871,6 @@ class _$UpdateRateError<T> implements UpdateRateError<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -12006,8 +10922,6 @@ class _$UpdateRateError<T> implements UpdateRateError<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -12065,8 +10979,6 @@ class _$UpdateRateError<T> implements UpdateRateError<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -12119,8 +11031,6 @@ class _$UpdateRateError<T> implements UpdateRateError<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -12224,8 +11134,6 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -12282,8 +11190,6 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -12331,8 +11237,6 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -12384,8 +11288,6 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -12443,8 +11345,6 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -12497,8 +11397,6 @@ class _$ImageSelectedSuccess<T> implements ImageSelectedSuccess<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -12596,8 +11494,6 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -12654,8 +11550,6 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -12703,8 +11597,6 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -12756,8 +11648,6 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -12815,8 +11705,6 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -12869,8 +11757,6 @@ class _$ImageSelectedLoading<T> implements ImageSelectedLoading<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -12967,8 +11853,6 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -13025,8 +11909,6 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -13074,8 +11956,6 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -13127,8 +12007,6 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -13186,8 +12064,6 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -13240,8 +12116,6 @@ class _$ImageSelectedError<T> implements ImageSelectedError<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -13338,8 +12212,6 @@ class _$GetUserInfoLoading<T> implements GetUserInfoLoading<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -13396,8 +12268,6 @@ class _$GetUserInfoLoading<T> implements GetUserInfoLoading<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -13445,8 +12315,6 @@ class _$GetUserInfoLoading<T> implements GetUserInfoLoading<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -13498,8 +12366,6 @@ class _$GetUserInfoLoading<T> implements GetUserInfoLoading<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -13557,8 +12423,6 @@ class _$GetUserInfoLoading<T> implements GetUserInfoLoading<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -13611,8 +12475,6 @@ class _$GetUserInfoLoading<T> implements GetUserInfoLoading<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -13713,8 +12575,6 @@ class _$UpdateExperienceRateSuccess<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -13771,8 +12631,6 @@ class _$UpdateExperienceRateSuccess<T>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -13820,8 +12678,6 @@ class _$UpdateExperienceRateSuccess<T>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -13873,8 +12729,6 @@ class _$UpdateExperienceRateSuccess<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -13932,8 +12786,6 @@ class _$UpdateExperienceRateSuccess<T>
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -13986,8 +12838,6 @@ class _$UpdateExperienceRateSuccess<T>
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -14085,8 +12935,6 @@ class _$UpdateQualityRate<T> implements UpdateQualityRate<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -14143,8 +12991,6 @@ class _$UpdateQualityRate<T> implements UpdateQualityRate<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -14192,8 +13038,6 @@ class _$UpdateQualityRate<T> implements UpdateQualityRate<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -14245,8 +13089,6 @@ class _$UpdateQualityRate<T> implements UpdateQualityRate<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -14304,8 +13146,6 @@ class _$UpdateQualityRate<T> implements UpdateQualityRate<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -14358,8 +13198,6 @@ class _$UpdateQualityRate<T> implements UpdateQualityRate<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -14461,8 +13299,6 @@ class _$UpdateCommunicationRateSuccess<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -14519,8 +13355,6 @@ class _$UpdateCommunicationRateSuccess<T>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -14568,8 +13402,6 @@ class _$UpdateCommunicationRateSuccess<T>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -14621,8 +13453,6 @@ class _$UpdateCommunicationRateSuccess<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -14680,8 +13510,6 @@ class _$UpdateCommunicationRateSuccess<T>
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -14734,8 +13562,6 @@ class _$UpdateCommunicationRateSuccess<T>
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -14834,8 +13660,6 @@ class _$UpdateTimeRateSuccess<T> implements UpdateTimeRateSuccess<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -14892,8 +13716,6 @@ class _$UpdateTimeRateSuccess<T> implements UpdateTimeRateSuccess<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -14941,8 +13763,6 @@ class _$UpdateTimeRateSuccess<T> implements UpdateTimeRateSuccess<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -14994,8 +13814,6 @@ class _$UpdateTimeRateSuccess<T> implements UpdateTimeRateSuccess<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -15053,8 +13871,6 @@ class _$UpdateTimeRateSuccess<T> implements UpdateTimeRateSuccess<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -15107,8 +13923,6 @@ class _$UpdateTimeRateSuccess<T> implements UpdateTimeRateSuccess<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -15209,8 +14023,6 @@ class _$UpdateProfessionlRateSuccess<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -15267,8 +14079,6 @@ class _$UpdateProfessionlRateSuccess<T>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -15316,8 +14126,6 @@ class _$UpdateProfessionlRateSuccess<T>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -15369,8 +14177,6 @@ class _$UpdateProfessionlRateSuccess<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -15428,8 +14234,6 @@ class _$UpdateProfessionlRateSuccess<T>
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -15482,8 +14286,6 @@ class _$UpdateProfessionlRateSuccess<T>
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -15609,8 +14411,6 @@ class _$GetUserInfoSuccess<T> implements GetUserInfoSuccess<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -15667,8 +14467,6 @@ class _$GetUserInfoSuccess<T> implements GetUserInfoSuccess<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -15716,8 +14514,6 @@ class _$GetUserInfoSuccess<T> implements GetUserInfoSuccess<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -15769,8 +14565,6 @@ class _$GetUserInfoSuccess<T> implements GetUserInfoSuccess<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -15828,8 +14622,6 @@ class _$GetUserInfoSuccess<T> implements GetUserInfoSuccess<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -15882,8 +14674,6 @@ class _$GetUserInfoSuccess<T> implements GetUserInfoSuccess<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,
@@ -16024,8 +14814,6 @@ class _$GetUserInfoError<T> implements GetUserInfoError<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function() locationError,
-    required TResult Function() signOutSuccess,
     required TResult Function() walletInfoLoading,
     required TResult Function(WalletInfo data) walletInfoSuccedded,
     required TResult Function(NetworkExceptions networkExceptions)
@@ -16082,8 +14870,6 @@ class _$GetUserInfoError<T> implements GetUserInfoError<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function()? locationError,
-    TResult? Function()? signOutSuccess,
     TResult? Function()? walletInfoLoading,
     TResult? Function(WalletInfo data)? walletInfoSuccedded,
     TResult? Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -16131,8 +14917,6 @@ class _$GetUserInfoError<T> implements GetUserInfoError<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function()? locationError,
-    TResult Function()? signOutSuccess,
     TResult Function()? walletInfoLoading,
     TResult Function(WalletInfo data)? walletInfoSuccedded,
     TResult Function(NetworkExceptions networkExceptions)? walletInfoError,
@@ -16184,8 +14968,6 @@ class _$GetUserInfoError<T> implements GetUserInfoError<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Idle<T> value) idle,
-    required TResult Function(LocationError<T> value) locationError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
     required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
     required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
     required TResult Function(WalletInfoError<T> value) walletInfoError,
@@ -16243,8 +15025,6 @@ class _$GetUserInfoError<T> implements GetUserInfoError<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Idle<T> value)? idle,
-    TResult? Function(LocationError<T> value)? locationError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult? Function(WalletInfoError<T> value)? walletInfoError,
@@ -16297,8 +15077,6 @@ class _$GetUserInfoError<T> implements GetUserInfoError<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Idle<T> value)? idle,
-    TResult Function(LocationError<T> value)? locationError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
     TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
     TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
     TResult Function(WalletInfoError<T> value)? walletInfoError,

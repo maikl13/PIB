@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../../data/models/setting_model.dart';
+import 'package:pip/features/menu/data/models/setting_model.dart';
 import '../../../../core/business_logic/global_cubit.dart';
 import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
@@ -40,7 +40,7 @@ class _ContactUsViewState extends State<ContactUsView> {
             Commons.showLoadingDialog(context);
           },
           sendComplainSuccess: (data) {
-            // BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
+            BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
 
             Navigator.pop(context);
             showContactSuccessDialog(

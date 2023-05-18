@@ -5,6 +5,9 @@ PODS:
   - AppAuth/Core (1.6.0)
   - AppAuth/ExternalUserAgent (1.6.0):
     - AppAuth/Core
+  - connectivity (0.0.1):
+    - Flutter
+    - Reachability
   - connectivity_plus (0.0.1):
     - Flutter
     - ReachabilitySwift
@@ -55,9 +58,6 @@ PODS:
     - FirebaseAuth (~> 10.6.0)
   - Firebase/CoreOnly (10.6.0):
     - FirebaseCore (= 10.6.0)
-  - Firebase/Messaging (10.6.0):
-    - Firebase/CoreOnly
-    - FirebaseMessaging (~> 10.6.0)
   - firebase_app_check (0.1.1-14):
     - Firebase/CoreOnly (~> 10.6.0)
     - firebase_core
@@ -69,10 +69,6 @@ PODS:
     - Flutter
   - firebase_core (2.8.0):
     - Firebase/CoreOnly (= 10.6.0)
-    - Flutter
-  - firebase_messaging (14.3.0):
-    - Firebase/Messaging (= 10.6.0)
-    - firebase_core
     - Flutter
   - FirebaseAppCheck (10.6.0):
     - FirebaseCore (~> 10.0)
@@ -89,24 +85,13 @@ PODS:
     - GoogleUtilities/Logger (~> 7.8)
   - FirebaseCoreInternal (10.7.0):
     - "GoogleUtilities/NSData+zlib (~> 7.8)"
-  - FirebaseInstallations (10.7.0):
-    - FirebaseCore (~> 10.0)
-    - GoogleUtilities/Environment (~> 7.8)
-    - GoogleUtilities/UserDefaults (~> 7.8)
-    - PromisesObjC (~> 2.1)
-  - FirebaseMessaging (10.6.0):
-    - FirebaseCore (~> 10.0)
-    - FirebaseInstallations (~> 10.0)
-    - GoogleDataTransport (~> 9.2)
-    - GoogleUtilities/AppDelegateSwizzler (~> 7.8)
-    - GoogleUtilities/Environment (~> 7.8)
-    - GoogleUtilities/Reachability (~> 7.8)
-    - GoogleUtilities/UserDefaults (~> 7.8)
-    - nanopb (< 2.30910.0, >= 2.30908.0)
   - Flutter (1.0.0)
   - flutter_facebook_auth (5.0.4):
     - FBSDKLoginKit (~> 15.1.0)
     - Flutter
+  - flutter_libphonenumber_ios (1.0.0):
+    - Flutter
+    - PhoneNumberKit/PhoneNumberKitCore (= 3.3.4)
   - flutter_secure_storage (6.0.0):
     - Flutter
   - fluttertoast (0.0.2):
@@ -125,10 +110,6 @@ PODS:
   - google_sign_in_ios (0.0.1):
     - Flutter
     - GoogleSignIn (~> 6.2)
-  - GoogleDataTransport (9.2.1):
-    - GoogleUtilities/Environment (~> 7.7)
-    - nanopb (< 2.30910.0, >= 2.30908.0)
-    - PromisesObjC (< 3.0, >= 1.2)
   - GoogleMaps (6.2.1):
     - GoogleMaps/Maps (= 6.2.1)
   - GoogleMaps/Base (6.2.1)
@@ -153,34 +134,18 @@ PODS:
   - "GoogleUtilities/NSData+zlib (7.11.0)"
   - GoogleUtilities/Reachability (7.11.0):
     - GoogleUtilities/Logger
-  - GoogleUtilities/UserDefaults (7.11.0):
-    - GoogleUtilities/Logger
   - GTMAppAuth (1.3.1):
     - AppAuth/Core (~> 1.6)
     - GTMSessionFetcher/Core (< 3.0, >= 1.5)
   - GTMSessionFetcher/Core (2.3.0)
   - image_picker_ios (0.0.1):
     - Flutter
-  - libphonenumber_plugin (0.0.1):
-    - Flutter
-    - PhoneNumberKit
-  - nanopb (2.30909.0):
-    - nanopb/decode (= 2.30909.0)
-    - nanopb/encode (= 2.30909.0)
-  - nanopb/decode (2.30909.0)
-  - nanopb/encode (2.30909.0)
-  - network_info_plus (0.0.1):
-    - Flutter
   - path_provider_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
-  - PhoneNumberKit (3.3.4):
-    - PhoneNumberKit/PhoneNumberKitCore (= 3.3.4)
-    - PhoneNumberKit/UIKit (= 3.3.4)
   - PhoneNumberKit/PhoneNumberKitCore (3.3.4)
-  - PhoneNumberKit/UIKit (3.3.4):
-    - PhoneNumberKit/PhoneNumberKitCore
   - PromisesObjC (2.2.0)
+  - Reachability (3.2)
   - ReachabilitySwift (5.0.0)
   - SDWebImage (5.15.5):
     - SDWebImage/Core (= 5.15.5)
@@ -203,16 +168,19 @@ PODS:
     - Flutter
   - wakelock (0.0.1):
     - Flutter
+  - wifi_info_flutter (0.0.1):
+    - Flutter
 
 DEPENDENCIES:
+  - connectivity (from `.symlinks/plugins/connectivity/ios`)
   - connectivity_plus (from `.symlinks/plugins/connectivity_plus/ios`)
   - file_picker (from `.symlinks/plugins/file_picker/ios`)
   - firebase_app_check (from `.symlinks/plugins/firebase_app_check/ios`)
   - firebase_auth (from `.symlinks/plugins/firebase_auth/ios`)
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
-  - firebase_messaging (from `.symlinks/plugins/firebase_messaging/ios`)
   - Flutter (from `Flutter`)
   - flutter_facebook_auth (from `.symlinks/plugins/flutter_facebook_auth/ios`)
+  - flutter_libphonenumber_ios (from `.symlinks/plugins/flutter_libphonenumber_ios/ios`)
   - flutter_secure_storage (from `.symlinks/plugins/flutter_secure_storage/ios`)
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
   - geocoding_ios (from `.symlinks/plugins/geocoding_ios/ios`)
@@ -220,8 +188,6 @@ DEPENDENCIES:
   - google_maps_flutter_ios (from `.symlinks/plugins/google_maps_flutter_ios/ios`)
   - google_sign_in_ios (from `.symlinks/plugins/google_sign_in_ios/ios`)
   - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
-  - libphonenumber_plugin (from `.symlinks/plugins/libphonenumber_plugin/ios`)
-  - network_info_plus (from `.symlinks/plugins/network_info_plus/ios`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/ios`)
   - sensors_plus (from `.symlinks/plugins/sensors_plus/ios`)
   - share_plus (from `.symlinks/plugins/share_plus/ios`)
@@ -230,6 +196,7 @@ DEPENDENCIES:
   - url_launcher_ios (from `.symlinks/plugins/url_launcher_ios/ios`)
   - video_player_avfoundation (from `.symlinks/plugins/video_player_avfoundation/ios`)
   - wakelock (from `.symlinks/plugins/wakelock/ios`)
+  - wifi_info_flutter (from `.symlinks/plugins/wifi_info_flutter/ios`)
 
 SPEC REPOS:
   trunk:
@@ -245,24 +212,23 @@ SPEC REPOS:
     - FirebaseAuth
     - FirebaseCore
     - FirebaseCoreInternal
-    - FirebaseInstallations
-    - FirebaseMessaging
     - FMDB
-    - GoogleDataTransport
     - GoogleMaps
     - GoogleSignIn
     - GoogleUtilities
     - GTMAppAuth
     - GTMSessionFetcher
-    - nanopb
     - PhoneNumberKit
     - PromisesObjC
+    - Reachability
     - ReachabilitySwift
     - SDWebImage
     - SwiftyGif
     - Toast
 
 EXTERNAL SOURCES:
+  connectivity:
+    :path: ".symlinks/plugins/connectivity/ios"
   connectivity_plus:
     :path: ".symlinks/plugins/connectivity_plus/ios"
   file_picker:
@@ -273,12 +239,12 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/firebase_auth/ios"
   firebase_core:
     :path: ".symlinks/plugins/firebase_core/ios"
-  firebase_messaging:
-    :path: ".symlinks/plugins/firebase_messaging/ios"
   Flutter:
     :path: Flutter
   flutter_facebook_auth:
     :path: ".symlinks/plugins/flutter_facebook_auth/ios"
+  flutter_libphonenumber_ios:
+    :path: ".symlinks/plugins/flutter_libphonenumber_ios/ios"
   flutter_secure_storage:
     :path: ".symlinks/plugins/flutter_secure_storage/ios"
   fluttertoast:
@@ -293,10 +259,6 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/google_sign_in_ios/ios"
   image_picker_ios:
     :path: ".symlinks/plugins/image_picker_ios/ios"
-  libphonenumber_plugin:
-    :path: ".symlinks/plugins/libphonenumber_plugin/ios"
-  network_info_plus:
-    :path: ".symlinks/plugins/network_info_plus/ios"
   path_provider_foundation:
     :path: ".symlinks/plugins/path_provider_foundation/ios"
   sensors_plus:
@@ -313,9 +275,12 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/video_player_avfoundation/ios"
   wakelock:
     :path: ".symlinks/plugins/wakelock/ios"
+  wifi_info_flutter:
+    :path: ".symlinks/plugins/wifi_info_flutter/ios"
 
 SPEC CHECKSUMS:
   AppAuth: 8fca6b5563a5baef2c04bee27538025e4ceb2add
+  connectivity: c4130b2985d4ef6fd26f9702e886bd5260681467
   connectivity_plus: 413a8857dd5d9f1c399a39130850d02fe0feaf7e
   DKImagePickerController: b512c28220a2b8ac7419f21c491fc8534b7601ac
   DKPhotoGallery: fdfad5125a9fdda9cc57df834d49df790dbb4179
@@ -328,15 +293,13 @@ SPEC CHECKSUMS:
   firebase_app_check: aa521b54379af998c95b05dca104b7f14a9c1ecc
   firebase_auth: 5f52508d5f90511e809832d9b3aea90b8cea7b0e
   firebase_core: 58542d7399889ebdbb034baa72d081e54c5c814d
-  firebase_messaging: 01a8db2962f81ea190d08db767aba2e7e805e647
   FirebaseAppCheck: 3977b20650f45cc5f67704044e5c5e925e933c20
   FirebaseAuth: 743e5cd568af59d6d99a91ea9300843672515cf7
   FirebaseCore: fa80ad16a62d52f67274b5b88304c3a318bbf9a4
   FirebaseCoreInternal: 8845798510aae74703467480f71ac613788d0696
-  FirebaseInstallations: 59c0e4c7a816a0f76710d83f77e5369b3e45eb96
-  FirebaseMessaging: fd93783258c53ae5cdb9b41bf0c51606a677f2d5
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
   flutter_facebook_auth: c69f4e643b1d9cc9063ec87c9411bd9ec268108f
+  flutter_libphonenumber_ios: 9b82b770449b1228fd7dc2e47984ebd8ef9ca381
   flutter_secure_storage: 23fc622d89d073675f2eaa109381aefbcf5a49be
   fluttertoast: eb263d302cc92e04176c053d2385237e9f43fad0
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
@@ -344,19 +307,16 @@ SPEC CHECKSUMS:
   geolocator_apple: cc556e6844d508c95df1e87e3ea6fa4e58c50401
   google_maps_flutter_ios: 3e0b99383a8003b8169d06e7e324170bd0424105
   google_sign_in_ios: 1256ff9d941db546373826966720b0c24804bcdd
-  GoogleDataTransport: ea169759df570f4e37bdee1623ec32a7e64e67c4
   GoogleMaps: 20d7b12be49a14287f797e88e0e31bc4156aaeb4
   GoogleSignIn: 5651ce3a61e56ca864160e79b484cd9ed3f49b7a
   GoogleUtilities: c2bdc4cf2ce786c4d2e6b3bcfd599a25ca78f06f
   GTMAppAuth: 0ff230db599948a9ad7470ca667337803b3fc4dd
   GTMSessionFetcher: 3a63d75eecd6aa32c2fc79f578064e1214dfdec2
   image_picker_ios: 4a8aadfbb6dc30ad5141a2ce3832af9214a705b5
-  libphonenumber_plugin: e8a7d64a6624a7c25f2c4ab0b7ead2a8e341e35e
-  nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
-  network_info_plus: b78876159360f5580608c2cea620d6ceffabd0ad
   path_provider_foundation: c68054786f1b4f3343858c1e1d0caaded73f0be9
   PhoneNumberKit: 441e8b26ec88d598e3591de9061eff18f5dd12e8
   PromisesObjC: 09985d6d70fbe7878040aa746d78236e6946d2ef
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   SDWebImage: fd7e1a22f00303e058058278639bf6196ee431fe
   sensors_plus: 5717760720f7e6acd96fdbd75b7428f5ad755ec2
@@ -368,7 +328,8 @@ SPEC CHECKSUMS:
   url_launcher_ios: 08a3dfac5fb39e8759aeb0abbd5d9480f30fc8b4
   video_player_avfoundation: 81e49bb3d9fb63dccf9fa0f6d877dc3ddbeac126
   wakelock: d0fc7c864128eac40eba1617cb5264d9c940b46f
+  wifi_info_flutter: 55d4c2469034f5b5c38063ccefa62f708a503a2b
 
-PODFILE CHECKSUM: e92702094849e3e23924e62252e00f663d630425
+PODFILE CHECKSUM: ef19549a9bc3046e7bb7d2fab4d021637c0c58a3
 
-COCOAPODS: 1.12.0
+COCOAPODS: 1.11.3

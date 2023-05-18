@@ -371,61 +371,6 @@ class _WebServices implements WebServices {
   }
 
   @override
-  Future<List<FastRequestModel>> getFastRequests(token) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'Authorization': token};
-    _headers.removeWhere((k, v) => v == null);
-    final _data = <String, dynamic>{};
-    final _result = await _dio
-        .fetch<List<dynamic>>(_setStreamType<List<FastRequestModel>>(Options(
-      method: 'GET',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              'user/deals/fast',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    var value = _result.data!
-        .map(
-            (dynamic i) => FastRequestModel.fromJson(i as Map<String, dynamic>))
-        .toList();
-    return value;
-  }
-
-  @override
-  Future<List<AvailableFastRequestModel>> getAvailableFastRequests(
-      token) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'Authorization': token};
-    _headers.removeWhere((k, v) => v == null);
-    final _data = <String, dynamic>{};
-    final _result = await _dio.fetch<List<dynamic>>(
-        _setStreamType<List<AvailableFastRequestModel>>(Options(
-      method: 'GET',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              'user/deals/fast/hirings',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    var value = _result.data!
-        .map((dynamic i) =>
-            AvailableFastRequestModel.fromJson(i as Map<String, dynamic>))
-        .toList();
-    return value;
-  }
-
-  @override
   Future<List<OfferModel>> getAllOffers(token) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -605,62 +550,6 @@ class _WebServices implements WebServices {
   }
 
   @override
-  Future<UpdateSkill> updateOffer(
-    token,
-    offerId,
-    price,
-    duration,
-    description,
-  ) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    queryParameters.removeWhere((k, v) => v == null);
-    final _headers = <String, dynamic>{r'Authorization': token};
-    _headers.removeWhere((k, v) => v == null);
-    final _data = FormData();
-    if (offerId != null) {
-      _data.fields.add(MapEntry(
-        'offer_id',
-        offerId,
-      ));
-    }
-    if (price != null) {
-      _data.fields.add(MapEntry(
-        'price',
-        price,
-      ));
-    }
-    if (duration != null) {
-      _data.fields.add(MapEntry(
-        'duration',
-        duration,
-      ));
-    }
-    if (description != null) {
-      _data.fields.add(MapEntry(
-        'description',
-        description,
-      ));
-    }
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<UpdateSkill>(Options(
-      method: 'POST',
-      headers: _headers,
-      extra: _extra,
-      contentType: 'multipart/form-data',
-    )
-            .compose(
-              _dio.options,
-              'offers/update',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = UpdateSkill.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
   Future<UpdateSkill> giveOfferWithoutImages(
     token,
     price,
@@ -822,35 +711,6 @@ class _WebServices implements WebServices {
   }
 
   @override
-  Future<UpdateSkill> completeRequest(
-    token,
-    id,
-  ) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    queryParameters.removeWhere((k, v) => v == null);
-    final _headers = <String, dynamic>{r'Authorization': token};
-    _headers.removeWhere((k, v) => v == null);
-    final _data = {'id': id};
-    _data.removeWhere((k, v) => v == null);
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<UpdateSkill>(Options(
-      method: 'POST',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              'deals/complete',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = UpdateSkill.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
   Future<UpdateSkill> acceptOffer(
     token,
     offerId,
@@ -871,167 +731,6 @@ class _WebServices implements WebServices {
             .compose(
               _dio.options,
               'deals/offers/accept',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = UpdateSkill.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
-  Future<CreateFastRequestModel> createFastRequest(
-    token,
-    categoryId,
-    mettingPointLat,
-    mettingPointLong,
-    destinationLat,
-    destinationLong,
-    description,
-  ) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    queryParameters.removeWhere((k, v) => v == null);
-    final _headers = <String, dynamic>{r'Authorization': token};
-    _headers.removeWhere((k, v) => v == null);
-    final _data = {
-      'category_id': categoryId,
-      'destination_from_lat': mettingPointLat,
-      'destination_from_long': mettingPointLong,
-      'destination_to_lat': destinationLat,
-      'destination_to_long': destinationLong,
-      'description': description,
-    };
-    _data.removeWhere((k, v) => v == null);
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<CreateFastRequestModel>(Options(
-      method: 'POST',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              'deals/fast/create',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = CreateFastRequestModel.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
-  Future<UpdateSkill> acceptFastRequest(
-    token,
-    requestId,
-  ) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    queryParameters.removeWhere((k, v) => v == null);
-    final _headers = <String, dynamic>{r'Authorization': token};
-    _headers.removeWhere((k, v) => v == null);
-    final _data = {'request_id': requestId};
-    _data.removeWhere((k, v) => v == null);
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<UpdateSkill>(Options(
-      method: 'POST',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              'user/deals/fast/hirings/accept',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = UpdateSkill.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
-  Future<UpdateSkill> rejectFastRequest(
-    token,
-    requestId,
-  ) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    queryParameters.removeWhere((k, v) => v == null);
-    final _headers = <String, dynamic>{r'Authorization': token};
-    _headers.removeWhere((k, v) => v == null);
-    final _data = {'request_id': requestId};
-    _data.removeWhere((k, v) => v == null);
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<UpdateSkill>(Options(
-      method: 'POST',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              'user/deals/fast/hirings/decline',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = UpdateSkill.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
-  Future<UpdateSkill> cancelFastRequest(
-    token,
-    requestId,
-  ) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    queryParameters.removeWhere((k, v) => v == null);
-    final _headers = <String, dynamic>{r'Authorization': token};
-    _headers.removeWhere((k, v) => v == null);
-    final _data = {'request_id': requestId};
-    _data.removeWhere((k, v) => v == null);
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<UpdateSkill>(Options(
-      method: 'POST',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              'user/deals/fast/cancel',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = UpdateSkill.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
-  Future<UpdateSkill> completeFastRequest(
-    token,
-    requestId,
-    price,
-  ) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    queryParameters.removeWhere((k, v) => v == null);
-    final _headers = <String, dynamic>{r'Authorization': token};
-    _headers.removeWhere((k, v) => v == null);
-    final _data = {
-      'request_id': requestId,
-      'price': price,
-    };
-    _data.removeWhere((k, v) => v == null);
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<UpdateSkill>(Options(
-      method: 'POST',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              'user/deals/fast/complete',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -1282,30 +981,6 @@ class _WebServices implements WebServices {
   }
 
   @override
-  Future<UnreadMessagesCount> getUnreadMessagesCount(token) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'Authorization': token};
-    _headers.removeWhere((k, v) => v == null);
-    final _data = <String, dynamic>{};
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<UnreadMessagesCount>(Options(
-      method: 'GET',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              'chat/notifications',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = UnreadMessagesCount.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
   Future<List<HiringChatModel>> getAllHiringChats(token) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -1381,60 +1056,6 @@ class _WebServices implements WebServices {
             )
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = JobChatsModel.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
-  Future<DriverModel> getDriverInfo(
-    token,
-    requestId,
-  ) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'Authorization': token};
-    _headers.removeWhere((k, v) => v == null);
-    final _data = <String, dynamic>{};
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<DriverModel>(Options(
-      method: 'GET',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              'deals/fast/${requestId}/show',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = DriverModel.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
-  Future<OfferModel> showSingleOffer(
-    token,
-    offerId,
-  ) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'Authorization': token};
-    _headers.removeWhere((k, v) => v == null);
-    final _data = <String, dynamic>{};
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<OfferModel>(Options(
-      method: 'GET',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              'offers/${offerId}/show',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = OfferModel.fromJson(_result.data!);
     return value;
   }
 
@@ -1715,62 +1336,6 @@ class _WebServices implements WebServices {
     var value = _result.data!
         .map((dynamic i) =>
             FastRequestCategory.fromJson(i as Map<String, dynamic>))
-        .toList();
-    return value;
-  }
-
-  @override
-  Future<UpdateSkill> updateFcm(
-    token,
-    fcmToken,
-  ) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    queryParameters.removeWhere((k, v) => v == null);
-    final _headers = <String, dynamic>{r'Authorization': token};
-    _headers.removeWhere((k, v) => v == null);
-    final _data = {'fcm_token': fcmToken};
-    _data.removeWhere((k, v) => v == null);
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<UpdateSkill>(Options(
-      method: 'POST',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              'user/fcm/update',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = UpdateSkill.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
-  Future<List<AcceptedOffersModel>> getAllAcceptedOfferForDriver(token) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'Authorization': token};
-    _headers.removeWhere((k, v) => v == null);
-    final _data = <String, dynamic>{};
-    final _result = await _dio
-        .fetch<List<dynamic>>(_setStreamType<List<AcceptedOffersModel>>(Options(
-      method: 'GET',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              'deals/ongoing',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    var value = _result.data!
-        .map((dynamic i) =>
-            AcceptedOffersModel.fromJson(i as Map<String, dynamic>))
         .toList();
     return value;
   }

@@ -1,3 +1,4 @@
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'slider_model.g.dart';
@@ -6,14 +7,13 @@ part 'slider_model.g.dart';
 class SliderModel {
   int? id;
   String? name;
-  String? content;
   String? image;
   String? link;
 
-  SliderModel({this.id, this.name, this.content, this.image, this.link});
+  SliderModel({this.id, this.name, this.image, this.link});
 
-  factory SliderModel.fromJson(Map<String, dynamic> json) =>
+    factory SliderModel.fromJson(Map<String, dynamic> json) =>
       _$SliderModelFromJson(json);
-
   Map<String, dynamic> toJson() => _$SliderModelToJson(this);
+
 }

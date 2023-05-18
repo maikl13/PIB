@@ -52,12 +52,11 @@ ThemeData getAppTheme = ThemeData(
         size: 18.sp,
       ),
       systemOverlayStyle: SystemUiOverlayStyle(
-        statusBarBrightness: Brightness.dark,
+        statusBarBrightness: Brightness.light,
         statusBarColor: ColorManager.transparent,
-        systemNavigationBarColor: ColorManager.lightWhite,
-        statusBarIconBrightness: Brightness.dark,
-
-        systemNavigationBarIconBrightness: Brightness.dark,
+        statusBarIconBrightness: Brightness.light,
+        systemNavigationBarColor: ColorManager.transparent,
+        systemNavigationBarIconBrightness: Brightness.light,
       ),
       centerTitle: true,
       color: ColorManager.transparent,

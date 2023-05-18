@@ -6,6 +6,7 @@ import '../../../../core/resources/constants.dart';
 import '../../../../core/widgets/custom_appbar.dart';
 
 import '../../../../core/resources/color_manager.dart';
+import '../../../../core/resources/commons.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/resources/style_manager.dart';
 import '../../../../core/widgets/default_button.dart';
@@ -96,9 +97,10 @@ class _ConfirmPhoneViewState extends State<ConfirmPhoneView> {
                     .login(uid: FirebaseAuth.instance.currentUser!.uid)
                 : BlocProvider.of<AuthCubit>(context).register(
                     uid: FirebaseAuth.instance.currentUser!.uid,
-                    name: userName!,
-                    phone: userPhone!,
-            imageUrl: '${AppConstants.baseDomain}/profile.png');
+                    name: userName!);
+          },
+          phoneAuthErrorOccurred: (errorMsg) {
+            Commons.showToast(message: errorMsg);
           },
         );
       },

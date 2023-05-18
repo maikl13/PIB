@@ -1,9 +1,8 @@
-// ignore_for_file: prefer_const_constructors_in_immutables, avoid_print
+// ignore_for_file: prefer_const_constructors_in_immutables
 
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -29,36 +28,16 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   var tokenFromDatabase = CacheHelper.getData(key: 'token');
-
   var userPicFromDatabase = CacheHelper.getData(key: 'userImage');
-
   var userNameFromDatabase = CacheHelper.getData(key: 'userName');
-
   var userPhoneFromDatabase = CacheHelper.getData(key: 'userPhone');
-
   var userGoToHomePage = CacheHelper.getData(key: 'goToHome');
-
   var userIdFromDatabase = CacheHelper.getData(key: 'uid');
   var countryCodeFromDatabase = CacheHelper.getData(key: 'countryCode');
-  // var fireBaseIdFromDatabase = CacheHelper.getData(key: 'fireBaseId');
-  void printAllData() {
-    print(tokenFromDatabase);
-    print(userPicFromDatabase);
-    print(userNameFromDatabase);
-    print(userPhoneFromDatabase);
-    print(userGoToHomePage);
-
-    print(userIdFromDatabase);
-    print(countryCodeFromDatabase);
-  }
 
   String getInitialScreen() {
-
-    printAllData();
-
     if (userNameFromDatabase == 'مجهول') {
       FirebaseAuth.instance.signOut();
-      FirebaseMessaging.instance.deleteToken();
 
       return Routes.splashRoute;
     } else {
@@ -70,7 +49,6 @@ class _MyAppState extends State<MyApp> {
         userPhone = userPhoneFromDatabase;
         countryCode = countryCodeFromDatabase;
 
-        // fireBaseId = fireBaseIdFromDatabase;
         return Routes.mainHomeViewRoute;
       } else {
         return Routes.splashRoute;
@@ -84,17 +62,12 @@ class _MyAppState extends State<MyApp> {
 // factory to get single instance
   @override
   Widget build(BuildContext context) {
-
     return BlocProvider(
         create: (context) => getIt<GlobalCubit>(),
         child: ScreenUtilInit(
             designSize: const Size(375, 812),
             useInheritedMediaQuery: true,
             minTextAdapt: true,
-
-            // splitScreenMode: true,
-            // useInheritedMediaQuery: true,
-            // scaleByHeight: true,
             builder: (context, state) {
               // ScreenUtil().setSp(28);
               return MaterialApp(
@@ -105,7 +78,7 @@ class _MyAppState extends State<MyApp> {
                   ],
                   supportedLocales: const [
                     Locale('ar'),
-                    // Locale('en')
+                    Locale('en')
                   ],
                   locale: const Locale('ar'),
                   debugShowCheckedModeBanner: false,
@@ -116,15 +89,6 @@ class _MyAppState extends State<MyApp> {
 
                   // initialRoute: Routes.splashRoute,
                   builder: (context, child) {
-                    FirebaseMessaging.instance.onTokenRefresh
-                        .listen((String? fcmToken) async {
-                      if (fcmToken != null) {
-                        fcmTokenFromFirebase = fcmToken;
-                        // Call the API to send the FCM token to the backend
-                        await BlocProvider.of<GlobalCubit>(context)
-                            .updateFcmToken(fcmToken);
-                      }
-                    });
                     return MediaQuery(
                       data:
                           MediaQuery.of(context).copyWith(textScaleFactor: 1.0),

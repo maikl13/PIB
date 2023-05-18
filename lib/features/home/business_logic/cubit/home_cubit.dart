@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../data/models/ad_model.dart';
 
+import '../../../../core/resources/constants.dart';
 import '../../../../core/web_services/network_exceptions.dart';
 import '../../data/models/slider_model.dart';
 import '../../data/repository/home_repository.dart';
@@ -42,6 +43,28 @@ class HomeCubit extends Cubit<HomeState> {
     );
   }
 
-  
+  changeSelectedIndex(int index) {
+    // screenIndex = index;
+    screenIndex = index;
+    emit(HomeState.selectedIndexChanged(index));
+  }
 
+  void goToBuyerHome() {
+    // emit(const HomeState.successBuyerHome());
+  }
+
+  void goToSellerHome() {
+    // emit(const HomeState.successSellerHome());
+  }
+
+  void showSelectedView() {
+    if (defaultChoiceIndex == 0) {
+      goToSellerHome();
+    }
+
+    if (defaultChoiceIndex == 1) {
+      showTitle = false;
+      goToBuyerHome();
+    }
+  }
 }

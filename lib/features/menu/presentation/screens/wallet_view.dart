@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/widgets/empty_screen.dart';
+import 'package:pip/core/widgets/empty_screen.dart';
 import '../../../../core/business_logic/global_cubit.dart';
 import '../../../../core/widgets/custom_appbar.dart';
 import '../../../../core/widgets/custom_title.dart';
@@ -38,12 +38,12 @@ class _WalletViewState extends State<WalletView> {
             );
           },
           walletBalanceAddedSuccedded: (AddBalance addBalance) {
-                // BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
+                BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
 
             Navigator.pop(context);
             Commons.showToast(
               message: 'تم اضافة رصيد بنجاح',
-              color: ColorManager.toastSuccess,
+              color: ColorManager.green,
             );
             BlocProvider.of<MenuCubit>(context).getWalletInfo();
           },

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/widgets/custom_network_image.dart';
+import 'job_rate_container.dart';
 
 class ImageWithRating extends StatelessWidget {
   const ImageWithRating({super.key, this.height, this.image});
@@ -16,8 +17,13 @@ class ImageWithRating extends StatelessWidget {
           // color: Colors.amber,
         ),
         _buildJobImage(),
-
-
+        // Positioned.fill(
+        //   child: Align(
+        //       alignment: Alignment.bottomLeft,
+        //       child: JobRateContainer(
+        //         height: height,
+        //       )),
+        // ),
       ],
     );
   }
@@ -31,7 +37,20 @@ class ImageWithRating extends StatelessWidget {
         child: ClipOval(child: CustomNetworkCachedImage(url: image)),
       ),
     );
-
+    // return Container(
+    //   width: 70.w,
+    //   height: 70.h,
+    //   decoration: BoxDecoration(
+    //     shape: BoxShape.circle,
+    //   ),
+    //   // color: Colors.red,
+    //   child: Image.asset(
+    //     ImageAssets.banner,
+    //     height: 70.h,
+    //     width: 70.w,
+    //     fit: BoxFit.fill,
+    //   ),
+    // );
   }
 
   @override

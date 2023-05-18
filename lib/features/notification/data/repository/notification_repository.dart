@@ -1,7 +1,5 @@
 
 
-import 'package:pip/features/menu/data/models/update_skill.dart';
-
 import '../../../../core/resources/constants.dart';
 import '../../../../core/web_services/api_result.dart';
 import '../../../../core/web_services/network_exceptions.dart';
@@ -29,17 +27,6 @@ class NotificationRepository {
     try {
       var response = await webServices.getUnreadNotificationCount(
           'Bearer $token');
-      return ApiResult.success(response);
-    } catch (error) {
-      return ApiResult.failure(NetworkExceptions.getDioException(error));
-    }
-  }
-
-
-    Future<ApiResult<UpdateSkill>> updateFcm(String? fcmToken)async {
-    try {
-      var response = await webServices.updateFcm(
-          'Bearer $token',fcmToken);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(NetworkExceptions.getDioException(error));

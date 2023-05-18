@@ -20,6 +20,6 @@ class HomeState<T> with _$HomeState<T> {
   const factory HomeState.homeAdsSuccess(List<AdModel> ads) = HomeAdsSuccess<T>;
   const factory HomeState.homeAdsError(NetworkExceptions networkExceptions) = HomeAdsError<T>;
 
-    
+    const factory HomeState.selectedIndexChanged(int index) = SelectedIndexChanged<T>;
 
 }

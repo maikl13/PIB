@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/features/requests/presentation/widgets/accepted_requests_item.dart';
-import '../../../pip/business_logic/cubit/pip_cubit.dart';
 
+import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/commons.dart';
 import '../../../../core/resources/route_manager.dart';
@@ -11,15 +10,11 @@ import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/resources/style_manager.dart';
 import '../../../../core/web_services/network_exceptions.dart';
 import '../../../../core/widgets/custom_title.dart';
-import '../../../../core/widgets/dark_default_button.dart';
+import '../../../../core/widgets/empty_screen.dart';
 import '../../../../core/widgets/loading_indicator.dart';
-import '../../../pip/data/models/driver_model.dart';
 import '../../business_logic/cubit/requests_cubit.dart';
 import '../../business_logic/cubit/requests_state.dart';
-import '../../data/models/accepted_offers_model.dart';
-import '../../data/models/available_fast_request_model.dart';
 import '../../data/models/my_request_model.dart';
-import '../widgets/available_fast_request.dart';
 import '../widgets/request_item.dart';
 
 class AvailableJobsView extends StatefulWidget {
@@ -30,21 +25,7 @@ class AvailableJobsView extends StatefulWidget {
 }
 
 class _AvailableJobsViewState extends State<AvailableJobsView> {
-  _buildBodyView() {
-    return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _buildMyAcceptedOffersBloc(),
-          _buildAvailableFastRequestsBloc(),
-          _buildAvailableJobsBloc(),
-          // SizedBox(height: 20.h),
-        ],
-      ),
-    );
-  }
-
-  _buildAvailableJobsBloc() {
+  _buildBloc() {
     return BlocConsumer<RequestsCubit, RequestState>(
       listener: (context, state) {
         state.whenOrNull(
@@ -60,316 +41,62 @@ class _AvailableJobsViewState extends State<AvailableJobsView> {
       builder: (context, state) {
         return state.maybeWhen(
             myAvailableJobsLoading: () {
-              return Padding(
-                  padding: EdgeInsets.only(top: 100.h),
-                  child: const LoadingIndicator());
+              return const LoadingIndicator();
             },
             myAvailableJobsSuccess: (avaliableJobs) {
-              return _buildAvailableRequestsView();
+              return _buildList(avaliableJobs);
             },
             orElse: () => Container());
       },
     );
   }
 
-  _buildAvailableFastRequestsBloc() {
-    return BlocConsumer<RequestsCubit, RequestState>(
-      listener: (context, state) {
-        state.whenOrNull(
-          acceptFastRequestLoading: () {
-            Commons.showLoadingDialog(context);
-          },
-          acceptFastRequestError: (networkExceptions) {
-            Navigator.pop(context);
-            Commons.showToast(
-              color: ColorManager.error,
-              message: NetworkExceptions.getErrorMessage(networkExceptions),
-            );
-          },
-          acceptFastRequestSuccess: (data) {
-            BlocProvider.of<PipCubit>(context).stopStream();
-            Navigator.pop(context);
-            Commons.showToast(
-              color: ColorManager.toastSuccess,
-              message: 'تم قبول الطلب بنجاح',
-            );
-            BlocProvider.of<RequestsCubit>(context)
-                .getAllMyAvailableFastRequests();
-          },
-          rejectFastRequestSuccess: (data) {
-            BlocProvider.of<PipCubit>(context).stopStream();
-            Navigator.pop(context);
-            Commons.showToast(
-              color: ColorManager.toastSuccess,
-              message: 'تم رفض الطلب بنجاح',
-            );
-            BlocProvider.of<RequestsCubit>(context)
-                .getAllMyAvailableFastRequests();
-          },
-          myAvailableFastRequestsError: (networkExceptions) {
-            Commons.showToast(
-                message: NetworkExceptions.getErrorMessage(networkExceptions));
-          },
-        );
-      },
-      buildWhen: (previous, next) => next is MyAvailableFastRequestsSuccess,
-      builder: (context, state) {
-        return state.maybeWhen(
-            myAvailableFastRequestsLoading: () {
-              return Padding(
-                  padding: EdgeInsets.only(top: 100.h),
-                  child: const LoadingIndicator());
-            },
-            myAvailableFastRequestsSuccess: (myFastRequests) {
-              return myFastRequests.isEmpty
-                  ? const SizedBox.shrink()
-                  : _buildAvailableFastRequestsView();
-            },
-            orElse: () => Container());
-      },
-    );
-  }
-
-  _buildMyAcceptedOffersBloc() {
-    return BlocConsumer<RequestsCubit, RequestState>(
-      listener: (context, state) {},
-      buildWhen: (previous, next) => next is MyAcceptedFastOffersSuccess,
-      builder: (context, state) {
-        return state.maybeWhen(
-          myAcceptedFastOffersSuccess: (myAcceptedFastOffers) {
-            return BlocProvider.of<RequestsCubit>(context)
-                    .myAcceptedFastOffers
-                    .isEmpty
-                ? _buildEmptyAcceptedOffersView()
-                : _buildMyAcceptedOffersView();
-          },
-          orElse: () => const SizedBox.shrink(),
-        );
-      },
-    );
-  }
-
-  Widget _buildEmptyAcceptedOffersView() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SizedBox(height: 20.h),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const CustomTitle(title: '${AppStrings.myAcceptedOffers} :'),
-
-
-            _buildArchieveButton()
-          ],
-        ),
-        SizedBox(height: 20.h),
-        Center(
-          child: Column(
-            children: [
-              Text(
-                'لا يوجد عروض مقبولة',
-                style: getRegularStyle(
-                  color: ColorManager.darkGrey,
-                  fontSize: 16,
-                ),
-              ),
-              // SizedBox(height: 10.h),
-              TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, Routes.infoViewRoute);
-                },
-                child: Text(
-                  'اضغط هنا  للمعلومات',
-                  style: getRegularStyle(
+  _buildList(List<MyRequestModel> availableJobs) {
+    return availableJobs.isEmpty
+        ? Padding(
+            padding: EdgeInsets.only(top: 100.h),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Center(
+                  child: Icon(
+                    Icons.work_outline_sharp,
+                    size: 100.sp,
                     color: ColorManager.darkSeconadry,
-                    fontSize: 16,
                   ),
                 ),
-              ),
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-
-  _buildArchieveButton() {
-    return
-
-      InkWell(
-        onTap: () {
-          Navigator.pushNamed(context, Routes.requestsArchieveViewRoute);
-        },
-        child:
-      Container(
-      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 7.h),
-      decoration: BoxDecoration(
-        color: ColorManager.grey.withOpacity(.3),
-        borderRadius: BorderRadius.circular(20.r),
-      ),
-      child: Text('ارشيف العروض المقبولة',
-          style: getRegularStyle(
-            color: ColorManager.darkSeconadry,
-            fontSize: 12.sp,
-          )),
-    ));
-  }
-
-  _buildMyAcceptedOffersView() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SizedBox(height: 20.h),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const CustomTitle(title: '${AppStrings.myAcceptedOffers} :'),
-            _buildArchieveButton(),
-          ],
-        ),
-        SizedBox(height: 20.h),
-        _buildMyAcceptedOffersList(
-            BlocProvider.of<RequestsCubit>(context).myAcceptedFastOffers),
-      ],
-    );
-  }
-
-  _buildMyAcceptedOffersList(List<AcceptedOffersModel> myAcceptedFastOffers) {
-    return ListView.separated(
-      itemCount: myAcceptedFastOffers.length,
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      separatorBuilder: (context, index) => SizedBox(height: 20.h),
-      itemBuilder: (context, index) {
-        return myAcceptedFastOffers[index].status != 'processing'
-            ? const SizedBox.shrink()
-            : AcceptedRequestItem(
-                requests: myAcceptedFastOffers, onTap: () {}, index: index);
-      },
-    );
-  }
-
-  _buildAvailableFastRequestsView() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SizedBox(height: 20.h),
-        const CustomTitle(title: '${AppStrings.fastRequests} :'),
-        SizedBox(height: 20.h),
-        _buildFastReqestsList(
-            BlocProvider.of<RequestsCubit>(context).myAvailableFastRequests),
-      ],
-    );
-  }
-
-  _buildAvailableRequestsView() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        _buildAvailableJobsList(
-            BlocProvider.of<RequestsCubit>(context).myAvailableJobs),
-      ],
-    );
-  }
-
-  _buildFastReqestsList(List<AvailableFastRequestModel> fastRequequests) {
-    return fastRequequests.isEmpty
-        ? Container()
+                Text('من فضلك قم بإضافة خبرة لتظهر للمستخدمين',
+                    textAlign: TextAlign.center,
+                    style: getBoldStyle(
+                        fontSize: 20.sp, color: ColorManager.darkGrey)),
+              ],
+            ),
+          )
         : ListView.separated(
-            itemCount: fastRequequests.length,
+            itemCount: availableJobs.length,
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             separatorBuilder: (context, index) {
               return SizedBox(height: 12.h);
             },
             itemBuilder: (context, index) {
-              return fastRequequests[index].status == 'complete'
-                  ? const SizedBox.shrink()
-                  : AvailableFastReqquestItem(
-                      fastRequests: fastRequequests,
-                      index: index,
-                    );
+              return RequestItem(
+                requests: availableJobs,
+                index: index,
+                onTap: () {
+                  Navigator.pushNamed(
+                      context, Routes.availableJobDetailsViewRoute,
+                      arguments: {'job': availableJobs[index]});
+                },
+              );
             },
           );
-  }
-
-  _buildAvailableJobsList(List<MyRequestModel> availableJobs) {
-    return availableJobs.isEmpty
-        ? _buildAvailableJobsEmpty()
-        : Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: 20.h),
-              const CustomTitle(title: AppStrings.availbleRecentJobs),
-              SizedBox(height: 20.h),
-              ListView.separated(
-                itemCount: availableJobs.length,
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                separatorBuilder: (context, index) {
-                  return SizedBox(height: 12.h);
-                },
-                itemBuilder: (context, index) {
-                  return RequestItem(
-                    requests: availableJobs,
-                    index: index,
-                    onTap: () {
-                      Navigator.pushNamed(
-                          context, Routes.availableJobDetailsViewRoute,
-                          arguments: {'job': availableJobs[index]});
-                    },
-                  );
-                },
-              )
-            ],
-          );
-  }
-
-  _buildAvailableJobsEmpty() {
-    return Padding(
-      padding: EdgeInsets.only(top: 100.h),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Center(
-            child: Icon(
-              Icons.work_outline_sharp,
-              size: 100.sp,
-              color: ColorManager.darkSeconadry,
-            ),
-          ),
-          Text(
-              'لا توجد وظائف لنفس المهارات التي حددتها ، سيصلك اشعار بمجرد وجود طلبات جديدة ، يمكنك ايضا تعديل مهاراتك من الزر ادناه',
-              textAlign: TextAlign.center,
-              style: getRegularStyle(
-                  fontSize: 18.sp, color: ColorManager.darkGrey)),
-          SizedBox(
-            height: 25.h,
-          ),
-          DarkDefaultButton(
-            widht: 195.w,
-            height: 39.h,
-            textStyle: getRegularStyle(
-                fontSize: 15.sp, color: ColorManager.darkSeconadry),
-            text: AppStrings.editSkills,
-            borderColor: ColorManager.darkSeconadry,
-            onTap: () {
-              // BlocProvider.of<MenuCubit>(context).getUserInfo();
-              Navigator.pushNamed(context, Routes.skillsViewRoute);
-            },
-          )
-        ],
-      ),
-    );
   }
 
   @override
   void initState() {
-    BlocProvider.of<RequestsCubit>(context).getAllMyAvailableFastRequests();
     BlocProvider.of<RequestsCubit>(context).getAllAvailableJobs();
-    BlocProvider.of<RequestsCubit>(context).getAllAcceptedOfferForDriver();
 
     super.initState();
   }
@@ -377,10 +104,12 @@ class _AvailableJobsViewState extends State<AvailableJobsView> {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      // padding: EdgeInsets.only(top: 37.h),
+      padding: EdgeInsets.only(top: 37.h),
       shrinkWrap: true,
       children: [
-        _buildBodyView(),
+        const CustomTitle(title: AppStrings.recievedRequests),
+        SizedBox(height: 20.h),
+        _buildBloc(),
       ],
     );
   }

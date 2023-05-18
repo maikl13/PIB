@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/features/requests/business_logic/cubit/requests_cubit.dart';
-import '../../../../core/resources/assets_manager.dart';
-import '../../../../core/resources/utils.dart';
-import '../../../chat/business_logic/chat_cubit.dart';
-import '../../../chat/business_logic/chat_state.dart';
+import 'package:pip/core/resources/assets_manager.dart';
+import 'package:pip/features/chat/business_logic/chat_cubit.dart';
+import 'package:pip/features/chat/business_logic/chat_state.dart';
 import '../../../../core/widgets/custom_clock_date.dart';
 import '../../../../core/widgets/custom_network_image.dart';
 import '../../../../core/widgets/image_item.dart';
@@ -73,11 +71,11 @@ class AvailableJobDetailsView extends StatelessWidget {
                   // trailling: FontAwesomeIcons.mapLocationDot,
                 ),
                 SizedBox(height: 15.h),
-                if (availableJob.images!.length != 0) _buildPhotos(),
+                _buildPhotos(),
 
-                SizedBox(height: 30.h),
-                _buildButtons(context),
                 SizedBox(height: 70.h),
+                _buildButtons(context),
+                SizedBox(height: 30.h),
               ],
             ),
           ),
@@ -93,28 +91,10 @@ class AvailableJobDetailsView extends StatelessWidget {
   _buildButtons(BuildContext context) {
     return Row(
       children: [
-        availableJob.submittedOffer == true
-            ? _buildEditOffer(context)
-            : _buildGiveOffer(context),
+        _buildGiveOffer(context),
         SizedBox(width: 10.w),
         _buildNegotiateButton(context),
       ],
-    );
-  }
-
-  _buildEditOffer(BuildContext context) {
-    return Expanded(
-      child: DefaultButton(
-        text: AppStrings.editOffer,
-        onTap: () {
-          
-          // BlocProvider.of<RequestsCubit>(context).showSingleOffer(offerId);
-          Navigator.pushNamed(context, Routes.editOffersViewRoute, arguments: {
-            'offerId': availableJob.submittedOfferId.toString(),
-
-          });
-        },
-      ),
     );
   }
 
@@ -123,15 +103,9 @@ class AvailableJobDetailsView extends StatelessWidget {
       child: DefaultButton(
         text: AppStrings.giveOffer,
         onTap: () {
-          if (checkUserType(context)) {
-            return;
-          } else {
-            Navigator.pushNamed(context, Routes.giveOffersViewRoute,
-                arguments: {
-                  'requestId': availableJob.id.toString(),
-                  'jobName': availableJob.category!.name
-                });
-          }
+          Navigator.pushNamed(context, Routes.giveOffersViewRoute, arguments: {
+            'requestId': availableJob.id.toString(),
+          });
         },
       ),
     );
@@ -145,13 +119,9 @@ class AvailableJobDetailsView extends StatelessWidget {
         textStyle:
             getBoldStyle(fontSize: 16.sp, color: ColorManager.darkSeconadry),
         onTap: () {
-          if (checkUserType(context)) {
-            return;
-          } else {
-            BlocProvider.of<ChatCubit>(context).chatWithUser(
-                requestId: availableJob.id.toString(),
-                targetId: availableJob.user!.id.toString());
-          }
+          BlocProvider.of<ChatCubit>(context).chatWithUser(
+              requestId: availableJob.id.toString(),
+              targetId: availableJob.user!.id.toString());
         },
       ),
     );
@@ -211,9 +181,8 @@ class AvailableJobDetailsView extends StatelessWidget {
             MainInfoItem(
                 title: '${availableJob.price} ${AppStrings.ryal}',
                 icon: ImageAssets.tags),
-            MainInfoItem(
-                title: getStatusInArabic(availableJob.status!),
-                icon: ImageAssets.solidLayers),
+             MainInfoItem(
+                title: availableJob.status!, icon: ImageAssets.solidLayers),
           ],
         ),
       ),

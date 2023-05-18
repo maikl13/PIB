@@ -17,7 +17,7 @@ class CustomNetworkCachedImage extends StatelessWidget {
       // Return a default placeholder widget if url is null
       return Container(
         color: Colors.grey[300],
-        child: Icon(Icons.image, size: 50.sp),
+        child:  Icon(Icons.image, size: 50.sp),
       );
     }
     return CachedNetworkImage(
@@ -27,7 +27,7 @@ class CustomNetworkCachedImage extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(
             image: imageProvider,
-            fit: fit ?? BoxFit.cover,
+            fit: fit ?? BoxFit.fill,
             colorFilter: filter,
           ),
         ),

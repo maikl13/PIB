@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/resources/assets_manager.dart';
-import '../../../../core/resources/utils.dart';
-import '../../../../core/widgets/custom_image_view.dart';
+import 'package:pip/core/resources/assets_manager.dart';
 import '../../../../core/widgets/custom_network_image.dart';
 import '../../data/models/my_request_model.dart';
 import '../../../../core/resources/color_manager.dart';
@@ -85,44 +83,23 @@ class RequestItem extends StatelessWidget {
 
   _buildRequestStatus() {
     return Text(
-      requests![index].submittedOffer == true
-          ? 'تم تقديم عرض'
-          : getStatusInArabic(requests![index].status ?? ''),
+      requests![index].status ?? '',
       style: getBoldStyle(fontSize: 10.sp, color: ColorManager.darkSeconadry),
     );
   }
 
   _buildLeadingImage() {
-    return Stack(
-      children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(8.r),
-          child: SizedBox(
-            width: 120.h,
-            height: 80.h,
-            child: Stack(
-              children: [
-                if (!(requests![index].images!.isEmpty &&
-                    (requests![index].category == null ||
-                        requests![index].category!.imageUrl == '')))
-                  CustomNetworkCachedImage(
-                    url: (requests![index].images!.isNotEmpty &&
-                            requests![index].images![0].attachmentUrl != '')
-                        ? requests![index].images![0].attachmentUrl
-                        : requests![index].category!.imageUrl,
-                    fit: BoxFit.fill,
-                  ),
-                CustomImageView(
-                  svgPath: ImageAssets.shadow,
-                  width: 120.h,
-                  height: 80.h,
-                  fit: BoxFit.fill,
-                )
-              ],
-            ),
-          ),
-        ),
-      ],
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(8.r),
+      child: SizedBox(
+        width: 120.h,
+        height: 80.h,
+        child: requests![index].images!.isEmpty &&
+                requests![index].category == null
+            ? Container()
+            : CustomNetworkCachedImage(
+                url: requests![index].category!.imageUrl),
+      ),
     );
   }
 

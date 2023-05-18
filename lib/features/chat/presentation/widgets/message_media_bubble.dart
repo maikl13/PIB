@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:full_screen_image/full_screen_image.dart';
-import '../../../../core/resources/assets_manager.dart';
-import '../../../../core/resources/color_manager.dart';
+import 'package:pip/core/resources/assets_manager.dart';
+import 'package:pip/core/resources/color_manager.dart';
 
 import '../../../../core/resources/commons.dart';
 import '../../../../core/resources/style_manager.dart';
@@ -48,69 +48,44 @@ class MessageMediaBubble extends StatelessWidget {
     String label = chatMessage.attachment!.split('/').last;
 
     return Row(
-      // mainAxisSize: MainAxisSize.min,
+      mainAxisSize: MainAxisSize.min,
       mainAxisAlignment:
           !isMe ? MainAxisAlignment.end : MainAxisAlignment.start,
       children: [
         InkWell(
-          onTap: () {
-            BlocProvider.of<ChatCubit>(context).stopStream();
-            Commons.openUrl(
-                'http://docs.google.com/viewer?url=${chatMessage.attachment}');
-            // Navigator.pushNamed(context, PdfViewerScreen.routeName,
-            //     arguments: RouteArgument(param: chatMessage.attachment));
-          },
-          child: isMe
-              ? Row(
-                  // mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Container(
-                        height: 50.h,
-                        width: 40.w,
-                        padding: EdgeInsets.all(8.w),
-                        decoration: BoxDecoration(
-                            // color: ColorManager.white,
-                            borderRadius: BorderRadius.circular(8.r)),
-                        child: Image.asset(ImageAssets.file)),
-                    const SizedBox(width: 10),
-                    Text(
-                      label,
-                      style: getRegularStyle(
-                              fontSize: 14.sp,
-                              color: ColorManager.darkSeconadry)
-                          .copyWith(decoration: TextDecoration.underline),
-                    )
-                  ],
+            onTap: () {
+              BlocProvider.of<ChatCubit>(context).stopStream();
+              Commons.openUrl(
+                  'http://docs.google.com/viewer?url=${chatMessage.attachment}');
+              // Navigator.pushNamed(context, PdfViewerScreen.routeName,
+              //     arguments: RouteArgument(param: chatMessage.attachment));
+            },
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                    height: 50.h,
+                    width: 40.w,
+                    padding: EdgeInsets.all(8.w),
+                    decoration: BoxDecoration(
+                        // color: ColorManager.white,
+                        borderRadius: BorderRadius.circular(8.r)),
+                    child: Image.asset(ImageAssets.file)),
+                const SizedBox(width: 10),
+                Text(
+                  label,
+                  style: getRegularStyle(
+                          fontSize: 14.sp, color: ColorManager.darkSeconadry)
+                      .copyWith(decoration: TextDecoration.underline),
                 )
-              : Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  // mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      label,
-                      style: getRegularStyle(
-                              fontSize: 14.sp,
-                              color: ColorManager.darkSeconadry)
-                          .copyWith(decoration: TextDecoration.underline),
-                    ),
-                    const SizedBox(width: 10),
-                    Container(
-                        height: 50.h,
-                        width: 40.w,
-                        padding: EdgeInsets.all(8.w),
-                        decoration: BoxDecoration(
-                            // color: ColorManager.white,
-                            borderRadius: BorderRadius.circular(8.r)),
-                        child: Image.asset(ImageAssets.file)),
-                  ],
-                ),
-        ),
+              ],
+            )),
       ],
     );
   }
 
   _buildVedioAndMusic(BuildContext context, bool video) {
+
     return Row(
       mainAxisAlignment:
           !isMe ? MainAxisAlignment.end : MainAxisAlignment.start,

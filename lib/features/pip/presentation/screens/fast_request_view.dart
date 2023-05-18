@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/resources/commons.dart';
-import '../../../../core/resources/constants.dart';
-import '../../../../core/widgets/loading_indicator.dart';
-import '../../business_logic/cubit/pip_cubit.dart';
-import '../../business_logic/cubit/pip_state.dart';
-import '../../../../core/resources/location_helper.dart';
+import 'package:pip/core/resources/commons.dart';
+import 'package:pip/core/widgets/loading_indicator.dart';
+import 'package:pip/features/pip/business_logic/cubit/pip_cubit.dart';
+import 'package:pip/features/pip/business_logic/cubit/pip_state.dart';
 import '../../../../core/resources/route_manager.dart';
 import '../../../../core/web_services/network_exceptions.dart';
 import '../../../../core/widgets/custom_title.dart';
@@ -38,6 +36,23 @@ class _FastRequestViewState extends State<FastRequestView> {
           const CustomTitle(title: AppStrings.chooseTypeOfRequest),
           SizedBox(height: 20.h),
           _buildCategories(),
+          // PickRequestItem(
+          //   height: 108.h,
+          //   title: AppStrings.taxi,
+          //   description: AppStrings.taxiDescription,
+          //   onTap: () {
+          //     Navigator.pushNamed(context, Routes.chooseTaxiViewRoute);
+          //   },
+          // ),
+          // SizedBox(height: 20.h),
+          // PickRequestItem(
+          //   height: 108.h,
+          //   title: AppStrings.fastDelivery,
+          //   description: AppStrings.fastDeliveryDescription,
+          //   onTap: () {
+          //     // Navigator.pushNamed(context, Routes.fas);
+          //   },
+          // ),
         ],
       ),
     );
@@ -48,11 +63,10 @@ class _FastRequestViewState extends State<FastRequestView> {
       listener: (context, state) {
         state.whenOrNull(
           fastRequestCategoryError: (networkExceptions) {
-            Commons.showToast(
+Commons.showToast(
               color: ColorManager.error,
               message: NetworkExceptions.getErrorMessage(networkExceptions),
-            );
-          },
+            );          },
         );
       },
       buildWhen: (previous, current) => current is FastRequestCategorySuccess,
@@ -79,18 +93,9 @@ class _FastRequestViewState extends State<FastRequestView> {
             title: categories[index].name ?? '',
             description: categories[index].description ?? '',
             onTap: () {
-              categoryId = categories[index].id.toString();
-              if (index == 0) {
-                Navigator.pushNamed(context, Routes.chooseTaxiViewRoute,
-                    arguments: {
-                      'title': categories[index].name,
-                    });
-              } else if (index == 1) {
-                Navigator.pushNamed(context, Routes.orderDescriptionViewRoute,
-                    arguments: {
-                      'title': categories[index].name,
-                    });
-              }
+              index == 0
+                  ? Navigator.pushNamed(context, Routes.chooseTaxiViewRoute)
+                  : null;
             },
           );
         },
@@ -119,7 +124,7 @@ class _FastRequestViewState extends State<FastRequestView> {
             return _buildFastRequest(false);
           },
           toggleSuccess: (data) {
-            fastRequsetStatus = data.action == 'enable' ? '1' : '0';
+            //TODO save this in shared prefrences 
             return _buildFastRequest(data.action == 'enable' ? true : false);
           },
           orElse: () => _buildFastRequest(false),
@@ -149,7 +154,7 @@ class _FastRequestViewState extends State<FastRequestView> {
               width: 37.w,
               height: 20.h,
               child: CustomSwitch(
-                enabled: fastRequsetStatus == '0' ? false : true,
+                enabled: value ?? false,
                 onChanged: (status) {
                   BlocProvider.of<PipCubit>(context).toggleFastRequest();
                 },
@@ -164,7 +169,8 @@ class _FastRequestViewState extends State<FastRequestView> {
   @override
   void initState() {
     super.initState();
-    // BlocProvider.of<PipCubit>(context).toggleFastRequest();
+    BlocProvider.of<PipCubit>(context).toggleFastRequest();
+
     BlocProvider.of<PipCubit>(context).getAllFastRequestCategories();
   }
 

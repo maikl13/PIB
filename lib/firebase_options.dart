@@ -64,6 +64,6 @@ class DefaultFirebaseOptions {
     projectId: 'pib-project-3eff6',
     storageBucket: 'pib-project-3eff6.appspot.com',
     iosClientId: '727664776199-sj4pvud6p5s38nbn5l8sghp5ppej849c.apps.googleusercontent.com',
-    iosBundleId: 'com.pib.platform',
+    iosBundleId: 'com.example.pip',
   );
 }

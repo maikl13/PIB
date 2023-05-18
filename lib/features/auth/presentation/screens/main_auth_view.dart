@@ -1,8 +1,6 @@
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pip/core/business_logic/global_cubit.dart';
 import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/commons.dart';
@@ -10,7 +8,6 @@ import '../../../../core/resources/constants.dart';
 import '../../../../core/resources/route_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/web_services/network_exceptions.dart';
-import '../../../../core/widgets/confirmation_dialog.dart';
 import '../../../../core/widgets/dark_default_button.dart';
 import '../../../../core/widgets/default_button.dart';
 import '../../../../core/widgets/skip_text.dart';
@@ -25,37 +22,34 @@ class MainAuthView extends StatelessWidget {
   const MainAuthView({super.key});
 
   _buildBody(BuildContext context) {
-    return SingleChildScrollView(
-      child: Container(
-        margin: EdgeInsets.only(right: 20.w, left: 20),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const MainAuthHeadline(),
-            SizedBox(height: 30.h),
-            _buildLogo(),
-            SizedBox(height: 50.h),
-            DefaultButton(
-              text: AppStrings.registerNewAcc,
-              onTap: () {
-                Navigator.pushNamed(context, Routes.registerViewRoute);
-              },
-            ),
-            SizedBox(height: 25.h),
-            DarkDefaultButton(
-              text: AppStrings.login,
-              onTap: () {
-                Navigator.pushNamed(context, Routes.loginViewRoute);
-              },
-            ),
-            SizedBox(height: 76.h),
-            _buildOrLoginWith(),
-            SizedBox(height: 29.h),
-            _buildSocialButtons(context),
-            _buildBloc(),
-          ],
-        ),
+    return Padding(
+      padding: EdgeInsets.only(right: 20.w, left: 20, bottom: 30.h),
+      child: ListView(
+        // crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const MainAuthHeadline(),
+          SizedBox(height: 30.h),
+          _buildLogo(),
+          SizedBox(height: 50.h),
+          DefaultButton(
+            text: AppStrings.registerNewAcc,
+            onTap: () {
+              Navigator.pushNamed(context, Routes.registerViewRoute);
+            },
+          ),
+          SizedBox(height: 25.h),
+          DarkDefaultButton(
+            text: AppStrings.login,
+            onTap: () {
+              Navigator.pushNamed(context, Routes.loginViewRoute);
+            },
+          ),
+          SizedBox(height: 76.h),
+          _buildOrLoginWith(),
+          SizedBox(height: 29.h),
+          _buildSocialButtons(context),
+          _buildBloc(),
+        ],
       ),
     );
   }
@@ -71,18 +65,21 @@ class MainAuthView extends StatelessWidget {
             );
           },
           firebaseAnonymousLoginLoading: () {
-            Commons.showLoadingDialog(context, text: "جار إعداد حسابك");
+            Commons.showLoadingDialog(context);
           },
           firebaseAnonymousLoginSuccess: (data) {
+            Navigator.pop(context);
+
             BlocProvider.of<AuthCubit>(context).register(
                 uid: data,
                 name: 'مجهول',
                 email: '',
                 phone: '000000000',
-                imageUrl: '${AppConstants.baseDomain}/profile.png');
+                imageUrl:
+                    'https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png');
           },
           phoneAuthLoading: () {
-            Commons.showLoadingDialog(context, text: "جار إعداد حسابك");
+            Commons.showLoadingDialog(context);
           },
           phoneNumberSubmited: () {
             // ignore: avoid_print
@@ -113,14 +110,10 @@ class MainAuthView extends StatelessWidget {
             );
           },
           loginLoading: () {
-            Commons.showLoadingDialog(context, text: "جار إعداد حسابك");
+            Commons.showLoadingDialog(context);
           },
           loginSuccess: (uid) {
             Navigator.pop(context);
-
-            // Call the API to send the FCM token to the backend
-            BlocProvider.of<GlobalCubit>(context)
-                .updateFcmToken(fcmTokenFromFirebase);
             showSuccessDialog(context);
 
             // _goToHomeSuccessfully(context);
@@ -144,15 +137,9 @@ class MainAuthView extends StatelessWidget {
             }
           },
           registerLoading: () {
-            Commons.showLoadingDialog(context, text: "جار إعداد حسابك");
+            Commons.showLoadingDialog(context);
           },
           registerSuccess: (user) {
-            Navigator.pop(context);
-
-            // Call the API to send the FCM token to the backend
-            BlocProvider.of<GlobalCubit>(context)
-                .updateFcmToken(fcmTokenFromFirebase);
-
             user.user!.name == 'مجهول'
                 ? Navigator.pushNamedAndRemoveUntil(
                     context, Routes.mainHomeViewRoute, (route) => false)
@@ -160,26 +147,10 @@ class MainAuthView extends StatelessWidget {
           },
           registerError: (networkExceptions) {
             Navigator.pop(context);
-            if (NetworkExceptions.getErrorMessage(networkExceptions) ==
-                "المستخدم موجود سابقا") {
-              showDialog(
-                  context: context,
-                  builder: (BuildContext dialog) => ConfirmationDialog(
-                      alertMsg:
-                          'هذا المستخدم موجود مسبقا ، يمكنك الانتقال لصفحة تسجيل الدخول او محاولة استخدام رقم اخر',
-                      cancel: "ادخل الرقم مجددا",
-                      ok: "صفحة الدخول",
-                      onTapConfirm: () {
-                        //  Navigator.pop(dialog);
-                        Navigator.pop(context);
-                        Navigator.pop(context);
-                      }));
-            } else {
-              Commons.showToast(
-                color: ColorManager.error,
-                message: NetworkExceptions.getErrorMessage(networkExceptions),
-              );
-            }
+            Commons.showToast(
+              color: ColorManager.error,
+              message: NetworkExceptions.getErrorMessage(networkExceptions),
+            );
           },
         );
       },
@@ -238,11 +209,8 @@ class MainAuthView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: ColorManager.transparent,
-        actions: [
-          Container(
-            padding: const EdgeInsets.only(top: 23),
-            child: const SkipText(),
-          ),
+        actions: const [
+          SkipText(),
         ],
       ),
       body: _buildBody(context),

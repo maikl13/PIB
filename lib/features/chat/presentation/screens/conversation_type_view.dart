@@ -50,7 +50,7 @@ class ConversationsTypeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-        // BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
+        BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
 
     return _buildBody();
   }

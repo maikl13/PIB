@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/resources/assets_manager.dart';
+import 'package:pip/core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
 // ignore: depend_on_referenced_packages
 import 'package:path/path.dart' as path;
@@ -21,18 +21,7 @@ class UploadedPhotos extends StatelessWidget {
 
   bool isVideo(File file) {
     String extension = path.extension(file.path);
-    if (extension.toLowerCase() == '.mp4' ||
-        extension.toLowerCase() == '.mov' ||
-        extension.toLowerCase() == '.avi' ||
-        extension.toLowerCase() == '.flv' ||
-        extension.toLowerCase() == '.wmv' ||
-        extension.toLowerCase() == '.3gp' ||
-        extension.toLowerCase() == '.mkv' ||
-        extension.toLowerCase() == '.webm') {
-      return true;
-    } else {
-      return false;
-    }
+    return extension.toLowerCase() == '.mp4 ||.mov ||.mp3';
   }
 
   _buildPhoto(BuildContext context) {
@@ -61,9 +50,8 @@ class UploadedPhotos extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.r),
                   ),
-                  child: Icon(
+                  child: const Icon(
                     Icons.video_collection_rounded,
-                    color: ColorManager.darkSeconadry,
                   ),
                 ),
               )

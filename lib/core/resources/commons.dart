@@ -1,11 +1,8 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:pip/core/resources/constants.dart';
-import 'package:pip/core/resources/shared_prefrences.dart';
 import 'route_manager.dart';
 import 'assets_manager.dart';
 import 'strings_manager.dart';
@@ -20,42 +17,7 @@ import 'color_manager.dart';
 import 'font_manager.dart';
 
 class Commons {
-  static Future<void> showLoadingDialog(BuildContext context ,{String? text}) async {
-    return showDialog<void>(
-        context: context,
-        barrierDismissible: false,
-        builder: (BuildContext context) {
-          return WillPopScope(
-            onWillPop: () async => false,
-            child: Dialog(
-              backgroundColor: Colors.transparent,
-              child: Container(
-                padding: const EdgeInsets.all(16.0),
-                decoration: BoxDecoration(
-                  color: ColorManager.darkBlack,
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    const LoadingIndicator(),
-                    SizedBox(height: 16.h),
-
-                     Text(
-                       text?? "برجاء الانتظار...",
-                      style: TextStyle(color:ColorManager.white5 ),
-                    ),
-
-
-                  ],
-                ),
-              ),
-            ),
-          );
-        });
-  }
-
-  static Future<void> showLoadingDriverDialog(BuildContext context) async {
+  static Future<void> showLoadingDialog(BuildContext context) async {
     return showDialog<void>(
         context: context,
         barrierDismissible: false,
@@ -78,15 +40,21 @@ class Commons {
                     AnimatedTextKit(
                       animatedTexts: [
                         FlickerAnimatedText(
-                            "تم نشر طلبك بنجاح ويتم البحث عن سائق للتوصيل",
-                            textAlign: TextAlign.center),
+                          "برجاء الانتظار...",
+                        ),
                       ],
                       isRepeatingAnimation: true,
                       onTap: () {
                         // print("Tap Event");
                       },
                     ),
-
+                    // Text(
+                    //   "برجاء الانتظار...",
+                    //   style: TextStyle(
+                    //     fontSize: 18.0,
+                    //     fontWeight: FontWeight.bold,
+                    //   ),
+                    // ),
                   ],
                 ),
               ),
@@ -98,8 +66,7 @@ class Commons {
   static void showErrorDialog(BuildContext context, String message) {
     showDialog(
         context: context,
-        builder: (BuildContext context) => AlertDialog(
-              // backgroundColor: Colors.white,
+        builder: (BuildContext context) => CupertinoAlertDialog(
               title: Text(
                 message,
                 style: const TextStyle(
@@ -116,80 +83,7 @@ class Commons {
                           fontFamily: FontConstants.defaultFontFamily,
                           fontSize: 14)),
                   onPressed: () => Navigator.of(context).pop(),
-                  child: const Text(
-                    'إلغاء',
-                  ),
-                ),
-                TextButton(
-                  style: TextButton.styleFrom(
-                      foregroundColor: Colors.black,
-                      textStyle: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontFamily: FontConstants.defaultFontFamily,
-                          fontSize: 14)),
-                  onPressed: () async{
-
-
-                    CacheHelper.removeAll();
-                    await FirebaseAuth.instance.signOut();
-
-                    screenIndex = 0;
-
-
-
-                    Navigator.pushNamedAndRemoveUntil(
-                        context, Routes.mainAuthViewRoute, (route) => false);
-
-                  },
-                  child: const Text(
-                    AppStrings.login,
-                  ),
-                ),
-              ],
-            ));
-  }
-  static void showRegisterErrorDialog(BuildContext context, String message) {
-    showDialog(
-        context: context,
-        builder: (BuildContext context) => AlertDialog(
-              // backgroundColor: Colors.white,
-              title: Text(
-                message,
-                style: const TextStyle(
-                    color: Colors.black,
-                    fontSize: 16,
-                    fontFamily: FontConstants.defaultFontFamily),
-              ),
-              actions: <Widget>[
-                TextButton(
-                  style: TextButton.styleFrom(
-                      foregroundColor: Colors.black,
-                      textStyle: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontFamily: FontConstants.defaultFontFamily,
-                          fontSize: 14)),
-                  onPressed: () => Navigator.of(context).pop(),
-                  child: const Text(
-                    'إلغاء',
-                  ),
-                ),
-                TextButton(
-                  style: TextButton.styleFrom(
-                      foregroundColor: Colors.black,
-                      textStyle: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontFamily: FontConstants.defaultFontFamily,
-                          fontSize: 14)),
-                  onPressed: () {
-
-                    screenIndex = 0;
-                    Navigator.pushNamedAndRemoveUntil(
-                        context, Routes.mainAuthViewRoute, (route) => false);
-                    CacheHelper.removeAll();
-                  },
-                  child: const Text(
-                    AppStrings.registerNewAcc,
-                  ),
+                  child: const Text('ok'),
                 ),
               ],
             ));
@@ -208,7 +102,12 @@ class Commons {
     );
   }
 
-
+  static Future<void> showLogoutDialog(BuildContext context) async {
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) =>
+            ConfirmationDialog(alertMsg: 'alert', onTapConfirm: () {}));
+  }
 
   static Future<void> openUrl(String urlLink) async {
     final Uri url = Uri.parse(urlLink);
@@ -476,7 +375,7 @@ void showContactSuccessDialog(BuildContext context, {void Function()? onOk}) {
   );
 }
 
-void showSuccessOfferDialog(BuildContext context ,  {required String title , void Function()? onOk}) {
+void showSuccessOfferDialog(BuildContext context, {void Function()? onOk}) {
   AlertDialog alertDialog = AlertDialog(
     backgroundColor: ColorManager.transparent,
     contentPadding: EdgeInsets.zero,
@@ -499,7 +398,7 @@ void showSuccessOfferDialog(BuildContext context ,  {required String title , voi
                 SizedBox(height: 22.h),
                 _buildDescription(AppStrings.succsesAdd),
                 SizedBox(height: 22.h),
-                _buildSubtitle(title),
+                _buildSubtitle(AppStrings.plumber),
                 SizedBox(height: 62.h),
                 Padding(
                   padding: EdgeInsets.only(right: 65.h, left: 65.h),
@@ -588,7 +487,7 @@ _buildSubtitle(String title) {
 //     padding: EdgeInsets.only(top: 20.h, right: 20.w),
 //     child: InkWell(
 //         onTap: () {
-//           Navigator.pop(context);
+//           // Navigator.pop(context);
 //         },
 //         child: Align(
 //           alignment: Alignment.topRight,

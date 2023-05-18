@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../../../chat/business_logic/chat_state.dart';
+import 'package:pip/features/chat/business_logic/chat_state.dart';
 import '../../../../core/widgets/custom_clock_date.dart';
 import '../../../chat/business_logic/chat_cubit.dart';
 import '../../business_logic/cubit/requests_cubit.dart';

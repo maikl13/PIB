@@ -20,6 +20,7 @@ class ConversationItem extends StatelessWidget {
   final String? imageUrl;
   final int chatId;
   // final String? title;
+  //TODO fix title 
   _buildBackground() {
     return Image.asset(
       ImageAssets.conversationItemBackground,
@@ -50,7 +51,7 @@ class ConversationItem extends StatelessWidget {
 
   _buildSubtitle() {
     return Text(
-      "${AppStrings.totalUsers} ${totalMessage ?? 0}",
+      "${AppStrings.totalMessage} ${totalMessage ?? 0}",
       style: getRegularStyle(fontSize: 12.sp, color: ColorManager.darkGrey),
     );
   }

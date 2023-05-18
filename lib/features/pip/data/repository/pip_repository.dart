@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import '../../../menu/data/models/update_skill.dart';
-import '../models/driver_model.dart';
 import '../models/fast_request_category.dart';
 import '../models/skills_model.dart';
 
@@ -26,11 +25,10 @@ class PipRepsitory {
     }
   }
 
-  Future<ApiResult<List<FastRequestCategory>>>
-      getAllFastRequestCategories() async {
+
+    Future<ApiResult<List<FastRequestCategory>>> getAllFastRequestCategories() async {
     try {
-      var response =
-          await webServices.getAllFastRequestCategories('Bearer $token');
+      var response = await webServices.getAllFastRequestCategories('Bearer $token');
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(NetworkExceptions.getDioException(error));
@@ -71,17 +69,6 @@ class PipRepsitory {
       var response = await webServices.toggleFastRequest('Bearer $token');
       return ApiResult.success(response);
     } catch (error) {
-      return ApiResult.failure(NetworkExceptions.getDioException(error));
-    }
-  }
-
-  Future<ApiResult<DriverModel>> getDriverInfo(String requestId) async {
-    try {
-      var response =
-          await webServices.getDriverInfo('Bearer $token', requestId);
-      return ApiResult.success(response);
-    } catch (error) {
-      print('asdasadasddaad $error.toString()');
       return ApiResult.failure(NetworkExceptions.getDioException(error));
     }
   }

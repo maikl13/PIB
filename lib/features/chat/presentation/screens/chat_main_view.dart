@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/resources/constants.dart';
-import '../../../../core/widgets/custom_network_image.dart';
-import '../../business_logic/chat_cubit.dart';
-import '../../business_logic/chat_state.dart';
+import 'package:pip/core/resources/constants.dart';
+import 'package:pip/core/widgets/custom_network_image.dart';
+import 'package:pip/features/chat/business_logic/chat_cubit.dart';
+import 'package:pip/features/chat/business_logic/chat_state.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/commons.dart';
 import '../../../../core/resources/style_manager.dart';
@@ -57,7 +57,7 @@ class _ChatViewState extends State<ChatView> {
             Navigator.pop(context);
             Commons.showToast(
               message: "reportedSuccessfully",
-              color: ColorManager.toastSuccess,
+              color: ColorManager.green,
             );
           },
         );
@@ -73,7 +73,6 @@ class _ChatViewState extends State<ChatView> {
             return WillPopScope(
               onWillPop: () {
                 BlocProvider.of<ChatCubit>(context).stopStream();
-                BlocProvider.of<ChatCubit>(context).imagesFile.clear();
                 return Future.value(true);
               },
               child: Scaffold(
@@ -83,8 +82,6 @@ class _ChatViewState extends State<ChatView> {
                   leading: LeadingArrow(
                     onTap: () {
                       BlocProvider.of<ChatCubit>(context).stopStream();
-                      BlocProvider.of<ChatCubit>(context).imagesFile.clear();
-
                       Navigator.pop(context);
                     },
                   ),

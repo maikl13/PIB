@@ -179,7 +179,7 @@ class _RateUsViewState extends State<RateUsView> {
           updateRateSuccess: (rates) {
             Navigator.pop(context);
             Commons.showToast(
-                message: 'تم التقييم بنجاح', color: ColorManager.toastSuccess);
+                message: 'تم التقييم بنجاح', color: ColorManager.green);
             BlocProvider.of<MenuCubit>(context).getAllRates();
             Navigator.pop(context);
           },
@@ -292,31 +292,29 @@ class _RateUsViewState extends State<RateUsView> {
       builder: (context, state) {
         return state.maybeWhen(
           getRatesSuccess: (rates) {
-            return _buildNumberOfEveryRate();
-          },
-          orElse: () => _buildNumberOfEveryRate(),
-        );
-      },
-    );
-  }
-
-  _buildNumberOfEveryRate() {
-    return SizedBox(
-      // height: 120.h,
-      width: 18.w,
-      child: ListView.separated(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          itemBuilder: (context, index) {
-            return Text(
-              BlocProvider.of<MenuCubit>(context).ratesFromOneToFive[index],
-              style: getRegularStyle(fontSize: 15.sp, color: ColorManager.grey),
+            return SizedBox(
+              // height: 120.h,
+              width: 18.w,
+              child: ListView.separated(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemBuilder: (context, index) {
+                    return Text(
+                      BlocProvider.of<MenuCubit>(context)
+                          .ratesFromOneToFive[index],
+                      style: getRegularStyle(
+                          fontSize: 15.sp, color: ColorManager.grey),
+                    );
+                  },
+                  separatorBuilder: (context, index) {
+                    return SizedBox(height: 4.h);
+                  },
+                  itemCount: 5),
             );
           },
-          separatorBuilder: (context, index) {
-            return SizedBox(height: 4.h);
-          },
-          itemCount: 5),
+          orElse: () => Container(),
+        );
+      },
     );
   }
 

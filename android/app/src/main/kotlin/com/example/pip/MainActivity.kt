@@ -1,4 +1,4 @@
-package com.pib.platform
+package com.example.pip
 
 import io.flutter.embedding.android.FlutterActivity
 

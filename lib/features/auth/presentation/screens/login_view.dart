@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/resources/constants.dart';
-import '../../../../core/resources/utils.dart';
+import 'package:pip/core/resources/constants.dart';
+import 'package:pip/core/resources/utils.dart';
 
 import '../../../../core/resources/commons.dart';
 import '../../../../core/resources/strings_manager.dart';
@@ -57,9 +57,7 @@ class _LoginViewState extends State<LoginView> {
       text: AppStrings.login,
       onTap: () {
         // showProgressIndicator(context);
-       setState(() {
-          isLogin = true;
-       });
+        isLogin = true;
         _login(context);
       },
     );

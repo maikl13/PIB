@@ -13,11 +13,6 @@ part 'menu_state.freezed.dart';
 class MenuState<T> with _$MenuState<T> {
   const factory MenuState.idle() = Idle<T>;
 
-  const factory MenuState.locationError() = LocationError<T>;
-  const factory MenuState.signOutSuccess() = SignOutSuccess<T>;
-
-
-
   const factory MenuState.walletInfoLoading() = WalletInfoLoading<T>;
 
   const factory MenuState.walletInfoSuccedded(WalletInfo data) =

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/business_logic/global_cubit.dart';
-import '../../../../core/widgets/empty_screen.dart';
+import 'package:pip/core/business_logic/global_cubit.dart';
+import 'package:pip/core/widgets/empty_screen.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/web_services/network_exceptions.dart';
@@ -33,7 +33,7 @@ class _NotificationViewState extends State<NotificationView> {
             return const LoadingIndicator();
           },
           success: (data) {
-            // BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
+            BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
             return _buildNotificationViewBody(data);
           },
           error: (networkExceptions) {
@@ -58,7 +58,6 @@ class _NotificationViewState extends State<NotificationView> {
                   return NotificationItem(
                     notificationContent: notifications[index].content!,
                     isRead: notifications[index].isRead == 1,
-                    date: notifications[index].createdAt!,
                   );
                 },
                 separatorBuilder: (context, index) {
@@ -81,7 +80,7 @@ class _NotificationViewState extends State<NotificationView> {
     return WillPopScope(
       onWillPop: () async {
         BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
-        return true;
+        return false;
       },
       child: Scaffold(
         appBar: CustomAppBar(

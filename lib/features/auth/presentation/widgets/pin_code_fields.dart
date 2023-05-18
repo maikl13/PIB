@@ -15,31 +15,23 @@ class CustomPinCodeFields extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.ltr,
       child: PinCodeTextField(
-        errorTextMargin: EdgeInsets.only(top: 20.h, bottom: 80.h),
-        scrollPadding: EdgeInsets.zero,
-        // errorTextMargin: EdgeInsets.only(top: 80.h),
         autoFocus: true,
         enablePinAutofill: true,
         autoDismissKeyboard: true,
         autoUnfocus: true,
         backgroundColor: ColorManager.transparent,
         length: 6,
-
-        textStyle:
-            getBoldStyle(color: ColorManager.black, fontSize: 24.sp).copyWith(),
+        textStyle: getBoldStyle(color: ColorManager.black, fontSize: 25.sp),
         cursorColor: ColorManager.black,
         obscureText: false,
-
         animationType: AnimationType.fade,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         keyboardType: TextInputType.number,
         pinTheme: PinTheme(
-          // fieldOuterPadding: EdgeInsets.zero,
           shape: PinCodeFieldShape.box,
           borderRadius: BorderRadius.circular(15.r),
           fieldHeight: 55.h,
           fieldWidth: 52.w,
-
           // fieldOuterPadding: EdgeInsets.only(left: 1.w, right: 5.w),
           selectedColor: ColorManager.transparent,
           disabledColor: ColorManager.transparent,

@@ -3,13 +3,11 @@ class AppStrings {
   static const String locale = 'locale';
   static const String englishCode = 'en';
   static const String arabicCode = 'ar';
-  static const String myAcceptedOffers = 'عروض مقبولة';
 
   static const String notification = 'الاشعارات';
   static const String theSearch = 'البحث';
   static const String search = 'بحث';
   static const String send = 'ارسال';
-  static const String editOffer = 'تعديل العرض المقدم';
 
   static const String main = 'الرئيسية ';
   static const String messages = 'الرسائل ';
@@ -30,8 +28,8 @@ class AppStrings {
   static const String hello = 'مرحبا';
   static const String you = 'بك';
   static const String registerNewAcc = 'تسجيل حساب جديد';
-  static const String login = 'تسجيل الدخول';
-  static const String logOut = 'تسجيل الخروج';
+  static const String login = 'تسجيل دخول';
+  static const String logOut = 'تسجيل خروج';
 
   static const String orLoginWith = 'او تسجيل باستخدام';
   static const String facebook = 'Facebook';
@@ -66,7 +64,9 @@ class AppStrings {
   static const String companiesRequireJobs = 'شركات قاموا بطلب وظائف :';
 
   static const String jobTitle = 'سباك';
-
+  static const String companyName = 'شركة امواج للنظافة';
+  static const String partTimeJobs = 'وظائف بارت تايم :';
+  static const String fullTimeJobs = 'وظائف دوام كامل :';
   static const String notificationSubtitle =
       'هناك حقيقة مثبتة منذ زمن طويل وهي المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الصفحة التي يقرأها.';
   static const String jobDetailsAppBarTitle = 'تفاصيل الاعلان';
@@ -80,7 +80,7 @@ class AppStrings {
   static const String emptySearch = 'لا توجد اي نتائج بحث';
   static const String searchResults = 'نتائج البحث :';
   static const String chooseRequestType = 'قم باختيار الطلب المناسب لك :';
-  static const String newRequest = 'عمل طلب جديد';
+
   static const String fastRequest = 'طلب سريع';
   static const String specialRequest = 'طلب خاص';
   static const String requestDescription =
@@ -105,8 +105,6 @@ class AppStrings {
   static const String specialSendedRequests = 'طلباتي الخاصة المرسلة';
   static const String recievedRequests = 'طلبات التوظيف المستلمة';
   static const String jobsDownlodedPreviously = 'وظائف قمت بتنزيلها مسبقا :';
-  static const String fastRequests = 'طلبات الخدمة السريعة';
-
   static const String requestDetails = 'تفاصيل الطلب';
   static const String requestStatus = 'تلقي العروض';
   static const String showOffers = 'عرض العروض المقدمة';
@@ -121,8 +119,7 @@ class AppStrings {
       'السلا عليكم اخي :\n انا سباك ماهر منذ زمن طويل مشكلةك ليست معقدة استطيع حلها بسهولة وبتكلفة قليلة ببدائل موجودة';
   static const String negotiate = 'تفاوض';
   static const String accept = 'قبول';
-  static const String reject = 'رفض';
-
+  static const String plumber = 'سباك';
   static const String giveOffer = 'تقديم طلب';
   static const String timeToComplete = 'مدة التنفيذ';
   static const String days = 'ايام';
@@ -131,10 +128,10 @@ class AppStrings {
   static const String serviceRequesterMessages = 'رسائل طالب الخدمة';
   static const String serviceRequesterMessagesTitle =
       'محادثتك على الوظائف الخاصة بك :';
-  static const String totalUsers = 'اجمالي المستخدمين :';
+  static const String totalMessage = 'اجمالي الرسائل :';
   static const String serviceProviderMessagesTitle =
       'محادثتك مع مقدمي الخدمات :';
-  static const String chatsTitle = 'الأشخاص التابعين لوظيفة :';
+  static const String chatsTitle = 'الأشخاص التابعين لوظيفة بحاجة لسباك :';
   static const String chatAppbar = 'بحاجة لسباك صرف';
   static const String today = 'اليوم';
   static const String writeYourMessage = 'اكتب رسالتك هنا';
@@ -147,7 +144,6 @@ class AppStrings {
   static const String jobName = 'اسم الوظيفة';
   static const String editProfile = 'تعديل الملف الشخصي';
   static const String editData = 'تعديل البيانات';
-  static const String editSkills = 'تعديل المهارات';
   static const String theMenue = 'القائمة';
   static const String contactUs = 'تواصل معنا';
   static const String userEmail = 'marawanmoubark@gmail.com';
@@ -184,18 +180,5 @@ class AppStrings {
   static const String willTry = 'سنحاول التواصل معك باسرع وقت ممكن';
   static const String showJob = 'عرض الوظيفة';
   static const String editRequest = 'تعديل الطلب';
-  static const String complete = 'اكمال';
-  static const String cancel = 'الغاء';
-  // static const String theMenue = 'القائمة';
-  // static const String theMenue = 'القائمة';
-  // static const String theMenue = 'القائمة';
-  // static const String theMenue = 'القائمة';
-  // static const String theMenue = 'القائمة';
-  // static const String theMenue = 'القائمة';
-  // static const String theMenue = 'القائمة';
-  // static const String theMenue = 'القائمة';
-  // static const String theMenue = 'القائمة';
-  // static const String theMenue = 'القائمة';
-  // static const String theMenue = 'القائمة';
   // static const String theMenue = 'القائمة';
 }

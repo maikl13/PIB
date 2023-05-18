@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/resources/assets_manager.dart';
-import '../../../../core/resources/constants.dart';
+import 'package:pip/core/resources/assets_manager.dart';
+import 'package:pip/core/resources/constants.dart';
 import '../../../../core/resources/commons.dart';
 import '../../../../core/resources/route_manager.dart';
 import '../../../../core/widgets/custom_appbar.dart';
@@ -29,7 +29,7 @@ class _RegisterViewState extends State<RegisterView> {
   final TextEditingController _phoneController = TextEditingController();
   final TextEditingController _nameController = TextEditingController();
 
-  // String phoneNumber = '';
+  String phoneNumber = '';
   Widget _buildBody(BuildContext context) {
     return Form(
       key: _phoneFormKey,
@@ -46,9 +46,10 @@ class _RegisterViewState extends State<RegisterView> {
           SizedBox(height: 20.h),
           DefaultPhoneTextField(
             onSaved: (value) {
-              userPhone = value!;
+              phoneNumber = value!;
             },
             controller: _phoneController,
+        
           ),
           SizedBox(height: 60.h),
           // _buildPasswordTextField(),
@@ -105,7 +106,7 @@ class _RegisterViewState extends State<RegisterView> {
     } else {
       // Navigator.pop(context);
       _phoneFormKey.currentState!.save();
-      BlocProvider.of<AuthCubit>(context).submitPhoneNumber(userPhone!);
+      BlocProvider.of<AuthCubit>(context).submitPhoneNumber(phoneNumber);
     }
   }
 
@@ -122,14 +123,11 @@ class _RegisterViewState extends State<RegisterView> {
     return DefaultButton(
       text: AppStrings.registerNewAcc,
       onTap: () {
-        setState(() {
-          isLogin = false;
-          userName = _nameController.text;
+        userName = _nameController.text;
+        isLogin = false;
+        userPhone = _phoneController.text;
 
-          userPhone = _phoneController.text;
-
-          _register(context);
-        });
+        _register(context);
       },
     );
   }

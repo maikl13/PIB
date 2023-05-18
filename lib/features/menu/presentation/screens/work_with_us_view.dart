@@ -120,7 +120,7 @@ class WorkWithUsView extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(
         appBarColor: ColorManager.lightBlack,
-        title: AppStrings.workAs ,
+        title: AppStrings.workAs,
         actions: const [],
       ),
       body: _buildBody(context),

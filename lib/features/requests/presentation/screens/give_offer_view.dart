@@ -22,9 +22,9 @@ import '../../../pip/presentation/widgets/request_custom_tetfield.dart';
 import '../../../pip/presentation/widgets/upload_photos.dart';
 
 class GiveOfferView extends StatefulWidget {
-  const GiveOfferView({super.key, required this.requestId , required this.jobName});
+  const GiveOfferView({super.key, required this.requestId});
 
-  final String requestId , jobName;
+  final String requestId;
 
   @override
   State<GiveOfferView> createState() => _GiveOfferViewState();
@@ -49,13 +49,12 @@ class _GiveOfferViewState extends State<GiveOfferView> {
             Commons.showLoadingDialog(context);
           },
           giveOfferSuccess: (data) {
-            // BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
+            BlocProvider.of<GlobalCubit>(context).getAllNotificationsCount();
 
             Navigator.pop(context);
 
             showSuccessOfferDialog(
               context,
-              title:widget.jobName,
               onOk: () {
                 setState(() {
                   screenIndex = 2;
@@ -267,11 +266,7 @@ class _GiveOfferViewState extends State<GiveOfferView> {
   }
 
   _buildUploadPhotoTextField(BuildContext context) {
-    return  InkWell(
-        onTap: () {
-      BlocProvider.of<RequestsCubit>(context).pickImage();
-    },
-    child:Container(
+    return Container(
       width: double.infinity,
       height: 52.h,
       decoration: BoxDecoration(
@@ -306,17 +301,21 @@ class _GiveOfferViewState extends State<GiveOfferView> {
                         fontSize: 15.sp, color: ColorManager.grey5)),
               ],
             ),
-            Image.asset(
-              ImageAssets.add,
-              width: 20.w,
-              height: 20.h,
-              color: ColorManager.darkSeconadry,
+            InkWell(
+              onTap: () {
+                BlocProvider.of<RequestsCubit>(context).pickImage();
+              },
+              child: Image.asset(
+                ImageAssets.add,
+                width: 20.w,
+                height: 20.h,
+                color: ColorManager.darkSeconadry,
+              ),
             )
-
           ],
         ),
       ),
-    ));
+    );
   }
 
   @override

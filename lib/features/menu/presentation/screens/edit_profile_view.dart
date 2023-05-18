@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/resources/utils.dart';
+import 'package:pip/core/resources/utils.dart';
+import 'package:pip/features/menu/data/models/user_info_model.dart';
 import '../../../../core/resources/commons.dart';
 import '../../../../core/resources/constants.dart';
 import '../../../../core/resources/strings_manager.dart';
@@ -42,7 +43,7 @@ class _EditProfileViewState extends State<EditProfileView> {
               Navigator.pop(context);
 
               Commons.showToast(
-                  message: 'تم تغير البيانات بنجاح', color: ColorManager.toastSuccess);
+                  message: 'تم تغير البيانات بنجاح', color: ColorManager.green);
               BlocProvider.of<MenuCubit>(context).getUserInfo();
               Navigator.pop(context);
             },
@@ -155,8 +156,7 @@ class _EditProfileViewState extends State<EditProfileView> {
                           backgroundColor: ColorManager.black,
                           child: ClipOval(
                             child: CustomNetworkCachedImage(
-                              url: userInfo.imageUrl ??
-                                  'https://th.bing.com/th/id/OIP.8R95WJtQhwmzvFvd75zrVQHaHa?pid=ImgDet&w=1490&h=1490&rs=1',
+                              url: userInfo.imageUrl,
                             ),
                           )),
                     ),
@@ -194,8 +194,7 @@ class _EditProfileViewState extends State<EditProfileView> {
                             backgroundColor: ColorManager.black,
                             child: ClipOval(
                               child: CustomNetworkCachedImage(
-                                url: userImage ??
-                                    'https://th.bing.com/th/id/OIP.8R95WJtQhwmzvFvd75zrVQHaHa?pid=ImgDet&w=1490&h=1490&rs=1',
+                                url: userImage,
                               ),
                             )),
                       ),
